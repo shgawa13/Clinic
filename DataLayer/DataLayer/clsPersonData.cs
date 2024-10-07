@@ -13,7 +13,7 @@ namespace DataLayer
   public class clsPersonData
   {
     // Add new Person
-    public static int AddNewPerson(int NationalID, string FirstName, string SecondName, string LastName,
+    public static int AddNewPerson(string NationalID, string FirstName, string SecondName, string LastName,
       DateTime DateOfBirth, byte Gendor, string PhoneNumber, string Email, string ImagePath, short CountryID)
     {
       int PersonID = -1;
@@ -66,7 +66,7 @@ namespace DataLayer
           }
 
         }
-
+        
       }
       catch (Exception ex)
       {
@@ -74,7 +74,7 @@ namespace DataLayer
       }
       finally
       {
-        Console.WriteLine($"Person ID is: {PersonID}");
+        //Console.WriteLine($"Person ID is: {PersonID}");
       }
 
 
@@ -82,7 +82,7 @@ namespace DataLayer
     }
 
     // Update PersonInfo
-    public static bool UpdatePersonInfo(int PersonID, int NationalID, string FirstName, string SecondName, string LastName,
+    public static bool UpdatePersonInfo(int PersonID, string NationalID, string FirstName, string SecondName, string LastName,
       DateTime DateOfBirth, byte Gendor, string PhoneNumber, string Email, string ImagePath, short CountryID)
     {
       int EffectedRow = 0;
@@ -155,9 +155,9 @@ namespace DataLayer
     }
 
     // Find Person By ID
-    public static bool GetPersonByID(int PersonID, ref int NationalID, ref string FirstName, ref string SecondName,
+    public static bool GetPersonByID(int PersonID, ref string NationalID, ref string FirstName, ref string SecondName,
       ref string LastName, ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email,
-      ref string ImagePath, short CountryID)
+      ref string ImagePath, ref short CountryID)
     {
       bool IsFound = false;
 
@@ -179,7 +179,7 @@ namespace DataLayer
             {
               if (reader.Read())
               {
-                NationalID = (int)reader["NationalID"];
+                NationalID = (string)reader["NationalID"];
                 FirstName = (string)reader["FirstName"];
                 SecondName = (string)reader["SecondName"];
                 LastName = (string)reader["LastName"];
@@ -212,10 +212,10 @@ namespace DataLayer
     // Find Person By NationalID
     public static bool GetPersonByNationalID(ref int PersonID, ref string FirstName, ref string SecondName,
       ref string LastName, ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email,
-      ref string ImagePath, short CountryID)
+      ref string ImagePath,ref short CountryID)
     {
       bool IsFound = false;
-      string query = @"Select * from People where PersonID=@PersonID;";
+      string query = @"Select * from People where NationalID=@NationalID;";
 
       try
       {
@@ -264,9 +264,9 @@ namespace DataLayer
     }
 
     // Find Person By PhoneNumber
-    public static bool GetPersonByPhoneNumber(string PhoneNumber, ref int PersonID, ref int NationalID,
+    public static bool GetPersonByPhoneNumber(string PhoneNumber, ref int PersonID, ref string NationalID,
       ref string FirstName, ref string SecondName, ref string LastName, ref DateTime DateOfBirth,
-      ref byte Gendor, ref string Email, ref string ImagePath, short CountryID)
+      ref byte Gendor, ref string Email, ref string ImagePath,ref short CountryID)
     {
       bool IsFound = false;
       string query = @"Select * from People where PhoneNumber=@PhoneNumber;";
@@ -288,7 +288,7 @@ namespace DataLayer
               if (reader.Read())
               {
                 PersonID = (int)reader["PersonID"];
-                NationalID = (int)reader["NationalID"];
+                NationalID = (string)reader["NationalID"];
                 FirstName = (string)reader["FirstName"];
                 SecondName = (string)reader["SecondName"];
                 LastName = (string)reader["LastName"];
