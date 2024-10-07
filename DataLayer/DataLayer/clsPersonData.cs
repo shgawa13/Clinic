@@ -14,13 +14,13 @@ namespace DataLayer
   {
     // Add new Person
     public static int AddNewPerson(string NationalID, string FirstName, string SecondName, string LastName,
-      DateTime DateOfBirth, byte Gendor, string PhoneNumber, string Email, string ImagePath, short CountryID)
+      DateTime DateOfBirth, byte Gendor, string PhoneNumber, string Email, string ImagePath, int NationalityCountryID)
     {
       int PersonID = -1;
 
       string query = @"Insert Into People
-     (NationalID,FirstName,SecondName,LastName,DateOfBirth,Gendor,PhoneNumber,Email,ImagePath,CountryID)
-     Values(@NationalID,@FirstName,@SecondName,@LastName,@DateOfBirth,@Gendor,@PhoneNumber,@Email,@ImagePath,@CountryID);
+     (NationalID,FirstName,SecondName,LastName,DateOfBirth,Gendor,PhoneNumber,Email,ImagePath,NationalityCountryID)
+     Values(@NationalID,@FirstName,@SecondName,@LastName,@DateOfBirth,@Gendor,@PhoneNumber,@Email,@ImagePath,@NationalityCountryID);
      Select SCOPE_IDENTITY();";
 
       try
@@ -53,7 +53,7 @@ namespace DataLayer
             else
               command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
 
-            command.Parameters.AddWithValue("@CountryID", CountryID);
+            command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
 
             // resiving object from DB
             object result = command.ExecuteNonQuery();
@@ -83,7 +83,7 @@ namespace DataLayer
 
     // Update PersonInfo
     public static bool UpdatePersonInfo(int PersonID, string NationalID, string FirstName, string SecondName, string LastName,
-      DateTime DateOfBirth, byte Gendor, string PhoneNumber, string Email, string ImagePath, short CountryID)
+      DateTime DateOfBirth, byte Gendor, string PhoneNumber, string Email, string ImagePath, int NationalityCountryID)
     {
       int EffectedRow = 0;
 
@@ -97,7 +97,7 @@ namespace DataLayer
           PhoneNumber=@PhoneNumber,
           Email=@Email,
           ImagePath=@ImagePath,
-          CountryID=@CountryID
+          NationalityCountryID=@NationalityCountryID
           where PersonID=@PersonID";
       try
       {
@@ -130,7 +130,7 @@ namespace DataLayer
             else
               command.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
 
-            command.Parameters.AddWithValue("@CountryID", CountryID);
+            command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
 
 
             // rows effected  
@@ -157,7 +157,7 @@ namespace DataLayer
     // Find Person By ID
     public static bool GetPersonByID(int PersonID, ref string NationalID, ref string FirstName, ref string SecondName,
       ref string LastName, ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email,
-      ref string ImagePath, ref short CountryID)
+      ref string ImagePath, ref int NationalityCountryID)
     {
       bool IsFound = false;
 
@@ -188,7 +188,7 @@ namespace DataLayer
                 PhoneNumber = (string)reader["PhoneNumber"];
                 Email = (string)reader["Email"] ?? "";
                 ImagePath = (string)reader["ImagePath"] ?? "";
-                CountryID = (short)reader["CountryID"];
+                NationalityCountryID = (int)reader["NationalityCountryID"];
               }
             }
 
@@ -212,7 +212,7 @@ namespace DataLayer
     // Find Person By NationalID
     public static bool GetPersonByNationalID(ref int PersonID, ref string FirstName, ref string SecondName,
       ref string LastName, ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email,
-      ref string ImagePath,ref short CountryID)
+      ref string ImagePath,ref int NationalityCountryID)
     {
       bool IsFound = false;
       string query = @"Select * from People where NationalID=@NationalID;";
@@ -242,7 +242,7 @@ namespace DataLayer
                 PhoneNumber = (string)reader["PhoneNumber"];
                 Email = (string)reader["Email"] ?? "";
                 ImagePath = (string)reader["ImagePath"] ?? "";
-                CountryID = (short)reader["CountryID"];
+                NationalityCountryID = (int)reader["NationalityCountryID"];
               }
             }
 
@@ -266,7 +266,7 @@ namespace DataLayer
     // Find Person By PhoneNumber
     public static bool GetPersonByPhoneNumber(string PhoneNumber, ref int PersonID, ref string NationalID,
       ref string FirstName, ref string SecondName, ref string LastName, ref DateTime DateOfBirth,
-      ref byte Gendor, ref string Email, ref string ImagePath,ref short CountryID)
+      ref byte Gendor, ref string Email, ref string ImagePath,ref int NationalityCountryID)
     {
       bool IsFound = false;
       string query = @"Select * from People where PhoneNumber=@PhoneNumber;";
@@ -296,7 +296,7 @@ namespace DataLayer
                 Gendor = (byte)reader["Gendor"];
                 Email = (string)reader["Email"] ?? "";
                 ImagePath = (string)reader["ImagePath"] ?? "";
-                CountryID = (short)reader["CountryID"];
+                NationalityCountryID = (int)reader["NationalityCountryID"];
               }
             }
 
