@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
@@ -146,6 +147,27 @@ namespace Business
       {
         return null;
       }
+    }
+
+    // Callin Save insted of calling add and update functions
+    public bool Save()
+    {
+      switch (Mode)
+      {
+        case enMode.AddNew:
+          if (_AddNewPerson())
+          {
+            Mode = enMode.Update;
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+        case enMode.Update:
+          return _UpdatePersonInfo();
+      }
+      return false;
     }
 
     // Get All People
