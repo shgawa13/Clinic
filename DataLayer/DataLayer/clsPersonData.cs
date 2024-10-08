@@ -174,11 +174,14 @@ namespace DataLayer
           // Create Command 
           using (SqlCommand command = new SqlCommand(query, connection))
           {
+            command.Parameters.AddWithValue("@PersonID", PersonID);
             // Create Reader
             using (SqlDataReader reader = command.ExecuteReader())
             {
               if (reader.Read())
               {
+                IsFound = true;
+
                 NationalID = (string)reader["NationalID"];
                 FirstName = (string)reader["FirstName"];
                 SecondName = (string)reader["SecondName"];
@@ -186,8 +189,18 @@ namespace DataLayer
                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                 Gendor = (byte)reader["Gendor"];
                 PhoneNumber = (string)reader["PhoneNumber"];
-                Email = (string)reader["Email"] ?? "";
-                ImagePath = (string)reader["ImagePath"] ?? "";
+                // handle Email
+                if (reader["Email"] == System.DBNull.Value)
+                  Email = "";
+                else
+                  Email = (string)reader["Email"];
+
+                // handle ImagePath
+                if (reader["ImagePath"] == System.DBNull.Value)
+                  ImagePath = "";
+                else
+                  ImagePath = (string)reader["ImagePath"];
+
                 NationalityCountryID = (int)reader["NationalityCountryID"];
               }
             }
@@ -210,7 +223,7 @@ namespace DataLayer
     }
 
     // Find Person By NationalID
-    public static bool GetPersonByNationalID(ref int PersonID, ref string FirstName, ref string SecondName,
+    public static bool GetPersonByNationalID(string NationalID,ref int PersonID, ref string FirstName, ref string SecondName,
       ref string LastName, ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email,
       ref string ImagePath,ref int NationalityCountryID)
     {
@@ -228,11 +241,14 @@ namespace DataLayer
           // Create Command 
           using (SqlCommand command = new SqlCommand(query, connection))
           {
+            command.Parameters.AddWithValue("@NationalID", NationalID);
             // Create Reader
             using (SqlDataReader reader = command.ExecuteReader())
             {
               if (reader.Read())
               {
+                IsFound = true;
+
                 PersonID = (int)reader["PersonID"];
                 FirstName = (string)reader["FirstName"];
                 SecondName = (string)reader["SecondName"];
@@ -240,8 +256,18 @@ namespace DataLayer
                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                 Gendor = (byte)reader["Gendor"];
                 PhoneNumber = (string)reader["PhoneNumber"];
-                Email = (string)reader["Email"] ?? "";
-                ImagePath = (string)reader["ImagePath"] ?? "";
+                // handle Email
+                if (reader["Email"] == System.DBNull.Value)
+                  Email = "";
+                else
+                  Email = (string)reader["Email"];
+
+                // handle ImagePath
+                if (reader["ImagePath"] == System.DBNull.Value)
+                  ImagePath = "";
+                else
+                  ImagePath = (string)reader["ImagePath"];
+
                 NationalityCountryID = (int)reader["NationalityCountryID"];
               }
             }
@@ -282,11 +308,14 @@ namespace DataLayer
           // Create Command 
           using (SqlCommand command = new SqlCommand(query, connection))
           {
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
             // Create Reader
             using (SqlDataReader reader = command.ExecuteReader())
             {
               if (reader.Read())
               {
+                IsFound = true;
+
                 PersonID = (int)reader["PersonID"];
                 NationalID = (string)reader["NationalID"];
                 FirstName = (string)reader["FirstName"];
@@ -294,8 +323,18 @@ namespace DataLayer
                 LastName = (string)reader["LastName"];
                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                 Gendor = (byte)reader["Gendor"];
-                Email = (string)reader["Email"] ?? "";
-                ImagePath = (string)reader["ImagePath"] ?? "";
+                // handle Email
+                if (reader["Email"] == System.DBNull.Value)
+                  Email = "";
+                else
+                  Email = (string)reader["Email"];
+
+                // handle ImagePath
+                if (reader["ImagePath"] == System.DBNull.Value)
+                  ImagePath = "";
+                else
+                  ImagePath = (string)reader["ImagePath"];
+
                 NationalityCountryID = (int)reader["NationalityCountryID"];
               }
             }

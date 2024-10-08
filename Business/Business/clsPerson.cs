@@ -109,7 +109,7 @@ namespace Business
       int NationalityCountryID = 0;
       DateTime DateOfBirth = DateTime.Now;
 
-      bool IsFound = clsPersonData.GetPersonByNationalID(ref PersonID, ref FirstName, ref SecondName, ref LastName
+      bool IsFound = clsPersonData.GetPersonByNationalID(NationalID, ref PersonID, ref FirstName, ref SecondName, ref LastName
         , ref DateOfBirth, ref Gendor, ref PhoneNumber, ref Email, ref ImagePath, ref NationalityCountryID);
 
       if (IsFound)
@@ -134,8 +134,8 @@ namespace Business
       int NationalityCountryID = 0;
       DateTime DateOfBirth = DateTime.Now;
 
-      bool IsFound = clsPersonData.GetPersonByID(PersonID, ref NationalID, ref FirstName, ref SecondName, ref LastName
-        , ref DateOfBirth, ref Gendor, ref PhoneNumber, ref Email, ref ImagePath, ref NationalityCountryID);
+      bool IsFound = clsPersonData.GetPersonByPhoneNumber(PhoneNumber,ref PersonID, ref NationalID, ref FirstName, ref SecondName, ref LastName
+        , ref DateOfBirth, ref Gendor, ref Email, ref ImagePath, ref NationalityCountryID);
 
       if (IsFound)
       {

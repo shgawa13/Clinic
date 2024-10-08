@@ -35,9 +35,21 @@ namespace ClinicConsoleApp
       return person;
     }
 
+    public static void FindPerson(int PersonID)
+    {
+      bool Person = clsPerson.IsExist(PersonID);
+
+      if (Person)
+      {
+        Console.WriteLine("Find the person");
+      }else
+        Console.WriteLine("Erorr");
+
+    }
+
     static void Main(string[] args)
     {
-      clsPerson person = AddingNewPerson();
+      FindPerson(1); 
 
       Console.ReadKey();
     }
