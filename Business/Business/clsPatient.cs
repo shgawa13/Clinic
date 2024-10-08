@@ -39,5 +39,10 @@ namespace Business
       return (PatientID > 0);
     }
 
+    private bool DeletePatient(int PatientID)
+    {
+      return false;
+    }
+
   }
 }
