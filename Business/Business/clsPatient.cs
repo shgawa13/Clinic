@@ -36,13 +36,17 @@ namespace Business
     private bool _AddNewPatient()
     {
       this.PatientID = clsPatientData.AddNewPatient(this.PersonID);
-
       return (PatientID > 0);
+    }
+
+    private bool _UpdatePatient()
+    {
+      return clsPatientData.UpdatePatient(this.PatientID,this.PersonID);
     }
 
     public bool DeletePatient(int PatientID) => clsPatientData.DeletePatient(PatientID);
 
-    public clsPatient FindPatientByID(int PatientID)
+    public static clsPatient FindPatientByID(int PatientID)
     {
       bool IsFound = false;
       int PersonID = -1;
@@ -54,7 +58,7 @@ namespace Business
         return null;
     }
 
-    public clsPatient FindPateintByPersonID(int PersonID)
+    public static clsPatient FindPateintByPersonID(int PersonID)
     {
       bool IsFound = false;
       int PatientID = -1;
@@ -66,7 +70,30 @@ namespace Business
         return null;
     }
 
-    public DataTable GetAllPatients() => clsPatientData.GetAllPatients();
+    // handle add and update call
+    public bool Save()
+    {
+      switch (Mode)
+      {
+        case enMode.AddNew:
+
+          if (_AddNewPatient())
+          {
+            Mode = enMode.Update;
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+
+        case enMode.Update:
+          return _UpdatePatient();
+      }
+      return false;
+    }
+
+    public static DataTable GetAllPatients() => clsPatientData.GetAllPatients();
 
   }
 }

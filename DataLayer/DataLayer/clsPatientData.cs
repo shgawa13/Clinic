@@ -57,6 +57,45 @@ namespace DataLayer
       return PatientID;
     }
 
+    // Update Patient
+    public static bool UpdatePatient(int PatientID,int PersonID)
+    {
+      int EffectedRow = 0;
+
+      string query = @"update Patients set PersonID=@PersonID  where PatientID=@PatientID";
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(query, connection))
+          {
+            // Adding Paramters
+            command.Parameters.AddWithValue("@PatientID", PatientID);
+            // rows effected  
+            EffectedRow = command.ExecuteNonQuery();
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+       // Console.WriteLine($"");
+      }
+
+      return (EffectedRow > 0);
+    }
+
     // Find by PatientID
     public static bool FindPatientByID(int PatientID,ref int PersonID)
     {
