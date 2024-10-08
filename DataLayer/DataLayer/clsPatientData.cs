@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -56,6 +57,143 @@ namespace DataLayer
       return PatientID;
     }
 
+    // Find by PatientID
+    public static bool FindPatientByID(int PatientID,ref int PersonID)
+    {
+      bool IsFound = false;
+      string query = @"Select * from Patients where PatientID=@PatientID;";
+
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(query, connection))
+          {
+            command.Parameters.AddWithValue("@PatientID", PatientID);
+            // Create Reader
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+              if (reader.Read())
+              {
+                IsFound = true;
+
+                PersonID = (int)reader["PersonID"];
+                
+              }
+            }
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+        //Console.WriteLine($"");
+      }
+
+      return IsFound;
+    }
+
+    // Find by PersonID
+    public static bool FindPatientByPersonID(int PersonID, ref int PatientID)
+    {
+      bool IsFound = false;
+      string query = @"Select * from Patients where PersonID=@PersonID;";
+
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(query, connection))
+          {
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            // Create Reader
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+              if (reader.Read())
+              {
+                IsFound = true;
+
+                PatientID = (int)reader["PatientID"];
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+        //Console.WriteLine($"");
+      }
+
+      return IsFound;
+    }
+
+    // Get All Patients
+    public static DataTable GetAllPatients()
+    {
+      DataTable dtAllPatients = new DataTable();
+
+      string query = @"select * from Patients;";
+
+      try
+      {
+
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(query, connection))
+          {
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+
+              if (reader.HasRows)
+              {
+                dtAllPatients.Load(reader);
+              }
+
+            }
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+
+      }
+
+
+      return dtAllPatients;
+    }
+
+    // Delete Patient
     public static bool DeletePatient(int PatientID)
     {
 

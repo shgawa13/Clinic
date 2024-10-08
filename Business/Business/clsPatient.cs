@@ -1,6 +1,7 @@
 ﻿using DataLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,10 +40,33 @@ namespace Business
       return (PatientID > 0);
     }
 
-    private bool DeletePatient(int PatientID)
+    public bool DeletePatient(int PatientID) => clsPatientData.DeletePatient(PatientID);
+
+    public clsPatient FindPatientByID(int PatientID)
     {
-      return false;
+      bool IsFound = false;
+      int PersonID = -1;
+
+      IsFound = clsPatientData.FindPatientByID(PatientID, ref PersonID);
+      if (IsFound)
+        return new clsPatient(PatientID, PersonID);
+      else
+        return null;
     }
+
+    public clsPatient FindPateintByPersonID(int PersonID)
+    {
+      bool IsFound = false;
+      int PatientID = -1;
+
+      IsFound = clsPatientData.FindPatientByID(PersonID,ref PatientID);
+      if (IsFound)
+        return new clsPatient(PatientID, PersonID);
+      else
+        return null;
+    }
+
+    public DataTable GetAllPatients() => clsPatientData.GetAllPatients();
 
   }
 }
