@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Business;
+﻿using Business;
+using System;
 namespace ClinicConsoleApp
 {
   internal class Program
@@ -42,12 +38,13 @@ namespace ClinicConsoleApp
       if (Person)
       {
         Console.WriteLine("Find the person");
-      }else
+      }
+      else
         Console.WriteLine("Erorr");
 
     }
 
-   public static void AddPatient(int PersonID)
+    public static void AddPatient(int PersonID)
     {
       clsPatient patient = new clsPatient();
 
@@ -55,7 +52,7 @@ namespace ClinicConsoleApp
       if (patient.Save())
       {
         Console.WriteLine($"new Patient has been added successfully");
-        
+
       }
     }
 
@@ -63,7 +60,7 @@ namespace ClinicConsoleApp
     {
       clsPatient patient = clsPatient.FindPateintByPersonID(PatientID);
 
-      if(patient != null)
+      if (patient != null)
       {
 
         Console.WriteLine($"PatientID         : {patient.PatientID}");

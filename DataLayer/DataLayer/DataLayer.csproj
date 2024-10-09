@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAccessSetting.cs" />
+    <Compile Include="clsCountryData.cs" />
     <Compile Include="clsPatientData.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
