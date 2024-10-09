@@ -10,29 +10,28 @@ namespace Business
 {
   public class clsCountries
   {
-    public class clsCounrty
-    {
+    
       public int ID { set; get; }
       public string CountryName { set; get; }
 
-      public clsCounrty()
+      public clsCountries()
       {
         this.ID = -1;
         this.CountryName = "";
       }
 
-      private clsCounrty(int ID, string CountryName)
+      private clsCountries(int ID, string CountryName)
       {
         this.ID = ID;
         this.CountryName = CountryName;
       }
 
-      public static clsCounrty Find(int ID)
+      public static clsCountries Find(int ID)
       {
         string CountryName = "";
         if (clsCountriesData.GetCountryByID(ID, ref CountryName))
         {
-          return new clsCounrty(ID, CountryName);
+          return new clsCountries(ID, CountryName);
         }
         else
         {
@@ -42,12 +41,12 @@ namespace Business
 
       }
 
-      public static clsCounrty Find(string CountryName)
+      public static clsCountries Find(string CountryName)
       {
         int ID = -1;
         if (clsCountriesData.GetCountryByName(CountryName, ref ID))
         {
-          return new clsCounrty(ID, CountryName);
+          return new clsCountries(ID, CountryName);
         }
         else
         {
@@ -57,8 +56,6 @@ namespace Business
       }
 
       public static DataTable GetAllCountries() => clsCountriesData.GetAllCountries();
-
-
-    }
+  
   }
 }

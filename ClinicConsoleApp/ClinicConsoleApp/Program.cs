@@ -67,6 +67,7 @@ namespace ClinicConsoleApp
         Console.WriteLine($"PersonID          : {patient.PersonID}");
         Console.WriteLine($"Patient FirstName : {patient.PatientInfo.FirstName}");
         Console.WriteLine($"Patient LastName  : {patient.PatientInfo.LastName}");
+        Console.WriteLine($"Patient LastName  : {patient.PatientInfo.CountryInfo.ID}");
 
       }
     }

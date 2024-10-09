@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
+using static Business.clsCountries;
 
 namespace Business
 {
@@ -24,6 +25,7 @@ namespace Business
     public string Email { set; get; }
     public string ImagePath { set; get; }
     public int NationalityCountryID { set; get; }
+    public clsCountries CountryInfo { set; get; }
 
     public clsPerson()
     {
@@ -55,6 +57,7 @@ namespace Business
       this.Email = Email;
       this.ImagePath = ImagePath;
       this.NationalityCountryID = NationalityCountryID;
+      this.CountryInfo = clsCountries.Find(NationalityCountryID);
       Mode = enMode.Update;
     }
 
