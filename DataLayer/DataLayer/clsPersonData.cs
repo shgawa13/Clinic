@@ -56,7 +56,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
 
             // resiving object from DB
-            object result = command.ExecuteNonQuery();
+            object result = command.ExecuteScalar();
             // Convert object to Int 
             if (result != null && int.TryParse(result.ToString(), out int ID))
             {
@@ -148,7 +148,7 @@ namespace DataLayer
       }
       finally
       {
-        Console.WriteLine($"Person ID is: {PersonID}");
+        //Console.WriteLine($"Person ID is: {PersonID}");
       }
 
       return (EffectedRow > 0);
