@@ -7,21 +7,25 @@ namespace ClinicConsoleApp
 
     public static clsPerson AddingNewPerson()
     {
-      clsPerson person = new clsPerson();
-      person.NationalID = "1022103033";
-      person.FirstName = "Alex";
-      person.SecondName = "Hamilton";
-      person.LastName = "Doh";
-      person.DateOfBirth = new DateTime(1990, 3, 11);
-      person.Gendor = 0;
-      person.PhoneNumber = "4122188631";
-      person.Email = "Alex@gmail.com";
-      person.ImagePath = "";
-      person.NationalityCountryID = 12;
 
+      clsPerson person = new clsPerson();
+      person.NationalID = "7846346387";
+      person.FirstName = "Alexander";
+      person.SecondName = "Hamilton";
+      person.LastName = "Tech";
+      person.DateOfBirth = new DateTime(1990,2,13);
+      person.Gendor = 0;
+      person.PhoneNumber = "0568889993";
+      person.Email = "Alexender@gmail.com";
+      person.ImagePath = " ";
+      person.NationalityCountryID = 11;
+
+      
       if (person.Save())
       {
-        Console.WriteLine("New Person has been Added Successfully");
+        Console.WriteLine("New Doctor has been Added Successfully");
+        Console.WriteLine($"{person.PersonID}");
+       
       }
       else
       {
@@ -31,51 +35,22 @@ namespace ClinicConsoleApp
       return person;
     }
 
-    public static void FindPerson(int PersonID)
+    public static void PrintInfo (clsPerson person)
     {
-      bool Person = clsPerson.IsExist(PersonID);
+      
 
-      if (Person)
+      if (person != null)
       {
-        Console.WriteLine("Find the person");
-      }
-      else
-        Console.WriteLine("Erorr");
-
-    }
-
-    public static void AddPatient(int PersonID)
-    {
-      clsPatient patient = new clsPatient();
-
-      patient.PersonID = 1;
-      if (patient.Save())
-      {
-        Console.WriteLine($"new Patient has been added successfully");
-
-      }
-    }
-
-    public static void FindPatient(int PatientID)
-    {
-      clsPatient patient = clsPatient.FindPateintByPersonID(PatientID);
-
-      if (patient != null)
-      {
-
-        Console.WriteLine($"PatientID         : {patient.PatientID}");
-        Console.WriteLine($"PersonID          : {patient.PersonID}");
-        Console.WriteLine($"Patient FirstName : {patient.PatientInfo.FirstName}");
-        Console.WriteLine($"Patient LastName  : {patient.PatientInfo.LastName}");
-        Console.WriteLine($"Patient LastName  : {patient.PatientInfo.CountryInfo.ID}");
-
+        Console.WriteLine($"DoctorID: ");
+        Console.WriteLine($"PersonID: ");
+        Console.WriteLine($"Specilization: ");
       }
     }
 
     static void Main(string[] args)
     {
-      FindPatient(1);
 
+      PrintInfo(AddingNewPerson());
       Console.ReadKey();
     }
   }

@@ -8,36 +8,41 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-  public class clsDoctorsData
+  public class clsAppointmentsData
   {
-    // AddNewDoctors
-    public static int AddNewDoctor(int PersonID, string Specialization)
+    // Add new Appointment
+    public static int AddNewAppointment(int PatientID,int DoctorID, DateTime AppointmentDateTime,
+                  int AppointmentStatus, int MedicalRecordID, int PaymentID)
     {
-      int DoctorID = -1;
-      string Query = @"Insert into Doctors(PersonID,Specialization) Values(@PersonID,@Specialization);
-                     Select SCOPE_IDENTITY();";
+      int AppointmentID = -1;
+      string query = @"Inert into Appointments(PatientID,DoctorID,AppointmentDateTime,AppointmentStatus,
+       MedicalRecordID,PaymentID)
+       Values(@PatientID,@DoctorID,@AppointmentDateTime,@AppointmentStatus,@MedicalRecordID,@PaymentID);
+       Select SCOPE_IDENTITY();";
 
       try
-      { // Connection
+      {
         using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
         {
+          // open connection
           connection.Open();
-
-          using (SqlCommand command = new SqlCommand(Query, connection))
+          using (SqlCommand command = new SqlCommand(query, connection))
           {
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@Specialization", Specialization);
-            
+            // adding Parameters
+            command.Parameters.AddWithValue("@PatientID", PatientID);
+            command.Parameters.AddWithValue("@DoctorID", DoctorID);
+            command.Parameters.AddWithValue("@AppointmentDateTime", AppointmentDateTime);
+            command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
+            command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
+            command.Parameters.AddWithValue("@PaymentID", PaymentID);
 
             object result = command.ExecuteScalar();
 
             if (result != null && int.TryParse(result.ToString(), out int ID))
             {
-              DoctorID = ID;
+              AppointmentID = ID;
             }
-
           }
-
         }
       }
       catch(Exception ex)
@@ -49,17 +54,23 @@ namespace DataLayer
 
       }
 
-        return DoctorID;
+      return AppointmentID;
     }
 
-    // Update Doctors
-    public static bool UpdateDoctors(int DoctorID, int PersonID, string Specialization)
+    // Update Appointmnet
+    public static bool UpdateAppointment(int AppointmentID,int PatientID, int DoctorID, DateTime AppointmentDateTime,
+                  int AppointmentStatus, int MedicalRecordID, int PaymentID)
     {
       int EffectedRow = 0;
-      string Query = @"Update Doctors
-      set PersonID=@PersonID,
-      Specialization=@Specialization
-      where DoctorID=@DoctorID";
+      string Query = @"Update Appointments
+      set AppointmentID=@AppointmentID,
+      PatientID=@PatientID,
+      DoctorID=@DoctorID,
+      AppointmentDateTime=@AppointmentDateTime,
+      AppointmentStatus=@AppointmentStatus,
+      MedicalRecordID=@MedicalRecordID
+      PaymentID=@PaymentID
+      where AppointmentID=@AppointmentID";
 
       try
       { // Create Connection
@@ -68,15 +79,19 @@ namespace DataLayer
           connection.Open();
           using (SqlCommand command = new SqlCommand(Query, connection))
           {
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@Specialization", Specialization);
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
+            command.Parameters.AddWithValue("@PatientID", PatientID);
             command.Parameters.AddWithValue("@DoctorID", DoctorID);
+            command.Parameters.AddWithValue("@AppointmentDateTime", AppointmentDateTime);
+            command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
+            command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
+            command.Parameters.AddWithValue("@PaymentID", PaymentID);
 
             EffectedRow = command.ExecuteNonQuery();
           }
         }
       }
-      catch(Exception ex)
+      catch (Exception ex)
       {
         Console.WriteLine($"Error: {ex.Message}");
       }
@@ -88,12 +103,13 @@ namespace DataLayer
       return (EffectedRow > 0);
     }
 
-    // Find Doctor By ID
-    public static bool GetDoctorByID(int DoctorID,ref int PersonID,ref string Specialization)
+    // Find Appointment By ID
+    public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,
+      ref DateTime AppointmentDateTime,ref int AppointmentStatus, ref int MedicalRecordID, ref int PaymentID)
     {
       bool IsFound = false;
 
-      string query = @"Select * from Doctors where DoctorID=@DoctorID;";
+      string query = @"Select * from Appointment where AppointmentID=@AppointmentID;";
 
       try
       {
@@ -106,7 +122,7 @@ namespace DataLayer
           // Create Command 
           using (SqlCommand command = new SqlCommand(query, connection))
           {
-            command.Parameters.AddWithValue("@DoctorID", DoctorID);
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
             // Create Reader
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -114,8 +130,12 @@ namespace DataLayer
               {
                 IsFound = true;
 
-                PersonID = (int)reader["PersonID"];
-                Specialization = (string)reader["Specialization"];
+                PatientID = (int)reader["PatientID"];
+                DoctorID = (int)reader["DoctorID"];
+                AppointmentDateTime = (DateTime)reader["AppointmentDateTime"];
+                AppointmentStatus = (int)reader["AppointmentStatus"];
+                MedicalRecordID = (int)reader["MedicalRecordID"];
+                PaymentID = (int)reader["PaymentID"];
               }
             }
 
@@ -130,18 +150,17 @@ namespace DataLayer
       }
       finally
       {
-        Console.WriteLine($"Person ID is: {PersonID}");
+       // Console.WriteLine($"Person ID is: {PersonID}");
       }
 
       return IsFound;
     }
 
-
-    // Get All Doctors
-    public static DataTable GetAllDoctors()
+    // Get All Appointments
+    public static DataTable GetAllAppointments()
     {
-      DataTable dtAllDoctors = new DataTable();
-      string query = @"select * from Doctors;";
+      DataTable dtAllAppointments = new DataTable();
+      string query = @"select * from Appointments;";
 
       try
       {
@@ -158,7 +177,7 @@ namespace DataLayer
 
               if (reader.HasRows)
               {
-                dtAllDoctors.Load(reader);
+                dtAllAppointments.Load(reader);
               }
 
             }
@@ -174,14 +193,14 @@ namespace DataLayer
 
       }
 
-      return dtAllDoctors;
+      return dtAllAppointments;
     }
 
-    // Delete Doctors
-    public static bool DeleteDoctor(int DoctorID)
+    // Delete Appointment
+    public static bool DeleteAppointment(int AppointmentID)
     {
       int IsDeleted = -1;
-      string query = @"Delete From Doctors where DoctorsID=@DoctorsID;";
+      string query = @"Delete From Appointments where AppointmentID=@AppointmentID;";
       try
       {
 
@@ -192,7 +211,7 @@ namespace DataLayer
           // Create Command 
           using (SqlCommand command = new SqlCommand(query, connection))
           {
-            command.Parameters.AddWithValue("@DoctorID", DoctorID);
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
 
             IsDeleted = command.ExecuteNonQuery();
           }
@@ -210,12 +229,11 @@ namespace DataLayer
       return (IsDeleted > 0);
     }
 
-
-    // IsExist DoctorID
-    public static bool IsPersonExist(int DoctorID)
+    // IsExist Appointment
+    public static bool IsAppointmentExist(int AppointmentID)
     {
       bool IsExist = false;
-      string query = @"Select Found=1 from Doctors where DoctorID=@DoctorID;";
+      string query = @"Select Found=1 from Appointments where AppointmentID=@AppointmentID;";
 
       try
       {
@@ -226,7 +244,7 @@ namespace DataLayer
           // Create Command 
           using (SqlCommand command = new SqlCommand(query, connection))
           {
-            command.Parameters.AddWithValue("@DoctorID", DoctorID);
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -247,6 +265,5 @@ namespace DataLayer
 
       return IsExist;
     }
-
   }
 }

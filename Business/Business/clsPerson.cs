@@ -67,7 +67,7 @@ namespace Business
       int PersonID = clsPersonData.AddNewPerson(this.NationalID,this.FirstName,this.SecondName,this.LastName,
             this.DateOfBirth,this.Gendor,this.PhoneNumber,this.Email,this.ImagePath,this.NationalityCountryID);
 
-      return (PersonID != -1);
+      return (this.PersonID != -1);
     }
 
     // Update PersonInfo

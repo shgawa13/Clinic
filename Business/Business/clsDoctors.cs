@@ -41,7 +41,7 @@ namespace Business
     {
       int DoctorID = clsDoctorsData.AddNewDoctor(this.PersonID, this.Specialization);
 
-      return (DoctorID > 0);
+      return (this.DoctorID != 0);
     }
 
     // Update Doctor
@@ -51,7 +51,7 @@ namespace Business
     }
 
     // Find Doctor
-    public clsDoctors Find(int DoctorID)
+    public static clsDoctors Find(int DoctorID)
     {
       int PersonID = -1;
       string Specialization = "";
@@ -64,14 +64,14 @@ namespace Business
     }
 
     // Get All Doctors
-    public DataTable GetAllDoctors()
+    public static DataTable GetAllDoctors()
     {
       DataTable dtAllDoctors = clsDoctorsData.GetAllDoctors();
       return dtAllDoctors;
     }
 
     // Delete Doctors
-    public static bool _DeleteDoctor(int DoctorID) => clsDoctorsData.DeleteDoctor(DoctorID);
+    public static bool DeleteDoctor(int DoctorID) => clsDoctorsData.DeleteDoctor(DoctorID);
 
 
     // handle Add and Update calls

@@ -36,7 +36,7 @@ namespace Business
     private bool _AddNewPatient()
     {
       this.PatientID = clsPatientData.AddNewPatient(this.PersonID);
-      return (PatientID > 0);
+      return (this.PatientID != 0);
     }
 
     private bool _UpdatePatient()
