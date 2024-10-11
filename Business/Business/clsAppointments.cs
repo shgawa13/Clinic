@@ -17,9 +17,10 @@ namespace Business
     public int PatientID { set; get; }
     public int DoctorID { set; get; }
     public DateTime AppointmentDateTime { set; get; }
-    public int AppointmentStatus { set; get; }
+    public short AppointmentStatus { set; get; }
     public int MedicalRecordID { set; get; }
     public int PaymentID { set; get; }
+    public DateTime LastStatusDate { set; get; }
 
     public clsAppointments()
     {
@@ -30,11 +31,13 @@ namespace Business
       this.AppointmentStatus = -1;
       this.MedicalRecordID = -1;
       this.PaymentID = -1;
+      this.LastStatusDate = DateTime.Now;
+
       Mode = enMode.AddNew;
     }
 
     private clsAppointments(int AppointmentID,int PatientID,int DoctorID,DateTime AppointmentDateTime,
-      int AppointmentStatus,int MedicalRecordID,int PaymentID)
+      short AppointmentStatus,int MedicalRecordID,int PaymentID,DateTime LastStatusDate)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
@@ -43,6 +46,7 @@ namespace Business
       this.AppointmentStatus = AppointmentStatus;
       this.MedicalRecordID = MedicalRecordID;
       this.PaymentID = PaymentID;
+      this.LastStatusDate = LastStatusDate;
 
       Mode = enMode.Update;
     }
@@ -51,7 +55,7 @@ namespace Business
     private bool _AddNewAppointment()
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
-        this.AppointmentDateTime, this.AppointmentStatus, this.MedicalRecordID, this.PaymentID);
+        this.AppointmentDateTime, this.AppointmentStatus, this.MedicalRecordID, this.PaymentID,this.LastStatusDate);
       return (this.AppointmentID != -1);
     }
 
@@ -59,7 +63,7 @@ namespace Business
     private bool _UpdateAppointment()
     {
       return clsAppointmentsData.UpdateAppointment(this.AppointmentID, this.PatientID, this.DoctorID,
-        this.AppointmentDateTime, this.AppointmentStatus, this.MedicalRecordID, this.PaymentID);
+        this.AppointmentDateTime, this.AppointmentStatus, this.MedicalRecordID, this.PaymentID,this.LastStatusDate);
     }
 
     // Delete Appointment
@@ -71,16 +75,17 @@ namespace Business
     // Find Appointment 
     public static clsAppointments Find(int AppointmentID)
     { 
-      int PatientID = -1, DoctorID =-1, AppointmentStatus =-1,MedicalRecordID =-1,PaymentID =-1;
-      DateTime AppointmentDateTime = DateTime.Now;
+      int PatientID = -1, DoctorID =-1,MedicalRecordID =-1,PaymentID =-1;
+      short  AppointmentStatus = -1;
+      DateTime AppointmentDateTime = DateTime.Now, LastStatusDate = DateTime.Now;
 
       // pass by ref
       bool IsFound = clsAppointmentsData.GetAppointmentByID(AppointmentID,ref PatientID,ref DoctorID,
-        ref AppointmentDateTime,ref AppointmentStatus,ref MedicalRecordID,ref PaymentID);
+        ref AppointmentDateTime,ref AppointmentStatus,ref MedicalRecordID,ref PaymentID,ref LastStatusDate);
 
       if (IsFound)
         return new clsAppointments(AppointmentID, PatientID, DoctorID, AppointmentDateTime,
-          AppointmentStatus, MedicalRecordID, PaymentID);
+          AppointmentStatus, MedicalRecordID, PaymentID, LastStatusDate);
       else
         return null;
 

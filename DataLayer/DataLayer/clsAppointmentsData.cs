@@ -12,12 +12,13 @@ namespace DataLayer
   {
     // Add new Appointment
     public static int AddNewAppointment(int PatientID,int DoctorID, DateTime AppointmentDateTime,
-                  int AppointmentStatus, int MedicalRecordID, int PaymentID)
+                  short AppointmentStatus, int MedicalRecordID, int PaymentID, DateTime LastStatusDate)
     {
       int AppointmentID = -1;
       string query = @"Inert into Appointments(PatientID,DoctorID,AppointmentDateTime,AppointmentStatus,
-       MedicalRecordID,PaymentID)
-       Values(@PatientID,@DoctorID,@AppointmentDateTime,@AppointmentStatus,@MedicalRecordID,@PaymentID);
+       MedicalRecordID,PaymentID,LastStatusDate)
+       Values(@PatientID,@DoctorID,@AppointmentDateTime,@AppointmentStatus,@MedicalRecordID,@PaymentID,
+       @LastStatusDate);
        Select SCOPE_IDENTITY();";
 
       try
@@ -35,6 +36,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
             command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
+            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
 
             object result = command.ExecuteScalar();
 
@@ -59,7 +61,7 @@ namespace DataLayer
 
     // Update Appointmnet
     public static bool UpdateAppointment(int AppointmentID,int PatientID, int DoctorID, DateTime AppointmentDateTime,
-                  int AppointmentStatus, int MedicalRecordID, int PaymentID)
+                  int AppointmentStatus, int MedicalRecordID, int PaymentID,DateTime LastStatusDate)
     {
       int EffectedRow = 0;
       string Query = @"Update Appointments
@@ -69,7 +71,8 @@ namespace DataLayer
       AppointmentDateTime=@AppointmentDateTime,
       AppointmentStatus=@AppointmentStatus,
       MedicalRecordID=@MedicalRecordID
-      PaymentID=@PaymentID
+      PaymentID=@PaymentID,
+      LastStatusDate=@LastStatusDate
       where AppointmentID=@AppointmentID";
 
       try
@@ -86,6 +89,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
             command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
+            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
 
             EffectedRow = command.ExecuteNonQuery();
           }
@@ -105,7 +109,8 @@ namespace DataLayer
 
     // Find Appointment By ID
     public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,
-      ref DateTime AppointmentDateTime,ref int AppointmentStatus, ref int MedicalRecordID, ref int PaymentID)
+      ref DateTime AppointmentDateTime,ref short AppointmentStatus, ref int MedicalRecordID,
+      ref int PaymentID,ref DateTime LastStatusDate)
     {
       bool IsFound = false;
 
@@ -133,9 +138,10 @@ namespace DataLayer
                 PatientID = (int)reader["PatientID"];
                 DoctorID = (int)reader["DoctorID"];
                 AppointmentDateTime = (DateTime)reader["AppointmentDateTime"];
-                AppointmentStatus = (int)reader["AppointmentStatus"];
+                AppointmentStatus = (short)reader["AppointmentStatus"];
                 MedicalRecordID = (int)reader["MedicalRecordID"];
                 PaymentID = (int)reader["PaymentID"];
+                LastStatusDate = (DateTime)reader["LastStatusDate"];
               }
             }
 
@@ -265,5 +271,7 @@ namespace DataLayer
 
       return IsExist;
     }
+
+
   }
 }
