@@ -10,14 +10,17 @@ namespace Business
 {
   public class clsAppointments
   {
-    public enum enMode { AddNew=0, Update=1 }
+    public enum enMode { AddNew = 0, Update = 1 }
     public enMode Mode = enMode.AddNew;
+
+    public enum enAppointmentSataus
+    { Pending = 1, Confirmed = 2, Completed = 3, Canceled = 4, Rescheduled = 5, NotShow = 6 }
 
     public int AppointmentID { set; get; }
     public int PatientID { set; get; }
     public int DoctorID { set; get; }
     public DateTime AppointmentDateTime { set; get; }
-    public short AppointmentStatus { set; get; }
+    public enAppointmentSataus AppointmentStatus { set; get; }
     public int MedicalRecordID { set; get; }
     public int PaymentID { set; get; }
     public DateTime LastStatusDate { set; get; }
@@ -28,7 +31,7 @@ namespace Business
       this.PatientID = -1;
       this.DoctorID = -1;
       this.AppointmentDateTime = DateTime.Now;
-      this.AppointmentStatus = -1;
+      this.AppointmentStatus = enAppointmentSataus.Pending;
       this.MedicalRecordID = -1;
       this.PaymentID = -1;
       this.LastStatusDate = DateTime.Now;
@@ -36,8 +39,8 @@ namespace Business
       Mode = enMode.AddNew;
     }
 
-    private clsAppointments(int AppointmentID,int PatientID,int DoctorID,DateTime AppointmentDateTime,
-      short AppointmentStatus,int MedicalRecordID,int PaymentID,DateTime LastStatusDate)
+    private clsAppointments(int AppointmentID, int PatientID, int DoctorID, DateTime AppointmentDateTime,
+      enAppointmentSataus AppointmentStatus, int MedicalRecordID, int PaymentID, DateTime LastStatusDate)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
@@ -55,7 +58,7 @@ namespace Business
     private bool _AddNewAppointment()
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
-        this.AppointmentDateTime, this.AppointmentStatus, this.MedicalRecordID, this.PaymentID,this.LastStatusDate);
+        this.AppointmentDateTime, (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate);
       return (this.AppointmentID != -1);
     }
 
@@ -63,29 +66,29 @@ namespace Business
     private bool _UpdateAppointment()
     {
       return clsAppointmentsData.UpdateAppointment(this.AppointmentID, this.PatientID, this.DoctorID,
-        this.AppointmentDateTime, this.AppointmentStatus, this.MedicalRecordID, this.PaymentID,this.LastStatusDate);
+        this.AppointmentDateTime, (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate);
     }
 
     // Delete Appointment
     public static bool DeleteAppointment(int AppointmentID)
     {
-     return clsAppointmentsData.DeleteAppointment(AppointmentID);
+      return clsAppointmentsData.DeleteAppointment(AppointmentID);
     }
 
     // Find Appointment 
     public static clsAppointments Find(int AppointmentID)
-    { 
-      int PatientID = -1, DoctorID =-1,MedicalRecordID =-1,PaymentID =-1;
-      short  AppointmentStatus = -1;
+    {
+      int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1;
+      byte AppointmentStatus = 1;
       DateTime AppointmentDateTime = DateTime.Now, LastStatusDate = DateTime.Now;
 
       // pass by ref
-      bool IsFound = clsAppointmentsData.GetAppointmentByID(AppointmentID,ref PatientID,ref DoctorID,
-        ref AppointmentDateTime,ref AppointmentStatus,ref MedicalRecordID,ref PaymentID,ref LastStatusDate);
+      bool IsFound = clsAppointmentsData.GetAppointmentByID(AppointmentID, ref PatientID, ref DoctorID,
+        ref AppointmentDateTime, ref AppointmentStatus, ref MedicalRecordID, ref PaymentID, ref LastStatusDate);
 
       if (IsFound)
         return new clsAppointments(AppointmentID, PatientID, DoctorID, AppointmentDateTime,
-          AppointmentStatus, MedicalRecordID, PaymentID, LastStatusDate);
+          (enAppointmentSataus)AppointmentStatus, MedicalRecordID, PaymentID, LastStatusDate);
       else
         return null;
 
@@ -93,12 +96,23 @@ namespace Business
 
     // Get All Appointments
     public static DataTable GetAllAppointments() => clsAppointmentsData.GetAllAppointments();
-    
+
     // IsExist
     public static bool IsExist(int AppointmentID) => clsAppointmentsData.IsAppointmentExist(AppointmentID);
-   
-    // Handle Add and Update calls
 
+    // Handle AppointmentStatus
+    public bool SetConfirmed() => clsAppointmentsData.UpdateStatus(AppointmentID, 2);
+
+    public bool SetCompleted() => clsAppointmentsData.UpdateStatus(AppointmentID, 3);
+
+    public bool Cancele() => clsAppointmentsData.UpdateStatus(AppointmentID, 4);
+
+    public bool Rescheduled() => clsAppointmentsData.UpdateStatus(AppointmentID, 5);
+
+    public bool SetNotShowed() => clsAppointmentsData.UpdateStatus(AppointmentID, 6);
+
+
+    // Handle Add and Update calls
     public bool Save()
     {
 

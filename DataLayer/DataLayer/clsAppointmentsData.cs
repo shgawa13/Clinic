@@ -12,7 +12,7 @@ namespace DataLayer
   {
     // Add new Appointment
     public static int AddNewAppointment(int PatientID,int DoctorID, DateTime AppointmentDateTime,
-                  short AppointmentStatus, int MedicalRecordID, int PaymentID, DateTime LastStatusDate)
+                  byte AppointmentStatus, int MedicalRecordID, int PaymentID, DateTime LastStatusDate)
     {
       int AppointmentID = -1;
       string query = @"Inert into Appointments(PatientID,DoctorID,AppointmentDateTime,AppointmentStatus,
@@ -61,12 +61,11 @@ namespace DataLayer
 
     // Update Appointmnet
     public static bool UpdateAppointment(int AppointmentID,int PatientID, int DoctorID, DateTime AppointmentDateTime,
-                  int AppointmentStatus, int MedicalRecordID, int PaymentID,DateTime LastStatusDate)
+                  byte AppointmentStatus, int MedicalRecordID, int PaymentID,DateTime LastStatusDate)
     {
       int EffectedRow = 0;
       string Query = @"Update Appointments
-      set AppointmentID=@AppointmentID,
-      PatientID=@PatientID,
+      set PatientID=@PatientID,
       DoctorID=@DoctorID,
       AppointmentDateTime=@AppointmentDateTime,
       AppointmentStatus=@AppointmentStatus,
@@ -109,7 +108,7 @@ namespace DataLayer
 
     // Find Appointment By ID
     public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,
-      ref DateTime AppointmentDateTime,ref short AppointmentStatus, ref int MedicalRecordID,
+      ref DateTime AppointmentDateTime,ref byte AppointmentStatus, ref int MedicalRecordID,
       ref int PaymentID,ref DateTime LastStatusDate)
     {
       bool IsFound = false;
@@ -138,7 +137,7 @@ namespace DataLayer
                 PatientID = (int)reader["PatientID"];
                 DoctorID = (int)reader["DoctorID"];
                 AppointmentDateTime = (DateTime)reader["AppointmentDateTime"];
-                AppointmentStatus = (short)reader["AppointmentStatus"];
+                AppointmentStatus = (byte)reader["AppointmentStatus"];
                 MedicalRecordID = (int)reader["MedicalRecordID"];
                 PaymentID = (int)reader["PaymentID"];
                 LastStatusDate = (DateTime)reader["LastStatusDate"];
@@ -272,6 +271,40 @@ namespace DataLayer
       return IsExist;
     }
 
+    // Update AppointmentStatus
+    public static bool UpdateStatus(int AppointmentID, short NewStatus)
+    {
+      int EffectedRow = 0;
+      string Query = @"Update Appointments
+      set AppointmentStatus=@NewStatus
+      LastStatusDate=@LastStatusDate
+      where AppointmentID=@AppointmentID,";
 
+      try
+      { // Create Connection
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        { // Open Connection
+          connection.Open();
+          using (SqlCommand command = new SqlCommand(Query, connection))
+          {
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
+            command.Parameters.AddWithValue("@AppointmentStatus", NewStatus);;
+            command.Parameters.AddWithValue("@LastStatusDate", DateTime.Now);
+
+            EffectedRow = command.ExecuteNonQuery();
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+
+      }
+
+      return (EffectedRow > 0);
+    }
   }
 }
