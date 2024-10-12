@@ -55,7 +55,7 @@ namespace Business
     }
 
     // Add new Appointment
-    private bool _AddNewAppointment()
+    private bool _AddNewAppointment() 
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
         this.AppointmentDateTime, (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate);
@@ -128,6 +128,7 @@ namespace Business
           {
             return false;
           }
+
         case enMode.Update:
           return _UpdateAppointment();
       }
