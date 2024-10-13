@@ -254,7 +254,7 @@ namespace DataLayer
 
 
     // IsExist MedicalRecordID
-    public static bool IsMedicalRecordIDExist(int MedicalRecordID)
+    public static bool IsExist(int MedicalRecordID)
     {
       bool IsExist = false;
       string query = @"Select Found=1 from MedicalRecords where MedicalRecordID=@MedicalRecordID;";

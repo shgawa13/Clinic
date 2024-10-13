@@ -74,6 +74,9 @@ namespace Business
     // GetAllMedicalRecords
     public static DataTable GetAllMedicalRecords() => clsMedicalRecordsData.GetAllMedicalRecords();
 
+    // IS Exist
+    public static bool IsExist(int MedicalRecordID) => clsMedicalRecordsData.IsExist(MedicalRecordID);
+
     // Handle Add and Update calls
     public bool Save()
     {
