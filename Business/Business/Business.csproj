@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAppointments.cs" />
+    <Compile Include="clsAppointmentStatus.cs" />
     <Compile Include="clsCountries.cs" />
     <Compile Include="clsDoctors.cs" />
     <Compile Include="clsPatient.cs" />

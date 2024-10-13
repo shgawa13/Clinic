@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="clsAccessSetting.cs" />
     <Compile Include="clsAppointmentsData.cs" />
+    <Compile Include="clsAppointmentStatusData.cs" />
     <Compile Include="clsCountriesData.cs" />
     <Compile Include="clsDoctorsData.cs" />
+    <Compile Include="clsMedicalRecordsData.cs" />
     <Compile Include="clsPatientData.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
