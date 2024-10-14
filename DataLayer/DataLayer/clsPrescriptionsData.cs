@@ -61,7 +61,7 @@ namespace DataLayer
     }
 
     // Update Perscription
-    public static bool UpdatePerscription(int MedicalRecordID, string MedicationName)
+    public static bool UpdatePerscription(int PerscriptionID, int MedicalRecordID, string MedicationName)
     {
       int EffectedRow = 0;
 
