@@ -73,6 +73,9 @@ namespace Business
     // GetAllPayments
     public static DataTable GetAllPayments() =>clsPaymentsData.GetAllPayments();
 
+    // IsExist
+    public static bool IsExist(int PaymentID) => clsPaymentsData.IsPaymentIDExist(PaymentID);
+
     // Handle Add and Update calls
     public bool Save()
     {
