@@ -23,9 +23,9 @@ namespace Business
 
     private clsAppointmentStatus(short AppointmentStatusID, string StatusName, string StatusDiscription)
     {
-      AppointmentStatusID = AppointmentStatusID;
-      StatusName = StatusName;
-      StatusDiscription = StatusDiscription;
+      this.AppointmentStatusID = AppointmentStatusID;
+      this.StatusName = StatusName;
+      this.StatusDiscription = StatusDiscription;
     }
 
     // Add new AppointmentStatus
