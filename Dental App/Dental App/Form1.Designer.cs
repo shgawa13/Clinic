@@ -251,9 +251,9 @@
       // iconCurrentChild
       // 
       this.iconCurrentChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-      this.iconCurrentChild.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.iconCurrentChild.ForeColor = System.Drawing.Color.MediumPurple;
       this.iconCurrentChild.IconChar = FontAwesome.Sharp.IconChar.House;
-      this.iconCurrentChild.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.iconCurrentChild.IconColor = System.Drawing.Color.MediumPurple;
       this.iconCurrentChild.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconCurrentChild.IconSize = 36;
       this.iconCurrentChild.Location = new System.Drawing.Point(10, 16);

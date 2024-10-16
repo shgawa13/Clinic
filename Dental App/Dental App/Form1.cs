@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Dental_App.Appointmnets;
+using Dental_App.Doctors;
+using Dental_App.Patients;
 
 namespace Dental_App
 {
@@ -117,16 +120,19 @@ namespace Dental_App
     private void iconButton2_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color2);
+      OpenChildForm(new frmAppointments());
     }
 
     private void iconButton3_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color3);
+      OpenChildForm(new frmPatients());
     }
 
     private void iconButton4_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color4);
+      OpenChildForm(new frmDoctors());
     }
 
     private void iconButton5_Click(object sender, EventArgs e)
@@ -141,6 +147,7 @@ namespace Dental_App
 
     private void homeBtn_Click(object sender, EventArgs e)
     {
+      currentChildForm.Close();
       Reset();
     }
 
@@ -164,5 +171,12 @@ namespace Dental_App
       ReleaseCapture();
       SendMessage(this.Handle, 0x112, 0xf012, 0);
     }
+
+    private void iconButton7_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
+
+   
   }
 }
