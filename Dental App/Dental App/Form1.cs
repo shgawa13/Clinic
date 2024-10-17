@@ -195,5 +195,7 @@ namespace Dental_App
     {
       WindowState = FormWindowState.Minimized;
     }
+
+
   }
 }
