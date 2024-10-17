@@ -15,14 +15,14 @@ using Dental_App.Patients;
 
 namespace Dental_App
 {
-  public partial class Form1 : Form
+  public partial class MainForm : Form
   {
     //Fields
     private IconButton currentBtn;
     private Panel leftBorderBtn;
     private Form currentChildForm;
 
-    public Form1()
+    public MainForm()
     {
       InitializeComponent();
       leftBorderBtn = new Panel();
@@ -94,6 +94,7 @@ namespace Dental_App
       childForm.FormBorderStyle = FormBorderStyle.None;
       childForm.Dock = DockStyle.Fill;
       panelDesktop.Controls.Add(childForm);
+      childForm.Size = panelDesktop.Size;
       panelDesktop.Tag = childForm;
       childForm.BringToFront();
       childForm.Show();
@@ -177,6 +178,22 @@ namespace Dental_App
       this.Close();
     }
 
-   
+    private void iconClose_Click(object sender, EventArgs e)
+    {
+      Application.Exit();
+    }
+
+    private void iconMaxmize_Click(object sender, EventArgs e)
+    {
+      if (WindowState == FormWindowState.Normal)
+        WindowState = FormWindowState.Maximized;
+      else
+        WindowState = FormWindowState.Normal;
+    }
+
+    private void iconMinimize_Click(object sender, EventArgs e)
+    {
+      WindowState = FormWindowState.Minimized;
+    }
   }
 }

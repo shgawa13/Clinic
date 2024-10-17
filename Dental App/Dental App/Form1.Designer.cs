@@ -1,6 +1,6 @@
 ﻿namespace Dental_App
 {
-  partial class Form1
+  partial class MainForm
   {
     /// <summary>
     /// Required designer variable.
@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.panelMenu = new System.Windows.Forms.Panel();
+      this.iconButton7 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
       this.iconButton4 = new FontAwesome.Sharp.IconButton();
@@ -38,20 +39,26 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.homeBtn = new System.Windows.Forms.PictureBox();
       this.panelTitlebar = new System.Windows.Forms.Panel();
+      this.iconMinimize = new FontAwesome.Sharp.IconButton();
+      this.iconMaxmize = new FontAwesome.Sharp.IconButton();
+      this.iconClose = new FontAwesome.Sharp.IconButton();
       this.lblTitleChild = new System.Windows.Forms.Label();
       this.iconCurrentChild = new FontAwesome.Sharp.IconPictureBox();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panelDesktop = new System.Windows.Forms.Panel();
+      this.panel3 = new System.Windows.Forms.Panel();
       this.panelMenu.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
       this.panelTitlebar.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).BeginInit();
+      this.panel3.SuspendLayout();
       this.SuspendLayout();
       // 
       // panelMenu
       // 
-      this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+      this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.panelMenu.Controls.Add(this.iconButton7);
       this.panelMenu.Controls.Add(this.iconButton6);
       this.panelMenu.Controls.Add(this.iconButton5);
       this.panelMenu.Controls.Add(this.iconButton4);
@@ -64,6 +71,28 @@
       this.panelMenu.Name = "panelMenu";
       this.panelMenu.Size = new System.Drawing.Size(209, 524);
       this.panelMenu.TabIndex = 0;
+      // 
+      // iconButton7
+      // 
+      this.iconButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+      this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
+      this.iconButton7.FlatAppearance.BorderSize = 0;
+      this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton7.ForeColor = System.Drawing.Color.Gainsboro;
+      this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.CreditCardAlt;
+      this.iconButton7.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton7.IconSize = 34;
+      this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.iconButton7.Location = new System.Drawing.Point(0, 369);
+      this.iconButton7.Name = "iconButton7";
+      this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+      this.iconButton7.Size = new System.Drawing.Size(209, 50);
+      this.iconButton7.TabIndex = 14;
+      this.iconButton7.Text = "iconButton7";
+      this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.iconButton7.UseVisualStyleBackColor = false;
       // 
       // iconButton6
       // 
@@ -97,7 +126,7 @@
       this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.iconButton5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
-      this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
+      this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.CommentAlt;
       this.iconButton5.IconColor = System.Drawing.Color.WhiteSmoke;
       this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton5.IconSize = 34;
@@ -228,6 +257,7 @@
       // panelTitlebar
       // 
       this.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+      this.panelTitlebar.Controls.Add(this.panel3);
       this.panelTitlebar.Controls.Add(this.lblTitleChild);
       this.panelTitlebar.Controls.Add(this.iconCurrentChild);
       this.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -236,6 +266,51 @@
       this.panelTitlebar.Size = new System.Drawing.Size(831, 69);
       this.panelTitlebar.TabIndex = 1;
       this.panelTitlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitlebar_MouseDown);
+      // 
+      // iconMinimize
+      // 
+      this.iconMinimize.FlatAppearance.BorderSize = 0;
+      this.iconMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
+      this.iconMinimize.IconColor = System.Drawing.Color.Gainsboro;
+      this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconMinimize.IconSize = 22;
+      this.iconMinimize.Location = new System.Drawing.Point(18, 4);
+      this.iconMinimize.Name = "iconMinimize";
+      this.iconMinimize.Size = new System.Drawing.Size(28, 24);
+      this.iconMinimize.TabIndex = 4;
+      this.iconMinimize.UseVisualStyleBackColor = true;
+      this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
+      // 
+      // iconMaxmize
+      // 
+      this.iconMaxmize.FlatAppearance.BorderSize = 0;
+      this.iconMaxmize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconMaxmize.IconChar = FontAwesome.Sharp.IconChar.Square;
+      this.iconMaxmize.IconColor = System.Drawing.Color.Gainsboro;
+      this.iconMaxmize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconMaxmize.IconSize = 22;
+      this.iconMaxmize.Location = new System.Drawing.Point(52, 4);
+      this.iconMaxmize.Name = "iconMaxmize";
+      this.iconMaxmize.Size = new System.Drawing.Size(28, 24);
+      this.iconMaxmize.TabIndex = 3;
+      this.iconMaxmize.UseVisualStyleBackColor = true;
+      this.iconMaxmize.Click += new System.EventHandler(this.iconMaxmize_Click);
+      // 
+      // iconClose
+      // 
+      this.iconClose.FlatAppearance.BorderSize = 0;
+      this.iconClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconClose.IconChar = FontAwesome.Sharp.IconChar.Remove;
+      this.iconClose.IconColor = System.Drawing.Color.Gainsboro;
+      this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconClose.IconSize = 22;
+      this.iconClose.Location = new System.Drawing.Point(86, 4);
+      this.iconClose.Name = "iconClose";
+      this.iconClose.Size = new System.Drawing.Size(28, 24);
+      this.iconClose.TabIndex = 2;
+      this.iconClose.UseVisualStyleBackColor = true;
+      this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
       // 
       // lblTitleChild
       // 
@@ -281,7 +356,18 @@
       this.panelDesktop.Size = new System.Drawing.Size(831, 451);
       this.panelDesktop.TabIndex = 3;
       // 
-      // Form1
+      // panel3
+      // 
+      this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+      this.panel3.Controls.Add(this.iconClose);
+      this.panel3.Controls.Add(this.iconMinimize);
+      this.panel3.Controls.Add(this.iconMaxmize);
+      this.panel3.Location = new System.Drawing.Point(709, 3);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(119, 31);
+      this.panel3.TabIndex = 5;
+      // 
+      // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -291,7 +377,7 @@
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.panelTitlebar);
       this.Controls.Add(this.panelMenu);
-      this.Name = "Form1";
+      this.Name = "MainForm";
       this.Text = "Form1";
       this.panelMenu.ResumeLayout(false);
       this.panel2.ResumeLayout(false);
@@ -299,6 +385,7 @@
       this.panelTitlebar.ResumeLayout(false);
       this.panelTitlebar.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).EndInit();
+      this.panel3.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -319,6 +406,11 @@
     private System.Windows.Forms.Label lblTitleChild;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panelDesktop;
+    private FontAwesome.Sharp.IconButton iconButton7;
+    private FontAwesome.Sharp.IconButton iconClose;
+    private FontAwesome.Sharp.IconButton iconMinimize;
+    private FontAwesome.Sharp.IconButton iconMaxmize;
+    private System.Windows.Forms.Panel panel3;
   }
 }
 
