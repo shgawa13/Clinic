@@ -113,10 +113,12 @@ namespace Dental_App
     }
     //Menu Button_Clicks
 
-    private void iconButton1_Click(object sender, EventArgs e)
+    private void btnAddNew_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color1);
+      OpenChildForm(new frmAddNewPatient());
     }
+
 
     private void iconButton2_Click(object sender, EventArgs e)
     {
@@ -146,6 +148,11 @@ namespace Dental_App
       ActivateButton(sender, RGBColors.color6);
     }
 
+    private void iconButton7_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show("Testing");
+    }
+
     private void homeBtn_Click(object sender, EventArgs e)
     {
       currentChildForm.Close();
@@ -173,11 +180,6 @@ namespace Dental_App
       SendMessage(this.Handle, 0x112, 0xf012, 0);
     }
 
-    private void iconButton7_Click(object sender, EventArgs e)
-    {
-      this.Close();
-    }
-
     private void iconClose_Click(object sender, EventArgs e)
     {
       Application.Exit();
@@ -196,6 +198,6 @@ namespace Dental_App
       WindowState = FormWindowState.Minimized;
     }
 
-
+  
   }
 }

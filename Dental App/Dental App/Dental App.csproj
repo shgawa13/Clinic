@@ -71,6 +71,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patients\controls\ctrlPatientCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patients\controls\ctrlPatientCard.Designer.cs">
+      <DependentUpon>ctrlPatientCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\frmAddNewPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\frmAddNewPatient.Designer.cs">
+      <DependentUpon>frmAddNewPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patients\frmPatients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\controls\ctrlPatientCard.resx">
+      <DependentUpon>ctrlPatientCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\frmAddNewPatient.resx">
+      <DependentUpon>frmAddNewPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\frmPatients.resx">
       <DependentUpon>frmPatients.cs</DependentUpon>

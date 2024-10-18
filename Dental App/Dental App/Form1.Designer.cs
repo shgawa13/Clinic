@@ -35,7 +35,7 @@
       this.iconButton4 = new FontAwesome.Sharp.IconButton();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      this.btnAddNew = new FontAwesome.Sharp.IconButton();
       this.panel2 = new System.Windows.Forms.Panel();
       this.homeBtn = new System.Windows.Forms.PictureBox();
       this.panelTitlebar = new System.Windows.Forms.Panel();
@@ -64,7 +64,7 @@
       this.panelMenu.Controls.Add(this.iconButton4);
       this.panelMenu.Controls.Add(this.iconButton3);
       this.panelMenu.Controls.Add(this.iconButton2);
-      this.panelMenu.Controls.Add(this.iconButton1);
+      this.panelMenu.Controls.Add(this.btnAddNew);
       this.panelMenu.Controls.Add(this.panel2);
       this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
       this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -90,9 +90,10 @@
       this.iconButton7.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton7.Size = new System.Drawing.Size(209, 50);
       this.iconButton7.TabIndex = 14;
-      this.iconButton7.Text = "iconButton7";
+      this.iconButton7.Text = "Payments";
       this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.iconButton7.UseVisualStyleBackColor = false;
+      this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
       // 
       // iconButton6
       // 
@@ -113,7 +114,7 @@
       this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton6.Size = new System.Drawing.Size(209, 50);
       this.iconButton6.TabIndex = 13;
-      this.iconButton6.Text = "iconButton6";
+      this.iconButton6.Text = "Logout";
       this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.iconButton6.UseVisualStyleBackColor = false;
       this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
@@ -136,7 +137,7 @@
       this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton5.Size = new System.Drawing.Size(209, 50);
       this.iconButton5.TabIndex = 12;
-      this.iconButton5.Text = "iconButton5";
+      this.iconButton5.Text = "Messages";
       this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.iconButton5.UseVisualStyleBackColor = false;
       this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
@@ -159,7 +160,7 @@
       this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton4.Size = new System.Drawing.Size(209, 50);
       this.iconButton4.TabIndex = 11;
-      this.iconButton4.Text = "iconButton4";
+      this.iconButton4.Text = "Doctors";
       this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.iconButton4.UseVisualStyleBackColor = false;
       this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
@@ -182,7 +183,7 @@
       this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton3.Size = new System.Drawing.Size(209, 50);
       this.iconButton3.TabIndex = 10;
-      this.iconButton3.Text = "iconButton3";
+      this.iconButton3.Text = "Patients";
       this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.iconButton3.UseVisualStyleBackColor = false;
       this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
@@ -205,33 +206,33 @@
       this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton2.Size = new System.Drawing.Size(209, 50);
       this.iconButton2.TabIndex = 9;
-      this.iconButton2.Text = "iconButton2";
+      this.iconButton2.Text = "Appointments";
       this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.iconButton2.UseVisualStyleBackColor = false;
       this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
       // 
-      // iconButton1
+      // btnAddNew
       // 
-      this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-      this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.iconButton1.FlatAppearance.BorderSize = 0;
-      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Tooth;
-      this.iconButton1.IconColor = System.Drawing.Color.WhiteSmoke;
-      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 34;
-      this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.iconButton1.Location = new System.Drawing.Point(0, 119);
-      this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.iconButton1.Size = new System.Drawing.Size(209, 50);
-      this.iconButton1.TabIndex = 2;
-      this.iconButton1.Text = "iconButton1";
-      this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.iconButton1.UseVisualStyleBackColor = false;
-      this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+      this.btnAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+      this.btnAddNew.Dock = System.Windows.Forms.DockStyle.Top;
+      this.btnAddNew.FlatAppearance.BorderSize = 0;
+      this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddNew.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddNew.ForeColor = System.Drawing.Color.Gainsboro;
+      this.btnAddNew.IconChar = FontAwesome.Sharp.IconChar.Tooth;
+      this.btnAddNew.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.btnAddNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnAddNew.IconSize = 34;
+      this.btnAddNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnAddNew.Location = new System.Drawing.Point(0, 119);
+      this.btnAddNew.Name = "btnAddNew";
+      this.btnAddNew.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+      this.btnAddNew.Size = new System.Drawing.Size(209, 50);
+      this.btnAddNew.TabIndex = 2;
+      this.btnAddNew.Text = "Add New";
+      this.btnAddNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnAddNew.UseVisualStyleBackColor = false;
+      this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
       // 
       // panel2
       // 
@@ -394,7 +395,7 @@
 
     private System.Windows.Forms.Panel panelMenu;
     private System.Windows.Forms.Panel panel2;
-    private FontAwesome.Sharp.IconButton iconButton1;
+    private FontAwesome.Sharp.IconButton btnAddNew;
     private FontAwesome.Sharp.IconButton iconButton5;
     private FontAwesome.Sharp.IconButton iconButton4;
     private FontAwesome.Sharp.IconButton iconButton3;
