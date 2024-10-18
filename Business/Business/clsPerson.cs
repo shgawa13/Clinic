@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
@@ -14,16 +15,27 @@ namespace Business
   {
     public enum enMode { AddNew = 0, Update = 1 }
     public enMode Mode = enMode.AddNew;
+
     public int PersonID { set; get; }
     public string NationalID { set; get; }
     public string FirstName { set; get; }
     public string SecondName { set; get; }
     public string LastName { set; get; }
+    public string FullName
+    {
+      get { return $"{FirstName} {SecondName} {LastName}"; }
+    }
+
     public DateTime DateOfBirth { set; get; }
     public byte Gendor { set; get; }
     public string PhoneNumber { set; get; }
     public string Email { set; get; }
-    public string ImagePath { set; get; }
+    private string _ImagePath;
+    public string ImagePath
+    {
+      set { _ImagePath = value; }
+      get { return _ImagePath;  }
+    }
     public int NationalityCountryID { set; get; }
     public clsCountries CountryInfo { set; get; }
 

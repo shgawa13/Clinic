@@ -116,7 +116,6 @@ namespace Dental_App
     private void btnAddNew_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color1);
-      OpenChildForm(new frmAddNewPatient());
     }
 
 

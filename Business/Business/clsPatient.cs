@@ -15,7 +15,7 @@ namespace Business
     public int PatientID { set; get; }
     public int PersonID { set; get; }
     public clsPerson PatientInfo;
-
+    
     public clsPatient()
     {
       this.PatientID = -1;

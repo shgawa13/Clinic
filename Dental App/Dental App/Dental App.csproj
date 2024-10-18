@@ -139,5 +139,14 @@
   <ItemGroup>
     <Folder Include="Payments\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\Business\Business.csproj">
+      <Project>{2f3d13b1-691e-4f8a-ba67-7fa399029708}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kilua.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

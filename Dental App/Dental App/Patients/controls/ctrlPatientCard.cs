@@ -16,5 +16,7 @@ namespace Dental_App.Patients.controls
     {
       InitializeComponent();
     }
+
+   
   }
 }
