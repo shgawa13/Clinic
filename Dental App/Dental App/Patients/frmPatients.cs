@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Dental_App.Patients
 {
-  public partial class frmPatients : Form
+  public partial class frmListPatients : Form
   {
-    public frmPatients()
+    public frmListPatients()
     {
       InitializeComponent();
     }
+
+   
   }
 }
