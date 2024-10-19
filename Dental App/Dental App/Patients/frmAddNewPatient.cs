@@ -10,13 +10,20 @@ using System.Windows.Forms;
 
 namespace Dental_App.Patients
 {
-  public partial class frmAddNewPatient : Form
+  public partial class frmAddUpdatePatient : Form
   {
-    public frmAddNewPatient()
+    private int _PatientID =-1;
+
+    public frmAddUpdatePatient()
     {
       InitializeComponent();
     }
 
-    
+    public frmAddUpdatePatient(int PatientID)
+    {
+      InitializeComponent();
+      _PatientID = PatientID;
+
+    }
   }
 }

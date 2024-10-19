@@ -1,6 +1,6 @@
 ﻿namespace Dental_App.Patients
 {
-  partial class frmAddNewPatient
+  partial class frmAddUpdatePatient
   {
     /// <summary>
     /// Required designer variable.
@@ -28,15 +28,15 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.txtFirstName = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.txtSecondName = new System.Windows.Forms.TextBox();
       this.label3 = new System.Windows.Forms.Label();
-      this.textBox3 = new System.Windows.Forms.TextBox();
-      this.textBox4 = new System.Windows.Forms.TextBox();
+      this.txtLastName = new System.Windows.Forms.TextBox();
+      this.txtNationalID = new System.Windows.Forms.TextBox();
       this.label5 = new System.Windows.Forms.Label();
-      this.textBox7 = new System.Windows.Forms.TextBox();
-      this.textBox8 = new System.Windows.Forms.TextBox();
+      this.txtPhone = new System.Windows.Forms.TextBox();
+      this.txtEmail = new System.Windows.Forms.TextBox();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
       this.iconButton7 = new FontAwesome.Sharp.IconButton();
@@ -53,89 +53,97 @@
       this.label9 = new System.Windows.Forms.Label();
       this.label10 = new System.Windows.Forms.Label();
       this.label11 = new System.Windows.Forms.Label();
-      this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-      this.radioButton1 = new System.Windows.Forms.RadioButton();
-      this.radioButton2 = new System.Windows.Forms.RadioButton();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
+      this.rbMale = new System.Windows.Forms.RadioButton();
+      this.rbFemal = new System.Windows.Forms.RadioButton();
+      this.cmbCountry = new System.Windows.Forms.ComboBox();
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.linkReomve = new System.Windows.Forms.LinkLabel();
+      this.linkChoseImage = new System.Windows.Forms.LinkLabel();
+      this.iconButton9 = new FontAwesome.Sharp.IconButton();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
-      // textBox1
+      // txtFirstName
       // 
-      this.textBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox1.Location = new System.Drawing.Point(169, 58);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(164, 26);
-      this.textBox1.TabIndex = 0;
+      this.txtFirstName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtFirstName.Location = new System.Drawing.Point(169, 62);
+      this.txtFirstName.Name = "txtFirstName";
+      this.txtFirstName.Size = new System.Drawing.Size(164, 26);
+      this.txtFirstName.TabIndex = 0;
       // 
       // label2
       // 
       this.label2.AutoSize = true;
       this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(165, 13);
+      this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label2.Location = new System.Drawing.Point(165, 18);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(37, 21);
       this.label2.TabIndex = 3;
       this.label2.Text = "???";
       // 
-      // textBox2
+      // txtSecondName
       // 
-      this.textBox2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox2.Location = new System.Drawing.Point(451, 58);
-      this.textBox2.Name = "textBox2";
-      this.textBox2.Size = new System.Drawing.Size(164, 26);
-      this.textBox2.TabIndex = 2;
+      this.txtSecondName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtSecondName.Location = new System.Drawing.Point(451, 62);
+      this.txtSecondName.Name = "txtSecondName";
+      this.txtSecondName.Size = new System.Drawing.Size(164, 26);
+      this.txtSecondName.TabIndex = 2;
       // 
       // label3
       // 
       this.label3.AutoSize = true;
       this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label3.Location = new System.Drawing.Point(618, 61);
+      this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label3.Location = new System.Drawing.Point(618, 65);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(88, 21);
       this.label3.TabIndex = 5;
       this.label3.Text = "LastName";
       // 
-      // textBox3
+      // txtLastName
       // 
-      this.textBox3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox3.Location = new System.Drawing.Point(712, 58);
-      this.textBox3.Name = "textBox3";
-      this.textBox3.Size = new System.Drawing.Size(164, 26);
-      this.textBox3.TabIndex = 4;
+      this.txtLastName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtLastName.Location = new System.Drawing.Point(712, 62);
+      this.txtLastName.Name = "txtLastName";
+      this.txtLastName.Size = new System.Drawing.Size(164, 26);
+      this.txtLastName.TabIndex = 4;
       // 
-      // textBox4
+      // txtNationalID
       // 
-      this.textBox4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox4.Location = new System.Drawing.Point(169, 106);
-      this.textBox4.Name = "textBox4";
-      this.textBox4.Size = new System.Drawing.Size(164, 26);
-      this.textBox4.TabIndex = 6;
+      this.txtNationalID.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtNationalID.Location = new System.Drawing.Point(169, 110);
+      this.txtNationalID.Name = "txtNationalID";
+      this.txtNationalID.Size = new System.Drawing.Size(164, 26);
+      this.txtNationalID.TabIndex = 6;
       // 
       // label5
       // 
       this.label5.AutoSize = true;
       this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label5.Location = new System.Drawing.Point(338, 61);
+      this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label5.Location = new System.Drawing.Point(338, 65);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(111, 21);
       this.label5.TabIndex = 9;
       this.label5.Text = "SecondName";
       // 
-      // textBox7
+      // txtPhone
       // 
-      this.textBox7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox7.Location = new System.Drawing.Point(169, 251);
-      this.textBox7.Name = "textBox7";
-      this.textBox7.Size = new System.Drawing.Size(164, 26);
-      this.textBox7.TabIndex = 12;
+      this.txtPhone.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtPhone.Location = new System.Drawing.Point(169, 254);
+      this.txtPhone.Name = "txtPhone";
+      this.txtPhone.Size = new System.Drawing.Size(164, 26);
+      this.txtPhone.TabIndex = 12;
       // 
-      // textBox8
+      // txtEmail
       // 
-      this.textBox8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox8.Location = new System.Drawing.Point(169, 343);
-      this.textBox8.Name = "textBox8";
-      this.textBox8.Size = new System.Drawing.Size(164, 26);
-      this.textBox8.TabIndex = 14;
+      this.txtEmail.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtEmail.Location = new System.Drawing.Point(169, 350);
+      this.txtEmail.Name = "txtEmail";
+      this.txtEmail.Size = new System.Drawing.Size(164, 26);
+      this.txtEmail.TabIndex = 14;
       // 
       // iconButton5
       // 
@@ -261,8 +269,8 @@
       // 
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.ForeColor = System.Drawing.Color.Black;
-      this.label1.Location = new System.Drawing.Point(68, 347);
+      this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label1.Location = new System.Drawing.Point(68, 353);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(55, 21);
       this.label1.TabIndex = 39;
@@ -272,8 +280,8 @@
       // 
       this.label6.AutoSize = true;
       this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label6.ForeColor = System.Drawing.Color.Black;
-      this.label6.Location = new System.Drawing.Point(68, 299);
+      this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label6.Location = new System.Drawing.Point(68, 305);
       this.label6.Name = "label6";
       this.label6.Size = new System.Drawing.Size(69, 21);
       this.label6.TabIndex = 38;
@@ -283,8 +291,8 @@
       // 
       this.label7.AutoSize = true;
       this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label7.ForeColor = System.Drawing.Color.Black;
-      this.label7.Location = new System.Drawing.Point(68, 251);
+      this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label7.Location = new System.Drawing.Point(68, 257);
       this.label7.Name = "label7";
       this.label7.Size = new System.Drawing.Size(59, 21);
       this.label7.TabIndex = 37;
@@ -294,8 +302,8 @@
       // 
       this.label8.AutoSize = true;
       this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label8.ForeColor = System.Drawing.Color.Black;
-      this.label8.Location = new System.Drawing.Point(68, 203);
+      this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label8.Location = new System.Drawing.Point(68, 209);
       this.label8.Name = "label8";
       this.label8.Size = new System.Drawing.Size(65, 21);
       this.label8.TabIndex = 36;
@@ -305,8 +313,8 @@
       // 
       this.label4.AutoSize = true;
       this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.ForeColor = System.Drawing.Color.Black;
-      this.label4.Location = new System.Drawing.Point(68, 155);
+      this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label4.Location = new System.Drawing.Point(68, 162);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(43, 21);
       this.label4.TabIndex = 35;
@@ -316,8 +324,8 @@
       // 
       this.label9.AutoSize = true;
       this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label9.ForeColor = System.Drawing.Color.Black;
-      this.label9.Location = new System.Drawing.Point(68, 107);
+      this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label9.Location = new System.Drawing.Point(68, 113);
       this.label9.Name = "label9";
       this.label9.Size = new System.Drawing.Size(88, 21);
       this.label9.TabIndex = 34;
@@ -327,8 +335,8 @@
       // 
       this.label10.AutoSize = true;
       this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label10.ForeColor = System.Drawing.Color.Black;
-      this.label10.Location = new System.Drawing.Point(68, 59);
+      this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label10.Location = new System.Drawing.Point(68, 65);
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(89, 21);
       this.label10.TabIndex = 33;
@@ -338,71 +346,127 @@
       // 
       this.label11.AutoSize = true;
       this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label11.ForeColor = System.Drawing.Color.Black;
-      this.label11.Location = new System.Drawing.Point(68, 13);
+      this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label11.Location = new System.Drawing.Point(68, 18);
       this.label11.Name = "label11";
       this.label11.Size = new System.Drawing.Size(83, 21);
       this.label11.TabIndex = 32;
       this.label11.Text = "PatientID";
       // 
-      // dateTimePicker
+      // dateTimePickerDOB
       // 
-      this.dateTimePicker.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-      this.dateTimePicker.Location = new System.Drawing.Point(169, 160);
-      this.dateTimePicker.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
-      this.dateTimePicker.Name = "dateTimePicker";
-      this.dateTimePicker.Size = new System.Drawing.Size(164, 26);
-      this.dateTimePicker.TabIndex = 48;
-      this.dateTimePicker.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
+      this.dateTimePickerDOB.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+      this.dateTimePickerDOB.Location = new System.Drawing.Point(169, 159);
+      this.dateTimePickerDOB.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
+      this.dateTimePickerDOB.Name = "dateTimePickerDOB";
+      this.dateTimePickerDOB.Size = new System.Drawing.Size(164, 26);
+      this.dateTimePickerDOB.TabIndex = 48;
+      this.dateTimePickerDOB.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
       // 
-      // radioButton1
+      // rbMale
       // 
-      this.radioButton1.AutoSize = true;
-      this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.radioButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.radioButton1.Location = new System.Drawing.Point(169, 203);
-      this.radioButton1.Name = "radioButton1";
-      this.radioButton1.Size = new System.Drawing.Size(66, 25);
-      this.radioButton1.TabIndex = 49;
-      this.radioButton1.TabStop = true;
-      this.radioButton1.Text = "Male";
-      this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.radioButton1.UseVisualStyleBackColor = true;
+      this.rbMale.AutoSize = true;
+      this.rbMale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.rbMale.Checked = true;
+      this.rbMale.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.rbMale.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.rbMale.Location = new System.Drawing.Point(169, 207);
+      this.rbMale.Name = "rbMale";
+      this.rbMale.Size = new System.Drawing.Size(66, 25);
+      this.rbMale.TabIndex = 49;
+      this.rbMale.TabStop = true;
+      this.rbMale.Text = "Male";
+      this.rbMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.rbMale.UseVisualStyleBackColor = true;
       // 
-      // radioButton2
+      // rbFemal
       // 
-      this.radioButton2.AutoSize = true;
-      this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.radioButton2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.radioButton2.Location = new System.Drawing.Point(252, 203);
-      this.radioButton2.Name = "radioButton2";
-      this.radioButton2.Size = new System.Drawing.Size(85, 25);
-      this.radioButton2.TabIndex = 50;
-      this.radioButton2.TabStop = true;
-      this.radioButton2.Text = "Female";
-      this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.radioButton2.UseVisualStyleBackColor = true;
+      this.rbFemal.AutoSize = true;
+      this.rbFemal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.rbFemal.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.rbFemal.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.rbFemal.Location = new System.Drawing.Point(252, 207);
+      this.rbFemal.Name = "rbFemal";
+      this.rbFemal.Size = new System.Drawing.Size(85, 25);
+      this.rbFemal.TabIndex = 50;
+      this.rbFemal.Text = "Female";
+      this.rbFemal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.rbFemal.UseVisualStyleBackColor = true;
       // 
-      // comboBox1
+      // cmbCountry
       // 
-      this.comboBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Location = new System.Drawing.Point(169, 297);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(163, 29);
-      this.comboBox1.TabIndex = 51;
+      this.cmbCountry.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cmbCountry.FormattingEnabled = true;
+      this.cmbCountry.Location = new System.Drawing.Point(169, 301);
+      this.cmbCountry.Name = "cmbCountry";
+      this.cmbCountry.Size = new System.Drawing.Size(163, 29);
+      this.cmbCountry.TabIndex = 51;
       // 
-      // frmAddNewPatient
+      // pictureBox1
+      // 
+      this.pictureBox1.Location = new System.Drawing.Point(560, 107);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(249, 191);
+      this.pictureBox1.TabIndex = 52;
+      this.pictureBox1.TabStop = false;
+      // 
+      // linkReomve
+      // 
+      this.linkReomve.AutoSize = true;
+      this.linkReomve.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkReomve.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkReomve.LinkColor = System.Drawing.Color.Crimson;
+      this.linkReomve.Location = new System.Drawing.Point(708, 347);
+      this.linkReomve.Name = "linkReomve";
+      this.linkReomve.Size = new System.Drawing.Size(124, 21);
+      this.linkReomve.TabIndex = 53;
+      this.linkReomve.TabStop = true;
+      this.linkReomve.Text = "Remove Image";
+      this.linkReomve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // linkChoseImage
+      // 
+      this.linkChoseImage.AutoSize = true;
+      this.linkChoseImage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkChoseImage.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkChoseImage.LinkColor = System.Drawing.Color.AliceBlue;
+      this.linkChoseImage.Location = new System.Drawing.Point(556, 347);
+      this.linkChoseImage.Name = "linkChoseImage";
+      this.linkChoseImage.Size = new System.Drawing.Size(109, 21);
+      this.linkChoseImage.TabIndex = 54;
+      this.linkChoseImage.TabStop = true;
+      this.linkChoseImage.Text = "Chose Image";
+      this.linkChoseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // iconButton9
+      // 
+      this.iconButton9.FlatAppearance.BorderSize = 0;
+      this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Tooth;
+      this.iconButton9.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton9.IconSize = 70;
+      this.iconButton9.Location = new System.Drawing.Point(394, 156);
+      this.iconButton9.Name = "iconButton9";
+      this.iconButton9.Size = new System.Drawing.Size(124, 109);
+      this.iconButton9.TabIndex = 55;
+      this.iconButton9.UseVisualStyleBackColor = true;
+      // 
+      // frmAddUpdatePatient
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.SystemColors.Control;
-      this.ClientSize = new System.Drawing.Size(912, 412);
-      this.Controls.Add(this.comboBox1);
-      this.Controls.Add(this.radioButton2);
-      this.Controls.Add(this.radioButton1);
-      this.Controls.Add(this.dateTimePicker);
+      this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
+      this.ClientSize = new System.Drawing.Size(901, 393);
+      this.Controls.Add(this.iconButton9);
+      this.Controls.Add(this.linkChoseImage);
+      this.Controls.Add(this.linkReomve);
+      this.Controls.Add(this.pictureBox1);
+      this.Controls.Add(this.cmbCountry);
+      this.Controls.Add(this.rbFemal);
+      this.Controls.Add(this.rbMale);
+      this.Controls.Add(this.dateTimePickerDOB);
       this.Controls.Add(this.iconButton5);
       this.Controls.Add(this.iconButton6);
       this.Controls.Add(this.iconButton7);
@@ -419,17 +483,18 @@
       this.Controls.Add(this.label9);
       this.Controls.Add(this.label10);
       this.Controls.Add(this.label11);
-      this.Controls.Add(this.textBox8);
-      this.Controls.Add(this.textBox7);
+      this.Controls.Add(this.txtEmail);
+      this.Controls.Add(this.txtPhone);
       this.Controls.Add(this.label5);
-      this.Controls.Add(this.textBox4);
+      this.Controls.Add(this.txtNationalID);
       this.Controls.Add(this.label3);
-      this.Controls.Add(this.textBox3);
+      this.Controls.Add(this.txtLastName);
       this.Controls.Add(this.label2);
-      this.Controls.Add(this.textBox2);
-      this.Controls.Add(this.textBox1);
-      this.Name = "frmAddNewPatient";
-      this.Text = "frmAddNewPatient";
+      this.Controls.Add(this.txtSecondName);
+      this.Controls.Add(this.txtFirstName);
+      this.Name = "frmAddUpdatePatient";
+      this.Text = "frmAddUpdatePatient";
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -437,15 +502,15 @@
 
     #endregion
 
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtFirstName;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox textBox2;
+    private System.Windows.Forms.TextBox txtSecondName;
     private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.TextBox textBox3;
-    private System.Windows.Forms.TextBox textBox4;
+    private System.Windows.Forms.TextBox txtLastName;
+    private System.Windows.Forms.TextBox txtNationalID;
     private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.TextBox textBox7;
-    private System.Windows.Forms.TextBox textBox8;
+    private System.Windows.Forms.TextBox txtPhone;
+    private System.Windows.Forms.TextBox txtEmail;
     private FontAwesome.Sharp.IconButton iconButton5;
     private FontAwesome.Sharp.IconButton iconButton6;
     private FontAwesome.Sharp.IconButton iconButton7;
@@ -462,9 +527,13 @@
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.Label label11;
-    private System.Windows.Forms.DateTimePicker dateTimePicker;
-    private System.Windows.Forms.RadioButton radioButton1;
-    private System.Windows.Forms.RadioButton radioButton2;
-    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.DateTimePicker dateTimePickerDOB;
+    private System.Windows.Forms.RadioButton rbMale;
+    private System.Windows.Forms.RadioButton rbFemal;
+    private System.Windows.Forms.ComboBox cmbCountry;
+    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.LinkLabel linkReomve;
+    private System.Windows.Forms.LinkLabel linkChoseImage;
+    private FontAwesome.Sharp.IconButton iconButton9;
   }
 }
