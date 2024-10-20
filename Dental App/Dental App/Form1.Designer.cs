@@ -69,7 +69,7 @@
       this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
       this.panelMenu.Location = new System.Drawing.Point(0, 0);
       this.panelMenu.Name = "panelMenu";
-      this.panelMenu.Size = new System.Drawing.Size(209, 524);
+      this.panelMenu.Size = new System.Drawing.Size(209, 576);
       this.panelMenu.TabIndex = 0;
       // 
       // iconButton7
@@ -109,7 +109,7 @@
       this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton6.IconSize = 34;
       this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.iconButton6.Location = new System.Drawing.Point(0, 474);
+      this.iconButton6.Location = new System.Drawing.Point(0, 526);
       this.iconButton6.Name = "iconButton6";
       this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.iconButton6.Size = new System.Drawing.Size(209, 50);
@@ -365,7 +365,7 @@
       this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panelDesktop.Location = new System.Drawing.Point(209, 73);
       this.panelDesktop.Name = "panelDesktop";
-      this.panelDesktop.Size = new System.Drawing.Size(831, 451);
+      this.panelDesktop.Size = new System.Drawing.Size(831, 503);
       this.panelDesktop.TabIndex = 3;
       // 
       // MainForm
@@ -373,12 +373,14 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.ClientSize = new System.Drawing.Size(1040, 524);
+      this.ClientSize = new System.Drawing.Size(1040, 576);
       this.Controls.Add(this.panelDesktop);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.panelTitlebar);
       this.Controls.Add(this.panelMenu);
+      this.MinimumSize = new System.Drawing.Size(1000, 615);
       this.Name = "MainForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Form1";
       this.panelMenu.ResumeLayout(false);
       this.panel2.ResumeLayout(false);

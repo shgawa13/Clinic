@@ -195,7 +195,7 @@ namespace DataLayer
     {
       DataTable dtAllPatients = new DataTable();
 
-      string query = @"select * from Patients;";
+      string query = @"select * from PatientsView;";
 
       try
       {
