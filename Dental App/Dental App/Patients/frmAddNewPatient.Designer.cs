@@ -37,14 +37,6 @@
       this.label5 = new System.Windows.Forms.Label();
       this.txtPhone = new System.Windows.Forms.TextBox();
       this.txtEmail = new System.Windows.Forms.TextBox();
-      this.iconButton5 = new FontAwesome.Sharp.IconButton();
-      this.iconButton6 = new FontAwesome.Sharp.IconButton();
-      this.iconButton7 = new FontAwesome.Sharp.IconButton();
-      this.iconButton8 = new FontAwesome.Sharp.IconButton();
-      this.iconButton3 = new FontAwesome.Sharp.IconButton();
-      this.iconButton4 = new FontAwesome.Sharp.IconButton();
-      this.iconButton2 = new FontAwesome.Sharp.IconButton();
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.label1 = new System.Windows.Forms.Label();
       this.label6 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
@@ -57,11 +49,21 @@
       this.rbMale = new System.Windows.Forms.RadioButton();
       this.rbFemal = new System.Windows.Forms.RadioButton();
       this.cmbCountry = new System.Windows.Forms.ComboBox();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.linkReomve = new System.Windows.Forms.LinkLabel();
       this.linkChoseImage = new System.Windows.Forms.LinkLabel();
+      this.btnSave = new System.Windows.Forms.Button();
+      this.button2 = new System.Windows.Forms.Button();
       this.iconButton9 = new FontAwesome.Sharp.IconButton();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      this.pbAvatar = new System.Windows.Forms.PictureBox();
+      this.iconButton5 = new FontAwesome.Sharp.IconButton();
+      this.iconButton6 = new FontAwesome.Sharp.IconButton();
+      this.iconButton7 = new FontAwesome.Sharp.IconButton();
+      this.iconButton8 = new FontAwesome.Sharp.IconButton();
+      this.iconButton3 = new FontAwesome.Sharp.IconButton();
+      this.iconButton4 = new FontAwesome.Sharp.IconButton();
+      this.iconButton2 = new FontAwesome.Sharp.IconButton();
+      this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
       // txtFirstName
@@ -144,6 +146,227 @@
       this.txtEmail.Name = "txtEmail";
       this.txtEmail.Size = new System.Drawing.Size(164, 26);
       this.txtEmail.TabIndex = 14;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label1.Location = new System.Drawing.Point(68, 353);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(55, 21);
+      this.label1.TabIndex = 39;
+      this.label1.Text = "Email";
+      // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label6.Location = new System.Drawing.Point(68, 305);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(69, 21);
+      this.label6.TabIndex = 38;
+      this.label6.Text = "Country";
+      // 
+      // label7
+      // 
+      this.label7.AutoSize = true;
+      this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label7.Location = new System.Drawing.Point(68, 257);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(59, 21);
+      this.label7.TabIndex = 37;
+      this.label7.Text = "Phone";
+      // 
+      // label8
+      // 
+      this.label8.AutoSize = true;
+      this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label8.Location = new System.Drawing.Point(68, 209);
+      this.label8.Name = "label8";
+      this.label8.Size = new System.Drawing.Size(65, 21);
+      this.label8.TabIndex = 36;
+      this.label8.Text = "Gendor";
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label4.Location = new System.Drawing.Point(68, 162);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(43, 21);
+      this.label4.TabIndex = 35;
+      this.label4.Text = "DOB";
+      // 
+      // label9
+      // 
+      this.label9.AutoSize = true;
+      this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label9.Location = new System.Drawing.Point(68, 113);
+      this.label9.Name = "label9";
+      this.label9.Size = new System.Drawing.Size(88, 21);
+      this.label9.TabIndex = 34;
+      this.label9.Text = "Natinal ID";
+      // 
+      // label10
+      // 
+      this.label10.AutoSize = true;
+      this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label10.Location = new System.Drawing.Point(68, 65);
+      this.label10.Name = "label10";
+      this.label10.Size = new System.Drawing.Size(89, 21);
+      this.label10.TabIndex = 33;
+      this.label10.Text = "FirstName";
+      // 
+      // label11
+      // 
+      this.label11.AutoSize = true;
+      this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label11.Location = new System.Drawing.Point(68, 18);
+      this.label11.Name = "label11";
+      this.label11.Size = new System.Drawing.Size(83, 21);
+      this.label11.TabIndex = 32;
+      this.label11.Text = "PatientID";
+      // 
+      // dateTimePickerDOB
+      // 
+      this.dateTimePickerDOB.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+      this.dateTimePickerDOB.Location = new System.Drawing.Point(169, 159);
+      this.dateTimePickerDOB.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
+      this.dateTimePickerDOB.Name = "dateTimePickerDOB";
+      this.dateTimePickerDOB.Size = new System.Drawing.Size(164, 26);
+      this.dateTimePickerDOB.TabIndex = 48;
+      this.dateTimePickerDOB.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
+      // 
+      // rbMale
+      // 
+      this.rbMale.AutoSize = true;
+      this.rbMale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.rbMale.Checked = true;
+      this.rbMale.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.rbMale.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.rbMale.Location = new System.Drawing.Point(169, 207);
+      this.rbMale.Name = "rbMale";
+      this.rbMale.Size = new System.Drawing.Size(66, 25);
+      this.rbMale.TabIndex = 49;
+      this.rbMale.TabStop = true;
+      this.rbMale.Text = "Male";
+      this.rbMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.rbMale.UseVisualStyleBackColor = true;
+      this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
+      // 
+      // rbFemal
+      // 
+      this.rbFemal.AutoSize = true;
+      this.rbFemal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.rbFemal.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.rbFemal.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.rbFemal.Location = new System.Drawing.Point(252, 207);
+      this.rbFemal.Name = "rbFemal";
+      this.rbFemal.Size = new System.Drawing.Size(85, 25);
+      this.rbFemal.TabIndex = 50;
+      this.rbFemal.Text = "Female";
+      this.rbFemal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.rbFemal.UseVisualStyleBackColor = true;
+      // 
+      // cmbCountry
+      // 
+      this.cmbCountry.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cmbCountry.FormattingEnabled = true;
+      this.cmbCountry.Location = new System.Drawing.Point(169, 301);
+      this.cmbCountry.Name = "cmbCountry";
+      this.cmbCountry.Size = new System.Drawing.Size(163, 29);
+      this.cmbCountry.TabIndex = 51;
+      // 
+      // linkReomve
+      // 
+      this.linkReomve.AutoSize = true;
+      this.linkReomve.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkReomve.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkReomve.LinkColor = System.Drawing.SystemColors.ScrollBar;
+      this.linkReomve.Location = new System.Drawing.Point(673, 305);
+      this.linkReomve.Name = "linkReomve";
+      this.linkReomve.Size = new System.Drawing.Size(124, 21);
+      this.linkReomve.TabIndex = 53;
+      this.linkReomve.TabStop = true;
+      this.linkReomve.Text = "Remove Image";
+      this.linkReomve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // linkChoseImage
+      // 
+      this.linkChoseImage.AutoSize = true;
+      this.linkChoseImage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkChoseImage.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkChoseImage.LinkColor = System.Drawing.Color.White;
+      this.linkChoseImage.Location = new System.Drawing.Point(681, 274);
+      this.linkChoseImage.Name = "linkChoseImage";
+      this.linkChoseImage.Size = new System.Drawing.Size(109, 21);
+      this.linkChoseImage.TabIndex = 54;
+      this.linkChoseImage.TabStop = true;
+      this.linkChoseImage.Text = "Chose Image";
+      this.linkChoseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.linkChoseImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkChoseImage_LinkClicked);
+      // 
+      // btnSave
+      // 
+      this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+      this.btnSave.FlatAppearance.BorderSize = 0;
+      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.Location = new System.Drawing.Point(622, 347);
+      this.btnSave.Name = "btnSave";
+      this.btnSave.Size = new System.Drawing.Size(120, 38);
+      this.btnSave.TabIndex = 56;
+      this.btnSave.Text = "Save";
+      this.btnSave.UseVisualStyleBackColor = false;
+      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      // 
+      // button2
+      // 
+      this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.button2.FlatAppearance.BorderSize = 0;
+      this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.button2.Location = new System.Drawing.Point(758, 347);
+      this.button2.Name = "button2";
+      this.button2.Size = new System.Drawing.Size(131, 38);
+      this.button2.TabIndex = 57;
+      this.button2.Text = "Cancel";
+      this.button2.UseVisualStyleBackColor = false;
+      // 
+      // iconButton9
+      // 
+      this.iconButton9.FlatAppearance.BorderSize = 0;
+      this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Tooth;
+      this.iconButton9.IconColor = System.Drawing.Color.White;
+      this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton9.IconSize = 75;
+      this.iconButton9.Location = new System.Drawing.Point(450, 192);
+      this.iconButton9.Name = "iconButton9";
+      this.iconButton9.Size = new System.Drawing.Size(63, 76);
+      this.iconButton9.TabIndex = 58;
+      this.iconButton9.UseVisualStyleBackColor = true;
+      // 
+      // pbAvatar
+      // 
+      this.pbAvatar.Location = new System.Drawing.Point(655, 107);
+      this.pbAvatar.Name = "pbAvatar";
+      this.pbAvatar.Size = new System.Drawing.Size(185, 152);
+      this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.pbAvatar.TabIndex = 52;
+      this.pbAvatar.TabStop = false;
       // 
       // iconButton5
       // 
@@ -265,194 +488,6 @@
       this.iconButton1.TabIndex = 40;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label1.Location = new System.Drawing.Point(68, 353);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(55, 21);
-      this.label1.TabIndex = 39;
-      this.label1.Text = "Email";
-      // 
-      // label6
-      // 
-      this.label6.AutoSize = true;
-      this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label6.Location = new System.Drawing.Point(68, 305);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(69, 21);
-      this.label6.TabIndex = 38;
-      this.label6.Text = "Country";
-      // 
-      // label7
-      // 
-      this.label7.AutoSize = true;
-      this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label7.Location = new System.Drawing.Point(68, 257);
-      this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(59, 21);
-      this.label7.TabIndex = 37;
-      this.label7.Text = "Phone";
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label8.Location = new System.Drawing.Point(68, 209);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(65, 21);
-      this.label8.TabIndex = 36;
-      this.label8.Text = "Gendor";
-      // 
-      // label4
-      // 
-      this.label4.AutoSize = true;
-      this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label4.Location = new System.Drawing.Point(68, 162);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(43, 21);
-      this.label4.TabIndex = 35;
-      this.label4.Text = "DOB";
-      // 
-      // label9
-      // 
-      this.label9.AutoSize = true;
-      this.label9.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label9.Location = new System.Drawing.Point(68, 113);
-      this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(88, 21);
-      this.label9.TabIndex = 34;
-      this.label9.Text = "Natinal ID";
-      // 
-      // label10
-      // 
-      this.label10.AutoSize = true;
-      this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label10.Location = new System.Drawing.Point(68, 65);
-      this.label10.Name = "label10";
-      this.label10.Size = new System.Drawing.Size(89, 21);
-      this.label10.TabIndex = 33;
-      this.label10.Text = "FirstName";
-      // 
-      // label11
-      // 
-      this.label11.AutoSize = true;
-      this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label11.Location = new System.Drawing.Point(68, 18);
-      this.label11.Name = "label11";
-      this.label11.Size = new System.Drawing.Size(83, 21);
-      this.label11.TabIndex = 32;
-      this.label11.Text = "PatientID";
-      // 
-      // dateTimePickerDOB
-      // 
-      this.dateTimePickerDOB.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-      this.dateTimePickerDOB.Location = new System.Drawing.Point(169, 159);
-      this.dateTimePickerDOB.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
-      this.dateTimePickerDOB.Name = "dateTimePickerDOB";
-      this.dateTimePickerDOB.Size = new System.Drawing.Size(164, 26);
-      this.dateTimePickerDOB.TabIndex = 48;
-      this.dateTimePickerDOB.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
-      // 
-      // rbMale
-      // 
-      this.rbMale.AutoSize = true;
-      this.rbMale.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.rbMale.Checked = true;
-      this.rbMale.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.rbMale.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.rbMale.Location = new System.Drawing.Point(169, 207);
-      this.rbMale.Name = "rbMale";
-      this.rbMale.Size = new System.Drawing.Size(66, 25);
-      this.rbMale.TabIndex = 49;
-      this.rbMale.TabStop = true;
-      this.rbMale.Text = "Male";
-      this.rbMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.rbMale.UseVisualStyleBackColor = true;
-      // 
-      // rbFemal
-      // 
-      this.rbFemal.AutoSize = true;
-      this.rbFemal.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.rbFemal.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.rbFemal.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.rbFemal.Location = new System.Drawing.Point(252, 207);
-      this.rbFemal.Name = "rbFemal";
-      this.rbFemal.Size = new System.Drawing.Size(85, 25);
-      this.rbFemal.TabIndex = 50;
-      this.rbFemal.Text = "Female";
-      this.rbFemal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      this.rbFemal.UseVisualStyleBackColor = true;
-      // 
-      // cmbCountry
-      // 
-      this.cmbCountry.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cmbCountry.FormattingEnabled = true;
-      this.cmbCountry.Location = new System.Drawing.Point(169, 301);
-      this.cmbCountry.Name = "cmbCountry";
-      this.cmbCountry.Size = new System.Drawing.Size(163, 29);
-      this.cmbCountry.TabIndex = 51;
-      // 
-      // pictureBox1
-      // 
-      this.pictureBox1.Location = new System.Drawing.Point(560, 107);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(249, 191);
-      this.pictureBox1.TabIndex = 52;
-      this.pictureBox1.TabStop = false;
-      // 
-      // linkReomve
-      // 
-      this.linkReomve.AutoSize = true;
-      this.linkReomve.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.linkReomve.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.linkReomve.LinkColor = System.Drawing.Color.Crimson;
-      this.linkReomve.Location = new System.Drawing.Point(708, 347);
-      this.linkReomve.Name = "linkReomve";
-      this.linkReomve.Size = new System.Drawing.Size(124, 21);
-      this.linkReomve.TabIndex = 53;
-      this.linkReomve.TabStop = true;
-      this.linkReomve.Text = "Remove Image";
-      this.linkReomve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
-      // linkChoseImage
-      // 
-      this.linkChoseImage.AutoSize = true;
-      this.linkChoseImage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.linkChoseImage.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.linkChoseImage.LinkColor = System.Drawing.Color.AliceBlue;
-      this.linkChoseImage.Location = new System.Drawing.Point(556, 347);
-      this.linkChoseImage.Name = "linkChoseImage";
-      this.linkChoseImage.Size = new System.Drawing.Size(109, 21);
-      this.linkChoseImage.TabIndex = 54;
-      this.linkChoseImage.TabStop = true;
-      this.linkChoseImage.Text = "Chose Image";
-      this.linkChoseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
-      // iconButton9
-      // 
-      this.iconButton9.FlatAppearance.BorderSize = 0;
-      this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Tooth;
-      this.iconButton9.IconColor = System.Drawing.Color.WhiteSmoke;
-      this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton9.IconSize = 70;
-      this.iconButton9.Location = new System.Drawing.Point(394, 156);
-      this.iconButton9.Name = "iconButton9";
-      this.iconButton9.Size = new System.Drawing.Size(124, 109);
-      this.iconButton9.TabIndex = 55;
-      this.iconButton9.UseVisualStyleBackColor = true;
-      // 
       // frmAddUpdatePatient
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,9 +495,11 @@
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
       this.ClientSize = new System.Drawing.Size(901, 393);
       this.Controls.Add(this.iconButton9);
+      this.Controls.Add(this.button2);
+      this.Controls.Add(this.btnSave);
       this.Controls.Add(this.linkChoseImage);
       this.Controls.Add(this.linkReomve);
-      this.Controls.Add(this.pictureBox1);
+      this.Controls.Add(this.pbAvatar);
       this.Controls.Add(this.cmbCountry);
       this.Controls.Add(this.rbFemal);
       this.Controls.Add(this.rbMale);
@@ -494,7 +531,7 @@
       this.Controls.Add(this.txtFirstName);
       this.Name = "frmAddUpdatePatient";
       this.Text = "frmAddUpdatePatient";
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -531,9 +568,11 @@
     private System.Windows.Forms.RadioButton rbMale;
     private System.Windows.Forms.RadioButton rbFemal;
     private System.Windows.Forms.ComboBox cmbCountry;
-    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.PictureBox pbAvatar;
     private System.Windows.Forms.LinkLabel linkReomve;
     private System.Windows.Forms.LinkLabel linkChoseImage;
+    private System.Windows.Forms.Button btnSave;
+    private System.Windows.Forms.Button button2;
     private FontAwesome.Sharp.IconButton iconButton9;
   }
 }

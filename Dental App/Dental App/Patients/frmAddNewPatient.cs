@@ -25,5 +25,20 @@ namespace Dental_App.Patients
       _PatientID = PatientID;
 
     }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void linkChoseImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+
+    }
+
+    private void rbMale_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }

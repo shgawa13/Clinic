@@ -34,9 +34,8 @@
       this.label1 = new System.Windows.Forms.Label();
       this.dgvPatients = new System.Windows.Forms.DataGridView();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.btnSearch = new FontAwesome.Sharp.IconButton();
-      this.txtValue = new System.Windows.Forms.TextBox();
-      this.cmbFindBy = new System.Windows.Forms.ComboBox();
+      this.txtFilterValue = new System.Windows.Forms.TextBox();
+      this.cbFilter = new System.Windows.Forms.ComboBox();
       this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
       this.label2 = new System.Windows.Forms.Label();
       this.panel3 = new System.Windows.Forms.Panel();
@@ -119,9 +118,8 @@
       // panel2
       // 
       this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.panel2.Controls.Add(this.btnSearch);
-      this.panel2.Controls.Add(this.txtValue);
-      this.panel2.Controls.Add(this.cmbFindBy);
+      this.panel2.Controls.Add(this.txtFilterValue);
+      this.panel2.Controls.Add(this.cbFilter);
       this.panel2.Controls.Add(this.btnAddNewPatient);
       this.panel2.Controls.Add(this.label2);
       this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -130,38 +128,32 @@
       this.panel2.Size = new System.Drawing.Size(800, 56);
       this.panel2.TabIndex = 4;
       // 
-      // btnSearch
+      // txtFilterValue
       // 
-      this.btnSearch.FlatAppearance.BorderSize = 0;
-      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-      this.btnSearch.IconColor = System.Drawing.Color.Lavender;
-      this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.btnSearch.IconSize = 36;
-      this.btnSearch.Location = new System.Drawing.Point(419, 9);
-      this.btnSearch.Name = "btnSearch";
-      this.btnSearch.Size = new System.Drawing.Size(37, 39);
-      this.btnSearch.TabIndex = 4;
-      this.btnSearch.UseVisualStyleBackColor = true;
+      this.txtFilterValue.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+      this.txtFilterValue.Location = new System.Drawing.Point(252, 14);
+      this.txtFilterValue.Name = "txtFilterValue";
+      this.txtFilterValue.Size = new System.Drawing.Size(160, 26);
+      this.txtFilterValue.TabIndex = 3;
+      this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
       // 
-      // txtValue
+      // cbFilter
       // 
-      this.txtValue.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.txtValue.Location = new System.Drawing.Point(252, 14);
-      this.txtValue.Name = "txtValue";
-      this.txtValue.Size = new System.Drawing.Size(160, 26);
-      this.txtValue.TabIndex = 3;
-      // 
-      // cmbFindBy
-      // 
-      this.cmbFindBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.cmbFindBy.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.cmbFindBy.FormattingEnabled = true;
-      this.cmbFindBy.Location = new System.Drawing.Point(86, 13);
-      this.cmbFindBy.Name = "cmbFindBy";
-      this.cmbFindBy.Size = new System.Drawing.Size(153, 29);
-      this.cmbFindBy.TabIndex = 2;
+      this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbFilter.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+      this.cbFilter.FormattingEnabled = true;
+      this.cbFilter.Items.AddRange(new object[] {
+            "None",
+            "Patient ID",
+            "Natinal ID",
+            "Last Name",
+            "Phone Number",
+            "Email"});
+      this.cbFilter.Location = new System.Drawing.Point(86, 13);
+      this.cbFilter.Name = "cbFilter";
+      this.cbFilter.Size = new System.Drawing.Size(153, 29);
+      this.cbFilter.TabIndex = 2;
+      this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
       // 
       // btnAddNewPatient
       // 
@@ -234,11 +226,10 @@
     private System.Windows.Forms.Panel panel2;
     private FontAwesome.Sharp.IconButton btnAddNewPatient;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox txtValue;
-    private System.Windows.Forms.ComboBox cmbFindBy;
+    private System.Windows.Forms.ComboBox cbFilter;
     private System.Windows.Forms.Label lblPatientsNumbers;
     private System.Windows.Forms.Label label1;
-    private FontAwesome.Sharp.IconButton btnSearch;
     private System.Windows.Forms.Panel panel3;
+    private System.Windows.Forms.TextBox txtFilterValue;
   }
 }
