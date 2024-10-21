@@ -1,6 +1,7 @@
 ﻿using Business;
 using Dental_App.Global_Classes;
 using Dental_App.Properties;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -170,6 +171,49 @@ namespace Dental_App.Patients
 
     private void btnSave_Click(object sender, EventArgs e)
     {
+      // we call handle image
+      if (!_HandleImage())
+        return;
+
+      int NationalCountryID = clsCountries.Find(cmbCountry.Text).ID;
+
+      _Person.FirstName = txtbFirstName.Text.Trim();
+      _Person.SecondName = txtbSecondName.Text.Trim();
+      _Person.LastName = txtbLastName.Text.Trim();
+      _Person.NationalID = txtbNationalID.Text.Trim();
+      _Person.Email = txtbEmail.Text.Trim();
+      _Person.PhoneNumber = txtbPhone.Text.Trim();
+      _Person.DateOfBirth = dtpDateOfBirth.Value;
+
+      if (rbMale.Checked)
+        _Person.Gendor = (byte)enGendor.Male;
+      else
+        _Person.Gendor = (byte)enGendor.Female;
+
+      _Person.NationalityCountryID = NationalCountryID;
+
+      if (pbAvatar.ImageLocation != null)
+        _Person.ImagePath = pbAvatar.ImageLocation;
+      else
+        _Person.ImagePath = "";
+
+      if (_Person.Save())
+      {
+        if (_Patient.Save())
+        {
+          lblPatientID.Text = _Patient.PatientID.ToString();
+          //change form mode to update.
+          _Mode = enMode.Update;
+          lblTitle.Text = "Update Patient";
+
+          MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+          DataBack.Invoke(this, _Patient.PatientID);
+        }
+      }else
+        MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
 
     }
 
@@ -180,10 +224,34 @@ namespace Dental_App.Patients
         _LoadData();
     }
 
-
     private void linkChoseImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+      openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+      openFileDialog1.FilterIndex = 1;
+      openFileDialog1.RestoreDirectory = true;
 
+      if (openFileDialog1.ShowDialog() == DialogResult.OK)
+      {
+        // Process the selected file
+        string selectedFilePath = openFileDialog1.FileName;
+        pbAvatar.Load(selectedFilePath);
+        linkReomve.Visible = true;
+      }
+    }
+
+    private void linkReomve_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      // First we clear the Picture box 
+      pbAvatar.ImageLocation = null;
+
+      // now we handle the defualt avatar
+      if (rbMale.Checked)
+        pbAvatar.Image = Resources.Male_avatar;
+      else
+        pbAvatar.Image = Resources.Female_avatar;
+
+      // we hide remove image link
+      linkReomve.Visible = false;
     }
 
     private void rbMale_CheckedChanged(object sender, EventArgs e)

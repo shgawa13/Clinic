@@ -45,7 +45,7 @@
       this.label9 = new System.Windows.Forms.Label();
       this.label10 = new System.Windows.Forms.Label();
       this.label11 = new System.Windows.Forms.Label();
-      this.dateTimePickerDOB = new System.Windows.Forms.DateTimePicker();
+      this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
       this.rbMale = new System.Windows.Forms.RadioButton();
       this.rbFemal = new System.Windows.Forms.RadioButton();
       this.cmbCountry = new System.Windows.Forms.ComboBox();
@@ -64,6 +64,7 @@
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.lblTitle = new System.Windows.Forms.Label();
+      this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
@@ -236,16 +237,16 @@
       this.label11.TabIndex = 32;
       this.label11.Text = "PatientID";
       // 
-      // dateTimePickerDOB
+      // dtpDateOfBirth
       // 
-      this.dateTimePickerDOB.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.dateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-      this.dateTimePickerDOB.Location = new System.Drawing.Point(169, 188);
-      this.dateTimePickerDOB.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
-      this.dateTimePickerDOB.Name = "dateTimePickerDOB";
-      this.dateTimePickerDOB.Size = new System.Drawing.Size(164, 26);
-      this.dateTimePickerDOB.TabIndex = 48;
-      this.dateTimePickerDOB.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
+      this.dtpDateOfBirth.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+      this.dtpDateOfBirth.Location = new System.Drawing.Point(169, 188);
+      this.dtpDateOfBirth.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
+      this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+      this.dtpDateOfBirth.Size = new System.Drawing.Size(164, 26);
+      this.dtpDateOfBirth.TabIndex = 48;
+      this.dtpDateOfBirth.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
       // 
       // rbMale
       // 
@@ -301,6 +302,7 @@
       this.linkReomve.TabStop = true;
       this.linkReomve.Text = "Remove Image";
       this.linkReomve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.linkReomve.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkReomve_LinkClicked);
       // 
       // linkChoseImage
       // 
@@ -502,6 +504,10 @@
       this.lblTitle.TabIndex = 59;
       this.lblTitle.Text = "Add New Patient";
       // 
+      // openFileDialog1
+      // 
+      this.openFileDialog1.FileName = "openFileDialog1";
+      // 
       // frmAddUpdatePatient
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,7 +524,7 @@
       this.Controls.Add(this.cmbCountry);
       this.Controls.Add(this.rbFemal);
       this.Controls.Add(this.rbMale);
-      this.Controls.Add(this.dateTimePickerDOB);
+      this.Controls.Add(this.dtpDateOfBirth);
       this.Controls.Add(this.iconButton5);
       this.Controls.Add(this.iconButton6);
       this.Controls.Add(this.iconButton7);
@@ -580,7 +586,7 @@
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.Label label11;
-    private System.Windows.Forms.DateTimePicker dateTimePickerDOB;
+    private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
     private System.Windows.Forms.RadioButton rbMale;
     private System.Windows.Forms.RadioButton rbFemal;
     private System.Windows.Forms.ComboBox cmbCountry;
@@ -591,5 +597,6 @@
     private System.Windows.Forms.Button button2;
     private FontAwesome.Sharp.IconButton iconButton9;
     private System.Windows.Forms.Label lblTitle;
+    private System.Windows.Forms.OpenFileDialog openFileDialog1;
   }
 }

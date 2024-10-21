@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-  public class clsPatient
+  public class clsPatient: clsPerson
   {
     public enum enMode { AddNew = 0, Update = 1 }
     public enMode Mode = enMode.AddNew;
@@ -35,6 +35,8 @@ namespace Business
 
     private bool _AddNewPatient()
     {
+
+
       this.PatientID = clsPatientData.AddNewPatient(this.PersonID);
       return (this.PatientID != 0);
     }
@@ -72,7 +74,7 @@ namespace Business
 
     // handle add and update call
     public bool Save()
-    {
+    {       
       switch (Mode)
       {
         case enMode.AddNew:
