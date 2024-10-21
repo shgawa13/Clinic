@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lblPatientsNumbers = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
@@ -36,36 +35,15 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilter = new System.Windows.Forms.ComboBox();
-      this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
       this.label2 = new System.Windows.Forms.Label();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // iconButton1
-      // 
-      this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-      this.iconButton1.FlatAppearance.BorderSize = 0;
-      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UsersLine;
-      this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 70;
-      this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.iconButton1.Location = new System.Drawing.Point(325, 9);
-      this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 9);
-      this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-      this.iconButton1.Size = new System.Drawing.Size(131, 77);
-      this.iconButton1.TabIndex = 1;
-      this.iconButton1.Text = "Patients";
-      this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.iconButton1.UseVisualStyleBackColor = true;
       // 
       // panel1
       // 
@@ -155,6 +133,48 @@
       this.cbFilter.TabIndex = 2;
       this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
       // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.label2.Location = new System.Drawing.Point(12, 17);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(72, 21);
+      this.label2.TabIndex = 0;
+      this.label2.Text = "Find by:";
+      // 
+      // panel3
+      // 
+      this.panel3.Controls.Add(this.iconButton1);
+      this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.panel3.Location = new System.Drawing.Point(0, -95);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(800, 95);
+      this.panel3.TabIndex = 5;
+      // 
+      // iconButton1
+      // 
+      this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+      this.iconButton1.FlatAppearance.BorderSize = 0;
+      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UsersLine;
+      this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton1.IconSize = 70;
+      this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.iconButton1.Location = new System.Drawing.Point(325, 9);
+      this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 9);
+      this.iconButton1.Name = "iconButton1";
+      this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+      this.iconButton1.Size = new System.Drawing.Size(131, 77);
+      this.iconButton1.TabIndex = 1;
+      this.iconButton1.Text = "Patients";
+      this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.iconButton1.UseVisualStyleBackColor = true;
+      // 
       // btnAddNewPatient
       // 
       this.btnAddNewPatient.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -175,26 +195,7 @@
       this.btnAddNewPatient.Text = "AddNew";
       this.btnAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnAddNewPatient.UseVisualStyleBackColor = false;
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label2.Location = new System.Drawing.Point(12, 17);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(72, 21);
-      this.label2.TabIndex = 0;
-      this.label2.Text = "Find by:";
-      // 
-      // panel3
-      // 
-      this.panel3.Controls.Add(this.iconButton1);
-      this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.panel3.Location = new System.Drawing.Point(0, -95);
-      this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(800, 95);
-      this.panel3.TabIndex = 5;
+      this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
       // 
       // frmListPatients
       // 

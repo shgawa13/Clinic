@@ -111,5 +111,11 @@ namespace Dental_App.Patients
       // here it will handle both string and Numbers
       lblPatientsNumbers.Text = _dtPatients.Rows.Count.ToString();
     }
+
+    private void btnAddNewPatient_Click(object sender, EventArgs e)
+    {
+      Form frm = new frmAddUpdatePatient();
+      frm.ShowDialog();
+    }
   }
 }
