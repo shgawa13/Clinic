@@ -71,17 +71,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global_Classes\clsUtilities.cs" />
     <Compile Include="Patients\controls\ctrlPatientCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Patients\controls\ctrlPatientCard.Designer.cs">
       <DependentUpon>ctrlPatientCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Patients\frmAddNewPatient.cs">
+    <Compile Include="Patients\frmAddUpdatePatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patients\frmAddNewPatient.Designer.cs">
-      <DependentUpon>frmAddNewPatient.cs</DependentUpon>
+    <Compile Include="Patients\frmAddUpdatePatient.Designer.cs">
+      <DependentUpon>frmAddUpdatePatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Patients\frmListPatients.cs">
       <SubType>Form</SubType>
@@ -103,8 +104,8 @@
     <EmbeddedResource Include="Patients\controls\ctrlPatientCard.resx">
       <DependentUpon>ctrlPatientCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patients\frmAddNewPatient.resx">
-      <DependentUpon>frmAddNewPatient.cs</DependentUpon>
+    <EmbeddedResource Include="Patients\frmAddUpdatePatient.resx">
+      <DependentUpon>frmAddUpdatePatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\frmListPatients.resx">
       <DependentUpon>frmListPatients.cs</DependentUpon>

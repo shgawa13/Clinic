@@ -1,10 +1,12 @@
 ﻿using Business;
+using Dental_App.Global_Classes;
 using Dental_App.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -120,6 +122,57 @@ namespace Dental_App.Patients
 
     }
 
+    // handle image Function is devided into  two parts:
+    // (1) Delete old image incase was changed
+    // (2) copy image from origanl Folder into project folder
+
+    private bool _HandleImage()
+    {
+      // First we handle Delete Image 
+      // we check if new image is not equle to image in picturebox
+      if(_Patient.PatientInfo.ImagePath != pbAvatar.ImageLocation)
+      {
+        // now we make sure the image path is not empty so we don't get error
+        if(_Patient.PatientInfo.ImagePath != "")
+        {
+          try
+          {
+            // now we can delete image
+            File.Delete(_Patient.PatientInfo.ImagePath);
+
+          }catch(IOException iox)
+          {
+            MessageBox.Show("Something went worng we couldn't delete image", "Can't Delete Image",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+          }
+        }
+
+        // copy image into project folder
+        if(pbAvatar.ImageLocation != null)
+        {
+          string SourceImageFile = pbAvatar.ImageLocation.ToString();
+
+          if (clsUtilities.CopyImageToProjectImages(ref SourceImageFile))
+          {
+            pbAvatar.ImageLocation = SourceImageFile;
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+        }
+
+      }
+        // we can return true in case image was only deleted
+        return true;
+    }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+
+    }
+
     private void frmAddUpdatePatient_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
@@ -127,10 +180,6 @@ namespace Dental_App.Patients
         _LoadData();
     }
 
-    private void btnSave_Click(object sender, EventArgs e)
-    {
-
-    }
 
     private void linkChoseImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
