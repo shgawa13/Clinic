@@ -14,6 +14,7 @@ namespace Dental_App.Patients
 {
   public partial class frmAddUpdatePatient : Form
   {
+    // Delegate function will return PatientID
     public delegate void DataBackEventHandler(object sender, int PatientID);
     public event DataBackEventHandler DataBack;
 
@@ -81,7 +82,49 @@ namespace Dental_App.Patients
       txtbPhone.Text = "";
       txtbEmail.Text = "";
 
+    }
 
+    private void _LoadData()
+    {
+      _Patient = clsPatient.FindPatientByID(_PatientID);
+
+      if(_Patient == null)
+      {
+        MessageBox.Show($"there is no Patient with {_PatientID}", "Patient Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        this.Close();
+        return;
+      }
+
+      // here we fill info form the object
+      lblPatientID.Text = _Patient.PatientID.ToString();
+      txtbFirstName.Text = _Patient.PatientInfo.FirstName;
+      txtbSecondName.Text = _Patient.PatientInfo.SecondName;
+      txtbLastName.Text = _Patient.PatientInfo.LastName;
+      txtbNationalID.Text = _Patient.PatientInfo.NationalID;
+      txtbPhone.Text = _Patient.PatientInfo.PhoneNumber;
+      txtbEmail.Text = _Patient.PatientInfo.Email;
+
+      // handle Gander
+      if (_Patient.PatientInfo.Gendor == 0)
+        rbMale.Checked = true;
+      else
+        rbFemal.Checked = true;
+      //cmbCountry.SelectedIndex = cmbCountry.FindString(_Patient.CountryInfo.CountryName);
+      cmbCountry.SelectedIndex = cmbCountry.FindString(_Patient.PatientInfo.CountryInfo.CountryName);
+      if (_Patient.PatientInfo.ImagePath != "")
+      {
+        pbAvatar.ImageLocation = _Patient.PatientInfo.ImagePath;
+      }
+
+      linkReomve.Visible = (_Patient.PatientInfo.ImagePath != "");
+
+    }
+
+    private void frmAddUpdatePatient_Load(object sender, EventArgs e)
+    {
+      _ResetDefualtValues();
+      if (_Mode == enMode.Update)
+        _LoadData();
     }
 
     private void btnSave_Click(object sender, EventArgs e)
@@ -105,5 +148,6 @@ namespace Dental_App.Patients
       if (pbAvatar.ImageLocation == null)
         pbAvatar.Image = Resources.Female_avatar;
     }
+
   }
 }

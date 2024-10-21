@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.txtbFirstName = new System.Windows.Forms.TextBox();
-      this.label2 = new System.Windows.Forms.Label();
+      this.lblPatientID = new System.Windows.Forms.Label();
       this.txtbSecondName = new System.Windows.Forms.TextBox();
       this.label3 = new System.Windows.Forms.Label();
       this.txtbLastName = new System.Windows.Forms.TextBox();
@@ -75,16 +75,16 @@
       this.txtbFirstName.Size = new System.Drawing.Size(164, 26);
       this.txtbFirstName.TabIndex = 0;
       // 
-      // label2
+      // lblPatientID
       // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label2.Location = new System.Drawing.Point(165, 47);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(37, 21);
-      this.label2.TabIndex = 3;
-      this.label2.Text = "???";
+      this.lblPatientID.AutoSize = true;
+      this.lblPatientID.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblPatientID.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.lblPatientID.Location = new System.Drawing.Point(165, 47);
+      this.lblPatientID.Name = "lblPatientID";
+      this.lblPatientID.Size = new System.Drawing.Size(37, 21);
+      this.lblPatientID.TabIndex = 3;
+      this.lblPatientID.Text = "???";
       // 
       // txtbSecondName
       // 
@@ -541,11 +541,12 @@
       this.Controls.Add(this.txtbNationalID);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.txtbLastName);
-      this.Controls.Add(this.label2);
+      this.Controls.Add(this.lblPatientID);
       this.Controls.Add(this.txtbSecondName);
       this.Controls.Add(this.txtbFirstName);
       this.Name = "frmAddUpdatePatient";
       this.Text = "frmAddUpdatePatient";
+      this.Load += new System.EventHandler(this.frmAddUpdatePatient_Load);
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -555,7 +556,7 @@
     #endregion
 
     private System.Windows.Forms.TextBox txtbFirstName;
-    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label lblPatientID;
     private System.Windows.Forms.TextBox txtbSecondName;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.TextBox txtbLastName;
