@@ -23,6 +23,7 @@ namespace Dental_App.Patients
     private enMode _Mode;
     private int _PatientID =-1;
     clsPatient _Patient;
+    clsPerson _Person;
 
     public frmAddUpdatePatient()
     {
@@ -50,8 +51,36 @@ namespace Dental_App.Patients
     }
 
     // Reset Value
-    private void _ResetValues()
+    private void _ResetDefualtValues()
     {
+      _FillCountriesInComoboBox();
+      if(_Mode == enMode.AddNew)
+      {
+        lblTitle.Text = "Add New Patient";
+        _Person = new clsPerson();
+        _Patient = new clsPatient();
+      }
+      else
+      {
+        lblTitle.Text = "Update Patient";
+      }
+
+      if (rbMale.Checked)
+        pbAvatar.Image = Resources.Male_avatar;
+      else
+        pbAvatar.Image = Resources.Female_avatar;
+      // hide Remove link incase there is no avatar.
+      linkReomve.Visible = (pbAvatar.ImageLocation != null);
+
+      txtbFirstName.Text = "";
+      txtbSecondName.Text = "";
+      txtbLastName.Text = "";
+      txtbNationalID.Text = "";
+      cmbCountry.SelectedIndex = cmbCountry.FindString("Bahrain");
+      rbMale.Checked = true;
+      txtbPhone.Text = "";
+      txtbEmail.Text = "";
+
 
     }
 

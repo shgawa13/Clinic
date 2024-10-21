@@ -28,15 +28,15 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.txtFirstName = new System.Windows.Forms.TextBox();
+      this.txtbFirstName = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.txtSecondName = new System.Windows.Forms.TextBox();
+      this.txtbSecondName = new System.Windows.Forms.TextBox();
       this.label3 = new System.Windows.Forms.Label();
-      this.txtLastName = new System.Windows.Forms.TextBox();
-      this.txtNationalID = new System.Windows.Forms.TextBox();
+      this.txtbLastName = new System.Windows.Forms.TextBox();
+      this.txtbNationalID = new System.Windows.Forms.TextBox();
       this.label5 = new System.Windows.Forms.Label();
-      this.txtPhone = new System.Windows.Forms.TextBox();
-      this.txtEmail = new System.Windows.Forms.TextBox();
+      this.txtbPhone = new System.Windows.Forms.TextBox();
+      this.txtbEmail = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
       this.label6 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
@@ -67,13 +67,13 @@
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
-      // txtFirstName
+      // txtbFirstName
       // 
-      this.txtFirstName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtFirstName.Location = new System.Drawing.Point(169, 91);
-      this.txtFirstName.Name = "txtFirstName";
-      this.txtFirstName.Size = new System.Drawing.Size(164, 26);
-      this.txtFirstName.TabIndex = 0;
+      this.txtbFirstName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtbFirstName.Location = new System.Drawing.Point(169, 91);
+      this.txtbFirstName.Name = "txtbFirstName";
+      this.txtbFirstName.Size = new System.Drawing.Size(164, 26);
+      this.txtbFirstName.TabIndex = 0;
       // 
       // label2
       // 
@@ -86,13 +86,13 @@
       this.label2.TabIndex = 3;
       this.label2.Text = "???";
       // 
-      // txtSecondName
+      // txtbSecondName
       // 
-      this.txtSecondName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtSecondName.Location = new System.Drawing.Point(451, 91);
-      this.txtSecondName.Name = "txtSecondName";
-      this.txtSecondName.Size = new System.Drawing.Size(164, 26);
-      this.txtSecondName.TabIndex = 2;
+      this.txtbSecondName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtbSecondName.Location = new System.Drawing.Point(451, 91);
+      this.txtbSecondName.Name = "txtbSecondName";
+      this.txtbSecondName.Size = new System.Drawing.Size(164, 26);
+      this.txtbSecondName.TabIndex = 2;
       // 
       // label3
       // 
@@ -105,21 +105,21 @@
       this.label3.TabIndex = 5;
       this.label3.Text = "LastName";
       // 
-      // txtLastName
+      // txtbLastName
       // 
-      this.txtLastName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtLastName.Location = new System.Drawing.Point(712, 91);
-      this.txtLastName.Name = "txtLastName";
-      this.txtLastName.Size = new System.Drawing.Size(164, 26);
-      this.txtLastName.TabIndex = 4;
+      this.txtbLastName.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtbLastName.Location = new System.Drawing.Point(712, 91);
+      this.txtbLastName.Name = "txtbLastName";
+      this.txtbLastName.Size = new System.Drawing.Size(164, 26);
+      this.txtbLastName.TabIndex = 4;
       // 
-      // txtNationalID
+      // txtbNationalID
       // 
-      this.txtNationalID.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtNationalID.Location = new System.Drawing.Point(169, 139);
-      this.txtNationalID.Name = "txtNationalID";
-      this.txtNationalID.Size = new System.Drawing.Size(164, 26);
-      this.txtNationalID.TabIndex = 6;
+      this.txtbNationalID.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtbNationalID.Location = new System.Drawing.Point(169, 139);
+      this.txtbNationalID.Name = "txtbNationalID";
+      this.txtbNationalID.Size = new System.Drawing.Size(164, 26);
+      this.txtbNationalID.TabIndex = 6;
       // 
       // label5
       // 
@@ -132,21 +132,21 @@
       this.label5.TabIndex = 9;
       this.label5.Text = "SecondName";
       // 
-      // txtPhone
+      // txtbPhone
       // 
-      this.txtPhone.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtPhone.Location = new System.Drawing.Point(169, 283);
-      this.txtPhone.Name = "txtPhone";
-      this.txtPhone.Size = new System.Drawing.Size(164, 26);
-      this.txtPhone.TabIndex = 12;
+      this.txtbPhone.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtbPhone.Location = new System.Drawing.Point(169, 283);
+      this.txtbPhone.Name = "txtbPhone";
+      this.txtbPhone.Size = new System.Drawing.Size(164, 26);
+      this.txtbPhone.TabIndex = 12;
       // 
-      // txtEmail
+      // txtbEmail
       // 
-      this.txtEmail.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtEmail.Location = new System.Drawing.Point(169, 379);
-      this.txtEmail.Name = "txtEmail";
-      this.txtEmail.Size = new System.Drawing.Size(164, 26);
-      this.txtEmail.TabIndex = 14;
+      this.txtbEmail.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtbEmail.Location = new System.Drawing.Point(169, 379);
+      this.txtbEmail.Name = "txtbEmail";
+      this.txtbEmail.Size = new System.Drawing.Size(164, 26);
+      this.txtbEmail.TabIndex = 14;
       // 
       // label1
       // 
@@ -494,11 +494,11 @@
       // lblTitle
       // 
       this.lblTitle.AutoSize = true;
-      this.lblTitle.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblTitle.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
-      this.lblTitle.Location = new System.Drawing.Point(382, 19);
+      this.lblTitle.Location = new System.Drawing.Point(361, 18);
       this.lblTitle.Name = "lblTitle";
-      this.lblTitle.Size = new System.Drawing.Size(177, 26);
+      this.lblTitle.Size = new System.Drawing.Size(201, 30);
       this.lblTitle.TabIndex = 59;
       this.lblTitle.Text = "Add New Patient";
       // 
@@ -535,15 +535,15 @@
       this.Controls.Add(this.label9);
       this.Controls.Add(this.label10);
       this.Controls.Add(this.label11);
-      this.Controls.Add(this.txtEmail);
-      this.Controls.Add(this.txtPhone);
+      this.Controls.Add(this.txtbEmail);
+      this.Controls.Add(this.txtbPhone);
       this.Controls.Add(this.label5);
-      this.Controls.Add(this.txtNationalID);
+      this.Controls.Add(this.txtbNationalID);
       this.Controls.Add(this.label3);
-      this.Controls.Add(this.txtLastName);
+      this.Controls.Add(this.txtbLastName);
       this.Controls.Add(this.label2);
-      this.Controls.Add(this.txtSecondName);
-      this.Controls.Add(this.txtFirstName);
+      this.Controls.Add(this.txtbSecondName);
+      this.Controls.Add(this.txtbFirstName);
       this.Name = "frmAddUpdatePatient";
       this.Text = "frmAddUpdatePatient";
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
@@ -554,15 +554,15 @@
 
     #endregion
 
-    private System.Windows.Forms.TextBox txtFirstName;
+    private System.Windows.Forms.TextBox txtbFirstName;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox txtSecondName;
+    private System.Windows.Forms.TextBox txtbSecondName;
     private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.TextBox txtLastName;
-    private System.Windows.Forms.TextBox txtNationalID;
+    private System.Windows.Forms.TextBox txtbLastName;
+    private System.Windows.Forms.TextBox txtbNationalID;
     private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.TextBox txtPhone;
-    private System.Windows.Forms.TextBox txtEmail;
+    private System.Windows.Forms.TextBox txtbPhone;
+    private System.Windows.Forms.TextBox txtbEmail;
     private FontAwesome.Sharp.IconButton iconButton5;
     private FontAwesome.Sharp.IconButton iconButton6;
     private FontAwesome.Sharp.IconButton iconButton7;
