@@ -131,15 +131,15 @@ namespace Dental_App.Patients
     {
       // First we handle Delete Image 
       // we check if new image is not equle to image in picturebox
-      if(_Patient.PatientInfo.ImagePath != pbAvatar.ImageLocation)
+      if(_Patient.ImagePath != pbAvatar.ImageLocation)
       {
         // now we make sure the image path is not empty so we don't get error
-        if(_Patient.PatientInfo.ImagePath != "")
+        if(_Patient.ImagePath != "")
         {
           try
           {
             // now we can delete image
-            File.Delete(_Patient.PatientInfo.ImagePath);
+            File.Delete(_Patient.ImagePath);
 
           }catch(IOException iox)
           {
@@ -199,6 +199,7 @@ namespace Dental_App.Patients
 
       if (_Person.Save())
       {
+        _Patient.PersonID = _Person.PersonID;
         if (_Patient.Save())
         {
           lblPatientID.Text = _Patient.PatientID.ToString();
@@ -208,10 +209,14 @@ namespace Dental_App.Patients
 
           MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-          DataBack.Invoke(this, _Patient.PatientID);
+          DataBack.Invoke(this, _PatientID);
         }
-      }else
-        MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
+      else
+      {
+          MessageBox.Show("Error Couldn't Save Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+      }
 
 
 

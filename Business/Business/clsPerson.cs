@@ -76,7 +76,7 @@ namespace Business
     // AddNewPerson
     private bool _AddNewPerson()
     {
-      int PersonID = clsPersonData.AddNewPerson(this.NationalID,this.FirstName,this.SecondName,this.LastName,
+      this.PersonID = clsPersonData.AddNewPerson(this.NationalID,this.FirstName,this.SecondName,this.LastName,
             this.DateOfBirth,this.Gendor,this.PhoneNumber,this.Email,this.ImagePath,this.NationalityCountryID);
 
       return (this.PersonID != -1);
@@ -164,7 +164,7 @@ namespace Business
       }
     }
 
-    // Callin Save insted of calling add and update functions
+    // Calling Save insted of calling add and update functions
     public bool Save()
     {
       switch (Mode)
