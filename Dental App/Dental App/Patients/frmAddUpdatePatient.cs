@@ -202,14 +202,15 @@ namespace Dental_App.Patients
         _Patient.PersonID = _Person.PersonID;
         if (_Patient.Save())
         {
-          lblPatientID.Text = _Patient.PatientID.ToString();
+          _PatientID = _Patient.PatientID;
+          lblPatientID.Text = _PatientID.ToString();
           //change form mode to update.
           _Mode = enMode.Update;
           lblTitle.Text = "Update Patient";
 
           MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-          DataBack.Invoke(this, _PatientID);
+          DataBack?.Invoke(this, _PatientID);
         }
       }
       else
