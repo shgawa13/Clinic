@@ -306,6 +306,7 @@
       // 
       // linkChoseImage
       // 
+      this.linkChoseImage.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
       this.linkChoseImage.AutoSize = true;
       this.linkChoseImage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.linkChoseImage.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;

@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lblPatientsNumbers = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
@@ -35,14 +36,19 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilter = new System.Windows.Forms.ComboBox();
+      this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
       this.label2 = new System.Windows.Forms.Label();
       this.panel3 = new System.Windows.Forms.Panel();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
-      this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
+      this.ctmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.tlsmShowInfo = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmEdit = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmDelete = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
+      this.ctmsPatient.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -85,6 +91,7 @@
       this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
       this.dgvPatients.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dgvPatients.ContextMenuStrip = this.ctmsPatient;
       this.dgvPatients.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.dgvPatients.Location = new System.Drawing.Point(0, 56);
       this.dgvPatients.Name = "dgvPatients";
@@ -133,6 +140,28 @@
       this.cbFilter.TabIndex = 2;
       this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
       // 
+      // btnAddNewPatient
+      // 
+      this.btnAddNewPatient.Anchor = System.Windows.Forms.AnchorStyles.Right;
+      this.btnAddNewPatient.BackColor = System.Drawing.Color.Snow;
+      this.btnAddNewPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddNewPatient.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.btnAddNewPatient.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+      this.btnAddNewPatient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(134)))), ((int)(((byte)(223)))));
+      this.btnAddNewPatient.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnAddNewPatient.IconSize = 36;
+      this.btnAddNewPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.btnAddNewPatient.Location = new System.Drawing.Point(673, 3);
+      this.btnAddNewPatient.Name = "btnAddNewPatient";
+      this.btnAddNewPatient.Size = new System.Drawing.Size(112, 50);
+      this.btnAddNewPatient.TabIndex = 1;
+      this.btnAddNewPatient.Text = "AddNew";
+      this.btnAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnAddNewPatient.UseVisualStyleBackColor = false;
+      this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
+      // 
       // label2
       // 
       this.label2.AutoSize = true;
@@ -175,27 +204,35 @@
       this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
-      // btnAddNewPatient
+      // ctmsPatient
       // 
-      this.btnAddNewPatient.Anchor = System.Windows.Forms.AnchorStyles.Right;
-      this.btnAddNewPatient.BackColor = System.Drawing.Color.Snow;
-      this.btnAddNewPatient.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddNewPatient.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.btnAddNewPatient.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-      this.btnAddNewPatient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(134)))), ((int)(((byte)(223)))));
-      this.btnAddNewPatient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.btnAddNewPatient.IconSize = 36;
-      this.btnAddNewPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.btnAddNewPatient.Location = new System.Drawing.Point(673, 3);
-      this.btnAddNewPatient.Name = "btnAddNewPatient";
-      this.btnAddNewPatient.Size = new System.Drawing.Size(112, 50);
-      this.btnAddNewPatient.TabIndex = 1;
-      this.btnAddNewPatient.Text = "AddNew";
-      this.btnAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnAddNewPatient.UseVisualStyleBackColor = false;
-      this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
+      this.ctmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsmShowInfo,
+            this.tlsmEdit,
+            this.tlsmDelete});
+      this.ctmsPatient.Name = "ctmsPatient";
+      this.ctmsPatient.Size = new System.Drawing.Size(181, 92);
+      this.ctmsPatient.Text = "Mange Patient";
+      // 
+      // tlsmShowInfo
+      // 
+      this.tlsmShowInfo.Name = "tlsmShowInfo";
+      this.tlsmShowInfo.Size = new System.Drawing.Size(180, 22);
+      this.tlsmShowInfo.Text = "Show info";
+      this.tlsmShowInfo.Click += new System.EventHandler(this.tlsmShowInfo_Click);
+      // 
+      // tlsmEdit
+      // 
+      this.tlsmEdit.Name = "tlsmEdit";
+      this.tlsmEdit.Size = new System.Drawing.Size(180, 22);
+      this.tlsmEdit.Text = "Edit";
+      this.tlsmEdit.Click += new System.EventHandler(this.tlsmEdit_Click);
+      // 
+      // tlsmDelete
+      // 
+      this.tlsmDelete.Name = "tlsmDelete";
+      this.tlsmDelete.Size = new System.Drawing.Size(180, 22);
+      this.tlsmDelete.Text = "Delete";
       // 
       // frmListPatients
       // 
@@ -216,6 +253,7 @@
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();
       this.panel3.ResumeLayout(false);
+      this.ctmsPatient.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -232,5 +270,9 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Panel panel3;
     private System.Windows.Forms.TextBox txtFilterValue;
+    private System.Windows.Forms.ContextMenuStrip ctmsPatient;
+    private System.Windows.Forms.ToolStripMenuItem tlsmShowInfo;
+    private System.Windows.Forms.ToolStripMenuItem tlsmEdit;
+    private System.Windows.Forms.ToolStripMenuItem tlsmDelete;
   }
 }

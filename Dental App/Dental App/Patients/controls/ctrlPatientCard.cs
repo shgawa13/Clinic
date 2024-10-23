@@ -16,21 +16,22 @@ namespace Dental_App.Patients.controls
   public partial class ctrlPatientCard : UserControl
   {
     private int _PatientID;
-    private clsPatient _Patient;
-
     public int PatientID
     {
       get { return _PatientID; }
     }
+    private clsPatient _Patient;
 
     public ctrlPatientCard()
     {
       InitializeComponent();
     }
 
-    public void LoadPatientInfo(int PateintID)
+    public void LoadPatientInfo(int pateintID)
     {
-      _Patient = clsPatient.FindPatientByID(PatientID);
+      _PatientID = pateintID;
+
+      _Patient = clsPatient.FindPatientByID(_PatientID);
       if(_Patient == null)
       {
         ResetPersonInfo();
@@ -44,14 +45,14 @@ namespace Dental_App.Patients.controls
     private void _FillPersonInfo()
     {
       lblPatientID.Text = _Patient.PatientID.ToString();
-      lblFullName.Text = _Patient.FullName;
-      lblNationalID.Text = _Patient.NationalID;
-      lblDateOfBirth.Text = _Patient.DateOfBirth.ToString();
-      lblGendor.Text = (_Patient.Gendor==0) ? "Male":"Female";
-      lblPhone.Text = _Patient.PhoneNumber;
-      lblCountry.Text = clsCountries.Find(_Patient.NationalityCountryID).CountryName;
-      lblEmail.Text = _Patient.Email;
-      // _LoadPersonImage();
+      lblFullName.Text = _Patient.PatientInfo.FullName;
+      lblNationalID.Text = _Patient.PatientInfo.NationalID;
+      lblDateOfBirth.Text = _Patient.PatientInfo.DateOfBirth.ToString();
+      lblGendor.Text = (_Patient.PatientInfo.Gendor==0) ? "Male":"Female";
+      lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
+      lblCountry.Text = clsCountries.Find(_Patient.PatientInfo.NationalityCountryID).CountryName;
+      lblEmail.Text = _Patient.PatientInfo.Email;
+       _LoadPersonImage();
     }
 
     // Handle Patient Image
@@ -62,7 +63,7 @@ namespace Dental_App.Patients.controls
       else
         pbAvatar.Image = Resources.Female_avatar;
 
-      string ImagePath = _Patient.ImagePath;
+      string ImagePath = _Patient.PatientInfo.ImagePath;
       if(ImagePath != "")
       {
         if (File.Exists(ImagePath))
@@ -85,6 +86,14 @@ namespace Dental_App.Patients.controls
       lblEmail.Text = "???";
 
       pbAvatar.Image = Resources.Male_avatar;
+    }
+
+    private void linkEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Form frm = new frmAddUpdatePatient(_PatientID);
+      frm.Show();
+      // refreching
+      LoadPatientInfo(_PatientID);
     }
   }
 }

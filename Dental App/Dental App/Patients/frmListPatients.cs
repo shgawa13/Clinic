@@ -117,5 +117,19 @@ namespace Dental_App.Patients
       Form frm = new frmAddUpdatePatient();
       frm.ShowDialog();
     }
+
+    private void tlsmShowInfo_Click(object sender, EventArgs e)
+    {
+      int PateintID = (int)dgvPatients.CurrentRow.Cells[0].Value;
+      Form frm = new frmPatientInfo(PateintID);
+      frm.Show();
+      // refreshing
+      
+    }
+
+    private void tlsmEdit_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show($"ID: {(int)dgvPatients.CurrentRow.Cells[0].Value}");
+    }
   }
 }

@@ -90,6 +90,12 @@
     <Compile Include="Patients\frmListPatients.Designer.cs">
       <DependentUpon>frmListPatients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patients\frmPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\frmPatientInfo.Designer.cs">
+      <DependentUpon>frmPatientInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Appointmnets\frmAppointments.resx">
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\frmListPatients.resx">
       <DependentUpon>frmListPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\frmPatientInfo.resx">
+      <DependentUpon>frmPatientInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

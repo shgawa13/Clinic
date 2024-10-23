@@ -297,13 +297,14 @@
       this.linkEdit.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.linkEdit.ForeColor = System.Drawing.Color.Thistle;
       this.linkEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.linkEdit.LinkColor = System.Drawing.SystemColors.Window;
+      this.linkEdit.LinkColor = System.Drawing.SystemColors.GradientActiveCaption;
       this.linkEdit.Location = new System.Drawing.Point(623, 29);
       this.linkEdit.Name = "linkEdit";
       this.linkEdit.Size = new System.Drawing.Size(83, 18);
       this.linkEdit.TabIndex = 33;
       this.linkEdit.TabStop = true;
       this.linkEdit.Text = "Edit Info";
+      this.linkEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEdit_LinkClicked);
       // 
       // pbAvatar
       // 
