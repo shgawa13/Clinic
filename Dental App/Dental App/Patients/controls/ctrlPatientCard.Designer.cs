@@ -45,8 +45,9 @@
       this.lblFullName = new System.Windows.Forms.Label();
       this.lblPatientID = new System.Windows.Forms.Label();
       this.grbPatient = new System.Windows.Forms.GroupBox();
+      this.iconButton9 = new FontAwesome.Sharp.IconButton();
       this.linkEdit = new System.Windows.Forms.LinkLabel();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.pbAvatar = new System.Windows.Forms.PictureBox();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
       this.iconButton7 = new FontAwesome.Sharp.IconButton();
@@ -56,14 +57,14 @@
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.grbPatient.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
       // label1
       // 
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.ForeColor = System.Drawing.Color.Black;
+      this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label1.Location = new System.Drawing.Point(16, 21);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(94, 24);
@@ -74,7 +75,7 @@
       // 
       this.label2.AutoSize = true;
       this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.ForeColor = System.Drawing.Color.Black;
+      this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label2.Location = new System.Drawing.Point(16, 67);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(97, 24);
@@ -85,7 +86,7 @@
       // 
       this.label3.AutoSize = true;
       this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label3.ForeColor = System.Drawing.Color.Black;
+      this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label3.Location = new System.Drawing.Point(16, 163);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(49, 24);
@@ -96,7 +97,7 @@
       // 
       this.label4.AutoSize = true;
       this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.ForeColor = System.Drawing.Color.Black;
+      this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label4.Location = new System.Drawing.Point(16, 115);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(100, 24);
@@ -107,7 +108,7 @@
       // 
       this.label5.AutoSize = true;
       this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label5.ForeColor = System.Drawing.Color.Black;
+      this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label5.Location = new System.Drawing.Point(16, 355);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(62, 24);
@@ -118,7 +119,7 @@
       // 
       this.label6.AutoSize = true;
       this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label6.ForeColor = System.Drawing.Color.Black;
+      this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label6.Location = new System.Drawing.Point(16, 307);
       this.label6.Name = "label6";
       this.label6.Size = new System.Drawing.Size(78, 24);
@@ -129,7 +130,7 @@
       // 
       this.label7.AutoSize = true;
       this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label7.ForeColor = System.Drawing.Color.Black;
+      this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label7.Location = new System.Drawing.Point(16, 259);
       this.label7.Name = "label7";
       this.label7.Size = new System.Drawing.Size(66, 24);
@@ -140,7 +141,7 @@
       // 
       this.label8.AutoSize = true;
       this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label8.ForeColor = System.Drawing.Color.Black;
+      this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.label8.Location = new System.Drawing.Point(16, 211);
       this.label8.Name = "label8";
       this.label8.Size = new System.Drawing.Size(74, 24);
@@ -151,7 +152,7 @@
       // 
       this.lblEmail.AutoSize = true;
       this.lblEmail.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblEmail.ForeColor = System.Drawing.Color.Black;
+      this.lblEmail.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblEmail.Location = new System.Drawing.Point(183, 356);
       this.lblEmail.Name = "lblEmail";
       this.lblEmail.Size = new System.Drawing.Size(43, 24);
@@ -162,7 +163,7 @@
       // 
       this.lblCountry.AutoSize = true;
       this.lblCountry.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblCountry.ForeColor = System.Drawing.Color.Black;
+      this.lblCountry.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblCountry.Location = new System.Drawing.Point(183, 306);
       this.lblCountry.Name = "lblCountry";
       this.lblCountry.Size = new System.Drawing.Size(43, 24);
@@ -173,7 +174,7 @@
       // 
       this.lblPhone.AutoSize = true;
       this.lblPhone.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPhone.ForeColor = System.Drawing.Color.Black;
+      this.lblPhone.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblPhone.Location = new System.Drawing.Point(183, 256);
       this.lblPhone.Name = "lblPhone";
       this.lblPhone.Size = new System.Drawing.Size(43, 24);
@@ -184,7 +185,7 @@
       // 
       this.lblGendor.AutoSize = true;
       this.lblGendor.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblGendor.ForeColor = System.Drawing.Color.Black;
+      this.lblGendor.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblGendor.Location = new System.Drawing.Point(183, 205);
       this.lblGendor.Name = "lblGendor";
       this.lblGendor.Size = new System.Drawing.Size(43, 24);
@@ -195,7 +196,7 @@
       // 
       this.lblDateOfBirth.AutoSize = true;
       this.lblDateOfBirth.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblDateOfBirth.ForeColor = System.Drawing.Color.Black;
+      this.lblDateOfBirth.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblDateOfBirth.Location = new System.Drawing.Point(183, 155);
       this.lblDateOfBirth.Name = "lblDateOfBirth";
       this.lblDateOfBirth.Size = new System.Drawing.Size(43, 24);
@@ -206,7 +207,7 @@
       // 
       this.lblNationalID.AutoSize = true;
       this.lblNationalID.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblNationalID.ForeColor = System.Drawing.Color.Black;
+      this.lblNationalID.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblNationalID.Location = new System.Drawing.Point(183, 113);
       this.lblNationalID.Name = "lblNationalID";
       this.lblNationalID.Size = new System.Drawing.Size(43, 24);
@@ -217,7 +218,7 @@
       // 
       this.lblFullName.AutoSize = true;
       this.lblFullName.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblFullName.ForeColor = System.Drawing.Color.Black;
+      this.lblFullName.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblFullName.Location = new System.Drawing.Point(183, 67);
       this.lblFullName.Name = "lblFullName";
       this.lblFullName.Size = new System.Drawing.Size(43, 24);
@@ -228,7 +229,7 @@
       // 
       this.lblPatientID.AutoSize = true;
       this.lblPatientID.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPatientID.ForeColor = System.Drawing.Color.Black;
+      this.lblPatientID.ForeColor = System.Drawing.Color.FloralWhite;
       this.lblPatientID.Location = new System.Drawing.Point(183, 21);
       this.lblPatientID.Name = "lblPatientID";
       this.lblPatientID.Size = new System.Drawing.Size(43, 24);
@@ -238,9 +239,10 @@
       // grbPatient
       // 
       this.grbPatient.Anchor = System.Windows.Forms.AnchorStyles.None;
-      this.grbPatient.BackColor = System.Drawing.SystemColors.Control;
+      this.grbPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
+      this.grbPatient.Controls.Add(this.iconButton9);
       this.grbPatient.Controls.Add(this.linkEdit);
-      this.grbPatient.Controls.Add(this.pictureBox1);
+      this.grbPatient.Controls.Add(this.pbAvatar);
       this.grbPatient.Controls.Add(this.iconButton5);
       this.grbPatient.Controls.Add(this.iconButton6);
       this.grbPatient.Controls.Add(this.iconButton7);
@@ -266,7 +268,7 @@
       this.grbPatient.Controls.Add(this.label2);
       this.grbPatient.Controls.Add(this.label1);
       this.grbPatient.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.grbPatient.ForeColor = System.Drawing.Color.SteelBlue;
+      this.grbPatient.ForeColor = System.Drawing.Color.Tomato;
       this.grbPatient.Location = new System.Drawing.Point(0, 0);
       this.grbPatient.Name = "grbPatient";
       this.grbPatient.Size = new System.Drawing.Size(840, 406);
@@ -274,28 +276,44 @@
       this.grbPatient.TabStop = false;
       this.grbPatient.Text = "Patient Info";
       // 
+      // iconButton9
+      // 
+      this.iconButton9.FlatAppearance.BorderSize = 0;
+      this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Tooth;
+      this.iconButton9.IconColor = System.Drawing.Color.White;
+      this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton9.IconSize = 80;
+      this.iconButton9.Location = new System.Drawing.Point(365, 159);
+      this.iconButton9.Name = "iconButton9";
+      this.iconButton9.Size = new System.Drawing.Size(63, 76);
+      this.iconButton9.TabIndex = 59;
+      this.iconButton9.UseVisualStyleBackColor = true;
+      // 
       // linkEdit
       // 
+      this.linkEdit.ActiveLinkColor = System.Drawing.SystemColors.InactiveCaption;
       this.linkEdit.AutoSize = true;
       this.linkEdit.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkEdit.ForeColor = System.Drawing.Color.Thistle;
       this.linkEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.linkEdit.LinkColor = System.Drawing.Color.SteelBlue;
-      this.linkEdit.Location = new System.Drawing.Point(626, 27);
+      this.linkEdit.LinkColor = System.Drawing.SystemColors.Window;
+      this.linkEdit.Location = new System.Drawing.Point(623, 29);
       this.linkEdit.Name = "linkEdit";
-      this.linkEdit.Size = new System.Drawing.Size(137, 18);
+      this.linkEdit.Size = new System.Drawing.Size(83, 18);
       this.linkEdit.TabIndex = 33;
       this.linkEdit.TabStop = true;
-      this.linkEdit.Text = "Change Image";
+      this.linkEdit.Text = "Edit Info";
       // 
-      // pictureBox1
+      // pbAvatar
       // 
-      this.pictureBox1.Image = global::Dental_App.Properties.Resources.kilua;
-      this.pictureBox1.Location = new System.Drawing.Point(561, 62);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(251, 256);
-      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-      this.pictureBox1.TabIndex = 32;
-      this.pictureBox1.TabStop = false;
+      this.pbAvatar.Image = global::Dental_App.Properties.Resources.kilua;
+      this.pbAvatar.Location = new System.Drawing.Point(517, 62);
+      this.pbAvatar.Name = "pbAvatar";
+      this.pbAvatar.Size = new System.Drawing.Size(295, 284);
+      this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.pbAvatar.TabIndex = 32;
+      this.pbAvatar.TabStop = false;
       // 
       // iconButton5
       // 
@@ -419,7 +437,7 @@
       this.Size = new System.Drawing.Size(840, 406);
       this.grbPatient.ResumeLayout(false);
       this.grbPatient.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -452,6 +470,7 @@
     private FontAwesome.Sharp.IconButton iconButton4;
     private FontAwesome.Sharp.IconButton iconButton2;
     private System.Windows.Forms.LinkLabel linkEdit;
-    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.PictureBox pbAvatar;
+    private FontAwesome.Sharp.IconButton iconButton9;
   }
 }

@@ -219,8 +219,6 @@ namespace Dental_App.Patients
 
       }
 
-
-
     }
 
     private void frmAddUpdatePatient_Load(object sender, EventArgs e)
