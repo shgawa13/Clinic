@@ -76,6 +76,7 @@ namespace DataLayer
           {
             // Adding Paramters
             command.Parameters.AddWithValue("@PatientID", PatientID);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
             // rows effected  
             EffectedRow = command.ExecuteNonQuery();
 

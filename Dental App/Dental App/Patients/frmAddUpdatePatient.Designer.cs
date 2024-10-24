@@ -349,6 +349,7 @@
       this.button2.TabIndex = 57;
       this.button2.Text = "Cancel";
       this.button2.UseVisualStyleBackColor = false;
+      this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
       // iconButton9
       // 
@@ -551,6 +552,7 @@
       this.Controls.Add(this.lblPatientID);
       this.Controls.Add(this.txtbSecondName);
       this.Controls.Add(this.txtbFirstName);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Name = "frmAddUpdatePatient";
       this.Text = "frmAddUpdatePatient";
       this.Load += new System.EventHandler(this.frmAddUpdatePatient_Load);

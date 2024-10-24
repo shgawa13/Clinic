@@ -47,7 +47,7 @@ namespace Dental_App.Patients.controls
       lblPatientID.Text = _Patient.PatientID.ToString();
       lblFullName.Text = _Patient.PatientInfo.FullName;
       lblNationalID.Text = _Patient.PatientInfo.NationalID;
-      lblDateOfBirth.Text = _Patient.PatientInfo.DateOfBirth.ToString();
+      lblDateOfBirth.Text = _Patient.PatientInfo.DateOfBirth.ToShortDateString();
       lblGendor.Text = (_Patient.PatientInfo.Gendor==0) ? "Male":"Female";
       lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
       lblCountry.Text = clsCountries.Find(_Patient.PatientInfo.NationalityCountryID).CountryName;
@@ -58,7 +58,7 @@ namespace Dental_App.Patients.controls
     // Handle Patient Image
     private void _LoadPersonImage()
     {
-      if (_Patient.Gendor == 0)
+      if (_Patient.PatientInfo.Gendor == 0)
         pbAvatar.Image = Resources.Male_avatar;
       else
         pbAvatar.Image = Resources.Female_avatar;
@@ -91,7 +91,7 @@ namespace Dental_App.Patients.controls
     private void linkEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       Form frm = new frmAddUpdatePatient(_PatientID);
-      frm.Show();
+      frm.ShowDialog();
       // refreching
       LoadPatientInfo(_PatientID);
     }

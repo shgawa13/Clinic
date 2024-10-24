@@ -20,7 +20,7 @@ namespace Business
     {
       this.PatientID = -1;
       this.PersonID = base.PersonID;
-
+      
       Mode = enMode.AddNew;
     }
 

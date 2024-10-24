@@ -114,17 +114,26 @@ namespace Dental_App.Patients
 
     private void btnAddNewPatient_Click(object sender, EventArgs e)
     {
-      Form frm = new frmAddUpdatePatient();
+      frmAddUpdatePatient frm = new frmAddUpdatePatient();
+      frm.DataBack += CallRefresh;
       frm.ShowDialog();
+      
+    }
+
+    private void CallRefresh(object sender, int PatientID)
+    {
+      // refreshing
+      _RefreshPatientsList();
     }
 
     private void tlsmShowInfo_Click(object sender, EventArgs e)
     {
       int PateintID = (int)dgvPatients.CurrentRow.Cells[0].Value;
-      Form frm = new frmPatientInfo(PateintID);
-      frm.Show();
-      // refreshing
+      frmPatientInfo frm = new frmPatientInfo(PateintID);
+      frm.ShowDialog();
       
+      // refreshing
+      _RefreshPatientsList();
     }
 
     private void tlsmEdit_Click(object sender, EventArgs e)

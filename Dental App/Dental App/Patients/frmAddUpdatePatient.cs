@@ -98,28 +98,32 @@ namespace Dental_App.Patients
         return;
       }
 
+      // now we load PersonInfo
+      _Person = clsPerson.Find(_Patient.PersonID);
+      
+
       // here we fill info form the object
       lblPatientID.Text = _Patient.PatientID.ToString();
-      txtbFirstName.Text = _Patient.PatientInfo.FirstName;
-      txtbSecondName.Text = _Patient.PatientInfo.SecondName;
-      txtbLastName.Text = _Patient.PatientInfo.LastName;
-      txtbNationalID.Text = _Patient.PatientInfo.NationalID;
-      txtbPhone.Text = _Patient.PatientInfo.PhoneNumber;
-      txtbEmail.Text = _Patient.PatientInfo.Email;
+      txtbFirstName.Text = _Person.FirstName;
+      txtbSecondName.Text = _Person.SecondName;
+      txtbLastName.Text = _Person.LastName;
+      txtbNationalID.Text = _Person.NationalID;
+      txtbPhone.Text = _Person.PhoneNumber;
+      txtbEmail.Text = _Person.Email;
 
       // handle Gander
-      if (_Patient.PatientInfo.Gendor == 0)
+      if (_Person.Gendor == 0)
         rbMale.Checked = true;
       else
         rbFemal.Checked = true;
       //cmbCountry.SelectedIndex = cmbCountry.FindString(_Patient.CountryInfo.CountryName);
-      cmbCountry.SelectedIndex = cmbCountry.FindString(_Patient.PatientInfo.CountryInfo.CountryName);
-      if (_Patient.PatientInfo.ImagePath != "")
+      cmbCountry.SelectedIndex = cmbCountry.FindString(_Person.CountryInfo.CountryName);
+      if (_Person.ImagePath != "")
       {
-        pbAvatar.ImageLocation = _Patient.PatientInfo.ImagePath;
+        pbAvatar.ImageLocation = _Person.ImagePath;
       }
 
-      linkReomve.Visible = (_Patient.PatientInfo.ImagePath != "");
+      linkReomve.Visible = (_Person.ImagePath != "");
 
     }
 
@@ -131,15 +135,15 @@ namespace Dental_App.Patients
     {
       // First we handle Delete Image 
       // we check if new image is not equle to image in picturebox
-      if(_Patient.ImagePath != pbAvatar.ImageLocation)
+      if(_Person.ImagePath != pbAvatar.ImageLocation)
       {
         // now we make sure the image path is not empty so we don't get error
-        if(_Patient.ImagePath != "")
+        if(_Person.ImagePath != "")
         {
           try
           {
             // now we can delete image
-            File.Delete(_Patient.ImagePath);
+            File.Delete(_Person.ImagePath);
 
           }catch(IOException iox)
           {
@@ -182,8 +186,8 @@ namespace Dental_App.Patients
       _Person.LastName = txtbLastName.Text.Trim();
       _Person.NationalID = txtbNationalID.Text.Trim();
       _Person.Email = txtbEmail.Text.Trim();
-      _Person.PhoneNumber = txtbPhone.Text.Trim();
       _Person.DateOfBirth = dtpDateOfBirth.Value;
+      _Person.PhoneNumber = txtbPhone.Text.Trim();
 
       if (rbMale.Checked)
         _Person.Gendor = (byte)enGendor.Male;
@@ -212,13 +216,14 @@ namespace Dental_App.Patients
 
           DataBack?.Invoke(this, _PatientID);
         }
-      }
-      else
-      {
+        //}
+        else
+        {
           MessageBox.Show("Error Couldn't Save Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-      }
+        }
 
+      }
     }
 
     private void frmAddUpdatePatient_Load(object sender, EventArgs e)
@@ -270,5 +275,9 @@ namespace Dental_App.Patients
         pbAvatar.Image = Resources.Female_avatar;
     }
 
+    private void button2_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
   }
 }
