@@ -71,8 +71,8 @@ namespace Dental_App.Patients
           FilterColumn = "PatientID";
           break;
 
-        case "Natinal ID":
-          FilterColumn = "NatinalID";
+        case "National ID":
+          FilterColumn = "NationalID";
           break;
 
         case "Last Name":
@@ -106,7 +106,7 @@ namespace Dental_App.Patients
         _dtPatients.DefaultView.RowFilter = string.Format("[{0}]={1}", FilterColumn, txtFilterValue.Text.Trim());
       else
         // this will filter Strings [NationalID,Email,PhoneNumber,LastName]
-        _dtPatients.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
+        _dtPatients.DefaultView.RowFilter = string.Format("[{0}] LIKE'{1}%'", FilterColumn, txtFilterValue.Text.Trim());
 
       // here it will handle both string and Numbers
       lblPatientsNumbers.Text = _dtPatients.Rows.Count.ToString();
@@ -133,12 +133,14 @@ namespace Dental_App.Patients
       frm.ShowDialog();
       
       // refreshing
-      _RefreshPatientsList();
+     //  _RefreshPatientsList();
     }
 
     private void tlsmEdit_Click(object sender, EventArgs e)
     {
       MessageBox.Show($"ID: {(int)dgvPatients.CurrentRow.Cells[0].Value}");
     }
+
+    
   }
 }

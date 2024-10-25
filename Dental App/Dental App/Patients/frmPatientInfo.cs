@@ -23,8 +23,6 @@ namespace Dental_App.Patients
       ctrlPatientCard1.LoadPatientInfo(_PatientID);
     }
 
-   
-
     
   }
 }

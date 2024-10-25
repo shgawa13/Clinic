@@ -33,6 +33,10 @@
       this.lblPatientsNumbers = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.dgvPatients = new System.Windows.Forms.DataGridView();
+      this.ctmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.tlsmShowInfo = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmEdit = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmDelete = new System.Windows.Forms.ToolStripMenuItem();
       this.panel2 = new System.Windows.Forms.Panel();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -40,15 +44,11 @@
       this.label2 = new System.Windows.Forms.Label();
       this.panel3 = new System.Windows.Forms.Panel();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
-      this.ctmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.tlsmShowInfo = new System.Windows.Forms.ToolStripMenuItem();
-      this.tlsmEdit = new System.Windows.Forms.ToolStripMenuItem();
-      this.tlsmDelete = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
+      this.ctmsPatient.SuspendLayout();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
-      this.ctmsPatient.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -100,6 +100,36 @@
       this.dgvPatients.Size = new System.Drawing.Size(800, 418);
       this.dgvPatients.TabIndex = 3;
       // 
+      // ctmsPatient
+      // 
+      this.ctmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsmShowInfo,
+            this.tlsmEdit,
+            this.tlsmDelete});
+      this.ctmsPatient.Name = "ctmsPatient";
+      this.ctmsPatient.Size = new System.Drawing.Size(128, 70);
+      this.ctmsPatient.Text = "Mange Patient";
+      // 
+      // tlsmShowInfo
+      // 
+      this.tlsmShowInfo.Name = "tlsmShowInfo";
+      this.tlsmShowInfo.Size = new System.Drawing.Size(127, 22);
+      this.tlsmShowInfo.Text = "Show info";
+      this.tlsmShowInfo.Click += new System.EventHandler(this.tlsmShowInfo_Click);
+      // 
+      // tlsmEdit
+      // 
+      this.tlsmEdit.Name = "tlsmEdit";
+      this.tlsmEdit.Size = new System.Drawing.Size(127, 22);
+      this.tlsmEdit.Text = "Edit";
+      this.tlsmEdit.Click += new System.EventHandler(this.tlsmEdit_Click);
+      // 
+      // tlsmDelete
+      // 
+      this.tlsmDelete.Name = "tlsmDelete";
+      this.tlsmDelete.Size = new System.Drawing.Size(127, 22);
+      this.tlsmDelete.Text = "Delete";
+      // 
       // panel2
       // 
       this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
@@ -130,7 +160,7 @@
       this.cbFilter.Items.AddRange(new object[] {
             "None",
             "Patient ID",
-            "Natinal ID",
+            "National ID",
             "Last Name",
             "Phone Number",
             "Email"});
@@ -204,36 +234,6 @@
       this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
-      // ctmsPatient
-      // 
-      this.ctmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tlsmShowInfo,
-            this.tlsmEdit,
-            this.tlsmDelete});
-      this.ctmsPatient.Name = "ctmsPatient";
-      this.ctmsPatient.Size = new System.Drawing.Size(181, 92);
-      this.ctmsPatient.Text = "Mange Patient";
-      // 
-      // tlsmShowInfo
-      // 
-      this.tlsmShowInfo.Name = "tlsmShowInfo";
-      this.tlsmShowInfo.Size = new System.Drawing.Size(180, 22);
-      this.tlsmShowInfo.Text = "Show info";
-      this.tlsmShowInfo.Click += new System.EventHandler(this.tlsmShowInfo_Click);
-      // 
-      // tlsmEdit
-      // 
-      this.tlsmEdit.Name = "tlsmEdit";
-      this.tlsmEdit.Size = new System.Drawing.Size(180, 22);
-      this.tlsmEdit.Text = "Edit";
-      this.tlsmEdit.Click += new System.EventHandler(this.tlsmEdit_Click);
-      // 
-      // tlsmDelete
-      // 
-      this.tlsmDelete.Name = "tlsmDelete";
-      this.tlsmDelete.Size = new System.Drawing.Size(180, 22);
-      this.tlsmDelete.Text = "Delete";
-      // 
       // frmListPatients
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,10 +250,10 @@
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
+      this.ctmsPatient.ResumeLayout(false);
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();
       this.panel3.ResumeLayout(false);
-      this.ctmsPatient.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
