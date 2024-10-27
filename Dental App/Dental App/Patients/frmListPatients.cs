@@ -43,9 +43,10 @@ namespace Dental_App.Patients
 
     private void frmListPatients_Load(object sender, EventArgs e)
     {
-      dgvPatients.DataSource = _dtPatients;
-
-      lblPatientsNumbers.Text = dgvPatients.RowCount.ToString();
+      _RefreshPatientsList();
+      
+      dgvPatients.Columns[6].HeaderText = "Gendor";
+      dgvPatients.Columns[6].Width = 20;
     }
 
     private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)

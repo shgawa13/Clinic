@@ -88,8 +88,8 @@
       // 
       this.dgvPatients.AllowUserToAddRows = false;
       this.dgvPatients.AllowUserToDeleteRows = false;
+      this.dgvPatients.AllowUserToOrderColumns = true;
       this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-      this.dgvPatients.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
       this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dgvPatients.ContextMenuStrip = this.ctmsPatient;
       this.dgvPatients.Dock = System.Windows.Forms.DockStyle.Bottom;

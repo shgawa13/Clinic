@@ -16,5 +16,12 @@ namespace Dental_App.Doctors
     {
       InitializeComponent();
     }
+
+    private void frmDoctors_Load(object sender, EventArgs e)
+    {
+
+    }
+
+  
   }
 }
