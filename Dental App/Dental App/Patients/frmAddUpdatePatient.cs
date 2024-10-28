@@ -175,6 +175,7 @@ namespace Dental_App.Patients
 
     private void btnSave_Click(object sender, EventArgs e)
     {
+
       // we call handle image
       if (!_HandleImage())
         return;
@@ -224,8 +225,9 @@ namespace Dental_App.Patients
         }
 
       }
-    }
 
+    }
+    
     private void frmAddUpdatePatient_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
@@ -275,7 +277,8 @@ namespace Dental_App.Patients
         pbAvatar.Image = Resources.Female_avatar;
     }
 
-    private void button2_Click(object sender, EventArgs e)
+
+    private void btnClose_Click(object sender, EventArgs e)
     {
       this.Close();
     }

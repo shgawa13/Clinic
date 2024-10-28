@@ -51,8 +51,6 @@
       this.cmbCountry = new System.Windows.Forms.ComboBox();
       this.linkReomve = new System.Windows.Forms.LinkLabel();
       this.linkChoseImage = new System.Windows.Forms.LinkLabel();
-      this.btnSave = new System.Windows.Forms.Button();
-      this.button2 = new System.Windows.Forms.Button();
       this.iconButton9 = new FontAwesome.Sharp.IconButton();
       this.pbAvatar = new System.Windows.Forms.PictureBox();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -65,6 +63,8 @@
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.lblTitle = new System.Windows.Forms.Label();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+      this.btnSave = new Dental_App.ExpertsBtn();
+      this.btnClose = new Dental_App.ExpertsBtn();
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
@@ -282,6 +282,7 @@
       // 
       // cmbCountry
       // 
+      this.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cmbCountry.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cmbCountry.FormattingEnabled = true;
       this.cmbCountry.Location = new System.Drawing.Point(169, 330);
@@ -319,37 +320,6 @@
       this.linkChoseImage.Text = "Chose Image";
       this.linkChoseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.linkChoseImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkChoseImage_LinkClicked);
-      // 
-      // btnSave
-      // 
-      this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-      this.btnSave.FlatAppearance.BorderSize = 0;
-      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(622, 376);
-      this.btnSave.Name = "btnSave";
-      this.btnSave.Size = new System.Drawing.Size(120, 38);
-      this.btnSave.TabIndex = 56;
-      this.btnSave.Text = "Save";
-      this.btnSave.UseVisualStyleBackColor = false;
-      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-      // 
-      // button2
-      // 
-      this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.button2.FlatAppearance.BorderSize = 0;
-      this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.button2.Location = new System.Drawing.Point(758, 376);
-      this.button2.Name = "button2";
-      this.button2.Size = new System.Drawing.Size(131, 38);
-      this.button2.TabIndex = 57;
-      this.button2.Text = "Cancel";
-      this.button2.UseVisualStyleBackColor = false;
-      this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
       // iconButton9
       // 
@@ -510,16 +480,57 @@
       // 
       this.openFileDialog1.FileName = "openFileDialog1";
       // 
+      // btnSave
+      // 
+      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSave.BorderRadius = 5;
+      this.btnSave.BorderSize = 0;
+      this.btnSave.FlatAppearance.BorderSize = 0;
+      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
+      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.Location = new System.Drawing.Point(592, 376);
+      this.btnSave.Name = "btnSave";
+      this.btnSave.Size = new System.Drawing.Size(137, 37);
+      this.btnSave.TabIndex = 60;
+      this.btnSave.Text = "Save";
+      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.UseVisualStyleBackColor = false;
+      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      // 
+      // btnClose
+      // 
+      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnClose.BorderRadius = 5;
+      this.btnClose.BorderSize = 0;
+      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnClose.FlatAppearance.BorderSize = 0;
+      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnClose.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
+      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.Location = new System.Drawing.Point(752, 376);
+      this.btnClose.Name = "btnClose";
+      this.btnClose.Size = new System.Drawing.Size(137, 37);
+      this.btnClose.TabIndex = 61;
+      this.btnClose.Text = "Close";
+      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.UseVisualStyleBackColor = false;
+      this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+      // 
       // frmAddUpdatePatient
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
       this.ClientSize = new System.Drawing.Size(901, 433);
+      this.Controls.Add(this.btnClose);
+      this.Controls.Add(this.btnSave);
       this.Controls.Add(this.lblTitle);
       this.Controls.Add(this.iconButton9);
-      this.Controls.Add(this.button2);
-      this.Controls.Add(this.btnSave);
       this.Controls.Add(this.linkChoseImage);
       this.Controls.Add(this.linkReomve);
       this.Controls.Add(this.pbAvatar);
@@ -596,10 +607,10 @@
     private System.Windows.Forms.PictureBox pbAvatar;
     private System.Windows.Forms.LinkLabel linkReomve;
     private System.Windows.Forms.LinkLabel linkChoseImage;
-    private System.Windows.Forms.Button btnSave;
-    private System.Windows.Forms.Button button2;
     private FontAwesome.Sharp.IconButton iconButton9;
     private System.Windows.Forms.Label lblTitle;
     private System.Windows.Forms.OpenFileDialog openFileDialog1;
+    private ExpertsBtn btnSave;
+    private ExpertsBtn btnClose;
   }
 }

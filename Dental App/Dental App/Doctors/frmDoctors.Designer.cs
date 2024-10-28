@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lblPatientsNumbers = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
@@ -36,16 +37,17 @@
       this.tabPage2 = new System.Windows.Forms.TabPage();
       this.panel3 = new System.Windows.Forms.Panel();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
-      this.expertsBtn1 = new Dental_App.ExpertsBtn();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
       this.panel1.SuspendLayout();
       this.tabControl1.SuspendLayout();
+      this.tpListDoctors.SuspendLayout();
       this.panel3.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // panel1
       // 
       this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.panel1.Controls.Add(this.expertsBtn1);
       this.panel1.Controls.Add(this.lblPatientsNumbers);
       this.panel1.Controls.Add(this.label1);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -59,7 +61,7 @@
       this.lblPatientsNumbers.AutoSize = true;
       this.lblPatientsNumbers.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblPatientsNumbers.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.lblPatientsNumbers.Location = new System.Drawing.Point(87, 16);
+      this.lblPatientsNumbers.Location = new System.Drawing.Point(87, 17);
       this.lblPatientsNumbers.Name = "lblPatientsNumbers";
       this.lblPatientsNumbers.Size = new System.Drawing.Size(37, 21);
       this.lblPatientsNumbers.TabIndex = 2;
@@ -91,6 +93,7 @@
       // tpListDoctors
       // 
       this.tpListDoctors.BackColor = System.Drawing.Color.Gainsboro;
+      this.tpListDoctors.Controls.Add(this.dataGridView1);
       this.tpListDoctors.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tpListDoctors.Location = new System.Drawing.Point(4, 29);
       this.tpListDoctors.Name = "tpListDoctors";
@@ -143,24 +146,26 @@
       this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
-      // expertsBtn1
+      // dataGridView1
       // 
-      this.expertsBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-      this.expertsBtn1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-      this.expertsBtn1.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn1.BorderRadius = 20;
-      this.expertsBtn1.BorderSize = 0;
-      this.expertsBtn1.FlatAppearance.BorderSize = 0;
-      this.expertsBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.expertsBtn1.ForeColor = System.Drawing.Color.Black;
-      this.expertsBtn1.Location = new System.Drawing.Point(275, 6);
-      this.expertsBtn1.Name = "expertsBtn1";
-      this.expertsBtn1.Size = new System.Drawing.Size(179, 38);
-      this.expertsBtn1.TabIndex = 3;
-      this.expertsBtn1.Text = "Tester";
-      this.expertsBtn1.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn1.UseVisualStyleBackColor = false;
+      this.dataGridView1.AllowUserToAddRows = false;
+      this.dataGridView1.AllowUserToDeleteRows = false;
+      this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+      this.dataGridView1.Name = "dataGridView1";
+      this.dataGridView1.ReadOnly = true;
+      this.dataGridView1.Size = new System.Drawing.Size(786, 433);
+      this.dataGridView1.TabIndex = 0;
       // 
       // frmDoctors
       // 
@@ -178,7 +183,9 @@
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.tabControl1.ResumeLayout(false);
+      this.tpListDoctors.ResumeLayout(false);
       this.panel3.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -193,6 +200,6 @@
     private System.Windows.Forms.TabPage tabPage2;
     private System.Windows.Forms.Panel panel3;
     private FontAwesome.Sharp.IconButton iconButton1;
-    private ExpertsBtn expertsBtn1;
+    private System.Windows.Forms.DataGridView dataGridView1;
   }
 }
