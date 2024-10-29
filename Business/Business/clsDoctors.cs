@@ -24,6 +24,7 @@ namespace Business
       this.DoctorID = -1;
       this.PersonID = -1;
       this.Specialization = "";
+
       Mode = enMode.AddNew; 
     }
 
@@ -33,6 +34,7 @@ namespace Business
       this.PersonID = PersonID;
       this.DoctorInfo = clsPerson.Find(PersonID);
       this.Specialization = Specialization;
+
       Mode = enMode.Update;
     }
 

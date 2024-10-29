@@ -141,7 +141,7 @@ namespace DataLayer
     public static DataTable GetAllDoctors()
     {
       DataTable dtAllDoctors = new DataTable();
-      string query = @"select * from Doctors;";
+      string query = @"Select * from DoctorsView;";
 
       try
       {
