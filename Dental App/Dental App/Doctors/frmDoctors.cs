@@ -24,8 +24,7 @@ namespace Dental_App.Doctors
     {
       _dtAllDoctors = clsDoctors.GetAllDoctors();
       _dtDoctors = _dtAllDoctors.DefaultView.ToTable(false, "DoctorID", "NationalID",
-      "FullName", "Specialization", "DateOfBirth", "Gendor", "PhoneNumber", "Email", "ImagePath",
-      "NationalityCountryID");
+      "FullName", "Specialization", "DateOfBirth", "Gendor", "PhoneNumber", "Email");
 
       dgvDoctors.DataSource = _dtDoctors;
       lblDoctorNumbers.Text = dgvDoctors.RowCount.ToString();
@@ -41,6 +40,6 @@ namespace Dental_App.Doctors
       _RefreshDoctorList();
     }
 
-   
+    
   }
 }
