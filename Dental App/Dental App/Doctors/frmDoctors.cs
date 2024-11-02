@@ -38,8 +38,15 @@ namespace Dental_App.Doctors
     private void frmDoctors_Load(object sender, EventArgs e)
     {
       _RefreshDoctorList();
+      if (tabControlDoctors.SelectedIndex == 0)
+        MessageBox.Show("ListDoctors");
+      else
+        MessageBox.Show("Add new");
     }
 
-    
+    private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }

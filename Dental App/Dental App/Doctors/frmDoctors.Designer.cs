@@ -28,14 +28,14 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lblDoctorNumbers = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
-      this.tabControl1 = new System.Windows.Forms.TabControl();
+      this.tabControlDoctors = new System.Windows.Forms.TabControl();
       this.tpListDoctors = new System.Windows.Forms.TabPage();
       this.dgvDoctors = new System.Windows.Forms.DataGridView();
       this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -46,7 +46,7 @@
       this.cbFilter = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
-      this.tabControl1.SuspendLayout();
+      this.tabControlDoctors.SuspendLayout();
       this.tpListDoctors.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).BeginInit();
       this.panel3.SuspendLayout();
@@ -86,17 +86,17 @@
       this.label1.TabIndex = 1;
       this.label1.Text = "# Record: ";
       // 
-      // tabControl1
+      // tabControlDoctors
       // 
-      this.tabControl1.Controls.Add(this.tpListDoctors);
-      this.tabControl1.Controls.Add(this.tabPage2);
-      this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.tabControl1.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tabControl1.Location = new System.Drawing.Point(0, 54);
-      this.tabControl1.Name = "tabControl1";
-      this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(800, 421);
-      this.tabControl1.TabIndex = 4;
+      this.tabControlDoctors.Controls.Add(this.tpListDoctors);
+      this.tabControlDoctors.Controls.Add(this.tabPage2);
+      this.tabControlDoctors.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.tabControlDoctors.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tabControlDoctors.Location = new System.Drawing.Point(0, 54);
+      this.tabControlDoctors.Name = "tabControlDoctors";
+      this.tabControlDoctors.SelectedIndex = 0;
+      this.tabControlDoctors.Size = new System.Drawing.Size(800, 421);
+      this.tabControlDoctors.TabIndex = 4;
       // 
       // tpListDoctors
       // 
@@ -117,38 +117,38 @@
       this.dgvDoctors.AllowUserToOrderColumns = true;
       this.dgvDoctors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
       this.dgvDoctors.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-      dataGridViewCellStyle5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-      dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDoctors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDoctors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.dgvDoctors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.dgvDoctors.DefaultCellStyle = dataGridViewCellStyle6;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.dgvDoctors.DefaultCellStyle = dataGridViewCellStyle2;
       this.dgvDoctors.Dock = System.Windows.Forms.DockStyle.Fill;
       this.dgvDoctors.Location = new System.Drawing.Point(3, 3);
       this.dgvDoctors.Name = "dgvDoctors";
       this.dgvDoctors.ReadOnly = true;
-      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-      dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.dgvDoctors.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-      dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-      this.dgvDoctors.RowsDefaultCellStyle = dataGridViewCellStyle8;
+      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvDoctors.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+      this.dgvDoctors.RowsDefaultCellStyle = dataGridViewCellStyle4;
       this.dgvDoctors.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
       this.dgvDoctors.Size = new System.Drawing.Size(786, 382);
       this.dgvDoctors.TabIndex = 4;
@@ -160,7 +160,7 @@
       this.tabPage2.Location = new System.Drawing.Point(4, 29);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(792, 382);
+      this.tabPage2.Size = new System.Drawing.Size(792, 388);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "Add Doctors";
       // 
@@ -224,7 +224,7 @@
       this.cbFilter.FormattingEnabled = true;
       this.cbFilter.Items.AddRange(new object[] {
             "None",
-            "Patient ID",
+            "Doctor ID",
             "National ID",
             "Last Name",
             "Phone Number",
@@ -233,6 +233,7 @@
       this.cbFilter.Name = "cbFilter";
       this.cbFilter.Size = new System.Drawing.Size(153, 29);
       this.cbFilter.TabIndex = 2;
+      this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
       // 
       // label2
       // 
@@ -254,14 +255,14 @@
       this.ClientSize = new System.Drawing.Size(800, 531);
       this.Controls.Add(this.panel3);
       this.Controls.Add(this.panel2);
-      this.Controls.Add(this.tabControl1);
+      this.Controls.Add(this.tabControlDoctors);
       this.Controls.Add(this.panel1);
       this.Name = "frmDoctors";
       this.Text = "frmDoctors";
       this.Load += new System.EventHandler(this.frmDoctors_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
-      this.tabControl1.ResumeLayout(false);
+      this.tabControlDoctors.ResumeLayout(false);
       this.tpListDoctors.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).EndInit();
       this.panel3.ResumeLayout(false);
@@ -276,7 +277,7 @@
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Label lblDoctorNumbers;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TabControl tabControl1;
+    private System.Windows.Forms.TabControl tabControlDoctors;
     private System.Windows.Forms.TabPage tpListDoctors;
     private System.Windows.Forms.TabPage tabPage2;
     private System.Windows.Forms.Panel panel3;

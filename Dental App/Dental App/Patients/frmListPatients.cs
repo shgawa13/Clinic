@@ -18,7 +18,7 @@ namespace Dental_App.Patients
     // show only colums in the Table
     private DataTable _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
       "PatientID", "NationalID", "FirstName", "SecondName", "LastName", "DateOfBirth", "Gendor",
-      "PhoneNumber", "Email", "ImagePath", "NationalityCountryID");
+      "PhoneNumber", "Email");
 
     // here we will refresh the list 
     private void _RefreshPatientsList()
@@ -26,7 +26,7 @@ namespace Dental_App.Patients
       _dtAllPatients = clsPatient.GetAllPatients();
       _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
       "PatientID", "NationalID", "FirstName", "SecondName", "LastName", "DateOfBirth", "Gendor","PhoneNumber",
-      "Email", "ImagePath", "NationalityCountryID");
+      "Email");
 
       dgvPatients.DataSource = _dtPatients;
       lblPatientsNumbers.Text = dgvPatients.RowCount.ToString();
@@ -44,9 +44,13 @@ namespace Dental_App.Patients
     private void frmListPatients_Load(object sender, EventArgs e)
     {
       _RefreshPatientsList();
-      
+
+      // here we style the width of columns 
+      dgvPatients.Columns[0].HeaderText = "PatientID";
+      dgvPatients.Columns[0].Width = 65;
+
       dgvPatients.Columns[6].HeaderText = "Gendor";
-      dgvPatients.Columns[6].Width = 20;
+      dgvPatients.Columns[6].Width = 60;
     }
 
     private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
