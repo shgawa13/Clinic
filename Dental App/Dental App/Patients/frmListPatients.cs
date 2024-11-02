@@ -57,10 +57,10 @@ namespace Dental_App.Patients
     {
       txtFilterValue.Visible = (cbFilter.Text != "None");
      
-      if (txtFilterValue.Visible)
+      if (cbFilter.Visible)
       {
-        cbFilter.Text = "";
-        cbFilter.Focus();
+        txtFilterValue.Text = string.Empty;
+        txtFilterValue.Focus();
       }
 
     }

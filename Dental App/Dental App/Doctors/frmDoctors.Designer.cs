@@ -35,10 +35,10 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.lblDoctorNumbers = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
-      this.tabControlDoctors = new System.Windows.Forms.TabControl();
-      this.tpListDoctors = new System.Windows.Forms.TabPage();
+      this.tpcDoctors = new System.Windows.Forms.TabControl();
+      this.tpbListDoctors = new System.Windows.Forms.TabPage();
       this.dgvDoctors = new System.Windows.Forms.DataGridView();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.tpbAddDoctor = new System.Windows.Forms.TabPage();
       this.panel3 = new System.Windows.Forms.Panel();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.panel2 = new System.Windows.Forms.Panel();
@@ -46,8 +46,8 @@
       this.cbFilter = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
-      this.tabControlDoctors.SuspendLayout();
-      this.tpListDoctors.SuspendLayout();
+      this.tpcDoctors.SuspendLayout();
+      this.tpbListDoctors.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).BeginInit();
       this.panel3.SuspendLayout();
       this.panel2.SuspendLayout();
@@ -86,29 +86,29 @@
       this.label1.TabIndex = 1;
       this.label1.Text = "# Record: ";
       // 
-      // tabControlDoctors
+      // tpcDoctors
       // 
-      this.tabControlDoctors.Controls.Add(this.tpListDoctors);
-      this.tabControlDoctors.Controls.Add(this.tabPage2);
-      this.tabControlDoctors.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.tabControlDoctors.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tabControlDoctors.Location = new System.Drawing.Point(0, 54);
-      this.tabControlDoctors.Name = "tabControlDoctors";
-      this.tabControlDoctors.SelectedIndex = 0;
-      this.tabControlDoctors.Size = new System.Drawing.Size(800, 421);
-      this.tabControlDoctors.TabIndex = 4;
+      this.tpcDoctors.Controls.Add(this.tpbListDoctors);
+      this.tpcDoctors.Controls.Add(this.tpbAddDoctor);
+      this.tpcDoctors.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.tpcDoctors.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tpcDoctors.Location = new System.Drawing.Point(0, 54);
+      this.tpcDoctors.Name = "tpcDoctors";
+      this.tpcDoctors.SelectedIndex = 0;
+      this.tpcDoctors.Size = new System.Drawing.Size(800, 421);
+      this.tpcDoctors.TabIndex = 4;
       // 
-      // tpListDoctors
+      // tpbListDoctors
       // 
-      this.tpListDoctors.BackColor = System.Drawing.Color.Gainsboro;
-      this.tpListDoctors.Controls.Add(this.dgvDoctors);
-      this.tpListDoctors.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tpListDoctors.Location = new System.Drawing.Point(4, 29);
-      this.tpListDoctors.Name = "tpListDoctors";
-      this.tpListDoctors.Padding = new System.Windows.Forms.Padding(3);
-      this.tpListDoctors.Size = new System.Drawing.Size(792, 388);
-      this.tpListDoctors.TabIndex = 0;
-      this.tpListDoctors.Text = "List Doctors";
+      this.tpbListDoctors.BackColor = System.Drawing.Color.Gainsboro;
+      this.tpbListDoctors.Controls.Add(this.dgvDoctors);
+      this.tpbListDoctors.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tpbListDoctors.Location = new System.Drawing.Point(4, 29);
+      this.tpbListDoctors.Name = "tpbListDoctors";
+      this.tpbListDoctors.Padding = new System.Windows.Forms.Padding(3);
+      this.tpbListDoctors.Size = new System.Drawing.Size(792, 388);
+      this.tpbListDoctors.TabIndex = 0;
+      this.tpbListDoctors.Text = "List Doctors";
       // 
       // dgvDoctors
       // 
@@ -153,16 +153,16 @@
       this.dgvDoctors.Size = new System.Drawing.Size(786, 382);
       this.dgvDoctors.TabIndex = 4;
       // 
-      // tabPage2
+      // tpbAddDoctor
       // 
-      this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
-      this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.tabPage2.Location = new System.Drawing.Point(4, 29);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(792, 388);
-      this.tabPage2.TabIndex = 1;
-      this.tabPage2.Text = "Add Doctors";
+      this.tpbAddDoctor.BackColor = System.Drawing.Color.Gainsboro;
+      this.tpbAddDoctor.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tpbAddDoctor.Location = new System.Drawing.Point(4, 29);
+      this.tpbAddDoctor.Name = "tpbAddDoctor";
+      this.tpbAddDoctor.Padding = new System.Windows.Forms.Padding(3);
+      this.tpbAddDoctor.Size = new System.Drawing.Size(792, 388);
+      this.tpbAddDoctor.TabIndex = 1;
+      this.tpbAddDoctor.Text = "Add Doctors";
       // 
       // panel3
       // 
@@ -216,6 +216,7 @@
       this.txtFilterValue.Name = "txtFilterValue";
       this.txtFilterValue.Size = new System.Drawing.Size(160, 26);
       this.txtFilterValue.TabIndex = 3;
+      this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
       // 
       // cbFilter
       // 
@@ -255,15 +256,15 @@
       this.ClientSize = new System.Drawing.Size(800, 531);
       this.Controls.Add(this.panel3);
       this.Controls.Add(this.panel2);
-      this.Controls.Add(this.tabControlDoctors);
+      this.Controls.Add(this.tpcDoctors);
       this.Controls.Add(this.panel1);
       this.Name = "frmDoctors";
       this.Text = "frmDoctors";
       this.Load += new System.EventHandler(this.frmDoctors_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
-      this.tabControlDoctors.ResumeLayout(false);
-      this.tpListDoctors.ResumeLayout(false);
+      this.tpcDoctors.ResumeLayout(false);
+      this.tpbListDoctors.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).EndInit();
       this.panel3.ResumeLayout(false);
       this.panel2.ResumeLayout(false);
@@ -277,9 +278,9 @@
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Label lblDoctorNumbers;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TabControl tabControlDoctors;
-    private System.Windows.Forms.TabPage tpListDoctors;
-    private System.Windows.Forms.TabPage tabPage2;
+    private System.Windows.Forms.TabControl tpcDoctors;
+    private System.Windows.Forms.TabPage tpbListDoctors;
+    private System.Windows.Forms.TabPage tpbAddDoctor;
     private System.Windows.Forms.Panel panel3;
     private FontAwesome.Sharp.IconButton iconButton1;
     private System.Windows.Forms.DataGridView dgvDoctors;
