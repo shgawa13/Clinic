@@ -39,7 +39,7 @@
       this.tpbListDoctors = new System.Windows.Forms.TabPage();
       this.dgvDoctors = new System.Windows.Forms.DataGridView();
       this.tpbAddDoctor = new System.Windows.Forms.TabPage();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.txtSpeciality = new System.Windows.Forms.TextBox();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.lblTitle = new System.Windows.Forms.Label();
@@ -195,9 +195,9 @@
       // 
       // tpbAddDoctor
       // 
-      this.tpbAddDoctor.BackColor = System.Drawing.Color.DimGray;
+      this.tpbAddDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
       this.tpbAddDoctor.Controls.Add(this.label13);
-      this.tpbAddDoctor.Controls.Add(this.textBox1);
+      this.tpbAddDoctor.Controls.Add(this.txtSpeciality);
       this.tpbAddDoctor.Controls.Add(this.btnClose);
       this.tpbAddDoctor.Controls.Add(this.btnSave);
       this.tpbAddDoctor.Controls.Add(this.lblTitle);
@@ -242,14 +242,14 @@
       this.tpbAddDoctor.TabIndex = 1;
       this.tpbAddDoctor.Text = "Add Doctors";
       // 
-      // textBox1
+      // txtSpeciality
       // 
-      this.textBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBox1.Location = new System.Drawing.Point(351, 273);
-      this.textBox1.Multiline = true;
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(170, 88);
-      this.textBox1.TabIndex = 98;
+      this.txtSpeciality.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtSpeciality.Location = new System.Drawing.Point(351, 262);
+      this.txtSpeciality.Multiline = true;
+      this.txtSpeciality.Name = "txtSpeciality";
+      this.txtSpeciality.Size = new System.Drawing.Size(170, 88);
+      this.txtSpeciality.TabIndex = 10;
       // 
       // btnClose
       // 
@@ -263,10 +263,10 @@
       this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnClose.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
       this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(698, 355);
+      this.btnClose.Location = new System.Drawing.Point(711, 355);
       this.btnClose.Name = "btnClose";
       this.btnClose.Size = new System.Drawing.Size(137, 37);
-      this.btnClose.TabIndex = 97;
+      this.btnClose.TabIndex = 13;
       this.btnClose.Text = "Close";
       this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnClose.UseVisualStyleBackColor = false;
@@ -282,10 +282,10 @@
       this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
       this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(538, 355);
+      this.btnSave.Location = new System.Drawing.Point(551, 355);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(137, 37);
-      this.btnSave.TabIndex = 96;
+      this.btnSave.TabIndex = 12;
       this.btnSave.Text = "Save";
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
@@ -325,7 +325,7 @@
       this.linkChoseImage.Location = new System.Drawing.Point(579, 301);
       this.linkChoseImage.Name = "linkChoseImage";
       this.linkChoseImage.Size = new System.Drawing.Size(109, 21);
-      this.linkChoseImage.TabIndex = 93;
+      this.linkChoseImage.TabIndex = 11;
       this.linkChoseImage.TabStop = true;
       this.linkChoseImage.Text = "Chose Image";
       this.linkChoseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -335,7 +335,7 @@
       this.linkReomve.AutoSize = true;
       this.linkReomve.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.linkReomve.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-      this.linkReomve.LinkColor = System.Drawing.SystemColors.ScrollBar;
+      this.linkReomve.LinkColor = System.Drawing.Color.DarkSalmon;
       this.linkReomve.Location = new System.Drawing.Point(702, 301);
       this.linkReomve.Name = "linkReomve";
       this.linkReomve.Size = new System.Drawing.Size(124, 21);
@@ -362,7 +362,7 @@
       this.cmbCountry.Location = new System.Drawing.Point(115, 309);
       this.cmbCountry.Name = "cmbCountry";
       this.cmbCountry.Size = new System.Drawing.Size(163, 29);
-      this.cmbCountry.TabIndex = 90;
+      this.cmbCountry.TabIndex = 8;
       // 
       // rbFemal
       // 
@@ -373,7 +373,7 @@
       this.rbFemal.Location = new System.Drawing.Point(198, 215);
       this.rbFemal.Name = "rbFemal";
       this.rbFemal.Size = new System.Drawing.Size(85, 25);
-      this.rbFemal.TabIndex = 89;
+      this.rbFemal.TabIndex = 6;
       this.rbFemal.Text = "Female";
       this.rbFemal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.rbFemal.UseVisualStyleBackColor = true;
@@ -388,7 +388,7 @@
       this.rbMale.Location = new System.Drawing.Point(115, 215);
       this.rbMale.Name = "rbMale";
       this.rbMale.Size = new System.Drawing.Size(66, 25);
-      this.rbMale.TabIndex = 88;
+      this.rbMale.TabIndex = 5;
       this.rbMale.TabStop = true;
       this.rbMale.Text = "Male";
       this.rbMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,7 +402,7 @@
       this.dtpDateOfBirth.MinDate = new System.DateTime(1953, 1, 1, 0, 0, 0, 0);
       this.dtpDateOfBirth.Name = "dtpDateOfBirth";
       this.dtpDateOfBirth.Size = new System.Drawing.Size(164, 26);
-      this.dtpDateOfBirth.TabIndex = 87;
+      this.dtpDateOfBirth.TabIndex = 4;
       this.dtpDateOfBirth.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
       // 
       // iconButton5
@@ -619,7 +619,7 @@
       this.txtbEmail.Location = new System.Drawing.Point(115, 358);
       this.txtbEmail.Name = "txtbEmail";
       this.txtbEmail.Size = new System.Drawing.Size(164, 26);
-      this.txtbEmail.TabIndex = 70;
+      this.txtbEmail.TabIndex = 9;
       // 
       // txtbPhone
       // 
@@ -627,7 +627,7 @@
       this.txtbPhone.Location = new System.Drawing.Point(115, 262);
       this.txtbPhone.Name = "txtbPhone";
       this.txtbPhone.Size = new System.Drawing.Size(164, 26);
-      this.txtbPhone.TabIndex = 69;
+      this.txtbPhone.TabIndex = 7;
       // 
       // label5
       // 
@@ -646,7 +646,7 @@
       this.txtbNationalID.Location = new System.Drawing.Point(115, 118);
       this.txtbNationalID.Name = "txtbNationalID";
       this.txtbNationalID.Size = new System.Drawing.Size(164, 26);
-      this.txtbNationalID.TabIndex = 67;
+      this.txtbNationalID.TabIndex = 3;
       // 
       // label12
       // 
@@ -665,7 +665,7 @@
       this.txtbLastName.Location = new System.Drawing.Point(658, 70);
       this.txtbLastName.Name = "txtbLastName";
       this.txtbLastName.Size = new System.Drawing.Size(164, 26);
-      this.txtbLastName.TabIndex = 65;
+      this.txtbLastName.TabIndex = 2;
       // 
       // lblPatientID
       // 
@@ -684,7 +684,7 @@
       this.txtbSecondName.Location = new System.Drawing.Point(397, 70);
       this.txtbSecondName.Name = "txtbSecondName";
       this.txtbSecondName.Size = new System.Drawing.Size(164, 26);
-      this.txtbSecondName.TabIndex = 63;
+      this.txtbSecondName.TabIndex = 1;
       // 
       // txtbFirstName
       // 
@@ -692,7 +692,7 @@
       this.txtbFirstName.Location = new System.Drawing.Point(115, 70);
       this.txtbFirstName.Name = "txtbFirstName";
       this.txtbFirstName.Size = new System.Drawing.Size(164, 26);
-      this.txtbFirstName.TabIndex = 62;
+      this.txtbFirstName.TabIndex = 0;
       // 
       // panel3
       // 
@@ -867,7 +867,7 @@
     private System.Windows.Forms.Label lblPatientID;
     private System.Windows.Forms.TextBox txtbSecondName;
     private System.Windows.Forms.TextBox txtbFirstName;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox txtSpeciality;
     private System.Windows.Forms.Label label13;
   }
 }
