@@ -96,10 +96,6 @@ namespace Dental_App.Doctors
           FilterColumn = "NationalID";
           break;
 
-        case "Last Name":
-          FilterColumn = "LastName";
-          break;
-
         case "Phone Number":
           FilterColumn = "PhoneNumber";
           break;
@@ -132,5 +128,7 @@ namespace Dental_App.Doctors
       lblDoctorNumbers.Text = _dtDoctors.Rows.Count.ToString();
 
     }
+
+   
   }
 }
