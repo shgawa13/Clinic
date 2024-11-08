@@ -29,8 +29,6 @@
     private void InitializeComponent()
     {
       this.label13 = new System.Windows.Forms.Label();
-      this.btnClose = new Dental_App.ExpertsBtn();
-      this.btnSave = new Dental_App.ExpertsBtn();
       this.lblTitle = new System.Windows.Forms.Label();
       this.linkChoseImage = new System.Windows.Forms.LinkLabel();
       this.linkReomve = new System.Windows.Forms.LinkLabel();
@@ -67,6 +65,8 @@
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.iconSpeciality = new FontAwesome.Sharp.IconButton();
+      this.btnClose = new Dental_App.ExpertsBtn();
+      this.btnSave = new Dental_App.ExpertsBtn();
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
@@ -75,50 +75,11 @@
       this.label13.AutoSize = true;
       this.label13.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label13.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.label13.Location = new System.Drawing.Point(364, 281);
+      this.label13.Location = new System.Drawing.Point(357, 280);
       this.label13.Name = "label13";
       this.label13.Size = new System.Drawing.Size(86, 21);
       this.label13.TabIndex = 129;
       this.label13.Text = "Speciality";
-      // 
-      // btnClose
-      // 
-      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnClose.BorderRadius = 5;
-      this.btnClose.BorderSize = 0;
-      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnClose.FlatAppearance.BorderSize = 0;
-      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnClose.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
-      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(753, 371);
-      this.btnClose.Name = "btnClose";
-      this.btnClose.Size = new System.Drawing.Size(137, 37);
-      this.btnClose.TabIndex = 113;
-      this.btnClose.Text = "Close";
-      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.UseVisualStyleBackColor = false;
-      // 
-      // btnSave
-      // 
-      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSave.BorderRadius = 5;
-      this.btnSave.BorderSize = 0;
-      this.btnSave.FlatAppearance.BorderSize = 0;
-      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
-      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(593, 371);
-      this.btnSave.Name = "btnSave";
-      this.btnSave.Size = new System.Drawing.Size(137, 37);
-      this.btnSave.TabIndex = 112;
-      this.btnSave.Text = "Save";
-      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.UseVisualStyleBackColor = false;
       // 
       // lblTitle
       // 
@@ -388,7 +349,7 @@
       this.iconLogo.IconColor = System.Drawing.Color.White;
       this.iconLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconLogo.IconSize = 80;
-      this.iconLogo.Location = new System.Drawing.Point(439, 161);
+      this.iconLogo.Location = new System.Drawing.Point(482, 170);
       this.iconLogo.Name = "iconLogo";
       this.iconLogo.Size = new System.Drawing.Size(79, 76);
       this.iconLogo.TabIndex = 127;
@@ -409,7 +370,7 @@
       this.cmbSpeciality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cmbSpeciality.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cmbSpeciality.FormattingEnabled = true;
-      this.cmbSpeciality.Location = new System.Drawing.Point(456, 277);
+      this.cmbSpeciality.Location = new System.Drawing.Point(440, 276);
       this.cmbSpeciality.Name = "cmbSpeciality";
       this.cmbSpeciality.Size = new System.Drawing.Size(163, 29);
       this.cmbSpeciality.TabIndex = 130;
@@ -548,6 +509,45 @@
       this.iconSpeciality.Size = new System.Drawing.Size(34, 32);
       this.iconSpeciality.TabIndex = 139;
       this.iconSpeciality.UseVisualStyleBackColor = true;
+      // 
+      // btnClose
+      // 
+      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnClose.BorderRadius = 5;
+      this.btnClose.BorderSize = 0;
+      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnClose.FlatAppearance.BorderSize = 0;
+      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnClose.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
+      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.Location = new System.Drawing.Point(753, 371);
+      this.btnClose.Name = "btnClose";
+      this.btnClose.Size = new System.Drawing.Size(137, 37);
+      this.btnClose.TabIndex = 113;
+      this.btnClose.Text = "Close";
+      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.UseVisualStyleBackColor = false;
+      // 
+      // btnSave
+      // 
+      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSave.BorderRadius = 5;
+      this.btnSave.BorderSize = 0;
+      this.btnSave.FlatAppearance.BorderSize = 0;
+      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
+      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.Location = new System.Drawing.Point(593, 371);
+      this.btnSave.Name = "btnSave";
+      this.btnSave.Size = new System.Drawing.Size(137, 37);
+      this.btnSave.TabIndex = 112;
+      this.btnSave.Text = "Save";
+      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.UseVisualStyleBackColor = false;
       // 
       // frmAddUpdateDoctor
       // 
