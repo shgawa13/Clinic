@@ -64,6 +64,9 @@ namespace DataLayer
 
         using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
         {
+          // Open Connection
+          connection.Open();
+
           using (SqlCommand command = new SqlCommand(Query, connection))
           {
             // adding Parameters
@@ -99,13 +102,14 @@ namespace DataLayer
     public static DataTable GetAllSpecialities()
     {
       DataTable dtSpecialities = new DataTable();
+      string Query = $"Select * from Specialities";
 
       try
       {
         using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
         {
-          // Query
-          string Query = $"Select * from Specialities";
+          // Open Connection
+          connection.Open();
 
           using (SqlCommand command = new SqlCommand(Query, connection))
           {

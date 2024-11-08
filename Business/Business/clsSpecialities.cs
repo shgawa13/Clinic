@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,5 +29,33 @@ namespace Business
     }
 
 
+    public static clsSpecialities Find(byte ID)
+    {
+      string Title = "", Description = "";
+
+      bool IsFound = clsSpecialitiesData.GetSpecialtyByID(ID, ref Title, ref Description);
+
+      if(IsFound)
+        return new clsSpecialities(ID,Title,Description);
+
+      return null;
+    }
+
+    public static clsSpecialities Find(string Title)
+    {
+      byte ID = 0;
+      string Description = "";
+
+      bool IsFound = clsSpecialitiesData.GetSpecialtyByTitle(Title, ref ID, ref Description);
+
+      if (IsFound)
+        return new clsSpecialities(ID, Title, Description);
+
+      return null;
+    }
+
+    // Get all Specialities
+    public static DataTable GetAllSpecialities() => clsSpecialitiesData.GetAllSpecialities();
+    
   }
 }

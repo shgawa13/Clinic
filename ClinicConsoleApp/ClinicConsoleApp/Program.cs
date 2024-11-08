@@ -1,5 +1,7 @@
 ﻿using Business;
 using System;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
 namespace ClinicConsoleApp
 {
   internal class Program
@@ -47,10 +49,46 @@ namespace ClinicConsoleApp
       }
     }
 
+    public static DataTable GetAll()
+    {
+      return clsSpecialities.GetAllSpecialities();
+    }
+
+    public static void PrintAll()
+    {
+      DataTable dt = GetAll();
+
+      if(dt != null)
+      {
+        foreach(DataRow row in dt.Rows)
+        {
+          Console.WriteLine($"ID : {row["ID"]}");
+          Console.WriteLine($"Title : {row["Title"]}");
+          Console.WriteLine($"Description : {row["Description"]}");
+        }
+      }
+    }
+
+    public static void GetSpecialityByID( string Title)
+    {
+      clsSpecialities sp = clsSpecialities.Find(Title); //Geriatric
+
+      if (sp != null)
+      {
+        Console.WriteLine($"ID : {sp.ID}");
+        Console.WriteLine($"Title : {sp.Title}");
+        Console.WriteLine($"Description : {sp.Description}");
+      }
+      else
+      {
+        Console.WriteLine("Error something went worng");
+      }
+    }
+
     static void Main(string[] args)
     {
+      GetSpecialityByID("Geriatric");
 
-      PrintInfo(AddingNewPerson());
       Console.ReadKey();
     }
   }
