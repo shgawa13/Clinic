@@ -128,6 +128,7 @@ namespace Dental_App.Doctors
         rbFemal.Checked = true;
       //cmbCountry.SelectedIndex = cmbCountry.FindString(_Patient.CountryInfo.CountryName);
       cmbCountry.SelectedIndex = cmbCountry.FindString(_Person.CountryInfo.CountryName);
+      cmbSpeciality.SelectedIndex = cmbSpeciality.FindString(_Doctor.SpecilityInfo.Title);
       if (_Person.ImagePath != "")
       {
         pbAvatar.ImageLocation = _Person.ImagePath;
@@ -159,7 +160,7 @@ namespace Dental_App.Doctors
           }
           catch (IOException iox)
           {
-            MessageBox.Show("Something went worng we couldn't delete image", "Can't Delete Image",
+            MessageBox.Show($"Something went worng we couldn't delete image: {iox.Message}", "Can't Delete Image",
                                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
           }
         }
@@ -193,6 +194,7 @@ namespace Dental_App.Doctors
         return;
 
       int NationalCountryID = clsCountries.Find(cmbCountry.Text).ID;
+      byte SpecialityID = clsSpecialities.Find(cmbSpeciality.Text).ID;
 
       _Person.FirstName = txtbFirstName.Text.Trim();
       _Person.SecondName = txtbSecondName.Text.Trim();
@@ -217,13 +219,16 @@ namespace Dental_App.Doctors
       if (_Person.Save())
       {
         _Doctor.PersonID = _Person.PersonID;
+        _Doctor.SpecialityID = SpecialityID;
+
         if (_Doctor.Save())
         {
           _DoctorID = _Doctor.DoctorID;
+          MessageBox.Show($"DoctorID: {_DoctorID}");
           lblDoctorID.Text = _DoctorID.ToString();
           //change form mode to update.
           _Mode = enMode.Update;
-          lblTitle.Text = "Update Patient";
+          lblTitle.Text = "Update Doctor";
 
           MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -41,7 +41,7 @@
       this.panel3 = new System.Windows.Forms.Panel();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.btnAddNew = new Dental_App.ExpertsBtn();
+      this.btnAddNew = new System.Windows.Forms.Button();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilter = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
@@ -193,6 +193,8 @@
       this.panel2.Controls.Add(this.cbFilter);
       this.panel2.Controls.Add(this.label2);
       this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.panel2.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.panel2.ForeColor = System.Drawing.Color.WhiteSmoke;
       this.panel2.Location = new System.Drawing.Point(0, -2);
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(872, 54);
@@ -202,20 +204,13 @@
       // 
       this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnAddNew.BackColor = System.Drawing.Color.DarkSlateBlue;
-      this.btnAddNew.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
-      this.btnAddNew.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnAddNew.BorderRadius = 5;
-      this.btnAddNew.BorderSize = 0;
       this.btnAddNew.FlatAppearance.BorderSize = 0;
       this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddNew.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
-      this.btnAddNew.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnAddNew.Location = new System.Drawing.Point(724, 4);
+      this.btnAddNew.Location = new System.Drawing.Point(714, 7);
       this.btnAddNew.Name = "btnAddNew";
-      this.btnAddNew.Size = new System.Drawing.Size(137, 48);
-      this.btnAddNew.TabIndex = 61;
+      this.btnAddNew.Size = new System.Drawing.Size(146, 40);
+      this.btnAddNew.TabIndex = 4;
       this.btnAddNew.Text = "Add New";
-      this.btnAddNew.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnAddNew.UseVisualStyleBackColor = false;
       this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
       // 
@@ -296,6 +291,6 @@
     private System.Windows.Forms.TextBox txtFilterValue;
     private System.Windows.Forms.ComboBox cbFilter;
     private System.Windows.Forms.Label label2;
-    private ExpertsBtn btnAddNew;
+    private System.Windows.Forms.Button btnAddNew;
   }
 }

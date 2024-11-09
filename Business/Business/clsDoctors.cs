@@ -10,7 +10,7 @@ using DataLayer;
 
 namespace Business
 {
-  public class clsDoctors
+  public class clsDoctors:clsPerson
   {
     public enum enMode { AddNew = 0, Update = 1 }
     public enMode Mode = enMode.AddNew;
@@ -25,7 +25,7 @@ namespace Business
     public clsDoctors()
     {
       this.DoctorID = -1;
-      this.PersonID = -1;
+      this.PersonID = base.PersonID;
       this.SpecialityID = 0;
 
       Mode = enMode.AddNew; 
@@ -45,7 +45,7 @@ namespace Business
     // Add new Doctor
     private bool _AddNewDoctor()
     {
-      int DoctorID = clsDoctorsData.AddNewDoctor(this.PersonID, this.SpecialityID);
+       this.DoctorID = clsDoctorsData.AddNewDoctor(this.PersonID, this.SpecialityID);
 
       return (this.DoctorID != 0);
     }

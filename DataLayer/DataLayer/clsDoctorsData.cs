@@ -11,10 +11,10 @@ namespace DataLayer
   public class clsDoctorsData
   {
     // AddNewDoctors
-    public static int AddNewDoctor(int PersonID, byte Specialization)
+    public static int AddNewDoctor(int PersonID, byte SpecialityID)
     {
       int DoctorID = -1;
-      string Query = @"Insert into Doctors(PersonID,Specialization) Values(@PersonID,@Specialization);
+      string Query = @"Insert into Doctors(PersonID,SpecialityID) Values(@PersonID,@SpecialityID);
                      Select SCOPE_IDENTITY();";
 
       try
@@ -26,8 +26,8 @@ namespace DataLayer
           using (SqlCommand command = new SqlCommand(Query, connection))
           {
             command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@Specialization", Specialization);
-            
+            command.Parameters.AddWithValue("@SpecialityID", SpecialityID);
+            // SpecialityID
 
             object result = command.ExecuteScalar();
 
@@ -53,12 +53,12 @@ namespace DataLayer
     }
 
     // Update Doctors
-    public static bool UpdateDoctors(int DoctorID, int PersonID, byte Specialization)
+    public static bool UpdateDoctors(int DoctorID, int PersonID, byte SpecialityID)
     {
       int EffectedRow = 0;
       string Query = @"Update Doctors
       set PersonID=@PersonID,
-      Specialization=@Specialization
+      SpecialityID=@SpecialityID
       where DoctorID=@DoctorID";
 
       try
@@ -69,7 +69,7 @@ namespace DataLayer
           using (SqlCommand command = new SqlCommand(Query, connection))
           {
             command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@Specialization", Specialization);
+            command.Parameters.AddWithValue("@SpecialityID", SpecialityID);
             command.Parameters.AddWithValue("@DoctorID", DoctorID);
 
             EffectedRow = command.ExecuteNonQuery();
@@ -89,7 +89,7 @@ namespace DataLayer
     }
 
     // Find Doctor By ID
-    public static bool GetDoctorByID(int DoctorID,ref int PersonID,ref byte Specialization)
+    public static bool GetDoctorByID(int DoctorID,ref int PersonID,ref byte SpecialityID)
     {
       bool IsFound = false;
 
@@ -115,7 +115,7 @@ namespace DataLayer
                 IsFound = true;
 
                 PersonID = (int)reader["PersonID"];
-                Specialization = (byte)reader["Specialization"];
+                SpecialityID = (byte)reader["SpecialityID"];
               }
             }
 

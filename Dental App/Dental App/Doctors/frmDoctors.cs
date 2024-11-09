@@ -136,8 +136,13 @@ namespace Dental_App.Doctors
     private void btnAddNew_Click(object sender, EventArgs e)
     {
       frmAddUpdateDoctor frm = new frmAddUpdateDoctor();
+      frm.DataBack += Frm_RefreshDoctors;
       frm.ShowDialog();
     }
 
+    private void Frm_RefreshDoctors(object sender, int DoctorID)
+    {
+      _RefreshDoctorList();
+    }
   }
 }
