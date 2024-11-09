@@ -50,7 +50,7 @@
       this.txtbNationalID = new System.Windows.Forms.TextBox();
       this.label12 = new System.Windows.Forms.Label();
       this.txtbLastName = new System.Windows.Forms.TextBox();
-      this.lblPatientID = new System.Windows.Forms.Label();
+      this.lblDoctorID = new System.Windows.Forms.Label();
       this.txtbSecondName = new System.Windows.Forms.TextBox();
       this.txtbFirstName = new System.Windows.Forms.TextBox();
       this.iconLogo = new FontAwesome.Sharp.IconButton();
@@ -67,6 +67,7 @@
       this.iconSpeciality = new FontAwesome.Sharp.IconButton();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
+      this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
@@ -106,6 +107,7 @@
       this.linkChoseImage.TabStop = true;
       this.linkChoseImage.Text = "Chose Image";
       this.linkChoseImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.linkChoseImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkChoseImage_LinkClicked);
       // 
       // linkReomve
       // 
@@ -120,6 +122,7 @@
       this.linkReomve.TabStop = true;
       this.linkReomve.Text = "Remove Image";
       this.linkReomve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.linkReomve.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkReomve_LinkClicked);
       // 
       // cmbCountry
       // 
@@ -144,6 +147,7 @@
       this.rbFemal.Text = "Female";
       this.rbFemal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.rbFemal.UseVisualStyleBackColor = true;
+      this.rbFemal.CheckedChanged += new System.EventHandler(this.rbFemal_CheckedChanged);
       // 
       // rbMale
       // 
@@ -160,6 +164,7 @@
       this.rbMale.Text = "Male";
       this.rbMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       this.rbMale.UseVisualStyleBackColor = true;
+      this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
       // 
       // dtpDateOfBirth
       // 
@@ -314,16 +319,16 @@
       this.txtbLastName.Size = new System.Drawing.Size(164, 26);
       this.txtbLastName.TabIndex = 102;
       // 
-      // lblPatientID
+      // lblDoctorID
       // 
-      this.lblPatientID.AutoSize = true;
-      this.lblPatientID.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPatientID.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.lblPatientID.Location = new System.Drawing.Point(153, 42);
-      this.lblPatientID.Name = "lblPatientID";
-      this.lblPatientID.Size = new System.Drawing.Size(37, 21);
-      this.lblPatientID.TabIndex = 114;
-      this.lblPatientID.Text = "???";
+      this.lblDoctorID.AutoSize = true;
+      this.lblDoctorID.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblDoctorID.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.lblDoctorID.Location = new System.Drawing.Point(153, 42);
+      this.lblDoctorID.Name = "lblDoctorID";
+      this.lblDoctorID.Size = new System.Drawing.Size(37, 21);
+      this.lblDoctorID.TabIndex = 114;
+      this.lblDoctorID.Text = "???";
       // 
       // txtbSecondName
       // 
@@ -548,6 +553,11 @@
       this.btnSave.Text = "Save";
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
+      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      // 
+      // openFileDialog1
+      // 
+      this.openFileDialog1.FileName = "openFileDialog1";
       // 
       // frmAddUpdateDoctor
       // 
@@ -591,7 +601,7 @@
       this.Controls.Add(this.txtbNationalID);
       this.Controls.Add(this.label12);
       this.Controls.Add(this.txtbLastName);
-      this.Controls.Add(this.lblPatientID);
+      this.Controls.Add(this.lblDoctorID);
       this.Controls.Add(this.txtbSecondName);
       this.Controls.Add(this.txtbFirstName);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -632,7 +642,7 @@
     private System.Windows.Forms.TextBox txtbNationalID;
     private System.Windows.Forms.Label label12;
     private System.Windows.Forms.TextBox txtbLastName;
-    private System.Windows.Forms.Label lblPatientID;
+    private System.Windows.Forms.Label lblDoctorID;
     private System.Windows.Forms.TextBox txtbSecondName;
     private System.Windows.Forms.TextBox txtbFirstName;
     private System.Windows.Forms.ComboBox cmbSpeciality;
@@ -645,5 +655,6 @@
     private FontAwesome.Sharp.IconButton iconButton2;
     private FontAwesome.Sharp.IconButton iconButton1;
     private FontAwesome.Sharp.IconButton iconSpeciality;
+    private System.Windows.Forms.OpenFileDialog openFileDialog1;
   }
 }
