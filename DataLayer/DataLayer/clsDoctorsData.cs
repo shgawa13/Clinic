@@ -11,7 +11,7 @@ namespace DataLayer
   public class clsDoctorsData
   {
     // AddNewDoctors
-    public static int AddNewDoctor(int PersonID, string Specialization)
+    public static int AddNewDoctor(int PersonID, byte Specialization)
     {
       int DoctorID = -1;
       string Query = @"Insert into Doctors(PersonID,Specialization) Values(@PersonID,@Specialization);
@@ -53,7 +53,7 @@ namespace DataLayer
     }
 
     // Update Doctors
-    public static bool UpdateDoctors(int DoctorID, int PersonID, string Specialization)
+    public static bool UpdateDoctors(int DoctorID, int PersonID, byte Specialization)
     {
       int EffectedRow = 0;
       string Query = @"Update Doctors
@@ -89,7 +89,7 @@ namespace DataLayer
     }
 
     // Find Doctor By ID
-    public static bool GetDoctorByID(int DoctorID,ref int PersonID,ref string Specialization)
+    public static bool GetDoctorByID(int DoctorID,ref int PersonID,ref byte Specialization)
     {
       bool IsFound = false;
 
@@ -115,7 +115,7 @@ namespace DataLayer
                 IsFound = true;
 
                 PersonID = (int)reader["PersonID"];
-                Specialization = (string)reader["Specialization"];
+                Specialization = (byte)reader["Specialization"];
               }
             }
 

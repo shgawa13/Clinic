@@ -14,26 +14,30 @@ namespace Business
   {
     public enum enMode { AddNew = 0, Update = 1 }
     public enMode Mode = enMode.AddNew;
+
     public int DoctorID { set; get; }
     public int PersonID { set; get; }
     public clsPerson DoctorInfo {  set; get; }
-    public string Specialization { set; get; }
+    public byte SpecialityID { set; get; }
+    public clsSpecialities SpecilityInfo;
+
 
     public clsDoctors()
     {
       this.DoctorID = -1;
       this.PersonID = -1;
-      this.Specialization = "";
+      this.SpecialityID = 0;
 
       Mode = enMode.AddNew; 
     }
 
-    private clsDoctors(int DoctorID, int PersonID, string Specialization)
+    private clsDoctors(int DoctorID, int PersonID, byte SpecialityID)
     {
       this.DoctorID = DoctorID;
       this.PersonID = PersonID;
       this.DoctorInfo = clsPerson.Find(PersonID);
-      this.Specialization = Specialization;
+      this.SpecialityID = SpecialityID;
+      this.SpecilityInfo = clsSpecialities.Find(SpecialityID);
 
       Mode = enMode.Update;
     }
@@ -41,7 +45,7 @@ namespace Business
     // Add new Doctor
     private bool _AddNewDoctor()
     {
-      int DoctorID = clsDoctorsData.AddNewDoctor(this.PersonID, this.Specialization);
+      int DoctorID = clsDoctorsData.AddNewDoctor(this.PersonID, this.SpecialityID);
 
       return (this.DoctorID != 0);
     }
@@ -49,18 +53,18 @@ namespace Business
     // Update Doctor
     private bool _UpdateDoctor()
     {
-      return clsDoctorsData.UpdateDoctors(this.DoctorID, this.PersonID, this.Specialization);
+      return clsDoctorsData.UpdateDoctors(this.DoctorID, this.PersonID, this.SpecialityID);
     }
 
     // Find Doctor
     public static clsDoctors Find(int DoctorID)
     {
       int PersonID = -1;
-      string Specialization = "";
-      bool IsFound = clsDoctorsData.GetDoctorByID(DoctorID,ref PersonID,ref Specialization);
+      byte SpecialityID = 0;
+      bool IsFound = clsDoctorsData.GetDoctorByID(DoctorID,ref PersonID,ref SpecialityID);
 
       if (IsFound)
-        return new clsDoctors(DoctorID, PersonID, Specialization);
+        return new clsDoctors(DoctorID, PersonID, SpecialityID);
       else
         return null;
     }

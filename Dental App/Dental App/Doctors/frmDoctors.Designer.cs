@@ -39,12 +39,12 @@
       this.tpbListDoctors = new System.Windows.Forms.TabPage();
       this.dgvDoctors = new System.Windows.Forms.DataGridView();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.btnAddNew = new Dental_App.ExpertsBtn();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilter = new System.Windows.Forms.ComboBox();
       this.label2 = new System.Windows.Forms.Label();
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
-      this.btnAddNew = new Dental_App.ExpertsBtn();
       this.panel1.SuspendLayout();
       this.tpcDoctors.SuspendLayout();
       this.tpbListDoctors.SuspendLayout();
@@ -118,7 +118,7 @@
       this.dgvDoctors.BorderStyle = System.Windows.Forms.BorderStyle.None;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold);
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -127,7 +127,7 @@
       this.dgvDoctors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Bold);
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
       dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
       dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -162,6 +162,29 @@
       this.panel3.Size = new System.Drawing.Size(872, 115);
       this.panel3.TabIndex = 6;
       // 
+      // iconButton1
+      // 
+      this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+      this.iconButton1.FlatAppearance.BorderSize = 0;
+      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+      this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton1.IconSize = 55;
+      this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+      this.iconButton1.Location = new System.Drawing.Point(360, 13);
+      this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 9);
+      this.iconButton1.Name = "iconButton1";
+      this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+      this.iconButton1.Size = new System.Drawing.Size(131, 86);
+      this.iconButton1.TabIndex = 1;
+      this.iconButton1.Text = "Doctors";
+      this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.iconButton1.UseVisualStyleBackColor = true;
+      // 
       // panel2
       // 
       this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
@@ -174,6 +197,27 @@
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(872, 54);
       this.panel2.TabIndex = 7;
+      // 
+      // btnAddNew
+      // 
+      this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnAddNew.BackColor = System.Drawing.Color.DarkSlateBlue;
+      this.btnAddNew.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+      this.btnAddNew.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnAddNew.BorderRadius = 5;
+      this.btnAddNew.BorderSize = 0;
+      this.btnAddNew.FlatAppearance.BorderSize = 0;
+      this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddNew.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
+      this.btnAddNew.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnAddNew.Location = new System.Drawing.Point(724, 4);
+      this.btnAddNew.Name = "btnAddNew";
+      this.btnAddNew.Size = new System.Drawing.Size(137, 48);
+      this.btnAddNew.TabIndex = 61;
+      this.btnAddNew.Text = "Add New";
+      this.btnAddNew.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnAddNew.UseVisualStyleBackColor = false;
+      this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
       // 
       // txtFilterValue
       // 
@@ -211,49 +255,6 @@
       this.label2.Size = new System.Drawing.Size(72, 21);
       this.label2.TabIndex = 0;
       this.label2.Text = "Find by:";
-      // 
-      // iconButton1
-      // 
-      this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-      this.iconButton1.FlatAppearance.BorderSize = 0;
-      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserMd;
-      this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 55;
-      this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-      this.iconButton1.Location = new System.Drawing.Point(360, 13);
-      this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 9);
-      this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-      this.iconButton1.Size = new System.Drawing.Size(131, 86);
-      this.iconButton1.TabIndex = 1;
-      this.iconButton1.Text = "Doctors";
-      this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.iconButton1.UseVisualStyleBackColor = true;
-      // 
-      // btnAddNew
-      // 
-      this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.btnAddNew.BackColor = System.Drawing.Color.DarkSlateBlue;
-      this.btnAddNew.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
-      this.btnAddNew.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnAddNew.BorderRadius = 5;
-      this.btnAddNew.BorderSize = 0;
-      this.btnAddNew.FlatAppearance.BorderSize = 0;
-      this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddNew.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold);
-      this.btnAddNew.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnAddNew.Location = new System.Drawing.Point(724, 4);
-      this.btnAddNew.Name = "btnAddNew";
-      this.btnAddNew.Size = new System.Drawing.Size(137, 48);
-      this.btnAddNew.TabIndex = 61;
-      this.btnAddNew.Text = "Add New";
-      this.btnAddNew.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnAddNew.UseVisualStyleBackColor = false;
       // 
       // frmDoctors
       // 

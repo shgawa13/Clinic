@@ -565,6 +565,7 @@
       this.Controls.Add(this.txtbFirstName);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Name = "frmAddUpdatePatient";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "frmAddUpdatePatient";
       this.Load += new System.EventHandler(this.frmAddUpdatePatient_Load);
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();

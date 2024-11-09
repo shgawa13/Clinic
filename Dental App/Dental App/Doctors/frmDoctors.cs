@@ -44,7 +44,7 @@ namespace Dental_App.Doctors
 
       // here we style the width of columns
       dgvDoctors.Columns[0].HeaderText = "DoctorID";
-      dgvDoctors.Columns[0].Width =70;
+      dgvDoctors.Columns[0].Width =80;
 
       dgvDoctors.Columns[1].HeaderText = "NationalID";
       dgvDoctors.Columns[1].Width = 120;
@@ -128,10 +128,16 @@ namespace Dental_App.Doctors
       lblDoctorNumbers.Text = _dtDoctors.Rows.Count.ToString();
 
     }
+
     //| --------------------------------------------------------- |
     //| -------------------- Add New Doctor --------------------- |
     //| --------------------------------------------------------- |
 
+    private void btnAddNew_Click(object sender, EventArgs e)
+    {
+      frmAddUpdateDoctor frm = new frmAddUpdateDoctor();
+      frm.ShowDialog();
+    }
 
   }
 }

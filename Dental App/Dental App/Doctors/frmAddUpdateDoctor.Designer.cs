@@ -594,8 +594,10 @@
       this.Controls.Add(this.lblPatientID);
       this.Controls.Add(this.txtbSecondName);
       this.Controls.Add(this.txtbFirstName);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Name = "frmAddUpdateDoctor";
       this.Text = "Add new Doctor";
+      this.Load += new System.EventHandler(this.frmAddUpdateDoctor_Load);
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
