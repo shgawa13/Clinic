@@ -14,7 +14,7 @@ namespace Dental_App.Patients
   public partial class frmListPatients : Form
   {
     private clsPerson _Person;
-    private clsPatient _Patient;
+
 
     private static DataTable _dtAllPatients = clsPatient.GetAllPatients();
 
@@ -147,13 +147,26 @@ namespace Dental_App.Patients
     private void tlsmEdit_Click(object sender, EventArgs e)
     {
       MessageBox.Show($"ID: {(int)dgvPatients.CurrentRow.Cells[0].Value}");
+      frmAddUpdatePatient frm = new frmAddUpdatePatient((int)dgvPatients.CurrentRow.Cells[0].Value);
+      frm.ShowDialog();
+    }
+
+    private void Frm_DataBack(object sender, int PatientID)
+    {
+      throw new NotImplementedException();
     }
 
     private void tlsmDelete_Click(object sender, EventArgs e)
     {
       MessageBox.Show("Are you sure to delete this patient","Worinig",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
       int PateintID = (int)dgvPatients.CurrentRow.Cells[0].Value;
-      _Patient.DeletePatient(PateintID);
+
+      clsPatient _Patient = clsPatient.FindPatientByID(PateintID);
+      if (_Patient.DeletePatient(PateintID))
+      {
+        clsPerson.DeletePerson(_Patient.PersonID);
+        MessageBox.Show("Patient has been deleted Successfully");
+      }
       
     }
   }

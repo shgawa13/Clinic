@@ -45,6 +45,7 @@ namespace Business
     }
 
     public bool DeletePatient(int PatientID) => clsPatientData.DeletePatient(PatientID);
+    
 
     public static clsPatient FindPatientByID(int PatientID)
     {
