@@ -87,7 +87,7 @@ namespace ClinicConsoleApp
 
     static void Main(string[] args)
     {
-    
+      GetSpecialityByID("Geriatric");
 
       Console.ReadKey();
     }
