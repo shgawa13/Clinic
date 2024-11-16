@@ -28,34 +28,37 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.label1 = new System.Windows.Forms.Label();
+      this.scheduleControl1 = new Syncfusion.Windows.Forms.Schedule.ScheduleControl();
       this.SuspendLayout();
       // 
-      // label1
+      // scheduleControl1
       // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(341, 183);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(73, 26);
-      this.label1.TabIndex = 0;
-      this.label1.Text = "label1";
+      this.scheduleControl1.Appearance.VisualStyle = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
+      this.scheduleControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(201)))), ((int)(((byte)(219)))));
+      this.scheduleControl1.Culture = new System.Globalization.CultureInfo("");
+      this.scheduleControl1.DataSource = null;
+      this.scheduleControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.scheduleControl1.ISO8601CalenderFormat = false;
+      this.scheduleControl1.Location = new System.Drawing.Point(0, 0);
+      this.scheduleControl1.Name = "scheduleControl1";
+      this.scheduleControl1.Size = new System.Drawing.Size(800, 450);
+      this.scheduleControl1.TabIndex = 0;
       // 
       // frmAppointments
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
-      this.Controls.Add(this.label1);
+      this.Controls.Add(this.scheduleControl1);
       this.Name = "frmAppointments";
       this.Text = "frmAppointments";
+      this.Load += new System.EventHandler(this.frmAppointments_Load);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
     #endregion
 
-    private System.Windows.Forms.Label label1;
+    private Syncfusion.Windows.Forms.Schedule.ScheduleControl scheduleControl1;
   }
 }

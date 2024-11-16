@@ -1,6 +1,8 @@
 ﻿using Business;
 using System;
 using System.Data;
+using System.Reflection;
+using Syncfusion.Schedule;
 using System.Diagnostics.Eventing.Reader;
 namespace ClinicConsoleApp
 {
@@ -85,9 +87,23 @@ namespace ClinicConsoleApp
       }
     }
 
+    public static void ShowScheduleInfo()
+    {
+
+      Type appointmentType = typeof(ScheduleAppointment);
+
+      Console.WriteLine("Properties:"); 
+      PropertyInfo[] properties = appointmentType.GetProperties();
+
+      foreach (PropertyInfo property in properties) 
+      {
+        Console.WriteLine($"{property.ToString()}");
+      }
+    }
+
     static void Main(string[] args)
     {
-      GetSpecialityByID("Geriatric");
+      ShowScheduleInfo();
 
       Console.ReadKey();
     }
