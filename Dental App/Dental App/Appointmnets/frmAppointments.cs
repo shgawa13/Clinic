@@ -7,11 +7,15 @@ using System.Text;
 using System.Windows.Forms;
 using Syncfusion.Windows.Forms.Schedule;
 using GridScheduleSample;
+using Syncfusion.Schedule;
 
 namespace Dental_App.Appointmnets
 {
   public partial class frmAppointments : Form
   {
+
+    public int ShowTester()=> 0;
+    
     SimpleScheduleDataProvider data = new SimpleScheduleDataProvider();
     //ScheduleAppointment appointment = new 
     public frmAppointments()
@@ -29,13 +33,13 @@ namespace Dental_App.Appointmnets
       
       
     }
-    public Button ShowRecurDialog;
 
+
+    public IScheduleAppointment itme;
 
     public void AddAppointmnet()
     {
-
-      
+     
 
     }
 
