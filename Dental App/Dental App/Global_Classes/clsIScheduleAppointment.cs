@@ -1,19 +1,17 @@
 ﻿using System;
-using System.IO;
+using Syncfusion.Schedule;
+using Syncfusion.Windows.Forms;
+using Syncfusion.WinForms.Controls;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Syncfusion.Schedule;
-//using System.Windows.Media;
-
 
 namespace Dental_App.Global_Classes
 {
-  internal class clsDentalScheduleAppointment : IScheduleAppointment, IComparable, ICloneable
+  internal class clsIScheduleAppointment : IScheduleAppointment, IComparable, ICloneable
   {
-    
 
     //
     // Summary:
@@ -135,7 +133,7 @@ namespace Dental_App.Global_Classes
     public Color TimeSpanColor { get; set; }
 
 
-  
+
     //
     // Summary:
     //     Gets or sets ToolTip text with the appointment.
@@ -245,7 +243,6 @@ namespace Dental_App.Global_Classes
       get { return _LastStatusDate; }
       set { _LastStatusDate = value; }
     }
-
 
   }
 }

@@ -34,8 +34,6 @@
       // scheduleControl1
       // 
       this.scheduleControl1.Appearance.VisualStyle = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
-      this.scheduleControl1.Appearance.WeekHeaderFormat = "MMMM dd";
-      this.scheduleControl1.Appearance.WeekMonthFullFormat = "dddd, dd MMMM yyyy";
       this.scheduleControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(201)))), ((int)(((byte)(219)))));
       this.scheduleControl1.Culture = new System.Globalization.CultureInfo("");
       this.scheduleControl1.DataSource = null;

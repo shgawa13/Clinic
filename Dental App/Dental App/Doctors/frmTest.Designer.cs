@@ -28,43 +28,36 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.expertsBtn1 = new Dental_App.ExpertsBtn();
+      this.scheduleControl1 = new Syncfusion.Windows.Forms.Schedule.ScheduleControl();
       this.SuspendLayout();
       // 
-      // expertsBtn1
+      // scheduleControl1
       // 
-      this.expertsBtn1.BackColor = System.Drawing.Color.MediumSlateBlue;
-      this.expertsBtn1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-      this.expertsBtn1.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn1.BorderRadius = 20;
-      this.expertsBtn1.BorderSize = 0;
-      this.expertsBtn1.FlatAppearance.BorderSize = 0;
-      this.expertsBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn1.ForeColor = System.Drawing.Color.White;
-      this.expertsBtn1.Location = new System.Drawing.Point(323, 186);
-      this.expertsBtn1.Name = "expertsBtn1";
-      this.expertsBtn1.Size = new System.Drawing.Size(137, 49);
-      this.expertsBtn1.TabIndex = 0;
-      this.expertsBtn1.Text = "expertsBtn1";
-      this.expertsBtn1.TextColor = System.Drawing.Color.White;
-      this.expertsBtn1.UseVisualStyleBackColor = false;
-      this.expertsBtn1.Click += new System.EventHandler(this.expertsBtn1_Click);
+      this.scheduleControl1.Appearance.VisualStyle = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
+      this.scheduleControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(201)))), ((int)(((byte)(219)))));
+      this.scheduleControl1.Culture = new System.Globalization.CultureInfo("");
+      this.scheduleControl1.DataSource = null;
+      this.scheduleControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.scheduleControl1.ISO8601CalenderFormat = false;
+      this.scheduleControl1.Location = new System.Drawing.Point(0, 0);
+      this.scheduleControl1.Name = "scheduleControl1";
+      this.scheduleControl1.Size = new System.Drawing.Size(800, 450);
+      this.scheduleControl1.TabIndex = 0;
       // 
       // frmTest
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
-      this.Controls.Add(this.expertsBtn1);
+      this.Controls.Add(this.scheduleControl1);
       this.Name = "frmTest";
       this.Text = "frmTest";
-      this.Load += new System.EventHandler(this.frmTest_Load);
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private ExpertsBtn expertsBtn1;
+    private Syncfusion.Windows.Forms.Schedule.ScheduleControl scheduleControl1;
   }
 }
