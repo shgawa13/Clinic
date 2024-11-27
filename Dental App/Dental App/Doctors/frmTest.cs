@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GridScheduleSample;
 using Syncfusion.Schedule;
+using Dental_App.Global_Classes;
 using Syncfusion.Windows.Forms.Schedule;
 
 namespace Dental_App.Doctors
@@ -61,6 +62,7 @@ namespace Dental_App.Doctors
       set { fileName = value; }
     }
 
+   
     private SimpleScheduleAppointmentList masterList;
 
     /// <summary>
@@ -93,7 +95,7 @@ namespace Dental_App.Doctors
       int count = 400;//1000;//200;//30;
 
       SimpleScheduleAppointmentList masterList = new SimpleScheduleAppointmentList();
-      ScheduleAppointment item = masterList.NewScheduleAppointment() as ScheduleAppointment;
+      clsAppt item = (clsAppt)masterList.NewScheduleAppointment();
       DateTime now = DateTime.Now.Date;
       item.StartTime = DateTime.Now.AddMinutes(-150);
       item.EndTime = DateTime.Now.AddMinutes(-120);
@@ -101,13 +103,13 @@ namespace Dental_App.Doctors
       item.Subject = "Name Surname Test";
       item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
       masterList.Add(item);
-      item = new ScheduleAppointment();
+      item = new clsAppt();
       item.StartTime = DateTime.Now.AddMinutes(-150);
       item.EndTime = DateTime.Now.AddMinutes(-120);
       item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
       item.Subject = "Name";
       masterList.Add(item);
-      item = new ScheduleAppointment();
+      item = new clsAppt();
       item.StartTime = DateTime.Now.AddMinutes(-150);
       item.EndTime = DateTime.Now.AddMinutes(-120);
       item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
@@ -119,6 +121,11 @@ namespace Dental_App.Doctors
       //item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
       //item.Subject = "Name Surname Test";
       //masterList.Add(item);
+
+
+      clsDentalScheduleAppointmnet appt = masterList.NewScheduleAppointment() as clsDentalScheduleAppointmnet;
+      
+
 
       //item = new ScheduleAppointment();
       //item.StartTime = DateTime.Now.AddMinutes(-120);
@@ -181,7 +188,7 @@ namespace Dental_App.Doctors
       ////set explicit values if needed for testing...
       //masterList[142].Reminder = true;
       //masterList[142].ReminderValue = 9;//  hrs; // 7;//3 hrs
-
+      
 
       //DisplayList("Before Sort", masterList);
       masterList.SortStartTime();

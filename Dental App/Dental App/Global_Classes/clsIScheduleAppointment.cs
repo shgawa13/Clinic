@@ -244,5 +244,36 @@ namespace Dental_App.Global_Classes
       set { _LastStatusDate = value; }
     }
 
+    public clsIScheduleAppointment()
+    {
+      this.AllDay = false;
+      this.AllowClickable = false;
+      this.AllowDrag = false;
+      this.AllowResize = false;
+      this.BackColor = Color.Black;
+      this.ForeColor = Color.Black;
+      this.Content = "";
+      this.CustomToolTip = "";
+      this.Dirty = false;
+      this.StartTime = DateTime.Now;
+      this.EndTime = DateTime.Now;
+      this.IgnoreChanges = false;
+      this.LabelValue = 0;
+      this.LocationValue = "";
+      this.RecurringOnOverride = false;
+      this.MarkerValue = 0;
+      this.Owner = 0;
+      this.Reminder = false;
+      this.ReminderValue = 0;
+      this.ReminderText = "";
+      this.Subject = "";
+      this.Tag = null;
+      this.TimeSpanColor = Color.Black;
+      this.ToolTip = ScheduleAppointmentToolTip.Custom;
+      this.UniqueID = 0;
+      this.Version = 0;
+     
+
+    }
   }
 }

@@ -4,11 +4,13 @@ using System.Data;
 using System.Reflection;
 using Syncfusion.Schedule;
 using System.Diagnostics.Eventing.Reader;
+using Syncfusion.Windows.Forms.Schedule;
+
 namespace ClinicConsoleApp
 {
   internal class Program
   {
-
+    
     public static clsPerson AddingNewPerson()
     {
 
