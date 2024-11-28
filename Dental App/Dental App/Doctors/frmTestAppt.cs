@@ -9,39 +9,58 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dental_App.Global_Classes;
 using GridScheduleSample;
 using Syncfusion.Schedule;
-using Dental_App.Global_Classes;
 using Syncfusion.Windows.Forms.Schedule;
 
 namespace Dental_App.Doctors
 {
-  public partial class frmTest : Form
+  public partial class frmTestAppt : Form
   {
-    private ScheduleControl schedulegrid;
+    private ScheduleControl _scheduleControl1;
+    private CustomScheduleDataProvider dataProvider;
 
-    SimpleScheduleDataProvider data = new SimpleScheduleDataProvider();
-
-    public frmTest()
+    public frmTestAppt()
     {
-      ContextMenu contextMenu = new ContextMenu();
-
       InitializeComponent();
-      //this.scheduleControl1.ScheduleType = ScheduleViewType.CustomWeek;
+      _scheduleControl1 = this.scheduleControl1;
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       SimpleScheduleDataProvider data1 = new SimpleScheduleDataProvider();
       data1.MasterList = SimpleScheduleDataProvider.InitializeRandomData("2DataSource");
       this.scheduleControl1.DataSource = data1;
 
-      MenuItem insert = new MenuItem("Insert");
-      MenuItem delete = new MenuItem("Delete");
-      MenuItem update = new MenuItem("Update");
-      contextMenu.MenuItems.AddRange(new MenuItem[] { insert, delete, update });
-      this.scheduleControl1.GetScheduleHost().ContextMenu = contextMenu;
       this.scheduleControl1.GetScheduleHost().Schedule.Appearance.VisualStyle = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
+      this.scheduleControl1.GetScheduleHost().Schedule.ShowingAppointmentForm += Schedule_ShowingAppointmentForm;
     }
-  
+    private void Schedule_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
+    {
+      TextBox textBox1 = new TextBox
+      {
+        Location = new Point(28, 35),
+        Name = "textBox1",
+        Size = new Size(100, 23), // Adjust size for better visibility
+        TabIndex = 9,
+        Text = "Additional Info"
+      };
+
+      ComboBox comboBox1 = new ComboBox
+      {
+        Location = new Point(150, 35), // Adjust as needed
+        Size = new Size(100, 23),
+        Name = "comboBox1",
+      };
+      comboBox1.Items.Add("Option 1");
+      comboBox1.Items.Add("Option 2");
+      comboBox1.Items.Add("Option 3");
+
+      // Add the TextBox to the form's controls
+      e.MetroAppointmentForm.Controls[1].Controls.Add(textBox1);
+      e.MetroAppointmentForm.Controls[1].Controls.Add(comboBox1);
+    }
   }
+
+
 
   #region SimpleScheduleDataProvider
   public class SimpleScheduleDataProvider : ScheduleDataProvider
@@ -62,7 +81,6 @@ namespace Dental_App.Doctors
       set { fileName = value; }
     }
 
-   
     private SimpleScheduleAppointmentList masterList;
 
     /// <summary>
@@ -95,7 +113,7 @@ namespace Dental_App.Doctors
       int count = 400;//1000;//200;//30;
 
       SimpleScheduleAppointmentList masterList = new SimpleScheduleAppointmentList();
-      clsAppt item = (clsAppt)masterList.NewScheduleAppointment();
+      clsAppt item = masterList.NewScheduleAppointment() as clsAppt;
       DateTime now = DateTime.Now.Date;
       item.StartTime = DateTime.Now.AddMinutes(-150);
       item.EndTime = DateTime.Now.AddMinutes(-120);
@@ -121,11 +139,6 @@ namespace Dental_App.Doctors
       //item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
       //item.Subject = "Name Surname Test";
       //masterList.Add(item);
-
-
-      clsDentalScheduleAppointmnet appt = masterList.NewScheduleAppointment() as clsDentalScheduleAppointmnet;
-      
-
 
       //item = new ScheduleAppointment();
       //item.StartTime = DateTime.Now.AddMinutes(-120);
@@ -188,7 +201,7 @@ namespace Dental_App.Doctors
       ////set explicit values if needed for testing...
       //masterList[142].Reminder = true;
       //masterList[142].ReminderValue = 9;//  hrs; // 7;//3 hrs
-      
+
 
       //DisplayList("Before Sort", masterList);
       masterList.SortStartTime();
@@ -276,7 +289,7 @@ namespace Dental_App.Doctors
       ScheduleAppointmentList list = new ScheduleAppointmentList();
       DateTime start = startDate.Date;
       DateTime end = endDate.Date;
-      foreach (ScheduleAppointment item in this.MasterList)
+      foreach (clsAppt item in this.MasterList)
       {
         //item.EndTime.AddMinutes(-1) is to make sure an item that ends at 
         //midnight is not shown on the next days calendar
@@ -347,7 +360,7 @@ namespace Dental_App.Doctors
     /// <returns></returns>
     public override IScheduleAppointment NewScheduleAppointment()
     {
-      return new SimpleScheduleAppointment();
+      return new clsAppt();
     }
 
     /// <summary>
@@ -433,7 +446,7 @@ namespace Dental_App.Doctors
     /// <returns>A SimpleScheduleAppointment.</returns>
     public override IScheduleAppointment NewScheduleAppointment()
     {
-      return new SimpleScheduleAppointment();
+      return new clsAppt();
     }
 
 

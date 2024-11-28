@@ -81,11 +81,11 @@
     <Compile Include="Doctors\frmDoctors.Designer.cs">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctors\frmTest.cs">
+    <Compile Include="Doctors\frmTestAppt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doctors\frmTest.Designer.cs">
-      <DependentUpon>frmTest.cs</DependentUpon>
+    <Compile Include="Doctors\frmTestAppt.Designer.cs">
+      <DependentUpon>frmTestAppt.cs</DependentUpon>
     </Compile>
     <Compile Include="ExpertsBtn.cs">
       <SubType>Component</SubType>
@@ -97,9 +97,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Global_Classes\clsAppt.cs" />
-    <Compile Include="Global_Classes\clsCustomArrayListDataProvider.cs" />
-    <Compile Include="Global_Classes\clsDentalScheduleAppointmnet.cs" />
-    <Compile Include="Global_Classes\clsIScheduleAppointment.cs" />
+    <Compile Include="Global_Classes\clsCustomScheduleDataProvider.cs" />
     <Compile Include="Global_Classes\clsUtilities.cs" />
     <Compile Include="Patients\controls\ctrlPatientCard.cs">
       <SubType>UserControl</SubType>
@@ -136,8 +134,8 @@
     <EmbeddedResource Include="Doctors\frmDoctors.resx">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctors\frmTest.resx">
-      <DependentUpon>frmTest.cs</DependentUpon>
+    <EmbeddedResource Include="Doctors\frmTestAppt.resx">
+      <DependentUpon>frmTestAppt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -1,17 +1,18 @@
-﻿using System;
+﻿using Syncfusion.Schedule;
+using System;
+using System.Drawing;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Drawing;
 using System.Xml.Serialization;
-using Syncfusion.Schedule;
 
 namespace Dental_App.Global_Classes
 {
-  internal class clsAppt: ScheduleAppointment
+  public class clsAppt : ScheduleAppointment
   {
+
     private bool allDay;
 
     private string content = string.Empty;
@@ -67,6 +68,63 @@ namespace Dental_App.Global_Classes
     private object tag;
 
     private int version;
+
+    // AppointmnetID
+    private int _AppintmnetID;
+    public int AppintmnetID
+    {
+      get { return _AppintmnetID; }
+      set { AppintmnetID = value; }
+    }
+
+    // PatientID
+    private int _PatientID;
+    public int PatientID
+    {
+      get { return _PatientID; }
+      set { _PatientID = value; }
+    }
+
+    // DoctorID
+    private int _DoctorID;
+    public int DoctorID
+    {
+      get { return _DoctorID; }
+      set { _DoctorID = value; }
+    }
+
+    // AppointmentStatus
+    private int _AppointmentStatus;
+    public int AppointmentStatus
+    {
+      get { return _AppointmentStatus; }
+      set { _AppointmentStatus = value; }
+    }
+
+    // MedicalRecordID
+    private int _MedicalRecordID;
+    public int MedicalRecordID
+    {
+      get { return _MedicalRecordID; }
+      set { _MedicalRecordID = value; }
+    }
+
+    // PaymentID
+    private int _PaymentID;
+    public int PaymentID
+    {
+      get { return _PaymentID; }
+      set { _PaymentID = value; }
+    }
+
+    // LastStatusDate
+    private DateTime _LastStatusDate;
+    public DateTime LastStatusDate
+    {
+      get { return _LastStatusDate; }
+      set { _LastStatusDate = value; }
+    }
+
 
     //
     // Summary:
@@ -787,6 +845,8 @@ namespace Dental_App.Global_Classes
     {
     }
 
+
+
     //
     // Summary:
     //     Creates a copy of this item; using MemberwiseClone.
@@ -907,5 +967,9 @@ namespace Dental_App.Global_Classes
 
       return $"[{StartTime}  {EndTime}] subject:{Subject}";
     }
+
+    
+
   }
+
 }
