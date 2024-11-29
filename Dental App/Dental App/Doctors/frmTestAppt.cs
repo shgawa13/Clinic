@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business;
 using Dental_App.Global_Classes;
 using GridScheduleSample;
 using Syncfusion.Schedule;
@@ -33,6 +34,7 @@ namespace Dental_App.Doctors
       this.scheduleControl1.GetScheduleHost().Schedule.Appearance.VisualStyle = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
       this.scheduleControl1.GetScheduleHost().Schedule.ShowingAppointmentForm += Schedule_ShowingAppointmentForm;
     }
+
     private void Schedule_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
       TextBox textBox1 = new TextBox
@@ -50,14 +52,27 @@ namespace Dental_App.Doctors
         Size = new Size(100, 23),
         Name = "comboBox1",
       };
-      comboBox1.Items.Add("Option 1");
-      comboBox1.Items.Add("Option 2");
-      comboBox1.Items.Add("Option 3");
+      //comboBox1.Items.Add("Option 1");
+      //comboBox1.Items.Add("Option 2");
+      //comboBox1.Items.Add("Option 3");
+      _FillComboBox(comboBox1);
 
+      
       // Add the TextBox to the form's controls
       e.MetroAppointmentForm.Controls[1].Controls.Add(textBox1);
       e.MetroAppointmentForm.Controls[1].Controls.Add(comboBox1);
     }
+
+    private void _FillComboBox(ComboBox comboBox)
+    {
+      DataTable Doctors = clsDoctors.GetAllDoctors();
+      
+      foreach(DataRow doctor in Doctors.Rows)
+      {
+        comboBox.Items.Add(doctor["FullName"]);
+      }
+    }
+
   }
 
 
@@ -114,6 +129,7 @@ namespace Dental_App.Doctors
 
       SimpleScheduleAppointmentList masterList = new SimpleScheduleAppointmentList();
       clsAppt item = masterList.NewScheduleAppointment() as clsAppt;
+      item.DoctorID = 3;
       DateTime now = DateTime.Now.Date;
       item.StartTime = DateTime.Now.AddMinutes(-150);
       item.EndTime = DateTime.Now.AddMinutes(-120);
