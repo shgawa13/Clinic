@@ -43,6 +43,7 @@
     <Reference Include="Syncfusion.Grid.Windows, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Schedule.Base, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Schedule.Windows, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Shared.Base, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Windows, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Tools.Windows, Version=27.2462.2.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -69,11 +70,23 @@
       <DependentUpon>frmAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="Appointmnets\SimpleScheduleDataProvider.cs" />
+    <Compile Include="Doctors\frmAddUpdateAppointmnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\frmAddUpdateAppointmnet.Designer.cs">
+      <DependentUpon>frmAddUpdateAppointmnet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors\frmAddUpdateDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Doctors\frmAddUpdateDoctor.Designer.cs">
       <DependentUpon>frmAddUpdateDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\frmAppt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\frmAppt.Designer.cs">
+      <DependentUpon>frmAppt.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctors\frmDoctors.cs">
       <SubType>Form</SubType>
@@ -128,8 +141,14 @@
     <EmbeddedResource Include="Appointmnets\frmAppointments.resx">
       <DependentUpon>frmAppointments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\frmAddUpdateAppointmnet.resx">
+      <DependentUpon>frmAddUpdateAppointmnet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctors\frmAddUpdateDoctor.resx">
       <DependentUpon>frmAddUpdateDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\frmAppt.resx">
+      <DependentUpon>frmAppt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\frmDoctors.resx">
       <DependentUpon>frmDoctors.cs</DependentUpon>

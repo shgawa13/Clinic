@@ -33,48 +33,57 @@ namespace Dental_App.Doctors
 
       this.scheduleControl1.GetScheduleHost().Schedule.Appearance.VisualStyle = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
       this.scheduleControl1.GetScheduleHost().Schedule.ShowingAppointmentForm += Schedule_ShowingAppointmentForm;
+
     }
 
     private void Schedule_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
-      TextBox textBox1 = new TextBox
-      {
-        Location = new Point(28, 35),
-        Name = "textBox1",
-        Size = new Size(100, 23), // Adjust size for better visibility
-        TabIndex = 9,
-        Text = "Additional Info"
-      };
+      //Cancel the default appointment form for schedule control.
+      e.Cancel = true;
+      //Shows the Custom appointment form.
+      MessageBox.Show("the form has been canceld");
+      frmAppt frm = new frmAppt();
+      frm.ShowDialog();
+      //  TextBox textBox1 = new TextBox
+      //  {
+      //    Location = new Point(28, 35),
+      //    Name = "textBox1",
+      //    Size = new Size(100, 23), // Adjust size for better visibility
+      //    TabIndex = 9,
+      //    Text = "Additional Info"
+      //  };
 
-      ComboBox comboBox1 = new ComboBox
-      {
-        Location = new Point(150, 35), // Adjust as needed
-        Size = new Size(100, 23),
-        Name = "comboBox1",
-      };
-      //comboBox1.Items.Add("Option 1");
-      //comboBox1.Items.Add("Option 2");
-      //comboBox1.Items.Add("Option 3");
-      _FillComboBox(comboBox1);
+      //  ComboBox comboBox1 = new ComboBox
+      //  {
+      //    Location = new Point(150, 35), // Adjust as needed
+      //    Size = new Size(100, 23),
+      //    Name = "comboBox1",
 
-      
-      // Add the TextBox to the form's controls
-      e.MetroAppointmentForm.Controls[1].Controls.Add(textBox1);
-      e.MetroAppointmentForm.Controls[1].Controls.Add(comboBox1);
+      //  };
+      //  comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+      //  //comboBox1.Items.Add("Option 1");
+      //  //comboBox1.Items.Add("Option 2");
+      //  //comboBox1.Items.Add("Option 3");
+      //  _FillComboBox(comboBox1);
+
+
+      //  // Add the TextBox to the form's controls
+      //  e.MetroAppointmentForm.Controls[1].Controls.Add(textBox1);
+      //  e.MetroAppointmentForm.Controls[1].Controls.Add(comboBox1);
+      //}
+
+
+      //private void _FillComboBox(ComboBox comboBox)
+      //{
+      //  DataTable Doctors = clsDoctors.GetAllDoctors();
+
+      //  foreach(DataRow doctor in Doctors.Rows)
+      //  {
+      //    comboBox.Items.Add(doctor["FullName"]);
+      //  }
+      //}
     }
-
-    private void _FillComboBox(ComboBox comboBox)
-    {
-      DataTable Doctors = clsDoctors.GetAllDoctors();
-      
-      foreach(DataRow doctor in Doctors.Rows)
-      {
-        comboBox.Items.Add(doctor["FullName"]);
-      }
-    }
-
   }
-
 
 
   #region SimpleScheduleDataProvider

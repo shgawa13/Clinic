@@ -65,9 +65,9 @@
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.iconSpeciality = new FontAwesome.Sharp.IconButton();
+      this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
-      this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
       this.SuspendLayout();
       // 
@@ -375,6 +375,7 @@
       this.cmbSpeciality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cmbSpeciality.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cmbSpeciality.FormattingEnabled = true;
+      this.cmbSpeciality.ImeMode = System.Windows.Forms.ImeMode.Off;
       this.cmbSpeciality.Location = new System.Drawing.Point(440, 276);
       this.cmbSpeciality.Name = "cmbSpeciality";
       this.cmbSpeciality.Size = new System.Drawing.Size(163, 29);
@@ -515,6 +516,10 @@
       this.iconSpeciality.TabIndex = 139;
       this.iconSpeciality.UseVisualStyleBackColor = true;
       // 
+      // openFileDialog1
+      // 
+      this.openFileDialog1.FileName = "openFileDialog1";
+      // 
       // btnClose
       // 
       this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
@@ -554,10 +559,6 @@
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
       this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-      // 
-      // openFileDialog1
-      // 
-      this.openFileDialog1.FileName = "openFileDialog1";
       // 
       // frmAddUpdateDoctor
       // 
