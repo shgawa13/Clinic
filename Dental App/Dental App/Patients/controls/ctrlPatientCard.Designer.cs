@@ -308,7 +308,7 @@
       // 
       // pbAvatar
       // 
-      this.pbAvatar.Image = global::Dental_App.Properties.Resources.kilua;
+      this.pbAvatar.Image = global::Dental_App.Properties.Resources.Male_avatar;
       this.pbAvatar.Location = new System.Drawing.Point(517, 62);
       this.pbAvatar.Name = "pbAvatar";
       this.pbAvatar.Size = new System.Drawing.Size(295, 284);

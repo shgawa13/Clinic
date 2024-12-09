@@ -30,21 +30,16 @@
     {
       this.SuspendLayout();
       // 
-      // ShowRecurDialog
-      // 
-      this.ShowRecurDialog.Location = new System.Drawing.Point(568, 139);
-      this.ShowRecurDialog.Click += new System.EventHandler(this.ShowRecurDialog_Click);
-      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1210, 522);
+      this.ClientSize = new System.Drawing.Size(590, 522);
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
       this.Name = "frmAddUpdateAppointmnet";
       this.Text = "Add New Appointmnet";
+      this.Load += new System.EventHandler(this.frmAddUpdateAppointmnet_Load);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 

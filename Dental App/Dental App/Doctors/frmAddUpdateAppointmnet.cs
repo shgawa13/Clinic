@@ -12,11 +12,15 @@ using Syncfusion.Windows.Forms;
 using Syncfusion.Schedule;
 using GridScheduleSample;
 using Syncfusion.Windows.Forms.Schedule;
+using GridScheduleSample;
+
 
 namespace Dental_App.Doctors
 {
-  public partial class frmAddUpdateAppointmnet : MetroAppointmentForm
+  public partial class frmAddUpdateAppointmnet : MetroForm
   {
+    //private ScheduleControl _ScheduleGrid;
+
     public frmAddUpdateAppointmnet()
     {
       InitializeComponent();
@@ -25,6 +29,11 @@ namespace Dental_App.Doctors
     private void ShowRecurDialog_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
+    {
+      
     }
   }
 }
