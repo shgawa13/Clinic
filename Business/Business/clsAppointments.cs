@@ -991,7 +991,7 @@ namespace Business
     }
 
     // Get All Appointments
-    public static DataTable GetAllAppointments() => clsAppointmentsData.GetAllAppointments();
+    public static DataTable GetAllAppointments() => clsTestApptData.GetAllAppointmnets();
 
     // IsExist
     public static bool IsExist(int AppointmentID) => clsAppointmentsData.IsAppointmentExist(AppointmentID);

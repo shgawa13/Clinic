@@ -18,7 +18,7 @@ using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization.Formatters.Binary;
 using Syncfusion.Schedule;
 using Syncfusion.Windows.Forms.Schedule;
-
+using Dental_App.Global_Classes;
 
 namespace GridScheduleSample
 {
@@ -87,7 +87,7 @@ namespace GridScheduleSample
 
       for (int i = 0; i < count; ++i)
       {
-        ScheduleAppointment item = masterList.NewScheduleAppointment() as ScheduleAppointment;
+        clsAppt item = masterList.NewScheduleAppointment() as clsAppt;
 
         int dayOffSet = 30 - r.Next(60);
 
@@ -142,7 +142,7 @@ namespace GridScheduleSample
 
       for (int i = 0; i < count; ++i)
       {
-        ScheduleAppointment item = masterList.NewScheduleAppointment() as ScheduleAppointment;
+        clsAppt item = masterList.NewScheduleAppointment() as clsAppt;
 
         int dayOffSet = 30 - r.Next(60);
 
@@ -202,7 +202,7 @@ namespace GridScheduleSample
       ScheduleAppointmentList list = new ScheduleAppointmentList();
       DateTime start = startDate.Date;
       DateTime end = endDate.Date;
-      foreach (ScheduleAppointment item in this.MasterList)
+      foreach (clsAppt item in this.MasterList)
       {
         //item.EndTime.AddMinutes(-1) is to make sure an item that ends at 
         //midnight is not shown on the next days calendar
@@ -227,7 +227,7 @@ namespace GridScheduleSample
     {
       ScheduleAppointmentList list = new ScheduleAppointmentList();
       day = day.Date;
-      foreach (ScheduleAppointment item in this.MasterList)
+      foreach (clsAppt item in this.MasterList)
       {
         //do not want anything that ends at 12AM on the day
         if (item.StartTime.Date == day || (item.EndTime.Date == day && item.EndTime > day))
@@ -435,7 +435,7 @@ namespace GridScheduleSample
   /// Derives <see cref="ScheduleAppointment"/> to implement IScheduleAppointment.
   /// </summary>
   [Serializable]
-  public class SimpleScheduleAppointment : ScheduleAppointment, ISerializable
+  public class SimpleScheduleAppointment : clsAppt, ISerializable
   {
     #region ISerializable Members
 

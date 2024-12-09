@@ -103,9 +103,32 @@ namespace ClinicConsoleApp
       }
     }
 
+
+    public static void GetAllAppt()
+    {
+      DataTable dt = clsAppointments.GetAllAppointments();
+
+      foreach(DataRow row in dt.Rows)
+      {
+        Console.WriteLine($"{row["StartTime"]}");
+        Console.WriteLine($"{row["EndTime"]}");
+        Console.WriteLine($"{row["_Subject"]}");
+        Console.WriteLine($"{row["Content"]}");
+        Console.WriteLine($"{row["LabelValue"]}");
+        Console.WriteLine($"{row["LocationValue"]}");
+        Console.WriteLine($"{row["ReminderValue"]}");
+        Console.WriteLine($"{row["Reminder"]}");
+        Console.WriteLine($"{row["AllDay"]}");
+        Console.WriteLine($"{row["MarkerValue"]}");
+        Console.WriteLine($"{row["Dirty"]}");
+      }
+
+
+    }
+
     static void Main(string[] args)
     {
-      ShowScheduleInfo();
+      GetAllAppt();
 
       Console.ReadKey();
     }
