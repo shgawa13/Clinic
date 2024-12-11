@@ -28,21 +28,36 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.SuspendLayout();
+      // 
+      // groupBox1
+      // 
+      this.groupBox1.BackColor = System.Drawing.Color.Silver;
+      this.groupBox1.Location = new System.Drawing.Point(9, 43);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(613, 428);
+      this.groupBox1.TabIndex = 0;
+      this.groupBox1.TabStop = false;
+      this.groupBox1.Text = "Appointmnet Info";
       // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(590, 522);
+      this.BackColor = System.Drawing.Color.Gainsboro;
+      this.ClientSize = new System.Drawing.Size(629, 508);
+      this.Controls.Add(this.groupBox1);
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
+      this.MetroColor = System.Drawing.Color.PaleGreen;
       this.Name = "frmAddUpdateAppointmnet";
-      this.Text = "Add New Appointmnet";
-      this.Load += new System.EventHandler(this.frmAddUpdateAppointmnet_Load);
+      this.Text = "Appointmnet";
       this.ResumeLayout(false);
 
     }
 
     #endregion
+
+    private System.Windows.Forms.GroupBox groupBox1;
   }
 }

@@ -40,8 +40,7 @@ namespace Dental_App.Doctors
     {
       FillList();
       // here we call the function
-     
-
+      
       
     }
 
