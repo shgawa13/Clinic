@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Dental_App.Global_Classes
 {
-  public class clsAppt : ScheduleAppointment
+  public class clsAppt : IScheduleAppointment
   {
 
     private bool allDay;
@@ -843,6 +843,8 @@ namespace Dental_App.Global_Classes
     //     Initializes a new instance of the Syncfusion.Schedule.ScheduleAppointment class.
     public clsAppt()
     {
+      this.DoctorID = -1;
+      
     }
 
 

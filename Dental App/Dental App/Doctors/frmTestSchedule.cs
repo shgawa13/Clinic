@@ -25,7 +25,7 @@ namespace Dental_App.Doctors
     {
       InitializeComponent();
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
-      //this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm;
+      this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm;
 
     }
 
