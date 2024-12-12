@@ -29,7 +29,10 @@
     private void InitializeComponent()
     {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.iconNote = new FontAwesome.Sharp.IconButton();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.iconLogo = new FontAwesome.Sharp.IconButton();
+      this.iconButton3 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
       this.iconStartTime = new FontAwesome.Sharp.IconButton();
       this.sfDateTimeEdit1 = new Syncfusion.WinForms.Input.SfDateTimeEdit();
@@ -40,6 +43,11 @@
       this.label12 = new System.Windows.Forms.Label();
       this.label6 = new System.Windows.Forms.Label();
       this.label16 = new System.Windows.Forms.Label();
+      this.lblNationalNo = new System.Windows.Forms.Label();
+      this.lblEmail = new System.Windows.Forms.Label();
+      this.lblPhone = new System.Windows.Forms.Label();
+      this.lblFullName = new System.Windows.Forms.Label();
+      this.lblPatinetID = new System.Windows.Forms.Label();
       this.iconButton4 = new FontAwesome.Sharp.IconButton();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -50,13 +58,10 @@
       this.label17 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
-      this.iconButton3 = new FontAwesome.Sharp.IconButton();
-      this.iconLogo = new FontAwesome.Sharp.IconButton();
-      this.lblPatinetID = new System.Windows.Forms.Label();
-      this.lblFullName = new System.Windows.Forms.Label();
-      this.lblPhone = new System.Windows.Forms.Label();
-      this.lblEmail = new System.Windows.Forms.Label();
-      this.lblNationalNo = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+      this.btnClose = new Dental_App.ExpertsBtn();
+      this.btnSave = new Dental_App.ExpertsBtn();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
@@ -65,22 +70,41 @@
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
       this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.groupBox1.Controls.Add(this.textBoxExt1);
+      this.groupBox1.Controls.Add(this.label2);
+      this.groupBox1.Controls.Add(this.iconNote);
       this.groupBox1.Controls.Add(this.splitContainer1);
       this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.groupBox1.Location = new System.Drawing.Point(0, 0);
-      this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.groupBox1.Size = new System.Drawing.Size(733, 622);
+      this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+      this.groupBox1.Size = new System.Drawing.Size(733, 447);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
+      // 
+      // iconNote
+      // 
+      this.iconNote.FlatAppearance.BorderSize = 0;
+      this.iconNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconNote.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconNote.IconChar = FontAwesome.Sharp.IconChar.StickyNote;
+      this.iconNote.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconNote.IconSize = 31;
+      this.iconNote.Location = new System.Drawing.Point(21, 313);
+      this.iconNote.Name = "iconNote";
+      this.iconNote.Size = new System.Drawing.Size(34, 32);
+      this.iconNote.TabIndex = 148;
+      this.iconNote.UseVisualStyleBackColor = true;
       // 
       // splitContainer1
       // 
@@ -124,8 +148,37 @@
       this.splitContainer1.Panel2.Controls.Add(this.label1);
       this.splitContainer1.Panel2.Controls.Add(this.label4);
       this.splitContainer1.Size = new System.Drawing.Size(707, 281);
-      this.splitContainer1.SplitterDistance = 149;
+      this.splitContainer1.SplitterDistance = 136;
       this.splitContainer1.TabIndex = 19;
+      // 
+      // iconLogo
+      // 
+      this.iconLogo.FlatAppearance.BorderSize = 0;
+      this.iconLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconLogo.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+      this.iconLogo.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconLogo.IconSize = 31;
+      this.iconLogo.Location = new System.Drawing.Point(8, 83);
+      this.iconLogo.Name = "iconLogo";
+      this.iconLogo.Size = new System.Drawing.Size(35, 35);
+      this.iconLogo.TabIndex = 128;
+      this.iconLogo.UseVisualStyleBackColor = true;
+      // 
+      // iconButton3
+      // 
+      this.iconButton3.FlatAppearance.BorderSize = 0;
+      this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+      this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton3.IconSize = 31;
+      this.iconButton3.Location = new System.Drawing.Point(292, 50);
+      this.iconButton3.Name = "iconButton3";
+      this.iconButton3.Size = new System.Drawing.Size(34, 32);
+      this.iconButton3.TabIndex = 144;
+      this.iconButton3.UseVisualStyleBackColor = true;
       // 
       // iconButton6
       // 
@@ -166,6 +219,7 @@
       this.sfDateTimeEdit1.Size = new System.Drawing.Size(194, 29);
       this.sfDateTimeEdit1.TabIndex = 18;
       this.sfDateTimeEdit1.ToolTipText = "";
+      this.sfDateTimeEdit1.Value = new System.DateTime(2024, 12, 12, 0, 0, 0, 0);
       // 
       // sfComboBox3
       // 
@@ -248,6 +302,56 @@
       this.label16.Size = new System.Drawing.Size(85, 21);
       this.label16.TabIndex = 8;
       this.label16.Text = "End Time:";
+      // 
+      // lblNationalNo
+      // 
+      this.lblNationalNo.AutoSize = true;
+      this.lblNationalNo.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblNationalNo.Location = new System.Drawing.Point(383, 16);
+      this.lblNationalNo.Name = "lblNationalNo";
+      this.lblNationalNo.Size = new System.Drawing.Size(31, 21);
+      this.lblNationalNo.TabIndex = 147;
+      this.lblNationalNo.Text = "???";
+      // 
+      // lblEmail
+      // 
+      this.lblEmail.AutoSize = true;
+      this.lblEmail.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblEmail.Location = new System.Drawing.Point(332, 96);
+      this.lblEmail.Name = "lblEmail";
+      this.lblEmail.Size = new System.Drawing.Size(31, 21);
+      this.lblEmail.TabIndex = 146;
+      this.lblEmail.Text = "???";
+      // 
+      // lblPhone
+      // 
+      this.lblPhone.AutoSize = true;
+      this.lblPhone.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblPhone.Location = new System.Drawing.Point(151, 95);
+      this.lblPhone.Name = "lblPhone";
+      this.lblPhone.Size = new System.Drawing.Size(31, 21);
+      this.lblPhone.TabIndex = 145;
+      this.lblPhone.Text = "???";
+      // 
+      // lblFullName
+      // 
+      this.lblFullName.AutoSize = true;
+      this.lblFullName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblFullName.Location = new System.Drawing.Point(151, 56);
+      this.lblFullName.Name = "lblFullName";
+      this.lblFullName.Size = new System.Drawing.Size(31, 21);
+      this.lblFullName.TabIndex = 144;
+      this.lblFullName.Text = "???";
+      // 
+      // lblPatinetID
+      // 
+      this.lblPatinetID.AutoSize = true;
+      this.lblPatinetID.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblPatinetID.Location = new System.Drawing.Point(151, 16);
+      this.lblPatinetID.Name = "lblPatinetID";
+      this.lblPatinetID.Size = new System.Drawing.Size(31, 21);
+      this.lblPatinetID.TabIndex = 143;
+      this.lblPatinetID.Text = "???";
       // 
       // iconButton4
       // 
@@ -374,99 +478,84 @@
       this.label4.TabIndex = 2;
       this.label4.Text = "Full Name:";
       // 
-      // iconButton3
+      // label2
       // 
-      this.iconButton3.FlatAppearance.BorderSize = 0;
-      this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
-      this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton3.IconSize = 31;
-      this.iconButton3.Location = new System.Drawing.Point(292, 50);
-      this.iconButton3.Name = "iconButton3";
-      this.iconButton3.Size = new System.Drawing.Size(34, 32);
-      this.iconButton3.TabIndex = 144;
-      this.iconButton3.UseVisualStyleBackColor = true;
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label2.Location = new System.Drawing.Point(59, 319);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(52, 21);
+      this.label2.TabIndex = 148;
+      this.label2.Text = "Note:";
       // 
-      // iconLogo
+      // textBoxExt1
       // 
-      this.iconLogo.FlatAppearance.BorderSize = 0;
-      this.iconLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconLogo.IconChar = FontAwesome.Sharp.IconChar.UserMd;
-      this.iconLogo.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconLogo.IconSize = 31;
-      this.iconLogo.Location = new System.Drawing.Point(8, 83);
-      this.iconLogo.Name = "iconLogo";
-      this.iconLogo.Size = new System.Drawing.Size(35, 35);
-      this.iconLogo.TabIndex = 128;
-      this.iconLogo.UseVisualStyleBackColor = true;
+      this.textBoxExt1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
+      this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(604, 111);
+      this.textBoxExt1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.textBoxExt1.Location = new System.Drawing.Point(117, 313);
+      this.textBoxExt1.Multiline = true;
+      this.textBoxExt1.Name = "textBoxExt1";
+      this.textBoxExt1.Size = new System.Drawing.Size(604, 111);
+      this.textBoxExt1.TabIndex = 149;
+      this.textBoxExt1.Text = "textBoxExt1";
       // 
-      // lblPatinetID
+      // btnClose
       // 
-      this.lblPatinetID.AutoSize = true;
-      this.lblPatinetID.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblPatinetID.Location = new System.Drawing.Point(151, 16);
-      this.lblPatinetID.Name = "lblPatinetID";
-      this.lblPatinetID.Size = new System.Drawing.Size(31, 21);
-      this.lblPatinetID.TabIndex = 143;
-      this.lblPatinetID.Text = "???";
+      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnClose.BorderRadius = 5;
+      this.btnClose.BorderSize = 0;
+      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnClose.FlatAppearance.BorderSize = 0;
+      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.Location = new System.Drawing.Point(587, 454);
+      this.btnClose.Name = "btnClose";
+      this.btnClose.Size = new System.Drawing.Size(137, 37);
+      this.btnClose.TabIndex = 115;
+      this.btnClose.Text = "Close";
+      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.UseVisualStyleBackColor = false;
       // 
-      // lblFullName
+      // btnSave
       // 
-      this.lblFullName.AutoSize = true;
-      this.lblFullName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblFullName.Location = new System.Drawing.Point(151, 56);
-      this.lblFullName.Name = "lblFullName";
-      this.lblFullName.Size = new System.Drawing.Size(31, 21);
-      this.lblFullName.TabIndex = 144;
-      this.lblFullName.Text = "???";
-      // 
-      // lblPhone
-      // 
-      this.lblPhone.AutoSize = true;
-      this.lblPhone.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblPhone.Location = new System.Drawing.Point(151, 95);
-      this.lblPhone.Name = "lblPhone";
-      this.lblPhone.Size = new System.Drawing.Size(31, 21);
-      this.lblPhone.TabIndex = 145;
-      this.lblPhone.Text = "???";
-      // 
-      // lblEmail
-      // 
-      this.lblEmail.AutoSize = true;
-      this.lblEmail.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblEmail.Location = new System.Drawing.Point(332, 96);
-      this.lblEmail.Name = "lblEmail";
-      this.lblEmail.Size = new System.Drawing.Size(31, 21);
-      this.lblEmail.TabIndex = 146;
-      this.lblEmail.Text = "???";
-      // 
-      // lblNationalNo
-      // 
-      this.lblNationalNo.AutoSize = true;
-      this.lblNationalNo.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblNationalNo.Location = new System.Drawing.Point(383, 16);
-      this.lblNationalNo.Name = "lblNationalNo";
-      this.lblNationalNo.Size = new System.Drawing.Size(31, 21);
-      this.lblNationalNo.TabIndex = 147;
-      this.lblNationalNo.Text = "???";
+      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSave.BorderRadius = 5;
+      this.btnSave.BorderSize = 0;
+      this.btnSave.FlatAppearance.BorderSize = 0;
+      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.Location = new System.Drawing.Point(427, 454);
+      this.btnSave.Name = "btnSave";
+      this.btnSave.Size = new System.Drawing.Size(137, 37);
+      this.btnSave.TabIndex = 114;
+      this.btnSave.Text = "Save";
+      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.UseVisualStyleBackColor = false;
       // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.Color.White;
-      this.ClientSize = new System.Drawing.Size(733, 609);
+      this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
+      this.ClientSize = new System.Drawing.Size(733, 495);
+      this.Controls.Add(this.btnClose);
+      this.Controls.Add(this.btnSave);
       this.Controls.Add(this.groupBox1);
       this.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Margin = new System.Windows.Forms.Padding(4);
       this.MetroColor = System.Drawing.Color.PaleGreen;
       this.Name = "frmAddUpdateAppointmnet";
       this.Text = "Appointmnet";
       this.groupBox1.ResumeLayout(false);
+      this.groupBox1.PerformLayout();
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel1.PerformLayout();
       this.splitContainer1.Panel2.ResumeLayout(false);
@@ -476,6 +565,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -511,5 +601,10 @@
     private System.Windows.Forms.Label lblPhone;
     private System.Windows.Forms.Label lblFullName;
     private System.Windows.Forms.Label lblPatinetID;
+    private FontAwesome.Sharp.IconButton iconNote;
+    private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
+    private System.Windows.Forms.Label label2;
+    private ExpertsBtn btnClose;
+    private ExpertsBtn btnSave;
   }
 }

@@ -32,7 +32,8 @@ namespace Dental_App.Doctors
     private void ScheduleControl1_ShowingAppointmentForm(object sender, Syncfusion.Windows.Forms.Schedule.ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-     
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1);
+      frm.ShowDialog();
 
     }
 
