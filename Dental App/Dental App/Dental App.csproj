@@ -91,6 +91,12 @@
     <Compile Include="Doctors\frmDoctors.Designer.cs">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctors\frmTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\frmTester.Designer.cs">
+      <DependentUpon>frmTester.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors\frmTestSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
