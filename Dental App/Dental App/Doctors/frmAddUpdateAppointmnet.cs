@@ -29,11 +29,7 @@ namespace Dental_App.Doctors
 
     private RTLComboBoxBase endComboBoxBase;
 
-     public static string[] DisplayStrings = new string[19]
-     {
-    "Sub&ject:", "&Location:", "Sho&w time as:", "&Reminder:", "All Day Event", "En&d Time:", "Start Time&:", "La&bel:", "subject", "Cancel",
-    "Save and Close", "Enter Appointment", "Delete this appointment that spans more than one day?", "Delete a Span", "Delete Span", "Edit Recurring", "Make Recurring", "minutes", "hours"
-    };
+   
 
     public frmAddUpdateAppointmnet(ScheduleControl control)
     {
@@ -44,9 +40,11 @@ namespace Dental_App.Doctors
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
+      dtAppointmentDate.MinDateTime = DateTime.Today;
       dtAppointmentDate.Value = DateTime.Today;
-      
+      dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
 
+      FillComboBoxWithTime();
     }
 
     private int DateTimeToIndex(DateTime dt)
@@ -54,29 +52,27 @@ namespace Dental_App.Doctors
       return 1; // dt.Hour * (60 / minimumTimeSlot) + dt.Minute / minimumTimeSlot;
     }
 
-    private void PopulateTimeListBoxes(int minimumTimeSlot, string format)
+    // Filling ComboBox with time it start with 8:00 AM.
+    private void FillComboBoxWithTime()
     {
-      int num = 1440 / minimumTimeSlot;
-      object[] array = new object[num];
-      DateTime date = DateTime.Now.Date;
-      for (int i = 0; i < num; i++)
+     
+      int Year = DateTime.Today.Year;
+      int Month = DateTime.Today.Month;
+      int ToDay = DateTime.Today.Day;
+
+      DateTime date = new DateTime(Year, Month, ToDay, 8, 0, 0);
+
+      for (int i = 0; i < 20; i++)
       {
-        array[i] = date.AddMinutes(i * minimumTimeSlot).ToString(format);
+        cbStartTime.Items.Add(date.ToShortTimeString());
+        date = date.AddMinutes(30);
+        cbEndTime.Items.Add(date.ToShortTimeString());
       }
 
-      endListBox.Items.AddRange(array);
-      startListBox.Items.AddRange(array);
-    }
-
-    private void comboBoxStartTime()
-    {
-      DateTime dt = DateTime.Now.Date;
-
-    }
-   
-
-
+      cbStartTime.SelectedIndex = 0;
+      cbEndTime.SelectedIndex = 0;
   }
-    
 
+   
+  }   
 }

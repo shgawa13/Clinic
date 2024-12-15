@@ -29,9 +29,12 @@
     private void InitializeComponent()
     {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.label9 = new System.Windows.Forms.Label();
       this.textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.iconNote = new FontAwesome.Sharp.IconButton();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.cbEndTime = new System.Windows.Forms.ComboBox();
+      this.cbStartTime = new System.Windows.Forms.ComboBox();
       this.label5 = new System.Windows.Forms.Label();
       this.iconLogo = new FontAwesome.Sharp.IconButton();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -40,7 +43,6 @@
       this.dtAppointmentDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
       this.sfComboBox3 = new Syncfusion.WinForms.ListView.SfComboBox();
       this.label8 = new System.Windows.Forms.Label();
-      this.endDateTimePicker2 = new Syncfusion.WinForms.ListView.SfComboBox();
       this.label12 = new System.Windows.Forms.Label();
       this.label16 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
       this.label6 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
-      this.startDateTimePicker1 = new Syncfusion.WinForms.ListView.SfComboBox();
-      this.label9 = new System.Windows.Forms.Label();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.groupBox1.SuspendLayout();
@@ -73,8 +73,6 @@
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.endDateTimePicker2)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.startDateTimePicker1)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -95,6 +93,16 @@
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
+      // 
+      // label9
+      // 
+      this.label9.AutoSize = true;
+      this.label9.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label9.Location = new System.Drawing.Point(49, 316);
+      this.label9.Name = "label9";
+      this.label9.Size = new System.Drawing.Size(52, 21);
+      this.label9.TabIndex = 150;
+      this.label9.Text = "Note:";
       // 
       // textBoxExt1
       // 
@@ -136,6 +144,8 @@
       // splitContainer1.Panel1
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.splitContainer1.Panel1.Controls.Add(this.cbEndTime);
+      this.splitContainer1.Panel1.Controls.Add(this.cbStartTime);
       this.splitContainer1.Panel1.Controls.Add(this.label5);
       this.splitContainer1.Panel1.Controls.Add(this.iconLogo);
       this.splitContainer1.Panel1.Controls.Add(this.iconButton3);
@@ -143,9 +153,7 @@
       this.splitContainer1.Panel1.Controls.Add(this.iconStartTime);
       this.splitContainer1.Panel1.Controls.Add(this.dtAppointmentDate);
       this.splitContainer1.Panel1.Controls.Add(this.sfComboBox3);
-      this.splitContainer1.Panel1.Controls.Add(this.startDateTimePicker1);
       this.splitContainer1.Panel1.Controls.Add(this.label8);
-      this.splitContainer1.Panel1.Controls.Add(this.endDateTimePicker2);
       this.splitContainer1.Panel1.Controls.Add(this.label12);
       this.splitContainer1.Panel1.Controls.Add(this.label16);
       this.splitContainer1.Panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -172,15 +180,35 @@
       this.splitContainer1.SplitterDistance = 136;
       this.splitContainer1.TabIndex = 19;
       // 
+      // cbEndTime
+      // 
+      this.cbEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbEndTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbEndTime.FormattingEnabled = true;
+      this.cbEndTime.Location = new System.Drawing.Point(422, 50);
+      this.cbEndTime.Name = "cbEndTime";
+      this.cbEndTime.Size = new System.Drawing.Size(140, 29);
+      this.cbEndTime.TabIndex = 147;
+      // 
+      // cbStartTime
+      // 
+      this.cbStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbStartTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbStartTime.FormattingEnabled = true;
+      this.cbStartTime.Location = new System.Drawing.Point(135, 50);
+      this.cbStartTime.Name = "cbStartTime";
+      this.cbStartTime.Size = new System.Drawing.Size(142, 29);
+      this.cbStartTime.TabIndex = 146;
+      // 
       // label5
       // 
       this.label5.AutoSize = true;
       this.label5.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label5.Location = new System.Drawing.Point(45, 54);
+      this.label5.Location = new System.Drawing.Point(42, 54);
       this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(85, 21);
+      this.label5.Size = new System.Drawing.Size(92, 21);
       this.label5.TabIndex = 145;
-      this.label5.Text = "End Time:";
+      this.label5.Text = "Start Time:";
       // 
       // iconLogo
       // 
@@ -243,6 +271,7 @@
       // 
       // dtAppointmentDate
       // 
+      this.dtAppointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
       this.dtAppointmentDate.DateTimeIcon = null;
       this.dtAppointmentDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.dtAppointmentDate.Location = new System.Drawing.Point(112, 11);
@@ -254,6 +283,7 @@
       // 
       // sfComboBox3
       // 
+      this.sfComboBox3.AllowDropDownResize = false;
       this.sfComboBox3.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
       this.sfComboBox3.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
       this.sfComboBox3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
@@ -276,21 +306,6 @@
       this.label8.Size = new System.Drawing.Size(50, 21);
       this.label8.TabIndex = 4;
       this.label8.Text = "Date:";
-      // 
-      // endDateTimePicker2
-      // 
-      this.endDateTimePicker2.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-      this.endDateTimePicker2.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-      this.endDateTimePicker2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.endDateTimePicker2.Location = new System.Drawing.Point(423, 51);
-      this.endDateTimePicker2.Name = "endDateTimePicker2";
-      this.endDateTimePicker2.Size = new System.Drawing.Size(128, 26);
-      this.endDateTimePicker2.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-      this.endDateTimePicker2.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.endDateTimePicker2.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.endDateTimePicker2.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.endDateTimePicker2.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.endDateTimePicker2.TabIndex = 17;
       // 
       // label12
       // 
@@ -527,32 +542,6 @@
       this.label4.TabIndex = 2;
       this.label4.Text = "Full Name:";
       // 
-      // startDateTimePicker1
-      // 
-      this.startDateTimePicker1.AllowDropDownResize = false;
-      this.startDateTimePicker1.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-      this.startDateTimePicker1.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-      this.startDateTimePicker1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.startDateTimePicker1.Location = new System.Drawing.Point(136, 51);
-      this.startDateTimePicker1.Name = "startDateTimePicker1";
-      this.startDateTimePicker1.Size = new System.Drawing.Size(130, 26);
-      this.startDateTimePicker1.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-      this.startDateTimePicker1.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.startDateTimePicker1.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.startDateTimePicker1.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.startDateTimePicker1.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.startDateTimePicker1.TabIndex = 16;
-      // 
-      // label9
-      // 
-      this.label9.AutoSize = true;
-      this.label9.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label9.Location = new System.Drawing.Point(49, 316);
-      this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(52, 21);
-      this.label9.TabIndex = 150;
-      this.label9.Text = "Note:";
-      // 
       // btnClose
       // 
       this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
@@ -617,8 +606,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.endDateTimePicker2)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.startDateTimePicker1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -633,7 +620,6 @@
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Label label1;
     private Syncfusion.WinForms.ListView.SfComboBox sfComboBox3;
-    private Syncfusion.WinForms.ListView.SfComboBox endDateTimePicker2;
     private System.Windows.Forms.SplitContainer splitContainer1;
     private System.Windows.Forms.Label label18;
     private System.Windows.Forms.Label label17;
@@ -661,7 +647,8 @@
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Label label3;
-    private Syncfusion.WinForms.ListView.SfComboBox startDateTimePicker1;
     private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.ComboBox cbEndTime;
+    private System.Windows.Forms.ComboBox cbStartTime;
   }
 }

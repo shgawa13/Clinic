@@ -104,6 +104,29 @@ namespace ClinicConsoleApp
     }
 
 
+    public static string[] arr = new string[20];
+
+    
+
+
+    public static void FillArrayWithTime()
+    {
+      int Year = DateTime.Today.Year;
+      int Month = DateTime.Today.Month;
+      int ToDay = DateTime.Today.Day;
+
+      DateTime date = new DateTime(Year, Month, ToDay, 8, 0, 0);
+
+      for(int i =0; i< 20; i++)
+      {
+
+        Console.WriteLine($"{date.ToShortTimeString()}");
+        date = date.AddMinutes(30);
+
+      }
+
+    }
+
     public static void GetAllAppt()
     {
       DataTable dt = clsAppointments.GetAllAppointments();
@@ -128,7 +151,7 @@ namespace ClinicConsoleApp
 
     static void Main(string[] args)
     {
-      GetAllAppt();
+      FillArrayWithTime();
 
       Console.ReadKey();
     }
