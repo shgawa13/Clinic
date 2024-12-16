@@ -73,6 +73,40 @@ namespace Dental_App.Doctors
       cbEndTime.SelectedIndex = 0;
   }
 
-   
+    private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+      cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
+    }
+
+    private void txtFilterValue_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void label10_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void panel2_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void expertsBtn1_Click(object sender, EventArgs e)
+    {
+
+    }
   }   
 }

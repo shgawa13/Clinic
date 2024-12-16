@@ -139,27 +139,27 @@
             this.tlsmEdit,
             this.tlsmDelete});
       this.ctmsPatient.Name = "ctmsPatient";
-      this.ctmsPatient.Size = new System.Drawing.Size(181, 92);
+      this.ctmsPatient.Size = new System.Drawing.Size(128, 70);
       this.ctmsPatient.Text = "Mange Patient";
       // 
       // tlsmShowInfo
       // 
       this.tlsmShowInfo.Name = "tlsmShowInfo";
-      this.tlsmShowInfo.Size = new System.Drawing.Size(180, 22);
+      this.tlsmShowInfo.Size = new System.Drawing.Size(127, 22);
       this.tlsmShowInfo.Text = "Show info";
       this.tlsmShowInfo.Click += new System.EventHandler(this.tlsmShowInfo_Click);
       // 
       // tlsmEdit
       // 
       this.tlsmEdit.Name = "tlsmEdit";
-      this.tlsmEdit.Size = new System.Drawing.Size(180, 22);
+      this.tlsmEdit.Size = new System.Drawing.Size(127, 22);
       this.tlsmEdit.Text = "Edit";
       this.tlsmEdit.Click += new System.EventHandler(this.tlsmEdit_Click);
       // 
       // tlsmDelete
       // 
       this.tlsmDelete.Name = "tlsmDelete";
-      this.tlsmDelete.Size = new System.Drawing.Size(180, 22);
+      this.tlsmDelete.Size = new System.Drawing.Size(127, 22);
       this.tlsmDelete.Text = "Delete";
       this.tlsmDelete.Click += new System.EventHandler(this.tlsmDelete_Click);
       // 
