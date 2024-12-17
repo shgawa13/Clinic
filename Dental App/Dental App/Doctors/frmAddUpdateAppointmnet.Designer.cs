@@ -45,17 +45,17 @@
       this.label8 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
       this.label16 = new System.Windows.Forms.Label();
-      this.panel2 = new System.Windows.Forms.Panel();
-      this.iconSearch = new FontAwesome.Sharp.IconButton();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
-      this.label11 = new System.Windows.Forms.Label();
-      this.label7 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
-      this.lblNationalNo = new System.Windows.Forms.Label();
+      this.lblFullName = new System.Windows.Forms.Label();
       this.lblEmail = new System.Windows.Forms.Label();
       this.lblPhone = new System.Windows.Forms.Label();
-      this.lblFullName = new System.Windows.Forms.Label();
+      this.lblNationalNo = new System.Windows.Forms.Label();
+      this.panelSearch = new System.Windows.Forms.Panel();
+      this.iconSearch = new FontAwesome.Sharp.IconButton();
+      this.tbSearch = new System.Windows.Forms.TextBox();
+      this.label11 = new System.Windows.Forms.Label();
+      this.label10 = new System.Windows.Forms.Label();
+      this.label7 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
       this.lblPatinetID = new System.Windows.Forms.Label();
       this.iconButton4 = new FontAwesome.Sharp.IconButton();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -63,6 +63,7 @@
       this.iconButton7 = new FontAwesome.Sharp.IconButton();
       this.label19 = new System.Windows.Forms.Label();
       this.label18 = new System.Windows.Forms.Label();
+      this.iconButton8 = new FontAwesome.Sharp.IconButton();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.label17 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
@@ -78,12 +79,13 @@
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).BeginInit();
-      this.panel2.SuspendLayout();
+      this.panelSearch.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
-      this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+      this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
       this.groupBox1.Controls.Add(this.label9);
@@ -167,13 +169,14 @@
       // splitContainer1.Panel2
       // 
       this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-      this.splitContainer1.Panel2.Controls.Add(this.panel2);
-      this.splitContainer1.Panel2.Controls.Add(this.label7);
-      this.splitContainer1.Panel2.Controls.Add(this.label3);
-      this.splitContainer1.Panel2.Controls.Add(this.lblNationalNo);
+      this.splitContainer1.Panel2.Controls.Add(this.lblFullName);
       this.splitContainer1.Panel2.Controls.Add(this.lblEmail);
       this.splitContainer1.Panel2.Controls.Add(this.lblPhone);
-      this.splitContainer1.Panel2.Controls.Add(this.lblFullName);
+      this.splitContainer1.Panel2.Controls.Add(this.lblNationalNo);
+      this.splitContainer1.Panel2.Controls.Add(this.panelSearch);
+      this.splitContainer1.Panel2.Controls.Add(this.label10);
+      this.splitContainer1.Panel2.Controls.Add(this.label7);
+      this.splitContainer1.Panel2.Controls.Add(this.label3);
       this.splitContainer1.Panel2.Controls.Add(this.lblPatinetID);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton4);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton5);
@@ -181,6 +184,7 @@
       this.splitContainer1.Panel2.Controls.Add(this.iconButton7);
       this.splitContainer1.Panel2.Controls.Add(this.label19);
       this.splitContainer1.Panel2.Controls.Add(this.label18);
+      this.splitContainer1.Panel2.Controls.Add(this.iconButton8);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton1);
       this.splitContainer1.Panel2.Controls.Add(this.label17);
       this.splitContainer1.Size = new System.Drawing.Size(707, 281);
@@ -341,110 +345,21 @@
       this.label16.TabIndex = 8;
       this.label16.Text = "End Time:";
       // 
-      // panel2
+      // lblFullName
       // 
-      this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.panel2.Controls.Add(this.iconSearch);
-      this.panel2.Controls.Add(this.textBox1);
-      this.panel2.Controls.Add(this.comboBox1);
-      this.panel2.Controls.Add(this.label11);
-      this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panel2.Location = new System.Drawing.Point(0, 0);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(707, 41);
-      this.panel2.TabIndex = 150;
-      this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-      // 
-      // iconSearch
-      // 
-      this.iconSearch.BackColor = System.Drawing.Color.Gainsboro;
-      this.iconSearch.FlatAppearance.BorderSize = 0;
-      this.iconSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-      this.iconSearch.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconSearch.IconSize = 40;
-      this.iconSearch.Location = new System.Drawing.Point(436, 3);
-      this.iconSearch.Name = "iconSearch";
-      this.iconSearch.Size = new System.Drawing.Size(33, 36);
-      this.iconSearch.TabIndex = 151;
-      this.iconSearch.UseVisualStyleBackColor = false;
-      // 
-      // textBox1
-      // 
-      this.textBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.textBox1.Location = new System.Drawing.Point(257, 7);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(173, 26);
-      this.textBox1.TabIndex = 152;
-      this.textBox1.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
-      // 
-      // comboBox1
-      // 
-      this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.comboBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Items.AddRange(new object[] {
-            "None",
-            "Patient ID",
-            "National ID",
-            "Last Name",
-            "Phone Number",
-            "Email"});
-      this.comboBox1.Location = new System.Drawing.Point(88, 6);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(163, 29);
-      this.comboBox1.TabIndex = 151;
-      this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
-      // 
-      // label11
-      // 
-      this.label11.AutoSize = true;
-      this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label11.ForeColor = System.Drawing.Color.Black;
-      this.label11.Location = new System.Drawing.Point(9, 10);
-      this.label11.Name = "label11";
-      this.label11.Size = new System.Drawing.Size(72, 21);
-      this.label11.TabIndex = 150;
-      this.label11.Text = "Find by:";
-      this.label11.Click += new System.EventHandler(this.label10_Click);
-      // 
-      // label7
-      // 
-      this.label7.AutoSize = true;
-      this.label7.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label7.Location = new System.Drawing.Point(43, 61);
-      this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(90, 21);
-      this.label7.TabIndex = 149;
-      this.label7.Text = "Patient ID:";
-      // 
-      // label3
-      // 
-      this.label3.AutoSize = true;
-      this.label3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label3.Location = new System.Drawing.Point(245, 61);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(92, 21);
-      this.label3.TabIndex = 148;
-      this.label3.Text = "Full Name:";
-      // 
-      // lblNationalNo
-      // 
-      this.lblNationalNo.AutoSize = true;
-      this.lblNationalNo.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblNationalNo.Location = new System.Drawing.Point(150, 108);
-      this.lblNationalNo.Name = "lblNationalNo";
-      this.lblNationalNo.Size = new System.Drawing.Size(31, 21);
-      this.lblNationalNo.TabIndex = 147;
-      this.lblNationalNo.Text = "???";
+      this.lblFullName.AutoSize = true;
+      this.lblFullName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblFullName.Location = new System.Drawing.Point(341, 58);
+      this.lblFullName.Name = "lblFullName";
+      this.lblFullName.Size = new System.Drawing.Size(31, 21);
+      this.lblFullName.TabIndex = 144;
+      this.lblFullName.Text = "???";
       // 
       // lblEmail
       // 
       this.lblEmail.AutoSize = true;
       this.lblEmail.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblEmail.Location = new System.Drawing.Point(509, 112);
+      this.lblEmail.Location = new System.Drawing.Point(527, 111);
       this.lblEmail.Name = "lblEmail";
       this.lblEmail.Size = new System.Drawing.Size(31, 21);
       this.lblEmail.TabIndex = 146;
@@ -454,27 +369,105 @@
       // 
       this.lblPhone.AutoSize = true;
       this.lblPhone.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblPhone.Location = new System.Drawing.Point(308, 108);
+      this.lblPhone.Location = new System.Drawing.Point(331, 111);
       this.lblPhone.Name = "lblPhone";
       this.lblPhone.Size = new System.Drawing.Size(31, 21);
       this.lblPhone.TabIndex = 145;
       this.lblPhone.Text = "???";
       // 
-      // lblFullName
+      // lblNationalNo
       // 
-      this.lblFullName.AutoSize = true;
-      this.lblFullName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblFullName.Location = new System.Drawing.Point(348, 61);
-      this.lblFullName.Name = "lblFullName";
-      this.lblFullName.Size = new System.Drawing.Size(31, 21);
-      this.lblFullName.TabIndex = 144;
-      this.lblFullName.Text = "???";
+      this.lblNationalNo.AutoSize = true;
+      this.lblNationalNo.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.lblNationalNo.Location = new System.Drawing.Point(135, 111);
+      this.lblNationalNo.Name = "lblNationalNo";
+      this.lblNationalNo.Size = new System.Drawing.Size(31, 21);
+      this.lblNationalNo.TabIndex = 147;
+      this.lblNationalNo.Text = "???";
+      // 
+      // panelSearch
+      // 
+      this.panelSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.panelSearch.Controls.Add(this.iconSearch);
+      this.panelSearch.Controls.Add(this.tbSearch);
+      this.panelSearch.Controls.Add(this.label11);
+      this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+      this.panelSearch.Location = new System.Drawing.Point(0, 0);
+      this.panelSearch.Name = "panelSearch";
+      this.panelSearch.Size = new System.Drawing.Size(707, 41);
+      this.panelSearch.TabIndex = 150;
+      // 
+      // iconSearch
+      // 
+      this.iconSearch.BackColor = System.Drawing.Color.Gainsboro;
+      this.iconSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+      this.iconSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+      this.iconSearch.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconSearch.IconSize = 25;
+      this.iconSearch.Location = new System.Drawing.Point(284, 6);
+      this.iconSearch.Name = "iconSearch";
+      this.iconSearch.Size = new System.Drawing.Size(42, 28);
+      this.iconSearch.TabIndex = 151;
+      this.iconSearch.UseVisualStyleBackColor = false;
+      this.iconSearch.Click += new System.EventHandler(this.iconSearch_Click);
+      // 
+      // tbSearch
+      // 
+      this.tbSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+      this.tbSearch.Location = new System.Drawing.Point(161, 7);
+      this.tbSearch.Name = "tbSearch";
+      this.tbSearch.Size = new System.Drawing.Size(116, 26);
+      this.tbSearch.TabIndex = 152;
+      // 
+      // label11
+      // 
+      this.label11.AutoSize = true;
+      this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label11.ForeColor = System.Drawing.Color.Black;
+      this.label11.Location = new System.Drawing.Point(9, 10);
+      this.label11.Name = "label11";
+      this.label11.Size = new System.Drawing.Size(150, 21);
+      this.label11.TabIndex = 150;
+      this.label11.Text = "Find by PatientID:";
+      // 
+      // label10
+      // 
+      this.label10.AutoSize = true;
+      this.label10.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label10.Location = new System.Drawing.Point(29, 58);
+      this.label10.Name = "label10";
+      this.label10.Size = new System.Drawing.Size(90, 21);
+      this.label10.TabIndex = 149;
+      this.label10.Text = "Patient ID:";
+      // 
+      // label7
+      // 
+      this.label7.AutoSize = true;
+      this.label7.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label7.Location = new System.Drawing.Point(28, 61);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(90, 21);
+      this.label7.TabIndex = 149;
+      this.label7.Text = "Patient ID:";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label3.Location = new System.Drawing.Point(245, 58);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(92, 21);
+      this.label3.TabIndex = 148;
+      this.label3.Text = "Full Name:";
       // 
       // lblPatinetID
       // 
       this.lblPatinetID.AutoSize = true;
       this.lblPatinetID.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.lblPatinetID.Location = new System.Drawing.Point(137, 61);
+      this.lblPatinetID.Location = new System.Drawing.Point(125, 58);
       this.lblPatinetID.Name = "lblPatinetID";
       this.lblPatinetID.Size = new System.Drawing.Size(31, 21);
       this.lblPatinetID.TabIndex = 143;
@@ -488,10 +481,10 @@
       this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Ideal;
       this.iconButton4.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton4.IconSize = 31;
-      this.iconButton4.Location = new System.Drawing.Point(6, 102);
+      this.iconButton4.IconSize = 25;
+      this.iconButton4.Location = new System.Drawing.Point(7, 111);
       this.iconButton4.Name = "iconButton4";
-      this.iconButton4.Size = new System.Drawing.Size(34, 32);
+      this.iconButton4.Size = new System.Drawing.Size(20, 21);
       this.iconButton4.TabIndex = 140;
       this.iconButton4.UseVisualStyleBackColor = true;
       // 
@@ -503,10 +496,10 @@
       this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.MailBulk;
       this.iconButton5.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton5.IconSize = 31;
-      this.iconButton5.Location = new System.Drawing.Point(406, 105);
+      this.iconButton5.IconSize = 25;
+      this.iconButton5.Location = new System.Drawing.Point(454, 109);
       this.iconButton5.Name = "iconButton5";
-      this.iconButton5.Size = new System.Drawing.Size(34, 32);
+      this.iconButton5.Size = new System.Drawing.Size(19, 24);
       this.iconButton5.TabIndex = 142;
       this.iconButton5.UseVisualStyleBackColor = true;
       // 
@@ -518,10 +511,10 @@
       this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
       this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton2.IconSize = 31;
-      this.iconButton2.Location = new System.Drawing.Point(205, 55);
+      this.iconButton2.IconSize = 25;
+      this.iconButton2.Location = new System.Drawing.Point(215, 55);
       this.iconButton2.Name = "iconButton2";
-      this.iconButton2.Size = new System.Drawing.Size(34, 32);
+      this.iconButton2.Size = new System.Drawing.Size(24, 27);
       this.iconButton2.TabIndex = 133;
       this.iconButton2.UseVisualStyleBackColor = true;
       // 
@@ -533,10 +526,10 @@
       this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Phone;
       this.iconButton7.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton7.IconSize = 31;
-      this.iconButton7.Location = new System.Drawing.Point(199, 102);
+      this.iconButton7.IconSize = 25;
+      this.iconButton7.Location = new System.Drawing.Point(247, 105);
       this.iconButton7.Name = "iconButton7";
-      this.iconButton7.Size = new System.Drawing.Size(34, 32);
+      this.iconButton7.Size = new System.Drawing.Size(20, 32);
       this.iconButton7.TabIndex = 141;
       this.iconButton7.UseVisualStyleBackColor = true;
       // 
@@ -544,7 +537,7 @@
       // 
       this.label19.AutoSize = true;
       this.label19.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label19.Location = new System.Drawing.Point(39, 108);
+      this.label19.Location = new System.Drawing.Point(28, 111);
       this.label19.Name = "label19";
       this.label19.Size = new System.Drawing.Size(108, 21);
       this.label19.TabIndex = 5;
@@ -554,11 +547,26 @@
       // 
       this.label18.AutoSize = true;
       this.label18.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label18.Location = new System.Drawing.Point(446, 112);
+      this.label18.Location = new System.Drawing.Point(471, 111);
       this.label18.Name = "label18";
       this.label18.Size = new System.Drawing.Size(57, 21);
       this.label18.TabIndex = 4;
       this.label18.Text = "Email:";
+      // 
+      // iconButton8
+      // 
+      this.iconButton8.FlatAppearance.BorderSize = 0;
+      this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
+      this.iconButton8.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton8.IconSize = 25;
+      this.iconButton8.Location = new System.Drawing.Point(8, 55);
+      this.iconButton8.Name = "iconButton8";
+      this.iconButton8.Size = new System.Drawing.Size(18, 27);
+      this.iconButton8.TabIndex = 139;
+      this.iconButton8.UseVisualStyleBackColor = true;
       // 
       // iconButton1
       // 
@@ -568,10 +576,10 @@
       this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
       this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 31;
-      this.iconButton1.Location = new System.Drawing.Point(6, 55);
+      this.iconButton1.IconSize = 25;
+      this.iconButton1.Location = new System.Drawing.Point(7, 55);
       this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Size = new System.Drawing.Size(34, 32);
+      this.iconButton1.Size = new System.Drawing.Size(18, 27);
       this.iconButton1.TabIndex = 139;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
@@ -579,7 +587,7 @@
       // 
       this.label17.AutoSize = true;
       this.label17.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label17.Location = new System.Drawing.Point(239, 108);
+      this.label17.Location = new System.Drawing.Point(272, 111);
       this.label17.Name = "label17";
       this.label17.Size = new System.Drawing.Size(63, 21);
       this.label17.TabIndex = 3;
@@ -656,14 +664,13 @@
       this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(427, 454);
+      this.btnSave.Location = new System.Drawing.Point(427, 455);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(137, 37);
       this.btnSave.TabIndex = 114;
       this.btnSave.Text = "Save";
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
-      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
       // 
       // frmAddUpdateAppointmnet
       // 
@@ -690,8 +697,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).EndInit();
-      this.panel2.ResumeLayout(false);
-      this.panel2.PerformLayout();
+      this.panelSearch.ResumeLayout(false);
+      this.panelSearch.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -735,11 +742,12 @@
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.ComboBox cbEndTime;
     private System.Windows.Forms.ComboBox cbStartTime;
-    private System.Windows.Forms.Panel panel2;
-    private System.Windows.Forms.TextBox textBox1;
-    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.Panel panelSearch;
+    private System.Windows.Forms.TextBox tbSearch;
     private System.Windows.Forms.Label label11;
     private FontAwesome.Sharp.IconButton iconSearch;
     private FontAwesome.Sharp.IconButton iconButton5;
+    private System.Windows.Forms.Label label10;
+    private FontAwesome.Sharp.IconButton iconButton8;
   }
 }

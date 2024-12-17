@@ -12,24 +12,16 @@ using Syncfusion.Windows.Forms;
 using Syncfusion.Schedule;
 using GridScheduleSample;
 using Syncfusion.Windows.Forms.Schedule;
+using Business;
 
 namespace Dental_App.Doctors
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
   {
     private ScheduleControl _ScheduleGrid;
-
-    private ListBox startListBox;
-
-    private ListBox endListBox;
-
-    private int minimumTimeSlot;
-
-    private RTLComboBoxBase startComboBoxBase;
-
-    private RTLComboBoxBase endComboBoxBase;
-
-   
+    private clsPatient _Patient;
+    private int _PatientID;
+    private string _searchString;
 
     public frmAddUpdateAppointmnet(ScheduleControl control)
     {
@@ -73,40 +65,44 @@ namespace Dental_App.Doctors
       cbEndTime.SelectedIndex = 0;
   }
 
+    // Find patient
+    private void _FindPatinet(int PatientID)
+    {
+      _Patient = clsPatient.FindPatientByID(PatientID);
+
+      if (_Patient == null) 
+      {
+        MessageBox.Show($"Patient with ID: {_Patient} was not  found");
+        return;  
+      }
+
+      lblFullName.Text = _Patient.PatientInfo.FullName;
+      lblPatinetID.Text = PatientID.ToString();
+      lblNationalNo.Text = _Patient.PatientInfo.NationalID;
+      lblEmail.Text = _Patient.PatientInfo.Email;
+      lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
+
+      MessageBox.Show($" {lblFullName.Text}," +
+        $"{lblPatinetID.Text}," +
+        $"{lblNationalNo.Text}," +
+        $"{lblEmail.Text}," +
+        $"{lblPhone.Text}");
+    }
+
+
     private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
     {
 
       cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
     }
 
-    private void txtFilterValue_TextChanged(object sender, EventArgs e)
+    private void iconSearch_Click(object sender, EventArgs e)
     {
-
+      _PatientID = int.Parse(tbSearch.Text);
+      _FindPatinet(_PatientID);
     }
 
-    private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
-    {
+   
 
-    }
-
-    private void label10_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void panel2_Paint(object sender, PaintEventArgs e)
-    {
-
-    }
-
-    private void btnSave_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void expertsBtn1_Click(object sender, EventArgs e)
-    {
-
-    }
   }   
 }
