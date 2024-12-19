@@ -18,20 +18,31 @@ namespace Dental_App.Doctors
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
   {
+    public enum enMode { AddNew = 0, Update = 1 };
+    private enMode _Mode = enMode.AddNew;
+
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
 
-    public frmAddUpdateAppointmnet(ScheduleControl control, DateTime dt, string Time)
+    // AppointmentForm Can be opened from two places
+    // From Schedule
+    public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     {
       InitializeComponent();
       _ScheduleGrid = control;
-      _SelectedAppointmentDate = dt;
-      _AppointmnetTime = Time;
+      _SelectedAppointmentDate = AppointmentDate;
+      _AppointmnetTime = AppointmentTime;
     }
 
+    public frmAddUpdateAppointmnet(ScheduleControl control, int PatientID)
+    {
+      InitializeComponent();
+      _ScheduleGrid = control;
+      _PatientID = PatientID;
+    }
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
@@ -39,7 +50,16 @@ namespace Dental_App.Doctors
       dtAppointmentDate.Value = _SelectedAppointmentDate;
       dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
 
-      FillComboBoxWithTime();
+
+      _ResetDefualtValues();
+    }
+
+    // Reset Defualt values
+    private void _ResetDefualtValues()
+    {
+      _FillComboBoxWithTime();
+      _FillDoctorsComboBox();
+
     }
 
     private int DateTimeToIndex(DateTime dt)
@@ -48,7 +68,7 @@ namespace Dental_App.Doctors
     }
 
     // Filling ComboBox with time it start with 8:00 AM.
-    private void FillComboBoxWithTime()
+    private void _FillComboBoxWithTime()
     {
      
       int Year = DateTime.Today.Year;
@@ -63,10 +83,25 @@ namespace Dental_App.Doctors
         date = date.AddMinutes(30);
         cbEndTime.Items.Add(date.ToShortTimeString());
       }
-      MessageBoxAdv.Show(_AppointmnetTime);
-      cbStartTime.SelectedIndex = 0;
+      
+      // If there is no Time selected
+      if (_AppointmnetTime == "")
+        cbStartTime.SelectedIndex = 0;
+      cbStartTime.SelectedIndex = cbStartTime.FindString(_AppointmnetTime);
+      
       cbEndTime.SelectedIndex = 0;
-  }
+    }
+
+    private void _FillDoctorsComboBox()
+    {
+      DataTable Doctors = clsDoctors.GetAllDoctors();
+
+      foreach(DataRow row in Doctors.Rows)
+      {
+        cbDoctor.Items.Add(row["FullName"]);
+      }
+
+    }
 
     // Find patient
     private void _FindPatinet(int PatientID)
