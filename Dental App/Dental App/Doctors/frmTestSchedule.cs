@@ -13,11 +13,15 @@ using Business;
 using Syncfusion.Schedule;
 using System.Windows.Documents;
 using Dental_App.Global_Classes;
+using Syncfusion.DataSource.Extensions;
+using Syncfusion.Windows.Forms.Grid;
 
 namespace Dental_App.Doctors
 {
   public partial class frmTestSchedule : Form
   {
+    private DateTime SelectedAppointmentDate { set; get; }
+
     CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
     SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
 
@@ -26,14 +30,24 @@ namespace Dental_App.Doctors
       InitializeComponent();
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm;
+      this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick; 
+     
+     // this.scheduleControl1.Schedule += Schedule_ScheduleDoubleTapped;
 
+    }
+
+    private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
+    {
+      //throw new NotImplementedException();
+      SelectedAppointmentDate = e.ClickDateTime.Date;
+     // MessageBox.Show($"{SelectedAppointmentDate}");
     }
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, Syncfusion.Windows.Forms.Schedule.ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-      int cell = this.scheduleControl1.Calendar.CalenderGrid.CurrentCell.ColIndex;
-      MessageBox.Show($"{cell}");
+    ;
+
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1);
       frm.ShowDialog();
 

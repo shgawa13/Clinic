@@ -41,7 +41,6 @@
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
       this.iconStartTime = new FontAwesome.Sharp.IconButton();
       this.dtAppointmentDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
-      this.sfComboBox3 = new Syncfusion.WinForms.ListView.SfComboBox();
       this.label8 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
       this.label16 = new System.Windows.Forms.Label();
@@ -72,13 +71,15 @@
       this.label4 = new System.Windows.Forms.Label();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
+      this.cbDoctor = new System.Windows.Forms.ComboBox();
+      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.label13 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).BeginInit();
       this.panelSearch.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -152,6 +153,9 @@
       // splitContainer1.Panel1
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.splitContainer1.Panel1.Controls.Add(this.label13);
+      this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+      this.splitContainer1.Panel1.Controls.Add(this.cbDoctor);
       this.splitContainer1.Panel1.Controls.Add(this.cbEndTime);
       this.splitContainer1.Panel1.Controls.Add(this.cbStartTime);
       this.splitContainer1.Panel1.Controls.Add(this.label5);
@@ -160,7 +164,6 @@
       this.splitContainer1.Panel1.Controls.Add(this.iconButton6);
       this.splitContainer1.Panel1.Controls.Add(this.iconStartTime);
       this.splitContainer1.Panel1.Controls.Add(this.dtAppointmentDate);
-      this.splitContainer1.Panel1.Controls.Add(this.sfComboBox3);
       this.splitContainer1.Panel1.Controls.Add(this.label8);
       this.splitContainer1.Panel1.Controls.Add(this.label12);
       this.splitContainer1.Panel1.Controls.Add(this.label16);
@@ -199,7 +202,7 @@
       this.cbEndTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.cbEndTime.FormattingEnabled = true;
       this.cbEndTime.IntegralHeight = false;
-      this.cbEndTime.Location = new System.Drawing.Point(422, 50);
+      this.cbEndTime.Location = new System.Drawing.Point(472, 50);
       this.cbEndTime.Name = "cbEndTime";
       this.cbEndTime.Size = new System.Drawing.Size(140, 29);
       this.cbEndTime.TabIndex = 147;
@@ -251,7 +254,7 @@
       this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton3.IconSize = 31;
-      this.iconButton3.Location = new System.Drawing.Point(292, 48);
+      this.iconButton3.Location = new System.Drawing.Point(326, 48);
       this.iconButton3.Name = "iconButton3";
       this.iconButton3.Size = new System.Drawing.Size(34, 32);
       this.iconButton3.TabIndex = 144;
@@ -299,22 +302,6 @@
       this.dtAppointmentDate.ToolTipText = "";
       this.dtAppointmentDate.Value = new System.DateTime(2024, 12, 12, 0, 0, 0, 0);
       // 
-      // sfComboBox3
-      // 
-      this.sfComboBox3.AllowDropDownResize = false;
-      this.sfComboBox3.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-      this.sfComboBox3.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-      this.sfComboBox3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.sfComboBox3.Location = new System.Drawing.Point(117, 84);
-      this.sfComboBox3.Name = "sfComboBox3";
-      this.sfComboBox3.Size = new System.Drawing.Size(185, 32);
-      this.sfComboBox3.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-      this.sfComboBox3.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.sfComboBox3.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.sfComboBox3.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.sfComboBox3.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.sfComboBox3.TabIndex = 18;
-      // 
       // label8
       // 
       this.label8.AutoSize = true;
@@ -339,7 +326,7 @@
       // 
       this.label16.AutoSize = true;
       this.label16.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label16.Location = new System.Drawing.Point(332, 54);
+      this.label16.Location = new System.Drawing.Point(361, 54);
       this.label16.Name = "label16";
       this.label16.Size = new System.Drawing.Size(85, 21);
       this.label16.TabIndex = 8;
@@ -672,6 +659,48 @@
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
       // 
+      // cbDoctor
+      // 
+      this.cbDoctor.AllowDrop = true;
+      this.cbDoctor.DropDownHeight = 80;
+      this.cbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbDoctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbDoctor.FormattingEnabled = true;
+      this.cbDoctor.IntegralHeight = false;
+      this.cbDoctor.Location = new System.Drawing.Point(117, 88);
+      this.cbDoctor.Name = "cbDoctor";
+      this.cbDoctor.Size = new System.Drawing.Size(209, 29);
+      this.cbDoctor.TabIndex = 148;
+      // 
+      // comboBox1
+      // 
+      this.comboBox1.AllowDrop = true;
+      this.comboBox1.DropDownHeight = 80;
+      this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBox1.FormattingEnabled = true;
+      this.comboBox1.IntegralHeight = false;
+      this.comboBox1.Items.AddRange(new object[] {
+            "Room A1",
+            "Room B1",
+            "Room B2",
+            "Room C1",
+            "Room C2"});
+      this.comboBox1.Location = new System.Drawing.Point(454, 88);
+      this.comboBox1.Name = "comboBox1";
+      this.comboBox1.Size = new System.Drawing.Size(176, 29);
+      this.comboBox1.TabIndex = 149;
+      // 
+      // label13
+      // 
+      this.label13.AutoSize = true;
+      this.label13.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label13.Location = new System.Drawing.Point(363, 92);
+      this.label13.Name = "label13";
+      this.label13.Size = new System.Drawing.Size(80, 21);
+      this.label13.TabIndex = 150;
+      this.label13.Text = "Location:";
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -696,7 +725,6 @@
       this.splitContainer1.Panel2.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.sfComboBox3)).EndInit();
       this.panelSearch.ResumeLayout(false);
       this.panelSearch.PerformLayout();
       this.ResumeLayout(false);
@@ -712,7 +740,6 @@
     private System.Windows.Forms.Label label8;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Label label1;
-    private Syncfusion.WinForms.ListView.SfComboBox sfComboBox3;
     private System.Windows.Forms.SplitContainer splitContainer1;
     private System.Windows.Forms.Label label18;
     private System.Windows.Forms.Label label17;
@@ -749,5 +776,8 @@
     private FontAwesome.Sharp.IconButton iconButton5;
     private System.Windows.Forms.Label label10;
     private FontAwesome.Sharp.IconButton iconButton8;
+    private System.Windows.Forms.Label label13;
+    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.ComboBox cbDoctor;
   }
 }
