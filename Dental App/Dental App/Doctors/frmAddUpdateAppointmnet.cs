@@ -21,19 +21,22 @@ namespace Dental_App.Doctors
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
-    private string _searchString;
+    private DateTime _SelectedAppointmentDate { set; get; }
+    private string _AppointmnetTime { set; get; }
 
-    public frmAddUpdateAppointmnet(ScheduleControl control)
+    public frmAddUpdateAppointmnet(ScheduleControl control, DateTime dt, string Time)
     {
       InitializeComponent();
       _ScheduleGrid = control;
-
+      _SelectedAppointmentDate = dt;
+      _AppointmnetTime = Time;
     }
+
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       dtAppointmentDate.MinDateTime = DateTime.Today;
-      dtAppointmentDate.Value = DateTime.Today;
+      dtAppointmentDate.Value = _SelectedAppointmentDate;
       dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
 
       FillComboBoxWithTime();
@@ -60,7 +63,7 @@ namespace Dental_App.Doctors
         date = date.AddMinutes(30);
         cbEndTime.Items.Add(date.ToShortTimeString());
       }
-
+      MessageBoxAdv.Show(_AppointmnetTime);
       cbStartTime.SelectedIndex = 0;
       cbEndTime.SelectedIndex = 0;
   }
@@ -82,11 +85,7 @@ namespace Dental_App.Doctors
       lblEmail.Text = _Patient.PatientInfo.Email;
       lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
 
-      MessageBox.Show($" {lblFullName.Text}," +
-        $"{lblPatinetID.Text}," +
-        $"{lblNationalNo.Text}," +
-        $"{lblEmail.Text}," +
-        $"{lblPhone.Text}");
+      
     }
 
 

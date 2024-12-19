@@ -21,6 +21,7 @@ namespace Dental_App.Doctors
   public partial class frmTestSchedule : Form
   {
     private DateTime SelectedAppointmentDate { set; get; }
+    private string _AppointmnetTime { set; get; }
 
     CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
     SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
@@ -40,15 +41,15 @@ namespace Dental_App.Doctors
     {
       //throw new NotImplementedException();
       SelectedAppointmentDate = e.ClickDateTime.Date;
-     // MessageBox.Show($"{SelectedAppointmentDate}");
+      _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
+      //MessageBox.Show($"{Time}");
     }
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, Syncfusion.Windows.Forms.Schedule.ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-    ;
 
-      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1);
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1,SelectedAppointmentDate,_AppointmnetTime);
       frm.ShowDialog();
 
     }
