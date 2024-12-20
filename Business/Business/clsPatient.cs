@@ -46,6 +46,11 @@ namespace Business
 
     public bool DeletePatient(int PatientID) => clsPatientData.DeletePatient(PatientID);
 
+   /// <summary>
+   ///  Find Patient By PatientID.
+   /// </summary>
+   /// <param name="PatientID"></param>
+   /// <returns></returns>
     public static clsPatient FindPatientByID(int PatientID)
     {
       bool IsFound = false;
@@ -58,6 +63,11 @@ namespace Business
         return null;
     }
 
+    /// <summary>
+    /// Find Patient By PersonID.
+    /// </summary>
+    /// <param name="PersonID"></param>
+    /// <returns></returns>
     public static clsPatient FindPateintByPersonID(int PersonID)
     {
       bool IsFound = false;
@@ -70,7 +80,10 @@ namespace Business
         return null;
     }
 
-    // handle add and update call
+    /// <summary>
+    /// This will save Data After add or Updating PatientInfo. 
+    /// </summary>
+    /// <returns></returns>
     public bool Save()
     {
       switch (Mode)

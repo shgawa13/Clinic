@@ -57,6 +57,15 @@ namespace Dental_App.Doctors
     // Reset Defualt values
     private void _ResetDefualtValues()
     {
+      
+      // ResetLables
+      lblPatinetID.Text = "???";
+      lblFullName.Text = "???";
+      lblNationalNo.Text = "???";
+      lblPhone.Text = "???";
+      lblEmail.Text = "???";
+      tbSearch.Text = string.Empty;
+
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
 

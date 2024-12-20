@@ -30,11 +30,11 @@
     {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.label9 = new System.Windows.Forms.Label();
-      this.textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+      this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.iconNote = new FontAwesome.Sharp.IconButton();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.label13 = new System.Windows.Forms.Label();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.cbLocation = new System.Windows.Forms.ComboBox();
       this.cbDoctor = new System.Windows.Forms.ComboBox();
       this.cbEndTime = new System.Windows.Forms.ComboBox();
       this.cbStartTime = new System.Windows.Forms.ComboBox();
@@ -74,8 +74,9 @@
       this.label4 = new System.Windows.Forms.Label();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
+      this.lblTitle = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -85,20 +86,20 @@
       // 
       // groupBox1
       // 
-      this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+      this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+      this.groupBox1.Controls.Add(this.lblTitle);
       this.groupBox1.Controls.Add(this.label9);
-      this.groupBox1.Controls.Add(this.textBoxExt1);
+      this.groupBox1.Controls.Add(this.tbNote);
       this.groupBox1.Controls.Add(this.iconNote);
       this.groupBox1.Controls.Add(this.splitContainer1);
       this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(0, 0);
+      this.groupBox1.Location = new System.Drawing.Point(0, 13);
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(733, 447);
+      this.groupBox1.Size = new System.Drawing.Size(733, 465);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -107,25 +108,24 @@
       // 
       this.label9.AutoSize = true;
       this.label9.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label9.Location = new System.Drawing.Point(49, 316);
+      this.label9.Location = new System.Drawing.Point(49, 343);
       this.label9.Name = "label9";
       this.label9.Size = new System.Drawing.Size(52, 21);
       this.label9.TabIndex = 150;
       this.label9.Text = "Note:";
       // 
-      // textBoxExt1
+      // tbNote
       // 
-      this.textBoxExt1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+      this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.textBoxExt1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(604, 111);
-      this.textBoxExt1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.textBoxExt1.Location = new System.Drawing.Point(117, 313);
-      this.textBoxExt1.Multiline = true;
-      this.textBoxExt1.Name = "textBoxExt1";
-      this.textBoxExt1.Size = new System.Drawing.Size(604, 111);
-      this.textBoxExt1.TabIndex = 149;
-      this.textBoxExt1.Text = "textBoxExt1";
+      this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(604, 64);
+      this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.tbNote.Location = new System.Drawing.Point(117, 343);
+      this.tbNote.Multiline = true;
+      this.tbNote.Name = "tbNote";
+      this.tbNote.Size = new System.Drawing.Size(604, 64);
+      this.tbNote.TabIndex = 149;
       // 
       // iconNote
       // 
@@ -136,7 +136,7 @@
       this.iconNote.IconColor = System.Drawing.Color.SteelBlue;
       this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconNote.IconSize = 31;
-      this.iconNote.Location = new System.Drawing.Point(21, 313);
+      this.iconNote.Location = new System.Drawing.Point(21, 343);
       this.iconNote.Name = "iconNote";
       this.iconNote.Size = new System.Drawing.Size(34, 27);
       this.iconNote.TabIndex = 148;
@@ -146,7 +146,7 @@
       // 
       this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.splitContainer1.Location = new System.Drawing.Point(14, 26);
+      this.splitContainer1.Location = new System.Drawing.Point(14, 53);
       this.splitContainer1.Name = "splitContainer1";
       this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
@@ -154,7 +154,7 @@
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
       this.splitContainer1.Panel1.Controls.Add(this.label13);
-      this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+      this.splitContainer1.Panel1.Controls.Add(this.cbLocation);
       this.splitContainer1.Panel1.Controls.Add(this.cbDoctor);
       this.splitContainer1.Panel1.Controls.Add(this.cbEndTime);
       this.splitContainer1.Panel1.Controls.Add(this.cbStartTime);
@@ -204,24 +204,24 @@
       this.label13.TabIndex = 150;
       this.label13.Text = "Location:";
       // 
-      // comboBox1
+      // cbLocation
       // 
-      this.comboBox1.AllowDrop = true;
-      this.comboBox1.DropDownHeight = 80;
-      this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.comboBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.IntegralHeight = false;
-      this.comboBox1.Items.AddRange(new object[] {
+      this.cbLocation.AllowDrop = true;
+      this.cbLocation.DropDownHeight = 80;
+      this.cbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbLocation.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLocation.FormattingEnabled = true;
+      this.cbLocation.IntegralHeight = false;
+      this.cbLocation.Items.AddRange(new object[] {
             "Room A1",
             "Room B1",
             "Room B2",
             "Room C1",
             "Room C2"});
-      this.comboBox1.Location = new System.Drawing.Point(454, 88);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(176, 29);
-      this.comboBox1.TabIndex = 149;
+      this.cbLocation.Location = new System.Drawing.Point(454, 88);
+      this.cbLocation.Name = "cbLocation";
+      this.cbLocation.Size = new System.Drawing.Size(176, 29);
+      this.cbLocation.TabIndex = 149;
       // 
       // cbDoctor
       // 
@@ -674,7 +674,7 @@
       this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(587, 454);
+      this.btnClose.Location = new System.Drawing.Point(589, 486);
       this.btnClose.Name = "btnClose";
       this.btnClose.Size = new System.Drawing.Size(137, 37);
       this.btnClose.TabIndex = 115;
@@ -693,7 +693,7 @@
       this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(427, 455);
+      this.btnSave.Location = new System.Drawing.Point(429, 487);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(137, 37);
       this.btnSave.TabIndex = 114;
@@ -701,12 +701,22 @@
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
       // 
+      // lblTitle
+      // 
+      this.lblTitle.AutoSize = true;
+      this.lblTitle.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblTitle.Location = new System.Drawing.Point(278, 19);
+      this.lblTitle.Name = "lblTitle";
+      this.lblTitle.Size = new System.Drawing.Size(176, 25);
+      this.lblTitle.TabIndex = 151;
+      this.lblTitle.Text = "New Appointment";
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.ClientSize = new System.Drawing.Size(733, 495);
+      this.ClientSize = new System.Drawing.Size(733, 526);
       this.Controls.Add(this.btnClose);
       this.Controls.Add(this.btnSave);
       this.Controls.Add(this.groupBox1);
@@ -718,7 +728,7 @@
       this.Load += new System.EventHandler(this.frmAddUpdateAppointmnet_Load);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tbNote)).EndInit();
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel1.PerformLayout();
       this.splitContainer1.Panel2.ResumeLayout(false);
@@ -759,7 +769,7 @@
     private System.Windows.Forms.Label lblFullName;
     private System.Windows.Forms.Label lblPatinetID;
     private FontAwesome.Sharp.IconButton iconNote;
-    private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
+    private Syncfusion.Windows.Forms.Tools.TextBoxExt tbNote;
     private System.Windows.Forms.Label label2;
     private ExpertsBtn btnClose;
     private ExpertsBtn btnSave;
@@ -777,7 +787,8 @@
     private System.Windows.Forms.Label label10;
     private FontAwesome.Sharp.IconButton iconButton8;
     private System.Windows.Forms.Label label13;
-    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.ComboBox cbLocation;
     private System.Windows.Forms.ComboBox cbDoctor;
+    private System.Windows.Forms.Label lblTitle;
   }
 }
