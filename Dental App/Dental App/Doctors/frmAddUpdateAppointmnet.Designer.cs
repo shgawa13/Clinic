@@ -28,7 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.lblTitle = new System.Windows.Forms.Label();
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.iconNote = new FontAwesome.Sharp.IconButton();
@@ -72,9 +74,9 @@
       this.label6 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
+      this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
-      this.lblTitle = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -82,6 +84,7 @@
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
       this.panelSearch.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -103,6 +106,16 @@
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
+      // 
+      // lblTitle
+      // 
+      this.lblTitle.AutoSize = true;
+      this.lblTitle.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblTitle.Location = new System.Drawing.Point(278, 19);
+      this.lblTitle.Name = "lblTitle";
+      this.lblTitle.Size = new System.Drawing.Size(176, 25);
+      this.lblTitle.TabIndex = 151;
+      this.lblTitle.Text = "New Appointment";
       // 
       // label9
       // 
@@ -450,6 +463,7 @@
       this.tbSearch.Name = "tbSearch";
       this.tbSearch.Size = new System.Drawing.Size(116, 26);
       this.tbSearch.TabIndex = 152;
+      this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
       // 
       // label11
       // 
@@ -662,6 +676,10 @@
       this.label4.TabIndex = 2;
       this.label4.Text = "Full Name:";
       // 
+      // errorProvider1
+      // 
+      this.errorProvider1.ContainerControl = this;
+      // 
       // btnClose
       // 
       this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
@@ -701,16 +719,6 @@
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
       // 
-      // lblTitle
-      // 
-      this.lblTitle.AutoSize = true;
-      this.lblTitle.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblTitle.Location = new System.Drawing.Point(278, 19);
-      this.lblTitle.Name = "lblTitle";
-      this.lblTitle.Size = new System.Drawing.Size(176, 25);
-      this.lblTitle.TabIndex = 151;
-      this.lblTitle.Text = "New Appointment";
-      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -737,6 +745,7 @@
       this.splitContainer1.ResumeLayout(false);
       this.panelSearch.ResumeLayout(false);
       this.panelSearch.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -790,5 +799,6 @@
     private System.Windows.Forms.ComboBox cbLocation;
     private System.Windows.Forms.ComboBox cbDoctor;
     private System.Windows.Forms.Label lblTitle;
+    private System.Windows.Forms.ErrorProvider errorProvider1;
   }
 }

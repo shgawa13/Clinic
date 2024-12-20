@@ -46,10 +46,6 @@ namespace Dental_App.Doctors
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
-      dtAppointmentDate.MinDateTime = DateTime.Today;
-      dtAppointmentDate.Value = _SelectedAppointmentDate;
-      dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
-
 
       _ResetDefualtValues();
     }
@@ -57,7 +53,11 @@ namespace Dental_App.Doctors
     // Reset Defualt values
     private void _ResetDefualtValues()
     {
-      
+      // Reset DateTime
+      dtAppointmentDate.MinDateTime = DateTime.Today;
+      dtAppointmentDate.Value = _SelectedAppointmentDate;
+      dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
+
       // ResetLables
       lblPatinetID.Text = "???";
       lblFullName.Text = "???";
@@ -66,15 +66,11 @@ namespace Dental_App.Doctors
       lblEmail.Text = "???";
       tbSearch.Text = string.Empty;
 
+      // Filling ComboBox with Data
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
-
     }
 
-    private int DateTimeToIndex(DateTime dt)
-    {
-      return 1; // dt.Hour * (60 / minimumTimeSlot) + dt.Minute / minimumTimeSlot;
-    }
 
     // Filling ComboBox with time it start with 8:00 AM.
     private void _FillComboBoxWithTime()
@@ -101,6 +97,7 @@ namespace Dental_App.Doctors
       cbEndTime.SelectedIndex = 0;
     }
 
+    // Filling ComboBox with Doctors names.
     private void _FillDoctorsComboBox()
     {
       DataTable Doctors = clsDoctors.GetAllDoctors();
@@ -128,8 +125,7 @@ namespace Dental_App.Doctors
       lblNationalNo.Text = _Patient.PatientInfo.NationalID;
       lblEmail.Text = _Patient.PatientInfo.Email;
       lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
-
-      
+   
     }
 
 
@@ -145,6 +141,23 @@ namespace Dental_App.Doctors
       _FindPatinet(_PatientID);
     }
 
-   
+
+    private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      // handle numbers input
+      if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+      { 
+         e.Handled = true; 
+      }
+
+      // handle EnterKey Press
+
+     //if (k.KeyCode == Keys.Enter)
+     // {
+     //   MessageBox.Show("enter key was pressed");
+     // }
+    }
+
+    
   }   
 }

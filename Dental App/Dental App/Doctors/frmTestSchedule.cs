@@ -33,13 +33,12 @@ namespace Dental_App.Doctors
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick; 
      
-     // this.scheduleControl1.Schedule += Schedule_ScheduleDoubleTapped;
+     
 
     }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
-      //throw new NotImplementedException();
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
       //MessageBox.Show($"{Time}");
