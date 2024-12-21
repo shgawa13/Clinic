@@ -11,14 +11,15 @@ namespace DataLayer
   public class clsAppointmentsData
   {
     // Add new Appointment
-    public static int AddNewAppointment(int PatientID,int DoctorID, DateTime AppointmentDateTime,
-                  byte AppointmentStatus, int MedicalRecordID, int PaymentID, DateTime LastStatusDate)
+    public static int AddNewAppointment( int PatientID, int DoctorID, byte AppointmentStatus,
+      int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
+       string Location, byte LabelValue, byte MarkerValue, string Note)
     {
       int AppointmentID = -1;
-      string query = @"Inert into Appointments(PatientID,DoctorID,AppointmentDateTime,AppointmentStatus,
-       MedicalRecordID,PaymentID,LastStatusDate)
-       Values(@PatientID,@DoctorID,@AppointmentDateTime,@AppointmentStatus,@MedicalRecordID,@PaymentID,
-       @LastStatusDate);
+      string query = @"Inert into Appointments(PatientID,DoctorID,AppointmentStatus,MedicalRecordID,PaymentID,
+       LastStatusDate,StartTime,EndTime,Location,Title,Note,LabelValue,MarkerValue,Note)
+       Values(@PatientID,@DoctorID,@AppointmentStatus,@MedicalRecordID,@PaymentID,
+       @LastStatusDate,@StartTime,@EndTime,@Location,@LabelValue,@MarkerValue,@Note);
        Select SCOPE_IDENTITY();";
 
       try
@@ -32,11 +33,16 @@ namespace DataLayer
             // adding Parameters
             command.Parameters.AddWithValue("@PatientID", PatientID);
             command.Parameters.AddWithValue("@DoctorID", DoctorID);
-            command.Parameters.AddWithValue("@AppointmentDateTime", AppointmentDateTime);
             command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
             command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+            command.Parameters.AddWithValue("@StartTime", StartTime);
+            command.Parameters.AddWithValue("@EndTime", EndTime);
+            command.Parameters.AddWithValue("@Location", Location);
+            command.Parameters.AddWithValue("@LabelValue", LabelValue);
+            command.Parameters.AddWithValue("@MarkerValue", MarkerValue);
+            command.Parameters.AddWithValue("@Note", Note);
 
             object result = command.ExecuteScalar();
 
@@ -60,18 +66,24 @@ namespace DataLayer
     }
 
     // Update Appointmnet
-    public static bool UpdateAppointment(int AppointmentID,int PatientID, int DoctorID, DateTime AppointmentDateTime,
-                  byte AppointmentStatus, int MedicalRecordID, int PaymentID,DateTime LastStatusDate)
+    public static bool UpdateAppointment(int AppointmentID, int PatientID, int DoctorID, byte AppointmentStatus,
+       int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
+       string Location, byte LabelValue, byte MarkerValue, string Note)
     {
       int EffectedRow = 0;
       string Query = @"Update Appointments
       set PatientID=@PatientID,
       DoctorID=@DoctorID,
-      AppointmentDateTime=@AppointmentDateTime,
       AppointmentStatus=@AppointmentStatus,
       MedicalRecordID=@MedicalRecordID
       PaymentID=@PaymentID,
       LastStatusDate=@LastStatusDate
+      StartTime=@StartTime,
+      EndTime=@EndTime,
+      Location=@Location,
+      LabelValue=@LabelValue,
+      MarkerValue=@MarkerValue,
+      Note=@Note,
       where AppointmentID=@AppointmentID";
 
       try
@@ -81,14 +93,20 @@ namespace DataLayer
           connection.Open();
           using (SqlCommand command = new SqlCommand(Query, connection))
           {
+            // adding Parameters
             command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
             command.Parameters.AddWithValue("@PatientID", PatientID);
             command.Parameters.AddWithValue("@DoctorID", DoctorID);
-            command.Parameters.AddWithValue("@AppointmentDateTime", AppointmentDateTime);
             command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
             command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+            command.Parameters.AddWithValue("@StartTime", StartTime);
+            command.Parameters.AddWithValue("@EndTime", EndTime);
+            command.Parameters.AddWithValue("@Location", Location);
+            command.Parameters.AddWithValue("@LabelValue", LabelValue);
+            command.Parameters.AddWithValue("@MarkerValue", MarkerValue);
+            command.Parameters.AddWithValue("@Note", Note);
 
             EffectedRow = command.ExecuteNonQuery();
           }
