@@ -10,7 +10,23 @@ namespace DataLayer
 {
   public class clsAppointmentsData
   {
-    // Add new Appointment
+    /// <summary>
+    /// Add new Appointment:
+    ///   will Add New Appointment and return AppointmentID.
+    /// </summary>
+    /// <param name="PatientID"></param>
+    /// <param name="DoctorID"></param>
+    /// <param name="AppointmentStatus"></param>
+    /// <param name="MedicalRecordID"></param>
+    /// <param name="PaymentID"></param>
+    /// <param name="LastStatusDate"></param>
+    /// <param name="StartTime"></param>
+    /// <param name="EndTime"></param>
+    /// <param name="Location"></param>
+    /// <param name="LabelValue"></param>
+    /// <param name="MarkerValue"></param>
+    /// <param name="Note"></param>
+    /// <returns></returns>
     public static int AddNewAppointment( int PatientID, int DoctorID, byte AppointmentStatus,
       int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
        string Location, byte LabelValue, byte MarkerValue, string Note)
@@ -65,7 +81,23 @@ namespace DataLayer
       return AppointmentID;
     }
 
-    // Update Appointmnet
+    /// <summary>
+    /// Update Appointmnet:
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <param name="PatientID"></param>
+    /// <param name="DoctorID"></param>
+    /// <param name="AppointmentStatus"></param>
+    /// <param name="MedicalRecordID"></param>
+    /// <param name="PaymentID"></param>
+    /// <param name="LastStatusDate"></param>
+    /// <param name="StartTime"></param>
+    /// <param name="EndTime"></param>
+    /// <param name="Location"></param>
+    /// <param name="LabelValue"></param>
+    /// <param name="MarkerValue"></param>
+    /// <param name="Note"></param>
+    /// <returns></returns>
     public static bool UpdateAppointment(int AppointmentID, int PatientID, int DoctorID, byte AppointmentStatus,
        int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
        string Location, byte LabelValue, byte MarkerValue, string Note)
@@ -124,14 +156,19 @@ namespace DataLayer
       return (EffectedRow > 0);
     }
 
-    // Find Appointment By ID
-    public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,
-      ref DateTime AppointmentDateTime,ref byte AppointmentStatus, ref int MedicalRecordID,
-      ref int PaymentID,ref DateTime LastStatusDate)
+    /// <summary>
+    /// Find Appointment By ID:
+    ///   Find Appointment by AppointmentID.
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <returns></returns>
+    public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,ref byte AppointmentStatus,
+      ref int MedicalRecordID, ref int PaymentID,ref DateTime LastStatusDate, ref DateTime StartTime, ref DateTime EndTime,
+       ref string Location, ref byte LabelValue, ref byte MarkerValue, ref string Note)
     {
       bool IsFound = false;
 
-      string query = @"Select * from Appointment where AppointmentID=@AppointmentID;";
+      string query = @"Select * from Appointments where AppointmentID=@AppointmentID;";
 
       try
       {
@@ -154,11 +191,16 @@ namespace DataLayer
 
                 PatientID = (int)reader["PatientID"];
                 DoctorID = (int)reader["DoctorID"];
-                AppointmentDateTime = (DateTime)reader["AppointmentDateTime"];
                 AppointmentStatus = (byte)reader["AppointmentStatus"];
                 MedicalRecordID = (int)reader["MedicalRecordID"];
                 PaymentID = (int)reader["PaymentID"];
                 LastStatusDate = (DateTime)reader["LastStatusDate"];
+                StartTime = (DateTime)reader["AppointmentStartTime"];
+                EndTime = (DateTime)reader["AppointmentEndTime"];
+                Location = (string)reader["Location"];
+                LabelValue = (byte)reader["LabelValue"];
+                MarkerValue = (byte)reader["MarkerValue"];
+                Note = (string)reader["Note"];
               }
             }
 
@@ -179,7 +221,11 @@ namespace DataLayer
       return IsFound;
     }
 
-    // Get All Appointments
+    /// <summary>
+    /// Get All Appointments:
+    ///   Get all Appointments as DataTable.
+    /// </summary>
+    /// <returns></returns>
     public static DataTable GetAllAppointments()
     {
       DataTable dtAllAppointments = new DataTable();
@@ -219,7 +265,11 @@ namespace DataLayer
       return dtAllAppointments;
     }
 
-    // Delete Appointment
+    /// <summary>
+    /// Delete Appointment:
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <returns></returns>
     public static bool DeleteAppointment(int AppointmentID)
     {
       int IsDeleted = -1;
@@ -252,7 +302,13 @@ namespace DataLayer
       return (IsDeleted > 0);
     }
 
-    // IsExist Appointment
+
+    /// <summary>
+    /// IsExist
+    ///  Check if Appointment already Exist or not;
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <returns></returns>
     public static bool IsAppointmentExist(int AppointmentID)
     {
       bool IsExist = false;
@@ -289,8 +345,14 @@ namespace DataLayer
       return IsExist;
     }
 
-    // Update AppointmentStatus
-    public static bool UpdateStatus(int AppointmentID, short NewStatus)
+    /// <summary>
+    /// Update AppointmentStatus:
+    ///  Update Status of Appointment
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <param name="NewStatus"></param>
+    /// <returns></returns>
+    public static bool UpdateStatus(int AppointmentID, byte NewStatus)
     {
       int EffectedRow = 0;
       string Query = @"Update Appointments
