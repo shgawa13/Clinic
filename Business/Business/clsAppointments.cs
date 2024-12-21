@@ -625,25 +625,25 @@ namespace Business
     //
     // Summary:
     //     Gets or sets the start time for this item.
-    [Browsable(true)]
-    [Bindable(true)]
-    [Description("Gets or sets the start time for this item.")]
-    public virtual DateTime StartTime
-    {
-      get
-      {
-        return start;
-      }
-      set
-      {
-        if (!IgnoreChanges && start != value)
-        {
-          Dirty = true;
-        }
+    //[Browsable(true)]
+    //[Bindable(true)]
+    //[Description("Gets or sets the start time for this item.")]
+    //public virtual DateTime StartTime
+    //{
+    //  get
+    //  {
+    //    return start;
+    //  }
+    //  set
+    //  {
+    //    if (!IgnoreChanges && start != value)
+    //    {
+    //      Dirty = true;
+    //    }
 
-        start = value;
-      }
-    }
+    //    start = value;
+    //  }
+    //}
 
     //
     // Summary:
@@ -915,7 +915,7 @@ namespace Business
     public int AppointmentID { set; get; }
     public int PatientID { set; get; }
     public int DoctorID { set; get; }
-    public DateTime AppointmentDateTime { set; get; }
+    public DateTime StartTime { set;get; }
     public enAppointmentSataus AppointmentStatus { set; get; }
     public int MedicalRecordID { set; get; }
     public int PaymentID { set; get; }
@@ -926,7 +926,8 @@ namespace Business
       this.AppointmentID = -1;
       this.PatientID = -1;
       this.DoctorID = -1;
-      this.AppointmentDateTime = DateTime.Now;
+      this.StartTime = DateTime.Now;
+      this.EndTime = DateTime.Now;
       this.AppointmentStatus = enAppointmentSataus.Pending;
       this.MedicalRecordID = -1;
       this.PaymentID = -1;
@@ -935,35 +936,44 @@ namespace Business
       Mode = enMode.AddNew;
     }
 
-    private clsAppointments(int AppointmentID, int PatientID, int DoctorID, DateTime AppointmentDateTime,
-      enAppointmentSataus AppointmentStatus, int MedicalRecordID, int PaymentID, DateTime LastStatusDate)
+    private clsAppointments(int AppointmentID, int PatientID, int DoctorID, enAppointmentSataus AppointmentStatus,
+      int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
+       string Location, string Title,string Note,int LabelValue,int MarkerValue)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
       this.DoctorID = DoctorID;
-      this.AppointmentDateTime = AppointmentDateTime;
       this.AppointmentStatus = AppointmentStatus;
       this.MedicalRecordID = MedicalRecordID;
       this.PaymentID = PaymentID;
-      this.LastStatusDate = LastStatusDate;
+      this.LastStatusDate = DateTime.Now;
+      this.StartTime = StartTime;
+      this.EndTime = EndTime;
+      this.LocationValue = Location;
+      this.Subject = Title;
+      this.content = Note;
+      this.LabelValue = LabelValue;
+      this.MarkerValue = MarkerValue;
       
       Mode = enMode.Update;
     }
 
     // Add new Appointment
-    private bool _AddNewAppointment() 
-    {
-      this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
-        this.AppointmentDateTime, (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate);
-      return (this.AppointmentID != -1);
-    }
+    //private bool _AddNewAppointment() 
+    //{
+    //  this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
+    //     (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
+    //     this.StartTime,this.EndTime,this.LocationValue,this.Subject,this.content,this.LabelValue,this.MarkerValue);
+    //  return (this.AppointmentID != -1);
+    //}
 
     // Update Appointment
-    private bool _UpdateAppointment()
-    {
-      return clsAppointmentsData.UpdateAppointment(this.AppointmentID, this.PatientID, this.DoctorID,
-        this.AppointmentDateTime, (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate);
-    }
+    //private bool _UpdateAppointment()
+    //{
+    //  return clsAppointmentsData.UpdateAppointment(this.PatientID, this.DoctorID,
+    //     (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
+    //     this.StartTime, this.EndTime, this.LocationValue, this.Subject, this.content, this.LabelValue, this.MarkerValue);
+    //}
 
     // Delete Appointment
     public static bool DeleteAppointment(int AppointmentID)
@@ -972,7 +982,7 @@ namespace Business
     }
 
     // Find Appointment 
-    public static clsAppointments Find(int AppointmentID)
+    public  clsAppointments Find(int AppointmentID)
     {
       int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1;
       byte AppointmentStatus = 1;
@@ -983,8 +993,8 @@ namespace Business
         ref AppointmentDateTime, ref AppointmentStatus, ref MedicalRecordID, ref PaymentID, ref LastStatusDate);
 
       if (IsFound)
-        return new clsAppointments(AppointmentID, PatientID, DoctorID, AppointmentDateTime,
-          (enAppointmentSataus)AppointmentStatus, MedicalRecordID, PaymentID, LastStatusDate);
+        return new clsAppointments(AppointmentID, PatientID, DoctorID,(enAppointmentSataus)AppointmentStatus, 
+          MedicalRecordID, PaymentID, LastStatusDate,StartTime,EndTime,LocationValue,Subject,Content,LabelValue,MarkerValue);
       else
         return null;
 
@@ -1009,28 +1019,28 @@ namespace Business
 
 
     // Handle Add and Update calls
-    public bool Save()
-    {
+    //public bool Save()
+    //{
 
-      switch (Mode)
-      {
-        case enMode.AddNew:
-          if (_AddNewAppointment())
-          {
-            Mode = enMode.AddNew;
-            return true;
-          }
-          else
-          {
-            return false;
-          }
+    //  switch (Mode)
+    //  {
+    //    case enMode.AddNew:
+    //      if (_AddNewAppointment())
+    //      {
+    //        Mode = enMode.AddNew;
+    //        return true;
+    //      }
+    //      else
+    //      {
+    //        return false;
+    //      }
 
-        case enMode.Update:
-          return _UpdateAppointment();
-      }
+    //    case enMode.Update:
+    //      return _UpdateAppointment();
+    //  }
 
-      return false;
-    }
+    //  return false;
+    //}
 
   }
 }

@@ -449,7 +449,7 @@
       this.iconSearch.IconColor = System.Drawing.Color.SteelBlue;
       this.iconSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconSearch.IconSize = 25;
-      this.iconSearch.Location = new System.Drawing.Point(284, 6);
+      this.iconSearch.Location = new System.Drawing.Point(299, 6);
       this.iconSearch.Name = "iconSearch";
       this.iconSearch.Size = new System.Drawing.Size(42, 28);
       this.iconSearch.TabIndex = 151;
@@ -459,11 +459,12 @@
       // tbSearch
       // 
       this.tbSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.tbSearch.Location = new System.Drawing.Point(161, 7);
+      this.tbSearch.Location = new System.Drawing.Point(159, 7);
       this.tbSearch.Name = "tbSearch";
       this.tbSearch.Size = new System.Drawing.Size(116, 26);
       this.tbSearch.TabIndex = 152;
       this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
+      this.tbSearch.Validating += new System.ComponentModel.CancelEventHandler(this.tbSearch_Validating);
       // 
       // label11
       // 

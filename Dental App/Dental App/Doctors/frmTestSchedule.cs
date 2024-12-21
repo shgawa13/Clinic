@@ -33,7 +33,6 @@ namespace Dental_App.Doctors
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick; 
      
-     
 
     }
 
@@ -41,13 +40,13 @@ namespace Dental_App.Doctors
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
-      //MessageBox.Show($"{Time}");
+    
     }
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, Syncfusion.Windows.Forms.Schedule.ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-
+      
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1,SelectedAppointmentDate,_AppointmnetTime);
       frm.ShowDialog();
 
@@ -74,14 +73,14 @@ namespace Dental_App.Doctors
         item.EndTime = (DateTime)row["EndTime"];
         item.Subject = (string)row["_Subject"];
         item.Content = (string)row["Content"];
-        item.LabelValue = 0;
+        item.LabelValue = 1;
         item.LocationValue = (string)row["LocationValue"];
         item.ReminderValue = (int)row["ReminderValue"];
         item.Reminder = false;
         item.AllDay = false;
         item.Dirty = false;
         item.Owner = 1; // (int)row["Own"];
-        item.MarkerValue = (int)row["MarkerValue"];
+        item.MarkerValue = 1;//(int)row["MarkerValue"];
         list.Add(item);
 
       }

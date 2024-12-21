@@ -145,19 +145,23 @@ namespace Dental_App.Doctors
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
       // handle numbers input
-      if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-      { 
-         e.Handled = true; 
-      }
-
-      // handle EnterKey Press
-
-     //if (k.KeyCode == Keys.Enter)
-     // {
-     //   MessageBox.Show("enter key was pressed");
-     // }
+      
+         e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar); 
+      
     }
 
-    
+    private void tbSearch_Validating(object sender, CancelEventArgs e)
+    {
+      if (String.IsNullOrEmpty(tbSearch.Text.Trim()))
+      {
+        e.Cancel = true;
+        errorProvider1.SetError(tbSearch, "You must enter PatientID");
+        return;
+      }
+      else
+      {
+        errorProvider1.SetError(tbSearch, null);
+      }
+    }
   }   
 }
