@@ -27,7 +27,7 @@ namespace Business
 
     private bool ignoreChanges;
 
-    private int labelValue;
+    private byte labelValue;
 
     private string locationValue = string.Empty;
 
@@ -53,7 +53,7 @@ namespace Business
 
     private string m_sCustomToolTip = string.Empty;
 
-    private int markerValue;
+    private byte markerValue;
 
     private int owner;
 
@@ -385,7 +385,7 @@ namespace Business
     [DefaultValue(0)]
     [Browsable(true)]
     [Bindable(true)]
-    public virtual int LabelValue
+    public virtual byte LabelValue
     {
       get
       {
@@ -433,7 +433,7 @@ namespace Business
     [Bindable(true)]
     [Description("Gets or sets a integer categorizer value for this item.")]
     [DefaultValue(0)]
-    public virtual int MarkerValue
+    public virtual byte MarkerValue
     {
       get
       {
@@ -938,7 +938,7 @@ namespace Business
 
     private clsAppointments(int AppointmentID, int PatientID, int DoctorID, enAppointmentSataus AppointmentStatus,
       int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, string Title,string Note,int LabelValue,int MarkerValue)
+       string Location, string Title,string Note,byte LabelValue,byte MarkerValue)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
@@ -981,16 +981,22 @@ namespace Business
       return clsAppointmentsData.DeleteAppointment(AppointmentID);
     }
 
-    // Find Appointment 
-    public  clsAppointments Find(int AppointmentID)
+    /// <summary>
+    /// Find Appointment 
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <returns></returns>
+    public static clsAppointments Find(int AppointmentID)
     {
       int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1;
-      byte AppointmentStatus = 1;
-      DateTime AppointmentDateTime = DateTime.Now, LastStatusDate = DateTime.Now;
+      byte AppointmentStatus = 1, LabelValue = 0, MarkerValue = 0;
+      DateTime LastStatusDate = DateTime.Now, StartTime = DateTime.Now,EndTime = DateTime.Now;
+      string LocationValue = "", Subject = "", Content = "";
 
       // pass by ref
       bool IsFound = clsAppointmentsData.GetAppointmentByID(AppointmentID, ref PatientID, ref DoctorID,
-        ref AppointmentDateTime, ref AppointmentStatus, ref MedicalRecordID, ref PaymentID, ref LastStatusDate);
+        ref AppointmentStatus, ref MedicalRecordID, ref PaymentID, ref LastStatusDate, ref StartTime, ref EndTime,
+        ref LocationValue,ref Subject,ref Content, ref LabelValue,ref MarkerValue);
 
       if (IsFound)
         return new clsAppointments(AppointmentID, PatientID, DoctorID,(enAppointmentSataus)AppointmentStatus, 
@@ -1000,10 +1006,17 @@ namespace Business
 
     }
 
-    // Get All Appointments
+    /// <summary>
+    /// Get All Appointments
+    /// </summary>
+    /// <returns></returns>
     public static DataTable GetAllAppointments() => clsTestApptData.GetAllAppointmnets();
 
-    // IsExist
+    /// <summary>
+    /// IsExist
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <returns></returns>
     public static bool IsExist(int AppointmentID) => clsAppointmentsData.IsAppointmentExist(AppointmentID);
 
     // Handle AppointmentStatus
