@@ -958,7 +958,7 @@ namespace Business
       Mode = enMode.Update;
     }
 
-    // Add new Appointment
+    /// Add new Appointment
     private bool _AddNewAppointment()
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
@@ -968,14 +968,19 @@ namespace Business
     }
 
     // Update Appointment
-    //private bool _UpdateAppointment()
-    //{
-    //  return clsAppointmentsData.UpdateAppointment(this.PatientID, this.DoctorID,
-    //     (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
-    //     this.StartTime, this.EndTime, this.LocationValue, this.Subject, this.content, this.LabelValue, this.MarkerValue);
-    //}
+    private bool _UpdateAppointment()
+    {
+      return clsAppointmentsData.UpdateAppointment(this.AppointmentID,this.PatientID, this.DoctorID,
+         (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
+         this.StartTime, this.EndTime, this.LocationValue, this.LabelValue, this.MarkerValue, this.content);
+    }
 
-    // Delete Appointment
+    /// <summary>
+    /// Delete Appointment:
+    ///   it takes AppointmenID, then it will delete Appointment. 
+    /// </summary>
+    /// <param name="AppointmentID"></param>
+    /// <returns></returns>
     public static bool DeleteAppointment(int AppointmentID)
     {
       return clsAppointmentsData.DeleteAppointment(AppointmentID);
@@ -1032,28 +1037,28 @@ namespace Business
 
 
     // Handle Add and Update calls
-    //public bool Save()
-    //{
+    public bool Save()
+    {
 
-    //  switch (Mode)
-    //  {
-    //    case enMode.AddNew:
-    //      if (_AddNewAppointment())
-    //      {
-    //        Mode = enMode.AddNew;
-    //        return true;
-    //      }
-    //      else
-    //      {
-    //        return false;
-    //      }
+      switch (Mode)
+      {
+        case enMode.AddNew:
+          if (_AddNewAppointment())
+          {
+            Mode = enMode.AddNew;
+            return true;
+          }
+          else
+          {
+            return false;
+          }
 
-    //    case enMode.Update:
-    //      return _UpdateAppointment();
-    //  }
+        case enMode.Update:
+          return _UpdateAppointment();
+      }
 
-    //  return false;
-    //}
+      return false;
+    }
 
   }
 }
