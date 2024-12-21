@@ -938,7 +938,7 @@ namespace Business
 
     private clsAppointments(int AppointmentID, int PatientID, int DoctorID, enAppointmentSataus AppointmentStatus,
       int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, string Title,string Note,byte LabelValue,byte MarkerValue)
+       string Location, string Title,byte LabelValue,byte MarkerValue, string Note)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
@@ -950,22 +950,22 @@ namespace Business
       this.StartTime = StartTime;
       this.EndTime = EndTime;
       this.LocationValue = Location;
-      this.Subject = Title;
-      this.content = Note;
+      this.Subject = clsPatient.Find(PatientID).FullName;
       this.LabelValue = LabelValue;
       this.MarkerValue = MarkerValue;
+      this.content = Note;
       
       Mode = enMode.Update;
     }
 
     // Add new Appointment
-    //private bool _AddNewAppointment() 
-    //{
-    //  this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
-    //     (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
-    //     this.StartTime,this.EndTime,this.LocationValue,this.Subject,this.content,this.LabelValue,this.MarkerValue);
-    //  return (this.AppointmentID != -1);
-    //}
+    private bool _AddNewAppointment()
+    {
+      this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
+         (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
+         this.StartTime, this.EndTime, this.LocationValue,this.LabelValue, this.MarkerValue,this.content);
+      return (this.AppointmentID != -1);
+    }
 
     // Update Appointment
     //private bool _UpdateAppointment()
@@ -991,16 +991,16 @@ namespace Business
       int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1;
       byte AppointmentStatus = 1, LabelValue = 0, MarkerValue = 0;
       DateTime LastStatusDate = DateTime.Now, StartTime = DateTime.Now,EndTime = DateTime.Now;
-      string LocationValue = "", Subject = "", Content = "";
+      string Location = "", Note = "",Subject="";
 
       // pass by ref
       bool IsFound = clsAppointmentsData.GetAppointmentByID(AppointmentID, ref PatientID, ref DoctorID,
         ref AppointmentStatus, ref MedicalRecordID, ref PaymentID, ref LastStatusDate, ref StartTime, ref EndTime,
-        ref LocationValue,ref Subject,ref Content, ref LabelValue,ref MarkerValue);
+        ref Location, ref LabelValue,ref MarkerValue,ref Note);
 
       if (IsFound)
-        return new clsAppointments(AppointmentID, PatientID, DoctorID,(enAppointmentSataus)AppointmentStatus, 
-          MedicalRecordID, PaymentID, LastStatusDate,StartTime,EndTime,LocationValue,Subject,Content,LabelValue,MarkerValue);
+        return new clsAppointments(AppointmentID,PatientID,DoctorID,(enAppointmentSataus)AppointmentStatus,
+         MedicalRecordID,PaymentID,LastStatusDate,StartTime,EndTime,Location,Subject,LabelValue,MarkerValue,Note);
       else
         return null;
 
