@@ -38,12 +38,12 @@ namespace Dental_App
     //Structs
     private struct RGBColors
     {
-      public static Color color1 = Color.FromArgb(172, 126, 241);
-      public static Color color2 = Color.FromArgb(249, 118, 176);
-      public static Color color3 = Color.FromArgb(253, 138, 114);
-      public static Color color4 = Color.FromArgb(95, 77, 221);
-      public static Color color5 = Color.FromArgb(249, 88, 155);
-      public static Color color6 = Color.FromArgb(217, 3, 104);
+      public static readonly Color color1 = Color.FromArgb(172, 126, 241);
+      public static readonly Color color2 = Color.FromArgb(249, 118, 176);
+      public static readonly Color color3 = Color.FromArgb(253, 138, 114);
+      public static readonly Color color4 = Color.FromArgb(95, 77, 221);
+      public static readonly Color color5 = Color.FromArgb(249, 88, 155);
+      public static readonly Color color6 = Color.FromArgb(217, 3, 104);
     }
     //Methods
     private void ActivateButton(object senderBtn, Color color)
@@ -107,15 +107,20 @@ namespace Dental_App
     {
       if (currentChildForm != null)
       {
-        currentChildForm.Close();
+        currentChildForm?.Close();
+        currentChildForm?.Dispose();
       }
       Reset();
+
     }
+
     //Menu Button_Clicks
 
     private void btnAddNew_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color1);
+      OpenChildForm(new frmTester());
+      
     }
 
 
@@ -198,6 +203,6 @@ namespace Dental_App
       WindowState = FormWindowState.Minimized;
     }
 
-  
+   
   }
 }

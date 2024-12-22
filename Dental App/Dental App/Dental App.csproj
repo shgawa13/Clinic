@@ -153,6 +153,9 @@
     <EmbeddedResource Include="Doctors\frmDoctors.resx">
       <DependentUpon>frmDoctors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\frmTester.resx">
+      <DependentUpon>frmTester.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctors\frmTestSchedule.resx">
       <DependentUpon>frmTestSchedule.cs</DependentUpon>
     </EmbeddedResource>

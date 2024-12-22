@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Dental_App.Doctors
 {
-  public partial class frmTester : MetroAppointmentForm
+  public partial class frmTester : Form
   {
     public frmTester()
     {

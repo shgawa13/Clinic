@@ -28,16 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer5 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-      Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer5 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
-      Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer4 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-      Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer4 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
-      Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer3 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-      Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer3 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
-      Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer2 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-      Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer2 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
-      Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer1 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-      Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer1 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
       this.panelMenu = new System.Windows.Forms.Panel();
       this.iconButton7 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -57,18 +47,12 @@
       this.iconCurrentChild = new FontAwesome.Sharp.IconPictureBox();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panelDesktop = new System.Windows.Forms.Panel();
-      this.clock1 = new Syncfusion.Windows.Forms.Tools.Clock();
-      this.clock2 = new Syncfusion.Windows.Forms.Tools.Clock();
-      this.clock3 = new Syncfusion.Windows.Forms.Tools.Clock();
-      this.clock4 = new Syncfusion.Windows.Forms.Tools.Clock();
-      this.clock5 = new Syncfusion.Windows.Forms.Tools.Clock();
       this.panelMenu.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
       this.panelTitlebar.SuspendLayout();
       this.panel3.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).BeginInit();
-      this.panelDesktop.SuspendLayout();
       this.SuspendLayout();
       // 
       // panelMenu
@@ -378,146 +362,11 @@
       // panelDesktop
       // 
       this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.panelDesktop.Controls.Add(this.clock5);
-      this.panelDesktop.Controls.Add(this.clock4);
-      this.panelDesktop.Controls.Add(this.clock3);
-      this.panelDesktop.Controls.Add(this.clock2);
-      this.panelDesktop.Controls.Add(this.clock1);
       this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panelDesktop.Location = new System.Drawing.Point(209, 73);
       this.panelDesktop.Name = "panelDesktop";
       this.panelDesktop.Size = new System.Drawing.Size(831, 503);
       this.panelDesktop.TabIndex = 3;
-      // 
-      // clock1
-      // 
-      this.clock1.BackgroundColor = System.Drawing.SystemColors.Control;
-      this.clock1.BeforeTouchSize = new System.Drawing.Size(227, 227);
-      this.clock1.ClockFormat = "HH:mm:ss";
-      this.clock1.ClockFrame = Syncfusion.Windows.Forms.Tools.ClockFrames.RectangularFrame;
-      this.clock1.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Rectangle;
-      this.clock1.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Analog;
-      this.clock1.CurrentDateTime = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock1.CustomTime = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock1.DigitalRenderer = digitalClockRenderer5;
-      this.clock1.DisplayDates = true;
-      this.clock1.Location = new System.Drawing.Point(592, 19);
-      this.clock1.MinimumSize = new System.Drawing.Size(75, 75);
-      this.clock1.Name = "clock1";
-      this.clock1.Now = new System.DateTime(((long)(0)));
-      this.clock1.Remainder = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock1.Renderer = clockRenderer5;
-      this.clock1.ShowClockFrame = false;
-      this.clock1.ShowCustomTimeClock = false;
-      this.clock1.ShowHourDesignator = false;
-      this.clock1.Size = new System.Drawing.Size(227, 227);
-      this.clock1.StopTimer = false;
-      this.clock1.TabIndex = 0;
-      this.clock1.Text = "clock1";
-      // 
-      // clock2
-      // 
-      this.clock2.BackgroundColor = System.Drawing.SystemColors.Control;
-      this.clock2.BeforeTouchSize = new System.Drawing.Size(227, 113);
-      this.clock2.ClockFormat = "HH:mm:ss";
-      this.clock2.ClockFrame = Syncfusion.Windows.Forms.Tools.ClockFrames.RectangularFrame;
-      this.clock2.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.RoundedRectangle;
-      this.clock2.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
-      this.clock2.CurrentDateTime = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock2.CustomTime = new System.DateTime(2024, 12, 20, 0, 32, 46, 95);
-      this.clock2.DigitalRenderer = digitalClockRenderer4;
-      this.clock2.DisplayDates = true;
-      this.clock2.Location = new System.Drawing.Point(321, 19);
-      this.clock2.MinimumSize = new System.Drawing.Size(75, 75);
-      this.clock2.Name = "clock2";
-      this.clock2.Now = new System.DateTime(((long)(0)));
-      this.clock2.Remainder = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock2.Renderer = clockRenderer4;
-      this.clock2.ShowClockFrame = false;
-      this.clock2.ShowCustomTimeClock = false;
-      this.clock2.ShowHourDesignator = false;
-      this.clock2.Size = new System.Drawing.Size(227, 113);
-      this.clock2.StopTimer = false;
-      this.clock2.TabIndex = 1;
-      this.clock2.Text = "clock2";
-      // 
-      // clock3
-      // 
-      this.clock3.BackgroundColor = System.Drawing.SystemColors.Control;
-      this.clock3.BeforeTouchSize = new System.Drawing.Size(227, 113);
-      this.clock3.ClockFormat = "HH:mm:ss";
-      this.clock3.ClockFrame = Syncfusion.Windows.Forms.Tools.ClockFrames.RectangularFrame;
-      this.clock3.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Rectangle;
-      this.clock3.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
-      this.clock3.CurrentDateTime = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock3.CustomTime = new System.DateTime(2024, 12, 20, 0, 32, 52, 485);
-      this.clock3.DigitalRenderer = digitalClockRenderer3;
-      this.clock3.DisplayDates = true;
-      this.clock3.Location = new System.Drawing.Point(10, 19);
-      this.clock3.MinimumSize = new System.Drawing.Size(75, 75);
-      this.clock3.Name = "clock3";
-      this.clock3.Now = new System.DateTime(((long)(0)));
-      this.clock3.Remainder = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock3.Renderer = clockRenderer3;
-      this.clock3.ShowClockFrame = false;
-      this.clock3.ShowCustomTimeClock = false;
-      this.clock3.ShowHourDesignator = false;
-      this.clock3.Size = new System.Drawing.Size(227, 113);
-      this.clock3.StopTimer = false;
-      this.clock3.TabIndex = 2;
-      this.clock3.Text = "clock3";
-      // 
-      // clock4
-      // 
-      this.clock4.BackgroundColor = System.Drawing.SystemColors.Control;
-      this.clock4.BeforeTouchSize = new System.Drawing.Size(227, 227);
-      this.clock4.ClockFormat = "HH:mm:ss";
-      this.clock4.ClockFrame = Syncfusion.Windows.Forms.Tools.ClockFrames.RectangularFrame;
-      this.clock4.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.Circle;
-      this.clock4.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
-      this.clock4.CurrentDateTime = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock4.CustomTime = new System.DateTime(2024, 12, 20, 0, 33, 33, 104);
-      this.clock4.DigitalRenderer = digitalClockRenderer2;
-      this.clock4.DisplayDates = true;
-      this.clock4.Location = new System.Drawing.Point(10, 162);
-      this.clock4.MinimumSize = new System.Drawing.Size(75, 75);
-      this.clock4.Name = "clock4";
-      this.clock4.Now = new System.DateTime(((long)(0)));
-      this.clock4.Remainder = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock4.Renderer = clockRenderer2;
-      this.clock4.ShowClockFrame = false;
-      this.clock4.ShowCustomTimeClock = false;
-      this.clock4.ShowHourDesignator = false;
-      this.clock4.Size = new System.Drawing.Size(227, 227);
-      this.clock4.StopTimer = false;
-      this.clock4.TabIndex = 3;
-      this.clock4.Text = "clock4";
-      // 
-      // clock5
-      // 
-      this.clock5.BackgroundColor = System.Drawing.Color.Silver;
-      this.clock5.BeforeTouchSize = new System.Drawing.Size(205, 205);
-      this.clock5.ClockFormat = "HH:mm:ss";
-      this.clock5.ClockFrame = Syncfusion.Windows.Forms.Tools.ClockFrames.RectangularFrame;
-      this.clock5.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.RoundedSquare;
-      this.clock5.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
-      this.clock5.CurrentDateTime = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock5.CustomTime = new System.DateTime(2024, 12, 20, 0, 33, 54, 947);
-      this.clock5.DigitalRenderer = digitalClockRenderer1;
-      this.clock5.DisplayDates = true;
-      this.clock5.Location = new System.Drawing.Point(343, 162);
-      this.clock5.MinimumSize = new System.Drawing.Size(75, 75);
-      this.clock5.Name = "clock5";
-      this.clock5.Now = new System.DateTime(((long)(0)));
-      this.clock5.Remainder = new System.DateTime(2024, 12, 20, 0, 32, 4, 596);
-      this.clock5.Renderer = clockRenderer1;
-      this.clock5.ShowClockFrame = false;
-      this.clock5.ShowCustomTimeClock = false;
-      this.clock5.ShowHourDesignator = false;
-      this.clock5.Size = new System.Drawing.Size(205, 205);
-      this.clock5.StopTimer = false;
-      this.clock5.TabIndex = 4;
-      this.clock5.Text = "clock5";
       // 
       // MainForm
       // 
@@ -540,7 +389,6 @@
       this.panelTitlebar.PerformLayout();
       this.panel3.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChild)).EndInit();
-      this.panelDesktop.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -566,11 +414,6 @@
     private FontAwesome.Sharp.IconButton iconMinimize;
     private FontAwesome.Sharp.IconButton iconMaxmize;
     private System.Windows.Forms.Panel panel3;
-    private Syncfusion.Windows.Forms.Tools.Clock clock5;
-    private Syncfusion.Windows.Forms.Tools.Clock clock4;
-    private Syncfusion.Windows.Forms.Tools.Clock clock3;
-    private Syncfusion.Windows.Forms.Tools.Clock clock2;
-    private Syncfusion.Windows.Forms.Tools.Clock clock1;
   }
 }
 

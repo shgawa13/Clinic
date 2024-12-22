@@ -77,6 +77,11 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSave = new Dental_App.ExpertsBtn();
+      this.tabCtrlAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+      this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.tbpTreatmentPlan = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -85,6 +90,9 @@
       this.splitContainer1.SuspendLayout();
       this.panelSearch.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tabCtrlAppointment)).BeginInit();
+      this.tabCtrlAppointment.SuspendLayout();
+      this.tbpAddAppointment.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -98,11 +106,11 @@
       this.groupBox1.Controls.Add(this.iconNote);
       this.groupBox1.Controls.Add(this.splitContainer1);
       this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(0, 13);
+      this.groupBox1.Location = new System.Drawing.Point(9, 4);
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(733, 465);
+      this.groupBox1.Size = new System.Drawing.Size(758, 423);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -132,12 +140,12 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(604, 64);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(629, 64);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(117, 343);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(604, 64);
+      this.tbNote.Size = new System.Drawing.Size(629, 64);
       this.tbNote.TabIndex = 149;
       // 
       // iconNote
@@ -203,8 +211,8 @@
       this.splitContainer1.Panel2.Controls.Add(this.iconButton8);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton1);
       this.splitContainer1.Panel2.Controls.Add(this.label17);
-      this.splitContainer1.Size = new System.Drawing.Size(707, 281);
-      this.splitContainer1.SplitterDistance = 136;
+      this.splitContainer1.Size = new System.Drawing.Size(732, 281);
+      this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
       // label13
@@ -436,7 +444,7 @@
       this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
       this.panelSearch.Location = new System.Drawing.Point(0, 0);
       this.panelSearch.Name = "panelSearch";
-      this.panelSearch.Size = new System.Drawing.Size(707, 41);
+      this.panelSearch.Size = new System.Drawing.Size(732, 41);
       this.panelSearch.TabIndex = 150;
       // 
       // iconSearch
@@ -693,7 +701,7 @@
       this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(589, 486);
+      this.btnClose.Location = new System.Drawing.Point(578, 434);
       this.btnClose.Name = "btnClose";
       this.btnClose.Size = new System.Drawing.Size(137, 37);
       this.btnClose.TabIndex = 115;
@@ -712,23 +720,100 @@
       this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(429, 487);
+      this.btnSave.Location = new System.Drawing.Point(435, 434);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(137, 37);
       this.btnSave.TabIndex = 114;
       this.btnSave.Text = "Save";
       this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSave.UseVisualStyleBackColor = false;
+      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      // 
+      // tabCtrlAppointment
+      // 
+      this.tabCtrlAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(781, 526);
+      this.tabCtrlAppointment.Controls.Add(this.tbpAddAppointment);
+      this.tabCtrlAppointment.Controls.Add(this.tbpProcedures);
+      this.tabCtrlAppointment.Controls.Add(this.tbpTreatmentPlan);
+      this.tabCtrlAppointment.Controls.Add(this.tbpBills);
+      this.tabCtrlAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tabCtrlAppointment.FocusOnTabClick = false;
+      this.tabCtrlAppointment.Location = new System.Drawing.Point(0, 0);
+      this.tabCtrlAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+      this.tabCtrlAppointment.Name = "tabCtrlAppointment";
+      this.tabCtrlAppointment.Size = new System.Drawing.Size(781, 526);
+      this.tabCtrlAppointment.TabIndex = 116;
+      this.tabCtrlAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
+      this.tabCtrlAppointment.ThemeName = "TabRendererMetro";
+      this.tabCtrlAppointment.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
+      this.tabCtrlAppointment.SelectedIndexChanged += new System.EventHandler(this.tabCtrlAppointment_SelectedIndexChanged);
+      // 
+      // tbpAddAppointment
+      // 
+      this.tbpAddAppointment.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpAddAppointment.Controls.Add(this.btnSave);
+      this.tbpAddAppointment.Controls.Add(this.groupBox1);
+      this.tbpAddAppointment.Controls.Add(this.btnClose);
+      this.tbpAddAppointment.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpAddAppointment.Image = null;
+      this.tbpAddAppointment.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpAddAppointment.Location = new System.Drawing.Point(1, 29);
+      this.tbpAddAppointment.Name = "tbpAddAppointment";
+      this.tbpAddAppointment.ShowCloseButton = true;
+      this.tbpAddAppointment.Size = new System.Drawing.Size(778, 495);
+      this.tbpAddAppointment.TabIndex = 1;
+      this.tbpAddAppointment.Text = "Add Appointment";
+      this.tbpAddAppointment.ThemesEnabled = false;
+      // 
+      // tbpProcedures
+      // 
+      this.tbpProcedures.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpProcedures.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpProcedures.Image = null;
+      this.tbpProcedures.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
+      this.tbpProcedures.Name = "tbpProcedures";
+      this.tbpProcedures.ShowCloseButton = true;
+      this.tbpProcedures.Size = new System.Drawing.Size(778, 495);
+      this.tbpProcedures.TabIndex = 2;
+      this.tbpProcedures.Text = "Procedures";
+      this.tbpProcedures.ThemesEnabled = false;
+      // 
+      // tbpBills
+      // 
+      this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpBills.Image = null;
+      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpBills.Location = new System.Drawing.Point(1, 29);
+      this.tbpBills.Name = "tbpBills";
+      this.tbpBills.ShowCloseButton = true;
+      this.tbpBills.Size = new System.Drawing.Size(778, 495);
+      this.tbpBills.TabIndex = 3;
+      this.tbpBills.Text = "Bills";
+      this.tbpBills.ThemesEnabled = false;
+      // 
+      // tbpTreatmentPlan
+      // 
+      this.tbpTreatmentPlan.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpTreatmentPlan.Image = null;
+      this.tbpTreatmentPlan.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpTreatmentPlan.Location = new System.Drawing.Point(1, 29);
+      this.tbpTreatmentPlan.Name = "tbpTreatmentPlan";
+      this.tbpTreatmentPlan.ShowCloseButton = true;
+      this.tbpTreatmentPlan.Size = new System.Drawing.Size(778, 495);
+      this.tbpTreatmentPlan.TabIndex = 4;
+      this.tbpTreatmentPlan.Text = "Treatment Plan";
+      this.tbpTreatmentPlan.ThemesEnabled = false;
       // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.ClientSize = new System.Drawing.Size(733, 526);
-      this.Controls.Add(this.btnClose);
-      this.Controls.Add(this.btnSave);
-      this.Controls.Add(this.groupBox1);
+      this.ClientSize = new System.Drawing.Size(781, 526);
+      this.Controls.Add(this.tabCtrlAppointment);
       this.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
       this.Margin = new System.Windows.Forms.Padding(4);
@@ -747,6 +832,9 @@
       this.panelSearch.ResumeLayout(false);
       this.panelSearch.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tabCtrlAppointment)).EndInit();
+      this.tabCtrlAppointment.ResumeLayout(false);
+      this.tbpAddAppointment.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -801,5 +889,10 @@
     private System.Windows.Forms.ComboBox cbDoctor;
     private System.Windows.Forms.Label lblTitle;
     private System.Windows.Forms.ErrorProvider errorProvider1;
+    private Syncfusion.Windows.Forms.Tools.TabControlAdv tabCtrlAppointment;
+    private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpAddAppointment;
+    private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpProcedures;
+    private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpBills;
+    private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpTreatmentPlan;
   }
 }

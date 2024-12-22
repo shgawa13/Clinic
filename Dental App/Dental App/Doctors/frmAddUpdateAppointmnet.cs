@@ -125,31 +125,33 @@ namespace Dental_App.Doctors
       lblNationalNo.Text = _Patient.PatientInfo.NationalID;
       lblEmail.Text = _Patient.PatientInfo.Email;
       lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
-   
+      tbNote.Focus();
     }
 
 
-    private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
+    private void btnSave_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
+    {
       cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
     }
 
     private void iconSearch_Click(object sender, EventArgs e)
     {
-      _PatientID = int.Parse(tbSearch.Text);
+      _PatientID = int.Parse(tbSearch.Text.Trim());
       _FindPatinet(_PatientID);
     }
-
 
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
       // handle numbers input
-      
-         e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar); 
-      
+       e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar); 
     }
 
+    // Validat inputs in Search box.
     private void tbSearch_Validating(object sender, CancelEventArgs e)
     {
       if (String.IsNullOrEmpty(tbSearch.Text.Trim()))
@@ -162,6 +164,11 @@ namespace Dental_App.Doctors
       {
         errorProvider1.SetError(tbSearch, null);
       }
+    }
+
+    private void tabCtrlAppointment_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
   }   
 }
