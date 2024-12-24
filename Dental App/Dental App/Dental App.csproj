@@ -228,5 +228,32 @@
   <ItemGroup>
     <None Include="Resources\Female_avatar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagnosis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restoration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Root canal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hygiene.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Surgery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whitening.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Implantion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t1 %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

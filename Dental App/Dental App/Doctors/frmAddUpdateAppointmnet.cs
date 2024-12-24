@@ -171,6 +171,9 @@ namespace Dental_App.Doctors
 
     }
 
- 
+    private void tbpProcedures_Click(object sender, EventArgs e)
+    {
+
+    }
   }   
 }
