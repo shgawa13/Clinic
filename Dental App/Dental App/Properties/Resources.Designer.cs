@@ -73,6 +73,26 @@ namespace Dental_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diagnosis1 {
+            get {
+                object obj = ResourceManager.GetObject("diagnosis1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Extraction {
+            get {
+                object obj = ResourceManager.GetObject("Extraction", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Female_avatar {
             get {
                 object obj = ResourceManager.GetObject("Female_avatar", resourceCulture);
@@ -113,6 +133,16 @@ namespace Dental_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Implantation {
+            get {
+                object obj = ResourceManager.GetObject("Implantation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Implantion {
             get {
                 object obj = ResourceManager.GetObject("Implantion", resourceCulture);
@@ -143,9 +173,29 @@ namespace Dental_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Orthopedic {
+            get {
+                object obj = ResourceManager.GetObject("Orthopedic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Restoration {
             get {
                 object obj = ResourceManager.GetObject("Restoration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restoration1 {
+            get {
+                object obj = ResourceManager.GetObject("Restoration1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +236,26 @@ namespace Dental_App.Properties {
         internal static System.Drawing.Bitmap Whitening {
             get {
                 object obj = ResourceManager.GetObject("Whitening", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Whitening1 {
+            get {
+                object obj = ResourceManager.GetObject("Whitening1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Whitening2 {
+            get {
+                object obj = ResourceManager.GetObject("Whitening2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
