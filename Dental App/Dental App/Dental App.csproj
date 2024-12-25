@@ -255,5 +255,26 @@
   <ItemGroup>
     <None Include="Resources\t1 %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagnosis1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whitening1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whitening2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restoration1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Implantation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orthopedic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Extraction.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

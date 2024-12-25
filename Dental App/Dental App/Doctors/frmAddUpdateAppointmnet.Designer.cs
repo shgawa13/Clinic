@@ -65,12 +65,9 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.tabCtrlAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.btnSave = new Dental_App.ExpertsBtn();
-      this.btnClose = new Dental_App.ExpertsBtn();
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.tbpTreatmentPlan = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.iconNote = new FontAwesome.Sharp.IconButton();
       this.iconLogo = new FontAwesome.Sharp.IconButton();
@@ -84,12 +81,15 @@
       this.iconButton7 = new FontAwesome.Sharp.IconButton();
       this.iconButton8 = new FontAwesome.Sharp.IconButton();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      this.btnSave = new Dental_App.ExpertsBtn();
+      this.btnClose = new Dental_App.ExpertsBtn();
       this.expertsBtn8 = new Dental_App.ExpertsBtn();
       this.expertsBtn5 = new Dental_App.ExpertsBtn();
       this.expertsBtn3 = new Dental_App.ExpertsBtn();
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -102,6 +102,7 @@
       this.tabCtrlAppointment.SuspendLayout();
       this.tbpAddAppointment.SuspendLayout();
       this.tbpProcedures.SuspendLayout();
+      this.panel2.SuspendLayout();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -525,7 +526,6 @@
       this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(781, 526);
       this.tabCtrlAppointment.Controls.Add(this.tbpAddAppointment);
       this.tabCtrlAppointment.Controls.Add(this.tbpProcedures);
-      this.tabCtrlAppointment.Controls.Add(this.tbpTreatmentPlan);
       this.tabCtrlAppointment.Controls.Add(this.tbpBills);
       this.tabCtrlAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabCtrlAppointment.FocusOnTabClick = false;
@@ -556,46 +556,6 @@
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
       // 
-      // btnSave
-      // 
-      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSave.BorderRadius = 5;
-      this.btnSave.BorderSize = 0;
-      this.btnSave.FlatAppearance.BorderSize = 0;
-      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(435, 434);
-      this.btnSave.Name = "btnSave";
-      this.btnSave.Size = new System.Drawing.Size(137, 37);
-      this.btnSave.TabIndex = 114;
-      this.btnSave.Text = "Save";
-      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.UseVisualStyleBackColor = false;
-      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-      // 
-      // btnClose
-      // 
-      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnClose.BorderRadius = 5;
-      this.btnClose.BorderSize = 0;
-      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnClose.FlatAppearance.BorderSize = 0;
-      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(578, 434);
-      this.btnClose.Name = "btnClose";
-      this.btnClose.Size = new System.Drawing.Size(137, 37);
-      this.btnClose.TabIndex = 115;
-      this.btnClose.Text = "Close";
-      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.UseVisualStyleBackColor = false;
-      // 
       // tbpProcedures
       // 
       this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
@@ -615,9 +575,10 @@
       // 
       // panel2
       // 
-      this.panel2.Location = new System.Drawing.Point(12, 237);
+      this.panel2.Controls.Add(this.checkedListBox1);
+      this.panel2.Location = new System.Drawing.Point(11, 238);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(756, 227);
+      this.panel2.Size = new System.Drawing.Size(756, 209);
       this.panel2.TabIndex = 132;
       this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
       // 
@@ -633,21 +594,8 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(778, 231);
+      this.panel1.Size = new System.Drawing.Size(778, 232);
       this.panel1.TabIndex = 131;
-      // 
-      // tbpTreatmentPlan
-      // 
-      this.tbpTreatmentPlan.BackColor = System.Drawing.SystemColors.Control;
-      this.tbpTreatmentPlan.Image = null;
-      this.tbpTreatmentPlan.ImageSize = new System.Drawing.Size(16, 16);
-      this.tbpTreatmentPlan.Location = new System.Drawing.Point(1, 29);
-      this.tbpTreatmentPlan.Name = "tbpTreatmentPlan";
-      this.tbpTreatmentPlan.ShowCloseButton = true;
-      this.tbpTreatmentPlan.Size = new System.Drawing.Size(778, 495);
-      this.tbpTreatmentPlan.TabIndex = 4;
-      this.tbpTreatmentPlan.Text = "Treatment Plan";
-      this.tbpTreatmentPlan.ThemesEnabled = false;
       // 
       // tbpBills
       // 
@@ -844,6 +792,46 @@
       this.iconButton1.TabIndex = 139;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
+      // btnSave
+      // 
+      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSave.BorderRadius = 5;
+      this.btnSave.BorderSize = 0;
+      this.btnSave.FlatAppearance.BorderSize = 0;
+      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.Location = new System.Drawing.Point(435, 434);
+      this.btnSave.Name = "btnSave";
+      this.btnSave.Size = new System.Drawing.Size(137, 37);
+      this.btnSave.TabIndex = 114;
+      this.btnSave.Text = "Save";
+      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.UseVisualStyleBackColor = false;
+      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      // 
+      // btnClose
+      // 
+      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnClose.BorderRadius = 5;
+      this.btnClose.BorderSize = 0;
+      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnClose.FlatAppearance.BorderSize = 0;
+      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.Location = new System.Drawing.Point(578, 434);
+      this.btnClose.Name = "btnClose";
+      this.btnClose.Size = new System.Drawing.Size(137, 37);
+      this.btnClose.TabIndex = 115;
+      this.btnClose.Text = "Close";
+      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.UseVisualStyleBackColor = false;
+      // 
       // expertsBtn8
       // 
       this.expertsBtn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
@@ -991,6 +979,19 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // checkedListBox1
+      // 
+      this.checkedListBox1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkedListBox1.FormattingEnabled = true;
+      this.checkedListBox1.Items.AddRange(new object[] {
+            "Cleaning",
+            "Take Xray",
+            "General Diagnosis"});
+      this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
+      this.checkedListBox1.Name = "checkedListBox1";
+      this.checkedListBox1.Size = new System.Drawing.Size(159, 61);
+      this.checkedListBox1.TabIndex = 0;
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1020,6 +1021,7 @@
       this.tabCtrlAppointment.ResumeLayout(false);
       this.tbpAddAppointment.ResumeLayout(false);
       this.tbpProcedures.ResumeLayout(false);
+      this.panel2.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
@@ -1079,7 +1081,6 @@
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpAddAppointment;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpProcedures;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpBills;
-    private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpTreatmentPlan;
     private ExpertsBtn expertsBtn8;
     private ExpertsBtn expertsBtn5;
     private ExpertsBtn expertsBtn4;
@@ -1088,5 +1089,6 @@
     private ExpertsBtn expertsBtn1;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
+    private System.Windows.Forms.CheckedListBox checkedListBox1;
   }
 }
