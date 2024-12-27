@@ -989,7 +989,7 @@
             "General Diagnosis"});
       this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
       this.checkedListBox1.Name = "checkedListBox1";
-      this.checkedListBox1.Size = new System.Drawing.Size(159, 61);
+      this.checkedListBox1.Size = new System.Drawing.Size(163, 99);
       this.checkedListBox1.TabIndex = 0;
       // 
       // frmAddUpdateAppointmnet
