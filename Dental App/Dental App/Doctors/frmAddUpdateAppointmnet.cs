@@ -48,6 +48,7 @@ namespace Dental_App.Doctors
     {
 
       _ResetDefualtValues();
+      CalcTotalCost();
     }
 
     // Reset Defualt values
@@ -166,29 +167,33 @@ namespace Dental_App.Doctors
       }
     }
 
-    private void tabCtrlAppointment_SelectedIndexChanged(object sender, EventArgs e)
+    private void CalcTotalCost()
     {
-
+      lbCost.Text = CalcDiagnosis().ToString();
     }
 
-    private void tbpProcedures_Click(object sender, EventArgs e)
+    private short CalcDiagnosis()
     {
-
+      int res = 0;
+      res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
+      res += (cbXray.Checked == true) ? int.Parse(cbXray.Tag.ToString()) : 0;
+      res += (cbDiagnosis.Checked == true) ? int.Parse(cbDiagnosis.Tag.ToString()) : 0;
+      return Convert.ToInt16(res);
     }
 
-    private void groupBox1_Enter(object sender, EventArgs e)
+    private void cbCleaning_CheckStateChanged(object sender, EventArgs e)
     {
-
+      CalcTotalCost();
     }
 
-    private void panel2_Paint(object sender, PaintEventArgs e)
+    private void cbXray_CheckStateChanged(object sender, EventArgs e)
     {
-
+      CalcTotalCost();
     }
 
-    private void expertsBtn5_Click(object sender, EventArgs e)
+    private void cbDiagnosis_CheckStateChanged(object sender, EventArgs e)
     {
-
+      CalcTotalCost();
     }
   }   
 }
