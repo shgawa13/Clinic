@@ -7,9 +7,76 @@ using System.Diagnostics.Eventing.Reader;
 using Syncfusion.Windows.Forms.Schedule;
 using System.Linq;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ClinicConsoleApp
 {
+
+  public  class TemprtureEventAgrs : EventArgs
+  {
+    public double NewTemprture { set; get; }
+    public double OldTemprture { set; get; }
+    public double Diffrence { set; get; }
+
+    public TemprtureEventAgrs(double NewTemprture, double OldTemprture ) 
+    {
+      this.NewTemprture = NewTemprture;
+      this.OldTemprture = OldTemprture;
+      this.Diffrence = NewTemprture - OldTemprture;
+    }
+  
+  }
+
+
+  public class Thermostat 
+  {
+
+    public event EventHandler<TemprtureEventAgrs> TemprtureChanged;
+
+    private double CurrentTmep;
+    private double OldTemp;
+
+
+    public void SetNewTempreture(double NewTemp)
+    {
+
+      if (NewTemp != CurrentTmep)
+      {
+        OldTemp = CurrentTmep;
+        CurrentTmep = NewTemp;
+        OnTempretureChanged(CurrentTmep, OldTemp);
+
+      }
+    }
+
+    public void OnTempretureChanged(double CurrentTemp, double OldTemp)
+    {
+      OnTempretureChanged(new TemprtureEventAgrs(CurrentTmep, OldTemp));
+    }
+
+    protected virtual void OnTempretureChanged(TemprtureEventAgrs e)
+    {
+      TemprtureChanged?.Invoke(this, e);
+    }
+
+  }
+  
+  
+  public class Display
+  {
+    public void Subscribe(Thermostat thermostat)
+    {
+      thermostat.TemprtureChanged += HandleTempretureChanged;
+    }
+
+    private void HandleTempretureChanged(object sender, TemprtureEventAgrs e)
+    {
+      
+      
+    }
+  }
+  
+
 
   public class Plan
   {
