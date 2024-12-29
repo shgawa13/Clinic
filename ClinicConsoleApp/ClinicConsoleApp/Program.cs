@@ -71,7 +71,10 @@ namespace ClinicConsoleApp
 
     private void HandleTempretureChanged(object sender, TemprtureEventAgrs e)
     {
-      
+      Console.WriteLine("\n\n Tempreture has been Changed:");
+      Console.WriteLine($"New Temp: {e.NewTemprture}");
+      Console.WriteLine($"Old Temp: {e.OldTemprture}");
+      Console.WriteLine($"Diffrences: {e.Diffrence}");
       
     }
   }
@@ -272,9 +275,17 @@ namespace ClinicConsoleApp
 
     static void Main(string[] args)
     {
-      PushToList(ref Testitem);
-      PrintPlanList( ref Testitem);
-      Console.WriteLine(Testitem.Count.ToString());
+      Display Screen = new Display();
+      Thermostat thermostat = new Thermostat();
+      
+      Screen.Subscribe(thermostat);
+
+      thermostat.SetNewTempreture(25);
+      thermostat.SetNewTempreture(25);
+      thermostat.SetNewTempreture(25);
+      thermostat.SetNewTempreture(26);
+
+
       Console.ReadKey();
     }
   }
