@@ -26,6 +26,7 @@ namespace Dental_App.Doctors
     private int _PatientID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
+    private List<string> PlanList = new List<string>();
 
     // AppointmentForm Can be opened from two places
     // From Schedule
@@ -49,6 +50,8 @@ namespace Dental_App.Doctors
 
       _ResetDefualtValues();
       CalcTotalCost();
+    
+      sfListView.DataSource = PlanList;
     }
 
     // Reset Defualt values
@@ -184,16 +187,19 @@ namespace Dental_App.Doctors
     private void cbCleaning_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
+      PlanList.Add(cbCleaning.Text.Trim());
     }
 
     private void cbXray_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
+      PlanList.Add(cbXray.Text.Trim());
     }
 
     private void cbDiagnosis_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
+      PlanList.Add(cbDiagnosis.Text.Trim());
     }
   }   
 }
