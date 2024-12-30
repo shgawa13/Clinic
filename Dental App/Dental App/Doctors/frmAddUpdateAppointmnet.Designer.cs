@@ -89,6 +89,7 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
+      this.listView = new System.Windows.Forms.ListView();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.expertsBtn8 = new Dental_App.ExpertsBtn();
@@ -97,7 +98,6 @@
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
-      this.listView = new System.Windows.Forms.ListView();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -916,6 +916,16 @@
       this.sfListView.TabIndex = 8;
       this.sfListView.Text = "sfListView1";
       // 
+      // listView
+      // 
+      this.listView.HideSelection = false;
+      this.listView.Location = new System.Drawing.Point(24, 44);
+      this.listView.Name = "listView";
+      this.listView.Size = new System.Drawing.Size(283, 129);
+      this.listView.TabIndex = 6;
+      this.listView.UseCompatibleStateImageBehavior = false;
+      this.listView.View = System.Windows.Forms.View.List;
+      // 
       // btnSave
       // 
       this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -1101,15 +1111,6 @@
       this.expertsBtn2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
-      // 
-      // listView
-      // 
-      this.listView.HideSelection = false;
-      this.listView.Location = new System.Drawing.Point(24, 44);
-      this.listView.Name = "listView";
-      this.listView.Size = new System.Drawing.Size(283, 129);
-      this.listView.TabIndex = 6;
-      this.listView.UseCompatibleStateImageBehavior = false;
       // 
       // frmAddUpdateAppointmnet
       // 
