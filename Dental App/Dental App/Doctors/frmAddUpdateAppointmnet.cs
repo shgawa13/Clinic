@@ -51,7 +51,7 @@ namespace Dental_App.Doctors
       _ResetDefualtValues();
       CalcTotalCost();
     
-      sfListView.DataSource = PlanList;
+     //sfListView.DataSource = PlanList;
     }
 
     // Reset Defualt values
@@ -175,12 +175,15 @@ namespace Dental_App.Doctors
       lbCost.Text = CalcDiagnosis().ToString();
     }
 
+   
+
     private short CalcDiagnosis()
     {
       int res = 0;
       res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
       res += (cbXray.Checked == true) ? int.Parse(cbXray.Tag.ToString()) : 0;
       res += (cbDiagnosis.Checked == true) ? int.Parse(cbDiagnosis.Tag.ToString()) : 0;
+      
       return Convert.ToInt16(res);
     }
 
@@ -188,6 +191,7 @@ namespace Dental_App.Doctors
     {
       CalcTotalCost();
       PlanList.Add(cbCleaning.Text.Trim());
+      listView.Items.Add(cbCleaning.Text.Trim());
     }
 
     private void cbXray_CheckStateChanged(object sender, EventArgs e)
@@ -200,6 +204,7 @@ namespace Dental_App.Doctors
     {
       CalcTotalCost();
       PlanList.Add(cbDiagnosis.Text.Trim());
+    
     }
   }   
 }
