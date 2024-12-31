@@ -206,5 +206,7 @@ namespace Dental_App.Doctors
       PlanList.Add(cbDiagnosis.Text.Trim());
     
     }
+
+   
   }   
 }

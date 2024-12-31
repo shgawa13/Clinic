@@ -75,29 +75,31 @@
       this.label1 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+      this.expertsBtn5 = new Dental_App.ExpertsBtn();
       this.tabCtrlAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.btnSave = new Dental_App.ExpertsBtn();
+      this.btnClose = new Dental_App.ExpertsBtn();
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.listView = new System.Windows.Forms.ListView();
       this.lb = new System.Windows.Forms.Label();
       this.lbCost = new System.Windows.Forms.Label();
       this.panelDiagnosis = new System.Windows.Forms.Panel();
+      this.label20 = new System.Windows.Forms.Label();
+      this.label15 = new System.Windows.Forms.Label();
+      this.label14 = new System.Windows.Forms.Label();
       this.cbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.cbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.cbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
-      this.listView = new System.Windows.Forms.ListView();
-      this.btnSave = new Dental_App.ExpertsBtn();
-      this.btnClose = new Dental_App.ExpertsBtn();
       this.expertsBtn8 = new Dental_App.ExpertsBtn();
-      this.expertsBtn5 = new Dental_App.ExpertsBtn();
       this.expertsBtn3 = new Dental_App.ExpertsBtn();
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -713,6 +715,32 @@
       // 
       this.errorProvider1.ContainerControl = this;
       // 
+      // expertsBtn5
+      // 
+      this.expertsBtn5.BackColor = System.Drawing.Color.AliceBlue;
+      this.expertsBtn5.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.expertsBtn5.BackgroundImage = global::Dental_App.Properties.Resources.Whitening2;
+      this.expertsBtn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.expertsBtn5.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.expertsBtn5.BorderRadius = 10;
+      this.expertsBtn5.BorderSize = 0;
+      this.expertsBtn5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.expertsBtn5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.expertsBtn5.FlatAppearance.BorderSize = 0;
+      this.expertsBtn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.expertsBtn5.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.expertsBtn5.ForeColor = System.Drawing.Color.Black;
+      this.errorProvider1.SetIconAlignment(this.expertsBtn5, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+      this.expertsBtn5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.expertsBtn5.Location = new System.Drawing.Point(528, 3);
+      this.expertsBtn5.Name = "expertsBtn5";
+      this.expertsBtn5.Size = new System.Drawing.Size(240, 109);
+      this.expertsBtn5.TabIndex = 130;
+      this.expertsBtn5.Text = "Whitening";
+      this.expertsBtn5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.expertsBtn5.TextColor = System.Drawing.Color.Black;
+      this.expertsBtn5.UseVisualStyleBackColor = false;
+      // 
       // tabCtrlAppointment
       // 
       this.tabCtrlAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -748,6 +776,46 @@
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
       // 
+      // btnSave
+      // 
+      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSave.BorderRadius = 5;
+      this.btnSave.BorderSize = 0;
+      this.btnSave.FlatAppearance.BorderSize = 0;
+      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.Location = new System.Drawing.Point(435, 434);
+      this.btnSave.Name = "btnSave";
+      this.btnSave.Size = new System.Drawing.Size(137, 37);
+      this.btnSave.TabIndex = 114;
+      this.btnSave.Text = "Save";
+      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSave.UseVisualStyleBackColor = false;
+      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      // 
+      // btnClose
+      // 
+      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnClose.BorderRadius = 5;
+      this.btnClose.BorderSize = 0;
+      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnClose.FlatAppearance.BorderSize = 0;
+      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.Location = new System.Drawing.Point(578, 434);
+      this.btnClose.Name = "btnClose";
+      this.btnClose.Size = new System.Drawing.Size(137, 37);
+      this.btnClose.TabIndex = 115;
+      this.btnClose.Text = "Close";
+      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnClose.UseVisualStyleBackColor = false;
+      // 
       // tbpProcedures
       // 
       this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
@@ -766,7 +834,6 @@
       // 
       // panel2
       // 
-      this.panel2.Controls.Add(this.sfListView);
       this.panel2.Controls.Add(this.panel3);
       this.panel2.Controls.Add(this.panelDiagnosis);
       this.panel2.Location = new System.Drawing.Point(11, 238);
@@ -778,18 +845,28 @@
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
       this.panel3.Controls.Add(this.listView);
-      this.panel3.Controls.Add(this.lb);
       this.panel3.Controls.Add(this.lbCost);
-      this.panel3.Location = new System.Drawing.Point(414, 12);
+      this.panel3.Controls.Add(this.lb);
+      this.panel3.Location = new System.Drawing.Point(335, 12);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(323, 186);
+      this.panel3.Size = new System.Drawing.Size(402, 186);
       this.panel3.TabIndex = 7;
+      // 
+      // listView
+      // 
+      this.listView.HideSelection = false;
+      this.listView.Location = new System.Drawing.Point(3, 3);
+      this.listView.Name = "listView";
+      this.listView.Size = new System.Drawing.Size(396, 142);
+      this.listView.TabIndex = 6;
+      this.listView.UseCompatibleStateImageBehavior = false;
+      this.listView.View = System.Windows.Forms.View.List;
       // 
       // lb
       // 
       this.lb.AutoSize = true;
       this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(3, 8);
+      this.lb.Location = new System.Drawing.Point(288, 155);
       this.lb.Name = "lb";
       this.lb.Size = new System.Drawing.Size(56, 25);
       this.lb.TabIndex = 4;
@@ -799,15 +876,18 @@
       // 
       this.lbCost.AutoSize = true;
       this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbCost.Location = new System.Drawing.Point(263, 8);
+      this.lbCost.Location = new System.Drawing.Point(352, 155);
       this.lbCost.Name = "lbCost";
-      this.lbCost.Size = new System.Drawing.Size(45, 25);
+      this.lbCost.Size = new System.Drawing.Size(34, 25);
       this.lbCost.TabIndex = 5;
-      this.lbCost.Text = "000";
+      this.lbCost.Text = "$0";
       // 
       // panelDiagnosis
       // 
       this.panelDiagnosis.BackColor = System.Drawing.Color.Azure;
+      this.panelDiagnosis.Controls.Add(this.label20);
+      this.panelDiagnosis.Controls.Add(this.label15);
+      this.panelDiagnosis.Controls.Add(this.label14);
       this.panelDiagnosis.Controls.Add(this.cbXray);
       this.panelDiagnosis.Controls.Add(this.cbDiagnosis);
       this.panelDiagnosis.Controls.Add(this.cbCleaning);
@@ -815,6 +895,36 @@
       this.panelDiagnosis.Name = "panelDiagnosis";
       this.panelDiagnosis.Size = new System.Drawing.Size(244, 195);
       this.panelDiagnosis.TabIndex = 6;
+      // 
+      // label20
+      // 
+      this.label20.AutoSize = true;
+      this.label20.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.label20.Location = new System.Drawing.Point(159, 93);
+      this.label20.Name = "label20";
+      this.label20.Size = new System.Drawing.Size(36, 20);
+      this.label20.TabIndex = 9;
+      this.label20.Text = "$10";
+      // 
+      // label15
+      // 
+      this.label15.AutoSize = true;
+      this.label15.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.label15.Location = new System.Drawing.Point(159, 54);
+      this.label15.Name = "label15";
+      this.label15.Size = new System.Drawing.Size(36, 20);
+      this.label15.TabIndex = 8;
+      this.label15.Text = "$10";
+      // 
+      // label14
+      // 
+      this.label14.AutoSize = true;
+      this.label14.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.label14.Location = new System.Drawing.Point(159, 15);
+      this.label14.Name = "label14";
+      this.label14.Size = new System.Drawing.Size(36, 20);
+      this.label14.TabIndex = 7;
+      this.label14.Text = "$10";
       // 
       // cbXray
       // 
@@ -891,81 +1001,6 @@
       this.panel1.Size = new System.Drawing.Size(778, 232);
       this.panel1.TabIndex = 131;
       // 
-      // tbpBills
-      // 
-      this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
-      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.tbpBills.Image = null;
-      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
-      this.tbpBills.Location = new System.Drawing.Point(1, 29);
-      this.tbpBills.Name = "tbpBills";
-      this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(778, 495);
-      this.tbpBills.TabIndex = 3;
-      this.tbpBills.Text = "Bills";
-      this.tbpBills.ThemesEnabled = false;
-      // 
-      // sfListView
-      // 
-      this.sfListView.AccessibleName = "ScrollControl";
-      this.sfListView.AutoHideScrollBars = true;
-      this.sfListView.BackColor = System.Drawing.SystemColors.Window;
-      this.sfListView.Location = new System.Drawing.Point(260, 12);
-      this.sfListView.Name = "sfListView";
-      this.sfListView.Size = new System.Drawing.Size(141, 174);
-      this.sfListView.TabIndex = 8;
-      this.sfListView.Text = "sfListView1";
-      // 
-      // listView
-      // 
-      this.listView.HideSelection = false;
-      this.listView.Location = new System.Drawing.Point(24, 44);
-      this.listView.Name = "listView";
-      this.listView.Size = new System.Drawing.Size(283, 129);
-      this.listView.TabIndex = 6;
-      this.listView.UseCompatibleStateImageBehavior = false;
-      this.listView.View = System.Windows.Forms.View.List;
-      // 
-      // btnSave
-      // 
-      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSave.BorderRadius = 5;
-      this.btnSave.BorderSize = 0;
-      this.btnSave.FlatAppearance.BorderSize = 0;
-      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(435, 434);
-      this.btnSave.Name = "btnSave";
-      this.btnSave.Size = new System.Drawing.Size(137, 37);
-      this.btnSave.TabIndex = 114;
-      this.btnSave.Text = "Save";
-      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.UseVisualStyleBackColor = false;
-      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-      // 
-      // btnClose
-      // 
-      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnClose.BorderRadius = 5;
-      this.btnClose.BorderSize = 0;
-      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnClose.FlatAppearance.BorderSize = 0;
-      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(578, 434);
-      this.btnClose.Name = "btnClose";
-      this.btnClose.Size = new System.Drawing.Size(137, 37);
-      this.btnClose.TabIndex = 115;
-      this.btnClose.Text = "Close";
-      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.UseVisualStyleBackColor = false;
-      // 
       // expertsBtn8
       // 
       this.expertsBtn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
@@ -989,32 +1024,6 @@
       this.expertsBtn8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.expertsBtn8.TextColor = System.Drawing.Color.Black;
       this.expertsBtn8.UseVisualStyleBackColor = false;
-      // 
-      // expertsBtn5
-      // 
-      this.expertsBtn5.BackColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn5.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn5.BackgroundImage = global::Dental_App.Properties.Resources.Whitening2;
-      this.expertsBtn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn5.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn5.BorderRadius = 10;
-      this.expertsBtn5.BorderSize = 0;
-      this.expertsBtn5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn5.FlatAppearance.BorderSize = 0;
-      this.expertsBtn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn5.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.expertsBtn5.ForeColor = System.Drawing.Color.Black;
-      this.errorProvider1.SetIconAlignment(this.expertsBtn5, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-      this.expertsBtn5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn5.Location = new System.Drawing.Point(528, 3);
-      this.expertsBtn5.Name = "expertsBtn5";
-      this.expertsBtn5.Size = new System.Drawing.Size(240, 109);
-      this.expertsBtn5.TabIndex = 130;
-      this.expertsBtn5.Text = "Whitening";
-      this.expertsBtn5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn5.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn5.UseVisualStyleBackColor = false;
       // 
       // expertsBtn3
       // 
@@ -1112,6 +1121,20 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // tbpBills
+      // 
+      this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpBills.Image = null;
+      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpBills.Location = new System.Drawing.Point(1, 29);
+      this.tbpBills.Name = "tbpBills";
+      this.tbpBills.ShowCloseButton = true;
+      this.tbpBills.Size = new System.Drawing.Size(778, 495);
+      this.tbpBills.TabIndex = 3;
+      this.tbpBills.Text = "Bills";
+      this.tbpBills.ThemesEnabled = false;
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1145,6 +1168,7 @@
       this.panel3.ResumeLayout(false);
       this.panel3.PerformLayout();
       this.panelDiagnosis.ResumeLayout(false);
+      this.panelDiagnosis.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cbXray)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.cbDiagnosis)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.cbCleaning)).EndInit();
@@ -1222,7 +1246,9 @@
     public System.Windows.Forms.Label lbCost;
     private System.Windows.Forms.Panel panelDiagnosis;
     private System.Windows.Forms.Panel panel3;
-    private Syncfusion.WinForms.ListView.SfListView sfListView;
     private System.Windows.Forms.ListView listView;
+    public System.Windows.Forms.Label label20;
+    public System.Windows.Forms.Label label15;
+    public System.Windows.Forms.Label label14;
   }
 }
