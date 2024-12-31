@@ -83,13 +83,6 @@
       this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
       this.lbCost = new System.Windows.Forms.Label();
       this.lb = new System.Windows.Forms.Label();
-      this.panelDiagnosis = new System.Windows.Forms.Panel();
-      this.label20 = new System.Windows.Forms.Label();
-      this.label15 = new System.Windows.Forms.Label();
-      this.label14 = new System.Windows.Forms.Label();
-      this.cbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.cbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.cbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.panel1 = new System.Windows.Forms.Panel();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.btnSave = new Dental_App.ExpertsBtn();
@@ -114,10 +107,6 @@
       this.tbpProcedures.SuspendLayout();
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
-      this.panelDiagnosis.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.cbXray)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.cbDiagnosis)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.cbCleaning)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -769,7 +758,6 @@
       // panel2
       // 
       this.panel2.Controls.Add(this.panel3);
-      this.panel2.Controls.Add(this.panelDiagnosis);
       this.panel2.Location = new System.Drawing.Point(11, 238);
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(756, 209);
@@ -781,9 +769,9 @@
       this.panel3.Controls.Add(this.sfListView);
       this.panel3.Controls.Add(this.lbCost);
       this.panel3.Controls.Add(this.lb);
-      this.panel3.Location = new System.Drawing.Point(335, 12);
+      this.panel3.Location = new System.Drawing.Point(327, 12);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(402, 186);
+      this.panel3.Size = new System.Drawing.Size(410, 186);
       this.panel3.TabIndex = 7;
       // 
       // sfListView
@@ -821,110 +809,6 @@
       this.lb.Size = new System.Drawing.Size(56, 25);
       this.lb.TabIndex = 4;
       this.lb.Text = "Cost:";
-      // 
-      // panelDiagnosis
-      // 
-      this.panelDiagnosis.BackColor = System.Drawing.Color.Azure;
-      this.panelDiagnosis.Controls.Add(this.label20);
-      this.panelDiagnosis.Controls.Add(this.label15);
-      this.panelDiagnosis.Controls.Add(this.label14);
-      this.panelDiagnosis.Controls.Add(this.cbXray);
-      this.panelDiagnosis.Controls.Add(this.cbDiagnosis);
-      this.panelDiagnosis.Controls.Add(this.cbCleaning);
-      this.panelDiagnosis.Location = new System.Drawing.Point(3, 8);
-      this.panelDiagnosis.Name = "panelDiagnosis";
-      this.panelDiagnosis.Size = new System.Drawing.Size(244, 195);
-      this.panelDiagnosis.TabIndex = 6;
-      // 
-      // label20
-      // 
-      this.label20.AutoSize = true;
-      this.label20.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.label20.Location = new System.Drawing.Point(159, 93);
-      this.label20.Name = "label20";
-      this.label20.Size = new System.Drawing.Size(36, 20);
-      this.label20.TabIndex = 9;
-      this.label20.Text = "$10";
-      // 
-      // label15
-      // 
-      this.label15.AutoSize = true;
-      this.label15.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.label15.Location = new System.Drawing.Point(159, 54);
-      this.label15.Name = "label15";
-      this.label15.Size = new System.Drawing.Size(36, 20);
-      this.label15.TabIndex = 8;
-      this.label15.Text = "$10";
-      // 
-      // label14
-      // 
-      this.label14.AutoSize = true;
-      this.label14.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.label14.Location = new System.Drawing.Point(159, 15);
-      this.label14.Name = "label14";
-      this.label14.Size = new System.Drawing.Size(36, 20);
-      this.label14.TabIndex = 7;
-      this.label14.Text = "$10";
-      // 
-      // cbXray
-      // 
-      this.cbXray.AccessibilityEnabled = true;
-      this.cbXray.BackColor = System.Drawing.Color.Azure;
-      this.cbXray.BeforeTouchSize = new System.Drawing.Size(238, 33);
-      this.cbXray.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-      this.cbXray.BorderSingle = System.Windows.Forms.ButtonBorderStyle.Dashed;
-      this.cbXray.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.cbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbXray.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.cbXray.HotBorderColor = System.Drawing.SystemColors.InactiveCaption;
-      this.cbXray.Location = new System.Drawing.Point(3, 48);
-      this.cbXray.Name = "cbXray";
-      this.cbXray.Size = new System.Drawing.Size(238, 33);
-      this.cbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.cbXray.TabIndex = 2;
-      this.cbXray.Tag = "10";
-      this.cbXray.Text = " X-ray";
-      this.cbXray.ThemeName = "Metro";
-      this.cbXray.CheckStateChanged += new System.EventHandler(this.cbXray_CheckStateChanged);
-      // 
-      // cbDiagnosis
-      // 
-      this.cbDiagnosis.AccessibilityEnabled = true;
-      this.cbDiagnosis.BackColor = System.Drawing.Color.Azure;
-      this.cbDiagnosis.BeforeTouchSize = new System.Drawing.Size(238, 33);
-      this.cbDiagnosis.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.cbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.cbDiagnosis.HotBorderColor = System.Drawing.SystemColors.InactiveCaption;
-      this.cbDiagnosis.Location = new System.Drawing.Point(3, 87);
-      this.cbDiagnosis.Name = "cbDiagnosis";
-      this.cbDiagnosis.Size = new System.Drawing.Size(238, 33);
-      this.cbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.cbDiagnosis.TabIndex = 3;
-      this.cbDiagnosis.Tag = "10";
-      this.cbDiagnosis.Text = "Diagnosis";
-      this.cbDiagnosis.ThemeName = "Metro";
-      this.cbDiagnosis.CheckStateChanged += new System.EventHandler(this.cbDiagnosis_CheckStateChanged);
-      // 
-      // cbCleaning
-      // 
-      this.cbCleaning.AccessibilityEnabled = true;
-      this.cbCleaning.BackColor = System.Drawing.Color.Azure;
-      this.cbCleaning.BeforeTouchSize = new System.Drawing.Size(238, 33);
-      this.cbCleaning.Border3DStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
-      this.cbCleaning.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.cbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.cbCleaning.HotBorderColor = System.Drawing.SystemColors.InactiveCaption;
-      this.cbCleaning.Location = new System.Drawing.Point(3, 9);
-      this.cbCleaning.Name = "cbCleaning";
-      this.cbCleaning.Size = new System.Drawing.Size(238, 33);
-      this.cbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.cbCleaning.TabIndex = 1;
-      this.cbCleaning.Tag = "10";
-      this.cbCleaning.Text = " Cleaning";
-      this.cbCleaning.ThemeName = "Metro";
-      this.cbCleaning.CheckStateChanged += new System.EventHandler(this.cbCleaning_CheckStateChanged);
       // 
       // panel1
       // 
@@ -1173,11 +1057,6 @@
       this.panel2.ResumeLayout(false);
       this.panel3.ResumeLayout(false);
       this.panel3.PerformLayout();
-      this.panelDiagnosis.ResumeLayout(false);
-      this.panelDiagnosis.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.cbXray)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.cbDiagnosis)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.cbCleaning)).EndInit();
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
@@ -1245,16 +1124,9 @@
     private ExpertsBtn expertsBtn1;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv cbCleaning;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv cbDiagnosis;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv cbXray;
     private System.Windows.Forms.Label lb;
     public System.Windows.Forms.Label lbCost;
-    private System.Windows.Forms.Panel panelDiagnosis;
     private System.Windows.Forms.Panel panel3;
-    public System.Windows.Forms.Label label20;
-    public System.Windows.Forms.Label label15;
-    public System.Windows.Forms.Label label14;
     private Syncfusion.WinForms.ListView.SfListView sfListView;
   }
 }
