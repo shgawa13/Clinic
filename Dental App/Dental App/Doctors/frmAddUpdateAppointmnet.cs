@@ -50,8 +50,11 @@ namespace Dental_App.Doctors
 
       _ResetDefualtValues();
       CalcTotalCost();
-    
-     //sfListView.DataSource = PlanList;
+      PlanList.Add("Cleaning");
+      PlanList.Add("X-ray");
+      PlanList.Add("Diagnosis");
+      sfListView.ShowCheckBoxes = true;
+     sfListView.DataSource = PlanList;
     }
 
     // Reset Defualt values
@@ -180,7 +183,16 @@ namespace Dental_App.Doctors
     private short CalcDiagnosis()
     {
       int res = 0;
-      res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
+      if (cbCleaning.Checked == true) 
+      {
+        res += int.Parse(cbCleaning.Tag.ToString());
+        listView.Items.Add(cbCleaning.Text);
+      }
+      else
+      {
+       // listView.Items.Contains(cbCleaning.Text);
+      }
+       // res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
       res += (cbXray.Checked == true) ? int.Parse(cbXray.Tag.ToString()) : 0;
       res += (cbDiagnosis.Checked == true) ? int.Parse(cbDiagnosis.Tag.ToString()) : 0;
       
@@ -191,7 +203,7 @@ namespace Dental_App.Doctors
     {
       CalcTotalCost();
       PlanList.Add(cbCleaning.Text.Trim());
-      listView.Items.Add(cbCleaning.Text.Trim());
+      //listView.Items.Add(cbCleaning.Text.Trim());
     }
 
     private void cbXray_CheckStateChanged(object sender, EventArgs e)
