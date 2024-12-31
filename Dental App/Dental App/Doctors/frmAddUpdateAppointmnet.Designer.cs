@@ -29,9 +29,6 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Plan", System.Windows.Forms.HorizontalAlignment.Left);
-      System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "one"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold));
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.lblTitle = new System.Windows.Forms.Label();
       this.label9 = new System.Windows.Forms.Label();
@@ -83,9 +80,9 @@
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel3 = new System.Windows.Forms.Panel();
-      this.listView = new System.Windows.Forms.ListView();
-      this.lb = new System.Windows.Forms.Label();
+      this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
       this.lbCost = new System.Windows.Forms.Label();
+      this.lb = new System.Windows.Forms.Label();
       this.panelDiagnosis = new System.Windows.Forms.Panel();
       this.label20 = new System.Windows.Forms.Label();
       this.label15 = new System.Windows.Forms.Label();
@@ -103,7 +100,6 @@
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
-      this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -783,7 +779,6 @@
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
       this.panel3.Controls.Add(this.sfListView);
-      this.panel3.Controls.Add(this.listView);
       this.panel3.Controls.Add(this.lbCost);
       this.panel3.Controls.Add(this.lb);
       this.panel3.Location = new System.Drawing.Point(335, 12);
@@ -791,34 +786,21 @@
       this.panel3.Size = new System.Drawing.Size(402, 186);
       this.panel3.TabIndex = 7;
       // 
-      // listView
+      // sfListView
       // 
-      this.listView.CheckBoxes = true;
-      listViewGroup1.Header = "Plan";
-      listViewGroup1.Name = "listViewGroup1";
-      this.listView.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
-      this.listView.HideSelection = false;
-      listViewItem1.Checked = true;
-      listViewItem1.StateImageIndex = 1;
-      this.listView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-      this.listView.Location = new System.Drawing.Point(259, 3);
-      this.listView.Name = "listView";
-      this.listView.Size = new System.Drawing.Size(140, 142);
-      this.listView.TabIndex = 6;
-      this.listView.UseCompatibleStateImageBehavior = false;
-      this.listView.View = System.Windows.Forms.View.List;
-      // 
-      // lb
-      // 
-      this.lb.AutoSize = true;
-      this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(288, 155);
-      this.lb.Name = "lb";
-      this.lb.Size = new System.Drawing.Size(56, 25);
-      this.lb.TabIndex = 4;
-      this.lb.Text = "Cost:";
+      this.sfListView.AccessibleName = "ScrollControl";
+      this.sfListView.AutoHideScrollBars = true;
+      this.sfListView.BackColor = System.Drawing.SystemColors.Window;
+      this.sfListView.CheckBoxSelectionMode = Syncfusion.WinForms.ListView.Enums.CheckBoxSelectionMode.SelectOnCheck;
+      this.sfListView.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.sfListView.Location = new System.Drawing.Point(14, 11);
+      this.sfListView.Name = "sfListView";
+      this.sfListView.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+      this.sfListView.ShowCheckBoxes = true;
+      this.sfListView.Size = new System.Drawing.Size(372, 134);
+      this.sfListView.Style.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.sfListView.TabIndex = 7;
+      this.sfListView.Text = "sfListView1";
       // 
       // lbCost
       // 
@@ -829,6 +811,16 @@
       this.lbCost.Size = new System.Drawing.Size(34, 25);
       this.lbCost.TabIndex = 5;
       this.lbCost.Text = "$0";
+      // 
+      // lb
+      // 
+      this.lb.AutoSize = true;
+      this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lb.Location = new System.Drawing.Point(288, 155);
+      this.lb.Name = "lb";
+      this.lb.Size = new System.Drawing.Size(56, 25);
+      this.lb.TabIndex = 4;
+      this.lb.Text = "Cost:";
       // 
       // panelDiagnosis
       // 
@@ -1149,19 +1141,6 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
-      // sfListView
-      // 
-      this.sfListView.AccessibleName = "ScrollControl";
-      this.sfListView.AutoHideScrollBars = true;
-      this.sfListView.BackColor = System.Drawing.SystemColors.Window;
-      this.sfListView.CheckBoxSelectionMode = Syncfusion.WinForms.ListView.Enums.CheckBoxSelectionMode.SelectOnCheck;
-      this.sfListView.Location = new System.Drawing.Point(24, 21);
-      this.sfListView.Name = "sfListView";
-      this.sfListView.Size = new System.Drawing.Size(200, 134);
-      this.sfListView.Style.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.sfListView.TabIndex = 7;
-      this.sfListView.Text = "sfListView1";
-      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1273,7 +1252,6 @@
     public System.Windows.Forms.Label lbCost;
     private System.Windows.Forms.Panel panelDiagnosis;
     private System.Windows.Forms.Panel panel3;
-    private System.Windows.Forms.ListView listView;
     public System.Windows.Forms.Label label20;
     public System.Windows.Forms.Label label15;
     public System.Windows.Forms.Label label14;

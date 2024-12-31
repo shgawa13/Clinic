@@ -13,6 +13,7 @@ using Syncfusion.Schedule;
 using GridScheduleSample;
 using Syncfusion.Windows.Forms.Schedule;
 using Business;
+using Syncfusion.WinForms.ListView;
 
 namespace Dental_App.Doctors
 {
@@ -28,6 +29,7 @@ namespace Dental_App.Doctors
     private string _AppointmnetTime { set; get; }
     private List<string> PlanList = new List<string>();
 
+   
     // AppointmentForm Can be opened from two places
     // From Schedule
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
@@ -50,11 +52,22 @@ namespace Dental_App.Doctors
 
       _ResetDefualtValues();
       CalcTotalCost();
-      PlanList.Add("Cleaning");
+      PlanList.Add("Cleaning\t$10");
       PlanList.Add("X-ray");
       PlanList.Add("Diagnosis");
       sfListView.ShowCheckBoxes = true;
+      sfListView.ItemChecked += Handle_ItemChecked;
+      //sfListView
      sfListView.DataSource = PlanList;
+    }
+
+    private void Handle_ItemChecked(object sender, Syncfusion.WinForms.ListView.Events.ItemCheckedEventArgs e)
+    {
+      if(e.NewState == CheckState.Checked)
+      {
+        MessageBox.Show($" {e.ItemData.ToString()}");
+        
+      }
     }
 
     // Reset Defualt values
@@ -186,7 +199,7 @@ namespace Dental_App.Doctors
       if (cbCleaning.Checked == true) 
       {
         res += int.Parse(cbCleaning.Tag.ToString());
-        listView.Items.Add(cbCleaning.Text);
+        
       }
       else
       {
@@ -219,6 +232,17 @@ namespace Dental_App.Doctors
     
     }
 
-   
-  }   
+  }
+
+  public class DentalPlan
+  {
+    public string PlanName { set; get; }
+    public short PlanPrice { set; get; }
+
+    public DentalPlan(string planName,short planPrice)
+    {
+      this.PlanName = planName;
+      this.PlanPrice = planPrice;
+    }
+  }
 }
