@@ -82,8 +82,8 @@
       this.panel3 = new System.Windows.Forms.Panel();
       this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
       this.lbCost = new System.Windows.Forms.Label();
-      this.lb = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.lb = new System.Windows.Forms.Label();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
@@ -743,7 +743,9 @@
       // 
       this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
       this.tbpProcedures.Controls.Add(this.panel2);
+      this.tbpProcedures.Controls.Add(this.lbCost);
       this.tbpProcedures.Controls.Add(this.panel1);
+      this.tbpProcedures.Controls.Add(this.lb);
       this.tbpProcedures.ForeColor = System.Drawing.SystemColors.ControlText;
       this.tbpProcedures.Image = null;
       this.tbpProcedures.ImageSize = new System.Drawing.Size(16, 16);
@@ -767,8 +769,6 @@
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
       this.panel3.Controls.Add(this.sfListView);
-      this.panel3.Controls.Add(this.lbCost);
-      this.panel3.Controls.Add(this.lb);
       this.panel3.Location = new System.Drawing.Point(327, 12);
       this.panel3.Name = "panel3";
       this.panel3.Size = new System.Drawing.Size(410, 186);
@@ -777,11 +777,12 @@
       // sfListView
       // 
       this.sfListView.AccessibleName = "ScrollControl";
+      this.sfListView.AutoFitMode = Syncfusion.WinForms.ListView.Enums.AutoFitMode.Height;
       this.sfListView.AutoHideScrollBars = true;
       this.sfListView.BackColor = System.Drawing.SystemColors.Window;
       this.sfListView.CheckBoxSelectionMode = Syncfusion.WinForms.ListView.Enums.CheckBoxSelectionMode.SelectOnCheck;
       this.sfListView.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.sfListView.Location = new System.Drawing.Point(14, 11);
+      this.sfListView.Location = new System.Drawing.Point(17, 13);
       this.sfListView.Name = "sfListView";
       this.sfListView.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
       this.sfListView.ShowCheckBoxes = true;
@@ -794,21 +795,11 @@
       // 
       this.lbCost.AutoSize = true;
       this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbCost.Location = new System.Drawing.Point(352, 155);
+      this.lbCost.Location = new System.Drawing.Point(705, 463);
       this.lbCost.Name = "lbCost";
       this.lbCost.Size = new System.Drawing.Size(34, 25);
       this.lbCost.TabIndex = 5;
       this.lbCost.Text = "$0";
-      // 
-      // lb
-      // 
-      this.lb.AutoSize = true;
-      this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(288, 155);
-      this.lb.Name = "lb";
-      this.lb.Size = new System.Drawing.Size(56, 25);
-      this.lb.TabIndex = 4;
-      this.lb.Text = "Cost:";
       // 
       // panel1
       // 
@@ -824,6 +815,16 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(778, 232);
       this.panel1.TabIndex = 131;
+      // 
+      // lb
+      // 
+      this.lb.AutoSize = true;
+      this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lb.Location = new System.Drawing.Point(628, 463);
+      this.lb.Name = "lb";
+      this.lb.Size = new System.Drawing.Size(56, 25);
+      this.lb.TabIndex = 4;
+      this.lb.Text = "Cost:";
       // 
       // tbpBills
       // 
@@ -1054,9 +1055,9 @@
       this.tabCtrlAppointment.ResumeLayout(false);
       this.tbpAddAppointment.ResumeLayout(false);
       this.tbpProcedures.ResumeLayout(false);
+      this.tbpProcedures.PerformLayout();
       this.panel2.ResumeLayout(false);
       this.panel3.ResumeLayout(false);
-      this.panel3.PerformLayout();
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 

@@ -29,9 +29,11 @@ namespace Dental_App.Doctors
     private string _AppointmnetTime { set; get; }
     private List<string> PlanList = new List<string>();
 
-   
+    private List<DentalPlan> PlanItem = new List<DentalPlan>();
     // AppointmentForm Can be opened from two places
     // From Schedule
+
+
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     {
       InitializeComponent();
@@ -52,21 +54,25 @@ namespace Dental_App.Doctors
 
       _ResetDefualtValues();
       CalcTotalCost();
-      PlanList.Add("Cleaning\t$10");
-      PlanList.Add("X-ray");
-      PlanList.Add("Diagnosis");
+      
+      PlanItem.Add(new DentalPlan("Cleaning", 10));
+      PlanItem.Add(new DentalPlan("X-ray", 10));
+      PlanItem.Add(new DentalPlan("Diagnosis", 10));
+      
       sfListView.ShowCheckBoxes = true;
       sfListView.ItemChecked += Handle_ItemChecked;
       //sfListView
-     sfListView.DataSource = PlanList;
+    
+     sfListView.DataSource = PlanItem;
     }
 
     private void Handle_ItemChecked(object sender, Syncfusion.WinForms.ListView.Events.ItemCheckedEventArgs e)
     {
       if(e.NewState == CheckState.Checked)
       {
-        MessageBox.Show($" {e.ItemData.ToString()}");
         
+        MessageBox.Show($" {(e.ItemData as DentalPlan).PlanName} ");
+        //e.ItemIndex
       }
     }
 
@@ -188,7 +194,7 @@ namespace Dental_App.Doctors
 
     private void CalcTotalCost()
     {
-      lbCost.Text = CalcDiagnosis().ToString();
+      lbCost.Text = $"${CalcDiagnosis()}";
     }
 
    
@@ -196,18 +202,18 @@ namespace Dental_App.Doctors
     private short CalcDiagnosis()
     {
       int res = 0;
-      if (cbCleaning.Checked == true) 
-      {
-        res += int.Parse(cbCleaning.Tag.ToString());
+      //if (cbCleaning.Checked == true) 
+      //{
+      //  res += int.Parse(cbCleaning.Tag.ToString());
         
-      }
-      else
-      {
-       // listView.Items.Contains(cbCleaning.Text);
-      }
-       // res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
-      res += (cbXray.Checked == true) ? int.Parse(cbXray.Tag.ToString()) : 0;
-      res += (cbDiagnosis.Checked == true) ? int.Parse(cbDiagnosis.Tag.ToString()) : 0;
+      //}
+      //else
+      //{
+      // // listView.Items.Contains(cbCleaning.Text);
+      //}
+      // // res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
+      //res += (cbXray.Checked == true) ? int.Parse(cbXray.Tag.ToString()) : 0;
+      //res += (cbDiagnosis.Checked == true) ? int.Parse(cbDiagnosis.Tag.ToString()) : 0;
       
       return Convert.ToInt16(res);
     }
@@ -215,23 +221,24 @@ namespace Dental_App.Doctors
     private void cbCleaning_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
-      PlanList.Add(cbCleaning.Text.Trim());
+     // PlanList.Add(cbCleaning.Text.Trim());
       //listView.Items.Add(cbCleaning.Text.Trim());
     }
 
     private void cbXray_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
-      PlanList.Add(cbXray.Text.Trim());
+     // PlanList.Add(cbXray.Text.Trim());
     }
 
     private void cbDiagnosis_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
-      PlanList.Add(cbDiagnosis.Text.Trim());
+    //  PlanList.Add(cbDiagnosis.Text.Trim());
     
     }
 
+    
   }
 
   public class DentalPlan
