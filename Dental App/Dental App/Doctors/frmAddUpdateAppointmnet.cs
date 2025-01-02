@@ -51,7 +51,7 @@ namespace Dental_App.Doctors
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
-
+       List<DentalPlan> PlanItem = new List<DentalPlan>();
       _ResetDefualtValues();
       CalcTotalCost();
       
@@ -62,8 +62,8 @@ namespace Dental_App.Doctors
       sfListView.ShowCheckBoxes = true;
       sfListView.ItemChecked += Handle_ItemChecked;
       //sfListView
-    
-     sfListView.DataSource = PlanItem;
+      sfListView.DataSource = PlanItem;
+      sfListView.DisplayMember = (PlanItem[0] as DentalPlan)?.Name;
     }
 
     private void Handle_ItemChecked(object sender, Syncfusion.WinForms.ListView.Events.ItemCheckedEventArgs e)
@@ -71,7 +71,7 @@ namespace Dental_App.Doctors
       if(e.NewState == CheckState.Checked)
       {
         
-        MessageBox.Show($" {(e.ItemData as DentalPlan).PlanName} ");
+        MessageBox.Show($" {(e.ItemData as DentalPlan).Name} ");
         //e.ItemIndex
       }
     }
@@ -243,13 +243,18 @@ namespace Dental_App.Doctors
 
   public class DentalPlan
   {
-    public string PlanName { set; get; }
-    public short PlanPrice { set; get; }
+    public string Name { set; get; }
+    public short Price { set; get; }
 
     public DentalPlan(string planName,short planPrice)
     {
-      this.PlanName = planName;
-      this.PlanPrice = planPrice;
+      Name = planName;
+      Price = planPrice;
+    }
+
+    public override string ToString()
+    {
+      return Name;
     }
   }
 }

@@ -93,6 +93,7 @@
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.listView1 = new System.Windows.Forms.ListView();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -759,6 +760,7 @@
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.listView1);
       this.panel2.Controls.Add(this.panel3);
       this.panel2.Location = new System.Drawing.Point(11, 238);
       this.panel2.Name = "panel2";
@@ -1026,6 +1028,16 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // listView1
+      // 
+      this.listView1.HideSelection = false;
+      this.listView1.Location = new System.Drawing.Point(37, 33);
+      this.listView1.Name = "listView1";
+      this.listView1.Size = new System.Drawing.Size(250, 147);
+      this.listView1.TabIndex = 8;
+      this.listView1.UseCompatibleStateImageBehavior = false;
+      this.listView1.View = System.Windows.Forms.View.Details;
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1129,5 +1141,6 @@
     public System.Windows.Forms.Label lbCost;
     private System.Windows.Forms.Panel panel3;
     private Syncfusion.WinForms.ListView.SfListView sfListView;
+    private System.Windows.Forms.ListView listView1;
   }
 }
