@@ -19,16 +19,17 @@ namespace Dental_App.Doctors
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
   {
+
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
-
+    private short res = 0;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
     private List<string> PlanList = new List<string>();
-
+    
     private List<DentalPlan> PlanItem = new List<DentalPlan>();
     // AppointmentForm Can be opened from two places
     // From Schedule
@@ -58,22 +59,32 @@ namespace Dental_App.Doctors
       PlanItem.Add(new DentalPlan("Cleaning", 10));
       PlanItem.Add(new DentalPlan("X-ray", 10));
       PlanItem.Add(new DentalPlan("Diagnosis", 10));
-      
+
+      listView1.Items.Add(PlanItem[0].Name);
+      listView1.Items.Add(PlanItem[1].Name);
+      listView1.View = View.List;
+      listView1.CheckBoxes = true;
       sfListView.ShowCheckBoxes = true;
       sfListView.ItemChecked += Handle_ItemChecked;
       //sfListView
+      listView1.Columns.Add("Name",150,HorizontalAlignment.Center);
+      listView1.Columns.Add("Price", 150, HorizontalAlignment.Center);
+
       sfListView.DataSource = PlanItem;
-      sfListView.DisplayMember = (PlanItem[0] as DentalPlan)?.Name;
+      sfListView.DisplayMember = PlanItem[0].Name ;
     }
 
     private void Handle_ItemChecked(object sender, Syncfusion.WinForms.ListView.Events.ItemCheckedEventArgs e)
     {
-      if(e.NewState == CheckState.Checked)
-      {
-        
-        MessageBox.Show($" {(e.ItemData as DentalPlan).Name} ");
-        //e.ItemIndex
-      }
+      int res = 0;
+      // res += (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
+      res += (e.ItemIndex == 0) && (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
+      res += (e.ItemIndex == 1) && (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
+      res += (e.ItemIndex == 2) && (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
+
+
+
+      CalcTotalCost();
     }
 
     // Reset Defualt values
@@ -201,7 +212,7 @@ namespace Dental_App.Doctors
 
     private short CalcDiagnosis()
     {
-      int res = 0;
+    
       //if (cbCleaning.Checked == true) 
       //{
       //  res += int.Parse(cbCleaning.Tag.ToString());

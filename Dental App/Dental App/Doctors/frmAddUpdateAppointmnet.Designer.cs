@@ -79,12 +79,15 @@
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.listView1 = new System.Windows.Forms.ListView();
       this.panel3 = new System.Windows.Forms.Panel();
       this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
       this.lbCost = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lb = new System.Windows.Forms.Label();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.expertsBtn8 = new Dental_App.ExpertsBtn();
@@ -93,7 +96,6 @@
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
-      this.listView1 = new System.Windows.Forms.ListView();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -767,6 +769,18 @@
       this.panel2.Size = new System.Drawing.Size(756, 209);
       this.panel2.TabIndex = 132;
       // 
+      // listView1
+      // 
+      this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+      this.listView1.HideSelection = false;
+      this.listView1.Location = new System.Drawing.Point(36, 37);
+      this.listView1.Name = "listView1";
+      this.listView1.Size = new System.Drawing.Size(250, 147);
+      this.listView1.TabIndex = 8;
+      this.listView1.UseCompatibleStateImageBehavior = false;
+      // 
       // panel3
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
@@ -784,7 +798,7 @@
       this.sfListView.BackColor = System.Drawing.SystemColors.Window;
       this.sfListView.CheckBoxSelectionMode = Syncfusion.WinForms.ListView.Enums.CheckBoxSelectionMode.SelectOnCheck;
       this.sfListView.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.sfListView.Location = new System.Drawing.Point(17, 13);
+      this.sfListView.Location = new System.Drawing.Point(17, 14);
       this.sfListView.Name = "sfListView";
       this.sfListView.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
       this.sfListView.ShowCheckBoxes = true;
@@ -841,6 +855,14 @@
       this.tbpBills.TabIndex = 3;
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
+      // 
+      // columnHeader1
+      // 
+      this.columnHeader1.Text = "Name";
+      // 
+      // columnHeader2
+      // 
+      this.columnHeader2.Text = "Price";
       // 
       // btnSave
       // 
@@ -1028,16 +1050,6 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
-      // listView1
-      // 
-      this.listView1.HideSelection = false;
-      this.listView1.Location = new System.Drawing.Point(37, 33);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(250, 147);
-      this.listView1.TabIndex = 8;
-      this.listView1.UseCompatibleStateImageBehavior = false;
-      this.listView1.View = System.Windows.Forms.View.Details;
-      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1142,5 +1154,7 @@
     private System.Windows.Forms.Panel panel3;
     private Syncfusion.WinForms.ListView.SfListView sfListView;
     private System.Windows.Forms.ListView listView1;
+    private System.Windows.Forms.ColumnHeader columnHeader1;
+    private System.Windows.Forms.ColumnHeader columnHeader2;
   }
 }
