@@ -190,44 +190,31 @@ namespace Dental_App.Doctors
 
     private short CalcDiagnosis()
     {
-    
-      //if (cbCleaning.Checked == true) 
-      //{
-      //  res += int.Parse(cbCleaning.Tag.ToString());
-        
-      //}
-      //else
-      //{
-      // // listView.Items.Contains(cbCleaning.Text);
-      //}
-      // // res += (cbCleaning.Checked == true) ? int.Parse(cbCleaning.Tag.ToString()) : 0;
-      //res += (cbXray.Checked == true) ? int.Parse(cbXray.Tag.ToString()) : 0;
-      //res += (cbDiagnosis.Checked == true) ? int.Parse(cbDiagnosis.Tag.ToString()) : 0;
-      
+      int res = 0;
+     
+      res += (chbCleaning.Checked == true) ? int.Parse(chbCleaning.Tag.ToString()) : 0;
+      res += (chbXray.Checked == true) ? int.Parse(chbXray.Tag.ToString()) : 0;
+      res += (chbDiagnosis.Checked == true) ? int.Parse(chbDiagnosis.Tag.ToString()) : 0;
+
       return Convert.ToInt16(res);
     }
 
-    private void cbCleaning_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-     // PlanList.Add(cbCleaning.Text.Trim());
-      //listView.Items.Add(cbCleaning.Text.Trim());
-    }
-
-    private void cbXray_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-     // PlanList.Add(cbXray.Text.Trim());
-    }
-
-    private void cbDiagnosis_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    //  PlanList.Add(cbDiagnosis.Text.Trim());
     
+    // new
+    private void chbCleaning_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
     }
 
-    
+    private void checkBoxAdv1_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void checkBoxAdv2_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
   }
 
   public class DentalPlan

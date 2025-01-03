@@ -85,8 +85,8 @@
       this.lb = new System.Windows.Forms.Label();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.chbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.checkBoxAdv1 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.checkBoxAdv2 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.expertsBtn8 = new Dental_App.ExpertsBtn();
@@ -111,8 +111,8 @@
       this.panel3.SuspendLayout();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbXray)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -773,12 +773,12 @@
       // panel3
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
-      this.panel3.Controls.Add(this.checkBoxAdv2);
-      this.panel3.Controls.Add(this.checkBoxAdv1);
+      this.panel3.Controls.Add(this.chbDiagnosis);
+      this.panel3.Controls.Add(this.chbXray);
       this.panel3.Controls.Add(this.chbCleaning);
-      this.panel3.Location = new System.Drawing.Point(13, 20);
+      this.panel3.Location = new System.Drawing.Point(13, 14);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(290, 129);
+      this.panel3.Size = new System.Drawing.Size(290, 186);
       this.panel3.TabIndex = 7;
       // 
       // lbCost
@@ -843,40 +843,43 @@
       this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
       this.chbCleaning.TabIndex = 8;
       this.chbCleaning.Tag = "10";
-      this.chbCleaning.Text = " Diagnosis";
+      this.chbCleaning.Text = " Cleaning";
       this.chbCleaning.ThemeName = "Metro";
+      this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
       // 
-      // checkBoxAdv1
+      // chbXray
       // 
-      this.checkBoxAdv1.AccessibilityEnabled = true;
-      this.checkBoxAdv1.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.checkBoxAdv1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxAdv1.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.checkBoxAdv1.Location = new System.Drawing.Point(0, 38);
-      this.checkBoxAdv1.Name = "checkBoxAdv1";
-      this.checkBoxAdv1.Size = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv1.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.checkBoxAdv1.TabIndex = 9;
-      this.checkBoxAdv1.Tag = "10";
-      this.checkBoxAdv1.Text = " X-ray";
-      this.checkBoxAdv1.ThemeName = "Metro";
+      this.chbXray.AccessibilityEnabled = true;
+      this.chbXray.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.chbXray.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbXray.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbXray.Location = new System.Drawing.Point(0, 38);
+      this.chbXray.Name = "chbXray";
+      this.chbXray.Size = new System.Drawing.Size(290, 38);
+      this.chbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbXray.TabIndex = 9;
+      this.chbXray.Tag = "10";
+      this.chbXray.Text = " X-ray";
+      this.chbXray.ThemeName = "Metro";
+      this.chbXray.CheckStateChanged += new System.EventHandler(this.checkBoxAdv1_CheckStateChanged);
       // 
-      // checkBoxAdv2
+      // chbDiagnosis
       // 
-      this.checkBoxAdv2.AccessibilityEnabled = true;
-      this.checkBoxAdv2.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv2.Dock = System.Windows.Forms.DockStyle.Top;
-      this.checkBoxAdv2.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxAdv2.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.checkBoxAdv2.Location = new System.Drawing.Point(0, 76);
-      this.checkBoxAdv2.Name = "checkBoxAdv2";
-      this.checkBoxAdv2.Size = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv2.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.checkBoxAdv2.TabIndex = 10;
-      this.checkBoxAdv2.Tag = "15";
-      this.checkBoxAdv2.Text = " Cleaning";
-      this.checkBoxAdv2.ThemeName = "Metro";
+      this.chbDiagnosis.AccessibilityEnabled = true;
+      this.chbDiagnosis.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.chbDiagnosis.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbDiagnosis.Location = new System.Drawing.Point(0, 76);
+      this.chbDiagnosis.Name = "chbDiagnosis";
+      this.chbDiagnosis.Size = new System.Drawing.Size(290, 38);
+      this.chbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbDiagnosis.TabIndex = 10;
+      this.chbDiagnosis.Tag = "15";
+      this.chbDiagnosis.Text = " Diagnosis";
+      this.chbDiagnosis.ThemeName = "Metro";
+      this.chbDiagnosis.CheckStateChanged += new System.EventHandler(this.checkBoxAdv2_CheckStateChanged);
       // 
       // btnSave
       // 
@@ -1098,8 +1101,8 @@
       this.panel3.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbXray)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1170,7 +1173,7 @@
     public System.Windows.Forms.Label lbCost;
     private System.Windows.Forms.Panel panel3;
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbCleaning;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv2;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv1;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbDiagnosis;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbXray;
   }
 }
