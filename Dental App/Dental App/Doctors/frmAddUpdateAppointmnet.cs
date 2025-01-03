@@ -29,7 +29,7 @@ namespace Dental_App.Doctors
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
     private List<string> PlanList = new List<string>();
-    
+    private int Cost = 0;
     private List<DentalPlan> PlanItem = new List<DentalPlan>();
     // AppointmentForm Can be opened from two places
     // From Schedule
@@ -190,17 +190,18 @@ namespace Dental_App.Doctors
 
     private short CalcDiagnosis()
     {
-      int res = 0;
+      Cost = 0;
+    
+      Cost += (chbCleaning.Checked == true) ? int.Parse(chbCleaning.Tag.ToString()) : 0;
+      Cost += (chbXray.Checked == true) ? int.Parse(chbXray.Tag.ToString()) : 0;
+      Cost += (chbDiagnosis.Checked == true) ? int.Parse(chbDiagnosis.Tag.ToString()) : 0;
      
-      res += (chbCleaning.Checked == true) ? int.Parse(chbCleaning.Tag.ToString()) : 0;
-      res += (chbXray.Checked == true) ? int.Parse(chbXray.Tag.ToString()) : 0;
-      res += (chbDiagnosis.Checked == true) ? int.Parse(chbDiagnosis.Tag.ToString()) : 0;
-
-      return Convert.ToInt16(res);
+      _UpdateSummary();
+      return Convert.ToInt16(Cost);
     }
 
     
-    // new
+    // checkboxs to handle TotalCost
     private void chbCleaning_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
@@ -214,6 +215,28 @@ namespace Dental_App.Doctors
     private void checkBoxAdv2_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
+    }
+
+    // Update Summary 
+
+    private void _UpdateSummary()
+    {
+      string Summarylable = "";
+
+      if(chbCleaning.Checked == true)
+      {
+        Summarylable += "\tCleaning ";
+      }
+      if(chbXray.Checked == true)
+      {
+        Summarylable += "\n\tX-ray ";
+      }
+      if(chbDiagnosis.Checked == true)
+      {
+        Summarylable += "\n\tDiagnosis.";
+      }
+
+      lbSummary.Text = Summarylable;
     }
   }
 

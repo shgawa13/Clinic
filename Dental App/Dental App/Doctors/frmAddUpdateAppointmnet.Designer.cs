@@ -95,6 +95,9 @@
       this.expertsBtn4 = new Dental_App.ExpertsBtn();
       this.expertsBtn1 = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.label14 = new System.Windows.Forms.Label();
+      this.panel4 = new System.Windows.Forms.Panel();
+      this.lbSummary = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -113,6 +116,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbXray)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
+      this.panel4.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -764,6 +768,8 @@
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.panel4);
+      this.panel2.Controls.Add(this.label14);
       this.panel2.Controls.Add(this.panel3);
       this.panel2.Location = new System.Drawing.Point(11, 238);
       this.panel2.Name = "panel2";
@@ -838,6 +844,7 @@
       this.chbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.chbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
       this.chbCleaning.Location = new System.Drawing.Point(0, 0);
+      this.chbCleaning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
       this.chbCleaning.Name = "chbCleaning";
       this.chbCleaning.Size = new System.Drawing.Size(290, 38);
       this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
@@ -845,6 +852,7 @@
       this.chbCleaning.Tag = "10";
       this.chbCleaning.Text = " Cleaning";
       this.chbCleaning.ThemeName = "Metro";
+      this.chbCleaning.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
       this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
       // 
       // chbXray
@@ -855,6 +863,7 @@
       this.chbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.chbXray.ForeColor = System.Drawing.SystemColors.ControlText;
       this.chbXray.Location = new System.Drawing.Point(0, 38);
+      this.chbXray.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
       this.chbXray.Name = "chbXray";
       this.chbXray.Size = new System.Drawing.Size(290, 38);
       this.chbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
@@ -862,6 +871,7 @@
       this.chbXray.Tag = "10";
       this.chbXray.Text = " X-ray";
       this.chbXray.ThemeName = "Metro";
+      this.chbXray.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
       this.chbXray.CheckStateChanged += new System.EventHandler(this.checkBoxAdv1_CheckStateChanged);
       // 
       // chbDiagnosis
@@ -872,6 +882,7 @@
       this.chbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.chbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
       this.chbDiagnosis.Location = new System.Drawing.Point(0, 76);
+      this.chbDiagnosis.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
       this.chbDiagnosis.Name = "chbDiagnosis";
       this.chbDiagnosis.Size = new System.Drawing.Size(290, 38);
       this.chbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
@@ -879,6 +890,7 @@
       this.chbDiagnosis.Tag = "15";
       this.chbDiagnosis.Text = " Diagnosis";
       this.chbDiagnosis.ThemeName = "Metro";
+      this.chbDiagnosis.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
       this.chbDiagnosis.CheckStateChanged += new System.EventHandler(this.checkBoxAdv2_CheckStateChanged);
       // 
       // btnSave
@@ -1067,6 +1079,37 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.Black;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // label14
+      // 
+      this.label14.AutoSize = true;
+      this.label14.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label14.ForeColor = System.Drawing.SystemColors.WindowFrame;
+      this.label14.Location = new System.Drawing.Point(433, 11);
+      this.label14.Name = "label14";
+      this.label14.Size = new System.Drawing.Size(102, 25);
+      this.label14.TabIndex = 8;
+      this.label14.Text = "Summary:";
+      // 
+      // panel4
+      // 
+      this.panel4.BackColor = System.Drawing.Color.Azure;
+      this.panel4.Controls.Add(this.lbSummary);
+      this.panel4.Location = new System.Drawing.Point(438, 39);
+      this.panel4.Name = "panel4";
+      this.panel4.Size = new System.Drawing.Size(290, 161);
+      this.panel4.TabIndex = 11;
+      // 
+      // lbSummary
+      // 
+      this.lbSummary.AutoSize = true;
+      this.lbSummary.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lbSummary.ForeColor = System.Drawing.Color.Black;
+      this.lbSummary.Location = new System.Drawing.Point(3, 13);
+      this.lbSummary.Name = "lbSummary";
+      this.lbSummary.Size = new System.Drawing.Size(102, 25);
+      this.lbSummary.TabIndex = 12;
+      this.lbSummary.Text = "Summary:";
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1098,11 +1141,14 @@
       this.tbpProcedures.ResumeLayout(false);
       this.tbpProcedures.PerformLayout();
       this.panel2.ResumeLayout(false);
+      this.panel2.PerformLayout();
       this.panel3.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbXray)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).EndInit();
+      this.panel4.ResumeLayout(false);
+      this.panel4.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1175,5 +1221,8 @@
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbCleaning;
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbDiagnosis;
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbXray;
+    private System.Windows.Forms.Panel panel4;
+    private System.Windows.Forms.Label lbSummary;
+    private System.Windows.Forms.Label label14;
   }
 }
