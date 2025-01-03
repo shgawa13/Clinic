@@ -79,15 +79,14 @@
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.listView1 = new System.Windows.Forms.ListView();
       this.panel3 = new System.Windows.Forms.Panel();
-      this.sfListView = new Syncfusion.WinForms.ListView.SfListView();
       this.lbCost = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lb = new System.Windows.Forms.Label();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.chbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.checkBoxAdv1 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.checkBoxAdv2 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.expertsBtn8 = new Dental_App.ExpertsBtn();
@@ -111,6 +110,9 @@
       this.panel2.SuspendLayout();
       this.panel3.SuspendLayout();
       this.panel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -762,50 +764,22 @@
       // 
       // panel2
       // 
-      this.panel2.Controls.Add(this.listView1);
       this.panel2.Controls.Add(this.panel3);
       this.panel2.Location = new System.Drawing.Point(11, 238);
       this.panel2.Name = "panel2";
       this.panel2.Size = new System.Drawing.Size(756, 209);
       this.panel2.TabIndex = 132;
       // 
-      // listView1
-      // 
-      this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-      this.listView1.HideSelection = false;
-      this.listView1.Location = new System.Drawing.Point(36, 37);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(250, 147);
-      this.listView1.TabIndex = 8;
-      this.listView1.UseCompatibleStateImageBehavior = false;
-      // 
       // panel3
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
-      this.panel3.Controls.Add(this.sfListView);
-      this.panel3.Location = new System.Drawing.Point(327, 12);
+      this.panel3.Controls.Add(this.checkBoxAdv2);
+      this.panel3.Controls.Add(this.checkBoxAdv1);
+      this.panel3.Controls.Add(this.chbCleaning);
+      this.panel3.Location = new System.Drawing.Point(13, 20);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(410, 186);
+      this.panel3.Size = new System.Drawing.Size(290, 129);
       this.panel3.TabIndex = 7;
-      // 
-      // sfListView
-      // 
-      this.sfListView.AccessibleName = "ScrollControl";
-      this.sfListView.AutoFitMode = Syncfusion.WinForms.ListView.Enums.AutoFitMode.Height;
-      this.sfListView.AutoHideScrollBars = true;
-      this.sfListView.BackColor = System.Drawing.SystemColors.Window;
-      this.sfListView.CheckBoxSelectionMode = Syncfusion.WinForms.ListView.Enums.CheckBoxSelectionMode.SelectOnCheck;
-      this.sfListView.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.sfListView.Location = new System.Drawing.Point(17, 14);
-      this.sfListView.Name = "sfListView";
-      this.sfListView.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-      this.sfListView.ShowCheckBoxes = true;
-      this.sfListView.Size = new System.Drawing.Size(372, 134);
-      this.sfListView.Style.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.sfListView.TabIndex = 7;
-      this.sfListView.Text = "sfListView1";
       // 
       // lbCost
       // 
@@ -856,13 +830,53 @@
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
       // 
-      // columnHeader1
+      // chbCleaning
       // 
-      this.columnHeader1.Text = "Name";
+      this.chbCleaning.AccessibilityEnabled = true;
+      this.chbCleaning.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.chbCleaning.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbCleaning.Location = new System.Drawing.Point(0, 0);
+      this.chbCleaning.Name = "chbCleaning";
+      this.chbCleaning.Size = new System.Drawing.Size(290, 38);
+      this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbCleaning.TabIndex = 8;
+      this.chbCleaning.Tag = "10";
+      this.chbCleaning.Text = " Diagnosis";
+      this.chbCleaning.ThemeName = "Metro";
       // 
-      // columnHeader2
+      // checkBoxAdv1
       // 
-      this.columnHeader2.Text = "Price";
+      this.checkBoxAdv1.AccessibilityEnabled = true;
+      this.checkBoxAdv1.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.checkBoxAdv1.Dock = System.Windows.Forms.DockStyle.Top;
+      this.checkBoxAdv1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxAdv1.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.checkBoxAdv1.Location = new System.Drawing.Point(0, 38);
+      this.checkBoxAdv1.Name = "checkBoxAdv1";
+      this.checkBoxAdv1.Size = new System.Drawing.Size(290, 38);
+      this.checkBoxAdv1.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.checkBoxAdv1.TabIndex = 9;
+      this.checkBoxAdv1.Tag = "10";
+      this.checkBoxAdv1.Text = " X-ray";
+      this.checkBoxAdv1.ThemeName = "Metro";
+      // 
+      // checkBoxAdv2
+      // 
+      this.checkBoxAdv2.AccessibilityEnabled = true;
+      this.checkBoxAdv2.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.checkBoxAdv2.Dock = System.Windows.Forms.DockStyle.Top;
+      this.checkBoxAdv2.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxAdv2.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.checkBoxAdv2.Location = new System.Drawing.Point(0, 76);
+      this.checkBoxAdv2.Name = "checkBoxAdv2";
+      this.checkBoxAdv2.Size = new System.Drawing.Size(290, 38);
+      this.checkBoxAdv2.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.checkBoxAdv2.TabIndex = 10;
+      this.checkBoxAdv2.Tag = "15";
+      this.checkBoxAdv2.Text = " Cleaning";
+      this.checkBoxAdv2.ThemeName = "Metro";
       // 
       // btnSave
       // 
@@ -1083,6 +1097,9 @@
       this.panel2.ResumeLayout(false);
       this.panel3.ResumeLayout(false);
       this.panel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1152,9 +1169,8 @@
     private System.Windows.Forms.Label lb;
     public System.Windows.Forms.Label lbCost;
     private System.Windows.Forms.Panel panel3;
-    private Syncfusion.WinForms.ListView.SfListView sfListView;
-    private System.Windows.Forms.ListView listView1;
-    private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbCleaning;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv2;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv1;
   }
 }

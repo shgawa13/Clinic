@@ -60,32 +60,10 @@ namespace Dental_App.Doctors
       PlanItem.Add(new DentalPlan("X-ray", 10));
       PlanItem.Add(new DentalPlan("Diagnosis", 10));
 
-      listView1.Items.Add(PlanItem[0].Name);
-      listView1.Items.Add(PlanItem[1].Name);
-      listView1.View = View.List;
-      listView1.CheckBoxes = true;
-      sfListView.ShowCheckBoxes = true;
-      sfListView.ItemChecked += Handle_ItemChecked;
-      //sfListView
-      listView1.Columns.Add("Name",150,HorizontalAlignment.Center);
-      listView1.Columns.Add("Price", 150, HorizontalAlignment.Center);
-
-      sfListView.DataSource = PlanItem;
-      sfListView.DisplayMember = PlanItem[0].Name ;
+      
     }
 
-    private void Handle_ItemChecked(object sender, Syncfusion.WinForms.ListView.Events.ItemCheckedEventArgs e)
-    {
-      int res = 0;
-      // res += (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
-      res += (e.ItemIndex == 0) && (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
-      res += (e.ItemIndex == 1) && (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
-      res += (e.ItemIndex == 2) && (e.NewState == CheckState.Checked) ? (e.ItemData as DentalPlan).Price : 0;
-
-
-
-      CalcTotalCost();
-    }
+    
 
     // Reset Defualt values
     private void _ResetDefualtValues()
