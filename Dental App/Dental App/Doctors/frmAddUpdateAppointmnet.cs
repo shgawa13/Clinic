@@ -239,7 +239,24 @@ namespace Dental_App.Doctors
       lbSummary.Text = Summarylable;
     }
 
-    
+    private void btnDiagnosis_Click(object sender, EventArgs e)
+    {
+      HideAllPlans();
+      pnlDiagnosis.Visible = true;
+    }
+
+    private void btnExtraction_Click(object sender, EventArgs e)
+    {
+      HideAllPlans();
+      pnlExtaction.Visible = true;
+    }
+
+    private void HideAllPlans()
+    {
+      pnlDiagnosis.Visible = false;
+      pnlExtaction.Visible = false;
+    }
+
   }
 
   public class DentalPlan
