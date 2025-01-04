@@ -225,19 +225,21 @@ namespace Dental_App.Doctors
 
       if(chbCleaning.Checked == true)
       {
-        Summarylable += "\tCleaning ";
+        Summarylable += "\tCleaning \t\t$10";
       }
       if(chbXray.Checked == true)
       {
-        Summarylable += "\n\tX-ray ";
+        Summarylable += "\n\tX-ray \t\t$10";
       }
       if(chbDiagnosis.Checked == true)
       {
-        Summarylable += "\n\tDiagnosis.";
+        Summarylable += "\n\tDiagnosis \t\t$15";
       }
 
       lbSummary.Text = Summarylable;
     }
+
+    
   }
 
   public class DentalPlan

@@ -75,29 +75,29 @@
       this.label1 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+      this.btnWhitening = new Dental_App.ExpertsBtn();
       this.tabCtrlAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.panel2 = new System.Windows.Forms.Panel();
-      this.panel3 = new System.Windows.Forms.Panel();
-      this.lbCost = new System.Windows.Forms.Label();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.lb = new System.Windows.Forms.Label();
-      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.chbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
-      this.expertsBtn8 = new Dental_App.ExpertsBtn();
-      this.expertsBtn5 = new Dental_App.ExpertsBtn();
-      this.expertsBtn3 = new Dental_App.ExpertsBtn();
-      this.expertsBtn4 = new Dental_App.ExpertsBtn();
-      this.expertsBtn1 = new Dental_App.ExpertsBtn();
-      this.expertsBtn2 = new Dental_App.ExpertsBtn();
-      this.label14 = new System.Windows.Forms.Label();
+      this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.panel2 = new System.Windows.Forms.Panel();
       this.panel4 = new System.Windows.Forms.Panel();
       this.lbSummary = new System.Windows.Forms.Label();
+      this.label14 = new System.Windows.Forms.Label();
+      this.panel3 = new System.Windows.Forms.Panel();
+      this.chbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.lbCost = new System.Windows.Forms.Label();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.btnDiagnosis = new Dental_App.ExpertsBtn();
+      this.btnRestoration = new Dental_App.ExpertsBtn();
+      this.btnImplantation = new Dental_App.ExpertsBtn();
+      this.Orthopedic = new Dental_App.ExpertsBtn();
+      this.btnExtraction = new Dental_App.ExpertsBtn();
+      this.lb = new System.Windows.Forms.Label();
+      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -111,12 +111,12 @@
       this.tbpAddAppointment.SuspendLayout();
       this.tbpProcedures.SuspendLayout();
       this.panel2.SuspendLayout();
-      this.panel3.SuspendLayout();
-      this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbXray)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
       this.panel4.SuspendLayout();
+      this.panel3.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbXray)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).BeginInit();
+      this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -713,6 +713,32 @@
       // 
       this.errorProvider1.ContainerControl = this;
       // 
+      // btnWhitening
+      // 
+      this.btnWhitening.BackColor = System.Drawing.Color.AliceBlue;
+      this.btnWhitening.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.btnWhitening.BackgroundImage = global::Dental_App.Properties.Resources.Whitening2;
+      this.btnWhitening.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.btnWhitening.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnWhitening.BorderRadius = 10;
+      this.btnWhitening.BorderSize = 0;
+      this.btnWhitening.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnWhitening.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.btnWhitening.FlatAppearance.BorderSize = 0;
+      this.btnWhitening.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnWhitening.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.btnWhitening.ForeColor = System.Drawing.Color.Black;
+      this.errorProvider1.SetIconAlignment(this.btnWhitening, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+      this.btnWhitening.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.btnWhitening.Location = new System.Drawing.Point(528, 3);
+      this.btnWhitening.Name = "btnWhitening";
+      this.btnWhitening.Size = new System.Drawing.Size(240, 109);
+      this.btnWhitening.TabIndex = 130;
+      this.btnWhitening.Text = "Whitening";
+      this.btnWhitening.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.btnWhitening.TextColor = System.Drawing.Color.Black;
+      this.btnWhitening.UseVisualStyleBackColor = false;
+      // 
       // tabCtrlAppointment
       // 
       this.tabCtrlAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -747,151 +773,6 @@
       this.tbpAddAppointment.TabIndex = 1;
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
-      // 
-      // tbpProcedures
-      // 
-      this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-      this.tbpProcedures.Controls.Add(this.panel2);
-      this.tbpProcedures.Controls.Add(this.lbCost);
-      this.tbpProcedures.Controls.Add(this.panel1);
-      this.tbpProcedures.Controls.Add(this.lb);
-      this.tbpProcedures.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.tbpProcedures.Image = null;
-      this.tbpProcedures.ImageSize = new System.Drawing.Size(16, 16);
-      this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
-      this.tbpProcedures.Name = "tbpProcedures";
-      this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(778, 495);
-      this.tbpProcedures.TabIndex = 2;
-      this.tbpProcedures.Text = "Procedures";
-      this.tbpProcedures.ThemesEnabled = false;
-      // 
-      // panel2
-      // 
-      this.panel2.Controls.Add(this.panel4);
-      this.panel2.Controls.Add(this.label14);
-      this.panel2.Controls.Add(this.panel3);
-      this.panel2.Location = new System.Drawing.Point(11, 238);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(756, 209);
-      this.panel2.TabIndex = 132;
-      // 
-      // panel3
-      // 
-      this.panel3.BackColor = System.Drawing.Color.Azure;
-      this.panel3.Controls.Add(this.chbDiagnosis);
-      this.panel3.Controls.Add(this.chbXray);
-      this.panel3.Controls.Add(this.chbCleaning);
-      this.panel3.Location = new System.Drawing.Point(13, 14);
-      this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(290, 186);
-      this.panel3.TabIndex = 7;
-      // 
-      // lbCost
-      // 
-      this.lbCost.AutoSize = true;
-      this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbCost.Location = new System.Drawing.Point(705, 463);
-      this.lbCost.Name = "lbCost";
-      this.lbCost.Size = new System.Drawing.Size(34, 25);
-      this.lbCost.TabIndex = 5;
-      this.lbCost.Text = "$0";
-      // 
-      // panel1
-      // 
-      this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-      this.panel1.Controls.Add(this.expertsBtn8);
-      this.panel1.Controls.Add(this.expertsBtn5);
-      this.panel1.Controls.Add(this.expertsBtn3);
-      this.panel1.Controls.Add(this.expertsBtn4);
-      this.panel1.Controls.Add(this.expertsBtn1);
-      this.panel1.Controls.Add(this.expertsBtn2);
-      this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panel1.Location = new System.Drawing.Point(0, 0);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(778, 232);
-      this.panel1.TabIndex = 131;
-      // 
-      // lb
-      // 
-      this.lb.AutoSize = true;
-      this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(628, 463);
-      this.lb.Name = "lb";
-      this.lb.Size = new System.Drawing.Size(56, 25);
-      this.lb.TabIndex = 4;
-      this.lb.Text = "Cost:";
-      // 
-      // tbpBills
-      // 
-      this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
-      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.tbpBills.Image = null;
-      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
-      this.tbpBills.Location = new System.Drawing.Point(1, 29);
-      this.tbpBills.Name = "tbpBills";
-      this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(778, 495);
-      this.tbpBills.TabIndex = 3;
-      this.tbpBills.Text = "Bills";
-      this.tbpBills.ThemesEnabled = false;
-      // 
-      // chbCleaning
-      // 
-      this.chbCleaning.AccessibilityEnabled = true;
-      this.chbCleaning.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbCleaning.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbCleaning.Location = new System.Drawing.Point(0, 0);
-      this.chbCleaning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbCleaning.Name = "chbCleaning";
-      this.chbCleaning.Size = new System.Drawing.Size(290, 38);
-      this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbCleaning.TabIndex = 8;
-      this.chbCleaning.Tag = "10";
-      this.chbCleaning.Text = " Cleaning";
-      this.chbCleaning.ThemeName = "Metro";
-      this.chbCleaning.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
-      // 
-      // chbXray
-      // 
-      this.chbXray.AccessibilityEnabled = true;
-      this.chbXray.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbXray.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbXray.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbXray.Location = new System.Drawing.Point(0, 38);
-      this.chbXray.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbXray.Name = "chbXray";
-      this.chbXray.Size = new System.Drawing.Size(290, 38);
-      this.chbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbXray.TabIndex = 9;
-      this.chbXray.Tag = "10";
-      this.chbXray.Text = " X-ray";
-      this.chbXray.ThemeName = "Metro";
-      this.chbXray.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbXray.CheckStateChanged += new System.EventHandler(this.checkBoxAdv1_CheckStateChanged);
-      // 
-      // chbDiagnosis
-      // 
-      this.chbDiagnosis.AccessibilityEnabled = true;
-      this.chbDiagnosis.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbDiagnosis.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbDiagnosis.Location = new System.Drawing.Point(0, 76);
-      this.chbDiagnosis.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbDiagnosis.Name = "chbDiagnosis";
-      this.chbDiagnosis.Size = new System.Drawing.Size(290, 38);
-      this.chbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbDiagnosis.TabIndex = 10;
-      this.chbDiagnosis.Tag = "15";
-      this.chbDiagnosis.Text = " Diagnosis";
-      this.chbDiagnosis.ThemeName = "Metro";
-      this.chbDiagnosis.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbDiagnosis.CheckStateChanged += new System.EventHandler(this.checkBoxAdv2_CheckStateChanged);
       // 
       // btnSave
       // 
@@ -933,162 +814,33 @@
       this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnClose.UseVisualStyleBackColor = false;
       // 
-      // expertsBtn8
+      // tbpProcedures
       // 
-      this.expertsBtn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
-      this.expertsBtn8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
-      this.expertsBtn8.BackgroundImage = global::Dental_App.Properties.Resources.diagnosis1;
-      this.expertsBtn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn8.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn8.BorderRadius = 10;
-      this.expertsBtn8.BorderSize = 0;
-      this.expertsBtn8.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn8.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn8.FlatAppearance.BorderSize = 0;
-      this.expertsBtn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn8.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.expertsBtn8.ForeColor = System.Drawing.Color.Black;
-      this.expertsBtn8.Location = new System.Drawing.Point(12, 3);
-      this.expertsBtn8.Name = "expertsBtn8";
-      this.expertsBtn8.Size = new System.Drawing.Size(264, 224);
-      this.expertsBtn8.TabIndex = 125;
-      this.expertsBtn8.Text = "Diagnosis";
-      this.expertsBtn8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn8.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn8.UseVisualStyleBackColor = false;
+      this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.tbpProcedures.Controls.Add(this.panel2);
+      this.tbpProcedures.Controls.Add(this.lbCost);
+      this.tbpProcedures.Controls.Add(this.panel1);
+      this.tbpProcedures.Controls.Add(this.lb);
+      this.tbpProcedures.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpProcedures.Image = null;
+      this.tbpProcedures.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
+      this.tbpProcedures.Name = "tbpProcedures";
+      this.tbpProcedures.ShowCloseButton = true;
+      this.tbpProcedures.Size = new System.Drawing.Size(778, 495);
+      this.tbpProcedures.TabIndex = 2;
+      this.tbpProcedures.Text = "Procedures";
+      this.tbpProcedures.ThemesEnabled = false;
       // 
-      // expertsBtn5
+      // panel2
       // 
-      this.expertsBtn5.BackColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn5.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn5.BackgroundImage = global::Dental_App.Properties.Resources.Whitening2;
-      this.expertsBtn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn5.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn5.BorderRadius = 10;
-      this.expertsBtn5.BorderSize = 0;
-      this.expertsBtn5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn5.FlatAppearance.BorderSize = 0;
-      this.expertsBtn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn5.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.expertsBtn5.ForeColor = System.Drawing.Color.Black;
-      this.errorProvider1.SetIconAlignment(this.expertsBtn5, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-      this.expertsBtn5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn5.Location = new System.Drawing.Point(528, 3);
-      this.expertsBtn5.Name = "expertsBtn5";
-      this.expertsBtn5.Size = new System.Drawing.Size(240, 109);
-      this.expertsBtn5.TabIndex = 130;
-      this.expertsBtn5.Text = "Whitening";
-      this.expertsBtn5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn5.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn5.UseVisualStyleBackColor = false;
-      // 
-      // expertsBtn3
-      // 
-      this.expertsBtn3.BackColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn3.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn3.BackgroundImage = global::Dental_App.Properties.Resources.Restoration1;
-      this.expertsBtn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn3.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn3.BorderRadius = 10;
-      this.expertsBtn3.BorderSize = 0;
-      this.expertsBtn3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn3.FlatAppearance.BorderSize = 0;
-      this.expertsBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.expertsBtn3.ForeColor = System.Drawing.Color.Black;
-      this.expertsBtn3.Location = new System.Drawing.Point(405, 3);
-      this.expertsBtn3.Name = "expertsBtn3";
-      this.expertsBtn3.Size = new System.Drawing.Size(117, 109);
-      this.expertsBtn3.TabIndex = 128;
-      this.expertsBtn3.Text = "Restoration";
-      this.expertsBtn3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn3.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn3.UseVisualStyleBackColor = false;
-      // 
-      // expertsBtn4
-      // 
-      this.expertsBtn4.BackColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn4.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn4.BackgroundImage = global::Dental_App.Properties.Resources.Implantation;
-      this.expertsBtn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn4.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn4.BorderRadius = 10;
-      this.expertsBtn4.BorderSize = 0;
-      this.expertsBtn4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn4.FlatAppearance.BorderSize = 0;
-      this.expertsBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn4.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.expertsBtn4.ForeColor = System.Drawing.Color.Black;
-      this.expertsBtn4.Location = new System.Drawing.Point(528, 118);
-      this.expertsBtn4.Name = "expertsBtn4";
-      this.expertsBtn4.Size = new System.Drawing.Size(240, 109);
-      this.expertsBtn4.TabIndex = 129;
-      this.expertsBtn4.Text = "Implantation";
-      this.expertsBtn4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn4.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn4.UseVisualStyleBackColor = false;
-      // 
-      // expertsBtn1
-      // 
-      this.expertsBtn1.BackColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn1.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn1.BackgroundImage = global::Dental_App.Properties.Resources.Orthopedic;
-      this.expertsBtn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn1.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn1.BorderRadius = 10;
-      this.expertsBtn1.BorderSize = 0;
-      this.expertsBtn1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn1.FlatAppearance.BorderSize = 0;
-      this.expertsBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.expertsBtn1.ForeColor = System.Drawing.Color.Black;
-      this.expertsBtn1.Location = new System.Drawing.Point(282, 118);
-      this.expertsBtn1.Name = "expertsBtn1";
-      this.expertsBtn1.Size = new System.Drawing.Size(240, 109);
-      this.expertsBtn1.TabIndex = 126;
-      this.expertsBtn1.Text = "Orthopedic";
-      this.expertsBtn1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn1.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn1.UseVisualStyleBackColor = false;
-      // 
-      // expertsBtn2
-      // 
-      this.expertsBtn2.BackColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn2.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.expertsBtn2.BackgroundImage = global::Dental_App.Properties.Resources.Extraction;
-      this.expertsBtn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.expertsBtn2.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.expertsBtn2.BorderRadius = 10;
-      this.expertsBtn2.BorderSize = 0;
-      this.expertsBtn2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.expertsBtn2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-      this.expertsBtn2.FlatAppearance.BorderSize = 0;
-      this.expertsBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.expertsBtn2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.expertsBtn2.ForeColor = System.Drawing.Color.Black;
-      this.expertsBtn2.Location = new System.Drawing.Point(282, 3);
-      this.expertsBtn2.Name = "expertsBtn2";
-      this.expertsBtn2.Size = new System.Drawing.Size(117, 109);
-      this.expertsBtn2.TabIndex = 127;
-      this.expertsBtn2.Text = "Extraction";
-      this.expertsBtn2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.expertsBtn2.TextColor = System.Drawing.Color.Black;
-      this.expertsBtn2.UseVisualStyleBackColor = false;
-      // 
-      // label14
-      // 
-      this.label14.AutoSize = true;
-      this.label14.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label14.ForeColor = System.Drawing.SystemColors.WindowFrame;
-      this.label14.Location = new System.Drawing.Point(433, 11);
-      this.label14.Name = "label14";
-      this.label14.Size = new System.Drawing.Size(102, 25);
-      this.label14.TabIndex = 8;
-      this.label14.Text = "Summary:";
+      this.panel2.Controls.Add(this.panel4);
+      this.panel2.Controls.Add(this.label14);
+      this.panel2.Controls.Add(this.panel3);
+      this.panel2.Location = new System.Drawing.Point(11, 238);
+      this.panel2.Name = "panel2";
+      this.panel2.Size = new System.Drawing.Size(756, 209);
+      this.panel2.TabIndex = 132;
       // 
       // panel4
       // 
@@ -1102,13 +854,262 @@
       // lbSummary
       // 
       this.lbSummary.AutoSize = true;
-      this.lbSummary.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lbSummary.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lbSummary.ForeColor = System.Drawing.Color.Black;
       this.lbSummary.Location = new System.Drawing.Point(3, 13);
       this.lbSummary.Name = "lbSummary";
-      this.lbSummary.Size = new System.Drawing.Size(102, 25);
+      this.lbSummary.Size = new System.Drawing.Size(87, 21);
       this.lbSummary.TabIndex = 12;
       this.lbSummary.Text = "Summary:";
+      // 
+      // label14
+      // 
+      this.label14.AutoSize = true;
+      this.label14.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label14.ForeColor = System.Drawing.SystemColors.WindowFrame;
+      this.label14.Location = new System.Drawing.Point(433, 11);
+      this.label14.Name = "label14";
+      this.label14.Size = new System.Drawing.Size(102, 25);
+      this.label14.TabIndex = 8;
+      this.label14.Text = "Summary:";
+      // 
+      // panel3
+      // 
+      this.panel3.BackColor = System.Drawing.Color.Azure;
+      this.panel3.Controls.Add(this.chbDiagnosis);
+      this.panel3.Controls.Add(this.chbXray);
+      this.panel3.Controls.Add(this.chbCleaning);
+      this.panel3.Location = new System.Drawing.Point(13, 14);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(290, 192);
+      this.panel3.TabIndex = 7;
+      this.panel3.Visible = false;
+      // 
+      // chbDiagnosis
+      // 
+      this.chbDiagnosis.AccessibilityEnabled = true;
+      this.chbDiagnosis.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.chbDiagnosis.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbDiagnosis.Location = new System.Drawing.Point(0, 76);
+      this.chbDiagnosis.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbDiagnosis.Name = "chbDiagnosis";
+      this.chbDiagnosis.Size = new System.Drawing.Size(290, 38);
+      this.chbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbDiagnosis.TabIndex = 10;
+      this.chbDiagnosis.Tag = "15";
+      this.chbDiagnosis.Text = " Diagnosis";
+      this.chbDiagnosis.ThemeName = "Metro";
+      this.chbDiagnosis.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbDiagnosis.CheckStateChanged += new System.EventHandler(this.checkBoxAdv2_CheckStateChanged);
+      // 
+      // chbXray
+      // 
+      this.chbXray.AccessibilityEnabled = true;
+      this.chbXray.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.chbXray.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbXray.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbXray.Location = new System.Drawing.Point(0, 38);
+      this.chbXray.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbXray.Name = "chbXray";
+      this.chbXray.Size = new System.Drawing.Size(290, 38);
+      this.chbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbXray.TabIndex = 9;
+      this.chbXray.Tag = "10";
+      this.chbXray.Text = " X-ray";
+      this.chbXray.ThemeName = "Metro";
+      this.chbXray.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbXray.CheckStateChanged += new System.EventHandler(this.checkBoxAdv1_CheckStateChanged);
+      // 
+      // chbCleaning
+      // 
+      this.chbCleaning.AccessibilityEnabled = true;
+      this.chbCleaning.BeforeTouchSize = new System.Drawing.Size(290, 38);
+      this.chbCleaning.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbCleaning.Location = new System.Drawing.Point(0, 0);
+      this.chbCleaning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbCleaning.Name = "chbCleaning";
+      this.chbCleaning.Size = new System.Drawing.Size(290, 38);
+      this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbCleaning.TabIndex = 8;
+      this.chbCleaning.Tag = "10";
+      this.chbCleaning.Text = " Cleaning";
+      this.chbCleaning.ThemeName = "Metro";
+      this.chbCleaning.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
+      // 
+      // lbCost
+      // 
+      this.lbCost.AutoSize = true;
+      this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lbCost.Location = new System.Drawing.Point(705, 463);
+      this.lbCost.Name = "lbCost";
+      this.lbCost.Size = new System.Drawing.Size(34, 25);
+      this.lbCost.TabIndex = 5;
+      this.lbCost.Text = "$0";
+      // 
+      // panel1
+      // 
+      this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+      this.panel1.Controls.Add(this.btnDiagnosis);
+      this.panel1.Controls.Add(this.btnWhitening);
+      this.panel1.Controls.Add(this.btnRestoration);
+      this.panel1.Controls.Add(this.btnImplantation);
+      this.panel1.Controls.Add(this.Orthopedic);
+      this.panel1.Controls.Add(this.btnExtraction);
+      this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+      this.panel1.Location = new System.Drawing.Point(0, 0);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(778, 232);
+      this.panel1.TabIndex = 131;
+      // 
+      // btnDiagnosis
+      // 
+      this.btnDiagnosis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
+      this.btnDiagnosis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
+      this.btnDiagnosis.BackgroundImage = global::Dental_App.Properties.Resources.diagnosis1;
+      this.btnDiagnosis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.btnDiagnosis.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnDiagnosis.BorderRadius = 10;
+      this.btnDiagnosis.BorderSize = 0;
+      this.btnDiagnosis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnDiagnosis.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.btnDiagnosis.FlatAppearance.BorderSize = 0;
+      this.btnDiagnosis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnDiagnosis.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnDiagnosis.ForeColor = System.Drawing.Color.Black;
+      this.btnDiagnosis.Location = new System.Drawing.Point(12, 3);
+      this.btnDiagnosis.Name = "btnDiagnosis";
+      this.btnDiagnosis.Size = new System.Drawing.Size(264, 224);
+      this.btnDiagnosis.TabIndex = 125;
+      this.btnDiagnosis.Text = "Diagnosis";
+      this.btnDiagnosis.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.btnDiagnosis.TextColor = System.Drawing.Color.Black;
+      this.btnDiagnosis.UseVisualStyleBackColor = false;
+      // 
+      // btnRestoration
+      // 
+      this.btnRestoration.BackColor = System.Drawing.Color.AliceBlue;
+      this.btnRestoration.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.btnRestoration.BackgroundImage = global::Dental_App.Properties.Resources.Restoration1;
+      this.btnRestoration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.btnRestoration.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnRestoration.BorderRadius = 10;
+      this.btnRestoration.BorderSize = 0;
+      this.btnRestoration.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnRestoration.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.btnRestoration.FlatAppearance.BorderSize = 0;
+      this.btnRestoration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnRestoration.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.btnRestoration.ForeColor = System.Drawing.Color.Black;
+      this.btnRestoration.Location = new System.Drawing.Point(405, 3);
+      this.btnRestoration.Name = "btnRestoration";
+      this.btnRestoration.Size = new System.Drawing.Size(117, 109);
+      this.btnRestoration.TabIndex = 128;
+      this.btnRestoration.Text = "Restoration";
+      this.btnRestoration.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.btnRestoration.TextColor = System.Drawing.Color.Black;
+      this.btnRestoration.UseVisualStyleBackColor = false;
+      // 
+      // btnImplantation
+      // 
+      this.btnImplantation.BackColor = System.Drawing.Color.AliceBlue;
+      this.btnImplantation.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.btnImplantation.BackgroundImage = global::Dental_App.Properties.Resources.Implantation;
+      this.btnImplantation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.btnImplantation.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnImplantation.BorderRadius = 10;
+      this.btnImplantation.BorderSize = 0;
+      this.btnImplantation.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnImplantation.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.btnImplantation.FlatAppearance.BorderSize = 0;
+      this.btnImplantation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnImplantation.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.btnImplantation.ForeColor = System.Drawing.Color.Black;
+      this.btnImplantation.Location = new System.Drawing.Point(528, 118);
+      this.btnImplantation.Name = "btnImplantation";
+      this.btnImplantation.Size = new System.Drawing.Size(240, 109);
+      this.btnImplantation.TabIndex = 129;
+      this.btnImplantation.Text = "Implantation";
+      this.btnImplantation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.btnImplantation.TextColor = System.Drawing.Color.Black;
+      this.btnImplantation.UseVisualStyleBackColor = false;
+      // 
+      // Orthopedic
+      // 
+      this.Orthopedic.BackColor = System.Drawing.Color.AliceBlue;
+      this.Orthopedic.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.Orthopedic.BackgroundImage = global::Dental_App.Properties.Resources.Orthopedic;
+      this.Orthopedic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.Orthopedic.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.Orthopedic.BorderRadius = 10;
+      this.Orthopedic.BorderSize = 0;
+      this.Orthopedic.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.Orthopedic.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.Orthopedic.FlatAppearance.BorderSize = 0;
+      this.Orthopedic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.Orthopedic.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.Orthopedic.ForeColor = System.Drawing.Color.Black;
+      this.Orthopedic.Location = new System.Drawing.Point(282, 118);
+      this.Orthopedic.Name = "Orthopedic";
+      this.Orthopedic.Size = new System.Drawing.Size(240, 109);
+      this.Orthopedic.TabIndex = 126;
+      this.Orthopedic.Text = "Orthopedic";
+      this.Orthopedic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.Orthopedic.TextColor = System.Drawing.Color.Black;
+      this.Orthopedic.UseVisualStyleBackColor = false;
+      // 
+      // btnExtraction
+      // 
+      this.btnExtraction.BackColor = System.Drawing.Color.AliceBlue;
+      this.btnExtraction.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.btnExtraction.BackgroundImage = global::Dental_App.Properties.Resources.Extraction;
+      this.btnExtraction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.btnExtraction.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnExtraction.BorderRadius = 10;
+      this.btnExtraction.BorderSize = 0;
+      this.btnExtraction.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnExtraction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.btnExtraction.FlatAppearance.BorderSize = 0;
+      this.btnExtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnExtraction.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnExtraction.ForeColor = System.Drawing.Color.Black;
+      this.btnExtraction.Location = new System.Drawing.Point(282, 3);
+      this.btnExtraction.Name = "btnExtraction";
+      this.btnExtraction.Size = new System.Drawing.Size(117, 109);
+      this.btnExtraction.TabIndex = 127;
+      this.btnExtraction.Text = "Extraction";
+      this.btnExtraction.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.btnExtraction.TextColor = System.Drawing.Color.Black;
+      this.btnExtraction.UseVisualStyleBackColor = false;
+      // 
+      // lb
+      // 
+      this.lb.AutoSize = true;
+      this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lb.Location = new System.Drawing.Point(628, 463);
+      this.lb.Name = "lb";
+      this.lb.Size = new System.Drawing.Size(56, 25);
+      this.lb.TabIndex = 4;
+      this.lb.Text = "Cost:";
+      // 
+      // tbpBills
+      // 
+      this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpBills.Image = null;
+      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpBills.Location = new System.Drawing.Point(1, 29);
+      this.tbpBills.Name = "tbpBills";
+      this.tbpBills.ShowCloseButton = true;
+      this.tbpBills.Size = new System.Drawing.Size(778, 495);
+      this.tbpBills.TabIndex = 3;
+      this.tbpBills.Text = "Bills";
+      this.tbpBills.ThemesEnabled = false;
       // 
       // frmAddUpdateAppointmnet
       // 
@@ -1142,13 +1143,13 @@
       this.tbpProcedures.PerformLayout();
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();
-      this.panel3.ResumeLayout(false);
-      this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbXray)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).EndInit();
       this.panel4.ResumeLayout(false);
       this.panel4.PerformLayout();
+      this.panel3.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbXray)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).EndInit();
+      this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -1207,12 +1208,12 @@
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpAddAppointment;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpProcedures;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpBills;
-    private ExpertsBtn expertsBtn8;
-    private ExpertsBtn expertsBtn5;
-    private ExpertsBtn expertsBtn4;
-    private ExpertsBtn expertsBtn3;
-    private ExpertsBtn expertsBtn2;
-    private ExpertsBtn expertsBtn1;
+    private ExpertsBtn btnDiagnosis;
+    private ExpertsBtn btnWhitening;
+    private ExpertsBtn btnImplantation;
+    private ExpertsBtn btnRestoration;
+    private ExpertsBtn btnExtraction;
+    private ExpertsBtn Orthopedic;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
     private System.Windows.Forms.Label lb;
