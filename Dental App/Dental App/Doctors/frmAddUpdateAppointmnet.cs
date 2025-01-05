@@ -227,17 +227,17 @@ namespace Dental_App.Doctors
     {
       string Summarylable = "";
 
-      if(chbCleaning.Checked == true)
+      if(chbCleaning.Checked)
       {
-        Summarylable += "\tCleaning \t\t$10";
+        Summarylable += "\tCleaning \t\t$10\n";
       }
-      if(chbXray.Checked == true)
+      if(chbXray.Checked)
       {
-        Summarylable += "\n\tX-ray \t\t$10";
+        Summarylable += "\tX-ray \t\t$10\n";
       }
-      if(chbDiagnosis.Checked == true)
+      if(chbDiagnosis.Checked)
       {
-        Summarylable += "\n\tDiagnosis \t\t$15";
+        Summarylable += "\tDiagnosis \t\t$15\n";
       }
 
       lbSummary.Text = Summarylable;
@@ -268,6 +268,18 @@ namespace Dental_App.Doctors
       HandlePlans();
     }
 
+    private void btnWhitening_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Whitening;
+      HandlePlans();
+    }
+
+    private void Orthopedic_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Orthopedic;
+      HandlePlans();
+    }
+
     private void HandlePlans()
     {
       HideAllPanels();
@@ -290,6 +302,15 @@ namespace Dental_App.Doctors
           pnlImplantaion.Visible = true;
           break;
 
+        case enPlan.Whitening:
+          pnlWhitening.Visible = true;
+          break;
+
+        case enPlan.Orthopedic:
+          pnlOrthopedic.Dock = DockStyle.Left;
+          pnlOrthopedic.Visible = true;
+
+          break;
       }
     }
 
@@ -298,8 +319,12 @@ namespace Dental_App.Doctors
       pnlDiagnosis.Visible = false;
       pnlExtaction.Visible = false;
       pnlRestoration.Visible = false;
+      pnlImplantaion.Visible = false;
+      pnlWhitening.Visible = false;
+      pnlOrthopedic.Visible = false;
     }
 
+    
   }
 
   public class DentalPlan

@@ -79,26 +79,37 @@
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.pnlExtaction = new System.Windows.Forms.Panel();
-      this.pnlRestoration = new System.Windows.Forms.Panel();
-      this.chbPorcelainFilling = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbCompositeFilling = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbAmalgamFilling = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbWisdomExtarction = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbComplexExtraction = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbComplicatedExtrcation = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.chbSimpleExtraction = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.panel4 = new System.Windows.Forms.Panel();
-      this.lbSummary = new System.Windows.Forms.Label();
-      this.label14 = new System.Windows.Forms.Label();
+      this.pnlOrthopedic = new System.Windows.Forms.Panel();
+      this.label15 = new System.Windows.Forms.Label();
       this.pnlDiagnosis = new System.Windows.Forms.Panel();
       this.chbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.chbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.chbCleaning = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.pnlImplantaion = new System.Windows.Forms.Panel();
+      this.chbFullMouthImplants = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbDoubleImplant = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbSingleImplant = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.label14 = new System.Windows.Forms.Label();
+      this.pnlRestoration = new System.Windows.Forms.Panel();
+      this.chbAmalgamFilling = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbPorcelainFilling = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbCompositeFilling = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.pnlExtaction = new System.Windows.Forms.Panel();
+      this.chbWisdomExtarction = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbComplexExtraction = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbComplicatedExtrcation = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbSimpleExtraction = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.pnlWhitening = new System.Windows.Forms.Panel();
+      this.chbPeroxide40 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.chbPeroxide25 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+      this.pnlSummaryDetials = new System.Windows.Forms.Panel();
+      this.lbSummary = new System.Windows.Forms.Label();
       this.lbCost = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
       this.lb = new System.Windows.Forms.Label();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.panel3 = new System.Windows.Forms.Panel();
+      this.label20 = new System.Windows.Forms.Label();
       this.btnSave = new Dental_App.ExpertsBtn();
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnDiagnosis = new Dental_App.ExpertsBtn();
@@ -107,10 +118,6 @@
       this.btnImplantation = new Dental_App.ExpertsBtn();
       this.Orthopedic = new Dental_App.ExpertsBtn();
       this.btnExtraction = new Dental_App.ExpertsBtn();
-      this.pnlImplantaion = new System.Windows.Forms.Panel();
-      this.checkBoxAdv1 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.checkBoxAdv2 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-      this.checkBoxAdv3 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -124,25 +131,31 @@
       this.tbpAddAppointment.SuspendLayout();
       this.tbpProcedures.SuspendLayout();
       this.panel2.SuspendLayout();
-      this.pnlExtaction.SuspendLayout();
-      this.pnlRestoration.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.chbPorcelainFilling)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbCompositeFilling)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbAmalgamFilling)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbWisdomExtarction)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbComplexExtraction)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbSimpleExtraction)).BeginInit();
-      this.panel4.SuspendLayout();
+      this.pnlOrthopedic.SuspendLayout();
       this.pnlDiagnosis.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbXray)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).BeginInit();
-      this.panel1.SuspendLayout();
       this.pnlImplantaion.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv3)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbFullMouthImplants)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbDoubleImplant)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbSingleImplant)).BeginInit();
+      this.pnlRestoration.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chbAmalgamFilling)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbPorcelainFilling)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbCompositeFilling)).BeginInit();
+      this.pnlExtaction.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chbWisdomExtarction)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbComplexExtraction)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbSimpleExtraction)).BeginInit();
+      this.pnlWhitening.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chbPeroxide40)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbPeroxide25)).BeginInit();
+      this.pnlSummaryDetials.SuspendLayout();
+      this.panel1.SuspendLayout();
+      this.tbpBills.SuspendLayout();
+      this.panel3.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -160,7 +173,7 @@
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(758, 423);
+      this.groupBox1.Size = new System.Drawing.Size(1281, 423);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -190,12 +203,12 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(629, 64);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(1152, 64);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(117, 343);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(629, 64);
+      this.tbNote.Size = new System.Drawing.Size(1152, 64);
       this.tbNote.TabIndex = 149;
       // 
       // iconNote
@@ -261,7 +274,7 @@
       this.splitContainer1.Panel2.Controls.Add(this.iconButton8);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton1);
       this.splitContainer1.Panel2.Controls.Add(this.label17);
-      this.splitContainer1.Size = new System.Drawing.Size(732, 281);
+      this.splitContainer1.Size = new System.Drawing.Size(1255, 281);
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
@@ -494,7 +507,7 @@
       this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
       this.panelSearch.Location = new System.Drawing.Point(0, 0);
       this.panelSearch.Name = "panelSearch";
-      this.panelSearch.Size = new System.Drawing.Size(732, 41);
+      this.panelSearch.Size = new System.Drawing.Size(1255, 41);
       this.panelSearch.TabIndex = 150;
       // 
       // iconSearch
@@ -742,7 +755,7 @@
       // tabCtrlAppointment
       // 
       this.tabCtrlAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(781, 526);
+      this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(1304, 562);
       this.tabCtrlAppointment.Controls.Add(this.tbpAddAppointment);
       this.tabCtrlAppointment.Controls.Add(this.tbpProcedures);
       this.tabCtrlAppointment.Controls.Add(this.tbpBills);
@@ -751,7 +764,7 @@
       this.tabCtrlAppointment.Location = new System.Drawing.Point(0, 0);
       this.tabCtrlAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
       this.tabCtrlAppointment.Name = "tabCtrlAppointment";
-      this.tabCtrlAppointment.Size = new System.Drawing.Size(781, 526);
+      this.tabCtrlAppointment.Size = new System.Drawing.Size(1304, 562);
       this.tabCtrlAppointment.TabIndex = 116;
       this.tabCtrlAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
       this.tabCtrlAppointment.ThemeName = "TabRendererMetro";
@@ -769,7 +782,7 @@
       this.tbpAddAppointment.Location = new System.Drawing.Point(1, 29);
       this.tbpAddAppointment.Name = "tbpAddAppointment";
       this.tbpAddAppointment.ShowCloseButton = true;
-      this.tbpAddAppointment.Size = new System.Drawing.Size(778, 495);
+      this.tbpAddAppointment.Size = new System.Drawing.Size(1301, 531);
       this.tbpAddAppointment.TabIndex = 1;
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
@@ -787,194 +800,184 @@
       this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
       this.tbpProcedures.Name = "tbpProcedures";
       this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(778, 495);
+      this.tbpProcedures.Size = new System.Drawing.Size(1301, 531);
       this.tbpProcedures.TabIndex = 2;
       this.tbpProcedures.Text = "Procedures";
       this.tbpProcedures.ThemesEnabled = false;
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.pnlOrthopedic);
+      this.panel2.Controls.Add(this.pnlDiagnosis);
+      this.panel2.Controls.Add(this.pnlImplantaion);
+      this.panel2.Controls.Add(this.label14);
       this.panel2.Controls.Add(this.pnlRestoration);
       this.panel2.Controls.Add(this.pnlExtaction);
-      this.panel2.Controls.Add(this.panel4);
-      this.panel2.Controls.Add(this.label14);
-      this.panel2.Controls.Add(this.pnlDiagnosis);
+      this.panel2.Controls.Add(this.pnlWhitening);
+      this.panel2.Controls.Add(this.pnlSummaryDetials);
       this.panel2.Location = new System.Drawing.Point(11, 238);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(756, 209);
+      this.panel2.Size = new System.Drawing.Size(1360, 247);
       this.panel2.TabIndex = 132;
       // 
-      // pnlExtaction
+      // pnlOrthopedic
       // 
-      this.pnlExtaction.BackColor = System.Drawing.Color.Azure;
-      this.pnlExtaction.Controls.Add(this.chbWisdomExtarction);
-      this.pnlExtaction.Controls.Add(this.chbComplexExtraction);
-      this.pnlExtaction.Controls.Add(this.chbComplicatedExtrcation);
-      this.pnlExtaction.Controls.Add(this.chbSimpleExtraction);
-      this.pnlExtaction.Location = new System.Drawing.Point(16, 8);
-      this.pnlExtaction.Name = "pnlExtaction";
-      this.pnlExtaction.Size = new System.Drawing.Size(290, 192);
-      this.pnlExtaction.TabIndex = 11;
-      this.pnlExtaction.Visible = false;
+      this.pnlOrthopedic.BackColor = System.Drawing.Color.Azure;
+      this.pnlOrthopedic.Controls.Add(this.label15);
+      this.pnlOrthopedic.Dock = System.Windows.Forms.DockStyle.Left;
+      this.pnlOrthopedic.Location = new System.Drawing.Point(1295, 0);
+      this.pnlOrthopedic.Name = "pnlOrthopedic";
+      this.pnlOrthopedic.Size = new System.Drawing.Size(259, 247);
+      this.pnlOrthopedic.TabIndex = 14;
+      this.pnlOrthopedic.Visible = false;
       // 
-      // pnlRestoration
+      // label15
       // 
-      this.pnlRestoration.BackColor = System.Drawing.Color.Azure;
-      this.pnlRestoration.Controls.Add(this.pnlImplantaion);
-      this.pnlRestoration.Controls.Add(this.chbPorcelainFilling);
-      this.pnlRestoration.Controls.Add(this.chbCompositeFilling);
-      this.pnlRestoration.Controls.Add(this.chbAmalgamFilling);
-      this.pnlRestoration.Location = new System.Drawing.Point(16, 11);
-      this.pnlRestoration.Name = "pnlRestoration";
-      this.pnlRestoration.Size = new System.Drawing.Size(290, 192);
-      this.pnlRestoration.TabIndex = 12;
-      this.pnlRestoration.Visible = false;
+      this.label15.AutoSize = true;
+      this.label15.Dock = System.Windows.Forms.DockStyle.Top;
+      this.label15.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.label15.Location = new System.Drawing.Point(0, 0);
+      this.label15.Name = "label15";
+      this.label15.Size = new System.Drawing.Size(102, 20);
+      this.label15.TabIndex = 9;
+      this.label15.Text = "Coming Soon";
       // 
-      // chbPorcelainFilling
+      // pnlDiagnosis
       // 
-      this.chbPorcelainFilling.AccessibilityEnabled = true;
-      this.chbPorcelainFilling.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbPorcelainFilling.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbPorcelainFilling.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbPorcelainFilling.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbPorcelainFilling.Location = new System.Drawing.Point(0, 76);
-      this.chbPorcelainFilling.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbPorcelainFilling.Name = "chbPorcelainFilling";
-      this.chbPorcelainFilling.Size = new System.Drawing.Size(290, 38);
-      this.chbPorcelainFilling.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbPorcelainFilling.TabIndex = 10;
-      this.chbPorcelainFilling.Tag = "250";
-      this.chbPorcelainFilling.Text = " Porcelain Filling";
-      this.chbPorcelainFilling.ThemeName = "Metro";
-      this.chbPorcelainFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.pnlDiagnosis.BackColor = System.Drawing.Color.Azure;
+      this.pnlDiagnosis.Controls.Add(this.chbDiagnosis);
+      this.pnlDiagnosis.Controls.Add(this.chbXray);
+      this.pnlDiagnosis.Controls.Add(this.chbCleaning);
+      this.pnlDiagnosis.Dock = System.Windows.Forms.DockStyle.Left;
+      this.pnlDiagnosis.Location = new System.Drawing.Point(1036, 0);
+      this.pnlDiagnosis.Name = "pnlDiagnosis";
+      this.pnlDiagnosis.Size = new System.Drawing.Size(259, 247);
+      this.pnlDiagnosis.TabIndex = 7;
       // 
-      // chbCompositeFilling
+      // chbDiagnosis
       // 
-      this.chbCompositeFilling.AccessibilityEnabled = true;
-      this.chbCompositeFilling.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbCompositeFilling.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbCompositeFilling.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbCompositeFilling.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbCompositeFilling.Location = new System.Drawing.Point(0, 38);
-      this.chbCompositeFilling.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbCompositeFilling.Name = "chbCompositeFilling";
-      this.chbCompositeFilling.Size = new System.Drawing.Size(290, 38);
-      this.chbCompositeFilling.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbCompositeFilling.TabIndex = 9;
-      this.chbCompositeFilling.Tag = "90";
-      this.chbCompositeFilling.Text = " Composite Filling";
-      this.chbCompositeFilling.ThemeName = "Metro";
-      this.chbCompositeFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbDiagnosis.AccessibilityEnabled = true;
+      this.chbDiagnosis.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbDiagnosis.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbDiagnosis.Location = new System.Drawing.Point(0, 76);
+      this.chbDiagnosis.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbDiagnosis.Name = "chbDiagnosis";
+      this.chbDiagnosis.Size = new System.Drawing.Size(259, 38);
+      this.chbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbDiagnosis.TabIndex = 10;
+      this.chbDiagnosis.Tag = "15";
+      this.chbDiagnosis.Text = " Diagnosis";
+      this.chbDiagnosis.ThemeName = "Metro";
+      this.chbDiagnosis.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
       // 
-      // chbAmalgamFilling
+      // chbXray
       // 
-      this.chbAmalgamFilling.AccessibilityEnabled = true;
-      this.chbAmalgamFilling.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbAmalgamFilling.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbAmalgamFilling.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbAmalgamFilling.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbAmalgamFilling.Location = new System.Drawing.Point(0, 0);
-      this.chbAmalgamFilling.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbAmalgamFilling.Name = "chbAmalgamFilling";
-      this.chbAmalgamFilling.Size = new System.Drawing.Size(290, 38);
-      this.chbAmalgamFilling.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbAmalgamFilling.TabIndex = 8;
-      this.chbAmalgamFilling.Tag = "50";
-      this.chbAmalgamFilling.Text = " Amalgam Filling";
-      this.chbAmalgamFilling.ThemeName = "Metro";
-      this.chbAmalgamFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbXray.AccessibilityEnabled = true;
+      this.chbXray.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbXray.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbXray.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbXray.Location = new System.Drawing.Point(0, 38);
+      this.chbXray.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbXray.Name = "chbXray";
+      this.chbXray.Size = new System.Drawing.Size(259, 38);
+      this.chbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbXray.TabIndex = 9;
+      this.chbXray.Tag = "10";
+      this.chbXray.Text = " X-ray";
+      this.chbXray.ThemeName = "Metro";
+      this.chbXray.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
       // 
-      // chbWisdomExtarction
+      // chbCleaning
       // 
-      this.chbWisdomExtarction.AccessibilityEnabled = true;
-      this.chbWisdomExtarction.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbWisdomExtarction.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbWisdomExtarction.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbWisdomExtarction.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbWisdomExtarction.Location = new System.Drawing.Point(0, 114);
-      this.chbWisdomExtarction.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbWisdomExtarction.Name = "chbWisdomExtarction";
-      this.chbWisdomExtarction.Size = new System.Drawing.Size(290, 38);
-      this.chbWisdomExtarction.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbWisdomExtarction.TabIndex = 11;
-      this.chbWisdomExtarction.Tag = "600";
-      this.chbWisdomExtarction.Text = "Wisdom tooth extraction";
-      this.chbWisdomExtarction.ThemeName = "Metro";
-      this.chbWisdomExtarction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbCleaning.AccessibilityEnabled = true;
+      this.chbCleaning.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbCleaning.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbCleaning.Location = new System.Drawing.Point(0, 0);
+      this.chbCleaning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbCleaning.Name = "chbCleaning";
+      this.chbCleaning.Size = new System.Drawing.Size(259, 38);
+      this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbCleaning.TabIndex = 8;
+      this.chbCleaning.Tag = "10";
+      this.chbCleaning.Text = " Cleaning";
+      this.chbCleaning.ThemeName = "Metro";
+      this.chbCleaning.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
       // 
-      // chbComplexExtraction
+      // pnlImplantaion
       // 
-      this.chbComplexExtraction.AccessibilityEnabled = true;
-      this.chbComplexExtraction.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbComplexExtraction.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbComplexExtraction.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbComplexExtraction.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbComplexExtraction.Location = new System.Drawing.Point(0, 76);
-      this.chbComplexExtraction.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbComplexExtraction.Name = "chbComplexExtraction";
-      this.chbComplexExtraction.Size = new System.Drawing.Size(290, 38);
-      this.chbComplexExtraction.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbComplexExtraction.TabIndex = 10;
-      this.chbComplexExtraction.Tag = "600";
-      this.chbComplexExtraction.Text = " Complex surgical tooth extraction";
-      this.chbComplexExtraction.ThemeName = "Metro";
-      this.chbComplexExtraction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.pnlImplantaion.BackColor = System.Drawing.Color.Azure;
+      this.pnlImplantaion.Controls.Add(this.chbFullMouthImplants);
+      this.pnlImplantaion.Controls.Add(this.chbDoubleImplant);
+      this.pnlImplantaion.Controls.Add(this.chbSingleImplant);
+      this.pnlImplantaion.Dock = System.Windows.Forms.DockStyle.Left;
+      this.pnlImplantaion.Location = new System.Drawing.Point(777, 0);
+      this.pnlImplantaion.Name = "pnlImplantaion";
+      this.pnlImplantaion.Size = new System.Drawing.Size(259, 247);
+      this.pnlImplantaion.TabIndex = 13;
+      this.pnlImplantaion.Visible = false;
       // 
-      // chbComplicatedExtrcation
+      // chbFullMouthImplants
       // 
-      this.chbComplicatedExtrcation.AccessibilityEnabled = true;
-      this.chbComplicatedExtrcation.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbComplicatedExtrcation.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbComplicatedExtrcation.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbComplicatedExtrcation.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbComplicatedExtrcation.Location = new System.Drawing.Point(0, 38);
-      this.chbComplicatedExtrcation.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbComplicatedExtrcation.Name = "chbComplicatedExtrcation";
-      this.chbComplicatedExtrcation.Size = new System.Drawing.Size(290, 38);
-      this.chbComplicatedExtrcation.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbComplicatedExtrcation.TabIndex = 9;
-      this.chbComplicatedExtrcation.Tag = "150";
-      this.chbComplicatedExtrcation.Text = " Complicated surgical extraction";
-      this.chbComplicatedExtrcation.ThemeName = "Metro";
-      this.chbComplicatedExtrcation.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbFullMouthImplants.AccessibilityEnabled = true;
+      this.chbFullMouthImplants.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbFullMouthImplants.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbFullMouthImplants.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbFullMouthImplants.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbFullMouthImplants.Location = new System.Drawing.Point(0, 76);
+      this.chbFullMouthImplants.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbFullMouthImplants.Name = "chbFullMouthImplants";
+      this.chbFullMouthImplants.Size = new System.Drawing.Size(259, 38);
+      this.chbFullMouthImplants.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbFullMouthImplants.TabIndex = 10;
+      this.chbFullMouthImplants.Tag = "20000";
+      this.chbFullMouthImplants.Text = " Full Mouth Implants";
+      this.chbFullMouthImplants.ThemeName = "Metro";
+      this.chbFullMouthImplants.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbFullMouthImplants.CheckStateChanged += new System.EventHandler(this.chbFullMouthImplants_CheckStateChanged);
       // 
-      // chbSimpleExtraction
+      // chbDoubleImplant
       // 
-      this.chbSimpleExtraction.AccessibilityEnabled = true;
-      this.chbSimpleExtraction.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbSimpleExtraction.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbSimpleExtraction.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbSimpleExtraction.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbSimpleExtraction.Location = new System.Drawing.Point(0, 0);
-      this.chbSimpleExtraction.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbSimpleExtraction.Name = "chbSimpleExtraction";
-      this.chbSimpleExtraction.Size = new System.Drawing.Size(290, 38);
-      this.chbSimpleExtraction.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbSimpleExtraction.TabIndex = 8;
-      this.chbSimpleExtraction.Tag = "75";
-      this.chbSimpleExtraction.Text = " Simple Extraction";
-      this.chbSimpleExtraction.ThemeName = "Metro";
-      this.chbSimpleExtraction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbDoubleImplant.AccessibilityEnabled = true;
+      this.chbDoubleImplant.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbDoubleImplant.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbDoubleImplant.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbDoubleImplant.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbDoubleImplant.Location = new System.Drawing.Point(0, 38);
+      this.chbDoubleImplant.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbDoubleImplant.Name = "chbDoubleImplant";
+      this.chbDoubleImplant.Size = new System.Drawing.Size(259, 38);
+      this.chbDoubleImplant.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbDoubleImplant.TabIndex = 9;
+      this.chbDoubleImplant.Tag = "3000";
+      this.chbDoubleImplant.Text = " Double Implant";
+      this.chbDoubleImplant.ThemeName = "Metro";
+      this.chbDoubleImplant.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbDoubleImplant.CheckStateChanged += new System.EventHandler(this.chbDoubleImplant_CheckStateChanged);
       // 
-      // panel4
+      // chbSingleImplant
       // 
-      this.panel4.BackColor = System.Drawing.Color.Azure;
-      this.panel4.Controls.Add(this.lbSummary);
-      this.panel4.Location = new System.Drawing.Point(438, 39);
-      this.panel4.Name = "panel4";
-      this.panel4.Size = new System.Drawing.Size(290, 161);
-      this.panel4.TabIndex = 11;
-      // 
-      // lbSummary
-      // 
-      this.lbSummary.AutoSize = true;
-      this.lbSummary.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbSummary.ForeColor = System.Drawing.Color.Black;
-      this.lbSummary.Location = new System.Drawing.Point(3, 13);
-      this.lbSummary.Name = "lbSummary";
-      this.lbSummary.Size = new System.Drawing.Size(87, 21);
-      this.lbSummary.TabIndex = 12;
-      this.lbSummary.Text = "Summary:";
+      this.chbSingleImplant.AccessibilityEnabled = true;
+      this.chbSingleImplant.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbSingleImplant.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbSingleImplant.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbSingleImplant.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbSingleImplant.Location = new System.Drawing.Point(0, 0);
+      this.chbSingleImplant.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbSingleImplant.Name = "chbSingleImplant";
+      this.chbSingleImplant.Size = new System.Drawing.Size(259, 38);
+      this.chbSingleImplant.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbSingleImplant.TabIndex = 8;
+      this.chbSingleImplant.Tag = "1500";
+      this.chbSingleImplant.Text = " Single tooth Implant";
+      this.chbSingleImplant.ThemeName = "Metro";
+      this.chbSingleImplant.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbSingleImplant.CheckStateChanged += new System.EventHandler(this.chbSingleImplant_CheckStateChanged);
       // 
       // label14
       // 
@@ -987,79 +990,241 @@
       this.label14.TabIndex = 8;
       this.label14.Text = "Summary:";
       // 
-      // pnlDiagnosis
+      // pnlRestoration
       // 
-      this.pnlDiagnosis.BackColor = System.Drawing.Color.Azure;
-      this.pnlDiagnosis.Controls.Add(this.chbDiagnosis);
-      this.pnlDiagnosis.Controls.Add(this.chbXray);
-      this.pnlDiagnosis.Controls.Add(this.chbCleaning);
-      this.pnlDiagnosis.Location = new System.Drawing.Point(13, 14);
-      this.pnlDiagnosis.Name = "pnlDiagnosis";
-      this.pnlDiagnosis.Size = new System.Drawing.Size(290, 192);
-      this.pnlDiagnosis.TabIndex = 7;
+      this.pnlRestoration.BackColor = System.Drawing.Color.Azure;
+      this.pnlRestoration.Controls.Add(this.chbAmalgamFilling);
+      this.pnlRestoration.Controls.Add(this.chbPorcelainFilling);
+      this.pnlRestoration.Controls.Add(this.chbCompositeFilling);
+      this.pnlRestoration.Dock = System.Windows.Forms.DockStyle.Left;
+      this.pnlRestoration.Location = new System.Drawing.Point(518, 0);
+      this.pnlRestoration.Name = "pnlRestoration";
+      this.pnlRestoration.Size = new System.Drawing.Size(259, 247);
+      this.pnlRestoration.TabIndex = 12;
+      this.pnlRestoration.Visible = false;
       // 
-      // chbDiagnosis
+      // chbAmalgamFilling
       // 
-      this.chbDiagnosis.AccessibilityEnabled = true;
-      this.chbDiagnosis.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbDiagnosis.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbDiagnosis.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbDiagnosis.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbDiagnosis.Location = new System.Drawing.Point(0, 76);
-      this.chbDiagnosis.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbDiagnosis.Name = "chbDiagnosis";
-      this.chbDiagnosis.Size = new System.Drawing.Size(290, 38);
-      this.chbDiagnosis.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbDiagnosis.TabIndex = 10;
-      this.chbDiagnosis.Tag = "15";
-      this.chbDiagnosis.Text = " Diagnosis";
-      this.chbDiagnosis.ThemeName = "Metro";
-      this.chbDiagnosis.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbDiagnosis.CheckStateChanged += new System.EventHandler(this.checkBoxAdv2_CheckStateChanged);
+      this.chbAmalgamFilling.AccessibilityEnabled = true;
+      this.chbAmalgamFilling.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbAmalgamFilling.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbAmalgamFilling.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbAmalgamFilling.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbAmalgamFilling.Location = new System.Drawing.Point(0, 76);
+      this.chbAmalgamFilling.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbAmalgamFilling.Name = "chbAmalgamFilling";
+      this.chbAmalgamFilling.Size = new System.Drawing.Size(259, 38);
+      this.chbAmalgamFilling.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbAmalgamFilling.TabIndex = 8;
+      this.chbAmalgamFilling.Tag = "50";
+      this.chbAmalgamFilling.Text = " Amalgam Filling";
+      this.chbAmalgamFilling.ThemeName = "Metro";
+      this.chbAmalgamFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbAmalgamFilling.CheckStateChanged += new System.EventHandler(this.chbAmalgamFilling_CheckStateChanged);
       // 
-      // chbXray
+      // chbPorcelainFilling
       // 
-      this.chbXray.AccessibilityEnabled = true;
-      this.chbXray.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbXray.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbXray.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbXray.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbXray.Location = new System.Drawing.Point(0, 38);
-      this.chbXray.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbXray.Name = "chbXray";
-      this.chbXray.Size = new System.Drawing.Size(290, 38);
-      this.chbXray.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbXray.TabIndex = 9;
-      this.chbXray.Tag = "10";
-      this.chbXray.Text = " X-ray";
-      this.chbXray.ThemeName = "Metro";
-      this.chbXray.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbXray.CheckStateChanged += new System.EventHandler(this.checkBoxAdv1_CheckStateChanged);
+      this.chbPorcelainFilling.AccessibilityEnabled = true;
+      this.chbPorcelainFilling.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbPorcelainFilling.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbPorcelainFilling.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbPorcelainFilling.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbPorcelainFilling.Location = new System.Drawing.Point(0, 38);
+      this.chbPorcelainFilling.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbPorcelainFilling.Name = "chbPorcelainFilling";
+      this.chbPorcelainFilling.Size = new System.Drawing.Size(259, 38);
+      this.chbPorcelainFilling.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbPorcelainFilling.TabIndex = 10;
+      this.chbPorcelainFilling.Tag = "250";
+      this.chbPorcelainFilling.Text = " Porcelain Filling";
+      this.chbPorcelainFilling.ThemeName = "Metro";
+      this.chbPorcelainFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbPorcelainFilling.CheckStateChanged += new System.EventHandler(this.chbPorcelainFilling_CheckStateChanged);
       // 
-      // chbCleaning
+      // chbCompositeFilling
       // 
-      this.chbCleaning.AccessibilityEnabled = true;
-      this.chbCleaning.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.chbCleaning.Dock = System.Windows.Forms.DockStyle.Top;
-      this.chbCleaning.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.chbCleaning.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.chbCleaning.Location = new System.Drawing.Point(0, 0);
-      this.chbCleaning.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.chbCleaning.Name = "chbCleaning";
-      this.chbCleaning.Size = new System.Drawing.Size(290, 38);
-      this.chbCleaning.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.chbCleaning.TabIndex = 8;
-      this.chbCleaning.Tag = "10";
-      this.chbCleaning.Text = " Cleaning";
-      this.chbCleaning.ThemeName = "Metro";
-      this.chbCleaning.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
+      this.chbCompositeFilling.AccessibilityEnabled = true;
+      this.chbCompositeFilling.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbCompositeFilling.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbCompositeFilling.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbCompositeFilling.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbCompositeFilling.Location = new System.Drawing.Point(0, 0);
+      this.chbCompositeFilling.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbCompositeFilling.Name = "chbCompositeFilling";
+      this.chbCompositeFilling.Size = new System.Drawing.Size(259, 38);
+      this.chbCompositeFilling.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbCompositeFilling.TabIndex = 9;
+      this.chbCompositeFilling.Tag = "90";
+      this.chbCompositeFilling.Text = " Composite Filling";
+      this.chbCompositeFilling.ThemeName = "Metro";
+      this.chbCompositeFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbCompositeFilling.CheckStateChanged += new System.EventHandler(this.chbCompositeFilling_CheckStateChanged);
+      // 
+      // pnlExtaction
+      // 
+      this.pnlExtaction.BackColor = System.Drawing.Color.Azure;
+      this.pnlExtaction.Controls.Add(this.chbWisdomExtarction);
+      this.pnlExtaction.Controls.Add(this.chbComplexExtraction);
+      this.pnlExtaction.Controls.Add(this.chbComplicatedExtrcation);
+      this.pnlExtaction.Controls.Add(this.chbSimpleExtraction);
+      this.pnlExtaction.Dock = System.Windows.Forms.DockStyle.Left;
+      this.pnlExtaction.Location = new System.Drawing.Point(259, 0);
+      this.pnlExtaction.Name = "pnlExtaction";
+      this.pnlExtaction.Size = new System.Drawing.Size(259, 247);
+      this.pnlExtaction.TabIndex = 11;
+      this.pnlExtaction.Visible = false;
+      // 
+      // chbWisdomExtarction
+      // 
+      this.chbWisdomExtarction.AccessibilityEnabled = true;
+      this.chbWisdomExtarction.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbWisdomExtarction.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbWisdomExtarction.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbWisdomExtarction.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbWisdomExtarction.Location = new System.Drawing.Point(0, 114);
+      this.chbWisdomExtarction.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbWisdomExtarction.Name = "chbWisdomExtarction";
+      this.chbWisdomExtarction.Size = new System.Drawing.Size(259, 38);
+      this.chbWisdomExtarction.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbWisdomExtarction.TabIndex = 11;
+      this.chbWisdomExtarction.Tag = "600";
+      this.chbWisdomExtarction.Text = "Wisdom tooth extraction";
+      this.chbWisdomExtarction.ThemeName = "Metro";
+      this.chbWisdomExtarction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbWisdomExtarction.CheckStateChanged += new System.EventHandler(this.chbWisdomExtarction_CheckStateChanged);
+      // 
+      // chbComplexExtraction
+      // 
+      this.chbComplexExtraction.AccessibilityEnabled = true;
+      this.chbComplexExtraction.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbComplexExtraction.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbComplexExtraction.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbComplexExtraction.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbComplexExtraction.Location = new System.Drawing.Point(0, 76);
+      this.chbComplexExtraction.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbComplexExtraction.Name = "chbComplexExtraction";
+      this.chbComplexExtraction.Size = new System.Drawing.Size(259, 38);
+      this.chbComplexExtraction.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbComplexExtraction.TabIndex = 10;
+      this.chbComplexExtraction.Tag = "600";
+      this.chbComplexExtraction.Text = " Complex surgical tooth extraction";
+      this.chbComplexExtraction.ThemeName = "Metro";
+      this.chbComplexExtraction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbComplexExtraction.CheckStateChanged += new System.EventHandler(this.chbComplexExtraction_CheckStateChanged);
+      // 
+      // chbComplicatedExtrcation
+      // 
+      this.chbComplicatedExtrcation.AccessibilityEnabled = true;
+      this.chbComplicatedExtrcation.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbComplicatedExtrcation.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbComplicatedExtrcation.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbComplicatedExtrcation.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbComplicatedExtrcation.Location = new System.Drawing.Point(0, 38);
+      this.chbComplicatedExtrcation.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbComplicatedExtrcation.Name = "chbComplicatedExtrcation";
+      this.chbComplicatedExtrcation.Size = new System.Drawing.Size(259, 38);
+      this.chbComplicatedExtrcation.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbComplicatedExtrcation.TabIndex = 9;
+      this.chbComplicatedExtrcation.Tag = "150";
+      this.chbComplicatedExtrcation.Text = " Complicated surgical extraction";
+      this.chbComplicatedExtrcation.ThemeName = "Metro";
+      this.chbComplicatedExtrcation.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbComplicatedExtrcation.CheckStateChanged += new System.EventHandler(this.chbComplicatedExtrcation_CheckStateChanged);
+      // 
+      // chbSimpleExtraction
+      // 
+      this.chbSimpleExtraction.AccessibilityEnabled = true;
+      this.chbSimpleExtraction.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbSimpleExtraction.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbSimpleExtraction.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbSimpleExtraction.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbSimpleExtraction.Location = new System.Drawing.Point(0, 0);
+      this.chbSimpleExtraction.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbSimpleExtraction.Name = "chbSimpleExtraction";
+      this.chbSimpleExtraction.Size = new System.Drawing.Size(259, 38);
+      this.chbSimpleExtraction.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbSimpleExtraction.TabIndex = 8;
+      this.chbSimpleExtraction.Tag = "75";
+      this.chbSimpleExtraction.Text = " Simple Extraction";
+      this.chbSimpleExtraction.ThemeName = "Metro";
+      this.chbSimpleExtraction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbSimpleExtraction.CheckStateChanged += new System.EventHandler(this.chbSimpleExtraction_CheckStateChanged);
+      // 
+      // pnlWhitening
+      // 
+      this.pnlWhitening.BackColor = System.Drawing.Color.Azure;
+      this.pnlWhitening.Controls.Add(this.chbPeroxide40);
+      this.pnlWhitening.Controls.Add(this.chbPeroxide25);
+      this.pnlWhitening.Dock = System.Windows.Forms.DockStyle.Left;
+      this.pnlWhitening.Location = new System.Drawing.Point(0, 0);
+      this.pnlWhitening.Name = "pnlWhitening";
+      this.pnlWhitening.Size = new System.Drawing.Size(259, 247);
+      this.pnlWhitening.TabIndex = 13;
+      this.pnlWhitening.Visible = false;
+      // 
+      // chbPeroxide40
+      // 
+      this.chbPeroxide40.AccessibilityEnabled = true;
+      this.chbPeroxide40.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbPeroxide40.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbPeroxide40.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbPeroxide40.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbPeroxide40.Location = new System.Drawing.Point(0, 38);
+      this.chbPeroxide40.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbPeroxide40.Name = "chbPeroxide40";
+      this.chbPeroxide40.Size = new System.Drawing.Size(259, 38);
+      this.chbPeroxide40.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbPeroxide40.TabIndex = 9;
+      this.chbPeroxide40.Tag = "850";
+      this.chbPeroxide40.Text = " Peroxide Level 40%";
+      this.chbPeroxide40.ThemeName = "Metro";
+      this.chbPeroxide40.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbPeroxide40.CheckStateChanged += new System.EventHandler(this.chbPeroxide40_CheckStateChanged);
+      // 
+      // chbPeroxide25
+      // 
+      this.chbPeroxide25.AccessibilityEnabled = true;
+      this.chbPeroxide25.BeforeTouchSize = new System.Drawing.Size(259, 38);
+      this.chbPeroxide25.Dock = System.Windows.Forms.DockStyle.Top;
+      this.chbPeroxide25.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.chbPeroxide25.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.chbPeroxide25.Location = new System.Drawing.Point(0, 0);
+      this.chbPeroxide25.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.chbPeroxide25.Name = "chbPeroxide25";
+      this.chbPeroxide25.Size = new System.Drawing.Size(259, 38);
+      this.chbPeroxide25.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+      this.chbPeroxide25.TabIndex = 8;
+      this.chbPeroxide25.Tag = "450";
+      this.chbPeroxide25.Text = " Peroxide Level  25%";
+      this.chbPeroxide25.ThemeName = "Metro";
+      this.chbPeroxide25.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
+      this.chbPeroxide25.CheckStateChanged += new System.EventHandler(this.chbPeroxide25_CheckStateChanged);
+      // 
+      // pnlSummaryDetials
+      // 
+      this.pnlSummaryDetials.BackColor = System.Drawing.Color.Azure;
+      this.pnlSummaryDetials.Controls.Add(this.lbSummary);
+      this.pnlSummaryDetials.Location = new System.Drawing.Point(438, 39);
+      this.pnlSummaryDetials.Name = "pnlSummaryDetials";
+      this.pnlSummaryDetials.Size = new System.Drawing.Size(254, 164);
+      this.pnlSummaryDetials.TabIndex = 11;
+      // 
+      // lbSummary
+      // 
+      this.lbSummary.AutoSize = true;
+      this.lbSummary.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lbSummary.ForeColor = System.Drawing.Color.Black;
+      this.lbSummary.Location = new System.Drawing.Point(3, 13);
+      this.lbSummary.Name = "lbSummary";
+      this.lbSummary.Size = new System.Drawing.Size(87, 21);
+      this.lbSummary.TabIndex = 12;
+      this.lbSummary.Text = "Summary:";
       // 
       // lbCost
       // 
       this.lbCost.AutoSize = true;
       this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbCost.Location = new System.Drawing.Point(705, 463);
+      this.lbCost.Location = new System.Drawing.Point(705, 488);
       this.lbCost.Name = "lbCost";
       this.lbCost.Size = new System.Drawing.Size(34, 25);
       this.lbCost.TabIndex = 5;
@@ -1077,14 +1242,14 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(778, 232);
+      this.panel1.Size = new System.Drawing.Size(1301, 232);
       this.panel1.TabIndex = 131;
       // 
       // lb
       // 
       this.lb.AutoSize = true;
       this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(628, 463);
+      this.lb.Location = new System.Drawing.Point(628, 488);
       this.lb.Name = "lb";
       this.lb.Size = new System.Drawing.Size(56, 25);
       this.lb.TabIndex = 4;
@@ -1093,16 +1258,37 @@
       // tbpBills
       // 
       this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
+      this.tbpBills.Controls.Add(this.panel3);
       this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
       this.tbpBills.Image = null;
       this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
       this.tbpBills.Location = new System.Drawing.Point(1, 29);
       this.tbpBills.Name = "tbpBills";
       this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(778, 495);
+      this.tbpBills.Size = new System.Drawing.Size(1301, 531);
       this.tbpBills.TabIndex = 3;
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
+      // 
+      // panel3
+      // 
+      this.panel3.BackColor = System.Drawing.Color.Azure;
+      this.panel3.Controls.Add(this.label20);
+      this.panel3.Location = new System.Drawing.Point(172, 99);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(254, 164);
+      this.panel3.TabIndex = 12;
+      // 
+      // label20
+      // 
+      this.label20.AutoSize = true;
+      this.label20.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label20.ForeColor = System.Drawing.Color.Black;
+      this.label20.Location = new System.Drawing.Point(3, 13);
+      this.label20.Name = "label20";
+      this.label20.Size = new System.Drawing.Size(87, 21);
+      this.label20.TabIndex = 12;
+      this.label20.Text = "Summary:";
       // 
       // btnSave
       // 
@@ -1153,12 +1339,13 @@
       this.btnDiagnosis.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.btnDiagnosis.BorderRadius = 10;
       this.btnDiagnosis.BorderSize = 0;
+      this.btnDiagnosis.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnDiagnosis.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.btnDiagnosis.FlatAppearance.BorderSize = 0;
       this.btnDiagnosis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnDiagnosis.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnDiagnosis.ForeColor = System.Drawing.Color.Black;
-      this.btnDiagnosis.Location = new System.Drawing.Point(12, 3);
+      this.btnDiagnosis.Location = new System.Drawing.Point(11, 3);
       this.btnDiagnosis.Name = "btnDiagnosis";
       this.btnDiagnosis.Size = new System.Drawing.Size(264, 224);
       this.btnDiagnosis.TabIndex = 125;
@@ -1177,7 +1364,7 @@
       this.btnWhitening.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.btnWhitening.BorderRadius = 10;
       this.btnWhitening.BorderSize = 0;
-      this.btnWhitening.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnWhitening.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnWhitening.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.btnWhitening.FlatAppearance.BorderSize = 0;
       this.btnWhitening.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1185,7 +1372,7 @@
       this.btnWhitening.ForeColor = System.Drawing.Color.Black;
       this.errorProvider1.SetIconAlignment(this.btnWhitening, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
       this.btnWhitening.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.btnWhitening.Location = new System.Drawing.Point(528, 3);
+      this.btnWhitening.Location = new System.Drawing.Point(527, 3);
       this.btnWhitening.Name = "btnWhitening";
       this.btnWhitening.Size = new System.Drawing.Size(240, 109);
       this.btnWhitening.TabIndex = 130;
@@ -1193,6 +1380,7 @@
       this.btnWhitening.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.btnWhitening.TextColor = System.Drawing.Color.Black;
       this.btnWhitening.UseVisualStyleBackColor = false;
+      this.btnWhitening.Click += new System.EventHandler(this.btnWhitening_Click);
       // 
       // btnRestoration
       // 
@@ -1203,12 +1391,13 @@
       this.btnRestoration.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.btnRestoration.BorderRadius = 10;
       this.btnRestoration.BorderSize = 0;
+      this.btnRestoration.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnRestoration.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.btnRestoration.FlatAppearance.BorderSize = 0;
       this.btnRestoration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnRestoration.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.btnRestoration.ForeColor = System.Drawing.Color.Black;
-      this.btnRestoration.Location = new System.Drawing.Point(405, 3);
+      this.btnRestoration.Location = new System.Drawing.Point(404, 3);
       this.btnRestoration.Name = "btnRestoration";
       this.btnRestoration.Size = new System.Drawing.Size(117, 109);
       this.btnRestoration.TabIndex = 128;
@@ -1227,13 +1416,13 @@
       this.btnImplantation.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.btnImplantation.BorderRadius = 10;
       this.btnImplantation.BorderSize = 0;
-      this.btnImplantation.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnImplantation.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnImplantation.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.btnImplantation.FlatAppearance.BorderSize = 0;
       this.btnImplantation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnImplantation.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.btnImplantation.ForeColor = System.Drawing.Color.Black;
-      this.btnImplantation.Location = new System.Drawing.Point(528, 118);
+      this.btnImplantation.Location = new System.Drawing.Point(527, 118);
       this.btnImplantation.Name = "btnImplantation";
       this.btnImplantation.Size = new System.Drawing.Size(240, 109);
       this.btnImplantation.TabIndex = 129;
@@ -1252,13 +1441,13 @@
       this.Orthopedic.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.Orthopedic.BorderRadius = 10;
       this.Orthopedic.BorderSize = 0;
-      this.Orthopedic.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.Orthopedic.Cursor = System.Windows.Forms.Cursors.Hand;
       this.Orthopedic.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.Orthopedic.FlatAppearance.BorderSize = 0;
       this.Orthopedic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.Orthopedic.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.Orthopedic.ForeColor = System.Drawing.Color.Black;
-      this.Orthopedic.Location = new System.Drawing.Point(282, 118);
+      this.Orthopedic.Location = new System.Drawing.Point(281, 118);
       this.Orthopedic.Name = "Orthopedic";
       this.Orthopedic.Size = new System.Drawing.Size(240, 109);
       this.Orthopedic.TabIndex = 126;
@@ -1266,6 +1455,7 @@
       this.Orthopedic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.Orthopedic.TextColor = System.Drawing.Color.Black;
       this.Orthopedic.UseVisualStyleBackColor = false;
+      this.Orthopedic.Click += new System.EventHandler(this.Orthopedic_Click);
       // 
       // btnExtraction
       // 
@@ -1276,12 +1466,13 @@
       this.btnExtraction.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.btnExtraction.BorderRadius = 10;
       this.btnExtraction.BorderSize = 0;
+      this.btnExtraction.Cursor = System.Windows.Forms.Cursors.Hand;
       this.btnExtraction.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.btnExtraction.FlatAppearance.BorderSize = 0;
       this.btnExtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnExtraction.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnExtraction.ForeColor = System.Drawing.Color.Black;
-      this.btnExtraction.Location = new System.Drawing.Point(282, 3);
+      this.btnExtraction.Location = new System.Drawing.Point(281, 3);
       this.btnExtraction.Name = "btnExtraction";
       this.btnExtraction.Size = new System.Drawing.Size(117, 109);
       this.btnExtraction.TabIndex = 127;
@@ -1291,78 +1482,12 @@
       this.btnExtraction.UseVisualStyleBackColor = false;
       this.btnExtraction.Click += new System.EventHandler(this.btnExtraction_Click);
       // 
-      // pnlImplantaion
-      // 
-      this.pnlImplantaion.BackColor = System.Drawing.Color.Azure;
-      this.pnlImplantaion.Controls.Add(this.checkBoxAdv1);
-      this.pnlImplantaion.Controls.Add(this.checkBoxAdv2);
-      this.pnlImplantaion.Controls.Add(this.checkBoxAdv3);
-      this.pnlImplantaion.Location = new System.Drawing.Point(8, 8);
-      this.pnlImplantaion.Name = "pnlImplantaion";
-      this.pnlImplantaion.Size = new System.Drawing.Size(290, 192);
-      this.pnlImplantaion.TabIndex = 13;
-      this.pnlImplantaion.Visible = false;
-      // 
-      // checkBoxAdv1
-      // 
-      this.checkBoxAdv1.AccessibilityEnabled = true;
-      this.checkBoxAdv1.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.checkBoxAdv1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxAdv1.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.checkBoxAdv1.Location = new System.Drawing.Point(0, 76);
-      this.checkBoxAdv1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.checkBoxAdv1.Name = "checkBoxAdv1";
-      this.checkBoxAdv1.Size = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv1.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.checkBoxAdv1.TabIndex = 10;
-      this.checkBoxAdv1.Tag = "250";
-      this.checkBoxAdv1.Text = " Porcelain Filling";
-      this.checkBoxAdv1.ThemeName = "Metro";
-      this.checkBoxAdv1.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      // 
-      // checkBoxAdv2
-      // 
-      this.checkBoxAdv2.AccessibilityEnabled = true;
-      this.checkBoxAdv2.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv2.Dock = System.Windows.Forms.DockStyle.Top;
-      this.checkBoxAdv2.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxAdv2.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.checkBoxAdv2.Location = new System.Drawing.Point(0, 38);
-      this.checkBoxAdv2.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.checkBoxAdv2.Name = "checkBoxAdv2";
-      this.checkBoxAdv2.Size = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv2.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.checkBoxAdv2.TabIndex = 9;
-      this.checkBoxAdv2.Tag = "90";
-      this.checkBoxAdv2.Text = " Composite Filling";
-      this.checkBoxAdv2.ThemeName = "Metro";
-      this.checkBoxAdv2.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      // 
-      // checkBoxAdv3
-      // 
-      this.checkBoxAdv3.AccessibilityEnabled = true;
-      this.checkBoxAdv3.BeforeTouchSize = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv3.Dock = System.Windows.Forms.DockStyle.Top;
-      this.checkBoxAdv3.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxAdv3.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.checkBoxAdv3.Location = new System.Drawing.Point(0, 0);
-      this.checkBoxAdv3.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-      this.checkBoxAdv3.Name = "checkBoxAdv3";
-      this.checkBoxAdv3.Size = new System.Drawing.Size(290, 38);
-      this.checkBoxAdv3.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
-      this.checkBoxAdv3.TabIndex = 8;
-      this.checkBoxAdv3.Tag = "50";
-      this.checkBoxAdv3.Text = " Amalgam Filling";
-      this.checkBoxAdv3.ThemeName = "Metro";
-      this.checkBoxAdv3.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.ClientSize = new System.Drawing.Size(781, 526);
+      this.ClientSize = new System.Drawing.Size(1304, 562);
       this.Controls.Add(this.tabCtrlAppointment);
       this.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -1389,26 +1514,34 @@
       this.tbpProcedures.PerformLayout();
       this.panel2.ResumeLayout(false);
       this.panel2.PerformLayout();
-      this.pnlExtaction.ResumeLayout(false);
-      this.pnlRestoration.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.chbPorcelainFilling)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbCompositeFilling)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbAmalgamFilling)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbWisdomExtarction)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbComplexExtraction)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chbSimpleExtraction)).EndInit();
-      this.panel4.ResumeLayout(false);
-      this.panel4.PerformLayout();
+      this.pnlOrthopedic.ResumeLayout(false);
+      this.pnlOrthopedic.PerformLayout();
       this.pnlDiagnosis.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbXray)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbCleaning)).EndInit();
-      this.panel1.ResumeLayout(false);
       this.pnlImplantaion.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv3)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbFullMouthImplants)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbDoubleImplant)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbSingleImplant)).EndInit();
+      this.pnlRestoration.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.chbAmalgamFilling)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbPorcelainFilling)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbCompositeFilling)).EndInit();
+      this.pnlExtaction.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.chbWisdomExtarction)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbComplexExtraction)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbSimpleExtraction)).EndInit();
+      this.pnlWhitening.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.chbPeroxide40)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chbPeroxide25)).EndInit();
+      this.pnlSummaryDetials.ResumeLayout(false);
+      this.pnlSummaryDetials.PerformLayout();
+      this.panel1.ResumeLayout(false);
+      this.tbpBills.ResumeLayout(false);
+      this.panel3.ResumeLayout(false);
+      this.panel3.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -1481,7 +1614,7 @@
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbCleaning;
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbDiagnosis;
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbXray;
-    private System.Windows.Forms.Panel panel4;
+    private System.Windows.Forms.Panel pnlSummaryDetials;
     private System.Windows.Forms.Label lbSummary;
     private System.Windows.Forms.Label label14;
     private System.Windows.Forms.Panel pnlExtaction;
@@ -1494,8 +1627,15 @@
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbCompositeFilling;
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbAmalgamFilling;
     private System.Windows.Forms.Panel pnlImplantaion;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv1;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv2;
-    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv3;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbFullMouthImplants;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbDoubleImplant;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbSingleImplant;
+    private System.Windows.Forms.Panel pnlWhitening;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbPeroxide40;
+    private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbPeroxide25;
+    private System.Windows.Forms.Panel pnlOrthopedic;
+    private System.Windows.Forms.Label label15;
+    private System.Windows.Forms.Panel panel3;
+    private System.Windows.Forms.Label label20;
   }
 }
