@@ -19,9 +19,13 @@ namespace Dental_App.Doctors
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
   {
+  
+    public enum enPlan { Diagnosis=0, Extraction=1, Restoration=2, Whitening=3, Orthopedic=4, Implantation=5 }
+    private enPlan _Plan = enPlan.Diagnosis;
 
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
+
     private short res = 0;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
@@ -241,20 +245,59 @@ namespace Dental_App.Doctors
 
     private void btnDiagnosis_Click(object sender, EventArgs e)
     {
-      HideAllPlans();
-      pnlDiagnosis.Visible = true;
+      _Plan = enPlan.Diagnosis;  
+      HandlePlans();
     }
 
     private void btnExtraction_Click(object sender, EventArgs e)
     {
-      HideAllPlans();
-      pnlExtaction.Visible = true;
+      _Plan = enPlan.Extraction;
+      HandlePlans();
     }
 
-    private void HideAllPlans()
+
+    private void btnRestoration_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Restoration;
+      HandlePlans();
+    }
+
+    private void btnImplantation_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Implantation;
+      HandlePlans();
+    }
+
+    private void HandlePlans()
+    {
+      HideAllPanels();
+
+      switch (_Plan)
+      {
+        case enPlan.Diagnosis:
+          pnlDiagnosis.Visible = true;
+          break;
+
+        case enPlan.Extraction:
+          pnlExtaction.Visible = true;
+          break;
+
+        case enPlan.Restoration:
+          pnlRestoration.Visible = true;
+          break;
+
+        case enPlan.Implantation:
+          pnlImplantaion.Visible = true;
+          break;
+
+      }
+    }
+
+    private void HideAllPanels()
     {
       pnlDiagnosis.Visible = false;
       pnlExtaction.Visible = false;
+      pnlRestoration.Visible = false;
     }
 
   }
