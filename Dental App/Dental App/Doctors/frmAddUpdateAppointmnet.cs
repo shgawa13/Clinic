@@ -33,7 +33,7 @@ namespace Dental_App.Doctors
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
     private List<string> PlanList = new List<string>();
-    private int Cost = 0;
+    private int TotalCost = 0;
     private List<DentalPlan> PlanItem = new List<DentalPlan>();
     // AppointmentForm Can be opened from two places
     // From Schedule
@@ -56,18 +56,11 @@ namespace Dental_App.Doctors
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
-       List<DentalPlan> PlanItem = new List<DentalPlan>();
       _ResetDefualtValues();
-      CalcTotalCost();
-      
-      PlanItem.Add(new DentalPlan("Cleaning", 10));
-      PlanItem.Add(new DentalPlan("X-ray", 10));
-      PlanItem.Add(new DentalPlan("Diagnosis", 10));
-
+     // CalcTotalCost();
       
     }
 
-    
 
     // Reset Defualt values
     private void _ResetDefualtValues()
@@ -160,8 +153,12 @@ namespace Dental_App.Doctors
 
     private void iconSearch_Click(object sender, EventArgs e)
     {
-      _PatientID = int.Parse(tbSearch.Text.Trim());
-      _FindPatinet(_PatientID);
+      if(tbSearch.Text.Trim() != string.Empty)
+      {
+        _FindPatinet(_PatientID);
+        _PatientID = int.Parse(tbSearch.Text.Trim());
+
+      }
     }
 
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -185,41 +182,148 @@ namespace Dental_App.Doctors
       }
     }
 
+    
+    //-------------------------------------[ Procedures Tap ] --------------------------------------------//
+
     private void CalcTotalCost()
     {
-      lbCost.Text = $"${CalcDiagnosis()}";
+      TotalCost = CalcDiagnosis() + CalcExtraction();
+      lbCost.Text = $"${TotalCost}";
     }
 
    
-
+    // Calc Diagnosis Plan
     private short CalcDiagnosis()
     {
-      Cost = 0;
+      int Cost = 0;
     
-      Cost += (chbCleaning.Checked == true) ? int.Parse(chbCleaning.Tag.ToString()) : 0;
-      Cost += (chbXray.Checked == true) ? int.Parse(chbXray.Tag.ToString()) : 0;
-      Cost += (chbDiagnosis.Checked == true) ? int.Parse(chbDiagnosis.Tag.ToString()) : 0;
+      Cost += (chbCleaning.Checked) ? int.Parse(chbCleaning.Tag.ToString()) : 0;
+      Cost += (chbXray.Checked) ? int.Parse(chbXray.Tag.ToString()) : 0;
+      Cost += (chbDiagnosis.Checked) ? int.Parse(chbDiagnosis.Tag.ToString()) : 0;
      
       _UpdateSummary();
       return Convert.ToInt16(Cost);
     }
 
+    private short CalcExtraction()
+    {
+      int Cost = 0;
+      Cost += (chbSimpleExtraction.Checked) ? int.Parse(chbSimpleExtraction.Tag.ToString()) : 0;
+      Cost += (chbComplicatedExtrcation.Checked) ? int.Parse(chbComplicatedExtrcation.Tag.ToString()) : 0;
+      Cost += (chbComplexExtraction.Checked) ? int.Parse(chbComplexExtraction.Tag.ToString()) : 0;
+      Cost += (chbWisdomExtarction.Checked) ? int.Parse(chbWisdomExtarction.Tag.ToString()) : 0;
+
+      return Convert.ToInt16(Cost);
+    }
     
+    private short CalcRestoration()
+    {
+      int Cost = 0;
+      Cost += (chbAmalgamFilling.Checked) ? int.Parse(chbAmalgamFilling.Tag.ToString()) : 0;
+      Cost += (chbPorcelainFilling.Checked) ? int.Parse(chbPorcelainFilling.Tag.ToString()) : 0;
+      Cost += (chbCompositeFilling.Checked) ? int.Parse(chbCompositeFilling.Tag.ToString()) : 0;
+
+      return Convert.ToInt16(Cost);
+    }
+
+    private short CalcImplantation()
+    {
+      int Cost = 0;
+      Cost += (chbSingleImplant.Checked) ? int.Parse(chbSingleImplant.Tag.ToString()) : 0;
+      Cost += (chbDoubleImplant.Checked) ? int.Parse(chbDoubleImplant.Tag.ToString()) : 0;
+      Cost += (chbFullMouthImplants.Checked) ? int.Parse(chbFullMouthImplants.Tag.ToString()) : 0;
+
+      return Convert.ToInt16(Cost);
+    }
+
+    private short CalcWhitenig()
+    {
+      int Cost = 0;
+
+      Cost += (chbPeroxide25.Checked) ? int.Parse(chbPeroxide25.Tag.ToString()) : 0;
+      Cost += (chbPeroxide40.Checked) ? int.Parse(chbPeroxide40.Tag.ToString()) : 0;
+
+      return Convert.ToInt16(Cost);
+    }
+
     // checkboxs to handle TotalCost
+
     private void chbCleaning_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
     }
-
-    private void checkBoxAdv1_CheckStateChanged(object sender, EventArgs e)
+    private void chbXray_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
     }
 
-    private void checkBoxAdv2_CheckStateChanged(object sender, EventArgs e)
+    private void chbDiagnosis_CheckStateChanged(object sender, EventArgs e)
     {
       CalcTotalCost();
     }
+
+
+    private void chbPeroxide25_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbPeroxide40_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbCompositeFilling_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbPorcelainFilling_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbAmalgamFilling_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbSingleImplant_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbDoubleImplant_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbFullMouthImplants_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    
+    private void chbSimpleExtraction_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbComplicatedExtrcation_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbComplexExtraction_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
+    private void chbWisdomExtarction_CheckStateChanged(object sender, EventArgs e)
+    {
+      CalcTotalCost();
+    }
+
 
     // Update Summary 
 
@@ -324,7 +428,7 @@ namespace Dental_App.Doctors
       pnlOrthopedic.Visible = false;
     }
 
-    
+   
   }
 
   public class DentalPlan
