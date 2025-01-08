@@ -14,6 +14,7 @@ using GridScheduleSample;
 using Syncfusion.Windows.Forms.Schedule;
 using Business;
 using Syncfusion.WinForms.ListView;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace Dental_App.Doctors
 {
@@ -26,7 +27,6 @@ namespace Dental_App.Doctors
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
 
-    private short res = 0;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
@@ -45,8 +45,27 @@ namespace Dental_App.Doctors
       _ScheduleGrid = control;
       _SelectedAppointmentDate = AppointmentDate;
       _AppointmnetTime = AppointmentTime;
+      // ------------
+      chbCleaning.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbXray.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbDiagnosis.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbPeroxide25.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbPeroxide40.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbCompositeFilling.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbPorcelainFilling.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbAmalgamFilling.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbSingleImplant.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbDoubleImplant.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbFullMouthImplants.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbSimpleExtraction.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbComplicatedExtrcation.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbComplexExtraction.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbWisdomExtarction.CheckStateChanged += CheckBox_CheckStateChanged;
     }
-
+    private void CheckBox_CheckStateChanged(object sender, EventArgs e) 
+    { 
+      CalcTotalCost();
+    }
     public frmAddUpdateAppointmnet(ScheduleControl control, int PatientID)
     {
       InitializeComponent();
@@ -187,7 +206,7 @@ namespace Dental_App.Doctors
 
     private void CalcTotalCost()
     {
-      TotalCost = CalcDiagnosis() + CalcExtraction();
+      TotalCost = CalcDiagnosis();
       lbCost.Text = $"${TotalCost}";
     }
 
@@ -196,133 +215,103 @@ namespace Dental_App.Doctors
     private short CalcDiagnosis()
     {
       int Cost = 0;
-    
-      Cost += (chbCleaning.Checked) ? int.Parse(chbCleaning.Tag.ToString()) : 0;
-      Cost += (chbXray.Checked) ? int.Parse(chbXray.Tag.ToString()) : 0;
-      Cost += (chbDiagnosis.Checked) ? int.Parse(chbDiagnosis.Tag.ToString()) : 0;
+
+      CheckBoxAdv[] checkBoxes = { chbCleaning, chbXray, chbDiagnosis, chbSimpleExtraction,
+        chbComplicatedExtrcation, chbComplexExtraction, chbWisdomExtarction, chbAmalgamFilling,
+        chbPorcelainFilling, chbCompositeFilling, chbSingleImplant, chbDoubleImplant , chbFullMouthImplants,
+        chbPeroxide25, chbPeroxide40};
+
+      foreach(var checkBox in checkBoxes)
+      {
+        if (checkBox.Checked)
+        {
+          Cost += int.Parse(checkBox.Tag.ToString());
+        }
+      } 
      
       _UpdateSummary();
       return Convert.ToInt16(Cost);
     }
 
-    private short CalcExtraction()
-    {
-      int Cost = 0;
-      Cost += (chbSimpleExtraction.Checked) ? int.Parse(chbSimpleExtraction.Tag.ToString()) : 0;
-      Cost += (chbComplicatedExtrcation.Checked) ? int.Parse(chbComplicatedExtrcation.Tag.ToString()) : 0;
-      Cost += (chbComplexExtraction.Checked) ? int.Parse(chbComplexExtraction.Tag.ToString()) : 0;
-      Cost += (chbWisdomExtarction.Checked) ? int.Parse(chbWisdomExtarction.Tag.ToString()) : 0;
-
-      return Convert.ToInt16(Cost);
-    }
     
-    private short CalcRestoration()
-    {
-      int Cost = 0;
-      Cost += (chbAmalgamFilling.Checked) ? int.Parse(chbAmalgamFilling.Tag.ToString()) : 0;
-      Cost += (chbPorcelainFilling.Checked) ? int.Parse(chbPorcelainFilling.Tag.ToString()) : 0;
-      Cost += (chbCompositeFilling.Checked) ? int.Parse(chbCompositeFilling.Tag.ToString()) : 0;
-
-      return Convert.ToInt16(Cost);
-    }
-
-    private short CalcImplantation()
-    {
-      int Cost = 0;
-      Cost += (chbSingleImplant.Checked) ? int.Parse(chbSingleImplant.Tag.ToString()) : 0;
-      Cost += (chbDoubleImplant.Checked) ? int.Parse(chbDoubleImplant.Tag.ToString()) : 0;
-      Cost += (chbFullMouthImplants.Checked) ? int.Parse(chbFullMouthImplants.Tag.ToString()) : 0;
-
-      return Convert.ToInt16(Cost);
-    }
-
-    private short CalcWhitenig()
-    {
-      int Cost = 0;
-
-      Cost += (chbPeroxide25.Checked) ? int.Parse(chbPeroxide25.Tag.ToString()) : 0;
-      Cost += (chbPeroxide40.Checked) ? int.Parse(chbPeroxide40.Tag.ToString()) : 0;
-
-      return Convert.ToInt16(Cost);
-    }
 
     // checkboxs to handle TotalCost
 
-    private void chbCleaning_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
-    private void chbXray_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbCleaning_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
+    //private void chbXray_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbDiagnosis_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbDiagnosis_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
 
-    private void chbPeroxide25_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbPeroxide25_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbPeroxide40_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbPeroxide40_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbCompositeFilling_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbCompositeFilling_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbPorcelainFilling_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbPorcelainFilling_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbAmalgamFilling_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbAmalgamFilling_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbSingleImplant_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbSingleImplant_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbDoubleImplant_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbDoubleImplant_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbFullMouthImplants_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbFullMouthImplants_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
     
-    private void chbSimpleExtraction_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbSimpleExtraction_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbComplicatedExtrcation_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbComplicatedExtrcation_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbComplexExtraction_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbComplexExtraction_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
-    private void chbWisdomExtarction_CheckStateChanged(object sender, EventArgs e)
-    {
-      CalcTotalCost();
-    }
+    //private void chbWisdomExtarction_CheckStateChanged(object sender, EventArgs e)
+    //{
+    //  CalcTotalCost();
+    //}
 
 
     // Update Summary 

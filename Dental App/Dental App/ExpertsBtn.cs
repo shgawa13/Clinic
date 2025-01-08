@@ -16,6 +16,7 @@ namespace Dental_App
     private int borderSize = 0;
     private int borderRadius = 20;
     private Color borderColor = Color.PaleVioletRed;
+    private bool isChanging = false; // Flag to prevent infinite loop
 
     //Properties
     [Category("Expert Btn")]
@@ -24,8 +25,16 @@ namespace Dental_App
       get { return borderSize; }
       set
       {
-        borderSize = value;
-        this.Invalidate();
+        if (borderSize != value) // Check if the value has actually changed
+        {
+          borderSize = value;
+          if (!isChanging) // Avoid calling Invalidate if it's already in progress
+          {
+            isChanging = true;
+            this.Invalidate();
+            isChanging = false;
+          }
+        }
       }
     }
 
@@ -35,8 +44,16 @@ namespace Dental_App
       get { return borderRadius; }
       set
       {
-        borderRadius = value;
-        this.Invalidate();
+        if (borderRadius != value)
+        {
+          borderRadius = value;
+          if (!isChanging)
+          {
+            isChanging = true;
+            this.Invalidate();
+            isChanging = false;
+          }
+        }
       }
     }
 
@@ -46,8 +63,16 @@ namespace Dental_App
       get { return borderColor; }
       set
       {
-        borderColor = value;
-        this.Invalidate();
+        if (borderColor != value)
+        {
+          borderColor = value;
+          if (!isChanging)
+          {
+            isChanging = true;
+            this.Invalidate();
+            isChanging = false;
+          }
+        }
       }
     }
     [Category("Expert Btn")]

@@ -173,7 +173,7 @@
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(1281, 423);
+      this.groupBox1.Size = new System.Drawing.Size(701, 423);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -203,12 +203,12 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(1152, 64);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(572, 64);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(117, 343);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(1152, 64);
+      this.tbNote.Size = new System.Drawing.Size(572, 64);
       this.tbNote.TabIndex = 149;
       // 
       // iconNote
@@ -274,7 +274,7 @@
       this.splitContainer1.Panel2.Controls.Add(this.iconButton8);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton1);
       this.splitContainer1.Panel2.Controls.Add(this.label17);
-      this.splitContainer1.Size = new System.Drawing.Size(1255, 281);
+      this.splitContainer1.Size = new System.Drawing.Size(675, 281);
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
@@ -507,7 +507,7 @@
       this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
       this.panelSearch.Location = new System.Drawing.Point(0, 0);
       this.panelSearch.Name = "panelSearch";
-      this.panelSearch.Size = new System.Drawing.Size(1255, 41);
+      this.panelSearch.Size = new System.Drawing.Size(675, 41);
       this.panelSearch.TabIndex = 150;
       // 
       // iconSearch
@@ -782,7 +782,7 @@
       // tabCtrlAppointment
       // 
       this.tabCtrlAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(1359, 562);
+      this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(779, 562);
       this.tabCtrlAppointment.Controls.Add(this.tbpAddAppointment);
       this.tabCtrlAppointment.Controls.Add(this.tbpProcedures);
       this.tabCtrlAppointment.Controls.Add(this.tbpBills);
@@ -791,7 +791,7 @@
       this.tabCtrlAppointment.Location = new System.Drawing.Point(0, 0);
       this.tabCtrlAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
       this.tabCtrlAppointment.Name = "tabCtrlAppointment";
-      this.tabCtrlAppointment.Size = new System.Drawing.Size(1359, 562);
+      this.tabCtrlAppointment.Size = new System.Drawing.Size(779, 562);
       this.tabCtrlAppointment.TabIndex = 116;
       this.tabCtrlAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
       this.tabCtrlAppointment.ThemeName = "TabRendererMetro";
@@ -809,7 +809,7 @@
       this.tbpAddAppointment.Location = new System.Drawing.Point(1, 29);
       this.tbpAddAppointment.Name = "tbpAddAppointment";
       this.tbpAddAppointment.ShowCloseButton = true;
-      this.tbpAddAppointment.Size = new System.Drawing.Size(783, 531);
+      this.tbpAddAppointment.Size = new System.Drawing.Size(776, 531);
       this.tbpAddAppointment.TabIndex = 1;
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
@@ -867,7 +867,7 @@
       this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
       this.tbpProcedures.Name = "tbpProcedures";
       this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(1356, 531);
+      this.tbpProcedures.Size = new System.Drawing.Size(776, 531);
       this.tbpProcedures.TabIndex = 2;
       this.tbpProcedures.Text = "Procedures";
       this.tbpProcedures.ThemesEnabled = false;
@@ -938,7 +938,6 @@
       this.chbDiagnosis.Text = " Diagnosis";
       this.chbDiagnosis.ThemeName = "Metro";
       this.chbDiagnosis.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbDiagnosis.CheckStateChanged += new System.EventHandler(this.chbDiagnosis_CheckStateChanged);
       // 
       // chbXray
       // 
@@ -957,7 +956,6 @@
       this.chbXray.Text = " X-ray";
       this.chbXray.ThemeName = "Metro";
       this.chbXray.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbXray.CheckStateChanged += new System.EventHandler(this.chbXray_CheckStateChanged);
       // 
       // chbCleaning
       // 
@@ -976,7 +974,6 @@
       this.chbCleaning.Text = " Cleaning";
       this.chbCleaning.ThemeName = "Metro";
       this.chbCleaning.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbCleaning.CheckStateChanged += new System.EventHandler(this.chbCleaning_CheckStateChanged);
       // 
       // pnlImplantaion
       // 
@@ -1008,7 +1005,6 @@
       this.chbFullMouthImplants.Text = " Full Mouth Implants";
       this.chbFullMouthImplants.ThemeName = "Metro";
       this.chbFullMouthImplants.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbFullMouthImplants.CheckStateChanged += new System.EventHandler(this.chbFullMouthImplants_CheckStateChanged);
       // 
       // chbDoubleImplant
       // 
@@ -1027,7 +1023,6 @@
       this.chbDoubleImplant.Text = " Double Implant";
       this.chbDoubleImplant.ThemeName = "Metro";
       this.chbDoubleImplant.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbDoubleImplant.CheckStateChanged += new System.EventHandler(this.chbDoubleImplant_CheckStateChanged);
       // 
       // chbSingleImplant
       // 
@@ -1046,7 +1041,6 @@
       this.chbSingleImplant.Text = " Single tooth Implant";
       this.chbSingleImplant.ThemeName = "Metro";
       this.chbSingleImplant.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbSingleImplant.CheckStateChanged += new System.EventHandler(this.chbSingleImplant_CheckStateChanged);
       // 
       // label14
       // 
@@ -1089,7 +1083,6 @@
       this.chbAmalgamFilling.Text = " Amalgam Filling";
       this.chbAmalgamFilling.ThemeName = "Metro";
       this.chbAmalgamFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbAmalgamFilling.CheckStateChanged += new System.EventHandler(this.chbAmalgamFilling_CheckStateChanged);
       // 
       // chbPorcelainFilling
       // 
@@ -1108,7 +1101,6 @@
       this.chbPorcelainFilling.Text = " Porcelain Filling";
       this.chbPorcelainFilling.ThemeName = "Metro";
       this.chbPorcelainFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbPorcelainFilling.CheckStateChanged += new System.EventHandler(this.chbPorcelainFilling_CheckStateChanged);
       // 
       // chbCompositeFilling
       // 
@@ -1127,7 +1119,6 @@
       this.chbCompositeFilling.Text = " Composite Filling";
       this.chbCompositeFilling.ThemeName = "Metro";
       this.chbCompositeFilling.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbCompositeFilling.CheckStateChanged += new System.EventHandler(this.chbCompositeFilling_CheckStateChanged);
       // 
       // pnlExtaction
       // 
@@ -1160,7 +1151,6 @@
       this.chbWisdomExtarction.Text = "Wisdom tooth extraction";
       this.chbWisdomExtarction.ThemeName = "Metro";
       this.chbWisdomExtarction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbWisdomExtarction.CheckStateChanged += new System.EventHandler(this.chbWisdomExtarction_CheckStateChanged);
       // 
       // chbComplexExtraction
       // 
@@ -1179,7 +1169,6 @@
       this.chbComplexExtraction.Text = " Complex surgical tooth extraction";
       this.chbComplexExtraction.ThemeName = "Metro";
       this.chbComplexExtraction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbComplexExtraction.CheckStateChanged += new System.EventHandler(this.chbComplexExtraction_CheckStateChanged);
       // 
       // chbComplicatedExtrcation
       // 
@@ -1198,7 +1187,6 @@
       this.chbComplicatedExtrcation.Text = " Complicated surgical extraction";
       this.chbComplicatedExtrcation.ThemeName = "Metro";
       this.chbComplicatedExtrcation.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbComplicatedExtrcation.CheckStateChanged += new System.EventHandler(this.chbComplicatedExtrcation_CheckStateChanged);
       // 
       // chbSimpleExtraction
       // 
@@ -1217,7 +1205,6 @@
       this.chbSimpleExtraction.Text = " Simple Extraction";
       this.chbSimpleExtraction.ThemeName = "Metro";
       this.chbSimpleExtraction.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbSimpleExtraction.CheckStateChanged += new System.EventHandler(this.chbSimpleExtraction_CheckStateChanged);
       // 
       // pnlWhitening
       // 
@@ -1248,7 +1235,6 @@
       this.chbPeroxide40.Text = " Peroxide Level 40%";
       this.chbPeroxide40.ThemeName = "Metro";
       this.chbPeroxide40.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbPeroxide40.CheckStateChanged += new System.EventHandler(this.chbPeroxide40_CheckStateChanged);
       // 
       // chbPeroxide25
       // 
@@ -1267,7 +1253,6 @@
       this.chbPeroxide25.Text = " Peroxide Level  25%";
       this.chbPeroxide25.ThemeName = "Metro";
       this.chbPeroxide25.ThemeStyle.BorderColor = System.Drawing.Color.Transparent;
-      this.chbPeroxide25.CheckStateChanged += new System.EventHandler(this.chbPeroxide25_CheckStateChanged);
       // 
       // pnlSummaryDetials
       // 
@@ -1312,7 +1297,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(1356, 232);
+      this.panel1.Size = new System.Drawing.Size(776, 232);
       this.panel1.TabIndex = 131;
       // 
       // btnDiagnosis
@@ -1460,7 +1445,7 @@
       this.tbpBills.Location = new System.Drawing.Point(1, 29);
       this.tbpBills.Name = "tbpBills";
       this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(783, 531);
+      this.tbpBills.Size = new System.Drawing.Size(776, 531);
       this.tbpBills.TabIndex = 3;
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
@@ -1490,7 +1475,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.ClientSize = new System.Drawing.Size(1359, 562);
+      this.ClientSize = new System.Drawing.Size(779, 562);
       this.Controls.Add(this.tabCtrlAppointment);
       this.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
