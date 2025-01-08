@@ -173,7 +173,7 @@
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(701, 423);
+      this.groupBox1.Size = new System.Drawing.Size(756, 423);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -203,12 +203,12 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(572, 64);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(627, 64);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(117, 343);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(572, 64);
+      this.tbNote.Size = new System.Drawing.Size(627, 64);
       this.tbNote.TabIndex = 149;
       // 
       // iconNote
@@ -274,7 +274,7 @@
       this.splitContainer1.Panel2.Controls.Add(this.iconButton8);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton1);
       this.splitContainer1.Panel2.Controls.Add(this.label17);
-      this.splitContainer1.Size = new System.Drawing.Size(675, 281);
+      this.splitContainer1.Size = new System.Drawing.Size(730, 281);
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
@@ -507,7 +507,7 @@
       this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
       this.panelSearch.Location = new System.Drawing.Point(0, 0);
       this.panelSearch.Name = "panelSearch";
-      this.panelSearch.Size = new System.Drawing.Size(675, 41);
+      this.panelSearch.Size = new System.Drawing.Size(730, 41);
       this.panelSearch.TabIndex = 150;
       // 
       // iconSearch
@@ -1454,7 +1454,7 @@
       // 
       this.panel3.BackColor = System.Drawing.Color.Azure;
       this.panel3.Controls.Add(this.label20);
-      this.panel3.Location = new System.Drawing.Point(172, 99);
+      this.panel3.Location = new System.Drawing.Point(11, 252);
       this.panel3.Name = "panel3";
       this.panel3.Size = new System.Drawing.Size(254, 164);
       this.panel3.TabIndex = 12;
