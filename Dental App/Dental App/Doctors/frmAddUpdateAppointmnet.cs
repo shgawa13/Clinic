@@ -46,22 +46,29 @@ namespace Dental_App.Doctors
       _SelectedAppointmentDate = AppointmentDate;
       _AppointmnetTime = AppointmentTime;
       // ------------
+      CheckBoxEvent();
+    }
+
+    private void CheckBoxEvent()
+    {
       chbCleaning.CheckStateChanged += CheckBox_CheckStateChanged;
       chbXray.CheckStateChanged += CheckBox_CheckStateChanged;
       chbDiagnosis.CheckStateChanged += CheckBox_CheckStateChanged;
       chbPeroxide25.CheckStateChanged += CheckBox_CheckStateChanged;
       chbPeroxide40.CheckStateChanged += CheckBox_CheckStateChanged;
-      chbCompositeFilling.CheckStateChanged += CheckBox_CheckStateChanged; 
-      chbPorcelainFilling.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbCompositeFilling.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbPorcelainFilling.CheckStateChanged += CheckBox_CheckStateChanged;
       chbAmalgamFilling.CheckStateChanged += CheckBox_CheckStateChanged;
-      chbSingleImplant.CheckStateChanged += CheckBox_CheckStateChanged; 
-      chbDoubleImplant.CheckStateChanged += CheckBox_CheckStateChanged; 
-      chbFullMouthImplants.CheckStateChanged += CheckBox_CheckStateChanged; 
+      chbSingleImplant.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbDoubleImplant.CheckStateChanged += CheckBox_CheckStateChanged;
+      chbFullMouthImplants.CheckStateChanged += CheckBox_CheckStateChanged;
       chbSimpleExtraction.CheckStateChanged += CheckBox_CheckStateChanged;
       chbComplicatedExtrcation.CheckStateChanged += CheckBox_CheckStateChanged;
       chbComplexExtraction.CheckStateChanged += CheckBox_CheckStateChanged;
       chbWisdomExtarction.CheckStateChanged += CheckBox_CheckStateChanged;
+
     }
+
     private void CheckBox_CheckStateChanged(object sender, EventArgs e) 
     { 
       CalcTotalCost();
@@ -76,7 +83,6 @@ namespace Dental_App.Doctors
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
-     // CalcTotalCost();
       
     }
 
@@ -206,13 +212,13 @@ namespace Dental_App.Doctors
 
     private void CalcTotalCost()
     {
-      TotalCost = CalcDiagnosis();
+      TotalCost = CalcPlanCost();
       lbCost.Text = $"${TotalCost}";
     }
 
    
-    // Calc Diagnosis Plan
-    private short CalcDiagnosis()
+    // Handle CheckBoxes and Plan Cost
+    private short CalcPlanCost()
     {
       int Cost = 0;
 
@@ -233,111 +239,34 @@ namespace Dental_App.Doctors
       return Convert.ToInt16(Cost);
     }
 
-    
-
-    // checkboxs to handle TotalCost
-
-    //private void chbCleaning_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-    //private void chbXray_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbDiagnosis_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-
-    //private void chbPeroxide25_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbPeroxide40_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbCompositeFilling_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbPorcelainFilling_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbAmalgamFilling_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbSingleImplant_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbDoubleImplant_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbFullMouthImplants_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    
-    //private void chbSimpleExtraction_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbComplicatedExtrcation_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbComplexExtraction_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
-
-    //private void chbWisdomExtarction_CheckStateChanged(object sender, EventArgs e)
-    //{
-    //  CalcTotalCost();
-    //}
 
 
     // Update Summary 
-
     private void _UpdateSummary()
     {
-      string Summarylable = "";
 
-      if(chbCleaning.Checked)
+      string Summarylable = "";
+      CheckBoxAdv[] checkBoxes = { chbCleaning, chbXray, chbDiagnosis, chbSimpleExtraction,
+        chbComplicatedExtrcation, chbComplexExtraction, chbWisdomExtarction, chbAmalgamFilling,
+        chbPorcelainFilling, chbCompositeFilling, chbSingleImplant, chbDoubleImplant , chbFullMouthImplants,
+        chbPeroxide25, chbPeroxide40};
+
+      foreach (var checkBox in checkBoxes)
       {
-        Summarylable += "\tCleaning \t\t$10\n";
-      }
-      if(chbXray.Checked)
-      {
-        Summarylable += "\tX-ray \t\t$10\n";
-      }
-      if(chbDiagnosis.Checked)
-      {
-        Summarylable += "\tDiagnosis \t\t$15\n";
+        if (checkBox.Checked)
+        {
+          Summarylable += $"{checkBox.Text}  $ {checkBox.Tag}.\n";
+        }
       }
 
       lbSummary.Text = Summarylable;
+      
+
     }
 
+
     private void btnDiagnosis_Click(object sender, EventArgs e)
-    {
+    { 
       _Plan = enPlan.Diagnosis;  
       HandlePlans();
     }
