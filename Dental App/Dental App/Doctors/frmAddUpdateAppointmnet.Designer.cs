@@ -29,15 +29,10 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      Syncfusion.Windows.Forms.PdfViewer.MessageBoxSettings messageBoxSettings1 = new Syncfusion.Windows.Forms.PdfViewer.MessageBoxSettings();
-      Syncfusion.Windows.PdfViewer.PdfViewerPrinterSettings pdfViewerPrinterSettings1 = new Syncfusion.Windows.PdfViewer.PdfViewerPrinterSettings();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdateAppointmnet));
-      Syncfusion.Windows.Forms.PdfViewer.TextSearchSettings textSearchSettings1 = new Syncfusion.Windows.Forms.PdfViewer.TextSearchSettings();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.lblTitle = new System.Windows.Forms.Label();
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-      this.iconNote = new FontAwesome.Sharp.IconButton();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.label13 = new System.Windows.Forms.Label();
       this.cbLocation = new System.Windows.Forms.ComboBox();
@@ -45,10 +40,6 @@
       this.cbEndTime = new System.Windows.Forms.ComboBox();
       this.cbStartTime = new System.Windows.Forms.ComboBox();
       this.label5 = new System.Windows.Forms.Label();
-      this.iconLogo = new FontAwesome.Sharp.IconButton();
-      this.iconButton3 = new FontAwesome.Sharp.IconButton();
-      this.iconButton6 = new FontAwesome.Sharp.IconButton();
-      this.iconStartTime = new FontAwesome.Sharp.IconButton();
       this.dtAppointmentDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
       this.label8 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
@@ -58,28 +49,21 @@
       this.lblPhone = new System.Windows.Forms.Label();
       this.lblNationalNo = new System.Windows.Forms.Label();
       this.panelSearch = new System.Windows.Forms.Panel();
-      this.iconSearch = new FontAwesome.Sharp.IconButton();
       this.tbSearch = new System.Windows.Forms.TextBox();
       this.label11 = new System.Windows.Forms.Label();
       this.label10 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.lblPatinetID = new System.Windows.Forms.Label();
-      this.iconButton4 = new FontAwesome.Sharp.IconButton();
-      this.iconButton5 = new FontAwesome.Sharp.IconButton();
-      this.iconButton2 = new FontAwesome.Sharp.IconButton();
-      this.iconButton7 = new FontAwesome.Sharp.IconButton();
       this.label19 = new System.Windows.Forms.Label();
       this.label18 = new System.Windows.Forms.Label();
-      this.iconButton8 = new FontAwesome.Sharp.IconButton();
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.label17 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.label6 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-      this.tabCtrlAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+      this.tcAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.panel2 = new System.Windows.Forms.Panel();
@@ -110,19 +94,32 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.lb = new System.Windows.Forms.Label();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.panel3 = new System.Windows.Forms.Panel();
+      this.pnlBillSummary = new System.Windows.Forms.Panel();
       this.label20 = new System.Windows.Forms.Label();
       this.lbSummary = new System.Windows.Forms.Label();
       this.pnlSummaryDetials = new System.Windows.Forms.Panel();
-      this.btnSave = new Dental_App.ExpertsBtn();
-      this.btnClose = new Dental_App.ExpertsBtn();
+      this.iconNote = new FontAwesome.Sharp.IconButton();
+      this.iconLogo = new FontAwesome.Sharp.IconButton();
+      this.iconButton3 = new FontAwesome.Sharp.IconButton();
+      this.iconButton6 = new FontAwesome.Sharp.IconButton();
+      this.iconStartTime = new FontAwesome.Sharp.IconButton();
+      this.iconSearch = new FontAwesome.Sharp.IconButton();
+      this.iconButton4 = new FontAwesome.Sharp.IconButton();
+      this.iconButton5 = new FontAwesome.Sharp.IconButton();
+      this.iconButton2 = new FontAwesome.Sharp.IconButton();
+      this.iconButton7 = new FontAwesome.Sharp.IconButton();
+      this.iconButton8 = new FontAwesome.Sharp.IconButton();
+      this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      this.homeBtn = new System.Windows.Forms.PictureBox();
+      this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.btnSteps = new Dental_App.ExpertsBtn();
       this.btnDiagnosis = new Dental_App.ExpertsBtn();
       this.btnWhitening = new Dental_App.ExpertsBtn();
       this.btnRestoration = new Dental_App.ExpertsBtn();
       this.btnImplantation = new Dental_App.ExpertsBtn();
       this.Orthopedic = new Dental_App.ExpertsBtn();
       this.btnExtraction = new Dental_App.ExpertsBtn();
-      this.pdfViewerControl1 = new Syncfusion.Windows.Forms.PdfViewer.PdfViewerControl();
+      this.btnPrintBill = new Dental_App.ExpertsBtn();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -131,8 +128,8 @@
       this.splitContainer1.SuspendLayout();
       this.panelSearch.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.tabCtrlAppointment)).BeginInit();
-      this.tabCtrlAppointment.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.tcAppointment)).BeginInit();
+      this.tcAppointment.SuspendLayout();
       this.tbpAddAppointment.SuspendLayout();
       this.tbpProcedures.SuspendLayout();
       this.panel2.SuspendLayout();
@@ -159,8 +156,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.chbPeroxide25)).BeginInit();
       this.panel1.SuspendLayout();
       this.tbpBills.SuspendLayout();
-      this.panel3.SuspendLayout();
+      this.pnlBillSummary.SuspendLayout();
       this.pnlSummaryDetials.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -178,7 +176,7 @@
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(754, 423);
+      this.groupBox1.Size = new System.Drawing.Size(754, 476);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -208,28 +206,13 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(625, 64);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(625, 126);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(117, 343);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(625, 64);
+      this.tbNote.Size = new System.Drawing.Size(625, 126);
       this.tbNote.TabIndex = 149;
-      // 
-      // iconNote
-      // 
-      this.iconNote.FlatAppearance.BorderSize = 0;
-      this.iconNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconNote.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconNote.IconChar = FontAwesome.Sharp.IconChar.StickyNote;
-      this.iconNote.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconNote.IconSize = 31;
-      this.iconNote.Location = new System.Drawing.Point(21, 343);
-      this.iconNote.Name = "iconNote";
-      this.iconNote.Size = new System.Drawing.Size(34, 27);
-      this.iconNote.TabIndex = 148;
-      this.iconNote.UseVisualStyleBackColor = true;
       // 
       // splitContainer1
       // 
@@ -362,65 +345,6 @@
       this.label5.TabIndex = 145;
       this.label5.Text = "Start Time:";
       // 
-      // iconLogo
-      // 
-      this.iconLogo.FlatAppearance.BorderSize = 0;
-      this.iconLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconLogo.IconChar = FontAwesome.Sharp.IconChar.UserMd;
-      this.iconLogo.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconLogo.IconSize = 31;
-      this.iconLogo.Location = new System.Drawing.Point(8, 83);
-      this.iconLogo.Name = "iconLogo";
-      this.iconLogo.Size = new System.Drawing.Size(35, 35);
-      this.iconLogo.TabIndex = 128;
-      this.iconLogo.UseVisualStyleBackColor = true;
-      // 
-      // iconButton3
-      // 
-      this.iconButton3.FlatAppearance.BorderSize = 0;
-      this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
-      this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton3.IconSize = 31;
-      this.iconButton3.Location = new System.Drawing.Point(326, 48);
-      this.iconButton3.Name = "iconButton3";
-      this.iconButton3.Size = new System.Drawing.Size(34, 32);
-      this.iconButton3.TabIndex = 144;
-      this.iconButton3.UseVisualStyleBackColor = true;
-      // 
-      // iconButton6
-      // 
-      this.iconButton6.FlatAppearance.BorderSize = 0;
-      this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-      this.iconButton6.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton6.IconSize = 31;
-      this.iconButton6.Location = new System.Drawing.Point(7, 7);
-      this.iconButton6.Name = "iconButton6";
-      this.iconButton6.Size = new System.Drawing.Size(34, 32);
-      this.iconButton6.TabIndex = 143;
-      this.iconButton6.UseVisualStyleBackColor = true;
-      // 
-      // iconStartTime
-      // 
-      this.iconStartTime.FlatAppearance.BorderSize = 0;
-      this.iconStartTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconStartTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconStartTime.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
-      this.iconStartTime.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconStartTime.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconStartTime.IconSize = 31;
-      this.iconStartTime.Location = new System.Drawing.Point(8, 48);
-      this.iconStartTime.Name = "iconStartTime";
-      this.iconStartTime.Size = new System.Drawing.Size(34, 32);
-      this.iconStartTime.TabIndex = 142;
-      this.iconStartTime.UseVisualStyleBackColor = true;
-      // 
       // dtAppointmentDate
       // 
       this.dtAppointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -515,23 +439,6 @@
       this.panelSearch.Size = new System.Drawing.Size(728, 41);
       this.panelSearch.TabIndex = 150;
       // 
-      // iconSearch
-      // 
-      this.iconSearch.BackColor = System.Drawing.Color.Gainsboro;
-      this.iconSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-      this.iconSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-      this.iconSearch.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconSearch.IconSize = 25;
-      this.iconSearch.Location = new System.Drawing.Point(299, 6);
-      this.iconSearch.Name = "iconSearch";
-      this.iconSearch.Size = new System.Drawing.Size(42, 28);
-      this.iconSearch.TabIndex = 151;
-      this.iconSearch.UseVisualStyleBackColor = false;
-      this.iconSearch.Click += new System.EventHandler(this.iconSearch_Click);
-      // 
       // tbSearch
       // 
       this.tbSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
@@ -593,66 +500,6 @@
       this.lblPatinetID.TabIndex = 143;
       this.lblPatinetID.Text = "???";
       // 
-      // iconButton4
-      // 
-      this.iconButton4.FlatAppearance.BorderSize = 0;
-      this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Ideal;
-      this.iconButton4.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton4.IconSize = 25;
-      this.iconButton4.Location = new System.Drawing.Point(7, 111);
-      this.iconButton4.Name = "iconButton4";
-      this.iconButton4.Size = new System.Drawing.Size(20, 21);
-      this.iconButton4.TabIndex = 140;
-      this.iconButton4.UseVisualStyleBackColor = true;
-      // 
-      // iconButton5
-      // 
-      this.iconButton5.FlatAppearance.BorderSize = 0;
-      this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.MailBulk;
-      this.iconButton5.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton5.IconSize = 25;
-      this.iconButton5.Location = new System.Drawing.Point(454, 109);
-      this.iconButton5.Name = "iconButton5";
-      this.iconButton5.Size = new System.Drawing.Size(19, 24);
-      this.iconButton5.TabIndex = 142;
-      this.iconButton5.UseVisualStyleBackColor = true;
-      // 
-      // iconButton2
-      // 
-      this.iconButton2.FlatAppearance.BorderSize = 0;
-      this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
-      this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton2.IconSize = 25;
-      this.iconButton2.Location = new System.Drawing.Point(215, 55);
-      this.iconButton2.Name = "iconButton2";
-      this.iconButton2.Size = new System.Drawing.Size(24, 27);
-      this.iconButton2.TabIndex = 133;
-      this.iconButton2.UseVisualStyleBackColor = true;
-      // 
-      // iconButton7
-      // 
-      this.iconButton7.FlatAppearance.BorderSize = 0;
-      this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Phone;
-      this.iconButton7.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton7.IconSize = 25;
-      this.iconButton7.Location = new System.Drawing.Point(247, 105);
-      this.iconButton7.Name = "iconButton7";
-      this.iconButton7.Size = new System.Drawing.Size(20, 32);
-      this.iconButton7.TabIndex = 141;
-      this.iconButton7.UseVisualStyleBackColor = true;
-      // 
       // label19
       // 
       this.label19.AutoSize = true;
@@ -672,36 +519,6 @@
       this.label18.Size = new System.Drawing.Size(57, 21);
       this.label18.TabIndex = 4;
       this.label18.Text = "Email:";
-      // 
-      // iconButton8
-      // 
-      this.iconButton8.FlatAppearance.BorderSize = 0;
-      this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
-      this.iconButton8.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton8.IconSize = 25;
-      this.iconButton8.Location = new System.Drawing.Point(8, 55);
-      this.iconButton8.Name = "iconButton8";
-      this.iconButton8.Size = new System.Drawing.Size(18, 27);
-      this.iconButton8.TabIndex = 139;
-      this.iconButton8.UseVisualStyleBackColor = true;
-      // 
-      // iconButton1
-      // 
-      this.iconButton1.FlatAppearance.BorderSize = 0;
-      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
-      this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 25;
-      this.iconButton1.Location = new System.Drawing.Point(7, 55);
-      this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Size = new System.Drawing.Size(18, 27);
-      this.iconButton1.TabIndex = 139;
-      this.iconButton1.UseVisualStyleBackColor = true;
       // 
       // label17
       // 
@@ -757,37 +574,35 @@
       // 
       this.errorProvider1.ContainerControl = this;
       // 
-      // tabCtrlAppointment
+      // tcAppointment
       // 
-      this.tabCtrlAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tabCtrlAppointment.BeforeTouchSize = new System.Drawing.Size(777, 562);
-      this.tabCtrlAppointment.Controls.Add(this.tbpAddAppointment);
-      this.tabCtrlAppointment.Controls.Add(this.tbpProcedures);
-      this.tabCtrlAppointment.Controls.Add(this.tbpBills);
-      this.tabCtrlAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tabCtrlAppointment.FocusOnTabClick = false;
-      this.tabCtrlAppointment.Location = new System.Drawing.Point(0, 0);
-      this.tabCtrlAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-      this.tabCtrlAppointment.Name = "tabCtrlAppointment";
-      this.tabCtrlAppointment.Size = new System.Drawing.Size(777, 562);
-      this.tabCtrlAppointment.TabIndex = 116;
-      this.tabCtrlAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
-      this.tabCtrlAppointment.ThemeName = "TabRendererMetro";
-      this.tabCtrlAppointment.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
+      this.tcAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(777, 607);
+      this.tcAppointment.Controls.Add(this.tbpAddAppointment);
+      this.tcAppointment.Controls.Add(this.tbpProcedures);
+      this.tcAppointment.Controls.Add(this.tbpBills);
+      this.tcAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tcAppointment.FocusOnTabClick = false;
+      this.tcAppointment.Location = new System.Drawing.Point(0, 0);
+      this.tcAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+      this.tcAppointment.Name = "tcAppointment";
+      this.tcAppointment.Size = new System.Drawing.Size(777, 607);
+      this.tcAppointment.TabIndex = 116;
+      this.tcAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
+      this.tcAppointment.ThemeName = "TabRendererMetro";
+      this.tcAppointment.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
       // 
       // tbpAddAppointment
       // 
       this.tbpAddAppointment.BackColor = System.Drawing.SystemColors.Control;
-      this.tbpAddAppointment.Controls.Add(this.btnSave);
       this.tbpAddAppointment.Controls.Add(this.groupBox1);
-      this.tbpAddAppointment.Controls.Add(this.btnClose);
       this.tbpAddAppointment.ForeColor = System.Drawing.SystemColors.ControlText;
       this.tbpAddAppointment.Image = null;
       this.tbpAddAppointment.ImageSize = new System.Drawing.Size(16, 16);
       this.tbpAddAppointment.Location = new System.Drawing.Point(1, 29);
       this.tbpAddAppointment.Name = "tbpAddAppointment";
       this.tbpAddAppointment.ShowCloseButton = true;
-      this.tbpAddAppointment.Size = new System.Drawing.Size(774, 531);
+      this.tbpAddAppointment.Size = new System.Drawing.Size(774, 576);
       this.tbpAddAppointment.TabIndex = 1;
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
@@ -805,7 +620,7 @@
       this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
       this.tbpProcedures.Name = "tbpProcedures";
       this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(774, 531);
+      this.tbpProcedures.Size = new System.Drawing.Size(774, 576);
       this.tbpProcedures.TabIndex = 2;
       this.tbpProcedures.Text = "Procedures";
       this.tbpProcedures.ThemesEnabled = false;
@@ -1196,7 +1011,7 @@
       // 
       this.lbCost.AutoSize = true;
       this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbCost.Location = new System.Drawing.Point(705, 488);
+      this.lbCost.Location = new System.Drawing.Point(87, 495);
       this.lbCost.Name = "lbCost";
       this.lbCost.Size = new System.Drawing.Size(34, 25);
       this.lbCost.TabIndex = 5;
@@ -1221,7 +1036,7 @@
       // 
       this.lb.AutoSize = true;
       this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(628, 488);
+      this.lb.Location = new System.Drawing.Point(14, 495);
       this.lb.Name = "lb";
       this.lb.Size = new System.Drawing.Size(56, 25);
       this.lb.TabIndex = 4;
@@ -1229,37 +1044,41 @@
       // 
       // tbpBills
       // 
-      this.tbpBills.BackColor = System.Drawing.SystemColors.Control;
-      this.tbpBills.Controls.Add(this.pdfViewerControl1);
-      this.tbpBills.Controls.Add(this.panel3);
+      this.tbpBills.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.tbpBills.Controls.Add(this.btnPrintBill);
+      this.tbpBills.Controls.Add(this.pnlBillSummary);
       this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.errorProvider1.SetIconAlignment(this.tbpBills, System.Windows.Forms.ErrorIconAlignment.TopLeft);
       this.tbpBills.Image = null;
       this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
       this.tbpBills.Location = new System.Drawing.Point(1, 29);
       this.tbpBills.Name = "tbpBills";
       this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(774, 531);
+      this.tbpBills.Size = new System.Drawing.Size(774, 576);
       this.tbpBills.TabIndex = 3;
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
       // 
-      // panel3
+      // pnlBillSummary
       // 
-      this.panel3.BackColor = System.Drawing.Color.Azure;
-      this.panel3.Controls.Add(this.label20);
-      this.panel3.Location = new System.Drawing.Point(510, 14);
-      this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(254, 164);
-      this.panel3.TabIndex = 12;
+      this.pnlBillSummary.BackColor = System.Drawing.Color.Azure;
+      this.pnlBillSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.pnlBillSummary.Controls.Add(this.homeBtn);
+      this.pnlBillSummary.Controls.Add(this.label20);
+      this.pnlBillSummary.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.pnlBillSummary.Location = new System.Drawing.Point(20, 18);
+      this.pnlBillSummary.Name = "pnlBillSummary";
+      this.pnlBillSummary.Size = new System.Drawing.Size(517, 446);
+      this.pnlBillSummary.TabIndex = 12;
       // 
       // label20
       // 
       this.label20.AutoSize = true;
-      this.label20.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label20.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label20.ForeColor = System.Drawing.Color.Black;
-      this.label20.Location = new System.Drawing.Point(3, 13);
+      this.label20.Location = new System.Drawing.Point(3, 112);
       this.label20.Name = "label20";
-      this.label20.Size = new System.Drawing.Size(87, 21);
+      this.label20.Size = new System.Drawing.Size(102, 25);
       this.label20.TabIndex = 12;
       this.label20.Text = "Summary:";
       // 
@@ -1285,45 +1104,237 @@
       this.pnlSummaryDetials.Size = new System.Drawing.Size(444, 164);
       this.pnlSummaryDetials.TabIndex = 11;
       // 
-      // btnSave
+      // iconNote
       // 
-      this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-      this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSave.BorderRadius = 5;
-      this.btnSave.BorderSize = 0;
-      this.btnSave.FlatAppearance.BorderSize = 0;
-      this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSave.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.Location = new System.Drawing.Point(435, 434);
-      this.btnSave.Name = "btnSave";
-      this.btnSave.Size = new System.Drawing.Size(137, 37);
-      this.btnSave.TabIndex = 114;
-      this.btnSave.Text = "Save";
-      this.btnSave.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSave.UseVisualStyleBackColor = false;
-      this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+      this.iconNote.FlatAppearance.BorderSize = 0;
+      this.iconNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconNote.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconNote.IconChar = FontAwesome.Sharp.IconChar.StickyNote;
+      this.iconNote.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconNote.IconSize = 31;
+      this.iconNote.Location = new System.Drawing.Point(21, 343);
+      this.iconNote.Name = "iconNote";
+      this.iconNote.Size = new System.Drawing.Size(34, 27);
+      this.iconNote.TabIndex = 148;
+      this.iconNote.UseVisualStyleBackColor = true;
       // 
-      // btnClose
+      // iconLogo
       // 
-      this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
-      this.btnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnClose.BorderRadius = 5;
-      this.btnClose.BorderSize = 0;
-      this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnClose.FlatAppearance.BorderSize = 0;
-      this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnClose.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.Location = new System.Drawing.Point(578, 434);
-      this.btnClose.Name = "btnClose";
-      this.btnClose.Size = new System.Drawing.Size(137, 37);
-      this.btnClose.TabIndex = 115;
-      this.btnClose.Text = "Close";
-      this.btnClose.TextColor = System.Drawing.Color.WhiteSmoke;
-      this.btnClose.UseVisualStyleBackColor = false;
+      this.iconLogo.FlatAppearance.BorderSize = 0;
+      this.iconLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconLogo.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+      this.iconLogo.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconLogo.IconSize = 31;
+      this.iconLogo.Location = new System.Drawing.Point(8, 83);
+      this.iconLogo.Name = "iconLogo";
+      this.iconLogo.Size = new System.Drawing.Size(35, 35);
+      this.iconLogo.TabIndex = 128;
+      this.iconLogo.UseVisualStyleBackColor = true;
+      // 
+      // iconButton3
+      // 
+      this.iconButton3.FlatAppearance.BorderSize = 0;
+      this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+      this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton3.IconSize = 31;
+      this.iconButton3.Location = new System.Drawing.Point(326, 48);
+      this.iconButton3.Name = "iconButton3";
+      this.iconButton3.Size = new System.Drawing.Size(34, 32);
+      this.iconButton3.TabIndex = 144;
+      this.iconButton3.UseVisualStyleBackColor = true;
+      // 
+      // iconButton6
+      // 
+      this.iconButton6.FlatAppearance.BorderSize = 0;
+      this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+      this.iconButton6.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton6.IconSize = 31;
+      this.iconButton6.Location = new System.Drawing.Point(7, 7);
+      this.iconButton6.Name = "iconButton6";
+      this.iconButton6.Size = new System.Drawing.Size(34, 32);
+      this.iconButton6.TabIndex = 143;
+      this.iconButton6.UseVisualStyleBackColor = true;
+      // 
+      // iconStartTime
+      // 
+      this.iconStartTime.FlatAppearance.BorderSize = 0;
+      this.iconStartTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconStartTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconStartTime.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+      this.iconStartTime.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconStartTime.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconStartTime.IconSize = 31;
+      this.iconStartTime.Location = new System.Drawing.Point(8, 48);
+      this.iconStartTime.Name = "iconStartTime";
+      this.iconStartTime.Size = new System.Drawing.Size(34, 32);
+      this.iconStartTime.TabIndex = 142;
+      this.iconStartTime.UseVisualStyleBackColor = true;
+      // 
+      // iconSearch
+      // 
+      this.iconSearch.BackColor = System.Drawing.Color.Gainsboro;
+      this.iconSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+      this.iconSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+      this.iconSearch.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconSearch.IconSize = 25;
+      this.iconSearch.Location = new System.Drawing.Point(299, 6);
+      this.iconSearch.Name = "iconSearch";
+      this.iconSearch.Size = new System.Drawing.Size(42, 28);
+      this.iconSearch.TabIndex = 151;
+      this.iconSearch.UseVisualStyleBackColor = false;
+      this.iconSearch.Click += new System.EventHandler(this.iconSearch_Click);
+      // 
+      // iconButton4
+      // 
+      this.iconButton4.FlatAppearance.BorderSize = 0;
+      this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Ideal;
+      this.iconButton4.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton4.IconSize = 25;
+      this.iconButton4.Location = new System.Drawing.Point(7, 111);
+      this.iconButton4.Name = "iconButton4";
+      this.iconButton4.Size = new System.Drawing.Size(20, 21);
+      this.iconButton4.TabIndex = 140;
+      this.iconButton4.UseVisualStyleBackColor = true;
+      // 
+      // iconButton5
+      // 
+      this.iconButton5.FlatAppearance.BorderSize = 0;
+      this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.MailBulk;
+      this.iconButton5.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton5.IconSize = 25;
+      this.iconButton5.Location = new System.Drawing.Point(454, 109);
+      this.iconButton5.Name = "iconButton5";
+      this.iconButton5.Size = new System.Drawing.Size(19, 24);
+      this.iconButton5.TabIndex = 142;
+      this.iconButton5.UseVisualStyleBackColor = true;
+      // 
+      // iconButton2
+      // 
+      this.iconButton2.FlatAppearance.BorderSize = 0;
+      this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
+      this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton2.IconSize = 25;
+      this.iconButton2.Location = new System.Drawing.Point(215, 55);
+      this.iconButton2.Name = "iconButton2";
+      this.iconButton2.Size = new System.Drawing.Size(24, 27);
+      this.iconButton2.TabIndex = 133;
+      this.iconButton2.UseVisualStyleBackColor = true;
+      // 
+      // iconButton7
+      // 
+      this.iconButton7.FlatAppearance.BorderSize = 0;
+      this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Phone;
+      this.iconButton7.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton7.IconSize = 25;
+      this.iconButton7.Location = new System.Drawing.Point(247, 105);
+      this.iconButton7.Name = "iconButton7";
+      this.iconButton7.Size = new System.Drawing.Size(20, 32);
+      this.iconButton7.TabIndex = 141;
+      this.iconButton7.UseVisualStyleBackColor = true;
+      // 
+      // iconButton8
+      // 
+      this.iconButton8.FlatAppearance.BorderSize = 0;
+      this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
+      this.iconButton8.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton8.IconSize = 25;
+      this.iconButton8.Location = new System.Drawing.Point(8, 55);
+      this.iconButton8.Name = "iconButton8";
+      this.iconButton8.Size = new System.Drawing.Size(18, 27);
+      this.iconButton8.TabIndex = 139;
+      this.iconButton8.UseVisualStyleBackColor = true;
+      // 
+      // iconButton1
+      // 
+      this.iconButton1.FlatAppearance.BorderSize = 0;
+      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
+      this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton1.IconSize = 25;
+      this.iconButton1.Location = new System.Drawing.Point(7, 55);
+      this.iconButton1.Name = "iconButton1";
+      this.iconButton1.Size = new System.Drawing.Size(18, 27);
+      this.iconButton1.TabIndex = 139;
+      this.iconButton1.UseVisualStyleBackColor = true;
+      // 
+      // homeBtn
+      // 
+      this.homeBtn.Image = global::Dental_App.Properties.Resources.gzexperts_logo;
+      this.homeBtn.Location = new System.Drawing.Point(234, 3);
+      this.homeBtn.Name = "homeBtn";
+      this.homeBtn.Size = new System.Drawing.Size(88, 79);
+      this.homeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.homeBtn.TabIndex = 13;
+      this.homeBtn.TabStop = false;
+      // 
+      // expertsBtn2
+      // 
+      this.expertsBtn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.expertsBtn2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(73)))));
+      this.expertsBtn2.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.expertsBtn2.BorderRadius = 5;
+      this.expertsBtn2.BorderSize = 0;
+      this.expertsBtn2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.expertsBtn2.FlatAppearance.BorderSize = 0;
+      this.expertsBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.expertsBtn2.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.expertsBtn2.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.expertsBtn2.Location = new System.Drawing.Point(636, 557);
+      this.expertsBtn2.Name = "expertsBtn2";
+      this.expertsBtn2.Size = new System.Drawing.Size(137, 45);
+      this.expertsBtn2.TabIndex = 134;
+      this.expertsBtn2.Text = "Close";
+      this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.expertsBtn2.UseVisualStyleBackColor = false;
+      // 
+      // btnSteps
+      // 
+      this.btnSteps.BackColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSteps.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+      this.btnSteps.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSteps.BorderRadius = 5;
+      this.btnSteps.BorderSize = 0;
+      this.btnSteps.Enabled = false;
+      this.btnSteps.FlatAppearance.BorderSize = 0;
+      this.btnSteps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSteps.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSteps.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSteps.Location = new System.Drawing.Point(481, 557);
+      this.btnSteps.Name = "btnSteps";
+      this.btnSteps.Size = new System.Drawing.Size(137, 45);
+      this.btnSteps.TabIndex = 133;
+      this.btnSteps.Text = "Next";
+      this.btnSteps.TextColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSteps.UseVisualStyleBackColor = false;
+      this.btnSteps.Click += new System.EventHandler(this.btnSteps_Click);
       // 
       // btnDiagnosis
       // 
@@ -1477,52 +1488,42 @@
       this.btnExtraction.UseVisualStyleBackColor = false;
       this.btnExtraction.Click += new System.EventHandler(this.btnExtraction_Click);
       // 
-      // pdfViewerControl1
+      // btnPrintBill
       // 
-      this.pdfViewerControl1.CursorMode = Syncfusion.Windows.Forms.PdfViewer.PdfViewerCursorMode.SelectTool;
-      this.pdfViewerControl1.EnableContextMenu = true;
-      this.pdfViewerControl1.EnableNotificationBar = true;
-      this.pdfViewerControl1.HorizontalScrollOffset = 0;
-      this.pdfViewerControl1.IsBookmarkEnabled = true;
-      this.pdfViewerControl1.IsTextSearchEnabled = true;
-      this.pdfViewerControl1.IsTextSelectionEnabled = true;
-      this.pdfViewerControl1.Location = new System.Drawing.Point(72, 73);
-      messageBoxSettings1.EnableNotification = true;
-      this.pdfViewerControl1.MessageBoxSettings = messageBoxSettings1;
-      this.pdfViewerControl1.MinimumZoomPercentage = 50;
-      this.pdfViewerControl1.Name = "pdfViewerControl1";
-      this.pdfViewerControl1.PageBorderThickness = 1;
-      pdfViewerPrinterSettings1.Copies = 1;
-      pdfViewerPrinterSettings1.PageOrientation = Syncfusion.Windows.PdfViewer.PdfViewerPrintOrientation.Auto;
-      pdfViewerPrinterSettings1.PageSize = Syncfusion.Windows.PdfViewer.PdfViewerPrintSize.ActualSize;
-      pdfViewerPrinterSettings1.PrintLocation = ((System.Drawing.PointF)(resources.GetObject("pdfViewerPrinterSettings1.PrintLocation")));
-      pdfViewerPrinterSettings1.ShowPrintStatusDialog = true;
-      this.pdfViewerControl1.PrinterSettings = pdfViewerPrinterSettings1;
-      this.pdfViewerControl1.ReferencePath = null;
-      this.pdfViewerControl1.ScrollDisplacementValue = 0;
-      this.pdfViewerControl1.ShowHorizontalScrollBar = true;
-      this.pdfViewerControl1.ShowToolBar = true;
-      this.pdfViewerControl1.ShowVerticalScrollBar = true;
-      this.pdfViewerControl1.Size = new System.Drawing.Size(424, 322);
-      this.pdfViewerControl1.SpaceBetweenPages = 8;
-      this.pdfViewerControl1.TabIndex = 13;
-      this.pdfViewerControl1.Text = "pdfViewerControl1";
-      textSearchSettings1.CurrentInstanceColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(64)))));
-      textSearchSettings1.HighlightAllInstance = true;
-      textSearchSettings1.OtherInstanceColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-      this.pdfViewerControl1.TextSearchSettings = textSearchSettings1;
-      this.pdfViewerControl1.VerticalScrollOffset = 0;
-      this.pdfViewerControl1.VisualStyle = Syncfusion.Windows.Forms.PdfViewer.VisualStyle.Default;
-      this.pdfViewerControl1.ZoomMode = Syncfusion.Windows.Forms.PdfViewer.ZoomMode.Default;
+      this.btnPrintBill.BackColor = System.Drawing.Color.AliceBlue;
+      this.btnPrintBill.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.btnPrintBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.btnPrintBill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+      this.btnPrintBill.BorderRadius = 10;
+      this.btnPrintBill.BorderSize = 2;
+      this.btnPrintBill.FlatAppearance.BorderSize = 0;
+      this.btnPrintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnPrintBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnPrintBill.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.errorProvider1.SetIconAlignment(this.btnPrintBill, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+      this.btnPrintBill.Image = global::Dental_App.Properties.Resources.printer;
+      this.btnPrintBill.Location = new System.Drawing.Point(598, 173);
+      this.btnPrintBill.Name = "btnPrintBill";
+      this.btnPrintBill.Size = new System.Drawing.Size(132, 87);
+      this.btnPrintBill.TabIndex = 13;
+      this.btnPrintBill.Text = "Print Bill";
+      this.btnPrintBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.btnPrintBill.TextColor = System.Drawing.SystemColors.ControlText;
+      this.btnPrintBill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnPrintBill.UseVisualStyleBackColor = false;
+      this.btnPrintBill.Click += new System.EventHandler(this.btnPrintBill_Click);
       // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.ClientSize = new System.Drawing.Size(777, 562);
-      this.Controls.Add(this.tabCtrlAppointment);
+      this.ClientSize = new System.Drawing.Size(777, 607);
+      this.Controls.Add(this.btnSteps);
+      this.Controls.Add(this.expertsBtn2);
+      this.Controls.Add(this.tcAppointment);
       this.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
       this.Margin = new System.Windows.Forms.Padding(4);
       this.Name = "frmAddUpdateAppointmnet";
@@ -1540,8 +1541,8 @@
       this.panelSearch.ResumeLayout(false);
       this.panelSearch.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.tabCtrlAppointment)).EndInit();
-      this.tabCtrlAppointment.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.tcAppointment)).EndInit();
+      this.tcAppointment.ResumeLayout(false);
       this.tbpAddAppointment.ResumeLayout(false);
       this.tbpProcedures.ResumeLayout(false);
       this.tbpProcedures.PerformLayout();
@@ -1571,10 +1572,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.chbPeroxide25)).EndInit();
       this.panel1.ResumeLayout(false);
       this.tbpBills.ResumeLayout(false);
-      this.panel3.ResumeLayout(false);
-      this.panel3.PerformLayout();
+      this.pnlBillSummary.ResumeLayout(false);
+      this.pnlBillSummary.PerformLayout();
       this.pnlSummaryDetials.ResumeLayout(false);
       this.pnlSummaryDetials.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -1609,8 +1611,6 @@
     private FontAwesome.Sharp.IconButton iconNote;
     private Syncfusion.Windows.Forms.Tools.TextBoxExt tbNote;
     private System.Windows.Forms.Label label2;
-    private ExpertsBtn btnClose;
-    private ExpertsBtn btnSave;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Label label3;
@@ -1629,7 +1629,7 @@
     private System.Windows.Forms.ComboBox cbDoctor;
     private System.Windows.Forms.Label lblTitle;
     private System.Windows.Forms.ErrorProvider errorProvider1;
-    private Syncfusion.Windows.Forms.Tools.TabControlAdv tabCtrlAppointment;
+    private Syncfusion.Windows.Forms.Tools.TabControlAdv tcAppointment;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpAddAppointment;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpProcedures;
     private Syncfusion.Windows.Forms.Tools.TabPageAdv tbpBills;
@@ -1666,10 +1666,13 @@
     private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbPeroxide25;
     private System.Windows.Forms.Panel pnlOrthopedic;
     private System.Windows.Forms.Label label15;
-    private System.Windows.Forms.Panel panel3;
+    private System.Windows.Forms.Panel pnlBillSummary;
     private System.Windows.Forms.Label label20;
     private System.Windows.Forms.Panel pnlSummaryDetials;
     private System.Windows.Forms.Label lbSummary;
-    private Syncfusion.Windows.Forms.PdfViewer.PdfViewerControl pdfViewerControl1;
+    private ExpertsBtn btnPrintBill;
+    private ExpertsBtn btnSteps;
+    private ExpertsBtn expertsBtn2;
+    private System.Windows.Forms.PictureBox homeBtn;
   }
 }

@@ -87,6 +87,7 @@ namespace Dental_App
       if (currentChildForm != null)
       {
         currentChildForm.Close();
+        currentChildForm.Dispose();
       }
       currentChildForm = childForm;
       //End

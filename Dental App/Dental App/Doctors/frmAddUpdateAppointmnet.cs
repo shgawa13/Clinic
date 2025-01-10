@@ -16,11 +16,12 @@ using Business;
 using Syncfusion.WinForms.ListView;
 using Syncfusion.Windows.Forms.Tools;
 
+
 namespace Dental_App.Doctors
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
   {
-  
+   // private PdfViewerControl pdfViewerControl;
     public enum enPlan { Diagnosis=0, Extraction=1, Restoration=2, Whitening=3, Orthopedic=4, Implantation=5 }
     private enPlan _Plan = enPlan.Diagnosis;
 
@@ -45,6 +46,7 @@ namespace Dental_App.Doctors
       _ScheduleGrid = control;
       _SelectedAppointmentDate = AppointmentDate;
       _AppointmnetTime = AppointmentTime;
+      
       // ------------
       CheckBoxEvent();
     }
@@ -102,6 +104,10 @@ namespace Dental_App.Doctors
       lblPhone.Text = "???";
       lblEmail.Text = "???";
       tbSearch.Text = string.Empty;
+
+      // Disable steps button
+      btnSteps.Enabled = false;
+      btnSteps.Text = "Next";
 
       // Filling ComboBox with Data
       _FillComboBoxWithTime();
@@ -163,14 +169,12 @@ namespace Dental_App.Doctors
       lblEmail.Text = _Patient.PatientInfo.Email;
       lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
       tbNote.Focus();
+
+      btnSteps.Enabled = true;
     }
 
 
-    private void btnSave_Click(object sender, EventArgs e)
-    {
-
-    }
-
+    
     private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
     {
       cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
@@ -180,8 +184,8 @@ namespace Dental_App.Doctors
     {
       if(tbSearch.Text.Trim() != string.Empty)
       {
-        _FindPatinet(_PatientID);
         _PatientID = int.Parse(tbSearch.Text.Trim());
+        _FindPatinet(_PatientID);
 
       }
     }
@@ -346,7 +350,15 @@ namespace Dental_App.Doctors
       pnlOrthopedic.Visible = false;
     }
 
-   
+    private void btnPrintBill_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnSteps_Click(object sender, EventArgs e)
+    {
+      tcAppointment.SelectedTab = tcAppointment.TabPages[1];
+    }
   }
 
   public class DentalPlan
