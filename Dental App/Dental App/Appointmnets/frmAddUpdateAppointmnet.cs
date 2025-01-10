@@ -169,6 +169,7 @@ namespace Dental_App.Appointmnets
       cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
     }
 
+    
     private void iconSearch_Click(object sender, EventArgs e)
     {
       if (tbSearch.Text.Trim() != string.Empty)
@@ -179,6 +180,7 @@ namespace Dental_App.Appointmnets
       }
     }
 
+    
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
       // handle numbers input
@@ -188,6 +190,7 @@ namespace Dental_App.Appointmnets
     // Validat inputs in Search box.
     private void tbSearch_Validating(object sender, CancelEventArgs e)
     {
+
       if (String.IsNullOrEmpty(tbSearch.Text.Trim()))
       {
         e.Cancel = true;
@@ -198,7 +201,11 @@ namespace Dental_App.Appointmnets
       {
         errorProvider1.SetError(tbSearch, null);
       }
+
     }
+
+    
+
 
 
     //-------------------------------------[ Procedures Tap ] --------------------------------------------//
