@@ -15,55 +15,55 @@ using System.Windows.Documents;
 using Dental_App.Global_Classes;
 using Syncfusion.DataSource.Extensions;
 using Syncfusion.Windows.Forms.Grid;
+using Dental_App.Doctors;
 
-namespace Dental_App.Doctors
+namespace Dental_App.Appointmnets
 {
-  public partial class frmTestSchedule : Form
+  public partial class frmSchedule : Form
   {
     private DateTime SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
 
     CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
     SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
-
-    public frmTestSchedule()
+    public frmSchedule()
     {
       InitializeComponent();
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
-      this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm;
-      this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick; 
-     
-
+      this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
+      this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
     }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
-    
+
     }
 
-    private void ScheduleControl1_ShowingAppointmentForm(object sender, Syncfusion.Windows.Forms.Schedule.ShowingAppointFormEventArgs e)
+    private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-      
-      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1,SelectedAppointmentDate,_AppointmnetTime);
+
+      //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
+      //frm.ShowDialog();
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       frm.ShowDialog();
-
     }
 
-    private void frmTestSchedule_Load(object sender, EventArgs e)
+    private void frmAppointments_Load(object sender, EventArgs e)
     {
-      FillList();
-      // here we call the function
+      FillList(); 
       
       
     }
+
+
 
     private void FillList()
     {
       DataTable dt = clsAppointments.GetAllAppointments();
-    
+
 
       foreach (DataRow row in dt.Rows)
       {
@@ -88,7 +88,11 @@ namespace Dental_App.Doctors
       dataProvider.MasterList = list;
       scheduleControl1.DataSource = dataProvider;
       // Refreshing
-     // scheduleControl1.Refresh();
+      // scheduleControl1.Refresh();
     }
+
+
+
+
   }
 }

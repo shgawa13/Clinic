@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Syncfusion.WinForms;
 using Syncfusion.Windows.Forms;
@@ -15,14 +15,12 @@ using Syncfusion.Windows.Forms.Schedule;
 using Business;
 using Syncfusion.WinForms.ListView;
 using Syncfusion.Windows.Forms.Tools;
-
-
-namespace Dental_App.Doctors
+namespace Dental_App.Appointmnets
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
   {
-   // private PdfViewerControl pdfViewerControl;
-    public enum enPlan { Diagnosis=0, Extraction=1, Restoration=2, Whitening=3, Orthopedic=4, Implantation=5 }
+    // private PdfViewerControl pdfViewerControl;
+    public enum enPlan { Diagnosis = 0, Extraction = 1, Restoration = 2, Whitening = 3, Orthopedic = 4, Implantation = 5 }
     private enPlan _Plan = enPlan.Diagnosis;
 
     public enum enMode { AddNew = 0, Update = 1 };
@@ -38,15 +36,13 @@ namespace Dental_App.Doctors
     private List<DentalPlan> PlanItem = new List<DentalPlan>();
     // AppointmentForm Can be opened from two places
     // From Schedule
-
-
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     {
       InitializeComponent();
       _ScheduleGrid = control;
       _SelectedAppointmentDate = AppointmentDate;
       _AppointmnetTime = AppointmentTime;
-      
+
       // ------------
       CheckBoxEvent();
     }
@@ -71,23 +67,16 @@ namespace Dental_App.Doctors
 
     }
 
-    private void CheckBox_CheckStateChanged(object sender, EventArgs e) 
-    { 
+    private void CheckBox_CheckStateChanged(object sender, EventArgs e)
+    {
       CalcTotalCost();
     }
-    public frmAddUpdateAppointmnet(ScheduleControl control, int PatientID)
-    {
-      InitializeComponent();
-      _ScheduleGrid = control;
-      _PatientID = PatientID;
-    }
+    
 
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
-      
     }
-
 
     // Reset Defualt values
     private void _ResetDefualtValues()
@@ -118,7 +107,7 @@ namespace Dental_App.Doctors
     // Filling ComboBox with time it start with 8:00 AM.
     private void _FillComboBoxWithTime()
     {
-     
+
       int Year = DateTime.Today.Year;
       int Month = DateTime.Today.Month;
       int ToDay = DateTime.Today.Day;
@@ -131,12 +120,12 @@ namespace Dental_App.Doctors
         date = date.AddMinutes(30);
         cbEndTime.Items.Add(date.ToShortTimeString());
       }
-      
+
       // If there is no Time selected
       if (_AppointmnetTime == "")
         cbStartTime.SelectedIndex = 0;
       cbStartTime.SelectedIndex = cbStartTime.FindString(_AppointmnetTime);
-      
+
       cbEndTime.SelectedIndex = 0;
     }
 
@@ -145,7 +134,7 @@ namespace Dental_App.Doctors
     {
       DataTable Doctors = clsDoctors.GetAllDoctors();
 
-      foreach(DataRow row in Doctors.Rows)
+      foreach (DataRow row in Doctors.Rows)
       {
         cbDoctor.Items.Add(row["FullName"]);
       }
@@ -157,10 +146,10 @@ namespace Dental_App.Doctors
     {
       _Patient = clsPatient.FindPatientByID(PatientID);
 
-      if (_Patient == null) 
+      if (_Patient == null)
       {
         MessageBox.Show($"Patient with ID: {_Patient} was not  found");
-        return;  
+        return;
       }
 
       lblFullName.Text = _Patient.PatientInfo.FullName;
@@ -174,7 +163,7 @@ namespace Dental_App.Doctors
     }
 
 
-    
+
     private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
     {
       cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
@@ -182,7 +171,7 @@ namespace Dental_App.Doctors
 
     private void iconSearch_Click(object sender, EventArgs e)
     {
-      if(tbSearch.Text.Trim() != string.Empty)
+      if (tbSearch.Text.Trim() != string.Empty)
       {
         _PatientID = int.Parse(tbSearch.Text.Trim());
         _FindPatinet(_PatientID);
@@ -193,7 +182,7 @@ namespace Dental_App.Doctors
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
       // handle numbers input
-       e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar); 
+      e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
     }
 
     // Validat inputs in Search box.
@@ -211,7 +200,7 @@ namespace Dental_App.Doctors
       }
     }
 
-    
+
     //-------------------------------------[ Procedures Tap ] --------------------------------------------//
 
     private void CalcTotalCost()
@@ -220,7 +209,7 @@ namespace Dental_App.Doctors
       lbCost.Text = $"${TotalCost}";
     }
 
-   
+
     // Handle CheckBoxes and Plan Cost
     private short CalcPlanCost()
     {
@@ -231,14 +220,14 @@ namespace Dental_App.Doctors
         chbPorcelainFilling, chbCompositeFilling, chbSingleImplant, chbDoubleImplant , chbFullMouthImplants,
         chbPeroxide25, chbPeroxide40};
 
-      foreach(var checkBox in checkBoxes)
+      foreach (var checkBox in checkBoxes)
       {
         if (checkBox.Checked)
         {
           Cost += int.Parse(checkBox.Tag.ToString());
         }
-      } 
-     
+      }
+
       _UpdateSummary();
       return Convert.ToInt16(Cost);
     }
@@ -264,47 +253,11 @@ namespace Dental_App.Doctors
       }
 
       lbSummary.Text = Summarylable;
-      
+
 
     }
 
 
-    private void btnDiagnosis_Click(object sender, EventArgs e)
-    { 
-      _Plan = enPlan.Diagnosis;  
-      HandlePlans();
-    }
-
-    private void btnExtraction_Click(object sender, EventArgs e)
-    {
-      _Plan = enPlan.Extraction;
-      HandlePlans();
-    }
-
-
-    private void btnRestoration_Click(object sender, EventArgs e)
-    {
-      _Plan = enPlan.Restoration;
-      HandlePlans();
-    }
-
-    private void btnImplantation_Click(object sender, EventArgs e)
-    {
-      _Plan = enPlan.Implantation;
-      HandlePlans();
-    }
-
-    private void btnWhitening_Click(object sender, EventArgs e)
-    {
-      _Plan = enPlan.Whitening;
-      HandlePlans();
-    }
-
-    private void Orthopedic_Click(object sender, EventArgs e)
-    {
-      _Plan = enPlan.Orthopedic;
-      HandlePlans();
-    }
 
     private void HandlePlans()
     {
@@ -340,6 +293,46 @@ namespace Dental_App.Doctors
       }
     }
 
+    private void btnSteps_Click(object sender, EventArgs e)
+    {
+      tcAppointment.SelectedTab = tcAppointment.TabPages[1];
+    }
+
+    private void btnDiagnosis_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Diagnosis;
+      HandlePlans();
+    }
+
+    private void btnExtraction_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Extraction;
+      HandlePlans();
+    }
+
+    private void btnRestoration_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Restoration;
+      HandlePlans();
+    }
+
+    private void btnWhitening_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Whitening;
+      HandlePlans();
+    }
+
+    private void Orthopedic_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Orthopedic;
+      HandlePlans();
+    }
+
+    private void btnImplantation_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Implantation;
+      HandlePlans();
+    }
     private void HideAllPanels()
     {
       pnlDiagnosis.Visible = false;
@@ -355,10 +348,6 @@ namespace Dental_App.Doctors
 
     }
 
-    private void btnSteps_Click(object sender, EventArgs e)
-    {
-      tcAppointment.SelectedTab = tcAppointment.TabPages[1];
-    }
   }
 
   public class DentalPlan
@@ -366,7 +355,7 @@ namespace Dental_App.Doctors
     public string Name { set; get; }
     public short Price { set; get; }
 
-    public DentalPlan(string planName,short planPrice)
+    public DentalPlan(string planName, short planPrice)
     {
       Name = planName;
       Price = planPrice;
@@ -377,4 +366,6 @@ namespace Dental_App.Doctors
       return Name;
     }
   }
+
 }
+

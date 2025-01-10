@@ -69,19 +69,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointmnets\frmAppointments.cs">
+    <Compile Include="Appointmnets\frmAddUpdateAppointmnet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Appointmnets\frmAppointments.Designer.cs">
-      <DependentUpon>frmAppointments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Appointmnets\SimpleScheduleDataProvider.cs" />
-    <Compile Include="Doctors\frmAddUpdateAppointmnet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Doctors\frmAddUpdateAppointmnet.Designer.cs">
+    <Compile Include="Appointmnets\frmAddUpdateAppointmnet.Designer.cs">
       <DependentUpon>frmAddUpdateAppointmnet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointmnets\frmSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointmnets\frmSchedule.Designer.cs">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointmnets\SimpleScheduleDataProvider.cs" />
     <Compile Include="Doctors\frmAddUpdateDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +99,6 @@
     </Compile>
     <Compile Include="Doctors\frmTester.Designer.cs">
       <DependentUpon>frmTester.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Doctors\frmTestSchedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Doctors\frmTestSchedule.Designer.cs">
-      <DependentUpon>frmTestSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="ExpertsBtn.cs">
       <SubType>Component</SubType>
@@ -144,11 +138,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Appointmnets\frmAppointments.resx">
-      <DependentUpon>frmAppointments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Doctors\frmAddUpdateAppointmnet.resx">
+    <EmbeddedResource Include="Appointmnets\frmAddUpdateAppointmnet.resx">
       <DependentUpon>frmAddUpdateAppointmnet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointmnets\frmSchedule.resx">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\frmAddUpdateDoctor.resx">
       <DependentUpon>frmAddUpdateDoctor.cs</DependentUpon>
@@ -158,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\frmTester.resx">
       <DependentUpon>frmTester.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Doctors\frmTestSchedule.resx">
-      <DependentUpon>frmTestSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -128,7 +128,7 @@ namespace Dental_App
     private void iconButton2_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color2);
-      OpenChildForm(new frmAppointments());
+      OpenChildForm(new frmSchedule());
     }
 
     private void iconButton3_Click(object sender, EventArgs e)
@@ -156,7 +156,7 @@ namespace Dental_App
     private void iconButton7_Click(object sender, EventArgs e)
     {
       MessageBox.Show("Testing");
-      OpenChildForm(new frmTestSchedule());
+      //OpenChildForm(new frmTestSchedule());
     }
 
     private void homeBtn_Click(object sender, EventArgs e)

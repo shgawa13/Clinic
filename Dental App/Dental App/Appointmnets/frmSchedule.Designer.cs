@@ -1,6 +1,6 @@
-﻿namespace Dental_App.Doctors
+﻿namespace Dental_App.Appointmnets
 {
-  partial class frmTestSchedule
+  partial class frmSchedule
   {
     /// <summary>
     /// Required designer variable.
@@ -44,15 +44,15 @@
       this.scheduleControl1.Size = new System.Drawing.Size(800, 450);
       this.scheduleControl1.TabIndex = 0;
       // 
-      // frmTestSchedule
+      // frmAppointments
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Controls.Add(this.scheduleControl1);
-      this.Name = "frmTestSchedule";
-      this.Text = "frmTestSchedule";
-      this.Load += new System.EventHandler(this.frmTestSchedule_Load);
+      this.Name = "frmAppointments";
+      this.Text = "frmAppointments";
+      this.Load += new System.EventHandler(this.frmAppointments_Load);
       this.ResumeLayout(false);
 
     }
