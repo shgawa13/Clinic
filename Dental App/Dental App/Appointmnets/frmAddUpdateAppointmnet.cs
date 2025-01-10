@@ -163,8 +163,8 @@ namespace Dental_App.Appointmnets
     }
 
 
-
-    private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
+    // if User Select StartTime it will add 30 min to EndTime 
+    private void cbStartTime_SelectedIndexChanged_1(object sender, EventArgs e)
     {
       cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
     }
@@ -300,11 +300,30 @@ namespace Dental_App.Appointmnets
       }
     }
 
+   
     private void btnSteps_Click(object sender, EventArgs e)
     {
-      tcAppointment.SelectedTab = tcAppointment.TabPages[1];
+
+
+
     }
 
+    private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if (tcAppointment.SelectedIndex == 1)
+      {
+        tcAppointment.SelectedTab = tcAppointment.TabPages[2];
+        btnSteps.Text = "Save";
+      }
+      else { btnSteps.Text = "Next"; }
+
+
+      if(tcAppointment.SelectedIndex ==0)
+        tcAppointment.SelectedTab = tcAppointment.TabPages[1];
+      
+    }
+
+    // OnClick on these buttons will show spicific plan panel
     private void btnDiagnosis_Click(object sender, EventArgs e)
     {
       _Plan = enPlan.Diagnosis;
@@ -340,6 +359,8 @@ namespace Dental_App.Appointmnets
       _Plan = enPlan.Implantation;
       HandlePlans();
     }
+
+    // Hiding all Panels
     private void HideAllPanels()
     {
       pnlDiagnosis.Visible = false;
@@ -349,6 +370,8 @@ namespace Dental_App.Appointmnets
       pnlWhitening.Visible = false;
       pnlOrthopedic.Visible = false;
     }
+
+    //-------------------------------------[ Bills Tap ] --------------------------------------------//
 
     private void btnPrintBill_Click(object sender, EventArgs e)
     {
