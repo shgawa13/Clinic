@@ -222,12 +222,7 @@ namespace Dental_App.Appointmnets
     {
       int Cost = 0;
 
-      CheckBoxAdv[] checkBoxes = { chbCleaning, chbXray, chbDiagnosis, chbSimpleExtraction,
-        chbComplicatedExtrcation, chbComplexExtraction, chbWisdomExtarction, chbAmalgamFilling,
-        chbPorcelainFilling, chbCompositeFilling, chbSingleImplant, chbDoubleImplant , chbFullMouthImplants,
-        chbPeroxide25, chbPeroxide40};
-
-      foreach (var checkBox in checkBoxes)
+      foreach (var checkBox in GetCheckBoxes())
       {
         if (checkBox.Checked)
         {
@@ -246,12 +241,8 @@ namespace Dental_App.Appointmnets
     {
 
       string Summarylable = "";
-      CheckBoxAdv[] checkBoxes = { chbCleaning, chbXray, chbDiagnosis, chbSimpleExtraction,
-        chbComplicatedExtrcation, chbComplexExtraction, chbWisdomExtarction, chbAmalgamFilling,
-        chbPorcelainFilling, chbCompositeFilling, chbSingleImplant, chbDoubleImplant , chbFullMouthImplants,
-        chbPeroxide25, chbPeroxide40};
 
-      foreach (var checkBox in checkBoxes)
+      foreach (var checkBox in GetCheckBoxes())
       {
         if (checkBox.Checked)
         {
@@ -264,6 +255,17 @@ namespace Dental_App.Appointmnets
 
     }
 
+    // Get all checkboxes
+    private IEnumerable<CheckBoxAdv> GetCheckBoxes()
+    {
+      return new List<CheckBoxAdv>
+      {
+        chbCleaning, chbXray, chbDiagnosis, chbSimpleExtraction,
+        chbComplicatedExtrcation, chbComplexExtraction, chbWisdomExtarction, chbAmalgamFilling,
+        chbPorcelainFilling, chbCompositeFilling, chbSingleImplant, chbDoubleImplant,
+        chbFullMouthImplants, chbPeroxide25, chbPeroxide40
+      };
+    }
 
 
     private void HandlePlans()
@@ -307,20 +309,15 @@ namespace Dental_App.Appointmnets
       if(tcAppointment.SelectedIndex !=2)
         tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
 
-
     }
 
     private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
     {
       if (tcAppointment.SelectedIndex == 2)
-      {
-      
         btnSteps.Text = "Save";
-      }
-      else { btnSteps.Text = "Next"; }
-
-
-      
+      else 
+        btnSteps.Text = "Next"; 
+     
     }
 
     // OnClick on these buttons will show spicific plan panel
