@@ -166,7 +166,10 @@ namespace Dental_App.Appointmnets
     // if User Select StartTime it will add 30 min to EndTime 
     private void cbStartTime_SelectedIndexChanged_1(object sender, EventArgs e)
     {
-      cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
+      if (cbStartTime.SelectedIndex != 19)
+      {
+        cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
+      }
     }
 
     
@@ -246,7 +249,7 @@ namespace Dental_App.Appointmnets
       {
         if (checkBox.Checked)
         {
-          Summarylable += $"{checkBox.Text}  $ {checkBox.Tag}.\n";
+          Summarylable += $"{checkBox.Text}  ${checkBox.Tag}.\n";
         }
       }
 
@@ -313,10 +316,10 @@ namespace Dental_App.Appointmnets
 
     private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if (tcAppointment.SelectedIndex == 2)
-        btnSteps.Text = "Save";
-      else 
-        btnSteps.Text = "Next"; 
+      // if tab index is 2 we hide the button
+      btnSteps.Visible = (tcAppointment.SelectedIndex != 2);
+      // if tab insex is 1 we change the text to save
+      btnSteps.Text = (tcAppointment.SelectedIndex == 1) ? "Save": "Next";
      
     }
 
