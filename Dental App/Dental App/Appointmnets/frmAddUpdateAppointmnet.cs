@@ -304,22 +304,22 @@ namespace Dental_App.Appointmnets
     private void btnSteps_Click(object sender, EventArgs e)
     {
 
+      if(tcAppointment.SelectedIndex !=2)
+        tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
 
 
     }
 
     private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if (tcAppointment.SelectedIndex == 1)
+      if (tcAppointment.SelectedIndex == 2)
       {
-        tcAppointment.SelectedTab = tcAppointment.TabPages[2];
+      
         btnSteps.Text = "Save";
       }
       else { btnSteps.Text = "Next"; }
 
 
-      if(tcAppointment.SelectedIndex ==0)
-        tcAppointment.SelectedTab = tcAppointment.TabPages[1];
       
     }
 
