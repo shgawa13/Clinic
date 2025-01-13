@@ -75,6 +75,12 @@
     <Compile Include="Appointmnets\frmAddUpdateAppointmnet.Designer.cs">
       <DependentUpon>frmAddUpdateAppointmnet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointmnets\frmPDFBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointmnets\frmPDFBills.Designer.cs">
+      <DependentUpon>frmPDFBills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointmnets\frmSchedule.cs">
       <SubType>Form</SubType>
     </Compile>

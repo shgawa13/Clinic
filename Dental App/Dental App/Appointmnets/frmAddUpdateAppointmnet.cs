@@ -376,7 +376,8 @@ namespace Dental_App.Appointmnets
 
     private void btnPrintBill_Click(object sender, EventArgs e)
     {
-     
+      frmPDFBills frm = new frmPDFBills();
+      frm.ShowDialog();
     }
 
   }
