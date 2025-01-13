@@ -311,16 +311,17 @@ namespace Dental_App.Appointmnets
 
       if(tcAppointment.SelectedIndex !=2)
         tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
+      
 
     }
 
+    
     private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
     {
       // if tab index is 2 we hide the button
       btnSteps.Visible = (tcAppointment.SelectedIndex != 2);
       // if tab insex is 1 we change the text to save
       btnSteps.Text = (tcAppointment.SelectedIndex == 1) ? "Save": "Next";
-     
     }
 
     // OnClick on these buttons will show spicific plan panel
@@ -377,10 +378,6 @@ namespace Dental_App.Appointmnets
     {
      
     }
-
-
-
-
 
   }
 

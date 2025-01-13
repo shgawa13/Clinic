@@ -32,19 +32,24 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
+      
     }
+
+ 
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
+      
 
     }
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-
+      
+      
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       //frm.ShowDialog();
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
