@@ -1,6 +1,7 @@
-﻿using Syncfusion.Schedule;
-using System;
+﻿using System;
 using System.Data;
+using Syncfusion.Schedule;
+using System;
 using System.Drawing;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using DataLayer;
 
 namespace Business
 {
-  public class clsAppointments: ScheduleAppointment
+  public class clsAppointments: IScheduleAppointment
   {
 
     private bool allDay;
@@ -920,6 +921,33 @@ namespace Business
     public int MedicalRecordID { set; get; }
     public int PaymentID { set; get; }
     public DateTime LastStatusDate { set; get; }
+    bool IScheduleAppointment.AllDay { get; set; }
+    bool IScheduleAppointment.AllowClickable { get ; set; }
+    bool IScheduleAppointment.AllowDrag { get; set; }
+    bool IScheduleAppointment.AllowResize { get; set; }
+    Color IScheduleAppointment.BackColor { get; set; }
+    Color IScheduleAppointment.ForeColor { get; set; }
+    string IScheduleAppointment.Content { get; set; }
+    string IScheduleAppointment.CustomToolTip { get; set; }
+    bool IScheduleAppointment.Dirty { get; set; }
+    DateTime IScheduleAppointment.EndTime { get; set; }
+    bool IScheduleAppointment.IgnoreChanges { get; set; }
+    int IScheduleAppointment.LabelValue { get; set; }
+    string IScheduleAppointment.LocationValue { get; set; }
+    bool IScheduleAppointment.RecurringOnOverride { get; set; }
+    int IScheduleAppointment.MarkerValue { get; set; }
+    int IScheduleAppointment.Owner { get; set; }
+    bool IScheduleAppointment.Reminder { get; set; }
+    int IScheduleAppointment.ReminderValue { get; set; }
+    string IScheduleAppointment.ReminderText { get; set; }
+    DateTime IScheduleAppointment.StartTime { get; set; }
+    string IScheduleAppointment.Subject { get; set; }
+    object IScheduleAppointment.Tag { get; set; }
+    Color IScheduleAppointment.TimeSpanColor { get; set; }
+    ScheduleAppointmentToolTip IScheduleAppointment.ToolTip { get; set; }
+    int IScheduleAppointment.UniqueID { get; set; }
+
+    int IScheduleAppointment.Version { get;  }
 
     public clsAppointments()
     {
@@ -1060,5 +1088,24 @@ namespace Business
       return false;
     }
 
+    bool IScheduleAppointment.IsConflict(IScheduleAppointment item)
+    {
+      throw new NotImplementedException();
+    }
+
+    bool IScheduleAppointment.IsConflict(DateTime dtStart, DateTime dtEnd)
+    {
+      throw new NotImplementedException();
+    }
+
+    int IComparable.CompareTo(object obj)
+    {
+      throw new NotImplementedException();
+    }
+
+    object ICloneable.Clone()
+    {
+      throw new NotImplementedException();
+    }
   }
 }

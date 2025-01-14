@@ -311,8 +311,7 @@ namespace Dental_App.Appointmnets
 
       if(tcAppointment.SelectedIndex !=2)
         tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
-      
-
+    
     }
 
     
@@ -372,7 +371,9 @@ namespace Dental_App.Appointmnets
       pnlOrthopedic.Visible = false;
     }
 
-    //-------------------------------------[ Bills Tap ] --------------------------------------------//
+
+
+    //------------------------------------- [ Bills Tap ] --------------------------------------------//
 
     private void btnPrintBill_Click(object sender, EventArgs e)
     {

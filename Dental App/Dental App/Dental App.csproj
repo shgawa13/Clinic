@@ -147,6 +147,9 @@
     <EmbeddedResource Include="Appointmnets\frmAddUpdateAppointmnet.resx">
       <DependentUpon>frmAddUpdateAppointmnet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Appointmnets\frmPDFBills.resx">
+      <DependentUpon>frmPDFBills.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointmnets\frmSchedule.resx">
       <DependentUpon>frmSchedule.cs</DependentUpon>
     </EmbeddedResource>
