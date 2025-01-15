@@ -19,6 +19,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Syncfusion.Schedule;
 using Syncfusion.Windows.Forms.Schedule;
 using Dental_App.Global_Classes;
+using Business;
 
 namespace GridScheduleSample
 {
@@ -87,7 +88,7 @@ namespace GridScheduleSample
 
       for (int i = 0; i < count; ++i)
       {
-        clsAppt item = masterList.NewScheduleAppointment() as clsAppt;
+        clsAppointments item = masterList.NewScheduleAppointment() as clsAppointments;
 
         int dayOffSet = 30 - r.Next(60);
 
@@ -98,15 +99,15 @@ namespace GridScheduleSample
         item.EndTime = item.StartTime.AddMinutes((double)len);
         item.Subject = string.Format("subject{0}", i);
         item.Content = string.Format("content{0}", i);
-        item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
+        item.LabelValue = ((byte)(r1.Next(10) < 3 ? 0 : r1.Next(10)));
         item.LocationValue = string.Format("location{0}", r1.Next(5));
 
-        item.ReminderValue = r1.Next(10) < 5 ? 0 : r1.Next(12);
+        item.ReminderValue = ((byte)(r1.Next(10) < 5 ? 0 : r1.Next(12)));
         item.Reminder = r1.Next(10) > 1;
         item.AllDay = r1.Next(10) < 1;
 
 
-        item.MarkerValue = r1.Next(4);
+        item.MarkerValue =( (byte)(r1.Next(4)));
         item.Dirty = false;
         masterList.Add(item);
       }
@@ -142,7 +143,7 @@ namespace GridScheduleSample
 
       for (int i = 0; i < count; ++i)
       {
-        clsAppt item = masterList.NewScheduleAppointment() as clsAppt;
+        clsAppointments item = masterList.NewScheduleAppointment() as clsAppointments;
 
         int dayOffSet = 30 - r.Next(60);
 
@@ -153,7 +154,7 @@ namespace GridScheduleSample
         item.EndTime = item.StartTime.AddMinutes((double)len);
         item.Subject = string.Format("subject{0}", i);
         item.Content = string.Format("content{0}", i);
-        item.LabelValue = r1.Next(10) < 3 ? 0 : r1.Next(10);
+        item.LabelValue = ((byte)(r1.Next(10) < 3 ? 0 : r1.Next(10)));
         item.LocationValue = string.Format("location{0}", r1.Next(5));
 
         item.ReminderValue = r1.Next(10) < 5 ? 0 : r1.Next(12);
@@ -161,7 +162,7 @@ namespace GridScheduleSample
         item.AllDay = r1.Next(10) < 1;
 
 
-        item.MarkerValue = r1.Next(4);
+        item.MarkerValue = ((byte)(r1.Next(4)));
         item.Dirty = false;
         masterList.Add(item);
       }
@@ -202,7 +203,7 @@ namespace GridScheduleSample
       ScheduleAppointmentList list = new ScheduleAppointmentList();
       DateTime start = startDate.Date;
       DateTime end = endDate.Date;
-      foreach (clsAppt item in this.MasterList)
+      foreach (clsAppointments item in this.MasterList)
       {
         //item.EndTime.AddMinutes(-1) is to make sure an item that ends at 
         //midnight is not shown on the next days calendar
@@ -227,7 +228,7 @@ namespace GridScheduleSample
     {
       ScheduleAppointmentList list = new ScheduleAppointmentList();
       day = day.Date;
-      foreach (clsAppt item in this.MasterList)
+      foreach (clsAppointments item in this.MasterList)
       {
         //do not want anything that ends at 12AM on the day
         if (item.StartTime.Date == day || (item.EndTime.Date == day && item.EndTime > day))
@@ -435,7 +436,7 @@ namespace GridScheduleSample
   /// Derives <see cref="ScheduleAppointment"/> to implement IScheduleAppointment.
   /// </summary>
   [Serializable]
-  public class SimpleScheduleAppointment : clsAppt, ISerializable
+  public class SimpleScheduleAppointment : clsAppointments, ISerializable
   {
     #region ISerializable Members
 
@@ -459,9 +460,9 @@ namespace GridScheduleSample
       this.ReminderValue = (int)info.GetValue("ReminderValue", typeof(int));
       this.Reminder = (bool)info.GetValue("Reminder", typeof(bool));
       this.Owner = (int)info.GetValue("Owner", typeof(int));
-      this.MarkerValue = (int)info.GetValue("MarkerValue", typeof(int));
+      this.MarkerValue = ((byte)((int)info.GetValue("MarkerValue", typeof(int))));
       this.LocationValue = (string)info.GetValue("LocationValue", typeof(string));
-      this.LabelValue = (int)info.GetValue("LabelValue", typeof(int));
+      this.LabelValue = ((byte)((int)info.GetValue("LabelValue", typeof(int))));
       this.EndTime = (DateTime)info.GetValue("EndTime", typeof(DateTime));
       this.Content = (string)info.GetValue("Content", typeof(string));
       this.AllDay = (bool)info.GetValue("AllDay", typeof(bool));

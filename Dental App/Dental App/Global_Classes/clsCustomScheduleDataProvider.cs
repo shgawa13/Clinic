@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business;
 
 namespace Dental_App.Global_Classes
 {
@@ -12,7 +13,7 @@ namespace Dental_App.Global_Classes
   {
     public override IScheduleAppointment NewScheduleAppointment()
     {
-      return new clsAppt();
+      return new clsAppointments();
     }
   }
 

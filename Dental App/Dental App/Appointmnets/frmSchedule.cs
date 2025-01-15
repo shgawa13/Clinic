@@ -72,7 +72,7 @@ namespace Dental_App.Appointmnets
 
       foreach (DataRow row in dt.Rows)
       {
-        clsAppt item = new clsAppt();
+        clsAppointments item = new clsAppointments();
         item.UniqueID = (int)row["UniqueID"];
         item.StartTime = (DateTime)row["StartTime"];
         item.EndTime = (DateTime)row["EndTime"];

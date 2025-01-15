@@ -115,7 +115,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global_Classes\clsAppt.cs" />
     <Compile Include="Global_Classes\clsCustomScheduleDataProvider.cs" />
     <Compile Include="Global_Classes\clsUtilities.cs" />
     <Compile Include="Patients\controls\ctrlPatientCard.cs">

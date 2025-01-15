@@ -28,7 +28,7 @@ namespace Business
 
     private bool ignoreChanges;
 
-    private byte labelValue;
+    private int labelValue;
 
     private string locationValue = string.Empty;
 
@@ -54,7 +54,7 @@ namespace Business
 
     private string m_sCustomToolTip = string.Empty;
 
-    private byte markerValue;
+    private int markerValue;
 
     private int owner;
 
@@ -71,6 +71,62 @@ namespace Business
     private object tag;
 
     private int version;
+
+    // AppointmnetID
+    private int _AppintmnetID;
+    public int AppintmnetID
+    {
+      get { return _AppintmnetID; }
+      set { AppintmnetID = value; }
+    }
+
+    // PatientID
+    private int _PatientID;
+    public int PatientID
+    {
+      get { return _PatientID; }
+      set { _PatientID = value; }
+    }
+
+    // DoctorID
+    private int _DoctorID;
+    public int DoctorID
+    {
+      get { return _DoctorID; }
+      set { _DoctorID = value; }
+    }
+
+    // AppointmentStatus
+    //private int _AppointmentStatus;
+    //public int AppointmentStatus
+    //{
+    //  get { return _AppointmentStatus; }
+    //  set { _AppointmentStatus = value; }
+    //}
+
+    // MedicalRecordID
+    private int _MedicalRecordID;
+    public int MedicalRecordID
+    {
+      get { return _MedicalRecordID; }
+      set { _MedicalRecordID = value; }
+    }
+
+    // PaymentID
+    private int _PaymentID;
+    public int PaymentID
+    {
+      get { return _PaymentID; }
+      set { _PaymentID = value; }
+    }
+
+    // LastStatusDate
+    private DateTime _LastStatusDate;
+    public DateTime LastStatusDate
+    {
+      get { return _LastStatusDate; }
+      set { _LastStatusDate = value; }
+    }
 
 
     //
@@ -386,7 +442,7 @@ namespace Business
     [DefaultValue(0)]
     [Browsable(true)]
     [Bindable(true)]
-    public virtual byte LabelValue
+    public virtual int LabelValue
     {
       get
       {
@@ -434,7 +490,7 @@ namespace Business
     [Bindable(true)]
     [Description("Gets or sets a integer categorizer value for this item.")]
     [DefaultValue(0)]
-    public virtual byte MarkerValue
+    public virtual int MarkerValue
     {
       get
       {
@@ -626,29 +682,29 @@ namespace Business
     //
     // Summary:
     //     Gets or sets the start time for this item.
-    //[Browsable(true)]
-    //[Bindable(true)]
-    //[Description("Gets or sets the start time for this item.")]
-    //public virtual DateTime StartTime
-    //{
-    //  get
-    //  {
-    //    return start;
-    //  }
-    //  set
-    //  {
-    //    if (!IgnoreChanges && start != value)
-    //    {
-    //      Dirty = true;
-    //    }
+    [Browsable(true)]
+    [Bindable(true)]
+    [Description("Gets or sets the start time for this item.")]
+    public virtual DateTime StartTime
+    {
+      get
+      {
+        return start;
+      }
+      set
+      {
+        if (!IgnoreChanges && start != value)
+        {
+          Dirty = true;
+        }
 
-    //    start = value;
-    //  }
-    //}
+        start = value;
+      }
+    }
 
     //
     // Summary:
-    ////     Gets or sets a text string identifying the topic of this item.
+    //     Gets or sets a text string identifying the topic of this item.
     [DefaultValue("")]
     [Description("Gets or sets a text string identifying the topic of this item.")]
     [Browsable(true)]
@@ -785,6 +841,16 @@ namespace Business
     [DefaultValue(0)]
     public virtual int Version => version;
 
+    //
+    // Summary:
+    //     Initializes a new instance of the Syncfusion.Schedule.ScheduleAppointment class.
+    //public clsAppt()
+    //{
+    //  this.DoctorID = -1;
+
+    //}
+
+
 
     //
     // Summary:
@@ -909,45 +975,10 @@ namespace Business
 
     public enum enMode { AddNew=0,Update=1}
     public enMode Mode = enMode.AddNew;
-
     public enum enAppointmentSataus
     { Pending = 1, Confirmed = 2, Completed = 3, Canceled = 4, Rescheduled = 5, NotShow = 6 }
-
     public int AppointmentID { set; get; }
-    public int PatientID { set; get; }
-    public int DoctorID { set; get; }
-    public DateTime StartTime { set;get; }
-    public enAppointmentSataus AppointmentStatus { set; get; }
-    public int MedicalRecordID { set; get; }
-    public int PaymentID { set; get; }
-    public DateTime LastStatusDate { set; get; }
-    bool IScheduleAppointment.AllDay { get; set; }
-    bool IScheduleAppointment.AllowClickable { get ; set; }
-    bool IScheduleAppointment.AllowDrag { get; set; }
-    bool IScheduleAppointment.AllowResize { get; set; }
-    Color IScheduleAppointment.BackColor { get; set; }
-    Color IScheduleAppointment.ForeColor { get; set; }
-    string IScheduleAppointment.Content { get; set; }
-    string IScheduleAppointment.CustomToolTip { get; set; }
-    bool IScheduleAppointment.Dirty { get; set; }
-    DateTime IScheduleAppointment.EndTime { get; set; }
-    bool IScheduleAppointment.IgnoreChanges { get; set; }
-    int IScheduleAppointment.LabelValue { get; set; }
-    string IScheduleAppointment.LocationValue { get; set; }
-    bool IScheduleAppointment.RecurringOnOverride { get; set; }
-    int IScheduleAppointment.MarkerValue { get; set; }
-    int IScheduleAppointment.Owner { get; set; }
-    bool IScheduleAppointment.Reminder { get; set; }
-    int IScheduleAppointment.ReminderValue { get; set; }
-    string IScheduleAppointment.ReminderText { get; set; }
-    DateTime IScheduleAppointment.StartTime { get; set; }
-    string IScheduleAppointment.Subject { get; set; }
-    object IScheduleAppointment.Tag { get; set; }
-    Color IScheduleAppointment.TimeSpanColor { get; set; }
-    ScheduleAppointmentToolTip IScheduleAppointment.ToolTip { get; set; }
-    int IScheduleAppointment.UniqueID { get; set; }
-
-    int IScheduleAppointment.Version { get;  }
+    public enAppointmentSataus AppointmentStatus { set; get; } 
 
     public clsAppointments()
     {
@@ -991,7 +1022,7 @@ namespace Business
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
          (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
-         this.StartTime, this.EndTime, this.LocationValue,this.LabelValue, this.MarkerValue,this.content);
+         this.StartTime, this.EndTime, this.LocationValue,(byte)this.LabelValue, (byte)this.MarkerValue,this.content);
       return (this.AppointmentID != -1);
     }
 
@@ -1000,7 +1031,7 @@ namespace Business
     {
       return clsAppointmentsData.UpdateAppointment(this.AppointmentID,this.PatientID, this.DoctorID,
          (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
-         this.StartTime, this.EndTime, this.LocationValue, this.LabelValue, this.MarkerValue, this.content);
+         this.StartTime, this.EndTime, this.LocationValue, (byte)this.LabelValue, (byte)this.MarkerValue, this.content);
     }
 
     /// <summary>
