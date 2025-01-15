@@ -86,6 +86,7 @@ namespace Dental_App.Appointmnets
         item.Dirty = false;
         item.Owner = 1; // (int)row["Own"];
         item.MarkerValue = 1;//(int)row["MarkerValue"];
+        
         list.Add(item);
 
       }
