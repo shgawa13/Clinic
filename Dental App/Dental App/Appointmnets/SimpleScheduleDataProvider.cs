@@ -156,7 +156,7 @@ namespace GridScheduleSample
         item.Content = string.Format("content{0}", i);
         item.LabelValue = ((byte)(r1.Next(10) < 3 ? 0 : r1.Next(10)));
         item.LocationValue = string.Format("location{0}", r1.Next(5));
-
+        
         item.ReminderValue = r1.Next(10) < 5 ? 0 : r1.Next(12);
         item.Reminder = r1.Next(10) > 1;
         item.AllDay = r1.Next(10) < 1;

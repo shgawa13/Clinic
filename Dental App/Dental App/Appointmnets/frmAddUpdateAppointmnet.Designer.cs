@@ -79,6 +79,8 @@
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.label22 = new System.Windows.Forms.Label();
+      this.cbLabel = new System.Windows.Forms.ComboBox();
       this.iconLogo = new FontAwesome.Sharp.IconButton();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -910,6 +912,8 @@
       // splitContainer1.Panel1
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.splitContainer1.Panel1.Controls.Add(this.label22);
+      this.splitContainer1.Panel1.Controls.Add(this.cbLabel);
       this.splitContainer1.Panel1.Controls.Add(this.label13);
       this.splitContainer1.Panel1.Controls.Add(this.cbLocation);
       this.splitContainer1.Panel1.Controls.Add(this.cbDoctor);
@@ -950,6 +954,29 @@
       this.splitContainer1.Size = new System.Drawing.Size(724, 281);
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
+      // 
+      // label22
+      // 
+      this.label22.AutoSize = true;
+      this.label22.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label22.Location = new System.Drawing.Point(391, 15);
+      this.label22.Name = "label22";
+      this.label22.Size = new System.Drawing.Size(55, 21);
+      this.label22.TabIndex = 152;
+      this.label22.Text = "Label:";
+      // 
+      // cbLabel
+      // 
+      this.cbLabel.AllowDrop = true;
+      this.cbLabel.DropDownHeight = 80;
+      this.cbLabel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLabel.FormattingEnabled = true;
+      this.cbLabel.IntegralHeight = false;
+      this.cbLabel.Location = new System.Drawing.Point(472, 11);
+      this.cbLabel.Name = "cbLabel";
+      this.cbLabel.Size = new System.Drawing.Size(140, 29);
+      this.cbLabel.TabIndex = 151;
       // 
       // iconLogo
       // 
@@ -1715,5 +1742,7 @@
     private System.Windows.Forms.Label lblBillsDate;
     private System.Windows.Forms.Label label21;
     private System.Windows.Forms.Label lblSummaryBill;
+    private System.Windows.Forms.Label label22;
+    private System.Windows.Forms.ComboBox cbLabel;
   }
 }

@@ -141,6 +141,10 @@ namespace Dental_App.Appointmnets
 
     }
 
+    // Filling ComboBoxt with Lables
+
+
+
     // Find patient
     private void _FindPatinet(int PatientID)
     {
