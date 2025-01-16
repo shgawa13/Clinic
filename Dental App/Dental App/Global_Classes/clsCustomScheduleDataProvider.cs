@@ -9,7 +9,7 @@ using Business;
 
 namespace Dental_App.Global_Classes
 {
-  public class CustomScheduleDataProvider : SimpleScheduleDataProvider
+  public class CustomScheduleDataProvider : ScheduleDataProvider
   {
 
     private string fileName;
@@ -89,6 +89,8 @@ namespace Dental_App.Global_Classes
       //DisplayList(string.Format("*************day {0}", day), list);
       return list;
     }
+    public override bool IsDirty { get => base.IsDirty; set => base.IsDirty = value; }
+    
   }
 
 }
