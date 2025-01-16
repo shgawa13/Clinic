@@ -123,6 +123,7 @@ namespace GridScheduleSample
 
       return masterList;
     }
+   
 
     public static SimpleScheduleAppointmentList InitializeRandomDataSource()
     {

@@ -142,8 +142,23 @@ namespace Dental_App.Appointmnets
     }
 
     // Filling ComboBoxt with Lables
-
-
+    private void _FillLabelComboBox()
+    {
+      //labelList = new ListObjectList();
+      //labelList.Add(new ListObject(0, "None", Color.White));
+      //labelList.Add(new ListObject(1, "Important", Color.FromArgb(255, 128, 64)));
+      //labelList.Add(new ListObject(2, "Business", Color.FromArgb(86, 152, 233)));
+      //labelList.Add(new ListObject(3, "Personal", Color.FromArgb(57, 210, 53)));
+      //labelList.Add(new ListObject(4, "Vacation", Color.FromArgb(199, 198, 182)));
+      //labelList.Add(new ListObject(5, "Must Attend", Color.FromArgb(255, 128, 0)));
+      //labelList.Add(new ListObject(6, "Travel Required", Color.FromArgb(0, 255, 255)));
+      //labelList.Add(new ListObject(7, "Needs Preparation", Color.FromArgb(171, 171, 88)));
+      //labelList.Add(new ListObject(8, "Birthday", Color.FromArgb(186, 117, 255)));
+      //labelList.Add(new ListObject(9, "Anniversary", Color.FromArgb(255, 128, 64)));
+      //labelList.Add(new ListObject(10, "Phone Call", Color.FromArgb(255, 128, 64)));
+      
+     // cbLabels.DataSource =
+    }
 
     // Find patient
     private void _FindPatinet(int PatientID)

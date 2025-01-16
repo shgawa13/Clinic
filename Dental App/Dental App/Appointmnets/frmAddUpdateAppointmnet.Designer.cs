@@ -80,7 +80,6 @@
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.label22 = new System.Windows.Forms.Label();
-      this.cbLabel = new System.Windows.Forms.ComboBox();
       this.iconLogo = new FontAwesome.Sharp.IconButton();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
       this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -125,6 +124,9 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnSteps = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.cbLabels = new Syncfusion.WinForms.ListView.SfComboBox();
+      this.sfComboBox1 = new Syncfusion.WinForms.ListView.SfComboBox();
+      this.label23 = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       this.pnlDiagnosis.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
@@ -164,6 +166,8 @@
       this.pnlBillSummary.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.cbLabels)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sfComboBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // panel1
@@ -178,7 +182,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(770, 232);
+      this.panel1.Size = new System.Drawing.Size(861, 232);
       this.panel1.TabIndex = 131;
       // 
       // btnDiagnosis
@@ -196,7 +200,7 @@
       this.btnDiagnosis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnDiagnosis.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnDiagnosis.ForeColor = System.Drawing.Color.Black;
-      this.btnDiagnosis.Location = new System.Drawing.Point(11, 3);
+      this.btnDiagnosis.Location = new System.Drawing.Point(3, 3);
       this.btnDiagnosis.Name = "btnDiagnosis";
       this.btnDiagnosis.Size = new System.Drawing.Size(264, 224);
       this.btnDiagnosis.TabIndex = 125;
@@ -222,9 +226,9 @@
       this.btnWhitening.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.btnWhitening.ForeColor = System.Drawing.Color.Black;
       this.btnWhitening.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.btnWhitening.Location = new System.Drawing.Point(527, 3);
+      this.btnWhitening.Location = new System.Drawing.Point(568, 3);
       this.btnWhitening.Name = "btnWhitening";
-      this.btnWhitening.Size = new System.Drawing.Size(240, 109);
+      this.btnWhitening.Size = new System.Drawing.Size(290, 109);
       this.btnWhitening.TabIndex = 130;
       this.btnWhitening.Text = "Whitening";
       this.btnWhitening.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -247,9 +251,9 @@
       this.btnRestoration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnRestoration.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.btnRestoration.ForeColor = System.Drawing.Color.Black;
-      this.btnRestoration.Location = new System.Drawing.Point(404, 3);
+      this.btnRestoration.Location = new System.Drawing.Point(421, 3);
       this.btnRestoration.Name = "btnRestoration";
-      this.btnRestoration.Size = new System.Drawing.Size(117, 109);
+      this.btnRestoration.Size = new System.Drawing.Size(142, 109);
       this.btnRestoration.TabIndex = 128;
       this.btnRestoration.Text = "Restoration";
       this.btnRestoration.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -272,9 +276,9 @@
       this.btnImplantation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnImplantation.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.btnImplantation.ForeColor = System.Drawing.Color.Black;
-      this.btnImplantation.Location = new System.Drawing.Point(527, 118);
+      this.btnImplantation.Location = new System.Drawing.Point(568, 118);
       this.btnImplantation.Name = "btnImplantation";
-      this.btnImplantation.Size = new System.Drawing.Size(240, 109);
+      this.btnImplantation.Size = new System.Drawing.Size(290, 109);
       this.btnImplantation.TabIndex = 129;
       this.btnImplantation.Text = "Implantation";
       this.btnImplantation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -297,9 +301,9 @@
       this.Orthopedic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.Orthopedic.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.Orthopedic.ForeColor = System.Drawing.Color.Black;
-      this.Orthopedic.Location = new System.Drawing.Point(281, 118);
+      this.Orthopedic.Location = new System.Drawing.Point(273, 118);
       this.Orthopedic.Name = "Orthopedic";
-      this.Orthopedic.Size = new System.Drawing.Size(240, 109);
+      this.Orthopedic.Size = new System.Drawing.Size(290, 109);
       this.Orthopedic.TabIndex = 126;
       this.Orthopedic.Text = "Orthopedic";
       this.Orthopedic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -322,9 +326,9 @@
       this.btnExtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnExtraction.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnExtraction.ForeColor = System.Drawing.Color.Black;
-      this.btnExtraction.Location = new System.Drawing.Point(281, 3);
+      this.btnExtraction.Location = new System.Drawing.Point(274, 3);
       this.btnExtraction.Name = "btnExtraction";
-      this.btnExtraction.Size = new System.Drawing.Size(117, 109);
+      this.btnExtraction.Size = new System.Drawing.Size(142, 109);
       this.btnExtraction.TabIndex = 127;
       this.btnExtraction.Text = "Extraction";
       this.btnExtraction.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -719,7 +723,7 @@
       this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
       this.panelSearch.Location = new System.Drawing.Point(0, 0);
       this.panelSearch.Name = "panelSearch";
-      this.panelSearch.Size = new System.Drawing.Size(724, 41);
+      this.panelSearch.Size = new System.Drawing.Size(815, 41);
       this.panelSearch.TabIndex = 150;
       // 
       // iconSearch
@@ -893,12 +897,12 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(621, 126);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(712, 126);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(117, 343);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(621, 126);
+      this.tbNote.Size = new System.Drawing.Size(712, 126);
       this.tbNote.TabIndex = 149;
       // 
       // splitContainer1
@@ -912,8 +916,10 @@
       // splitContainer1.Panel1
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.splitContainer1.Panel1.Controls.Add(this.sfComboBox1);
+      this.splitContainer1.Panel1.Controls.Add(this.label23);
+      this.splitContainer1.Panel1.Controls.Add(this.cbLabels);
       this.splitContainer1.Panel1.Controls.Add(this.label22);
-      this.splitContainer1.Panel1.Controls.Add(this.cbLabel);
       this.splitContainer1.Panel1.Controls.Add(this.label13);
       this.splitContainer1.Panel1.Controls.Add(this.cbLocation);
       this.splitContainer1.Panel1.Controls.Add(this.cbDoctor);
@@ -951,7 +957,7 @@
       this.splitContainer1.Panel2.Controls.Add(this.iconButton8);
       this.splitContainer1.Panel2.Controls.Add(this.iconButton1);
       this.splitContainer1.Panel2.Controls.Add(this.label17);
-      this.splitContainer1.Size = new System.Drawing.Size(724, 281);
+      this.splitContainer1.Size = new System.Drawing.Size(815, 281);
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
@@ -959,24 +965,11 @@
       // 
       this.label22.AutoSize = true;
       this.label22.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label22.Location = new System.Drawing.Point(391, 15);
+      this.label22.Location = new System.Drawing.Point(324, 13);
       this.label22.Name = "label22";
       this.label22.Size = new System.Drawing.Size(55, 21);
       this.label22.TabIndex = 152;
       this.label22.Text = "Label:";
-      // 
-      // cbLabel
-      // 
-      this.cbLabel.AllowDrop = true;
-      this.cbLabel.DropDownHeight = 80;
-      this.cbLabel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.cbLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbLabel.FormattingEnabled = true;
-      this.cbLabel.IntegralHeight = false;
-      this.cbLabel.Location = new System.Drawing.Point(472, 11);
-      this.cbLabel.Name = "cbLabel";
-      this.cbLabel.Size = new System.Drawing.Size(140, 29);
-      this.cbLabel.TabIndex = 151;
       // 
       // iconLogo
       // 
@@ -1224,7 +1217,7 @@
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(750, 476);
+      this.groupBox1.Size = new System.Drawing.Size(841, 476);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointmnet Info";
@@ -1341,7 +1334,7 @@
       this.tbpAddAppointment.Location = new System.Drawing.Point(1, 29);
       this.tbpAddAppointment.Name = "tbpAddAppointment";
       this.tbpAddAppointment.ShowCloseButton = true;
-      this.tbpAddAppointment.Size = new System.Drawing.Size(770, 573);
+      this.tbpAddAppointment.Size = new System.Drawing.Size(861, 573);
       this.tbpAddAppointment.TabIndex = 1;
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
@@ -1359,7 +1352,7 @@
       this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
       this.tbpProcedures.Name = "tbpProcedures";
       this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(770, 573);
+      this.tbpProcedures.Size = new System.Drawing.Size(861, 573);
       this.tbpProcedures.TabIndex = 2;
       this.tbpProcedures.Text = "Procedures";
       this.tbpProcedures.ThemesEnabled = false;
@@ -1367,7 +1360,7 @@
       // tcAppointment
       // 
       this.tcAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(773, 604);
+      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(864, 604);
       this.tcAppointment.Controls.Add(this.tbpAddAppointment);
       this.tcAppointment.Controls.Add(this.tbpProcedures);
       this.tcAppointment.Controls.Add(this.tbpBills);
@@ -1377,7 +1370,7 @@
       this.tcAppointment.Location = new System.Drawing.Point(0, 0);
       this.tcAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
       this.tcAppointment.Name = "tcAppointment";
-      this.tcAppointment.Size = new System.Drawing.Size(773, 604);
+      this.tcAppointment.Size = new System.Drawing.Size(864, 604);
       this.tcAppointment.TabIndex = 152;
       this.tcAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
       this.tcAppointment.ThemeName = "TabRendererMetro";
@@ -1395,7 +1388,7 @@
       this.tbpBills.Location = new System.Drawing.Point(1, 29);
       this.tbpBills.Name = "tbpBills";
       this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(770, 573);
+      this.tbpBills.Size = new System.Drawing.Size(861, 573);
       this.tbpBills.TabIndex = 3;
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
@@ -1578,11 +1571,51 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // cbLabels
+      // 
+      this.cbLabels.AllowDropDownResize = false;
+      this.cbLabels.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+      this.cbLabels.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+      this.cbLabels.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLabels.Location = new System.Drawing.Point(385, 11);
+      this.cbLabels.Name = "cbLabels";
+      this.cbLabels.Size = new System.Drawing.Size(173, 24);
+      this.cbLabels.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLabels.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLabels.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.cbLabels.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLabels.TabIndex = 152;
+      // 
+      // sfComboBox1
+      // 
+      this.sfComboBox1.AllowDropDownResize = false;
+      this.sfComboBox1.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+      this.sfComboBox1.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+      this.sfComboBox1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.sfComboBox1.Location = new System.Drawing.Point(635, 10);
+      this.sfComboBox1.Name = "sfComboBox1";
+      this.sfComboBox1.Size = new System.Drawing.Size(173, 24);
+      this.sfComboBox1.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.sfComboBox1.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.sfComboBox1.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      this.sfComboBox1.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.sfComboBox1.TabIndex = 153;
+      // 
+      // label23
+      // 
+      this.label23.AutoSize = true;
+      this.label23.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label23.Location = new System.Drawing.Point(574, 12);
+      this.label23.Name = "label23";
+      this.label23.Size = new System.Drawing.Size(53, 21);
+      this.label23.TabIndex = 154;
+      this.label23.Text = "Mark:";
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(773, 604);
+      this.ClientSize = new System.Drawing.Size(864, 604);
       this.Controls.Add(this.btnSteps);
       this.Controls.Add(this.expertsBtn2);
       this.Controls.Add(this.tcAppointment);
@@ -1641,6 +1674,8 @@
       this.pnlBillSummary.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.cbLabels)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sfComboBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1743,6 +1778,8 @@
     private System.Windows.Forms.Label label21;
     private System.Windows.Forms.Label lblSummaryBill;
     private System.Windows.Forms.Label label22;
-    private System.Windows.Forms.ComboBox cbLabel;
+    private Syncfusion.WinForms.ListView.SfComboBox cbLabels;
+    private Syncfusion.WinForms.ListView.SfComboBox sfComboBox1;
+    private System.Windows.Forms.Label label23;
   }
 }

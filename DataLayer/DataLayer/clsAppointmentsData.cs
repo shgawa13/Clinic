@@ -304,7 +304,7 @@ namespace DataLayer
 
 
     /// <summary>
-    /// IsExist
+    /// IsExist:
     ///  Check if Appointment already Exist or not;
     /// </summary>
     /// <param name="AppointmentID"></param>
