@@ -330,9 +330,13 @@ namespace Dental_App.Appointmnets
       if(tcAppointment.SelectedIndex == 1)
       {
          _SaveAppointment();
-        _Appointment.Save();
+        if (_Appointment.Save())
+          MessageBox.Show("Appointment Has been Added Successully");
+        else
+          MessageBox.Show("Erorr: Something went wrong couldn't add an appointment");
+
       }
-    
+
     }
 
 

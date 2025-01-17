@@ -78,10 +78,62 @@ namespace ClinicConsoleApp
       
     }
   }
-  
+
+  // ----------------- Order Event Args -----------------
+
+  public class OrderEvent :EventArgs
+  {
+    public string OrderID { set; get; }
+    public string Product { set; get; }
+    public double Price { set; get; }
+
+    public OrderEvent(string OrderID, string Product, double Price)
+    {
+      this.OrderID = OrderID;
+      this.Product = Product;
+      this.Price = Price;
+    }
+  }
 
 
-  public class Plan
+  public class Order
+  {
+
+    public event EventHandler<OrderEvent> OnOrderCreated;
+
+    public void CreateOrder(string OrderID, string Product, double Price)
+    {
+      if(OnOrderCreated != null)
+      {
+        OnOrderCreated(this, new OrderEvent(OrderID, Product, Price));
+      }
+    }
+
+  }
+
+
+  public class Shipper
+  {
+    
+
+    public void Subscribe(Order s)
+    {
+      s.OnOrderCreated += S_OnOrderCreated;
+    }
+
+    private void S_OnOrderCreated(object sender, OrderEvent e)
+    {
+      Console.WriteLine($"-------------------------------------\n");
+      Console.WriteLine($"New Order has been Created");
+      Console.WriteLine($"OrderID: ${e.OrderID}");
+      Console.WriteLine($"Product: ${e.Product}");
+      Console.WriteLine($"Price: ${e.Price}");
+      Console.WriteLine($"-------------------------------------\n");
+    }
+  }
+
+
+    public class Plan
   {
     public string ItemName { set; get; }
     public short ItemPrice { set; get; }
@@ -275,16 +327,23 @@ namespace ClinicConsoleApp
 
     static void Main(string[] args)
     {
-      Display Screen = new Display();
-      Thermostat thermostat = new Thermostat();
-      
-      Screen.Subscribe(thermostat);
+      //Display Screen = new Display();
+      //Thermostat thermostat = new Thermostat();
 
-      thermostat.SetNewTempreture(25);
-      thermostat.SetNewTempreture(25);
-      thermostat.SetNewTempreture(25);
-      thermostat.SetNewTempreture(26);
+      //Screen.Subscribe(thermostat);
 
+      //thermostat.SetNewTempreture(25);
+      //thermostat.SetNewTempreture(25);
+      //thermostat.SetNewTempreture(25);
+      //thermostat.SetNewTempreture(26);
+
+
+      var order = new Order();
+
+      Shipper Aramx = new Shipper();
+      Aramx.Subscribe(order);
+
+      order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
 
       Console.ReadKey();
     }

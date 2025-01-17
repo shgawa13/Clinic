@@ -1039,7 +1039,7 @@ namespace Business
       this.Subject = clsPatient.Find(PatientID).FullName;
       this.LabelValue = LabelValue;
       this.MarkerValue = MarkerValue;
-      this._Notes = Note;
+      this.Notes = Note;
       
       Mode = enMode.Update;
     }
@@ -1049,7 +1049,7 @@ namespace Business
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
          (byte)this.AppointmentStatus, this.MedicalRecordID, this.PaymentID, this.LastStatusDate,
-         this.StartTime, this.EndTime, this.LocationValue,(byte)this.LabelValue, (byte)this.MarkerValue,this.content);
+         this.StartTime, this.EndTime, this.LocationValue,(byte)this.LabelValue, (byte)this.MarkerValue,this.Notes);
       return (this.AppointmentID != -1);
     }
 
