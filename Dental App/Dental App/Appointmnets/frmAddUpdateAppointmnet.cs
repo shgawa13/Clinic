@@ -143,8 +143,6 @@ namespace Dental_App.Appointmnets
 
     }
 
-
-
     // Find patient
     private void _FindPatinet(int PatientID)
     {
@@ -211,8 +209,7 @@ namespace Dental_App.Appointmnets
 
     }
 
-    
-
+   
 
 
     //-------------------------------------[ Procedures Tap ] --------------------------------------------//
