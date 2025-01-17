@@ -33,6 +33,7 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
       
+      FillList(); 
     }
 
  
@@ -58,7 +59,6 @@ namespace Dental_App.Appointmnets
 
     private void frmAppointments_Load(object sender, EventArgs e)
     {
-      FillList(); 
       
       
     }

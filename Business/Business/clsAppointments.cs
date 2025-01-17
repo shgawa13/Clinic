@@ -54,6 +54,8 @@ namespace Business
 
     private string m_sCustomToolTip = string.Empty;
 
+    private string _Notes = string.Empty;
+
     private int markerValue;
 
     private int owner;
@@ -726,6 +728,30 @@ namespace Business
       }
     }
 
+
+    //
+    // Summary:
+    //     Gets or sets a text string as Notes of this item.
+    [DefaultValue("")]
+    [Description("Gets or sets a text string as Notes of this item.")]
+    [Browsable(true)]
+    [Bindable(true)]
+
+    public string Notes
+    {
+      get
+      {
+        return _Notes;
+      }
+      set
+      {
+        if(!IgnoreChanges && _Notes != value)
+        {
+          Dirty = true;
+        }
+        _Notes = value;
+      }
+    }
     //
     // Summary:
     //     Gets or sets an arbitrary object associated with this item.
@@ -991,6 +1017,7 @@ namespace Business
       this.MedicalRecordID = -1;
       this.PaymentID = -1;
       this.LastStatusDate = DateTime.Now;
+      this._Notes = string.Empty;
 
       Mode = enMode.AddNew;
     }
@@ -1012,7 +1039,7 @@ namespace Business
       this.Subject = clsPatient.Find(PatientID).FullName;
       this.LabelValue = LabelValue;
       this.MarkerValue = MarkerValue;
-      this.content = Note;
+      this._Notes = Note;
       
       Mode = enMode.Update;
     }
