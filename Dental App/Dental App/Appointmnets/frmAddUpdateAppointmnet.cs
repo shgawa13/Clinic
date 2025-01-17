@@ -26,15 +26,13 @@ namespace Dental_App.Appointmnets
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
 
-    private ListObjectList labelList;
+    private clsAppointments _Appointment;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
-    private List<string> PlanList = new List<string>();
     private int TotalCost = 0;
-    private List<DentalPlan> PlanItem = new List<DentalPlan>();
     // AppointmentForm Can be opened from two places
     // From Schedule
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
@@ -43,10 +41,12 @@ namespace Dental_App.Appointmnets
       _ScheduleGrid = control;
       _SelectedAppointmentDate = AppointmentDate;
       _AppointmnetTime = AppointmentTime;
-
+      _Mode = enMode.AddNew;
       // ------------
       CheckBoxEvent();
     }
+
+
 
     private void CheckBoxEvent()
     {
@@ -77,6 +77,8 @@ namespace Dental_App.Appointmnets
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
+     // if (_Mode == enMode.Update)
+     //   _LoadData();
     }
 
     // Reset Defualt values
@@ -131,6 +133,18 @@ namespace Dental_App.Appointmnets
       cbEndTime.SelectedIndex = 0;
     }
 
+
+
+    private DateTime GetSelectedTime(ComboBox comboBox)
+    {
+      if (comboBox.SelectedItem != null) 
+      {
+        string selectedTime = comboBox.SelectedItem.ToString();
+        DateTime selectedDate = DateTime.Parse(selectedTime); 
+        return selectedDate;
+      } 
+      return DateTime.MinValue;
+    }
     // Filling ComboBox with Doctors names.
     private void _FillDoctorsComboBox()
     {
@@ -312,10 +326,16 @@ namespace Dental_App.Appointmnets
 
       if(tcAppointment.SelectedIndex !=2)
         tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
+
+      if(tcAppointment.SelectedIndex == 1)
+      {
+         _SaveAppointment();
+        _Appointment.Save();
+      }
     
     }
 
-    
+
     private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
     {
       // if tab index is 2 we hide the button
@@ -323,6 +343,27 @@ namespace Dental_App.Appointmnets
       // if tab insex is 1 we change the text to save
       btnSteps.Text = (tcAppointment.SelectedIndex == 1) ? "Save": "Next";
     }
+    
+    private void _SaveAppointment()
+    {
+      _Appointment.PatientID = _PatientID;
+      _Appointment.Subject = _Patient.FullName;
+      _Appointment.Content = cbDoctor.SelectedText;
+      _Appointment.LastStatusDate = DateTime.Now;
+      _Appointment.StartTime = GetSelectedTime(cbStartTime);
+      _Appointment.EndTime = GetSelectedTime(cbEndTime);
+      _Appointment.LocationValue = cbLocation.Text;
+      _Appointment.AllDay = false;
+      _Appointment.Dirty = false;
+      _Appointment.LabelValue = 1;
+      _Appointment.Reminder = false;
+      _Appointment.Owner = 1;
+      _Appointment.MarkerValue = 1;
+
+      _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
+      _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
+    }
+
 
     // OnClick on these buttons will show spicific plan panel
     private void btnDiagnosis_Click(object sender, EventArgs e)
@@ -382,6 +423,7 @@ namespace Dental_App.Appointmnets
       frm.ShowDialog();
     }
 
+   
   }
 
   public class DentalPlan
