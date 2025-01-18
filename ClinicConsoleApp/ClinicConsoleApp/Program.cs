@@ -300,21 +300,6 @@ namespace ClinicConsoleApp
         Console.WriteLine($" Something went wrong  ");
 
 
-      //this.AppointmentID = AppointmentID;
-      //this.PatientID = PatientID;
-      //this.DoctorID = DoctorID;
-      //this.AppointmentStatus = AppointmentStatus;
-      //this.MedicalRecordID = MedicalRecordID;
-      //this.PaymentID = PaymentID;
-      //this.LastStatusDate = DateTime.Now;
-      //this.StartTime = StartTime;
-      //this.EndTime = EndTime;
-      //this.LocationValue = Location;
-      //this.Subject = clsPatient.Find(PatientID).FullName;
-      //this.LabelValue = LabelValue;
-      //this.MarkerValue = MarkerValue;
-      //this.Notes = Note;
-
     }
 
 
@@ -324,17 +309,19 @@ namespace ClinicConsoleApp
 
       foreach(DataRow row in dt.Rows)
       {
+        Console.WriteLine($"{row["AppointmentID"]}");
+        Console.WriteLine($"{clsPatient.Find((int)row["PatientID"])}");
+        Console.WriteLine($"{clsDoctors.Find((int)row["DoctorID"]).FullName}");
+        Console.WriteLine($"{row["AppointmentStatus"]}");
+        Console.WriteLine($"{row["MedicalRecordID"]}");
+        Console.WriteLine($"{row["PaymentID"]}");
+        Console.WriteLine($"{row["LastStatusDate"]}");
         Console.WriteLine($"{row["StartTime"]}");
         Console.WriteLine($"{row["EndTime"]}");
-        Console.WriteLine($"{row["_Subject"]}");
-        Console.WriteLine($"{row["Content"]}");
+        Console.WriteLine($"{row["Location"]}");
         Console.WriteLine($"{row["LabelValue"]}");
-        Console.WriteLine($"{row["LocationValue"]}");
-        Console.WriteLine($"{row["ReminderValue"]}");
-        Console.WriteLine($"{row["Reminder"]}");
-        Console.WriteLine($"{row["AllDay"]}");
         Console.WriteLine($"{row["MarkerValue"]}");
-        Console.WriteLine($"{row["Dirty"]}");
+        Console.WriteLine($"{row["Notes"]}");
       }
 
 
@@ -394,7 +381,7 @@ namespace ClinicConsoleApp
       //order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
       //order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
 
-      AddNewAppointment();
+      GetAllAppt();
 
       Console.ReadKey();
     }

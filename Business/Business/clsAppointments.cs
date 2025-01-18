@@ -1101,7 +1101,7 @@ namespace Business
     /// Get All Appointments
     /// </summary>
     /// <returns></returns>
-    public static DataTable GetAllAppointments() => clsTestApptData.GetAllAppointmnets();
+    public static DataTable GetAllAppointments() => clsAppointmentsData.GetAllAppointments();
 
     /// <summary>
     /// IsExist
@@ -1131,7 +1131,7 @@ namespace Business
         case enMode.AddNew:
           if (_AddNewAppointment())
           {
-            Mode = enMode.AddNew;
+            Mode = enMode.Update;
             return true;
           }
           else
@@ -1145,6 +1145,7 @@ namespace Business
 
       return false;
     }
+
 
     bool IScheduleAppointment.IsConflict(IScheduleAppointment item)
     {
