@@ -29,13 +29,13 @@ namespace DataLayer
     /// <returns></returns>
     public static int AddNewAppointment( int PatientID, int DoctorID, byte AppointmentStatus,
       int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, byte LabelValue, byte MarkerValue, string Note)
+       string Location, byte LabelValue, byte MarkerValue, string Notes)
     {
       int AppointmentID = -1;
-      string query = @"Inert into Appointments(PatientID,DoctorID,AppointmentStatus,MedicalRecordID,PaymentID,
-       LastStatusDate,StartTime,EndTime,Location,Title,Note,LabelValue,MarkerValue,Note)
+      string query = @"Insert into Appointments(PatientID,DoctorID,AppointmentStatus,MedicalRecordID,PaymentID,
+       LastStatusDate,StartTime,EndTime,Location,LabelValue,MarkerValue,Notes)
        Values(@PatientID,@DoctorID,@AppointmentStatus,@MedicalRecordID,@PaymentID,
-       @LastStatusDate,@StartTime,@EndTime,@Location,@LabelValue,@MarkerValue,@Note);
+       @LastStatusDate,@StartTime,@EndTime,@Location,@LabelValue,@MarkerValue,@Notes);
        Select SCOPE_IDENTITY();";
 
       try
@@ -58,7 +58,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@Location", Location);
             command.Parameters.AddWithValue("@LabelValue", LabelValue);
             command.Parameters.AddWithValue("@MarkerValue", MarkerValue);
-            command.Parameters.AddWithValue("@Note", Note);
+            command.Parameters.AddWithValue("@Notes", Notes);
 
             object result = command.ExecuteScalar();
 

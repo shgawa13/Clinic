@@ -270,6 +270,54 @@ namespace ClinicConsoleApp
 
     }
 
+    public static void AddNewAppointment()
+    {
+      int Year = DateTime.Today.Year;
+      int Month = DateTime.Today.Month;
+      int ToDay = DateTime.Today.Day;
+
+      DateTime date = new DateTime(Year, Month, ToDay, 8, 0, 0);
+
+      clsAppointments Appt = new clsAppointments();
+      Appt.PatientID = 6;
+      Appt.DoctorID = 3;
+      Appt.AppointmentStatus = clsAppointments.enAppointmentSataus.Pending;
+      Appt.MedicalRecordID = 1;
+      Appt.PaymentID = 1;
+      Appt.StartTime = new DateTime(Year, Month, 20, 8, 0, 0);
+      Appt.EndTime = new DateTime(Year, Month, 20, 9, 0, 0);
+      Appt.Subject = "Appointment Test";
+      Appt.Content = "Dr.Something";
+      Appt.LabelValue = 2;
+      Appt.LocationValue = "Room B";
+      Appt.Reminder = false;
+      Appt.AllDay = false;
+      Appt.MarkerValue = 2;
+
+      if (Appt.Save())
+        Console.WriteLine($" {Appt.AppointmentID} Appointment has been made successfully");
+      else
+        Console.WriteLine($" Something went wrong  ");
+
+
+      //this.AppointmentID = AppointmentID;
+      //this.PatientID = PatientID;
+      //this.DoctorID = DoctorID;
+      //this.AppointmentStatus = AppointmentStatus;
+      //this.MedicalRecordID = MedicalRecordID;
+      //this.PaymentID = PaymentID;
+      //this.LastStatusDate = DateTime.Now;
+      //this.StartTime = StartTime;
+      //this.EndTime = EndTime;
+      //this.LocationValue = Location;
+      //this.Subject = clsPatient.Find(PatientID).FullName;
+      //this.LabelValue = LabelValue;
+      //this.MarkerValue = MarkerValue;
+      //this.Notes = Note;
+
+    }
+
+
     public static void GetAllAppt()
     {
       DataTable dt = clsAppointments.GetAllAppointments();
@@ -338,12 +386,15 @@ namespace ClinicConsoleApp
       //thermostat.SetNewTempreture(26);
 
 
-      var order = new Order();
+      //var order = new Order();
 
-      Shipper Aramx = new Shipper();
-      Aramx.Subscribe(order);
+      //Shipper Aramx = new Shipper();
+      //Aramx.Subscribe(order);
 
-      order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
+      //order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
+      //order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
+
+      AddNewAppointment();
 
       Console.ReadKey();
     }
