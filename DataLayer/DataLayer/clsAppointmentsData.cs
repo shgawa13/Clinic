@@ -28,7 +28,7 @@ namespace DataLayer
     /// <param name="Note"></param>
     /// <returns></returns>
     public static int AddNewAppointment( int PatientID, int DoctorID, byte AppointmentStatus,
-      int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
+       DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
        string Location, byte LabelValue, byte MarkerValue, string Notes)
     {
       int AppointmentID = -1;
