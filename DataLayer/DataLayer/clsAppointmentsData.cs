@@ -163,8 +163,8 @@ namespace DataLayer
     /// <param name="AppointmentID"></param>
     /// <returns></returns>
     public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,ref byte AppointmentStatus,
-      ref int MedicalRecordID, ref int PaymentID,ref DateTime LastStatusDate, ref DateTime StartTime, ref DateTime EndTime,
-       ref string Location, ref byte LabelValue, ref byte MarkerValue, ref string Notes)
+       ref DateTime LastStatusDate, ref DateTime StartTime, ref DateTime EndTime,ref string Location, ref byte LabelValue,
+       ref byte MarkerValue, ref string Notes, ref int PaymentID, ref int MedicalRecordID)
     {
       bool IsFound = false;
 
