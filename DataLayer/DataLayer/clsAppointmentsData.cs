@@ -25,17 +25,17 @@ namespace DataLayer
     /// <param name="Location"></param>
     /// <param name="LabelValue"></param>
     /// <param name="MarkerValue"></param>
-    /// <param name="Note"></param>
+    /// <param name="Notes"></param>
     /// <returns></returns>
     public static int AddNewAppointment( int PatientID, int DoctorID, byte AppointmentStatus,
        DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, byte LabelValue, byte MarkerValue, string Notes)
+       string Location, byte LabelValue, byte MarkerValue, string Notes, int PaymentID, int MedicalRecordID)
     {
       int AppointmentID = -1;
-      string query = @"Insert into Appointments(PatientID,DoctorID,AppointmentStatus,MedicalRecordID,PaymentID,
-       LastStatusDate,StartTime,EndTime,Location,LabelValue,MarkerValue,Notes)
-       Values(@PatientID,@DoctorID,@AppointmentStatus,@MedicalRecordID,@PaymentID,
-       @LastStatusDate,@StartTime,@EndTime,@Location,@LabelValue,@MarkerValue,@Notes);
+      string query = @"Insert into Appointments(PatientID,DoctorID,AppointmentStatus,
+       LastStatusDate,StartTime,EndTime,Location,LabelValue,MarkerValue,Notes,PaymentID,MedicalRecordID)
+       Values(@PatientID,@DoctorID,@AppointmentStatus,@LastStatusDate,@StartTime,@EndTime,@Location,@LabelValue,
+       @MarkerValue,@Notes,@PaymentID,@MedicalRecordID);
        Select SCOPE_IDENTITY();";
 
       try
@@ -50,8 +50,6 @@ namespace DataLayer
             command.Parameters.AddWithValue("@PatientID", PatientID);
             command.Parameters.AddWithValue("@DoctorID", DoctorID);
             command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
-            command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
-            command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
             command.Parameters.AddWithValue("@StartTime", StartTime);
             command.Parameters.AddWithValue("@EndTime", EndTime);
@@ -59,6 +57,8 @@ namespace DataLayer
             command.Parameters.AddWithValue("@LabelValue", LabelValue);
             command.Parameters.AddWithValue("@MarkerValue", MarkerValue);
             command.Parameters.AddWithValue("@Notes", Notes);
+            command.Parameters.AddWithValue("@PaymentID", PaymentID);
+            command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
 
             object result = command.ExecuteScalar();
 
@@ -96,26 +96,26 @@ namespace DataLayer
     /// <param name="Location"></param>
     /// <param name="LabelValue"></param>
     /// <param name="MarkerValue"></param>
-    /// <param name="Note"></param>
+    /// <param name="Notes"></param>
     /// <returns></returns>
     public static bool UpdateAppointment(int AppointmentID, int PatientID, int DoctorID, byte AppointmentStatus,
-       int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, byte LabelValue, byte MarkerValue, string Note)
+        DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,string Location, byte LabelValue, byte MarkerValue,
+        string Notes, int PaymentID, int MedicalRecordID)
     {
       int EffectedRow = 0;
       string Query = @"Update Appointments
       set PatientID=@PatientID,
       DoctorID=@DoctorID,
       AppointmentStatus=@AppointmentStatus,
-      MedicalRecordID=@MedicalRecordID
-      PaymentID=@PaymentID,
       LastStatusDate=@LastStatusDate
       StartTime=@StartTime,
       EndTime=@EndTime,
       Location=@Location,
       LabelValue=@LabelValue,
       MarkerValue=@MarkerValue,
-      Note=@Note,
+      Notes=@Notes,
+      PaymentID=@PaymentID,
+      MedicalRecordID=@MedicalRecordID
       where AppointmentID=@AppointmentID";
 
       try
@@ -130,15 +130,15 @@ namespace DataLayer
             command.Parameters.AddWithValue("@PatientID", PatientID);
             command.Parameters.AddWithValue("@DoctorID", DoctorID);
             command.Parameters.AddWithValue("@AppointmentStatus", AppointmentStatus);
-            command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
-            command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
             command.Parameters.AddWithValue("@StartTime", StartTime);
             command.Parameters.AddWithValue("@EndTime", EndTime);
             command.Parameters.AddWithValue("@Location", Location);
             command.Parameters.AddWithValue("@LabelValue", LabelValue);
             command.Parameters.AddWithValue("@MarkerValue", MarkerValue);
-            command.Parameters.AddWithValue("@Note", Note);
+            command.Parameters.AddWithValue("@Notes", Notes);
+            command.Parameters.AddWithValue("@PaymentID", PaymentID);
+            command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
 
             EffectedRow = command.ExecuteNonQuery();
           }
@@ -164,7 +164,7 @@ namespace DataLayer
     /// <returns></returns>
     public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,ref byte AppointmentStatus,
       ref int MedicalRecordID, ref int PaymentID,ref DateTime LastStatusDate, ref DateTime StartTime, ref DateTime EndTime,
-       ref string Location, ref byte LabelValue, ref byte MarkerValue, ref string Note)
+       ref string Location, ref byte LabelValue, ref byte MarkerValue, ref string Notes)
     {
       bool IsFound = false;
 
@@ -192,15 +192,15 @@ namespace DataLayer
                 PatientID = (int)reader["PatientID"];
                 DoctorID = (int)reader["DoctorID"];
                 AppointmentStatus = (byte)reader["AppointmentStatus"];
-                MedicalRecordID = (int)reader["MedicalRecordID"];
-                PaymentID = (int)reader["PaymentID"];
                 LastStatusDate = (DateTime)reader["LastStatusDate"];
                 StartTime = (DateTime)reader["AppointmentStartTime"];
                 EndTime = (DateTime)reader["AppointmentEndTime"];
                 Location = (string)reader["Location"];
                 LabelValue = (byte)reader["LabelValue"];
                 MarkerValue = (byte)reader["MarkerValue"];
-                Note = (string)reader["Note"];
+                Notes = (string)reader["Notes"];
+                PaymentID = (int)reader["PaymentID"];
+                MedicalRecordID = (int)reader["MedicalRecordID"];
               }
             }
 
