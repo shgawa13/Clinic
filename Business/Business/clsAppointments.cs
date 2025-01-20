@@ -1030,8 +1030,6 @@ namespace Business
       this.PatientID = PatientID;
       this.DoctorID = DoctorID;
       this.AppointmentStatus = AppointmentStatus;
-      this.MedicalRecordID = MedicalRecordID;
-      this.PaymentID = PaymentID;
       this.LastStatusDate = DateTime.Now;
       this.StartTime = StartTime;
       this.EndTime = EndTime;
@@ -1040,6 +1038,8 @@ namespace Business
       this.LabelValue = LabelValue;
       this.MarkerValue = MarkerValue;
       this.Notes = Note;
+      this.PaymentID = PaymentID;
+      this.MedicalRecordID = MedicalRecordID;
       
       Mode = enMode.Update;
     }
