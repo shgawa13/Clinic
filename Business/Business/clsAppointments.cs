@@ -1023,8 +1023,8 @@ namespace Business
     }
 
     private clsAppointments(int AppointmentID, int PatientID, int DoctorID, enAppointmentSataus AppointmentStatus,
-      int MedicalRecordID, int PaymentID, DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, string Title,byte LabelValue,byte MarkerValue, string Note)
+       DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
+       string Location, string Title,byte LabelValue,byte MarkerValue, string Notes, int PaymentID, int MedicalRecordID)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
@@ -1037,7 +1037,7 @@ namespace Business
       this.Subject = clsPatient.Find(PatientID).FullName;
       this.LabelValue = LabelValue;
       this.MarkerValue = MarkerValue;
-      this.Notes = Note;
+      this.Notes = Notes;
       this.PaymentID = PaymentID;
       this.MedicalRecordID = MedicalRecordID;
       
