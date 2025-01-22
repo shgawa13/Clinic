@@ -27,6 +27,7 @@ namespace Dental_App.Appointmnets
     private enMode _Mode = enMode.AddNew;
 
     private clsAppointments _Appointment;
+    private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
@@ -366,6 +367,19 @@ namespace Dental_App.Appointmnets
 
       _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
       _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
+    }
+
+
+
+    private int _MedicalRecordID()
+    {
+      int ID =0;
+      _MedicalRecord.AdditionalNotes = tbNote.Text;
+      _MedicalRecord.Diagnosis = lbSummary.Text;
+
+
+
+      return ID;
     }
 
 

@@ -1001,6 +1001,7 @@ namespace Business
 
     public enum enMode { AddNew=0,Update=1}
     public enMode Mode = enMode.AddNew;
+
     public enum enAppointmentSataus
     { Pending = 1, Confirmed = 2, Completed = 3, Canceled = 4, Rescheduled = 5, NotShow = 6 }
     public int AppointmentID { set; get; }
@@ -1125,6 +1126,9 @@ namespace Business
     // Handle Add and Update calls
     public bool Save()
     {
+      
+      // Create MedicalRecord and Payments
+      //if()
 
       switch (Mode)
       {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-  internal class clsMedicalRecords
+  public class clsMedicalRecords
   {
     public enum enMode { AddNew = 0, Update = 1 }
     public enMode Mode = enMode.AddNew;
