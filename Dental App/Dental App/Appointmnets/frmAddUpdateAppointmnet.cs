@@ -441,7 +441,10 @@ namespace Dental_App.Appointmnets
       frm.ShowDialog();
     }
 
-   
+    private void btnPayBill_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
   public class DentalPlan
