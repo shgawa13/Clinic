@@ -13,11 +13,16 @@ namespace Dental_App.Payments
 {
   public partial class frmPay : Form
   {
+    // Delegate function will return PaymentID
+    public delegate void DataBackEventHandler(object sender, int PaymentID);
+    public event DataBackEventHandler DataBack;
+
     public enum enMode { AddNew=0, Update=1}
     public enMode Mode = enMode.AddNew;
 
     public enum enPaymentMethod { Cash=0, Card=1}
-    
+
+    private decimal _Amount;
     private int _PaymentID =-1;
     public int PaymentID
     {
@@ -28,24 +33,35 @@ namespace Dental_App.Payments
     private clsPayments _Payment;
 
     // this will handle add new
-    public frmPay()
+    public frmPay(decimal TotalBill)
     {
       InitializeComponent();
+      _Amount = TotalBill;
       Mode = enMode.AddNew;
     }
 
     // this will handle update
-    public frmPay(int ID)
+    public frmPay(int ID, decimal TotalBill)
     {
       InitializeComponent();
       _PaymentID = ID;
-      Mode = enMode.AddNew;
+      _Amount = TotalBill;
+      Mode = enMode.Update;
     }
 
 
     private void _ResetDefualtValues()
     {
-      lblTitle.Text = "Add New Payment";
+      if(Mode == enMode.AddNew)
+      {
+        lblTitle.Text = "Add New Payment";
+        _Payment = new clsPayments();
+      }
+      else
+      {
+        lblTitle.Text = "Update Payment";
+      }
+
       lblID.Text = "????";
       lblDate.Text = DateTime.Now.ToShortDateString();
       tbNote.Clear();
@@ -64,7 +80,6 @@ namespace Dental_App.Payments
         return;
       }
 
-      lblTitle.Text = "Update Payment";
       lblID.Text = _Payment.PaymentID.ToString();
       lblDate.Text = _Payment.PaymentDate.ToShortDateString();
       lblAmount.Text = _Payment.PaidAmount.ToString();
@@ -86,6 +101,39 @@ namespace Dental_App.Payments
         _LoadData();
     }
 
-    
+    private void btnSteps_Click(object sender, EventArgs e)
+    {
+      // Saving Payment
+
+      _Payment.PaymentDate = DateTime.Now;
+      _Payment.PaidAmount = _Amount;
+      _Payment.PaymentMethod = (byte)cbPaymentMethod.SelectedIndex;
+
+      if(tbNote.Text.Trim() != null)
+      {
+
+        _Payment.Notes = tbNote.Text.Trim();
+      }
+      else
+      {
+        _Payment.Notes = "";
+      }
+
+
+      if (_Payment.Save())
+      {
+
+        lblTitle.Text = "Update Payment";
+
+        MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        DataBack?.Invoke(this, _PaymentID);
+
+      }
+      else
+      {
+        MessageBox.Show("Error Couldn't Save Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+      }
+    }
   }
 }

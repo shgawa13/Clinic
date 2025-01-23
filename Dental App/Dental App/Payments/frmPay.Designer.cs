@@ -285,6 +285,7 @@
       this.btnSteps.Text = "Save";
       this.btnSteps.TextColor = System.Drawing.Color.WhiteSmoke;
       this.btnSteps.UseVisualStyleBackColor = false;
+      this.btnSteps.Click += new System.EventHandler(this.btnSteps_Click);
       // 
       // expertsBtn2
       // 

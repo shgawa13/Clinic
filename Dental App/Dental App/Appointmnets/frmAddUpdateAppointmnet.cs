@@ -447,22 +447,17 @@ namespace Dental_App.Appointmnets
     }
   }
 
-  public class DentalPlan
-  {
-    public string Name { set; get; }
-    public short Price { set; get; }
+  //public class AppointmnetEventArgs :EventArgs
+  //{
+  //  public int 
 
-    public DentalPlan(string planName, short planPrice)
-    {
-      Name = planName;
-      Price = planPrice;
-    }
+  //  public AppointmnetEventArgs(string planName, short planPrice)
+  //  {
+  //    Name = planName;
+  //    Price = planPrice;
+  //  }
 
-    public override string ToString()
-    {
-      return Name;
-    }
-  }
+  //}
 
 }
 
