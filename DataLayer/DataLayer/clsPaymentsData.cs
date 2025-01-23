@@ -11,7 +11,7 @@ namespace DataLayer
   public class clsPaymentsData
   {
     // Add new Payment
-    public static int AddNewPayment(DateTime PaymentDate, string PaymentMethod, decimal AmountPaid,string Notes)
+    public static int AddNewPayment(DateTime PaymentDate, byte PaymentMethod, decimal AmountPaid,string Notes)
     {
       int PaymentID = -1;
 
@@ -63,7 +63,7 @@ namespace DataLayer
     }
 
     // Update Payment
-    public static bool UpdatePayments(int PaymentID, DateTime PaymentDate, string PaymentMethod, decimal AmountPaid,string Notes)
+    public static bool UpdatePayments(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal AmountPaid,string Notes)
     {
       int EffectedRow = 0;
 
@@ -112,7 +112,7 @@ namespace DataLayer
     }
 
     // Find Payment By ID
-    public static bool GetPaymentByID(int PaymentID, ref DateTime PaymentDate, ref string PaymentMethod,
+    public static bool GetPaymentByID(int PaymentID, ref DateTime PaymentDate, ref byte PaymentMethod,
       ref decimal AmountPaid,ref string Notes)
     {
       bool IsFound = false;
@@ -139,7 +139,7 @@ namespace DataLayer
                 IsFound = true;
 
                 PaymentDate = (DateTime)reader["PaymentDate"];
-                PaymentMethod = (string)reader["PaymentMethod"];
+                PaymentMethod = (byte)reader["PaymentMethod"];
                 AmountPaid = (decimal)reader["AmountPaid"];
                 Notes = (string)reader["AdditionalNotes"];
               }

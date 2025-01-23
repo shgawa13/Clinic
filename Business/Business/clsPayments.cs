@@ -15,7 +15,7 @@ namespace Business
 
     public int PaymentID { set; get; }
     public DateTime PaymentDate { set; get; }
-    public string PaymentMethod { set; get; }
+    public byte PaymentMethod { set; get; }
     public decimal PaidAmount { set; get; }
     public string Notes { set; get; }
 
@@ -23,14 +23,14 @@ namespace Business
     {
       this.PaymentID = -1;
       this.PaymentDate = DateTime.Now;
-      this.PaymentMethod = "";
+      this.PaymentMethod = 0;
       this.PaidAmount = 0;
       this.Notes = "";
 
       Mode = enMode.AddNew;
     }
 
-    private clsPayments(int PaymentID, DateTime PaymentDate, string PaymentMethod, decimal PaidAmount,string Notes)
+    private clsPayments(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal PaidAmount,string Notes)
     {
       this.PaymentID = PaymentID;
       this.PaymentDate = PaymentDate;
@@ -63,7 +63,7 @@ namespace Business
     public static clsPayments Find(int PaymentID)
     {
       DateTime PaymentDate = DateTime.Now;
-      string PaymentMethod = "";
+      byte PaymentMethod = 0;
       decimal PaidAmount = 0;
       string Notes = "";
       bool IsFound = clsPaymentsData.GetPaymentByID(PaymentID, ref PaymentDate,ref PaymentMethod,ref PaidAmount,ref Notes);
