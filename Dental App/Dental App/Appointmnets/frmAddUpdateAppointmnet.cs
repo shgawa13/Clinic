@@ -15,6 +15,7 @@ using Syncfusion.Windows.Forms.Schedule;
 using Business;
 using Syncfusion.WinForms.ListView;
 using Syncfusion.Windows.Forms.Tools;
+using Dental_App.Payments;
 namespace Dental_App.Appointmnets
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
@@ -27,13 +28,14 @@ namespace Dental_App.Appointmnets
     private enMode _Mode = enMode.AddNew;
 
     private clsAppointments _Appointment;
+    private clsPayments _Payment;
     private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
-    private int TotalCost = 0;
+    private decimal TotalCost = 0;
     // AppointmentForm Can be opened from two places
     // From Schedule
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
@@ -224,8 +226,6 @@ namespace Dental_App.Appointmnets
 
     }
 
-   
-
 
     //-------------------------------------[ Procedures Tap ] --------------------------------------------//
 
@@ -252,7 +252,6 @@ namespace Dental_App.Appointmnets
       _UpdateSummary();
       return Convert.ToInt16(Cost);
     }
-
 
 
     // Update Summary 
@@ -328,7 +327,7 @@ namespace Dental_App.Appointmnets
       if(tcAppointment.SelectedIndex !=2)
         tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
 
-      if(tcAppointment.SelectedIndex == 1)
+      if(tcAppointment.SelectedIndex == 2 && btnSteps.Enabled)
       {
          _SaveAppointment();
         if (_Appointment.Save())
@@ -343,15 +342,19 @@ namespace Dental_App.Appointmnets
 
     private void tcAppointment_SelectedIndexChanged(object sender, EventArgs e)
     {
-      // if tab index is 2 we hide the button
-      btnSteps.Visible = (tcAppointment.SelectedIndex != 2);
+      
       // if tab insex is 1 we change the text to save
-      btnSteps.Text = (tcAppointment.SelectedIndex == 1) ? "Save": "Next";
+      if(tcAppointment.SelectedIndex == 2)
+      {
+        btnSteps.Enabled = false;
+        btnSteps.Text = "Save";
+      } 
     }
     
     private void _SaveAppointment()
     {
       _Appointment.PatientID = _PatientID;
+    //  _Appointment.PaymentID = 
       _Appointment.Subject = _Patient.FullName;
       _Appointment.Content = cbDoctor.SelectedText;
       _Appointment.LastStatusDate = DateTime.Now;
@@ -369,18 +372,6 @@ namespace Dental_App.Appointmnets
       _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
     }
 
-
-
-    private int _MedicalRecordID()
-    {
-      int ID =0;
-      _MedicalRecord.AdditionalNotes = tbNote.Text;
-      _MedicalRecord.Diagnosis = lbSummary.Text;
-
-
-
-      return ID;
-    }
 
 
     // OnClick on these buttons will show spicific plan panel
@@ -432,7 +423,6 @@ namespace Dental_App.Appointmnets
     }
 
 
-
     //------------------------------------- [ Bills Tap ] --------------------------------------------//
 
     private void btnPrintBill_Click(object sender, EventArgs e)
@@ -443,21 +433,27 @@ namespace Dental_App.Appointmnets
 
     private void btnPayBill_Click(object sender, EventArgs e)
     {
+      frmPay frm = new frmPay(TotalCost);
+      frm.DataBack += GetPaymentID;
+      frm.ShowDialog();
+    }
 
+    // here we assing PaymentID 
+    private void GetPaymentID(object sender, int PaymentID)
+    {
+      if(PaymentID != -1)
+      {
+        _Payment.PaymentID = PaymentID;
+        btnSteps.Enabled = true;
+      }
+      else
+      {
+        MessageBox.Show("Error Couldn't Save Appointment because payment fild.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        btnSteps.Enabled = false;
+      }
     }
   }
 
-  //public class AppointmnetEventArgs :EventArgs
-  //{
-  //  public int 
-
-  //  public AppointmnetEventArgs(string planName, short planPrice)
-  //  {
-  //    Name = planName;
-  //    Price = planPrice;
-  //  }
-
-  //}
-
+  
 }
 

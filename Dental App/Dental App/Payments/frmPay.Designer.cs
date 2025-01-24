@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.lblTitle = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.lblDate = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.iconNote = new FontAwesome.Sharp.IconButton();
-      this.lblAmount = new System.Windows.Forms.Label();
       this.label4 = new System.Windows.Forms.Label();
       this.payicon = new FontAwesome.Sharp.IconButton();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,9 +48,12 @@
       this.pictureBox2 = new System.Windows.Forms.PictureBox();
       this.btnSteps = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.tbAmount = new System.Windows.Forms.TextBox();
+      this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
       this.SuspendLayout();
       // 
       // lblTitle
@@ -153,16 +156,6 @@
       this.iconNote.TabIndex = 157;
       this.iconNote.UseVisualStyleBackColor = true;
       // 
-      // lblAmount
-      // 
-      this.lblAmount.AutoSize = true;
-      this.lblAmount.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblAmount.Location = new System.Drawing.Point(167, 209);
-      this.lblAmount.Name = "lblAmount";
-      this.lblAmount.Size = new System.Drawing.Size(36, 25);
-      this.lblAmount.TabIndex = 163;
-      this.lblAmount.Text = "???";
-      // 
       // label4
       // 
       this.label4.AutoSize = true;
@@ -206,9 +199,9 @@
       this.cbPaymentMethod.Items.AddRange(new object[] {
             "Cash",
             "Card"});
-      this.cbPaymentMethod.Location = new System.Drawing.Point(172, 258);
+      this.cbPaymentMethod.Location = new System.Drawing.Point(164, 258);
       this.cbPaymentMethod.Name = "cbPaymentMethod";
-      this.cbPaymentMethod.Size = new System.Drawing.Size(193, 28);
+      this.cbPaymentMethod.Size = new System.Drawing.Size(201, 28);
       this.cbPaymentMethod.TabIndex = 167;
       // 
       // label2
@@ -307,12 +300,28 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // tbAmount
+      // 
+      this.tbAmount.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tbAmount.Location = new System.Drawing.Point(164, 205);
+      this.tbAmount.Name = "tbAmount";
+      this.tbAmount.Size = new System.Drawing.Size(200, 28);
+      this.tbAmount.TabIndex = 172;
+      this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmount_KeyPress);
+      this.tbAmount.Leave += new System.EventHandler(this.tbAmount_Leave);
+      this.tbAmount.Validating += new System.ComponentModel.CancelEventHandler(this.tbAmount_Validating);
+      // 
+      // errorProvider1
+      // 
+      this.errorProvider1.ContainerControl = this;
+      // 
       // frmPay
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.Control;
       this.ClientSize = new System.Drawing.Size(532, 486);
+      this.Controls.Add(this.tbAmount);
       this.Controls.Add(this.lblID);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.iconID);
@@ -321,7 +330,6 @@
       this.Controls.Add(this.pictureBox2);
       this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.payicon);
-      this.Controls.Add(this.lblAmount);
       this.Controls.Add(this.label4);
       this.Controls.Add(this.btnSteps);
       this.Controls.Add(this.expertsBtn2);
@@ -340,6 +348,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.tbNote)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -357,7 +366,6 @@
     private FontAwesome.Sharp.IconButton iconNote;
     private ExpertsBtn btnSteps;
     private ExpertsBtn expertsBtn2;
-    private System.Windows.Forms.Label lblAmount;
     private System.Windows.Forms.Label label4;
     private FontAwesome.Sharp.IconButton payicon;
     private System.Windows.Forms.PictureBox pictureBox1;
@@ -367,5 +375,7 @@
     private System.Windows.Forms.Label lblID;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.PictureBox pictureBox2;
+    private System.Windows.Forms.TextBox tbAmount;
+    private System.Windows.Forms.ErrorProvider errorProvider1;
   }
 }

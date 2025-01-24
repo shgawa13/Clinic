@@ -37,6 +37,7 @@ namespace Dental_App.Payments
     {
       InitializeComponent();
       _Amount = TotalBill;
+
       Mode = enMode.AddNew;
     }
 
@@ -46,6 +47,7 @@ namespace Dental_App.Payments
       InitializeComponent();
       _PaymentID = ID;
       _Amount = TotalBill;
+
       Mode = enMode.Update;
     }
 
@@ -64,6 +66,7 @@ namespace Dental_App.Payments
 
       lblID.Text = "????";
       lblDate.Text = DateTime.Now.ToShortDateString();
+      tbAmount.Focus();
       tbNote.Clear();
     }
 
@@ -82,7 +85,7 @@ namespace Dental_App.Payments
 
       lblID.Text = _Payment.PaymentID.ToString();
       lblDate.Text = _Payment.PaymentDate.ToShortDateString();
-      lblAmount.Text = _Payment.PaidAmount.ToString();
+      tbAmount.Text = _Payment.PaidAmount.ToString();
 
       cbPaymentMethod.SelectedIndex = _Payment.PaymentMethod;
       if (_Payment.Notes == null)
@@ -124,8 +127,9 @@ namespace Dental_App.Payments
       {
 
         lblTitle.Text = "Update Payment";
-
         MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        Mode = enMode.Update;
+
         DataBack?.Invoke(this, _PaymentID);
 
       }
@@ -135,5 +139,35 @@ namespace Dental_App.Payments
 
       }
     }
+
+    // if input is not digit 
+    private void tbAmount_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      // handle numbers input
+      e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+    }
+
+    // handle txtBox Amount is not empty.
+    private void tbAmount_Validating(object sender, CancelEventArgs e)
+    {
+      if (String.IsNullOrEmpty(tbAmount.Text.Trim()))
+      {
+        e.Cancel = true;
+        errorProvider1.SetError(tbAmount, "You must enter PatientID");
+        return;
+      }
+      else
+      {
+        errorProvider1.SetError(tbAmount, null);
+      }
+    }
+
+    // this will handle if Paid amount less than totalCost  
+    private void tbAmount_Leave(object sender, EventArgs e)
+    {
+      if (Convert.ToDecimal(tbAmount.Text.Trim()) != _Amount)
+        MessageBox.Show("Message box");
+    }
+
   }
 }
