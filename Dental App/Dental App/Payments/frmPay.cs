@@ -23,6 +23,7 @@ namespace Dental_App.Payments
     public enum enPaymentMethod { Cash=0, Card=1}
 
     private decimal _Amount;
+    private decimal DifferentAmount;
     private int _PaymentID =-1;
     public int PaymentID
     {
@@ -110,8 +111,9 @@ namespace Dental_App.Payments
       // Saving Payment
 
       _Payment.PaymentDate = DateTime.Now;
-      _Payment.PaidAmount = _Amount;
+      _Payment.PaidAmount = Convert.ToDecimal(tbAmount.Text);
       _Payment.PaymentMethod = (byte)cbPaymentMethod.SelectedIndex;
+      _Payment.Total = DifferentAmount;
 
       if(tbNote.Text.Trim() != null)
       {
@@ -166,9 +168,11 @@ namespace Dental_App.Payments
     // this will handle if Paid amount less than totalCost  
     private void tbAmount_Leave(object sender, EventArgs e)
     {
-      if (Convert.ToDecimal(tbAmount.Text.Trim()) != _Amount)
+       DifferentAmount = _Amount - Convert.ToDecimal(tbAmount.Text.Trim());
+
+      if (DifferentAmount != 0)
       {
-        // tbNote.Text = 
+        tbNote.Text = $"\n the rest of Amount that need to be paid is:\n\t{DifferentAmount}";
       }
     }
 
