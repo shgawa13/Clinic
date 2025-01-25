@@ -66,6 +66,7 @@ namespace Dental_App.Payments
 
       lblID.Text = "????";
       lblDate.Text = DateTime.Now.ToShortDateString();
+      tbAmount.Text = _Amount.ToString();
       tbAmount.Focus();
       tbNote.Clear();
     }
@@ -166,7 +167,9 @@ namespace Dental_App.Payments
     private void tbAmount_Leave(object sender, EventArgs e)
     {
       if (Convert.ToDecimal(tbAmount.Text.Trim()) != _Amount)
-        MessageBox.Show("Message box");
+      {
+        // tbNote.Text = 
+      }
     }
 
   }

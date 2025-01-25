@@ -18,6 +18,7 @@ namespace Business
     public byte PaymentMethod { set; get; }
     public decimal PaidAmount { set; get; }
     public string Notes { set; get; }
+    public decimal Total { set; get; }
 
     public clsPayments()
     {
@@ -26,17 +27,20 @@ namespace Business
       this.PaymentMethod = 0;
       this.PaidAmount = 0;
       this.Notes = "";
+      this.Total = 0;
 
       Mode = enMode.AddNew;
     }
 
-    private clsPayments(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal PaidAmount,string Notes)
+    private clsPayments(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal PaidAmount,
+      string Notes, decimal Total)
     {
       this.PaymentID = PaymentID;
       this.PaymentDate = PaymentDate;
       this.PaymentMethod = PaymentMethod;
       this.PaidAmount = PaidAmount;
       this.Notes = Notes;
+      this.Total=Total;
 
       Mode = enMode.Update;
     }
@@ -45,7 +49,7 @@ namespace Business
     private bool _AddNew()
     {
       this.PaymentID = clsPaymentsData.AddNewPayment(this.PaymentDate, this.PaymentMethod,
-        this.PaidAmount, this.Notes);
+        this.PaidAmount, this.Notes,this.Total);
 
       return (this.PaymentID != -1);
     }
@@ -53,7 +57,8 @@ namespace Business
     // Update Payment
     private bool _Update()
     {
-      return clsPaymentsData.UpdatePayments(this.PaymentID, this.PaymentDate, this.PaymentMethod, this.PaidAmount, this.Notes);
+      return clsPaymentsData.UpdatePayments(this.PaymentID,this.PaymentDate, this.PaymentMethod,
+        this.PaidAmount, this.Notes, this.Total);
     }
 
     // Delete Payment
@@ -64,12 +69,13 @@ namespace Business
     {
       DateTime PaymentDate = DateTime.Now;
       byte PaymentMethod = 0;
-      decimal PaidAmount = 0;
+      decimal PaidAmount = 0, Total = 0;
       string Notes = "";
-      bool IsFound = clsPaymentsData.GetPaymentByID(PaymentID, ref PaymentDate,ref PaymentMethod,ref PaidAmount,ref Notes);
+      bool IsFound = clsPaymentsData.GetPaymentByID(PaymentID, ref PaymentDate,ref PaymentMethod,ref PaidAmount,
+        ref Notes,ref Total);
 
       if (IsFound)
-        return new clsPayments(PaymentID,PaymentDate,PaymentMethod,PaidAmount,Notes);
+        return new clsPayments(PaymentID,PaymentDate,PaymentMethod,PaidAmount,Notes,Total);
       else
         return null;
     }
