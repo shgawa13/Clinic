@@ -270,7 +270,6 @@ namespace Dental_App.Appointmnets
 
       lbSummary.Text = Summarylable;
 
-
     }
 
     // Get all checkboxes
