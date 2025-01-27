@@ -1263,7 +1263,7 @@
       this.groupBox1.Size = new System.Drawing.Size(841, 476);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "Appointmnet Info";
+      this.groupBox1.Text = "Appointment Info";
       // 
       // iconNote
       // 
