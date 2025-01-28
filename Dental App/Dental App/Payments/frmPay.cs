@@ -170,7 +170,7 @@ namespace Dental_App.Payments
     {
        DifferentAmount = _Amount - Convert.ToDecimal(tbAmount.Text.Trim());
 
-      if (DifferentAmount != 0)
+      if (DifferentAmount > 0)
       {
         tbNote.Text = $"\n the rest of Amount that need to be paid is:\n\t{DifferentAmount}";
       }

@@ -33,8 +33,10 @@ namespace Dental_App.Appointmnets
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
+    private int _PaymentID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
+    private string _Diagnosis { set; get; }
     private decimal TotalCost = 0;
     // AppointmentForm Can be opened from two places
     // From Schedule
@@ -245,7 +247,9 @@ namespace Dental_App.Appointmnets
       {
         if (checkBox.Checked)
         {
+          // Sum Plan Cost.
           Cost += int.Parse(checkBox.Tag.ToString());
+          _Diagnosis = checkBox.Text;
         }
       }
 
@@ -353,7 +357,6 @@ namespace Dental_App.Appointmnets
     private void _SaveAppointment()
     {
       _Appointment.PatientID = _PatientID;
-    //  _Appointment.PaymentID = 
       _Appointment.Subject = _Patient.FullName;
       _Appointment.Content = cbDoctor.SelectedText;
       _Appointment.LastStatusDate = DateTime.Now;
@@ -366,6 +369,8 @@ namespace Dental_App.Appointmnets
       _Appointment.Reminder = false;
       _Appointment.Owner = 1;
       _Appointment.MarkerValue = 1;
+      _Appointment.PaymentID = _PaymentID;
+  //    _Appointment.MedicalRecordID =
 
       _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
       _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
@@ -443,6 +448,7 @@ namespace Dental_App.Appointmnets
       if(PaymentID != -1)
       {
         _Payment.PaymentID = PaymentID;
+        _PaymentID = PaymentID;
         btnSteps.Enabled = true;
       }
       else
@@ -451,8 +457,15 @@ namespace Dental_App.Appointmnets
         btnSteps.Enabled = false;
       }
     }
+
+    // here we handle MedicalRecred
+    private void GetMedicalRecordID()
+    {
+      _MedicalRecord.VisitDescription = lbSummary.Text.Trim();
+      _MedicalRecord.Diagnosis = _Diagnosis;
+      _MedicalRecord.AdditionalNotes = null;
+    }
   }
 
-  
 }
 
