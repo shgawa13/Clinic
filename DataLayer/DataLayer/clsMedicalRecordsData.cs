@@ -34,7 +34,6 @@ namespace DataLayer
             // Adding Paramters
             command.Parameters.AddWithValue("@VisitDescription", VisitDescription);
             command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
-            command.Parameters.AddWithValue("@AdditionalNotes", AdditionalNotes);
 
             if (AdditionalNotes != "" && AdditionalNotes != null)
               command.Parameters.AddWithValue("@AdditionalNotes", AdditionalNotes);
