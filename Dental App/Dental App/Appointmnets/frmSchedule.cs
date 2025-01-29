@@ -73,13 +73,14 @@ namespace Dental_App.Appointmnets
       foreach (DataRow row in dt.Rows)
       {
         clsAppointments item = new clsAppointments();
-        item.UniqueID = (int)row["UniqueID"];
+        item.UniqueID = (int)row["AppointmentID"];
         item.StartTime = (DateTime)row["StartTime"];
         item.EndTime = (DateTime)row["EndTime"];
-        item.Subject = (string)row["_Subject"];
-        item.Content = (string)row["Content"];
+        item.Subject = (string)row["PatientID"];
+        item.Content = (string)row["DoctorID"];
         item.LabelValue = 1;
-        item.LocationValue = (string)row["LocationValue"];
+        item.LocationValue = (string)row["Location"];
+        item.LabelValue = (int)row["LabelValue"];
         item.ReminderValue = (int)row["ReminderValue"];
         item.Reminder = false;
         item.AllDay = false;

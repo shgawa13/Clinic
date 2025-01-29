@@ -11,12 +11,12 @@ namespace DataLayer
   public class clsPaymentsData
   {
     // Add new Payment
-    public static int AddNewPayment(DateTime PaymentDate, byte PaymentMethod, decimal AmountPaid,string Notes,decimal Total)
+    public static int AddNewPayment(DateTime PaymentDate, byte PaymentMethod, decimal PaidAmount,string Notes,decimal Total)
     {
       int PaymentID = -1;
 
-      string query = @"Insert Into Payments(PaymentDate,PaymentMethod,AmountPaid,AdditionalNotes,Total)
-      Values(@PaymentDate,@PaymentMethod,@AmountPaid,@AdditionalNotes,Total);
+      string query = @"Insert Into Payments(PaymentDate,PaymentMethod,PaidAmount,AdditionalNotes,Total)
+      Values(@PaymentDate,@PaymentMethod,@PaidAmount,@AdditionalNotes,@Total);
       Select SCOPE_IDENTITY();";
 
       try
@@ -33,7 +33,7 @@ namespace DataLayer
             // Adding Paramters
             command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
             command.Parameters.AddWithValue("@PaymentMethod", PaymentMethod);
-            command.Parameters.AddWithValue("@AmountPaid", AmountPaid);
+            command.Parameters.AddWithValue("@PaidAmount", PaidAmount);
             command.Parameters.AddWithValue("@AdditionalNotes", Notes);
             command.Parameters.AddWithValue("@Total", Total); 
             // resiving object from DB
@@ -63,7 +63,7 @@ namespace DataLayer
     }
 
     // Update Payment
-    public static bool UpdatePayments(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal AmountPaid,
+    public static bool UpdatePayments(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal PaidAmount,
       string Notes,decimal Total)
     {
       int EffectedRow = 0;
@@ -71,7 +71,7 @@ namespace DataLayer
       string query = @"update Payments
           set PaymentDate=@PaymentDate,
           PaymentMethod=@PaymentMethod,
-          AmountPaid=@AmountPaid,
+          PaidAmount=@PaidAmount,
           AdditionalNotes=@Notes,
           Total=@Total
           where PaymentID=@PaymentID";
@@ -89,7 +89,7 @@ namespace DataLayer
             // Adding Paramters
             command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
             command.Parameters.AddWithValue("@PaymentMethod", PaymentMethod);
-            command.Parameters.AddWithValue("@AmountPaid", AmountPaid);
+            command.Parameters.AddWithValue("@PaidAmount", PaidAmount);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@AdditionalNotes", Notes);
             command.Parameters.AddWithValue("@Total", Total);
@@ -115,7 +115,7 @@ namespace DataLayer
 
     // Find Payment By ID
     public static bool GetPaymentByID(int PaymentID, ref DateTime PaymentDate, ref byte PaymentMethod,
-      ref decimal AmountPaid,ref string Notes, ref decimal Total)
+      ref decimal PaidAmount,ref string Notes, ref decimal Total)
     {
       bool IsFound = false;
 
@@ -142,7 +142,7 @@ namespace DataLayer
 
                 PaymentDate = (DateTime)reader["PaymentDate"];
                 PaymentMethod = (byte)reader["PaymentMethod"];
-                AmountPaid = (decimal)reader["AmountPaid"];
+                PaidAmount = (decimal)reader["PaidAmount"];
                 Notes = (string)reader["AdditionalNotes"];
                 Total = (decimal)reader["Total"];
               }

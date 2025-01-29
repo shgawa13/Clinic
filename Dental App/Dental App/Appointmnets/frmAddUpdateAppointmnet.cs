@@ -89,6 +89,16 @@ namespace Dental_App.Appointmnets
     // Reset Defualt values
     private void _ResetDefualtValues()
     {
+
+      if(_Mode == enMode.AddNew)
+      {
+        lblTitle.Text = "Add new Appointment";
+        _Appointment = new clsAppointments();
+      }
+      else
+      {
+        lblTitle.Text = "Update Appointment";
+      }
       // Reset DateTime
       dtAppointmentDate.MinDateTime = DateTime.Today;
       dtAppointmentDate.Value = _SelectedAppointmentDate;
@@ -356,8 +366,8 @@ namespace Dental_App.Appointmnets
     
     private void _SaveAppointment()
     {
-      _Appointment.PatientID = _PatientID;
-      _Appointment.Subject = _Patient.FullName;
+      _Appointment.PatientID = (int)_PatientID;
+      _Appointment.Subject = _Patient.PatientInfo.FullName;
       _Appointment.Content = cbDoctor.SelectedText;
       _Appointment.LastStatusDate = DateTime.Now;
       _Appointment.StartTime = GetSelectedTime(cbStartTime);
@@ -369,8 +379,8 @@ namespace Dental_App.Appointmnets
       _Appointment.Reminder = false;
       _Appointment.Owner = 1;
       _Appointment.MarkerValue = 1;
-      _Appointment.PaymentID = _PaymentID;
-  //    _Appointment.MedicalRecordID =
+      _Appointment.PaymentID = _PatientID;
+      _Appointment.MedicalRecordID = _GetMedicalRecordID();
 
       _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
       _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
@@ -447,7 +457,7 @@ namespace Dental_App.Appointmnets
     {
       if(PaymentID != -1)
       {
-        _Payment.PaymentID = PaymentID;
+        MessageBox.Show($"{PaymentID}");
         _PaymentID = PaymentID;
         btnSteps.Enabled = true;
       }
@@ -459,11 +469,19 @@ namespace Dental_App.Appointmnets
     }
 
     // here we handle MedicalRecred
-    private void GetMedicalRecordID()
+    private int _GetMedicalRecordID()
     {
+      _MedicalRecord = new clsMedicalRecords();
       _MedicalRecord.VisitDescription = lbSummary.Text.Trim();
       _MedicalRecord.Diagnosis = _Diagnosis;
       _MedicalRecord.AdditionalNotes = null;
+
+      if (_MedicalRecord.Save())
+        MessageBox.Show("MedicalRecord has been save Successfully");
+      else
+        MessageBox.Show("Error: Fild to create MedicalRecord");
+
+      return _MedicalRecord.MedicalRecordID;
     }
   }
 

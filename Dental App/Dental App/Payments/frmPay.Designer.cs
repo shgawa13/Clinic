@@ -266,7 +266,6 @@
       this.btnSteps.BorderColor = System.Drawing.Color.PaleVioletRed;
       this.btnSteps.BorderRadius = 5;
       this.btnSteps.BorderSize = 0;
-      this.btnSteps.Enabled = false;
       this.btnSteps.FlatAppearance.BorderSize = 0;
       this.btnSteps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnSteps.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
