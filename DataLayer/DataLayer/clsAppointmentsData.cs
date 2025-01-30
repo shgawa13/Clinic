@@ -229,7 +229,7 @@ namespace DataLayer
     public static DataTable GetAllAppointments()
     {
       DataTable dtAllAppointments = new DataTable();
-      string query = @"select * from Appointments;";
+      string query = @"select * from AppointmentsView;";
 
       try
       {

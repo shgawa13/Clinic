@@ -76,12 +76,12 @@ namespace Dental_App.Appointmnets
         item.UniqueID = (int)row["AppointmentID"];
         item.StartTime = (DateTime)row["StartTime"];
         item.EndTime = (DateTime)row["EndTime"];
-        item.Subject = (string)row["PatientID"];
-        item.Content = (string)row["DoctorID"];
+        item.Subject = Convert.ToString((int)row["PatientID"]);
+        item.Content = Convert.ToString((int)row["DoctorID"]);
         item.LabelValue = 1;
         item.LocationValue = (string)row["Location"];
-        item.LabelValue = (int)row["LabelValue"];
-        item.ReminderValue = (int)row["ReminderValue"];
+        item.LabelValue = (short)row["LabelValue"];
+        item.MarkerValue = (short)row["MarkerValue"];
         item.Reminder = false;
         item.AllDay = false;
         item.Dirty = false;
