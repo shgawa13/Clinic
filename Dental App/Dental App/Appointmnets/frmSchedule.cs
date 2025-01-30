@@ -74,11 +74,14 @@ namespace Dental_App.Appointmnets
       {
         clsAppointments item = new clsAppointments();
         item.UniqueID = (int)row["AppointmentID"];
+        item.PatientID = (int)row["PatientID"];
+        item.DoctorID = (int)row["DoctorID"];
+        item.Subject = (string)row["PatientName"];
+        item.Content = (string)row["DoctorName"];
+        item.AppointmentStatus = (clsAppointments.enAppointmentSataus)row["AppointmentStatus"];
+        item.LastStatusDate = (DateTime)row["LastStatusDate"];
         item.StartTime = (DateTime)row["StartTime"];
         item.EndTime = (DateTime)row["EndTime"];
-        item.Subject = Convert.ToString((int)row["PatientID"]);
-        item.Content = Convert.ToString((int)row["DoctorID"]);
-        item.LabelValue = 1;
         item.LocationValue = (string)row["Location"];
         item.LabelValue = (short)row["LabelValue"];
         item.MarkerValue = (short)row["MarkerValue"];
@@ -87,6 +90,7 @@ namespace Dental_App.Appointmnets
         item.Dirty = false;
         item.Owner = 1; // (int)row["Own"];
         item.MarkerValue = 1;//(int)row["MarkerValue"];
+        item.Notes = (string)row["Notes"];
         
         list.Add(item);
         
