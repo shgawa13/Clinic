@@ -51,7 +51,17 @@ namespace Dental_App.Appointmnets
       CheckBoxEvent();
     }
 
-
+    // Here we Open the form form patient
+    public frmAddUpdateAppointmnet(int ApptID,ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
+    {
+      InitializeComponent();
+      _ScheduleGrid = control;
+      _SelectedAppointmentDate = AppointmentDate;
+      _AppointmnetTime = AppointmentTime;
+      _Mode = enMode.AddNew;
+      // ------------
+      CheckBoxEvent();
+    }
 
     private void CheckBoxEvent()
     {
