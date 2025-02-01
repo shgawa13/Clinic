@@ -38,16 +38,20 @@
       this.label1 = new System.Windows.Forms.Label();
       this.dgvPatients = new System.Windows.Forms.DataGridView();
       this.ctmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.tlsmShowInfo = new System.Windows.Forms.ToolStripMenuItem();
-      this.tlsmEdit = new System.Windows.Forms.ToolStripMenuItem();
-      this.tlsmDelete = new System.Windows.Forms.ToolStripMenuItem();
       this.panel2 = new System.Windows.Forms.Panel();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilter = new System.Windows.Forms.ComboBox();
-      this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
       this.label2 = new System.Windows.Forms.Label();
       this.panel3 = new System.Windows.Forms.Panel();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+      this.updateAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      this.btnAddNewPatient = new FontAwesome.Sharp.IconButton();
+      this.addAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmShowInfo = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmEdit = new System.Windows.Forms.ToolStripMenuItem();
+      this.tlsmDelete = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
       this.ctmsPatient.SuspendLayout();
@@ -135,33 +139,16 @@
       // ctmsPatient
       // 
       this.ctmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addAppointmentToolStripMenuItem,
+            this.updateAppointmentToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.tlsmShowInfo,
             this.tlsmEdit,
+            this.toolStripMenuItem2,
             this.tlsmDelete});
       this.ctmsPatient.Name = "ctmsPatient";
-      this.ctmsPatient.Size = new System.Drawing.Size(128, 70);
+      this.ctmsPatient.Size = new System.Drawing.Size(187, 126);
       this.ctmsPatient.Text = "Mange Patient";
-      // 
-      // tlsmShowInfo
-      // 
-      this.tlsmShowInfo.Name = "tlsmShowInfo";
-      this.tlsmShowInfo.Size = new System.Drawing.Size(127, 22);
-      this.tlsmShowInfo.Text = "Show info";
-      this.tlsmShowInfo.Click += new System.EventHandler(this.tlsmShowInfo_Click);
-      // 
-      // tlsmEdit
-      // 
-      this.tlsmEdit.Name = "tlsmEdit";
-      this.tlsmEdit.Size = new System.Drawing.Size(127, 22);
-      this.tlsmEdit.Text = "Edit";
-      this.tlsmEdit.Click += new System.EventHandler(this.tlsmEdit_Click);
-      // 
-      // tlsmDelete
-      // 
-      this.tlsmDelete.Name = "tlsmDelete";
-      this.tlsmDelete.Size = new System.Drawing.Size(127, 22);
-      this.tlsmDelete.Text = "Delete";
-      this.tlsmDelete.Click += new System.EventHandler(this.tlsmDelete_Click);
       // 
       // panel2
       // 
@@ -203,28 +190,6 @@
       this.cbFilter.TabIndex = 2;
       this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
       // 
-      // btnAddNewPatient
-      // 
-      this.btnAddNewPatient.Anchor = System.Windows.Forms.AnchorStyles.Right;
-      this.btnAddNewPatient.BackColor = System.Drawing.Color.Snow;
-      this.btnAddNewPatient.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddNewPatient.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
-      this.btnAddNewPatient.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-      this.btnAddNewPatient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(134)))), ((int)(((byte)(223)))));
-      this.btnAddNewPatient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.btnAddNewPatient.IconSize = 36;
-      this.btnAddNewPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.btnAddNewPatient.Location = new System.Drawing.Point(673, 3);
-      this.btnAddNewPatient.Name = "btnAddNewPatient";
-      this.btnAddNewPatient.Size = new System.Drawing.Size(112, 50);
-      this.btnAddNewPatient.TabIndex = 1;
-      this.btnAddNewPatient.Text = "AddNew";
-      this.btnAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnAddNewPatient.UseVisualStyleBackColor = false;
-      this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
-      // 
       // label2
       // 
       this.label2.AutoSize = true;
@@ -244,6 +209,17 @@
       this.panel3.Name = "panel3";
       this.panel3.Size = new System.Drawing.Size(800, 95);
       this.panel3.TabIndex = 5;
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
+      // 
+      // updateAppointmentToolStripMenuItem
+      // 
+      this.updateAppointmentToolStripMenuItem.Name = "updateAppointmentToolStripMenuItem";
+      this.updateAppointmentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+      this.updateAppointmentToolStripMenuItem.Text = "Update Appointment";
       // 
       // iconButton1
       // 
@@ -266,6 +242,65 @@
       this.iconButton1.Text = "Patients";
       this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
       this.iconButton1.UseVisualStyleBackColor = true;
+      // 
+      // btnAddNewPatient
+      // 
+      this.btnAddNewPatient.Anchor = System.Windows.Forms.AnchorStyles.Right;
+      this.btnAddNewPatient.BackColor = System.Drawing.Color.Snow;
+      this.btnAddNewPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddNewPatient.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(67)))));
+      this.btnAddNewPatient.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+      this.btnAddNewPatient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(134)))), ((int)(((byte)(223)))));
+      this.btnAddNewPatient.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnAddNewPatient.IconSize = 36;
+      this.btnAddNewPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.btnAddNewPatient.Location = new System.Drawing.Point(673, 3);
+      this.btnAddNewPatient.Name = "btnAddNewPatient";
+      this.btnAddNewPatient.Size = new System.Drawing.Size(112, 50);
+      this.btnAddNewPatient.TabIndex = 1;
+      this.btnAddNewPatient.Text = "AddNew";
+      this.btnAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnAddNewPatient.UseVisualStyleBackColor = false;
+      this.btnAddNewPatient.Click += new System.EventHandler(this.btnAddNewPatient_Click);
+      // 
+      // addAppointmentToolStripMenuItem
+      // 
+      this.addAppointmentToolStripMenuItem.Image = global::Dental_App.Properties.Resources.AddAppointment_32;
+      this.addAppointmentToolStripMenuItem.Name = "addAppointmentToolStripMenuItem";
+      this.addAppointmentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+      this.addAppointmentToolStripMenuItem.Text = "Add Appointment";
+      this.addAppointmentToolStripMenuItem.Click += new System.EventHandler(this.addAppointmentToolStripMenuItem_Click);
+      // 
+      // tlsmShowInfo
+      // 
+      this.tlsmShowInfo.Image = global::Dental_App.Properties.Resources.Vision_Test_32;
+      this.tlsmShowInfo.Name = "tlsmShowInfo";
+      this.tlsmShowInfo.Size = new System.Drawing.Size(186, 22);
+      this.tlsmShowInfo.Text = "Show Patient info";
+      this.tlsmShowInfo.Click += new System.EventHandler(this.tlsmShowInfo_Click);
+      // 
+      // tlsmEdit
+      // 
+      this.tlsmEdit.Image = global::Dental_App.Properties.Resources.edit_32;
+      this.tlsmEdit.Name = "tlsmEdit";
+      this.tlsmEdit.Size = new System.Drawing.Size(186, 22);
+      this.tlsmEdit.Text = "Edit Patient Info";
+      this.tlsmEdit.Click += new System.EventHandler(this.tlsmEdit_Click);
+      // 
+      // tlsmDelete
+      // 
+      this.tlsmDelete.Image = global::Dental_App.Properties.Resources.cross_32;
+      this.tlsmDelete.Name = "tlsmDelete";
+      this.tlsmDelete.Size = new System.Drawing.Size(186, 22);
+      this.tlsmDelete.Text = "Delete Patient";
+      this.tlsmDelete.Click += new System.EventHandler(this.tlsmDelete_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Size = new System.Drawing.Size(183, 6);
       // 
       // frmListPatients
       // 
@@ -307,5 +342,9 @@
     private System.Windows.Forms.ToolStripMenuItem tlsmShowInfo;
     private System.Windows.Forms.ToolStripMenuItem tlsmEdit;
     private System.Windows.Forms.ToolStripMenuItem tlsmDelete;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem addAppointmentToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem updateAppointmentToolStripMenuItem;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
   }
 }

@@ -212,7 +212,9 @@
   <ItemGroup>
     <None Include="Resources\gzexperts_logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\New Application 64.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\Business\Business.csproj">
       <Project>{2f3d13b1-691e-4f8a-ba67-7fa399029708}</Project>
@@ -293,6 +295,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vision Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddAppointment 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

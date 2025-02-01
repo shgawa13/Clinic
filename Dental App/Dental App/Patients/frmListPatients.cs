@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
+using Dental_App.Appointmnets;
 
 namespace Dental_App.Patients
 {
@@ -22,7 +23,6 @@ namespace Dental_App.Patients
     private DataTable _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
       "PatientID", "NationalID", "FirstName", "SecondName", "LastName", "DateOfBirth", "Gendor",
       "PhoneNumber", "Email");
-
     // here we will refresh the list 
     private void _RefreshPatientsList()
     {
@@ -155,6 +155,12 @@ namespace Dental_App.Patients
       int PateintID = (int)dgvPatients.CurrentRow.Cells[0].Value;
       _Patient.DeletePatient(PateintID);
       
+    }
+
+    private void addAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(_Patient.PatientID);
+      frm.ShowDialog();
     }
   }
 }

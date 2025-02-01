@@ -16,6 +16,7 @@ using Business;
 using Syncfusion.WinForms.ListView;
 using Syncfusion.Windows.Forms.Tools;
 using Dental_App.Payments;
+
 namespace Dental_App.Appointmnets
 {
   public partial class frmAddUpdateAppointmnet : MetroForm
@@ -33,13 +34,14 @@ namespace Dental_App.Appointmnets
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
+    
     private int _PaymentID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
     private string _Diagnosis { set; get; }
     private decimal TotalCost = 0;
     // AppointmentForm Can be opened from two places
-    // From Schedule
+    // From Schedule to create new Appointmnet
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     {
       InitializeComponent();
@@ -51,14 +53,24 @@ namespace Dental_App.Appointmnets
       CheckBoxEvent();
     }
 
-    // Here we Open the form form patient
+    // From Schedule to Update an Existing appointment
     public frmAddUpdateAppointmnet(int ApptID,ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     {
       InitializeComponent();
       _ScheduleGrid = control;
       _SelectedAppointmentDate = AppointmentDate;
       _AppointmnetTime = AppointmentTime;
-      _Mode = enMode.AddNew;
+      _Mode = enMode.Update;
+      // ------------
+      CheckBoxEvent();
+    }
+
+    // From patient list 
+    public frmAddUpdateAppointmnet(int PatientID)
+    {
+      InitializeComponent();
+      _PatientID = PatientID;
+      _Mode = enMode.Update;
       // ------------
       CheckBoxEvent();
     }
@@ -389,7 +401,7 @@ namespace Dental_App.Appointmnets
       _Appointment.Reminder = false;
       _Appointment.Owner = 1;
       _Appointment.MarkerValue = 1;
-      _Appointment.PaymentID = _PatientID;
+      _Appointment.PaymentID = _PaymentID;
       _Appointment.MedicalRecordID = _GetMedicalRecordID();
 
       _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
@@ -467,7 +479,6 @@ namespace Dental_App.Appointmnets
     {
       if(PaymentID != -1)
       {
-        MessageBox.Show($"{PaymentID}");
         _PaymentID = PaymentID;
         btnSteps.Enabled = true;
       }

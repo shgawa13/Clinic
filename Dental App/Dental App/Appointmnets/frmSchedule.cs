@@ -24,8 +24,8 @@ namespace Dental_App.Appointmnets
     private DateTime SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
 
-    CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
-    SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
+   public CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
+   public SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
     public frmSchedule()
     {
       InitializeComponent();
@@ -55,6 +55,11 @@ namespace Dental_App.Appointmnets
       //frm.ShowDialog();
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       frm.ShowDialog();
+    }
+
+    public ScheduleControl SendContorl()
+    {
+      return this.scheduleControl1;
     }
 
     private void frmAppointments_Load(object sender, EventArgs e)
