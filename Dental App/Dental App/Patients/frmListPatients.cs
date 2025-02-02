@@ -14,7 +14,6 @@ namespace Dental_App.Patients
 {
   public partial class frmListPatients : Form
   {
-    private clsPerson _Person;
     private clsPatient _Patient;
 
     private static DataTable _dtAllPatients = clsPatient.GetAllPatients();
@@ -33,7 +32,7 @@ namespace Dental_App.Patients
 
       dgvPatients.DataSource = _dtPatients;
       lblPatientsNumbers.Text = dgvPatients.RowCount.ToString();
-
+      
     }
 
     public frmListPatients()
@@ -146,7 +145,8 @@ namespace Dental_App.Patients
 
     private void tlsmEdit_Click(object sender, EventArgs e)
     {
-      MessageBox.Show($"ID: {(int)dgvPatients.CurrentRow.Cells[0].Value}");
+      frmAddUpdatePatient frm = new frmAddUpdatePatient((int)dgvPatients.CurrentRow.Cells[0].Value);
+      frm.ShowDialog();
     }
 
     private void tlsmDelete_Click(object sender, EventArgs e)
@@ -159,7 +159,7 @@ namespace Dental_App.Patients
 
     private void addAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(_Patient.PatientID);
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet((int)dgvPatients.CurrentRow.Cells[0].Value);
       frm.ShowDialog();
     }
   }

@@ -24,14 +24,17 @@ namespace Dental_App.Appointmnets
     private DateTime SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
 
-   public CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
-   public SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
+    public CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
+    public SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
+    public ScheduleControl ScheduleControl;
+
     public frmSchedule()
     {
       InitializeComponent();
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
+      
       
       FillList(); 
     }
@@ -57,9 +60,9 @@ namespace Dental_App.Appointmnets
       frm.ShowDialog();
     }
 
-    public ScheduleControl SendContorl()
+    public ScheduleControl GetScheduleControl()
     {
-      return this.scheduleControl1;
+      return scheduleControl1;
     }
 
     private void frmAppointments_Load(object sender, EventArgs e)

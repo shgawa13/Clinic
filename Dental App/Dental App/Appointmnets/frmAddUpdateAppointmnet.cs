@@ -123,7 +123,13 @@ namespace Dental_App.Appointmnets
       }
       // Reset DateTime
       dtAppointmentDate.MinDateTime = DateTime.Today;
-      dtAppointmentDate.Value = _SelectedAppointmentDate;
+
+      // we check for the value incase add appointmnet from patient list
+      if (_SelectedAppointmentDate != null)
+        dtAppointmentDate.Value = _SelectedAppointmentDate;
+      else
+        dtAppointmentDate.Value = DateTime.Now;
+
       dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
 
       // ResetLables
