@@ -726,7 +726,7 @@
       // 
       this.lblTitle.AutoSize = true;
       this.lblTitle.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblTitle.Location = new System.Drawing.Point(319, 19);
+      this.lblTitle.Location = new System.Drawing.Point(319, 15);
       this.lblTitle.Name = "lblTitle";
       this.lblTitle.Size = new System.Drawing.Size(176, 25);
       this.lblTitle.TabIndex = 151;

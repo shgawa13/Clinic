@@ -69,7 +69,7 @@ namespace Dental_App.Appointmnets
     public frmAddUpdateAppointmnet(int PatientID)
     {
       InitializeComponent();
-      _PatientID = PatientID;
+      _LoadPatientInfo(PatientID);
       _Mode = enMode.Update;
       // ------------
       CheckBoxEvent();
@@ -221,6 +221,13 @@ namespace Dental_App.Appointmnets
       btnSteps.Enabled = true;
     }
 
+    // if appointment open from patient list we load patient info
+    private void _LoadPatientInfo(int PatientID)
+    {
+      _FindPatinet(PatientID);
+      tbSearch.Enabled = false;
+      iconSearch.Enabled = false;
+    }
 
     // if User Select StartTime it will add 30 min to EndTime 
     private void cbStartTime_SelectedIndexChanged_1(object sender, EventArgs e)
