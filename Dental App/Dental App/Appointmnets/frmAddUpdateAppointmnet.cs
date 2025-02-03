@@ -517,6 +517,8 @@ namespace Dental_App.Appointmnets
 
       return _MedicalRecord.MedicalRecordID;
     }
+
+    
   }
 
 }
