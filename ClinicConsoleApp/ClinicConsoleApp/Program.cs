@@ -346,13 +346,7 @@ namespace ClinicConsoleApp
       Testitem.Add(three);
     }
 
-    public static void PrintPlanList(ref List<Plan> list)
-    {
-      foreach (Plan p in list)
-      {
-        Console.WriteLine($"Item Name: {p.ItemName} , Item Price: {p.ItemPrice}");
-      }
-    }
+  
 
     static void Main(string[] args)
     {
