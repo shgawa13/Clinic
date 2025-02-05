@@ -12,73 +12,67 @@ using System.Security.Cryptography.X509Certificates;
 namespace ClinicConsoleApp
 {
 
-  public  class TemprtureEventAgrs : EventArgs
+  public class TempEventArgs : EventArgs
   {
-    public double NewTemprture { set; get; }
-    public double OldTemprture { set; get; }
-    public double Diffrence { set; get; }
+    public double NewTemp { set; get; }
+    public double OldTemp { set; get; }
+    public double Diff { set; get; }
 
-    public TemprtureEventAgrs(double NewTemprture, double OldTemprture ) 
+    public TempEventArgs(double NewTemp, double OldTemp)
     {
-      this.NewTemprture = NewTemprture;
-      this.OldTemprture = OldTemprture;
-      this.Diffrence = NewTemprture - OldTemprture;
+      this.NewTemp = NewTemp;
+      this.OldTemp = OldTemp;
+      this.Diff = NewTemp - OldTemp;
     }
-  
   }
 
 
-  public class Thermostat 
+  public class Theromstat
   {
+    public event EventHandler<TempEventArgs> TempChanged;
+    public double CurrentTemp;
+    public double OldTemp;
 
-    public event EventHandler<TemprtureEventAgrs> TemprtureChanged;
-
-    private double CurrentTmep;
-    private double OldTemp;
-
-
-    public void SetNewTempreture(double NewTemp)
+    public void SetTemp(double NewTemp)
     {
-
-      if (NewTemp != CurrentTmep)
+      if (CurrentTemp != NewTemp)
       {
-        OldTemp = CurrentTmep;
-        CurrentTmep = NewTemp;
-        OnTempretureChanged(CurrentTmep, OldTemp);
+        OldTemp = CurrentTemp;
+        CurrentTemp = NewTemp;
 
+        OnTempChanged(CurrentTemp, OldTemp);
       }
     }
 
-    public void OnTempretureChanged(double CurrentTemp, double OldTemp)
+    public void OnTempChanged(double Current, double OldTemp)
     {
-      OnTempretureChanged(new TemprtureEventAgrs(CurrentTmep, OldTemp));
+      OnTempChanged(new TempEventArgs(Current, OldTemp));
     }
 
-    protected virtual void OnTempretureChanged(TemprtureEventAgrs e)
+    protected virtual void OnTempChanged(TempEventArgs e)
     {
-      TemprtureChanged?.Invoke(this, e);
+      TempChanged?.Invoke(this, e);
     }
 
   }
-  
-  
+
   public class Display
   {
-    public void Subscribe(Thermostat thermostat)
+
+    public void Subscribe(Theromstat theromstat)
     {
-      thermostat.TemprtureChanged += HandleTempretureChanged;
+      theromstat.TempChanged += HandleTempChanged;
     }
 
-    private void HandleTempretureChanged(object sender, TemprtureEventAgrs e)
+    private void HandleTempChanged(object sender, TempEventArgs e)
     {
-      Console.WriteLine("\n\n Tempreture has been Changed:");
-      Console.WriteLine($"New Temp: {e.NewTemprture}");
-      Console.WriteLine($"Old Temp: {e.OldTemprture}");
-      Console.WriteLine($"Diffrences: {e.Diffrence}");
-      
+      Console.WriteLine($"\n--------- [ Temp Has Changed ] ---------");
+      Console.WriteLine($"--------- [ NewTemp: {e.NewTemp}] ---------");
+      Console.WriteLine($"--------- [ OldTemp: {e.OldTemp}] ---------");
+      Console.WriteLine($"--------- [ Diff: {e.Diff}] ---------");
+      Console.WriteLine($"------------------------------------------");
     }
   }
-
   // ----------------- Order Event Args -----------------
 
   public class OrderEvent :EventArgs
@@ -362,16 +356,13 @@ namespace ClinicConsoleApp
 
     static void Main(string[] args)
     {
-      //Display Screen = new Display();
-      //Thermostat thermostat = new Thermostat();
+      Display Screen = new Display();
+      Theromstat Therom = new Theromstat();
 
-      //Screen.Subscribe(thermostat);
+      Screen.Subscribe(Therom);
 
-      //thermostat.SetNewTempreture(25);
-      //thermostat.SetNewTempreture(25);
-      //thermostat.SetNewTempreture(25);
-      //thermostat.SetNewTempreture(26);
-
+      Therom.SetTemp(10);
+      Therom.SetTemp(12);
 
       //var order = new Order();
 

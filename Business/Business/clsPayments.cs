@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-  public class clsPayments
+  public class clsPayments:EventArgs
   {
     public enum enMode { AddNew = 0 , Update=1}
     public enMode Mode = enMode.AddNew;
@@ -109,4 +109,18 @@ namespace Business
       return false;
     }
   }
+
+  public class Payment
+  {
+    public event EventHandler<clsPayments> OnPaymentProcessed;
+
+    public void ProcessPayment(int PaymentID, DateTime PaymentDate, byte PaymentMethod, decimal PaidAmount,
+        string Notes, decimal Total)
+    {
+      Console.WriteLine("New Payment has been Process");
+
+     
+    }
+  }
 }
+
