@@ -12,6 +12,8 @@ using System.Security.Cryptography.X509Certificates;
 namespace ClinicConsoleApp
 {
 
+
+
   public class TempEventArgs : EventArgs
   {
     public double NewTemp { set; get; }
@@ -226,18 +228,43 @@ namespace ClinicConsoleApp
       }
     }
 
+    public static void ShowStringInfo()
+    {
+      Type StringTyp = typeof(String);
+
+      Console.WriteLine($"------ [ String Info ] ------");
+      Console.WriteLine($" {StringTyp.Name}");
+      Console.WriteLine($" {StringTyp.FullName}");
+      Console.WriteLine($" {StringTyp.IsClass}");
+      Console.WriteLine($"-----------------------------");
+    }
+
+    static string GetParameterList(ParameterInfo[] parameters)
+    {
+      return string.Join(", ", parameters.Select(parameter => $"{parameter.ParameterType} {parameter.Name}"));
+    }
+
     public static void ShowScheduleInfo()
     {
 
       Type appointmentType = typeof(ScheduleAppointment);
-
-      Console.WriteLine("Properties:"); 
+      // get properties in ScheduleAppointmnet
+      Console.WriteLine("\nProperties:"); 
       PropertyInfo[] properties = appointmentType.GetProperties();
 
       foreach (PropertyInfo property in properties) 
       {
-        Console.WriteLine($"{property.ToString()}");
+        Console.WriteLine($"\t Name:{property.Name}, PropertyType: {property.PropertyType}");
       }
+
+      MethodInfo[] methods = appointmentType.GetMethods();
+      Console.WriteLine($"\nMethods:\n");
+
+      foreach(MethodInfo method in methods)
+      {
+        Console.WriteLine($"\t{method.ReturnType}, {method.Name}, ({GetParameterList(method.GetParameters())})");
+      }
+
     }
 
 
@@ -346,29 +373,99 @@ namespace ClinicConsoleApp
       Testitem.Add(three);
     }
 
-  
+    // this is Custom Attribute 
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class RangeAttribute : Attribute
+    {
+      public int Min { get; }
+      public int Max { get; }
+
+      public string ErrorMessage { get; set; }
+
+      public RangeAttribute(int min, int max)
+      {
+        Min = min;
+        Max = max;
+      }
+    }
+
+
+    public class Person
+    {
+      // here we can have the cutom Attribute to handle the validation of age
+      [RangeAttribute(18, 40, ErrorMessage = "Error: Person should be between 18 - 40 Years old.")]
+      public int Age { set; get; }
+
+      [RangeAttribute(3, 10, ErrorMessage = "Error: Person must have Experince from 3 - 10 Years")]
+      public int Experince { get; set; }
+
+      public string Name { get; set; }
+
+      public Person(int Age, int Experince, string name) 
+      {
+        this.Age = Age;
+        this.Experince = Experince;
+        this.Name = name;
+      }
+    }
+
+    public static T Swap<T>(ref T first, ref T second)
+    {
+      T temp = first;
+      first = second;
+      second = temp;
+      return temp;
+    }
 
     static void Main(string[] args)
     {
-      Display Screen = new Display();
-      Theromstat Therom = new Theromstat();
 
-      Screen.Subscribe(Therom);
+      //Person person = new Person(11, 5, "sonethid");
 
-      Therom.SetTemp(10);
-      Therom.SetTemp(12);
 
-      //var order = new Order();
+      //if (ValidatePerson(person))
+      //  Console.WriteLine("person is Valid");
+      //else
+      //  Console.WriteLine("Perosn Not Valid");
 
-      //Shipper Aramx = new Shipper();
-      //Aramx.Subscribe(order);
+      Console.WriteLine("Swap Numbers: ");
+      int a = 5, b = 10;
 
-      //order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
-      //order.CreateOrder("2fd6522-454df45-454d54f", "PC", 6000);
+      Console.WriteLine($"Before Swap: a={a},b={b}");
+      Swap(ref a, ref b);
+      Console.WriteLine($"After Swap: a={a},b={b}");
 
-      GetAllAppt();
+      
+
 
       Console.ReadKey();
+    }
+
+    static bool ValidatePerson(Person person)
+    {
+      Type type = typeof(Person);
+
+      foreach(var property in type.GetProperties())
+      {
+        // Check RangeAttribute on property
+        if (Attribute.IsDefined(property, typeof(RangeAttribute)))
+        {
+          var rangeAttribute = (RangeAttribute)Attribute.GetCustomAttribute(property, typeof(RangeAttribute));
+          int value = (int)property.GetValue(person);
+
+          // here we perform Validation
+          if(value < rangeAttribute.Min || value > rangeAttribute.Max)
+          {
+            Console.WriteLine($"Fild due to Validation {property.Name}, Error message {rangeAttribute.ErrorMessage}");
+            return false;
+          }
+
+        }
+        
+
+      }
+
+      return true;
     }
   }
 }
