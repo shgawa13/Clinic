@@ -8,10 +8,26 @@ using Syncfusion.Windows.Forms.Schedule;
 using System.Linq;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.Win32;
 
 namespace ClinicConsoleApp
 {
 
+  public class Generic<T>
+  {
+    public T Content { get; set; }
+
+    public Generic(T value) 
+    {
+      Content = value;
+    
+    }
+
+    public T GetValue()
+    {
+      return Content;
+    }
+  }
 
 
   public class TempEventArgs : EventArgs
@@ -428,14 +444,47 @@ namespace ClinicConsoleApp
       //else
       //  Console.WriteLine("Perosn Not Valid");
 
-      Console.WriteLine("Swap Numbers: ");
-      int a = 5, b = 10;
 
-      Console.WriteLine($"Before Swap: a={a},b={b}");
-      Swap(ref a, ref b);
-      Console.WriteLine($"After Swap: a={a},b={b}");
 
-      
+
+      //Console.WriteLine("Swap Numbers: ");
+      //int a = 5, b = 10;
+
+      //Console.WriteLine($"Before Swap: a={a},b={b}");
+      //Swap(ref a, ref b);
+      //Console.WriteLine($"After Swap: a={a},b={b}");
+
+
+      //Console.WriteLine($"------------------------");
+
+      //Generic<int> genericInt = new Generic<int>(5);
+      //Console.WriteLine($"the value is:  {genericInt.GetValue()}");
+
+      //Generic<string> genericStr = new Generic<string>("nano");
+      //Console.WriteLine($"the value is:{genericStr.GetValue()}");
+
+
+
+      // Specify the Registry key and path
+      //string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\YourSoftware"; // <- this need permission
+      string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\YourSoftware";
+      string valueName = "YourValueName";
+      string valueData = "YourValueData";
+
+
+      try
+      {
+        // Write the value to the Registry
+        Registry.SetValue(keyPath, valueName, valueData, RegistryValueKind.String);
+
+
+        Console.WriteLine($"Value {valueName} successfully written to the Registry.");
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"An error occurred: {ex.Message}");
+      }
+
 
 
       Console.ReadKey();
