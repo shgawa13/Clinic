@@ -12,11 +12,11 @@ using Microsoft.Win32;
 
 namespace ClinicConsoleApp
 {
-
+  
   public class Generic<T>
   {
     public T Content { get; set; }
-
+    public T Name { get; set; }
     public Generic(T value) 
     {
       Content = value;
@@ -467,25 +467,21 @@ namespace ClinicConsoleApp
 
       // Specify the Registry key and path
       //string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\YourSoftware"; // <- this need permission
-      string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\YourSoftware";
-      string valueName = "YourValueName";
-      string valueData = "YourValueData";
-
+     
+      string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DentalApp";
+      string valueName = "UserName";
+      
 
       try
       {
-        // Write the value to the Registry
-        Registry.SetValue(keyPath, valueName, valueData, RegistryValueKind.String);
+        string valueData= Registry.GetValue(keyPath, valueName,null) as string;
+        Console.WriteLine($"\n valueName: \t{valueName} \n valueData: \t {valueData}");
 
-
-        Console.WriteLine($"Value {valueName} successfully written to the Registry.");
       }
-      catch (Exception ex)
+      catch(Exception ex)
       {
-        Console.WriteLine($"An error occurred: {ex.Message}");
+        Console.WriteLine($"Error: {ex.Message}");
       }
-
-
 
       Console.ReadKey();
     }
