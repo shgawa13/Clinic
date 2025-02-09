@@ -306,18 +306,17 @@ namespace Dental_App.Appointmnets
     // Update Summary 
     private void _UpdateSummary()
     {
-
-      string Summarylable = "";
-
+      // StringBuilder is more faster then concat normal string.
+      StringBuilder Summary = new StringBuilder();
       foreach (var checkBox in GetCheckBoxes())
       {
         if (checkBox.Checked)
         {
-          Summarylable += $"{checkBox.Text}  ${checkBox.Tag}.\n";
+          Summary.Append($"{checkBox.Text}  ${checkBox.Tag}.\n");
         }
       }
 
-      lbSummary.Text = Summarylable;
+      lbSummary.Text = Summary.ToString();
 
     }
 
