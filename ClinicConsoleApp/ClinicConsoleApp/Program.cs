@@ -1,5 +1,6 @@
 ﻿using Business;
 using System;
+using System.Text;
 using System.Data;
 using System.Reflection;
 using Syncfusion.Schedule;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace ClinicConsoleApp
 {
@@ -433,6 +435,30 @@ namespace ClinicConsoleApp
       return temp;
     }
 
+    public static void ConcatWithString(int iteration)
+    {
+      string result = "";
+
+      for(int i=0; i < iteration; i++)
+      {
+        result += "a";
+      }
+
+    }
+
+    public static void ConcatWithStringBuilder(int iteration)
+    {
+
+      StringBuilder sb = new StringBuilder();
+
+      for (int i = 0; i < iteration; i++)
+      {
+        sb.Append("a");
+      }
+
+      string result = sb.ToString();
+    }
+
     static void Main(string[] args)
     {
 
@@ -467,21 +493,35 @@ namespace ClinicConsoleApp
 
       // Specify the Registry key and path
       //string keyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\YourSoftware"; // <- this need permission
-     
-      string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DentalApp";
-      string valueName = "UserName";
-      
 
-      try
-      {
-        string valueData= Registry.GetValue(keyPath, valueName,null) as string;
-        Console.WriteLine($"\n valueName: \t{valueName} \n valueData: \t {valueData}");
+      //string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DentalApp";
+      //string valueName = "UserName";
 
-      }
-      catch(Exception ex)
-      {
-        Console.WriteLine($"Error: {ex.Message}");
-      }
+
+      //try
+      //{
+      //  string valueData= Registry.GetValue(keyPath, valueName,null) as string;
+      //  Console.WriteLine($"\n valueName: \t{valueName} \n valueData: \t {valueData}");
+
+      //}
+      //catch(Exception ex)
+      //{
+      //  Console.WriteLine($"Error: {ex.Message}");
+      //}
+
+      int iteration = 20000;
+      // Testing with noraml string
+      Stopwatch st = Stopwatch.StartNew();
+      ConcatWithString(iteration);
+      st.Stop();
+      Console.WriteLine($"with normal concationation it took: {st.ElapsedMilliseconds} ms");
+
+      // Testing with stringbuilder
+      Stopwatch st2 = Stopwatch.StartNew();
+      ConcatWithStringBuilder(iteration);
+      st2.Stop();
+      Console.WriteLine($"with StringBuilder concationation it took: {st2.ElapsedMilliseconds} ms");
+
 
       Console.ReadKey();
     }
