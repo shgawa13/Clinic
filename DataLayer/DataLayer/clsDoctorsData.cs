@@ -136,6 +136,74 @@ namespace DataLayer
       return IsFound;
     }
 
+    // Find Doctor By ID
+    public static bool GetDoctorByFullName(string FullName,ref int DoctorID ,ref int PersonID,ref string NationalID, 
+      ref byte SpecialityID,ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email, 
+      ref int NationalityCountryID,ref string ImagePath)
+    {
+      bool IsFound = false;
+
+      string query = @"Select * from DoctorsView where FullName like '%@FullName';";
+
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(query, connection))
+          {
+            command.Parameters.AddWithValue("@FullName", FullName);
+            // Create Reader
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+              if (reader.Read())
+              {
+                IsFound = true;
+
+                DoctorID = (int)reader["DoctorID"];
+                PersonID = (int)reader["PersonID"];
+                NationalID = (string)reader["NationalID"];
+                SpecialityID = (byte)reader["SpecialityID"];
+                DateOfBirth = (DateTime)reader["DateOfBirth"];
+                Gendor = (byte)reader["Gendor"];
+                PhoneNumber = (string)reader["PhoneNumber"];
+                // handle Email
+                if (reader["Email"] == System.DBNull.Value)
+                  Email = "";
+                else
+                  Email = (string)reader["Email"];
+
+                NationalityCountryID = (int)reader["NationalityCountryID"];
+
+                // handle ImagePath
+                if (reader["ImagePath"] == System.DBNull.Value)
+                  ImagePath = "";
+                else
+                  ImagePath = (string)reader["ImagePath"];
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+        Console.WriteLine($"FullName is: {FullName}");
+      }
+
+      return IsFound;
+    }
 
     // Get All Doctors
     public static DataTable GetAllDoctors()
