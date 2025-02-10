@@ -27,7 +27,7 @@ namespace Business
       this.DoctorID = -1;
       this.PersonID = base.PersonID;
       this.SpecialityID = 0;
-
+      
       Mode = enMode.AddNew; 
     }
 
@@ -68,6 +68,19 @@ namespace Business
       else
         return null;
     }
+
+    // Find Doctor by fullname
+    //public static clsDoctors Find(string FullName)
+    //{
+    //  int PersonID = -1;
+    //  byte SpecialityID = 0;
+    //  bool IsFound = clsDoctorsData.GetDoctorByID(DoctorID, ref PersonID, ref SpecialityID);
+
+    //  if (IsFound)
+    //    return new clsDoctors(DoctorID, PersonID, SpecialityID);
+    //  else
+    //    return null;
+    //}
 
     // Get All Doctors
     public static DataTable GetAllDoctors()

@@ -34,7 +34,7 @@ namespace Dental_App.Appointmnets
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private int _PatientID;
-    
+    private int _DoctrorID;
     private int _PaymentID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
@@ -53,17 +53,17 @@ namespace Dental_App.Appointmnets
       CheckBoxEvent();
     }
 
-    // From Schedule to Update an Existing appointment
-    public frmAddUpdateAppointmnet(int ApptID,ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
-    {
-      InitializeComponent();
-      _ScheduleGrid = control;
-      _SelectedAppointmentDate = AppointmentDate;
-      _AppointmnetTime = AppointmentTime;
-      _Mode = enMode.Update;
-      // ------------
-      CheckBoxEvent();
-    }
+    //// From Schedule to Update an Existing appointment
+    //public frmAddUpdateAppointmnet(int ApptID,ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
+    //{
+    //  InitializeComponent();
+    //  _ScheduleGrid = control;
+    //  _SelectedAppointmentDate = AppointmentDate;
+    //  _AppointmnetTime = AppointmentTime;
+    //  _Mode = enMode.Update;
+    //  // ------------
+    //  CheckBoxEvent();
+    //}
 
     // From patient list 
     public frmAddUpdateAppointmnet(int PatientID)
@@ -395,11 +395,18 @@ namespace Dental_App.Appointmnets
       {
         btnSteps.Enabled = false;
         btnSteps.Text = "Save";
-      } 
+      }
+      else
+      {
+        btnSteps.Text = "Next";
+      }
     }
     
     private void _SaveAppointment()
     {
+      // Getting doctorID 
+       
+
       _Appointment.PatientID = (int)_PatientID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
       _Appointment.Content = cbDoctor.SelectedText;
