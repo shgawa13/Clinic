@@ -405,11 +405,12 @@ namespace Dental_App.Appointmnets
     private void _SaveAppointment()
     {
       // Getting doctorID 
-       
+      _DoctrorID = clsDoctors.Find(cbDoctor.SelectedItem.ToString()).DoctorID;
 
       _Appointment.PatientID = (int)_PatientID;
+      _Appointment.DoctorID = _DoctrorID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
-      _Appointment.Content = cbDoctor.SelectedText;
+      _Appointment.Content = cbDoctor.SelectedItem.ToString();
       _Appointment.LastStatusDate = DateTime.Now;
       _Appointment.StartTime = GetSelectedTime(cbStartTime);
       _Appointment.EndTime = GetSelectedTime(cbEndTime);
@@ -476,7 +477,6 @@ namespace Dental_App.Appointmnets
       pnlWhitening.Visible = false;
       pnlOrthopedic.Visible = false;
     }
-
 
     //------------------------------------- [ Bills Tap ] --------------------------------------------//
 

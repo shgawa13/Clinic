@@ -70,17 +70,17 @@ namespace Business
     }
 
     // Find Doctor by fullname
-    //public static clsDoctors Find(string FullName)
-    //{
-    //  int PersonID = -1;
-    //  byte SpecialityID = 0;
-    //  bool IsFound = clsDoctorsData.GetDoctorByID(DoctorID, ref PersonID, ref SpecialityID);
+    public static clsDoctors Find(string FullName)
+    {
+      int DoctorID=-1,PersonID = -1;
+      byte SpecialityID = 0;
+      bool IsFound = clsDoctorsData.GetDoctorByFullName(FullName, ref DoctorID, ref PersonID, ref SpecialityID);
 
-    //  if (IsFound)
-    //    return new clsDoctors(DoctorID, PersonID, SpecialityID);
-    //  else
-    //    return null;
-    //}
+      if (IsFound)
+        return new clsDoctors(DoctorID, PersonID, SpecialityID);
+      else
+        return null;
+    }
 
     // Get All Doctors
     public static DataTable GetAllDoctors()

@@ -136,14 +136,12 @@ namespace DataLayer
       return IsFound;
     }
 
-    // Find Doctor By ID
-    public static bool GetDoctorByFullName(string FullName,ref int DoctorID ,ref int PersonID,ref string NationalID, 
-      ref byte SpecialityID,ref DateTime DateOfBirth, ref byte Gendor, ref string PhoneNumber, ref string Email, 
-      ref int NationalityCountryID,ref string ImagePath)
+    // Find Doctor By FullName
+    public static bool GetDoctorByFullName(string FullName,ref int DoctorID ,ref int PersonID, ref byte SpecialityID)
     {
       bool IsFound = false;
 
-      string query = @"Select * from DoctorsView where FullName like '%@FullName';";
+      string query = @"SELECT * FROM DoctorsView WHERE FullName LIKE @FullName + '%';";
 
       try
       {
@@ -166,25 +164,8 @@ namespace DataLayer
 
                 DoctorID = (int)reader["DoctorID"];
                 PersonID = (int)reader["PersonID"];
-                NationalID = (string)reader["NationalID"];
-                SpecialityID = (byte)reader["SpecialityID"];
-                DateOfBirth = (DateTime)reader["DateOfBirth"];
-                Gendor = (byte)reader["Gendor"];
-                PhoneNumber = (string)reader["PhoneNumber"];
-                // handle Email
-                if (reader["Email"] == System.DBNull.Value)
-                  Email = "";
-                else
-                  Email = (string)reader["Email"];
-
-                NationalityCountryID = (int)reader["NationalityCountryID"];
-
-                // handle ImagePath
-                if (reader["ImagePath"] == System.DBNull.Value)
-                  ImagePath = "";
-                else
-                  ImagePath = (string)reader["ImagePath"];
-
+                // here we can have the rest of info in the future.
+                
               }
             }
 
