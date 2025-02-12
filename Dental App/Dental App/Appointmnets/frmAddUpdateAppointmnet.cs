@@ -69,7 +69,7 @@ namespace Dental_App.Appointmnets
     public frmAddUpdateAppointmnet(int PatientID)
     {
       InitializeComponent();
-      _LoadPatientInfo(PatientID);
+      _PatientID = PatientID;
       _Mode = enMode.Update;
       // ------------
       CheckBoxEvent();
@@ -201,7 +201,7 @@ namespace Dental_App.Appointmnets
 
       foreach (DataRow row in Doctors.Rows)
       {
-        cbDoctor.Items.Add(new DoctorList((int)row["DoctorID"],(string)row["FullName"]).ToString());
+        cbDoctor.Items.Add(new DoctorList((int)row["DoctorID"],(string)row["FullName"]));
       }
 
     }
@@ -410,12 +410,12 @@ namespace Dental_App.Appointmnets
     private void _SaveAppointment()
     {
       // Getting doctorID 
-      _DoctrorID = clsDoctors.Find(cbDoctor.SelectedItem.ToString()).DoctorID;
+      DoctorList selectedDoctor = (DoctorList)cbDoctor.SelectedItem;
 
       _Appointment.PatientID = (int)_PatientID;
-      _Appointment.DoctorID = _DoctrorID;
+      _Appointment.DoctorID = selectedDoctor.ID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
-      _Appointment.Content = cbDoctor.SelectedItem.ToString();
+      _Appointment.Content = selectedDoctor.FullName;
       _Appointment.LastStatusDate = DateTime.Now;
       _Appointment.StartTime = GetSelectedTime(cbStartTime);
       _Appointment.EndTime = GetSelectedTime(cbEndTime);
@@ -539,13 +539,18 @@ namespace Dental_App.Appointmnets
 
   public class DoctorList
   {
-    public int ID;
-    public string FullName;
+    public int ID { get; set; }
+    public string FullName { get; set; }
 
     public DoctorList(int id, string fullname)
     {
       ID = id;
       FullName = fullname;
+    }
+
+    public override string ToString()
+    {
+      return FullName;
     }
   }
 }
