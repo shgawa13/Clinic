@@ -26,7 +26,7 @@ namespace Dental_App.Appointmnets
 
     public CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
     public SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
-    public ScheduleControl ScheduleControl;
+    public ScheduleControl ScheduleControl { set; get; }
 
     public frmSchedule()
     {

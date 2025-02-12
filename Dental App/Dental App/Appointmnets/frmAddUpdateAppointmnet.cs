@@ -27,7 +27,7 @@ namespace Dental_App.Appointmnets
 
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
-
+   
     private clsAppointments _Appointment;
     private clsPayments _Payment;
     private clsMedicalRecords _MedicalRecord;
@@ -73,6 +73,7 @@ namespace Dental_App.Appointmnets
       _Mode = enMode.Update;
       // ------------
       CheckBoxEvent();
+      
     }
 
     private void CheckBoxEvent()
@@ -143,11 +144,15 @@ namespace Dental_App.Appointmnets
       // Disable steps button
       btnSteps.Enabled = false;
       btnSteps.Text = "Next";
-
+      ListObjectList ls = new ListObjectList();
+      testLable.Items.Add(new ListObject(0, "None", Color.White));
+      testLable.Items.Add(new ListObject(1, "Important", Color.FromArgb(255, 128, 64)));
+      testLable.Items.Add(new ListObject(2, "Business", Color.FromArgb(86, 152, 233)));
+      testLable.Items.Add(new ListObject(3, "Personal", Color.FromArgb(57, 210, 53)));
       // Filling ComboBox with Data
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
-
+     
     }
 
 
@@ -188,6 +193,7 @@ namespace Dental_App.Appointmnets
       } 
       return DateTime.MinValue;
     }
+
     // Filling ComboBox with Doctors names.
     private void _FillDoctorsComboBox()
     {
@@ -195,7 +201,7 @@ namespace Dental_App.Appointmnets
 
       foreach (DataRow row in Doctors.Rows)
       {
-        cbDoctor.Items.Add(row["FullName"]);
+        cbDoctor.Items.Add(new DoctorList((int)row["DoctorID"],(string)row["FullName"]).ToString());
       }
 
     }
@@ -281,7 +287,6 @@ namespace Dental_App.Appointmnets
       TotalCost = CalcPlanCost();
       lbCost.Text = $"${TotalCost}";
     }
-
 
     // Handle CheckBoxes and Plan Cost
     private short CalcPlanCost()
@@ -524,8 +529,24 @@ namespace Dental_App.Appointmnets
       return _MedicalRecord.MedicalRecordID;
     }
 
-    
+    private void button1_Click(object sender, EventArgs e)
+    {
+     DoctorList selectedDoctor = (DoctorList)cbDoctor.SelectedItem;
+      MessageBox.Show($"Doctor Name is: {selectedDoctor.FullName} Id: {selectedDoctor.ID}");
+    }
   }
 
+
+  public class DoctorList
+  {
+    public int ID;
+    public string FullName;
+
+    public DoctorList(int id, string fullname)
+    {
+      ID = id;
+      FullName = fullname;
+    }
+  }
 }
 

@@ -79,7 +79,7 @@
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-      this.sfComboBox1 = new Syncfusion.WinForms.ListView.SfComboBox();
+      this.testLable = new System.Windows.Forms.ComboBox();
       this.label23 = new System.Windows.Forms.Label();
       this.cbLabels = new Syncfusion.WinForms.ListView.SfComboBox();
       this.label22 = new System.Windows.Forms.Label();
@@ -128,6 +128,7 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnSteps = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.button1 = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.pnlDiagnosis.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
@@ -153,7 +154,6 @@
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.sfComboBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.cbLabels)).BeginInit();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).BeginInit();
@@ -917,7 +917,7 @@
       // splitContainer1.Panel1
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-      this.splitContainer1.Panel1.Controls.Add(this.sfComboBox1);
+      this.splitContainer1.Panel1.Controls.Add(this.testLable);
       this.splitContainer1.Panel1.Controls.Add(this.label23);
       this.splitContainer1.Panel1.Controls.Add(this.cbLabels);
       this.splitContainer1.Panel1.Controls.Add(this.label22);
@@ -940,6 +940,7 @@
       // splitContainer1.Panel2
       // 
       this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.splitContainer1.Panel2.Controls.Add(this.button1);
       this.splitContainer1.Panel2.Controls.Add(this.lblFullName);
       this.splitContainer1.Panel2.Controls.Add(this.lblEmail);
       this.splitContainer1.Panel2.Controls.Add(this.lblPhone);
@@ -962,21 +963,18 @@
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
-      // sfComboBox1
+      // testLable
       // 
-      this.sfComboBox1.AllowDropDownResize = false;
-      this.sfComboBox1.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-      this.sfComboBox1.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-      this.sfComboBox1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.sfComboBox1.Location = new System.Drawing.Point(635, 10);
-      this.sfComboBox1.Name = "sfComboBox1";
-      this.sfComboBox1.Size = new System.Drawing.Size(173, 24);
-      this.sfComboBox1.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-      this.sfComboBox1.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.sfComboBox1.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.sfComboBox1.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.sfComboBox1.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.sfComboBox1.TabIndex = 153;
+      this.testLable.AllowDrop = true;
+      this.testLable.DropDownHeight = 80;
+      this.testLable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.testLable.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.testLable.FormattingEnabled = true;
+      this.testLable.IntegralHeight = false;
+      this.testLable.Location = new System.Drawing.Point(628, 11);
+      this.testLable.Name = "testLable";
+      this.testLable.Size = new System.Drawing.Size(181, 29);
+      this.testLable.TabIndex = 155;
       // 
       // label23
       // 
@@ -1641,6 +1639,16 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
+      // button1
+      // 
+      this.button1.Location = new System.Drawing.Point(610, 73);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(122, 46);
+      this.button1.TabIndex = 151;
+      this.button1.Text = "button1";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1685,7 +1693,6 @@
       this.splitContainer1.Panel2.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.sfComboBox1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.cbLabels)).EndInit();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
@@ -1809,8 +1816,9 @@
     private System.Windows.Forms.Label lblSummaryBill;
     private System.Windows.Forms.Label label22;
     private Syncfusion.WinForms.ListView.SfComboBox cbLabels;
-    private Syncfusion.WinForms.ListView.SfComboBox sfComboBox1;
     private System.Windows.Forms.Label label23;
     private ExpertsBtn btnPayBill;
+    private System.Windows.Forms.ComboBox testLable;
+    private System.Windows.Forms.Button button1;
   }
 }

@@ -1077,7 +1077,7 @@ namespace Business
     /// Find Appointment 
     /// </summary>
     /// <param name="AppointmentID"></param>
-    /// <returns></returns>
+    /// <returns>Object: clsAppointments</returns>
     public static clsAppointments Find(int AppointmentID)
     {
       int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1;
