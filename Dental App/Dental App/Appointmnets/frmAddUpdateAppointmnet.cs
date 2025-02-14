@@ -144,11 +144,11 @@ namespace Dental_App.Appointmnets
       // Disable steps button
       btnSteps.Enabled = false;
       btnSteps.Text = "Next";
-      ListObjectList ls = new ListObjectList();
-      testLable.Items.Add(new ListObject(0, "None", Color.White));
-      testLable.Items.Add(new ListObject(1, "Important", Color.FromArgb(255, 128, 64)));
-      testLable.Items.Add(new ListObject(2, "Business", Color.FromArgb(86, 152, 233)));
-      testLable.Items.Add(new ListObject(3, "Personal", Color.FromArgb(57, 210, 53)));
+    
+      testLable.Items.Add(new CustomList(0, "None"));
+      testLable.Items.Add(new CustomList(1, "Important"));
+      testLable.Items.Add(new CustomList(2, "Business"));
+      testLable.Items.Add(new CustomList(3, "Personal"));
       // Filling ComboBox with Data
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
@@ -201,7 +201,7 @@ namespace Dental_App.Appointmnets
 
       foreach (DataRow row in Doctors.Rows)
       {
-        cbDoctor.Items.Add(new DoctorList((int)row["DoctorID"],(string)row["FullName"]));
+        cbDoctor.Items.Add(new CustomList((int)row["DoctorID"],(string)row["FullName"]));
       }
 
     }
@@ -410,12 +410,12 @@ namespace Dental_App.Appointmnets
     private void _SaveAppointment()
     {
       // Getting doctorID 
-      DoctorList selectedDoctor = (DoctorList)cbDoctor.SelectedItem;
+      CustomList selectedDoctor = (CustomList)cbDoctor.SelectedItem;
 
       _Appointment.PatientID = (int)_PatientID;
       _Appointment.DoctorID = selectedDoctor.ID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
-      _Appointment.Content = selectedDoctor.FullName;
+      _Appointment.Content = selectedDoctor.DisplayMember;
       _Appointment.LastStatusDate = DateTime.Now;
       _Appointment.StartTime = GetSelectedTime(cbStartTime);
       _Appointment.EndTime = GetSelectedTime(cbEndTime);
@@ -532,29 +532,77 @@ namespace Dental_App.Appointmnets
     private void button1_Click(object sender, EventArgs e)
     {
 
-      ListObject obj = (ListObject)testLable.SelectedValue;
-      MessageBox.Show($"Doctor Name is: {obj.ToString()}");
+      CustomList obj = (CustomList)testLable.SelectedItem;
+      CustomList obj2 = (CustomList)cbDoctor.SelectedItem;
+      MessageBox.Show($"Doctor Name is: {obj.ID}");
+      MessageBox.Show($"Doctor Name is: {obj2.ID}");
     }
 
 
   }
 
 
-  public class DoctorList
+ public class CustomList 
   {
-    public int ID { get; set; }
-    public string FullName { get; set; }
+    private int id;
+    private string display;
 
-    public DoctorList(int id, string fullname)
+    //
+    // Summary:
+    //     Gets or sets string that is used when this object is displayed.
+    public  string DisplayMember
     {
-      ID = id;
-      FullName = fullname;
+      get
+      {
+        return display;
+      }
+      set
+      {
+        display = value;
+      }
     }
 
+    //
+    // Summary:
+    //     Gets or sets an integer that is stored in the data objects to represent this
+    //     object.
+    public  int ID
+    {
+      get
+      {
+        return id;
+      }
+      set
+      {
+        id = value;
+      }
+    }
+
+   
+    // Parameters:
+    //   valueMember:
+    //     The valueMember that is stored in the data objects.
+    //
+    //   displayMember:
+    //     The displayMember that is used for display.
+   
+    public CustomList(int valueMember, string displayMember)
+    {
+      id = valueMember;
+      display = displayMember;
+    }
+
+
+   
+    // Returns:
+    /// <returns>The DisplayMember as string</returns>
+   
     public override string ToString()
     {
-      return FullName;
+      return display;
     }
   }
+
+ 
 }
 
