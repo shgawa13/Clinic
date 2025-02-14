@@ -531,9 +531,12 @@ namespace Dental_App.Appointmnets
 
     private void button1_Click(object sender, EventArgs e)
     {
-     DoctorList selectedDoctor = (DoctorList)cbDoctor.SelectedItem;
-      MessageBox.Show($"Doctor Name is: {selectedDoctor.FullName} Id: {selectedDoctor.ID}");
+
+      ListObject obj = (ListObject)testLable.SelectedValue;
+      MessageBox.Show($"Doctor Name is: {obj.ToString()}");
     }
+
+
   }
 
 
