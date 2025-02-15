@@ -16,6 +16,7 @@ using Dental_App.Global_Classes;
 using Syncfusion.DataSource.Extensions;
 using Syncfusion.Windows.Forms.Grid;
 using Dental_App.Doctors;
+using System.Threading;
 
 namespace Dental_App.Appointmnets
 {
@@ -34,9 +35,10 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
-      
-      
-      FillList(); 
+
+      Thread t1 = new Thread(()=>FillList());
+      t1.Start();
+      t1.Join();
     }
 
  
