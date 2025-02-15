@@ -79,9 +79,8 @@
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-      this.testLable = new System.Windows.Forms.ComboBox();
+      this.cbMark = new System.Windows.Forms.ComboBox();
       this.label23 = new System.Windows.Forms.Label();
-      this.cbLabels = new Syncfusion.WinForms.ListView.SfComboBox();
       this.label22 = new System.Windows.Forms.Label();
       this.iconLogo = new FontAwesome.Sharp.IconButton();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -128,7 +127,7 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnSteps = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
-      this.button1 = new System.Windows.Forms.Button();
+      this.cbLable = new System.Windows.Forms.ComboBox();
       this.panel1.SuspendLayout();
       this.pnlDiagnosis.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
@@ -154,7 +153,6 @@
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.cbLabels)).BeginInit();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chbSimpleExtraction)).BeginInit();
@@ -917,9 +915,9 @@
       // splitContainer1.Panel1
       // 
       this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-      this.splitContainer1.Panel1.Controls.Add(this.testLable);
+      this.splitContainer1.Panel1.Controls.Add(this.cbLable);
+      this.splitContainer1.Panel1.Controls.Add(this.cbMark);
       this.splitContainer1.Panel1.Controls.Add(this.label23);
-      this.splitContainer1.Panel1.Controls.Add(this.cbLabels);
       this.splitContainer1.Panel1.Controls.Add(this.label22);
       this.splitContainer1.Panel1.Controls.Add(this.label13);
       this.splitContainer1.Panel1.Controls.Add(this.cbLocation);
@@ -940,7 +938,6 @@
       // splitContainer1.Panel2
       // 
       this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-      this.splitContainer1.Panel2.Controls.Add(this.button1);
       this.splitContainer1.Panel2.Controls.Add(this.lblFullName);
       this.splitContainer1.Panel2.Controls.Add(this.lblEmail);
       this.splitContainer1.Panel2.Controls.Add(this.lblPhone);
@@ -963,44 +960,28 @@
       this.splitContainer1.SplitterDistance = 127;
       this.splitContainer1.TabIndex = 19;
       // 
-      // testLable
+      // cbMark
       // 
-      this.testLable.AllowDrop = true;
-      this.testLable.DropDownHeight = 80;
-      this.testLable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.testLable.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.testLable.FormattingEnabled = true;
-      this.testLable.IntegralHeight = false;
-      this.testLable.Location = new System.Drawing.Point(628, 11);
-      this.testLable.Name = "testLable";
-      this.testLable.Size = new System.Drawing.Size(181, 29);
-      this.testLable.TabIndex = 155;
+      this.cbMark.AllowDrop = true;
+      this.cbMark.DropDownHeight = 80;
+      this.cbMark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbMark.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbMark.FormattingEnabled = true;
+      this.cbMark.IntegralHeight = false;
+      this.cbMark.Location = new System.Drawing.Point(628, 9);
+      this.cbMark.Name = "cbMark";
+      this.cbMark.Size = new System.Drawing.Size(181, 29);
+      this.cbMark.TabIndex = 155;
       // 
       // label23
       // 
       this.label23.AutoSize = true;
       this.label23.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label23.Location = new System.Drawing.Point(574, 12);
+      this.label23.Location = new System.Drawing.Point(570, 13);
       this.label23.Name = "label23";
       this.label23.Size = new System.Drawing.Size(53, 21);
       this.label23.TabIndex = 154;
       this.label23.Text = "Mark:";
-      // 
-      // cbLabels
-      // 
-      this.cbLabels.AllowDropDownResize = false;
-      this.cbLabels.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-      this.cbLabels.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-      this.cbLabels.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbLabels.Location = new System.Drawing.Point(385, 11);
-      this.cbLabels.Name = "cbLabels";
-      this.cbLabels.Size = new System.Drawing.Size(173, 24);
-      this.cbLabels.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-      this.cbLabels.Style.EditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbLabels.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbLabels.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.cbLabels.Style.TokenStyle.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.cbLabels.TabIndex = 152;
       // 
       // label22
       // 
@@ -1639,15 +1620,18 @@
       this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
       this.expertsBtn2.UseVisualStyleBackColor = false;
       // 
-      // button1
+      // cbLable
       // 
-      this.button1.Location = new System.Drawing.Point(581, 65);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(157, 40);
-      this.button1.TabIndex = 151;
-      this.button1.Text = "button1";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.button1_Click);
+      this.cbLable.AllowDrop = true;
+      this.cbLable.DropDownHeight = 80;
+      this.cbLable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbLable.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cbLable.FormattingEnabled = true;
+      this.cbLable.IntegralHeight = false;
+      this.cbLable.Location = new System.Drawing.Point(384, 9);
+      this.cbLable.Name = "cbLable";
+      this.cbLable.Size = new System.Drawing.Size(181, 29);
+      this.cbLable.TabIndex = 156;
       // 
       // frmAddUpdateAppointmnet
       // 
@@ -1693,7 +1677,6 @@
       this.splitContainer1.Panel2.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.cbLabels)).EndInit();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbComplicatedExtrcation)).EndInit();
@@ -1815,10 +1798,9 @@
     private System.Windows.Forms.Label label21;
     private System.Windows.Forms.Label lblSummaryBill;
     private System.Windows.Forms.Label label22;
-    private Syncfusion.WinForms.ListView.SfComboBox cbLabels;
     private System.Windows.Forms.Label label23;
     private ExpertsBtn btnPayBill;
-    private System.Windows.Forms.ComboBox testLable;
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.ComboBox cbMark;
+    private System.Windows.Forms.ComboBox cbLable;
   }
 }

@@ -145,10 +145,10 @@ namespace Dental_App.Appointmnets
       btnSteps.Enabled = false;
       btnSteps.Text = "Next";
     
-      testLable.Items.Add(new CustomList(0, "None"));
-      testLable.Items.Add(new CustomList(1, "Important"));
-      testLable.Items.Add(new CustomList(2, "Business"));
-      testLable.Items.Add(new CustomList(3, "Personal"));
+      cbMark.Items.Add(new CustomList(0, "None"));
+      cbMark.Items.Add(new CustomList(1, "Important"));
+      cbMark.Items.Add(new CustomList(2, "Business"));
+      cbMark.Items.Add(new CustomList(3, "Personal"));
       // Filling ComboBox with Data
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
@@ -288,41 +288,28 @@ namespace Dental_App.Appointmnets
       lbCost.Text = $"${TotalCost}";
     }
 
-    // Handle CheckBoxes and Plan Cost
     private short CalcPlanCost()
     {
-      int Cost = 0;
+      var checkBoxes = GetCheckBoxes();
+      var checkedCheckBoxes = checkBoxes
+          .Where(cb => cb.Checked)
+          .ToList();
 
-      foreach (var checkBox in GetCheckBoxes())
+      int cost = checkedCheckBoxes.Sum(cb => int.Parse(cb.Tag.ToString()));
+      _Diagnosis = checkedCheckBoxes.FirstOrDefault()?.Text; // Update diagnosis (first checked checkbox)
+
+      // Build the summary string
+      StringBuilder summary = new StringBuilder();
+      foreach (var cb in checkedCheckBoxes)
       {
-        if (checkBox.Checked)
-        {
-          // Sum Plan Cost.
-          Cost += int.Parse(checkBox.Tag.ToString());
-          _Diagnosis = checkBox.Text;
-        }
+        summary.Append($"{cb.Text}  ${cb.Tag}.\n");
       }
 
-      _UpdateSummary();
-      return Convert.ToInt16(Cost);
-    }
+      // Update the summary label
+      lbSummary.Text = summary.ToString();
 
-
-    // Update Summary 
-    private void _UpdateSummary()
-    {
-      // StringBuilder is more faster then concat normal string.
-      StringBuilder Summary = new StringBuilder();
-      foreach (var checkBox in GetCheckBoxes())
-      {
-        if (checkBox.Checked)
-        {
-          Summary.Append($"{checkBox.Text}  ${checkBox.Tag}.\n");
-        }
-      }
-
-      lbSummary.Text = Summary.ToString();
-
+      // Return the cost as a short 
+      return Convert.ToInt16(cost);
     }
 
     // Get all checkboxes
@@ -336,7 +323,20 @@ namespace Dental_App.Appointmnets
         chbFullMouthImplants, chbPeroxide25, chbPeroxide40
       };
     }
-
+    
+    // Hide all Panles
+    private IEnumerable<Panel> HideAllPanelss()
+    {
+      return new List<Panel>
+      {
+        pnlDiagnosis,
+        pnlExtaction,
+        pnlRestoration,
+        pnlImplantaion,
+        pnlWhitening,
+        pnlOrthopedic
+      };
+    }
 
     private void HandlePlans()
     {
@@ -411,7 +411,7 @@ namespace Dental_App.Appointmnets
     {
       // Getting doctorID 
       CustomList selectedDoctor = (CustomList)cbDoctor.SelectedItem;
-
+      CustomList selectedLable = (CustomList)cbLable.SelectedItem;
       _Appointment.PatientID = (int)_PatientID;
       _Appointment.DoctorID = selectedDoctor.ID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
@@ -529,19 +529,14 @@ namespace Dental_App.Appointmnets
       return _MedicalRecord.MedicalRecordID;
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-
-      CustomList obj = (CustomList)testLable.SelectedItem;
-      CustomList obj2 = (CustomList)cbDoctor.SelectedItem;
-      MessageBox.Show($"Doctor Name is: {obj.ID}");
-      MessageBox.Show($"Doctor Name is: {obj2.ID}");
-    }
-
 
   }
 
-
+  /// <summary>
+  /// Custom list that hold
+  /// int ID
+  /// string displayName 
+  /// </summary>
  public class CustomList 
   {
     private int id;
