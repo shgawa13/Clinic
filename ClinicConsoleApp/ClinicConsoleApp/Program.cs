@@ -367,29 +367,6 @@ namespace ClinicConsoleApp
     }
 
 
-    
-
-
-
-    public static List<Plan> Testitem = new List<Plan>();
-
-    public static void PushToList(ref List<Plan> Testitem)
-    {
-      Plan one = new Plan();
-      one.ItemName = "A";
-      one.ItemPrice = 10;
-      Testitem.Add(one);
-
-      Plan two = new Plan();
-      two.ItemName= "B";
-      two.ItemPrice = 10;
-      Testitem.Add(two);
-      
-      Plan three = new Plan();
-      three.ItemName= "B";
-      three.ItemPrice = 10;
-      Testitem.Add(three);
-    }
 
     // this is Custom Attribute 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
