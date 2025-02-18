@@ -147,7 +147,7 @@ namespace ClinicConsoleApp
   }
 
 
-    public class Plan
+  public class Plan
   {
     public string ItemName { set; get; }
     public short ItemPrice { set; get; }
@@ -286,28 +286,7 @@ namespace ClinicConsoleApp
     }
 
 
-    public static string[] arr = new string[20];
-
-    
-
-
-    public static void FillArrayWithTime()
-    {
-      int Year = DateTime.Today.Year;
-      int Month = DateTime.Today.Month;
-      int ToDay = DateTime.Today.Day;
-
-      DateTime date = new DateTime(Year, Month, ToDay, 8, 0, 0);
-
-      for(int i =0; i< 20; i++)
-      {
-
-        Console.WriteLine($"{date.ToShortTimeString()}");
-        date = date.AddMinutes(30);
-
-      }
-
-    }
+   
 
     public static void AddNewAppointment()
     {
@@ -412,17 +391,6 @@ namespace ClinicConsoleApp
       return temp;
     }
 
-    public static void ConcatWithString(int iteration)
-    {
-      string result = "";
-
-      for(int i=0; i < iteration; i++)
-      {
-        result += "a";
-      }
-
-    }
-
     public static void ConcatWithStringBuilder(int iteration)
     {
 
@@ -487,11 +455,6 @@ namespace ClinicConsoleApp
       //}
 
       int iteration = 20000;
-      // Testing with noraml string
-      Stopwatch st = Stopwatch.StartNew();
-      ConcatWithString(iteration);
-      st.Stop();
-      Console.WriteLine($"with normal concationation it took: {st.ElapsedMilliseconds} ms");
 
       // Testing with stringbuilder
       Stopwatch st2 = Stopwatch.StartNew();
