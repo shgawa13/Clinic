@@ -115,12 +115,12 @@ namespace Dental_App.Appointmnets
 
       if(_Mode == enMode.AddNew)
       {
-        lblTitle.Text = "Add new Appointment";
+        //lblTitle.Text = "Add new Appointment";
         _Appointment = new clsAppointments();
       }
       else
       {
-        lblTitle.Text = "Update Appointment";
+        //lblTitle.Text = "Update Appointment";
       }
       // Reset DateTime
       dtAppointmentDate.MinDateTime = DateTime.Today;
@@ -134,11 +134,7 @@ namespace Dental_App.Appointmnets
       dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
 
       // ResetLables
-      lblPatinetID.Text = "???";
-      lblFullName.Text = "???";
-      lblNationalNo.Text = "???";
-      lblPhone.Text = "???";
-      lblEmail.Text = "???";
+     
       tbSearch.Text = string.Empty;
 
       // Disable steps button
@@ -216,12 +212,8 @@ namespace Dental_App.Appointmnets
         MessageBox.Show($"Patient with ID: {_Patient} was not  found");
         return;
       }
+      // here we fill patient card
 
-      lblFullName.Text = _Patient.PatientInfo.FullName;
-      lblPatinetID.Text = PatientID.ToString();
-      lblNationalNo.Text = _Patient.PatientInfo.NationalID;
-      lblEmail.Text = _Patient.PatientInfo.Email;
-      lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
       tbNote.Focus();
 
       btnSteps.Enabled = true;
@@ -529,7 +521,7 @@ namespace Dental_App.Appointmnets
       return _MedicalRecord.MedicalRecordID;
     }
 
-
+   
   }
 
   /// <summary>
@@ -537,7 +529,7 @@ namespace Dental_App.Appointmnets
   /// int ID
   /// string displayName 
   /// </summary>
- public class CustomList 
+  public class CustomList 
   {
     private int id;
     private string display;
