@@ -45,7 +45,6 @@
       this.lblFullName = new System.Windows.Forms.Label();
       this.lblPatientID = new System.Windows.Forms.Label();
       this.grbPatient = new System.Windows.Forms.GroupBox();
-      this.iconButton9 = new FontAwesome.Sharp.IconButton();
       this.linkEdit = new System.Windows.Forms.LinkLabel();
       this.pbAvatar = new System.Windows.Forms.PictureBox();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -239,7 +238,6 @@
       // grbPatient
       // 
       this.grbPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(90)))));
-      this.grbPatient.Controls.Add(this.iconButton9);
       this.grbPatient.Controls.Add(this.linkEdit);
       this.grbPatient.Controls.Add(this.pbAvatar);
       this.grbPatient.Controls.Add(this.iconButton5);
@@ -266,41 +264,26 @@
       this.grbPatient.Controls.Add(this.label4);
       this.grbPatient.Controls.Add(this.label2);
       this.grbPatient.Controls.Add(this.label1);
-      this.grbPatient.Dock = System.Windows.Forms.DockStyle.Fill;
       this.grbPatient.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.grbPatient.ForeColor = System.Drawing.Color.Tomato;
-      this.grbPatient.Location = new System.Drawing.Point(0, 0);
+      this.grbPatient.Location = new System.Drawing.Point(-2, 0);
       this.grbPatient.Name = "grbPatient";
-      this.grbPatient.Size = new System.Drawing.Size(702, 319);
+      this.grbPatient.Size = new System.Drawing.Size(626, 321);
       this.grbPatient.TabIndex = 24;
       this.grbPatient.TabStop = false;
       this.grbPatient.Text = "Patient Info";
-      // 
-      // iconButton9
-      // 
-      this.iconButton9.FlatAppearance.BorderSize = 0;
-      this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Tooth;
-      this.iconButton9.IconColor = System.Drawing.Color.White;
-      this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton9.IconSize = 80;
-      this.iconButton9.Location = new System.Drawing.Point(335, 138);
-      this.iconButton9.Name = "iconButton9";
-      this.iconButton9.Size = new System.Drawing.Size(63, 76);
-      this.iconButton9.TabIndex = 59;
-      this.iconButton9.UseVisualStyleBackColor = true;
       // 
       // linkEdit
       // 
       this.linkEdit.ActiveLinkColor = System.Drawing.SystemColors.InactiveCaption;
       this.linkEdit.AutoSize = true;
-      this.linkEdit.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkEdit.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.linkEdit.ForeColor = System.Drawing.Color.Thistle;
       this.linkEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkEdit.LinkColor = System.Drawing.SystemColors.GradientActiveCaption;
-      this.linkEdit.Location = new System.Drawing.Point(530, 21);
+      this.linkEdit.Location = new System.Drawing.Point(466, 22);
       this.linkEdit.Name = "linkEdit";
-      this.linkEdit.Size = new System.Drawing.Size(83, 18);
+      this.linkEdit.Size = new System.Drawing.Size(75, 21);
       this.linkEdit.TabIndex = 33;
       this.linkEdit.TabStop = true;
       this.linkEdit.Text = "Edit Info";
@@ -309,7 +292,7 @@
       // pbAvatar
       // 
       this.pbAvatar.Image = global::Dental_App.Properties.Resources.Male_avatar;
-      this.pbAvatar.Location = new System.Drawing.Point(465, 53);
+      this.pbAvatar.Location = new System.Drawing.Point(401, 53);
       this.pbAvatar.Name = "pbAvatar";
       this.pbAvatar.Size = new System.Drawing.Size(212, 213);
       this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -435,7 +418,7 @@
       this.BackColor = System.Drawing.Color.Gainsboro;
       this.Controls.Add(this.grbPatient);
       this.Name = "ctrlPatientCard";
-      this.Size = new System.Drawing.Size(702, 319);
+      this.Size = new System.Drawing.Size(621, 319);
       this.grbPatient.ResumeLayout(false);
       this.grbPatient.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
@@ -472,6 +455,5 @@
     private FontAwesome.Sharp.IconButton iconButton2;
     private System.Windows.Forms.LinkLabel linkEdit;
     private System.Windows.Forms.PictureBox pbAvatar;
-    private FontAwesome.Sharp.IconButton iconButton9;
   }
 }

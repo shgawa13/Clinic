@@ -521,7 +521,10 @@ namespace Dental_App.Appointmnets
       return _MedicalRecord.MedicalRecordID;
     }
 
-   
+    private void tbpAddAppointment_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 
   /// <summary>

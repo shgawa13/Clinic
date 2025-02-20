@@ -34,16 +34,17 @@
       // ctrlPatientCard1
       // 
       this.ctrlPatientCard1.BackColor = System.Drawing.Color.Gainsboro;
-      this.ctrlPatientCard1.Location = new System.Drawing.Point(-1, 1);
+      this.ctrlPatientCard1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 0);
       this.ctrlPatientCard1.Name = "ctrlPatientCard1";
-      this.ctrlPatientCard1.Size = new System.Drawing.Size(840, 406);
+      this.ctrlPatientCard1.Size = new System.Drawing.Size(621, 317);
       this.ctrlPatientCard1.TabIndex = 0;
       // 
       // frmPatientInfo
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(838, 407);
+      this.ClientSize = new System.Drawing.Size(621, 317);
       this.Controls.Add(this.ctrlPatientCard1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Name = "frmPatientInfo";
