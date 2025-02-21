@@ -123,6 +123,12 @@
     <Compile Include="Patients\controls\ctrlPatientCard.Designer.cs">
       <DependentUpon>ctrlPatientCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patients\controls\ctrlPatientCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patients\controls\ctrlPatientCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlPatientCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patients\frmAddUpdatePatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\controls\ctrlPatientCard.resx">
       <DependentUpon>ctrlPatientCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\controls\ctrlPatientCardWithFilter.resx">
+      <DependentUpon>ctrlPatientCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\frmAddUpdatePatient.resx">
       <DependentUpon>frmAddUpdatePatient.cs</DependentUpon>

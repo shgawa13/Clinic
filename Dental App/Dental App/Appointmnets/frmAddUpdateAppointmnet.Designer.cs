@@ -59,24 +59,6 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.pnlExtaction = new System.Windows.Forms.Panel();
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.tcAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
-      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.pnlBillSummary = new System.Windows.Forms.Panel();
-      this.lblSummaryBill = new System.Windows.Forms.Label();
-      this.lblBillsDate = new System.Windows.Forms.Label();
-      this.label21 = new System.Windows.Forms.Label();
-      this.homeBtn = new System.Windows.Forms.PictureBox();
-      this.label20 = new System.Windows.Forms.Label();
-      this.label4 = new System.Windows.Forms.Label();
-      this.label1 = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
-      this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-      this.panelSearch = new System.Windows.Forms.Panel();
-      this.label11 = new System.Windows.Forms.Label();
-      this.tbSearch = new System.Windows.Forms.TextBox();
-      this.iconSearch = new FontAwesome.Sharp.IconButton();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.panel3 = new System.Windows.Forms.Panel();
       this.cbLable = new System.Windows.Forms.ComboBox();
@@ -97,11 +79,25 @@
       this.label8 = new System.Windows.Forms.Label();
       this.label12 = new System.Windows.Forms.Label();
       this.label16 = new System.Windows.Forms.Label();
+      this.tbpProcedures = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.label9 = new System.Windows.Forms.Label();
       this.tbNote = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
       this.iconNote = new FontAwesome.Sharp.IconButton();
+      this.tcAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+      this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+      this.pnlBillSummary = new System.Windows.Forms.Panel();
+      this.lblSummaryBill = new System.Windows.Forms.Label();
+      this.lblBillsDate = new System.Windows.Forms.Label();
+      this.label21 = new System.Windows.Forms.Label();
+      this.homeBtn = new System.Windows.Forms.PictureBox();
+      this.label20 = new System.Windows.Forms.Label();
+      this.label4 = new System.Windows.Forms.Label();
+      this.label1 = new System.Windows.Forms.Label();
+      this.label6 = new System.Windows.Forms.Label();
+      this.label2 = new System.Windows.Forms.Label();
+      this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnSteps = new Dental_App.ExpertsBtn();
-      this.ctrlPatientCard1 = new Dental_App.Patients.controls.ctrlPatientCard();
+      this.ctrlPatientCardWithFilter1 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
       this.btnDiagnosis = new Dental_App.ExpertsBtn();
       this.btnWhitening = new Dental_App.ExpertsBtn();
       this.btnRestoration = new Dental_App.ExpertsBtn();
@@ -136,17 +132,16 @@
       this.panel2.SuspendLayout();
       this.pnlExtaction.SuspendLayout();
       this.tbpAddAppointment.SuspendLayout();
+      this.groupBox1.SuspendLayout();
+      this.panel3.SuspendLayout();
       this.tbpProcedures.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tcAppointment)).BeginInit();
       this.tcAppointment.SuspendLayout();
       this.tbpBills.SuspendLayout();
       this.pnlBillSummary.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-      this.panelSearch.SuspendLayout();
-      this.groupBox1.SuspendLayout();
-      this.panel3.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.tbNote)).BeginInit();
       this.SuspendLayout();
       // 
       // panel1
@@ -449,7 +444,7 @@
       // 
       this.lbCost.AutoSize = true;
       this.lbCost.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbCost.Location = new System.Drawing.Point(711, 536);
+      this.lbCost.Location = new System.Drawing.Point(727, 536);
       this.lbCost.Name = "lbCost";
       this.lbCost.Size = new System.Drawing.Size(34, 25);
       this.lbCost.TabIndex = 5;
@@ -477,7 +472,7 @@
       // 
       this.lb.AutoSize = true;
       this.lb.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lb.Location = new System.Drawing.Point(649, 536);
+      this.lb.Location = new System.Drawing.Point(665, 536);
       this.lb.Name = "lb";
       this.lb.Size = new System.Drawing.Size(56, 25);
       this.lb.TabIndex = 4;
@@ -590,6 +585,7 @@
       // 
       // tbpAddAppointment
       // 
+      this.tbpAddAppointment.AutoSize = true;
       this.tbpAddAppointment.BackColor = System.Drawing.SystemColors.Control;
       this.tbpAddAppointment.Controls.Add(this.groupBox1);
       this.tbpAddAppointment.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -604,241 +600,18 @@
       this.tbpAddAppointment.ThemesEnabled = false;
       this.tbpAddAppointment.Click += new System.EventHandler(this.tbpAddAppointment_Click);
       // 
-      // tbpProcedures
-      // 
-      this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-      this.tbpProcedures.Controls.Add(this.label9);
-      this.tbpProcedures.Controls.Add(this.tbNote);
-      this.tbpProcedures.Controls.Add(this.iconNote);
-      this.tbpProcedures.Controls.Add(this.panel2);
-      this.tbpProcedures.Controls.Add(this.lbCost);
-      this.tbpProcedures.Controls.Add(this.panel1);
-      this.tbpProcedures.Controls.Add(this.lb);
-      this.tbpProcedures.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.tbpProcedures.Image = null;
-      this.tbpProcedures.ImageSize = new System.Drawing.Size(16, 16);
-      this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
-      this.tbpProcedures.Name = "tbpProcedures";
-      this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(861, 614);
-      this.tbpProcedures.TabIndex = 2;
-      this.tbpProcedures.Text = "Procedures";
-      this.tbpProcedures.ThemesEnabled = false;
-      // 
-      // tcAppointment
-      // 
-      this.tcAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(864, 645);
-      this.tcAppointment.Controls.Add(this.tbpAddAppointment);
-      this.tcAppointment.Controls.Add(this.tbpProcedures);
-      this.tcAppointment.Controls.Add(this.tbpBills);
-      this.tcAppointment.FocusOnTabClick = false;
-      this.tcAppointment.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tcAppointment.Location = new System.Drawing.Point(0, 0);
-      this.tcAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-      this.tcAppointment.MinimumSize = new System.Drawing.Size(864, 604);
-      this.tcAppointment.Name = "tcAppointment";
-      this.tcAppointment.Size = new System.Drawing.Size(864, 645);
-      this.tcAppointment.TabIndex = 152;
-      this.tcAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
-      this.tcAppointment.ThemeName = "TabRendererMetro";
-      this.tcAppointment.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
-      this.tcAppointment.SelectedIndexChanged += new System.EventHandler(this.tcAppointment_SelectedIndexChanged);
-      // 
-      // tbpBills
-      // 
-      this.tbpBills.BackColor = System.Drawing.SystemColors.ControlLight;
-      this.tbpBills.Controls.Add(this.btnPayBill);
-      this.tbpBills.Controls.Add(this.btnPrintBill);
-      this.tbpBills.Controls.Add(this.pnlBillSummary);
-      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.tbpBills.Image = null;
-      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
-      this.tbpBills.Location = new System.Drawing.Point(1, 29);
-      this.tbpBills.Name = "tbpBills";
-      this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(861, 614);
-      this.tbpBills.TabIndex = 3;
-      this.tbpBills.Text = "Bills";
-      this.tbpBills.ThemesEnabled = false;
-      // 
-      // pnlBillSummary
-      // 
-      this.pnlBillSummary.BackColor = System.Drawing.Color.Azure;
-      this.pnlBillSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.pnlBillSummary.Controls.Add(this.lblSummaryBill);
-      this.pnlBillSummary.Controls.Add(this.lblBillsDate);
-      this.pnlBillSummary.Controls.Add(this.label21);
-      this.pnlBillSummary.Controls.Add(this.homeBtn);
-      this.pnlBillSummary.Controls.Add(this.label20);
-      this.pnlBillSummary.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.pnlBillSummary.Location = new System.Drawing.Point(20, 18);
-      this.pnlBillSummary.Name = "pnlBillSummary";
-      this.pnlBillSummary.Size = new System.Drawing.Size(510, 446);
-      this.pnlBillSummary.TabIndex = 12;
-      // 
-      // lblSummaryBill
-      // 
-      this.lblSummaryBill.AutoSize = true;
-      this.lblSummaryBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblSummaryBill.ForeColor = System.Drawing.Color.Black;
-      this.lblSummaryBill.Location = new System.Drawing.Point(13, 154);
-      this.lblSummaryBill.Name = "lblSummaryBill";
-      this.lblSummaryBill.Size = new System.Drawing.Size(87, 21);
-      this.lblSummaryBill.TabIndex = 16;
-      this.lblSummaryBill.Text = "Summary:";
-      // 
-      // lblBillsDate
-      // 
-      this.lblBillsDate.AutoSize = true;
-      this.lblBillsDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblBillsDate.ForeColor = System.Drawing.Color.Black;
-      this.lblBillsDate.Location = new System.Drawing.Point(65, 16);
-      this.lblBillsDate.Name = "lblBillsDate";
-      this.lblBillsDate.Size = new System.Drawing.Size(38, 21);
-      this.lblBillsDate.TabIndex = 15;
-      this.lblBillsDate.Text = "????";
-      // 
-      // label21
-      // 
-      this.label21.AutoSize = true;
-      this.label21.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label21.ForeColor = System.Drawing.Color.Black;
-      this.label21.Location = new System.Drawing.Point(13, 16);
-      this.label21.Name = "label21";
-      this.label21.Size = new System.Drawing.Size(50, 21);
-      this.label21.TabIndex = 14;
-      this.label21.Text = "Date:";
-      // 
-      // homeBtn
-      // 
-      this.homeBtn.Image = global::Dental_App.Properties.Resources.gzexperts_logo;
-      this.homeBtn.Location = new System.Drawing.Point(212, -1);
-      this.homeBtn.Name = "homeBtn";
-      this.homeBtn.Size = new System.Drawing.Size(83, 104);
-      this.homeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-      this.homeBtn.TabIndex = 13;
-      this.homeBtn.TabStop = false;
-      // 
-      // label20
-      // 
-      this.label20.AutoSize = true;
-      this.label20.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label20.ForeColor = System.Drawing.Color.Black;
-      this.label20.Location = new System.Drawing.Point(13, 119);
-      this.label20.Name = "label20";
-      this.label20.Size = new System.Drawing.Size(87, 21);
-      this.label20.TabIndex = 12;
-      this.label20.Text = "Summary:";
-      // 
-      // label4
-      // 
-      this.label4.AutoSize = true;
-      this.label4.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label4.Location = new System.Drawing.Point(54, 56);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(92, 21);
-      this.label4.TabIndex = 150;
-      this.label4.Text = "Full Name:";
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label1.Location = new System.Drawing.Point(55, 16);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(90, 21);
-      this.label1.TabIndex = 149;
-      this.label1.Text = "Patinet ID:";
-      // 
-      // label6
-      // 
-      this.label6.AutoSize = true;
-      this.label6.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label6.Location = new System.Drawing.Point(45, 52);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(92, 21);
-      this.label6.TabIndex = 151;
-      this.label6.Text = "Start Time:";
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.label2.Location = new System.Drawing.Point(59, 316);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(52, 21);
-      this.label2.TabIndex = 155;
-      this.label2.Text = "Note:";
-      // 
-      // errorProvider1
-      // 
-      this.errorProvider1.ContainerControl = this;
-      // 
-      // panelSearch
-      // 
-      this.panelSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.panelSearch.Controls.Add(this.iconSearch);
-      this.panelSearch.Controls.Add(this.tbSearch);
-      this.panelSearch.Controls.Add(this.label11);
-      this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panelSearch.Location = new System.Drawing.Point(4, 19);
-      this.panelSearch.Name = "panelSearch";
-      this.panelSearch.Size = new System.Drawing.Size(830, 41);
-      this.panelSearch.TabIndex = 150;
-      // 
-      // label11
-      // 
-      this.label11.AutoSize = true;
-      this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label11.ForeColor = System.Drawing.Color.Black;
-      this.label11.Location = new System.Drawing.Point(9, 10);
-      this.label11.Name = "label11";
-      this.label11.Size = new System.Drawing.Size(150, 21);
-      this.label11.TabIndex = 150;
-      this.label11.Text = "Find by PatientID:";
-      // 
-      // tbSearch
-      // 
-      this.tbSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.tbSearch.Location = new System.Drawing.Point(159, 7);
-      this.tbSearch.Name = "tbSearch";
-      this.tbSearch.Size = new System.Drawing.Size(116, 26);
-      this.tbSearch.TabIndex = 152;
-      this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
-      this.tbSearch.Validating += new System.ComponentModel.CancelEventHandler(this.tbSearch_Validating);
-      // 
-      // iconSearch
-      // 
-      this.iconSearch.BackColor = System.Drawing.Color.Gainsboro;
-      this.iconSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-      this.iconSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iconSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-      this.iconSearch.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconSearch.IconSize = 25;
-      this.iconSearch.Location = new System.Drawing.Point(299, 6);
-      this.iconSearch.Name = "iconSearch";
-      this.iconSearch.Size = new System.Drawing.Size(42, 28);
-      this.iconSearch.TabIndex = 151;
-      this.iconSearch.UseVisualStyleBackColor = false;
-      this.iconSearch.Click += new System.EventHandler(this.iconSearch_Click);
-      // 
       // groupBox1
       // 
-      this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
       this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-      this.groupBox1.Controls.Add(this.ctrlPatientCard1);
+      this.groupBox1.Controls.Add(this.ctrlPatientCardWithFilter1);
       this.groupBox1.Controls.Add(this.panel3);
-      this.groupBox1.Controls.Add(this.panelSearch);
+      this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(12, 12);
+      this.groupBox1.Location = new System.Drawing.Point(0, 0);
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(838, 592);
+      this.groupBox1.Size = new System.Drawing.Size(861, 614);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointment Info";
@@ -1093,6 +866,28 @@
       this.label16.TabIndex = 176;
       this.label16.Text = "End Time:";
       // 
+      // tbpProcedures
+      // 
+      this.tbpProcedures.AutoSize = true;
+      this.tbpProcedures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+      this.tbpProcedures.Controls.Add(this.label9);
+      this.tbpProcedures.Controls.Add(this.tbNote);
+      this.tbpProcedures.Controls.Add(this.iconNote);
+      this.tbpProcedures.Controls.Add(this.panel2);
+      this.tbpProcedures.Controls.Add(this.lbCost);
+      this.tbpProcedures.Controls.Add(this.panel1);
+      this.tbpProcedures.Controls.Add(this.lb);
+      this.tbpProcedures.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpProcedures.Image = null;
+      this.tbpProcedures.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
+      this.tbpProcedures.Name = "tbpProcedures";
+      this.tbpProcedures.ShowCloseButton = true;
+      this.tbpProcedures.Size = new System.Drawing.Size(861, 614);
+      this.tbpProcedures.TabIndex = 2;
+      this.tbpProcedures.Text = "Procedures";
+      this.tbpProcedures.ThemesEnabled = false;
+      // 
       // label9
       // 
       this.label9.AutoSize = true;
@@ -1108,12 +903,14 @@
       this.tbNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tbNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(156)))));
-      this.tbNote.BeforeTouchSize = new System.Drawing.Size(506, 104);
+      this.tbNote.BeforeTouchSize = new System.Drawing.Size(504, 104);
       this.tbNote.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
       this.tbNote.Location = new System.Drawing.Point(102, 495);
+      this.tbNote.MaximumSize = new System.Drawing.Size(504, 104);
+      this.tbNote.MinimumSize = new System.Drawing.Size(504, 4);
       this.tbNote.Multiline = true;
       this.tbNote.Name = "tbNote";
-      this.tbNote.Size = new System.Drawing.Size(506, 104);
+      this.tbNote.Size = new System.Drawing.Size(504, 104);
       this.tbNote.TabIndex = 155;
       // 
       // iconNote
@@ -1130,6 +927,158 @@
       this.iconNote.Size = new System.Drawing.Size(34, 27);
       this.iconNote.TabIndex = 154;
       this.iconNote.UseVisualStyleBackColor = true;
+      // 
+      // tcAppointment
+      // 
+      this.tcAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tcAppointment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(864, 645);
+      this.tcAppointment.Controls.Add(this.tbpAddAppointment);
+      this.tcAppointment.Controls.Add(this.tbpProcedures);
+      this.tcAppointment.Controls.Add(this.tbpBills);
+      this.tcAppointment.FocusOnTabClick = false;
+      this.tcAppointment.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tcAppointment.Location = new System.Drawing.Point(0, 0);
+      this.tcAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+      this.tcAppointment.MinimumSize = new System.Drawing.Size(864, 604);
+      this.tcAppointment.Name = "tcAppointment";
+      this.tcAppointment.Size = new System.Drawing.Size(864, 645);
+      this.tcAppointment.TabIndex = 152;
+      this.tcAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
+      this.tcAppointment.ThemeName = "TabRendererMetro";
+      this.tcAppointment.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
+      this.tcAppointment.SelectedIndexChanged += new System.EventHandler(this.tcAppointment_SelectedIndexChanged);
+      // 
+      // tbpBills
+      // 
+      this.tbpBills.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.tbpBills.Controls.Add(this.btnPayBill);
+      this.tbpBills.Controls.Add(this.btnPrintBill);
+      this.tbpBills.Controls.Add(this.pnlBillSummary);
+      this.tbpBills.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.tbpBills.Image = null;
+      this.tbpBills.ImageSize = new System.Drawing.Size(16, 16);
+      this.tbpBills.Location = new System.Drawing.Point(1, 29);
+      this.tbpBills.Name = "tbpBills";
+      this.tbpBills.ShowCloseButton = true;
+      this.tbpBills.Size = new System.Drawing.Size(861, 614);
+      this.tbpBills.TabIndex = 3;
+      this.tbpBills.Text = "Bills";
+      this.tbpBills.ThemesEnabled = false;
+      // 
+      // pnlBillSummary
+      // 
+      this.pnlBillSummary.BackColor = System.Drawing.Color.Azure;
+      this.pnlBillSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.pnlBillSummary.Controls.Add(this.lblSummaryBill);
+      this.pnlBillSummary.Controls.Add(this.lblBillsDate);
+      this.pnlBillSummary.Controls.Add(this.label21);
+      this.pnlBillSummary.Controls.Add(this.homeBtn);
+      this.pnlBillSummary.Controls.Add(this.label20);
+      this.pnlBillSummary.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.pnlBillSummary.Location = new System.Drawing.Point(20, 18);
+      this.pnlBillSummary.Name = "pnlBillSummary";
+      this.pnlBillSummary.Size = new System.Drawing.Size(510, 446);
+      this.pnlBillSummary.TabIndex = 12;
+      // 
+      // lblSummaryBill
+      // 
+      this.lblSummaryBill.AutoSize = true;
+      this.lblSummaryBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblSummaryBill.ForeColor = System.Drawing.Color.Black;
+      this.lblSummaryBill.Location = new System.Drawing.Point(13, 154);
+      this.lblSummaryBill.Name = "lblSummaryBill";
+      this.lblSummaryBill.Size = new System.Drawing.Size(87, 21);
+      this.lblSummaryBill.TabIndex = 16;
+      this.lblSummaryBill.Text = "Summary:";
+      // 
+      // lblBillsDate
+      // 
+      this.lblBillsDate.AutoSize = true;
+      this.lblBillsDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblBillsDate.ForeColor = System.Drawing.Color.Black;
+      this.lblBillsDate.Location = new System.Drawing.Point(65, 16);
+      this.lblBillsDate.Name = "lblBillsDate";
+      this.lblBillsDate.Size = new System.Drawing.Size(38, 21);
+      this.lblBillsDate.TabIndex = 15;
+      this.lblBillsDate.Text = "????";
+      // 
+      // label21
+      // 
+      this.label21.AutoSize = true;
+      this.label21.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label21.ForeColor = System.Drawing.Color.Black;
+      this.label21.Location = new System.Drawing.Point(13, 16);
+      this.label21.Name = "label21";
+      this.label21.Size = new System.Drawing.Size(50, 21);
+      this.label21.TabIndex = 14;
+      this.label21.Text = "Date:";
+      // 
+      // homeBtn
+      // 
+      this.homeBtn.Image = global::Dental_App.Properties.Resources.gzexperts_logo;
+      this.homeBtn.Location = new System.Drawing.Point(212, -1);
+      this.homeBtn.Name = "homeBtn";
+      this.homeBtn.Size = new System.Drawing.Size(83, 104);
+      this.homeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.homeBtn.TabIndex = 13;
+      this.homeBtn.TabStop = false;
+      // 
+      // label20
+      // 
+      this.label20.AutoSize = true;
+      this.label20.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label20.ForeColor = System.Drawing.Color.Black;
+      this.label20.Location = new System.Drawing.Point(13, 119);
+      this.label20.Name = "label20";
+      this.label20.Size = new System.Drawing.Size(87, 21);
+      this.label20.TabIndex = 12;
+      this.label20.Text = "Summary:";
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label4.Location = new System.Drawing.Point(54, 56);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(92, 21);
+      this.label4.TabIndex = 150;
+      this.label4.Text = "Full Name:";
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label1.Location = new System.Drawing.Point(55, 16);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(90, 21);
+      this.label1.TabIndex = 149;
+      this.label1.Text = "Patinet ID:";
+      // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label6.Location = new System.Drawing.Point(45, 52);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(92, 21);
+      this.label6.TabIndex = 151;
+      this.label6.Text = "Start Time:";
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.label2.Location = new System.Drawing.Point(59, 316);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(52, 21);
+      this.label2.TabIndex = 155;
+      this.label2.Text = "Note:";
+      // 
+      // errorProvider1
+      // 
+      this.errorProvider1.ContainerControl = this;
       // 
       // btnSteps
       // 
@@ -1152,15 +1101,16 @@
       this.btnSteps.UseVisualStyleBackColor = false;
       this.btnSteps.Click += new System.EventHandler(this.btnSteps_Click);
       // 
-      // ctrlPatientCard1
+      // ctrlPatientCardWithFilter1
       // 
-      this.ctrlPatientCard1.BackColor = System.Drawing.Color.Gainsboro;
-      this.ctrlPatientCard1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.ctrlPatientCard1.Location = new System.Drawing.Point(4, 60);
-      this.ctrlPatientCard1.Margin = new System.Windows.Forms.Padding(4);
-      this.ctrlPatientCard1.Name = "ctrlPatientCard1";
-      this.ctrlPatientCard1.Size = new System.Drawing.Size(830, 419);
-      this.ctrlPatientCard1.TabIndex = 152;
+      this.ctrlPatientCardWithFilter1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.ctrlPatientCardWithFilter1.FilterEnable = true;
+      this.ctrlPatientCardWithFilter1.Location = new System.Drawing.Point(4, 19);
+      this.ctrlPatientCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
+      this.ctrlPatientCardWithFilter1.Name = "ctrlPatientCardWithFilter1";
+      this.ctrlPatientCardWithFilter1.Size = new System.Drawing.Size(834, 460);
+      this.ctrlPatientCardWithFilter1.TabIndex = 152;
       // 
       // btnDiagnosis
       // 
@@ -1387,7 +1337,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ControlLight;
-      this.ClientSize = new System.Drawing.Size(864, 696);
+      this.ClientSize = new System.Drawing.Size(865, 696);
       this.Controls.Add(this.btnSteps);
       this.Controls.Add(this.tcAppointment);
       this.Controls.Add(this.label4);
@@ -1426,21 +1376,20 @@
       this.panel2.PerformLayout();
       this.pnlExtaction.ResumeLayout(false);
       this.tbpAddAppointment.ResumeLayout(false);
+      this.groupBox1.ResumeLayout(false);
+      this.panel3.ResumeLayout(false);
+      this.panel3.PerformLayout();
       this.tbpProcedures.ResumeLayout(false);
       this.tbpProcedures.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.tbNote)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.tcAppointment)).EndInit();
       this.tcAppointment.ResumeLayout(false);
+      this.tcAppointment.PerformLayout();
       this.tbpBills.ResumeLayout(false);
       this.pnlBillSummary.ResumeLayout(false);
       this.pnlBillSummary.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-      this.panelSearch.ResumeLayout(false);
-      this.panelSearch.PerformLayout();
-      this.groupBox1.ResumeLayout(false);
-      this.panel3.ResumeLayout(false);
-      this.panel3.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.tbNote)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1504,10 +1453,6 @@
     private ExpertsBtn btnPayBill;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.Panel panel3;
-    private System.Windows.Forms.Panel panelSearch;
-    private FontAwesome.Sharp.IconButton iconSearch;
-    private System.Windows.Forms.TextBox tbSearch;
-    private System.Windows.Forms.Label label11;
     private System.Windows.Forms.ComboBox cbLable;
     private System.Windows.Forms.ComboBox cbMark;
     private System.Windows.Forms.Label label23;
@@ -1526,9 +1471,9 @@
     private System.Windows.Forms.Label label8;
     private System.Windows.Forms.Label label12;
     private System.Windows.Forms.Label label16;
-    private Patients.controls.ctrlPatientCard ctrlPatientCard1;
     private System.Windows.Forms.Label label9;
     private Syncfusion.Windows.Forms.Tools.TextBoxExt tbNote;
     private FontAwesome.Sharp.IconButton iconNote;
+    private Patients.controls.ctrlPatientCardWithFilter ctrlPatientCardWithFilter1;
   }
 }

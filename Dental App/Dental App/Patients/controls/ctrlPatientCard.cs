@@ -15,22 +15,28 @@ namespace Dental_App.Patients.controls
 {
   public partial class ctrlPatientCard : UserControl
   {
-    private int _PatientID;
-    public int PatientID
-    {
-      get { return _PatientID; }
-    }
-    private clsPatient _Patient;
-
     public ctrlPatientCard()
     {
       InitializeComponent();
     }
 
+    private int _PatientID;
+    public int PatientID
+    {
+      get { return _PatientID; }
+    }
+
+    private clsPatient _Patient;
+    public clsPatient SelectedPatient
+    {
+      get { return _Patient; }
+    }
+
+
     public void LoadPatientInfo(int pateintID)
     {
       _PatientID = pateintID;
-
+      
       _Patient = clsPatient.FindPatientByID(_PatientID);
       if(_Patient == null)
       {
@@ -41,7 +47,13 @@ namespace Dental_App.Patients.controls
 
       _FillPersonInfo();
     }
-   
+
+    public void LoadPatientInfo()
+    {
+
+    }
+
+
     private void _FillPersonInfo()
     {
       lblPatientID.Text = _Patient.PatientID.ToString();

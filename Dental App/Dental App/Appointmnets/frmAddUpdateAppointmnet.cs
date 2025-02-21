@@ -135,7 +135,7 @@ namespace Dental_App.Appointmnets
 
       // ResetLables
      
-      tbSearch.Text = string.Empty;
+      //bSearch.Text = string.Empty;
 
       // Disable steps button
       btnSteps.Enabled = false;
@@ -223,8 +223,8 @@ namespace Dental_App.Appointmnets
     private void _LoadPatientInfo(int PatientID)
     {
       _FindPatinet(PatientID);
-      tbSearch.Enabled = false;
-      iconSearch.Enabled = false;
+      //tbSearch.Enabled = false;
+      //iconSearch.Enabled = false;
     }
 
     // if User Select StartTime it will add 30 min to EndTime 
@@ -237,15 +237,15 @@ namespace Dental_App.Appointmnets
     }
 
     
-    private void iconSearch_Click(object sender, EventArgs e)
-    {
-      if (tbSearch.Text.Trim() != string.Empty)
-      {
-        _PatientID = int.Parse(tbSearch.Text.Trim());
-        _FindPatinet(_PatientID);
+    //private void iconSearch_Click(object sender, EventArgs e)
+    //{
+    //  if (tbSearch.Text.Trim() != string.Empty)
+    //  {
+    //    _PatientID = int.Parse(tbSearch.Text.Trim());
+    //    _FindPatinet(_PatientID);
 
-      }
-    }
+    //  }
+    //}
 
     
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -254,22 +254,7 @@ namespace Dental_App.Appointmnets
       e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
     }
 
-    // Validat inputs in Search box.
-    private void tbSearch_Validating(object sender, CancelEventArgs e)
-    {
-
-      if (String.IsNullOrEmpty(tbSearch.Text.Trim()))
-      {
-        e.Cancel = true;
-        errorProvider1.SetError(tbSearch, "You must enter PatientID");
-        return;
-      }
-      else
-      {
-        errorProvider1.SetError(tbSearch, null);
-      }
-
-    }
+    
 
 
     //-------------------------------------[ Procedures Tap ] --------------------------------------------//
