@@ -25,6 +25,29 @@ namespace Dental_App.Patients.controls
       }
     }
 
+    public class PatientCardWithFilterEvent : EventArgs
+    {
+      public int ID { get; }
+      
+      public PatientCardWithFilterEvent(int id)
+      {
+        this.ID = id;
+      }
+
+    }
+
+    public event EventHandler<PatientCardWithFilterEvent> OnPatientSelecte;
+
+    public void RaisePatientSelected(int ID)
+    {
+      RaisePatientSelected(new PatientCardWithFilterEvent(ID));
+    }
+
+    protected virtual void RaisePatientSelected(PatientCardWithFilterEvent e)
+    {
+      OnPatientSelecte?.Invoke(this, e);
+    }
+
     public ctrlPatientCardWithFilter()
     {
       InitializeComponent();
@@ -60,22 +83,28 @@ namespace Dental_App.Patients.controls
       FindNow();
     }
 
-
+    public void LoadPatientInfo(string NationalID)
+    {
+      cbFilterBy.SelectedIndex = 1;
+      txtFilterValue.Text = NationalID;
+      FindNow();
+    }
 
     public void FindNow()
     {
       switch (cbFilterBy.Text) 
       {
         case "Patient ID":
-          ctrlPatientCard1.LoadPatientInfo(_PatientID);
+          ctrlPatientCard1.LoadPatientInfo(int.Parse(txtFilterValue.Text));
           break;
           // here we add National No case
       }
 
-      if(OnPatientSelected !=null && FilterEnable)
+      if (OnPatientSelected != null && FilterEnable)
       {
         OnPatientSelected(ctrlPatientCard1.PatientID);
       }
+
     }
 
     // Validat inputs in Search box.
@@ -93,5 +122,12 @@ namespace Dental_App.Patients.controls
         errorProvider1.SetError(txtFilterValue, null);
       }
     }
+
+    private void iconSearch_Click(object sender, EventArgs e)
+    {
+      FindNow();
+    }
+
+    
   }
 }

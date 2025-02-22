@@ -30,12 +30,12 @@
     {
       this.components = new System.ComponentModel.Container();
       this.grbFilter = new System.Windows.Forms.Panel();
+      this.cbFilterBy = new System.Windows.Forms.ComboBox();
       this.iconSearch = new FontAwesome.Sharp.IconButton();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.label11 = new System.Windows.Forms.Label();
-      this.ctrlPatientCard1 = new Dental_App.Patients.controls.ctrlPatientCard();
-      this.cbFilterBy = new System.Windows.Forms.ComboBox();
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+      this.ctrlPatientCard1 = new Dental_App.Patients.controls.ctrlPatientCard();
       this.grbFilter.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
       this.SuspendLayout();
@@ -53,6 +53,18 @@
       this.grbFilter.Size = new System.Drawing.Size(619, 41);
       this.grbFilter.TabIndex = 151;
       // 
+      // cbFilterBy
+      // 
+      this.cbFilterBy.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+      this.cbFilterBy.FormattingEnabled = true;
+      this.cbFilterBy.Items.AddRange(new object[] {
+            "Patient ID",
+            "National No"});
+      this.cbFilterBy.Location = new System.Drawing.Point(129, 6);
+      this.cbFilterBy.Name = "cbFilterBy";
+      this.cbFilterBy.Size = new System.Drawing.Size(142, 29);
+      this.cbFilterBy.TabIndex = 153;
+      // 
       // iconSearch
       // 
       this.iconSearch.BackColor = System.Drawing.Color.SlateBlue;
@@ -68,6 +80,7 @@
       this.iconSearch.Size = new System.Drawing.Size(49, 32);
       this.iconSearch.TabIndex = 151;
       this.iconSearch.UseVisualStyleBackColor = false;
+      this.iconSearch.Click += new System.EventHandler(this.iconSearch_Click);
       // 
       // txtFilterValue
       // 
@@ -89,29 +102,17 @@
       this.label11.TabIndex = 150;
       this.label11.Text = "Find Patient:";
       // 
+      // errorProvider1
+      // 
+      this.errorProvider1.ContainerControl = this;
+      // 
       // ctrlPatientCard1
       // 
       this.ctrlPatientCard1.BackColor = System.Drawing.Color.Gainsboro;
       this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 40);
       this.ctrlPatientCard1.Name = "ctrlPatientCard1";
-      this.ctrlPatientCard1.Size = new System.Drawing.Size(626, 317);
+      this.ctrlPatientCard1.Size = new System.Drawing.Size(619, 317);
       this.ctrlPatientCard1.TabIndex = 152;
-      // 
-      // cbFilterBy
-      // 
-      this.cbFilterBy.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
-      this.cbFilterBy.FormattingEnabled = true;
-      this.cbFilterBy.Items.AddRange(new object[] {
-            "Patient ID",
-            "National No"});
-      this.cbFilterBy.Location = new System.Drawing.Point(129, 6);
-      this.cbFilterBy.Name = "cbFilterBy";
-      this.cbFilterBy.Size = new System.Drawing.Size(142, 29);
-      this.cbFilterBy.TabIndex = 153;
-      // 
-      // errorProvider1
-      // 
-      this.errorProvider1.ContainerControl = this;
       // 
       // ctrlPatientCardWithFilter
       // 

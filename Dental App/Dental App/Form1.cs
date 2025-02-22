@@ -155,8 +155,8 @@ namespace Dental_App
 
     private void iconButton7_Click(object sender, EventArgs e)
     {
-      MessageBox.Show("Testing");
-      //OpenChildForm(new frmTestSchedule());
+      //MessageBox.Show("Testing");
+      OpenChildForm(new testCard());
     }
 
     private void homeBtn_Click(object sender, EventArgs e)

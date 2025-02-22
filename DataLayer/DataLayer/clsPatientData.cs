@@ -193,6 +193,8 @@ namespace DataLayer
       return IsFound;
     }
 
+    
+
     // Get All Patients
     public static DataTable GetAllPatients()
     {

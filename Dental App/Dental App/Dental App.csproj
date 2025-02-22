@@ -147,6 +147,12 @@
     <Compile Include="Patients\frmPatientInfo.Designer.cs">
       <DependentUpon>frmPatientInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patients\testCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\testCard.Designer.cs">
+      <DependentUpon>testCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payments\frmPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\frmPatientInfo.resx">
       <DependentUpon>frmPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\testCard.resx">
+      <DependentUpon>testCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payments\frmPay.resx">
       <DependentUpon>frmPay.cs</DependentUpon>
