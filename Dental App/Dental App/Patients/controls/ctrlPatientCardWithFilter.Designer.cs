@@ -110,10 +110,12 @@
       // ctrlPatientCard1
       // 
       this.ctrlPatientCard1.BackColor = System.Drawing.Color.Gainsboro;
-      this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 40);
+      this.ctrlPatientCard1.Dock = System.Windows.Forms.DockStyle.Top;
+      this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 41);
       this.ctrlPatientCard1.Name = "ctrlPatientCard1";
       this.ctrlPatientCard1.Size = new System.Drawing.Size(619, 317);
       this.ctrlPatientCard1.TabIndex = 152;
+      this.ctrlPatientCard1.Load += new System.EventHandler(this.ctrlPatientCard1_Load);
       // 
       // ctrlPatientCardWithFilter
       // 

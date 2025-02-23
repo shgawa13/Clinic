@@ -131,6 +131,9 @@ namespace Dental_App.Patients.controls
       FindNow();
     }
 
-    
+    private void ctrlPatientCard1_Load(object sender, EventArgs e)
+    {
+
+    }
   }
 }

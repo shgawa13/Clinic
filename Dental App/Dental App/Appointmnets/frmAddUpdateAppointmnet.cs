@@ -223,6 +223,7 @@ namespace Dental_App.Appointmnets
     private void _LoadPatientInfo(int PatientID)
     {
       _FindPatinet(PatientID);
+      //ctrlPatientCardWithFilter1
       //tbSearch.Enabled = false;
       //iconSearch.Enabled = false;
     }
@@ -236,16 +237,6 @@ namespace Dental_App.Appointmnets
       }
     }
 
-    
-    //private void iconSearch_Click(object sender, EventArgs e)
-    //{
-    //  if (tbSearch.Text.Trim() != string.Empty)
-    //  {
-    //    _PatientID = int.Parse(tbSearch.Text.Trim());
-    //    _FindPatinet(_PatientID);
-
-    //  }
-    //}
 
     
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)

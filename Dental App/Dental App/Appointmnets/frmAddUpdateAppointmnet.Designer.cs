@@ -97,6 +97,7 @@
       this.label2 = new System.Windows.Forms.Label();
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnSteps = new Dental_App.ExpertsBtn();
+      this.ctrlPatientCardWithFilter1 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
       this.btnDiagnosis = new Dental_App.ExpertsBtn();
       this.btnWhitening = new Dental_App.ExpertsBtn();
       this.btnRestoration = new Dental_App.ExpertsBtn();
@@ -106,7 +107,6 @@
       this.btnPayBill = new Dental_App.ExpertsBtn();
       this.btnPrintBill = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
-      this.ctrlPatientCardWithFilter1 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
       this.panel1.SuspendLayout();
       this.pnlDiagnosis.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
@@ -1101,6 +1101,16 @@
       this.btnSteps.UseVisualStyleBackColor = false;
       this.btnSteps.Click += new System.EventHandler(this.btnSteps_Click);
       // 
+      // ctrlPatientCardWithFilter1
+      // 
+      this.ctrlPatientCardWithFilter1.Dock = System.Windows.Forms.DockStyle.Top;
+      this.ctrlPatientCardWithFilter1.FilterEnable = true;
+      this.ctrlPatientCardWithFilter1.Location = new System.Drawing.Point(4, 19);
+      this.ctrlPatientCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
+      this.ctrlPatientCardWithFilter1.Name = "ctrlPatientCardWithFilter1";
+      this.ctrlPatientCardWithFilter1.Size = new System.Drawing.Size(853, 469);
+      this.ctrlPatientCardWithFilter1.TabIndex = 152;
+      // 
       // btnDiagnosis
       // 
       this.btnDiagnosis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
@@ -1320,16 +1330,6 @@
       this.expertsBtn2.Text = "Close";
       this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
       this.expertsBtn2.UseVisualStyleBackColor = false;
-      // 
-      // ctrlPatientCardWithFilter1
-      // 
-      this.ctrlPatientCardWithFilter1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.ctrlPatientCardWithFilter1.FilterEnable = true;
-      this.ctrlPatientCardWithFilter1.Location = new System.Drawing.Point(4, 19);
-      this.ctrlPatientCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-      this.ctrlPatientCardWithFilter1.Name = "ctrlPatientCardWithFilter1";
-      this.ctrlPatientCardWithFilter1.Size = new System.Drawing.Size(853, 462);
-      this.ctrlPatientCardWithFilter1.TabIndex = 152;
       // 
       // frmAddUpdateAppointmnet
       // 
