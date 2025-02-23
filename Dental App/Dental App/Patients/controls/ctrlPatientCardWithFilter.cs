@@ -97,7 +97,10 @@ namespace Dental_App.Patients.controls
         case "Patient ID":
           ctrlPatientCard1.LoadPatientInfo(int.Parse(txtFilterValue.Text));
           break;
-          // here we add National No case
+
+        case "National ID":
+          ctrlPatientCard1.LoadPatientInfo(txtFilterValue.Text);
+          break;
       }
 
       if (OnPatientSelected != null && FilterEnable)

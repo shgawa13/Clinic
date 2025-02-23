@@ -55,11 +55,12 @@
       // 
       // cbFilterBy
       // 
+      this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.cbFilterBy.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
       this.cbFilterBy.FormattingEnabled = true;
       this.cbFilterBy.Items.AddRange(new object[] {
             "Patient ID",
-            "National No"});
+            "National ID"});
       this.cbFilterBy.Location = new System.Drawing.Point(129, 6);
       this.cbFilterBy.Name = "cbFilterBy";
       this.cbFilterBy.Size = new System.Drawing.Size(142, 29);

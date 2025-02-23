@@ -48,9 +48,16 @@ namespace Dental_App.Patients.controls
       _FillPersonInfo();
     }
 
-    public void LoadPatientInfo()
+    public void LoadPatientInfo(string NationalID)
     {
-
+      _Patient = clsPatient.FindPatientByNationalID(NationalID);
+      if(_Patient == null)
+      {
+        ResetPersonInfo();
+        MessageBox.Show("No Patient with NationalID. = " + NationalID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      }
+      _FillPersonInfo();
     }
 
 

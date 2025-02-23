@@ -193,7 +193,57 @@ namespace DataLayer
       return IsFound;
     }
 
-    
+
+    // Find by Patient by NationalID
+    public static bool FindPatientByNationalID(string NationalID, ref int PersonID, ref int PatientID)
+    {
+      bool IsFound = false;
+      string query = @"Select Patients.PersonID,PatientID From Patients
+                      inner join People On Patients.PersonID=People.PersonID
+                      Where NationalID Like @NationalID + '%';";
+
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(query, connection))
+          {
+            command.Parameters.AddWithValue("@NationalID", NationalID);
+            // Create Reader
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+              if (reader.Read())
+              {
+                IsFound = true;
+
+                PersonID = (int)reader["PersonID"];
+                PatientID = (int)reader["PatientID"];
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+        //Console.WriteLine($"");
+      }
+
+      return IsFound;
+    }
+
 
     // Get All Patients
     public static DataTable GetAllPatients()
