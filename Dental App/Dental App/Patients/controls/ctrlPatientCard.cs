@@ -15,9 +15,21 @@ namespace Dental_App.Patients.controls
 {
   public partial class ctrlPatientCard : UserControl
   {
+
     public ctrlPatientCard()
     {
       InitializeComponent();
+    }
+
+    public event EventHandler<PatientCardEventArgs> OnPatientSelected;
+
+    // funcation that will rais on PatientSelected
+    public void PatientSelected(int PatientID, clsPatient Patient)
+    {
+      if (OnPatientSelected != null)
+      {
+        OnPatientSelected(this, new PatientCardEventArgs(PatientID, Patient));
+      }
     }
 
     private int _PatientID;
@@ -35,6 +47,8 @@ namespace Dental_App.Patients.controls
 
     public bool LoadPatientInfo(int pateintID)
     {
+
+     
       _PatientID = pateintID;
       
       _Patient = clsPatient.FindPatientByID(_PatientID);
@@ -117,4 +131,17 @@ namespace Dental_App.Patients.controls
       LoadPatientInfo(_PatientID);
     }
   }
+
+  public class PatientCardEventArgs : EventArgs
+  {
+    public int PatientID { get; }
+    public clsPatient SelectedPatient { get; }
+
+    public PatientCardEventArgs(int PatientID, clsPatient Patient)
+    {
+      this.PatientID = PatientID;
+      this.SelectedPatient = Patient;
+    }
+  }
+
 }
