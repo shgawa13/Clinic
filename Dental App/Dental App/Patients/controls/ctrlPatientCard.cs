@@ -33,7 +33,7 @@ namespace Dental_App.Patients.controls
     }
 
 
-    public void LoadPatientInfo(int pateintID)
+    public bool LoadPatientInfo(int pateintID)
     {
       _PatientID = pateintID;
       
@@ -42,22 +42,24 @@ namespace Dental_App.Patients.controls
       {
         ResetPersonInfo();
         MessageBox.Show("No Patient with ID. = " + _PatientID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return;
+        return false;
       }
 
       _FillPersonInfo();
+      return true;
     }
 
-    public void LoadPatientInfo(string NationalID)
+    public bool LoadPatientInfo(string NationalID)
     {
       _Patient = clsPatient.FindPatientByNationalID(NationalID);
       if(_Patient == null)
       {
         ResetPersonInfo();
         MessageBox.Show("No Patient with NationalID. = " + NationalID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        return;
+        return false;
       }
       _FillPersonInfo();
+      return true;
     }
 
 

@@ -222,23 +222,23 @@ namespace Dental_App.Appointmnets
     // if appointment open from patient list we load patient info
     private void _LoadPatientInfo(int PatientID)
     {
-      _FindPatinet(PatientID);
-      //ctrlPatientCardWithFilter1
-      //tbSearch.Enabled = false;
-      //iconSearch.Enabled = false;
+      if (ctrlPatientCardWithFilter1.LoadPatientInfo(PatientID))
+      {
+        _Patient = clsPatient.FindPatientByID(PatientID);
+        tbNote.Focus();
+        btnSteps.Enabled = true;
+      }
+      
     }
 
     // if User Select StartTime it will add 30 min to EndTime 
-    private void cbStartTime_SelectedIndexChanged_1(object sender, EventArgs e)
+    private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)
     {
       if (cbStartTime.SelectedIndex != 19)
-      {
         cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
-      }
     }
 
 
-    
     private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
     {
       // handle numbers input
@@ -501,6 +501,7 @@ namespace Dental_App.Appointmnets
     {
 
     }
+
   }
 
   /// <summary>

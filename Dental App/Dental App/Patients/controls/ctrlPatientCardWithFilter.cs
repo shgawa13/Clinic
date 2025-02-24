@@ -76,30 +76,32 @@ namespace Dental_App.Patients.controls
       get { return ctrlPatientCard1.SelectedPatient; }
     }
 
-    public void LoadPatientInfo(int PatientID)
+    public bool LoadPatientInfo(int PatientID)
     {
       cbFilterBy.SelectedIndex = 0;
       txtFilterValue.Text = PatientID.ToString();
-      FindNow();
+     return FindNow();
     }
 
-    public void LoadPatientInfo(string NationalID)
+    public bool LoadPatientInfo(string NationalID)
     {
       cbFilterBy.SelectedIndex = 1;
       txtFilterValue.Text = NationalID;
-      FindNow();
+     return FindNow();
     }
 
-    public void FindNow()
+    public bool FindNow()
     {
+      bool IsFound = false;
+
       switch (cbFilterBy.Text) 
       {
         case "Patient ID":
-          ctrlPatientCard1.LoadPatientInfo(int.Parse(txtFilterValue.Text));
+         IsFound = ctrlPatientCard1.LoadPatientInfo(int.Parse(txtFilterValue.Text));
           break;
 
         case "National ID":
-          ctrlPatientCard1.LoadPatientInfo(txtFilterValue.Text);
+          IsFound = ctrlPatientCard1.LoadPatientInfo(txtFilterValue.Text);
           break;
       }
 
@@ -107,7 +109,7 @@ namespace Dental_App.Patients.controls
       {
         OnPatientSelected(ctrlPatientCard1.PatientID);
       }
-
+      return IsFound;
     }
 
     // Validat inputs in Search box.
