@@ -105,8 +105,9 @@ namespace Dental_App.Appointmnets
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
-     // if (_Mode == enMode.Update)
-     //   _LoadData();
+      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected;
+      // if (_Mode == enMode.Update)
+      //   _LoadData();
     }
 
     // Reset Defualt values
@@ -230,6 +231,19 @@ namespace Dental_App.Appointmnets
       }
       
     }
+
+    private void CtrlPatientCardWithFilter1_OnPatientSelected(object sender, Patients.controls.PatientCardEventArgs e)
+    {
+      _Patient = e.SelectedPatient;
+      if (e.SelectedPatient != null)
+        MessageBox.Show($"{_Patient.FullName}");
+
+      MessageBox.Show($"{e.SelectedPatient.FullName.ToString()} {e.SelectedPatient.PhoneNumber.ToString()}");
+      MessageBox.Show($"{e.PatientID}");
+      
+    }
+
+
 
     // if User Select StartTime it will add 30 min to EndTime 
     private void cbStartTime_SelectedIndexChanged(object sender, EventArgs e)

@@ -13,40 +13,18 @@ namespace Dental_App.Patients.controls
 {
   public partial class ctrlPatientCardWithFilter : UserControl
   {
-    public event Action<int> OnPatientSelected;
+    //public event Action<int> OnPatientSelected;
 
-    protected virtual void PatientSelected(int PatientID)
-    {
-      Action<int> handler = OnPatientSelected;
+    //protected virtual void PatientSelected(int PatientID)
+    //{
+    //  Action<int> handler = OnPatientSelected;
 
-      if(handler != null)
-      {
-        handler(PatientID);
-      }
-    }
+    //  if(handler != null)
+    //  {
+    //    handler(PatientID);
+    //  }
+    //}
 
-    public class PatientCardWithFilterEvent : EventArgs
-    {
-      public int ID { get; }
-      
-      public PatientCardWithFilterEvent(int id)
-      {
-        this.ID = id;
-      }
-
-    }
-
-    public event EventHandler<PatientCardWithFilterEvent> OnPatientSelecte;
-
-    public void RaisePatientSelected(int ID)
-    {
-      RaisePatientSelected(new PatientCardWithFilterEvent(ID));
-    }
-
-    protected virtual void RaisePatientSelected(PatientCardWithFilterEvent e)
-    {
-      OnPatientSelecte?.Invoke(this, e);
-    }
 
     public ctrlPatientCardWithFilter()
     {
@@ -75,6 +53,17 @@ namespace Dental_App.Patients.controls
     {
       get { return ctrlPatientCard1.SelectedPatient; }
     }
+    public event EventHandler<PatientCardEventArgs> OnPatientSelected;
+
+    // funcation that will rais on PatientSelected
+    public void PatientSelected(int PatientID, clsPatient Patient)
+    {
+      if (OnPatientSelected != null)
+      {
+        OnPatientSelected(this, new PatientCardEventArgs(PatientID, Patient));
+      }
+    }
+
 
     public bool LoadPatientInfo(int PatientID)
     {
@@ -107,10 +96,13 @@ namespace Dental_App.Patients.controls
 
       if (OnPatientSelected != null && FilterEnable)
       {
-        OnPatientSelected(ctrlPatientCard1.PatientID);
+        //// sending PatientID and Patient object as EventArgs
+        OnPatientSelected(this,new PatientCardEventArgs(ctrlPatientCard1.PatientID,SelectedPatient));
       }
       return IsFound;
     }
+
+   
 
     // Validat inputs in Search box.
 
@@ -136,6 +128,17 @@ namespace Dental_App.Patients.controls
     private void ctrlPatientCard1_Load(object sender, EventArgs e)
     {
 
+    }
+  }
+  public class PatientCardEventArgs : EventArgs
+  {
+    public int PatientID { get; }
+    public clsPatient SelectedPatient { get; }
+
+    public PatientCardEventArgs(int PatientID, clsPatient Patient)
+    {
+      this.PatientID = PatientID;
+      this.SelectedPatient = Patient;
     }
   }
 }
