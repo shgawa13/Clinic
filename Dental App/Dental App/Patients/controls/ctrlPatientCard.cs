@@ -33,6 +33,8 @@ namespace Dental_App.Patients.controls
     public clsPatient SelectedPatient
     {
       get { return _Patient; }
+
+      set { _Patient = value; }
      
     }
 
@@ -49,6 +51,7 @@ namespace Dental_App.Patients.controls
         return false;
       }
 
+      SelectedPatient = _Patient;
       _FillPersonInfo();
       return true;
     }
@@ -62,6 +65,7 @@ namespace Dental_App.Patients.controls
         MessageBox.Show("No Patient with NationalID. = " + NationalID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return false;
       }
+      SelectedPatient = _Patient;
 
 
       _FillPersonInfo();

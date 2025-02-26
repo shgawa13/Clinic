@@ -31,6 +31,20 @@ namespace Dental_App.Patients.controls
       InitializeComponent();
     }
 
+    public class PatientCardEventArgs : EventArgs
+    {
+      public int PatientID { get; }
+      public clsPatient Patient { get; }
+
+      public PatientCardEventArgs(int PatientID, clsPatient Patient)
+      {
+        this.PatientID = PatientID;
+        this.Patient = Patient;
+      }
+    }
+
+
+
     private bool _FilterEnable = true;
     public bool FilterEnable
     {
@@ -53,17 +67,16 @@ namespace Dental_App.Patients.controls
     {
       get { return ctrlPatientCard1.SelectedPatient; }
     }
-    public event EventHandler<PatientCardEventArgs> OnPatientSelected;
 
+    public event EventHandler<PatientCardEventArgs> OnPatientSelected;
     // funcation that will rais on PatientSelected
-    public void PatientSelected(int PatientID, clsPatient Patient)
+    public void RaisPatientSelected(int PatientID, clsPatient Patient)
     {
-      if (OnPatientSelected != null)
-      {
-        OnPatientSelected(this, new PatientCardEventArgs(PatientID, Patient));
-      }
+
+      OnPatientSelected?.Invoke(this, new PatientCardEventArgs(PatientID, Patient));
     }
 
+    
 
     public bool LoadPatientInfo(int PatientID)
     {
@@ -94,10 +107,12 @@ namespace Dental_App.Patients.controls
           break;
       }
 
+
+     
       if (OnPatientSelected != null && FilterEnable)
       {
         //// sending PatientID and Patient object as EventArgs
-        OnPatientSelected(this,new PatientCardEventArgs(ctrlPatientCard1.PatientID,SelectedPatient));
+        OnPatientSelected(this,new PatientCardEventArgs(ctrlPatientCard1.PatientID, ctrlPatientCard1.SelectedPatient));
       }
       return IsFound;
     }
@@ -130,15 +145,5 @@ namespace Dental_App.Patients.controls
 
     }
   }
-  public class PatientCardEventArgs : EventArgs
-  {
-    public int PatientID { get; }
-    public clsPatient SelectedPatient { get; }
-
-    public PatientCardEventArgs(int PatientID, clsPatient Patient)
-    {
-      this.PatientID = PatientID;
-      this.SelectedPatient = Patient;
-    }
-  }
+  
 }

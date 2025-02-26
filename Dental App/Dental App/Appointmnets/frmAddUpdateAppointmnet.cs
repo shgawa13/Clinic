@@ -105,10 +105,17 @@ namespace Dental_App.Appointmnets
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
-      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected;
+      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1; ; ;
       // if (_Mode == enMode.Update)
       //   _LoadData();
     }
+
+    private void CtrlPatientCardWithFilter1_OnPatientSelected1(object sender, Patients.controls.ctrlPatientCardWithFilter.PatientCardEventArgs e)
+    {
+      MessageBox.Show($"{e.Patient.PatientInfo.DateOfBirth} ???");
+    }
+
+
 
     // Reset Defualt values
     private void _ResetDefualtValues()
@@ -232,15 +239,9 @@ namespace Dental_App.Appointmnets
       
     }
 
-    private void CtrlPatientCardWithFilter1_OnPatientSelected(object sender, Patients.controls.PatientCardEventArgs e)
+    private void CtrlPatientCardWithFilter1_OnPatientSelected(object sender, Patients.controls.ctrlPatientCard e)
     {
-      _Patient = e.SelectedPatient;
-      if (e.SelectedPatient != null)
-        MessageBox.Show($"{_Patient.FullName}");
-
-      MessageBox.Show($"{e.SelectedPatient.FullName.ToString()} {e.SelectedPatient.PhoneNumber.ToString()}");
-      MessageBox.Show($"{e.PatientID}");
-      
+     
     }
 
 
