@@ -112,7 +112,9 @@ namespace Dental_App.Appointmnets
 
     private void CtrlPatientCardWithFilter1_OnPatientSelected1(object sender, Patients.controls.ctrlPatientCardWithFilter.PatientCardEventArgs e)
     {
-      MessageBox.Show($"{e.Patient.PatientInfo.DateOfBirth} ???");
+      _Patient = (clsPatient)e.Patient;
+      MessageBox.Show($"{_Patient.FirstName} ???");
+      MessageBox.Show($"{_Patient.NationalID} ???");
     }
 
 

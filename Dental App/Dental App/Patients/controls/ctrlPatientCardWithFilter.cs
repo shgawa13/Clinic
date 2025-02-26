@@ -70,7 +70,7 @@ namespace Dental_App.Patients.controls
 
     public event EventHandler<PatientCardEventArgs> OnPatientSelected;
     // funcation that will rais on PatientSelected
-    public void RaisPatientSelected(int PatientID, clsPatient Patient)
+    public void RaisPatientSelected(int PatientID, ref clsPatient Patient)
     {
 
       OnPatientSelected?.Invoke(this, new PatientCardEventArgs(PatientID, Patient));

@@ -24,6 +24,7 @@ namespace Business
     public string FullName
     {
       get { return $"{FirstName} {SecondName} {LastName}"; }
+      
     }
 
     public DateTime DateOfBirth { set; get; }
