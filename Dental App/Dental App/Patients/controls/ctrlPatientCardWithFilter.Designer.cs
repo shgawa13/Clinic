@@ -90,6 +90,7 @@
       this.txtFilterValue.Name = "txtFilterValue";
       this.txtFilterValue.Size = new System.Drawing.Size(142, 26);
       this.txtFilterValue.TabIndex = 152;
+      this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
       this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilterValue_Validating);
       // 
       // label11
@@ -113,6 +114,7 @@
       this.ctrlPatientCard1.Dock = System.Windows.Forms.DockStyle.Top;
       this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 41);
       this.ctrlPatientCard1.Name = "ctrlPatientCard1";
+      this.ctrlPatientCard1.SelectedPatient = null;
       this.ctrlPatientCard1.Size = new System.Drawing.Size(619, 317);
       this.ctrlPatientCard1.TabIndex = 152;
       this.ctrlPatientCard1.Load += new System.EventHandler(this.ctrlPatientCard1_Load);

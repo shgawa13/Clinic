@@ -32,9 +32,8 @@ namespace Dental_App.Appointmnets
     private clsPayments _Payment;
     private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
-    private clsPatient _Patient;
+    private clsPatient _Patient { set; get; }
     private int _PatientID;
-    private int _DoctrorID;
     private int _PaymentID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
@@ -105,16 +104,14 @@ namespace Dental_App.Appointmnets
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
-      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1; ; ;
       // if (_Mode == enMode.Update)
       //   _LoadData();
+      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1; ; ;
     }
 
     private void CtrlPatientCardWithFilter1_OnPatientSelected1(object sender, Patients.controls.ctrlPatientCardWithFilter.PatientCardEventArgs e)
     {
-      _Patient = (clsPatient)e.Patient;
-      MessageBox.Show($"{_Patient.FirstName} ???");
-      MessageBox.Show($"{_Patient.NationalID} ???");
+      _FindPatinet(e.PatientID);
     }
 
 
@@ -219,7 +216,7 @@ namespace Dental_App.Appointmnets
 
       if (_Patient == null)
       {
-        MessageBox.Show($"Patient with ID: {_Patient} was not  found");
+        MessageBox.Show($"Patient with ID: {_PatientID}???");
         return;
       }
       // here we fill patient card
@@ -227,23 +224,6 @@ namespace Dental_App.Appointmnets
       tbNote.Focus();
 
       btnSteps.Enabled = true;
-    }
-
-    // if appointment open from patient list we load patient info
-    private void _LoadPatientInfo(int PatientID)
-    {
-      if (ctrlPatientCardWithFilter1.LoadPatientInfo(PatientID))
-      {
-        _Patient = clsPatient.FindPatientByID(PatientID);
-        tbNote.Focus();
-        btnSteps.Enabled = true;
-      }
-      
-    }
-
-    private void CtrlPatientCardWithFilter1_OnPatientSelected(object sender, Patients.controls.ctrlPatientCard e)
-    {
-     
     }
 
 
@@ -254,16 +234,6 @@ namespace Dental_App.Appointmnets
       if (cbStartTime.SelectedIndex != 19)
         cbEndTime.SelectedIndex = cbStartTime.SelectedIndex + 1;
     }
-
-
-    private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
-    {
-      // handle numbers input
-      e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-    }
-
-    
-
 
     //-------------------------------------[ Procedures Tap ] --------------------------------------------//
 
@@ -478,6 +448,7 @@ namespace Dental_App.Appointmnets
 
     private void btnPayBill_Click(object sender, EventArgs e)
     {
+      MessageBoxAdv.Show($"The id is:{_PatientID} FullName: ") ;
       frmPay frm = new frmPay(TotalCost);
       frm.DataBack += GetPaymentID;
       frm.ShowDialog();

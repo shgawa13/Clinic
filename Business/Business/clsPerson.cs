@@ -20,11 +20,10 @@ namespace Business
     public string NationalID { set; get; }
     public string FirstName { set; get; }
     public string SecondName { set; get; }
-    public string LastName { set; get; }
+    public string LastName { set; get; } 
     public string FullName
     {
       get { return $"{FirstName} {SecondName} {LastName}"; }
-      
     }
 
     public DateTime DateOfBirth { set; get; }
@@ -34,8 +33,8 @@ namespace Business
     private string _ImagePath;
     public string ImagePath
     {
-      set { _ImagePath = value; }
       get { return _ImagePath;  }
+      set { _ImagePath = value; }
     }
     public int NationalityCountryID { set; get; }
     public clsCountries CountryInfo { set; get; }

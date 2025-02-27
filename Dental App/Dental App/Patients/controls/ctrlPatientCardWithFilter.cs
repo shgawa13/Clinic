@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,18 +14,7 @@ namespace Dental_App.Patients.controls
 {
   public partial class ctrlPatientCardWithFilter : UserControl
   {
-    //public event Action<int> OnPatientSelected;
-
-    //protected virtual void PatientSelected(int PatientID)
-    //{
-    //  Action<int> handler = OnPatientSelected;
-
-    //  if(handler != null)
-    //  {
-    //    handler(PatientID);
-    //  }
-    //}
-
+    
 
     public ctrlPatientCardWithFilter()
     {
@@ -42,8 +32,6 @@ namespace Dental_App.Patients.controls
         this.Patient = Patient;
       }
     }
-
-
 
     private bool _FilterEnable = true;
     public bool FilterEnable
@@ -70,13 +58,11 @@ namespace Dental_App.Patients.controls
 
     public event EventHandler<PatientCardEventArgs> OnPatientSelected;
     // funcation that will rais on PatientSelected
-    public void RaisPatientSelected(int PatientID, ref clsPatient Patient)
+    public void RaisPatientSelected(int PatientID, clsPatient Patient)
     {
 
       OnPatientSelected?.Invoke(this, new PatientCardEventArgs(PatientID, Patient));
     }
-
-    
 
     public bool LoadPatientInfo(int PatientID)
     {
@@ -89,8 +75,9 @@ namespace Dental_App.Patients.controls
     {
       cbFilterBy.SelectedIndex = 1;
       txtFilterValue.Text = NationalID;
-     return FindNow();
+      return FindNow();
     }
+
 
     public bool FindNow()
     {
@@ -106,24 +93,19 @@ namespace Dental_App.Patients.controls
           IsFound = ctrlPatientCard1.LoadPatientInfo(txtFilterValue.Text);
           break;
       }
-
-
      
-      if (OnPatientSelected != null && FilterEnable)
+      if (OnPatientSelected != null && FilterEnable && IsFound)
       {
         //// sending PatientID and Patient object as EventArgs
-        OnPatientSelected(this,new PatientCardEventArgs(ctrlPatientCard1.PatientID, ctrlPatientCard1.SelectedPatient));
+        OnPatientSelected(this,new PatientCardEventArgs(ctrlPatientCard1.PatientID,ctrlPatientCard1.SelectedPatient));
       }
       return IsFound;
     }
 
-   
-
     // Validat inputs in Search box.
-
     private void txtFilterValue_Validating(object sender, CancelEventArgs e)
     {
-      if (String.IsNullOrEmpty(txtFilterValue.Text.Trim()))
+      if (String.IsNullOrEmpty(txtFilterValue.Text.Trim()) && cbFilterBy.SelectedIndex == 0)
       {
         e.Cancel = true;
         errorProvider1.SetError(txtFilterValue, "You must enter PatientID");
@@ -135,14 +117,21 @@ namespace Dental_App.Patients.controls
       }
     }
 
+
     private void iconSearch_Click(object sender, EventArgs e)
     {
       FindNow();
     }
 
+    private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      // handle numbers input
+      e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+    }
+
     private void ctrlPatientCard1_Load(object sender, EventArgs e)
     {
-
+      cbFilterBy.SelectedIndex = 0;
     }
   }
   
