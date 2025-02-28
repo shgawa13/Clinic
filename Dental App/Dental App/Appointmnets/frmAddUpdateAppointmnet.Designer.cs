@@ -1142,7 +1142,7 @@
       this.btnPayBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnPayBill.ForeColor = System.Drawing.SystemColors.ControlText;
       this.btnPayBill.Image = global::Dental_App.Properties.Resources.dollar;
-      this.btnPayBill.Location = new System.Drawing.Point(583, 147);
+      this.btnPayBill.Location = new System.Drawing.Point(564, 147);
       this.btnPayBill.Name = "btnPayBill";
       this.btnPayBill.Size = new System.Drawing.Size(208, 73);
       this.btnPayBill.TabIndex = 14;
@@ -1167,7 +1167,7 @@
       this.btnPrintBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnPrintBill.ForeColor = System.Drawing.SystemColors.ControlText;
       this.btnPrintBill.Image = global::Dental_App.Properties.Resources.printer;
-      this.btnPrintBill.Location = new System.Drawing.Point(583, 251);
+      this.btnPrintBill.Location = new System.Drawing.Point(564, 235);
       this.btnPrintBill.Name = "btnPrintBill";
       this.btnPrintBill.Size = new System.Drawing.Size(208, 73);
       this.btnPrintBill.TabIndex = 13;
