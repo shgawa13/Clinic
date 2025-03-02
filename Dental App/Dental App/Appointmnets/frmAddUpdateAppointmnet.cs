@@ -106,12 +106,13 @@ namespace Dental_App.Appointmnets
       _ResetDefualtValues();
       // if (_Mode == enMode.Update)
       //   _LoadData();
-      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1; ; ;
+      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1;
     }
 
     private void CtrlPatientCardWithFilter1_OnPatientSelected1(object sender, Patients.controls.ctrlPatientCardWithFilter.PatientCardEventArgs e)
     {
-      _FindPatinet(e.PatientID);
+      
+      _FindPatinet(e.Patient.PatientID);
     }
 
 

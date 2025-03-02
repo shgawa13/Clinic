@@ -120,7 +120,7 @@ namespace Dental_App
     private void btnAddNew_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color1);
-      OpenChildForm(new frmTester());
+     // OpenChildForm(new frmTester());
       
     }
 
@@ -155,8 +155,8 @@ namespace Dental_App
 
     private void iconButton7_Click(object sender, EventArgs e)
     {
-      //MessageBox.Show("Testing");
-      OpenChildForm(new testCard());
+     // MessageBox.Show("Testing");
+     // OpenChildForm(new testCard());
     }
 
     private void homeBtn_Click(object sender, EventArgs e)
