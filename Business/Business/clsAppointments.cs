@@ -1150,8 +1150,8 @@ namespace Business
     }
 
 
-    bool IScheduleAppointment.IsConflict(IScheduleAppointment item)
-    {
+     bool IScheduleAppointment.IsConflict(IScheduleAppointment item)
+     {
       
       throw new NotImplementedException();
     }
