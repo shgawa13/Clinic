@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using Syncfusion.Schedule;
-using System;
 using System.Drawing;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -1153,6 +1152,7 @@ namespace Business
 
     bool IScheduleAppointment.IsConflict(IScheduleAppointment item)
     {
+      
       throw new NotImplementedException();
     }
 
