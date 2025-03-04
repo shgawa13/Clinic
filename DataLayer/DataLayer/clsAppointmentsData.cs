@@ -386,5 +386,7 @@ namespace DataLayer
 
       return (EffectedRow > 0);
     }
+
+    public static bool IsConflict()=> false;
   }
 }
