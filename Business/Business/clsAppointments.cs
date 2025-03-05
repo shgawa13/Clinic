@@ -1150,13 +1150,14 @@ namespace Business
     }
 
 
-    bool IScheduleAppointment.IsConflict(IScheduleAppointment item) => clsAppointmentsData.IsConflict(item.StartTime,item.EndTime);
-
-    bool IScheduleAppointment.IsConflict(DateTime dtStart, DateTime dtEnd)
+    bool IScheduleAppointment.IsConflict(IScheduleAppointment item ) 
     {
-      throw new NotImplementedException();
+
+      return false;
     }
 
+    bool IScheduleAppointment.IsConflict(DateTime dtStart, DateTime dtEnd) => clsAppointmentsData.IsConflict(dtStart, dtEnd);
+   
     int IComparable.CompareTo(object obj)
     {
       throw new NotImplementedException();

@@ -387,6 +387,11 @@ namespace DataLayer
       return (EffectedRow > 0);
     }
 
-    public static bool IsConflict()=> false;
+    public static bool IsConflict(DateTime Start, DateTime End)
+    {
+
+
+      return false;
+    }
   }
 }
