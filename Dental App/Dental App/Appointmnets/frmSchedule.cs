@@ -38,7 +38,7 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
-     // this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu; 
+      this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu; 
 
     }
 
@@ -48,9 +48,9 @@ namespace Dental_App.Appointmnets
       ContextMenuStrip menu = new ContextMenuStrip();
 
       // Add a custom menu item
-      menu.Items.Add("Add Appointmnet",Resources.AddAppointment_32,AddNewAppointmnet);
-      menu.Items.Add("Edit");
-      menu.Items.Add("Delete");
+      menu.Items.Add("Add Appointmnet",Resources.AddAppointment_32,HandleAddNew);
+      menu.Items.Add("Edit",Resources.edit_32,HandleEdit);
+      menu.Items.Add("Delete",Resources.cross_32);
      
 
 
@@ -61,13 +61,21 @@ namespace Dental_App.Appointmnets
       e.Cancel = true;
     }
 
-    private void AddNewAppointmnet(object sender, EventArgs e)
+    private void HandleAddNew(object sender, EventArgs e)
     {
       MessageBox.Show("Add new appointmnet here");
     }
 
-    private  void AddNewAppointmnet()
+
+    private void HandleEdit(object sender, EventArgs e)
     {
+      MessageBox.Show("Edit appointmnet here");
+
+    }
+
+    private void HandleDelete(object sender, EventArgs e)
+    {
+      MessageBox.Show("Delete appointmnet here");
 
     }
 
@@ -75,9 +83,9 @@ namespace Dental_App.Appointmnets
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
-      
 
     }
+
     void scheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
     {
       // Create a new ContextMenuStrip
