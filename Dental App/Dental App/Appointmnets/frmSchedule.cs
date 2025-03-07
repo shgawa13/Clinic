@@ -1,6 +1,7 @@
 ﻿using GridScheduleSample;
 using Syncfusion.Windows.Forms.Schedule;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ using Syncfusion.DataSource.Extensions;
 using Syncfusion.Windows.Forms.Grid;
 using Dental_App.Doctors;
 using System.Threading;
+using System.Security.Cryptography;
+using Dental_App.Properties;
 
 namespace Dental_App.Appointmnets
 {
@@ -35,10 +38,38 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
+     // this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu; 
 
     }
 
- 
+    private void ScheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
+    {
+      // Create a new ContextMenuStrip
+      ContextMenuStrip menu = new ContextMenuStrip();
+
+      // Add a custom menu item
+      menu.Items.Add("Add Appointmnet",Resources.AddAppointment_32,AddNewAppointmnet);
+      menu.Items.Add("Edit");
+      menu.Items.Add("Delete");
+     
+
+
+      // Assign the custom menu to the ScheduleControl
+      scheduleControl1.ContextMenuStrip = menu;
+
+      // Cancel the default context menu
+      e.Cancel = true;
+    }
+
+    private void AddNewAppointmnet(object sender, EventArgs e)
+    {
+      MessageBox.Show("Add new appointmnet here");
+    }
+
+    private  void AddNewAppointmnet()
+    {
+
+    }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
@@ -47,12 +78,26 @@ namespace Dental_App.Appointmnets
       
 
     }
+    void scheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
+    {
+      // Create a new ContextMenuStrip
+      ContextMenuStrip menu = new ContextMenuStrip();
+
+      // Add a custom menu item
+      menu.Items.Add("Hello");
+
+      // Assign the custom menu to the ScheduleControl
+      scheduleControl1.ContextMenuStrip = menu;
+
+      // Cancel the default context menu
+      e.Cancel = true;
+    }
+
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-      
-      
+
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       //frm.ShowDialog();
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
