@@ -1,7 +1,6 @@
 ﻿using GridScheduleSample;
 using Syncfusion.Windows.Forms.Schedule;
 using System;
-using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +17,11 @@ using Syncfusion.DataSource.Extensions;
 using Syncfusion.Windows.Forms.Grid;
 using Dental_App.Doctors;
 using System.Threading;
-using System.Security.Cryptography;
-using Dental_App.Properties;
+using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Xml.Serialization;
+
+
 
 namespace Dental_App.Appointmnets
 {
@@ -38,74 +40,49 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
-      this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu; 
+      
 
     }
 
-    private void ScheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
-    {
-      // Create a new ContextMenuStrip
-      ContextMenuStrip menu = new ContextMenuStrip();
-
-      // Add a custom menu item
-      menu.Items.Add("Add Appointmnet",Resources.AddAppointment_32,HandleAddNew);
-      menu.Items.Add("Edit",Resources.edit_32,HandleEdit);
-      menu.Items.Add("Delete",Resources.cross_32);
-     
 
 
-      // Assign the custom menu to the ScheduleControl
-      scheduleControl1.ContextMenuStrip = menu;
+    //public ContextMenuStrip MetroContextMenu()
+    //{
+    //  ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[9], ScheduleGrid.GetBitmap("AddNew.png"), newItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[10], null, newAllDayItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripSeparator());
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[11], ScheduleGrid.GetBitmap("Edit.png"), editItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[12], ScheduleGrid.GetBitmap("Delete.png"), deleteItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripSeparator());
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[13], ScheduleGrid.GetBitmap("Day.png"), dayItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[14], ScheduleGrid.GetBitmap("Workweek.png"), workWeekItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[15], ScheduleGrid.GetBitmap("Week.png"), weekItemClick));
+    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[16], ScheduleGrid.GetBitmap("Month.png"), monthItemClick));
+    //  contextMenuStrip.ShowImageMargin = true;
+    //  contextMenuStrip.DropShadowEnabled = false;
+    //  contextMenuStrip.Renderer = new ContextMenuRenderer();
+    //  contextMenuStrip.BackColor = Color.White;
+    //  return contextMenuStrip;
+    //}
 
-      // Cancel the default context menu
-      e.Cancel = true;
-    }
-
-    private void HandleAddNew(object sender, EventArgs e)
-    {
-      MessageBox.Show("Add new appointmnet here");
-    }
-
-
-    private void HandleEdit(object sender, EventArgs e)
-    {
-      MessageBox.Show("Edit appointmnet here");
-
-    }
-
-    private void HandleDelete(object sender, EventArgs e)
-    {
-      MessageBox.Show("Delete appointmnet here");
-
-    }
+ 
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
+      
 
-    }
-
-    void scheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
-    {
-      // Create a new ContextMenuStrip
-      ContextMenuStrip menu = new ContextMenuStrip();
-
-      // Add a custom menu item
-      menu.Items.Add("Hello");
-
-      // Assign the custom menu to the ScheduleControl
-      scheduleControl1.ContextMenuStrip = menu;
-
-      // Cancel the default context menu
-      e.Cancel = true;
     }
 
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
-
+      
+      
+      
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       //frm.ShowDialog();
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
