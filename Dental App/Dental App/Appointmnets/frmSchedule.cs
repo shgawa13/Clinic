@@ -48,32 +48,68 @@ namespace Dental_App.Appointmnets
 
     }
 
+    //
+    // Summary:
+    //     Gets a Metro ContextMenu implementing standard set of menu items for metro theme
+    //
+    //
+    // Returns:
+    //     A ContextMenu.
+    //
+    // Remarks:
+    //     If you use this default implementation of a ContextMenu, you can dynamically
+    //     cancel the execution of a menu selection by subscribing to the ScheduleControl.ScheduleAppointmentClick
+    //     event and setting e.Cancel = true when e.ClickType is RightClick.
+    public ContextMenuStrip MetroContextMenu()
+    {
+      ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+      contextMenuStrip.Items.Add(new ToolStripMenuItem("New Appointment", ScheduleGrid.GetBitmap("AddNew.png"), AddNew));
+      //contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[10], null, newAllDayItemClick));
+      contextMenuStrip.Items.Add(new ToolStripSeparator());
+      contextMenuStrip.Items.Add(new ToolStripMenuItem("Edit", ScheduleGrid.GetBitmap("Edit.png"), EditItem));
+      contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[12], ScheduleGrid.GetBitmap("Delete.png"), DeleteItem));
+      contextMenuStrip.Items.Add(new ToolStripSeparator());
+      contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[13], ScheduleGrid.GetBitmap("Day.png"), SwitchToDayView));
+      contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[15], ScheduleGrid.GetBitmap("Week.png"), SwitchToWeekView));
+      contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[16], ScheduleGrid.GetBitmap("Month.png"), SwitchToMonthView));
+      contextMenuStrip.ShowImageMargin = true;
+      contextMenuStrip.DropShadowEnabled = false;
+      contextMenuStrip.Renderer = new ContextMenuRenderer();
+      contextMenuStrip.BackColor = Color.White;
+      return contextMenuStrip;
+    }
+
+    // Costumize ContextMenu
     private void ScheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
     {
       e.Cancel = true;
-      // Create a custom context menu
-      var customContextMenu = new ContextMenuStrip();
-
-      // Add custom items
-      var newItem = new ToolStripMenuItem("New Item");
-      newItem.Click += AddNew;
-      customContextMenu.Items.Add(newItem);
-
-      var editItem = new ToolStripMenuItem("Edit Item");
-      editItem.Click += EditItem;
-      customContextMenu.Items.Add(editItem);
-      
-      var day = new ToolStripMenuItem("Day");
-      day.Click += Day_Click; ;
-      customContextMenu.Items.Add(day);
-
-      this.scheduleControl1.ContextMenuStrip = customContextMenu;
+      this.scheduleControl1.ContextMenuStrip = MetroContextMenu();
     }
 
-    private void Day_Click(object sender, EventArgs e)
+    // View Schedule by day
+    private void SwitchToDayView(object sender, EventArgs e)
     {
-      //this.scheduleControl1.SwitchToScheduleViewTypeDay(SelectedAppointmentDate);
+      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Day);
+    }
+
+    // View Schedule by Week 
+    private void SwitchToWeekView(object sender, EventArgs e)
+    {
       this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Week);
+    }
+
+
+    // View Schedule by Month 
+    private void SwitchToMonthView(object sender, EventArgs e)
+    {
+      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Month);
+    }
+
+
+
+    private void AddNew(object sender, EventArgs e)
+    {
+      MessageBox.Show("Add new item clicked");
     }
 
     private void EditItem(object sender, EventArgs e)
@@ -81,9 +117,9 @@ namespace Dental_App.Appointmnets
       MessageBox.Show("Edit item clicked");
     }
 
-    private void AddNew(object sender, EventArgs e)
+    private void DeleteItem(object sender, EventArgs e)
     {
-      MessageBox.Show("Add new item clicked");
+      MessageBox.Show("Edit item clicked");
     }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
