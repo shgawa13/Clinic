@@ -40,49 +40,67 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
-      
+
+     
+
+      // Assign the custom context menu to the ScheduleControl
+      this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu;
 
     }
 
+    private void ScheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
+    {
+      e.Cancel = true;
+      // Create a custom context menu
+      var customContextMenu = new ContextMenuStrip();
 
+      // Add custom items
+      var newItem = new ToolStripMenuItem("New Item");
+      newItem.Click += AddNew;
+      customContextMenu.Items.Add(newItem);
 
-    //public ContextMenuStrip MetroContextMenu()
-    //{
-    //  ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[9], ScheduleGrid.GetBitmap("AddNew.png"), newItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[10], null, newAllDayItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripSeparator());
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[11], ScheduleGrid.GetBitmap("Edit.png"), editItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[12], ScheduleGrid.GetBitmap("Delete.png"), deleteItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripSeparator());
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[13], ScheduleGrid.GetBitmap("Day.png"), dayItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[14], ScheduleGrid.GetBitmap("Workweek.png"), workWeekItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[15], ScheduleGrid.GetBitmap("Week.png"), weekItemClick));
-    //  contextMenuStrip.Items.Add(new ToolStripMenuItem(ScheduleGrid.DisplayStrings[16], ScheduleGrid.GetBitmap("Month.png"), monthItemClick));
-    //  contextMenuStrip.ShowImageMargin = true;
-    //  contextMenuStrip.DropShadowEnabled = false;
-    //  contextMenuStrip.Renderer = new ContextMenuRenderer();
-    //  contextMenuStrip.BackColor = Color.White;
-    //  return contextMenuStrip;
-    //}
+      var editItem = new ToolStripMenuItem("Edit Item");
+      editItem.Click += EditItem;
+      customContextMenu.Items.Add(editItem);
+      
+      var day = new ToolStripMenuItem("Day");
+      day.Click += Day_Click; ;
+      customContextMenu.Items.Add(day);
 
- 
+      this.scheduleControl1.ContextMenuStrip = customContextMenu;
+    }
+
+    private void Day_Click(object sender, EventArgs e)
+    {
+      //this.scheduleControl1.SwitchToScheduleViewTypeDay(SelectedAppointmentDate);
+      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Week);
+    }
+
+    private void EditItem(object sender, EventArgs e)
+    {
+      MessageBox.Show("Edit item clicked");
+    }
+
+    private void AddNew(object sender, EventArgs e)
+    {
+      MessageBox.Show("Add new item clicked");
+    }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
       
-
+     
     }
 
 
     private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
     {
       e.Cancel = true;
+
       
-      
-      
+           
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       //frm.ShowDialog();
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
@@ -101,9 +119,7 @@ namespace Dental_App.Appointmnets
       t1.Start();
       t1.Join();
 
-
     }
-
 
 
     private void FillList()
