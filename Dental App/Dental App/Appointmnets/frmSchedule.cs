@@ -110,47 +110,39 @@ namespace Dental_App.Appointmnets
     private void AddNew(object sender, EventArgs e)
     {
       MessageBox.Show("Add new item clicked");
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
+      frm.Show();
     }
 
     private void EditItem(object sender, EventArgs e)
     {
+      this.scheduleControl1.PerformEditItemClick();
       MessageBox.Show("Edit item clicked");
     }
 
     private void DeleteItem(object sender, EventArgs e)
     {
+      this.scheduleControl1.PerformDeleteItemClick();
       MessageBox.Show("Edit item clicked");
     }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       SelectedAppointmentDate = e.ClickDateTime.Date;
-      _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
-      
+      _AppointmnetTime = e.ClickDateTime.ToShortTimeString(); 
      
     }
 
 
-    private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
-    {
-      e.Cancel = true;
+    private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e) => e.Cancel = true;
 
-      
-           
-      //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
-      //frm.ShowDialog();
-      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
-      frm.ShowDialog();
-    }
 
-    public ScheduleControl GetScheduleControl()
-    {
-      return scheduleControl1;
-    }
+    public ScheduleControl GetScheduleControl() => this.scheduleControl1;
+    
 
     private void frmAppointments_Load(object sender, EventArgs e)
     {
-      //FillList();
+
       Thread t1 = new Thread(() => FillList());
       t1.Start();
       t1.Join();

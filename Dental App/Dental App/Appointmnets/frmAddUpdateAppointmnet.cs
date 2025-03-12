@@ -33,8 +33,10 @@ namespace Dental_App.Appointmnets
     private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient { set; get; }
+
     private int _PatientID;
     private int _PaymentID;
+    private int _ApptID;
     private DateTime _SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
     private string _Diagnosis { set; get; }
@@ -53,16 +55,16 @@ namespace Dental_App.Appointmnets
     }
 
     //// From Schedule to Update an Existing appointment
-    //public frmAddUpdateAppointmnet(int ApptID,ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
-    //{
-    //  InitializeComponent();
-    //  _ScheduleGrid = control;
-    //  _SelectedAppointmentDate = AppointmentDate;
-    //  _AppointmnetTime = AppointmentTime;
-    //  _Mode = enMode.Update;
-    //  // ------------
-    //  CheckBoxEvent();
-    //}
+    public frmAddUpdateAppointmnet(int ApptID, ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
+    {
+      InitializeComponent();
+      _ScheduleGrid = control;
+      _SelectedAppointmentDate = AppointmentDate;
+      _AppointmnetTime = AppointmentTime;
+      _Mode = enMode.Update;
+      // ------------
+      CheckBoxEvent();
+    }
 
     // From patient list 
     public frmAddUpdateAppointmnet(int PatientID)
@@ -227,6 +229,22 @@ namespace Dental_App.Appointmnets
       btnSteps.Enabled = true;
     }
 
+    // Load Appointment Data:
+    private void _LoadData()
+    {
+      _Appointment = clsAppointments.Find(_ApptID);
+
+      if(_Appointment == null)
+      {
+        MessageBox.Show("Error: Appointment Couldn't found");
+        return;
+      }
+
+      ctrlPatientCardWithFilter1.LoadPatientInfo(_Appointment.PatientID);
+      dtAppointmentDate.Value = _Appointment.StartTime.Date;
+      
+
+    }
 
 
     // if User Select StartTime it will add 30 min to EndTime 
@@ -449,7 +467,6 @@ namespace Dental_App.Appointmnets
 
     private void btnPayBill_Click(object sender, EventArgs e)
     {
-      MessageBoxAdv.Show($"The id is:{_PatientID} FullName: ") ;
       frmPay frm = new frmPay(TotalCost);
       frm.DataBack += GetPaymentID;
       frm.ShowDialog();
