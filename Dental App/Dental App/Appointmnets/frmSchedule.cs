@@ -29,6 +29,7 @@ namespace Dental_App.Appointmnets
   {
     private DateTime SelectedAppointmentDate { set; get; }
     private string _AppointmnetTime { set; get; }
+    private int _ApptID { set; get; }
 
     public CustomScheduleDataProvider dataProvider = new CustomScheduleDataProvider();
     public SimpleScheduleAppointmentList list = new SimpleScheduleAppointmentList();
@@ -116,33 +117,42 @@ namespace Dental_App.Appointmnets
 
     private void EditItem(object sender, EventArgs e)
     {
-      this.scheduleControl1.PerformEditItemClick();
+      //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(_ApptID, this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
+      //frm.Show();
       MessageBox.Show("Edit item clicked");
     }
 
     private void DeleteItem(object sender, EventArgs e)
     {
-      this.scheduleControl1.PerformDeleteItemClick();
+      
       MessageBox.Show("Edit item clicked");
     }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
+      if (e.Item?.UniqueID > 0)
+        _ApptID = e.Item.UniqueID;
+
+    
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString(); 
      
     }
 
 
-    private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e) => e.Cancel = true;
+    private void ScheduleControl1_ShowingAppointmentForm(object sender, ShowingAppointFormEventArgs e)
+    {
+      e.Cancel = true;
+    }
 
-
+    // return schedule
     public ScheduleControl GetScheduleControl() => this.scheduleControl1;
-    
+   
 
     private void frmAppointments_Load(object sender, EventArgs e)
     {
 
+      // FillList();
       Thread t1 = new Thread(() => FillList());
       t1.Start();
       t1.Join();

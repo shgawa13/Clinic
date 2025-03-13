@@ -55,16 +55,16 @@ namespace Dental_App.Appointmnets
     }
 
     //// From Schedule to Update an Existing appointment
-    public frmAddUpdateAppointmnet(int ApptID, ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
-    {
-      InitializeComponent();
-      _ScheduleGrid = control;
-      _SelectedAppointmentDate = AppointmentDate;
-      _AppointmnetTime = AppointmentTime;
-      _Mode = enMode.Update;
-      // ------------
-      CheckBoxEvent();
-    }
+    //public frmAddUpdateAppointmnet(int ApptID, ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
+    //{
+    //  InitializeComponent();
+    //  _ScheduleGrid = control;
+    //  _SelectedAppointmentDate = AppointmentDate;
+    //  _AppointmnetTime = AppointmentTime;
+    //  _Mode = enMode.Update;
+    //  // ------------
+    //  CheckBoxEvent();
+    //}
 
     // From patient list 
     public frmAddUpdateAppointmnet(int PatientID)
@@ -106,8 +106,8 @@ namespace Dental_App.Appointmnets
     private void frmAddUpdateAppointmnet_Load(object sender, EventArgs e)
     {
       _ResetDefualtValues();
-      // if (_Mode == enMode.Update)
-      //   _LoadData();
+      if (_Mode == enMode.Update)
+        _LoadData();
       ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1;
     }
 
@@ -242,7 +242,11 @@ namespace Dental_App.Appointmnets
 
       ctrlPatientCardWithFilter1.LoadPatientInfo(_Appointment.PatientID);
       dtAppointmentDate.Value = _Appointment.StartTime.Date;
-      
+      cbStartTime.SelectedIndex = cbStartTime.FindString(_Appointment.StartTime.ToShortTimeString());
+      cbEndTime.SelectedIndex = cbStartTime.FindString(_Appointment.EndTime.ToShortTimeString());
+      cbDoctor.SelectedIndex = cbDoctor.FindString(_Appointment.DoctorID.ToString());
+      cbLocation.SelectedIndex = cbLocation.FindString(_Appointment.LocationValue);
+
 
     }
 
