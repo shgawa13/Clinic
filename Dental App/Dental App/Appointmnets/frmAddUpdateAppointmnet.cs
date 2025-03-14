@@ -378,7 +378,6 @@ namespace Dental_App.Appointmnets
       {
         btnSteps.Enabled = false;
         btnSteps.Text = "Save";
-        
       }
       else
       {
@@ -497,13 +496,13 @@ namespace Dental_App.Appointmnets
     // here we update Bill info
     private void _UpdateBillInfo()
     {
-      lblBillsDate.Text = _Appointment.StartTime.ToShortDateString();
+      lblBillsDate.Text = dtAppointmentDate.Value.ToString();
       lblTime.Text = _Appointment.StartTime.ToShortTimeString();
       lblPatientName.Text = _Patient.PatientInfo.FullName;
       lblLocation.Text = cbLocation.SelectedItem.ToString();
       lblDoctorName.Text = cbDoctor.SelectedItem.ToString();
       lblSummay.Text = lbSummary.Text;
-      lblCost.Text = TotalCost.ToString();
+      lblCost.Text = $"${CalcPlanCost()}";
     }
 
     // here we handle MedicalRecred

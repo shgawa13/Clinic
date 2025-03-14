@@ -1229,7 +1229,7 @@
       this.lblSummay.AutoSize = true;
       this.lblSummay.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblSummay.ForeColor = System.Drawing.Color.Black;
-      this.lblSummay.Location = new System.Drawing.Point(110, 327);
+      this.lblSummay.Location = new System.Drawing.Point(107, 300);
       this.lblSummay.Name = "lblSummay";
       this.lblSummay.Size = new System.Drawing.Size(38, 21);
       this.lblSummay.TabIndex = 25;
@@ -1240,7 +1240,7 @@
       this.lblLocation.AutoSize = true;
       this.lblLocation.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblLocation.ForeColor = System.Drawing.Color.Black;
-      this.lblLocation.Location = new System.Drawing.Point(110, 278);
+      this.lblLocation.Location = new System.Drawing.Point(107, 251);
       this.lblLocation.Name = "lblLocation";
       this.lblLocation.Size = new System.Drawing.Size(38, 21);
       this.lblLocation.TabIndex = 24;
@@ -1251,7 +1251,7 @@
       this.lblDoctorName.AutoSize = true;
       this.lblDoctorName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblDoctorName.ForeColor = System.Drawing.Color.Black;
-      this.lblDoctorName.Location = new System.Drawing.Point(93, 231);
+      this.lblDoctorName.Location = new System.Drawing.Point(107, 204);
       this.lblDoctorName.Name = "lblDoctorName";
       this.lblDoctorName.Size = new System.Drawing.Size(38, 21);
       this.lblDoctorName.TabIndex = 23;
@@ -1262,7 +1262,7 @@
       this.lblPatientName.AutoSize = true;
       this.lblPatientName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblPatientName.ForeColor = System.Drawing.Color.Black;
-      this.lblPatientName.Location = new System.Drawing.Point(93, 184);
+      this.lblPatientName.Location = new System.Drawing.Point(107, 157);
       this.lblPatientName.Name = "lblPatientName";
       this.lblPatientName.Size = new System.Drawing.Size(38, 21);
       this.lblPatientName.TabIndex = 22;
@@ -1273,7 +1273,7 @@
       this.lblTime.AutoSize = true;
       this.lblTime.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblTime.ForeColor = System.Drawing.Color.Black;
-      this.lblTime.Location = new System.Drawing.Point(86, 137);
+      this.lblTime.Location = new System.Drawing.Point(107, 110);
       this.lblTime.Name = "lblTime";
       this.lblTime.Size = new System.Drawing.Size(38, 21);
       this.lblTime.TabIndex = 21;
@@ -1295,7 +1295,7 @@
       this.label10.AutoSize = true;
       this.label10.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label10.ForeColor = System.Drawing.Color.Black;
-      this.label10.Location = new System.Drawing.Point(11, 327);
+      this.label10.Location = new System.Drawing.Point(10, 300);
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(91, 21);
       this.label10.TabIndex = 19;
@@ -1306,7 +1306,7 @@
       this.label7.AutoSize = true;
       this.label7.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label7.ForeColor = System.Drawing.Color.Black;
-      this.label7.Location = new System.Drawing.Point(14, 231);
+      this.label7.Location = new System.Drawing.Point(31, 204);
       this.label7.Name = "label7";
       this.label7.Size = new System.Drawing.Size(70, 21);
       this.label7.TabIndex = 18;
@@ -1317,7 +1317,7 @@
       this.label3.AutoSize = true;
       this.label3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label3.ForeColor = System.Drawing.Color.Black;
-      this.label3.Location = new System.Drawing.Point(14, 184);
+      this.label3.Location = new System.Drawing.Point(28, 157);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(73, 21);
       this.label3.TabIndex = 17;
@@ -1328,7 +1328,7 @@
       this.lblSummaryBill.AutoSize = true;
       this.lblSummaryBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblSummaryBill.ForeColor = System.Drawing.Color.Black;
-      this.lblSummaryBill.Location = new System.Drawing.Point(14, 137);
+      this.lblSummaryBill.Location = new System.Drawing.Point(45, 110);
       this.lblSummaryBill.Name = "lblSummaryBill";
       this.lblSummaryBill.Size = new System.Drawing.Size(56, 21);
       this.lblSummaryBill.TabIndex = 16;
@@ -1339,7 +1339,7 @@
       this.lblBillsDate.AutoSize = true;
       this.lblBillsDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblBillsDate.ForeColor = System.Drawing.Color.Black;
-      this.lblBillsDate.Location = new System.Drawing.Point(60, 16);
+      this.lblBillsDate.Location = new System.Drawing.Point(66, 20);
       this.lblBillsDate.Name = "lblBillsDate";
       this.lblBillsDate.Size = new System.Drawing.Size(38, 21);
       this.lblBillsDate.TabIndex = 15;
@@ -1350,7 +1350,7 @@
       this.label21.AutoSize = true;
       this.label21.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label21.ForeColor = System.Drawing.Color.Black;
-      this.label21.Location = new System.Drawing.Point(9, 16);
+      this.label21.Location = new System.Drawing.Point(15, 20);
       this.label21.Name = "label21";
       this.label21.Size = new System.Drawing.Size(50, 21);
       this.label21.TabIndex = 14;
@@ -1371,7 +1371,7 @@
       this.label20.AutoSize = true;
       this.label20.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label20.ForeColor = System.Drawing.Color.Black;
-      this.label20.Location = new System.Drawing.Point(11, 278);
+      this.label20.Location = new System.Drawing.Point(17, 251);
       this.label20.Name = "label20";
       this.label20.Size = new System.Drawing.Size(84, 21);
       this.label20.TabIndex = 12;
