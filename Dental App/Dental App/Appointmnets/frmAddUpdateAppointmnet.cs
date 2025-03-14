@@ -378,6 +378,7 @@ namespace Dental_App.Appointmnets
       {
         btnSteps.Enabled = false;
         btnSteps.Text = "Save";
+        
       }
       else
       {
@@ -483,12 +484,26 @@ namespace Dental_App.Appointmnets
       {
         _PaymentID = PaymentID;
         btnSteps.Enabled = true;
+        _UpdateBillInfo();
+
       }
       else
       {
         MessageBox.Show("Error Couldn't Save Appointment because payment fild.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         btnSteps.Enabled = false;
       }
+    }
+
+    // here we update Bill info
+    private void _UpdateBillInfo()
+    {
+      lblBillsDate.Text = _Appointment.StartTime.ToShortDateString();
+      lblTime.Text = _Appointment.StartTime.ToShortTimeString();
+      lblPatientName.Text = _Patient.PatientInfo.FullName;
+      lblLocation.Text = cbLocation.SelectedItem.ToString();
+      lblDoctorName.Text = cbDoctor.SelectedItem.ToString();
+      lblSummay.Text = lbSummary.Text;
+      lblCost.Text = TotalCost.ToString();
     }
 
     // here we handle MedicalRecred
@@ -509,9 +524,13 @@ namespace Dental_App.Appointmnets
 
     private void tbpAddAppointment_Click(object sender, EventArgs e)
     {
-
+      
     }
 
+    private void expertsBtn2_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
   }
 
   /// <summary>

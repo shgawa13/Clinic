@@ -95,6 +95,16 @@
       this.btnPayBill = new Dental_App.ExpertsBtn();
       this.btnPrintBill = new Dental_App.ExpertsBtn();
       this.pnlBillSummary = new System.Windows.Forms.Panel();
+      this.lblCost = new System.Windows.Forms.Label();
+      this.lblSummay = new System.Windows.Forms.Label();
+      this.lblLocation = new System.Windows.Forms.Label();
+      this.lblDoctorName = new System.Windows.Forms.Label();
+      this.lblPatientName = new System.Windows.Forms.Label();
+      this.lblTime = new System.Windows.Forms.Label();
+      this.label11 = new System.Windows.Forms.Label();
+      this.label10 = new System.Windows.Forms.Label();
+      this.label7 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
       this.lblSummaryBill = new System.Windows.Forms.Label();
       this.lblBillsDate = new System.Windows.Forms.Label();
       this.label21 = new System.Windows.Forms.Label();
@@ -1182,6 +1192,16 @@
       // 
       this.pnlBillSummary.BackColor = System.Drawing.Color.Azure;
       this.pnlBillSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.pnlBillSummary.Controls.Add(this.lblCost);
+      this.pnlBillSummary.Controls.Add(this.lblSummay);
+      this.pnlBillSummary.Controls.Add(this.lblLocation);
+      this.pnlBillSummary.Controls.Add(this.lblDoctorName);
+      this.pnlBillSummary.Controls.Add(this.lblPatientName);
+      this.pnlBillSummary.Controls.Add(this.lblTime);
+      this.pnlBillSummary.Controls.Add(this.label11);
+      this.pnlBillSummary.Controls.Add(this.label10);
+      this.pnlBillSummary.Controls.Add(this.label7);
+      this.pnlBillSummary.Controls.Add(this.label3);
       this.pnlBillSummary.Controls.Add(this.lblSummaryBill);
       this.pnlBillSummary.Controls.Add(this.lblBillsDate);
       this.pnlBillSummary.Controls.Add(this.label21);
@@ -1193,23 +1213,133 @@
       this.pnlBillSummary.Size = new System.Drawing.Size(510, 446);
       this.pnlBillSummary.TabIndex = 12;
       // 
+      // lblCost
+      // 
+      this.lblCost.AutoSize = true;
+      this.lblCost.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblCost.ForeColor = System.Drawing.Color.Black;
+      this.lblCost.Location = new System.Drawing.Point(68, 393);
+      this.lblCost.Name = "lblCost";
+      this.lblCost.Size = new System.Drawing.Size(38, 21);
+      this.lblCost.TabIndex = 26;
+      this.lblCost.Text = "????";
+      // 
+      // lblSummay
+      // 
+      this.lblSummay.AutoSize = true;
+      this.lblSummay.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblSummay.ForeColor = System.Drawing.Color.Black;
+      this.lblSummay.Location = new System.Drawing.Point(110, 327);
+      this.lblSummay.Name = "lblSummay";
+      this.lblSummay.Size = new System.Drawing.Size(38, 21);
+      this.lblSummay.TabIndex = 25;
+      this.lblSummay.Text = "????";
+      // 
+      // lblLocation
+      // 
+      this.lblLocation.AutoSize = true;
+      this.lblLocation.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblLocation.ForeColor = System.Drawing.Color.Black;
+      this.lblLocation.Location = new System.Drawing.Point(110, 278);
+      this.lblLocation.Name = "lblLocation";
+      this.lblLocation.Size = new System.Drawing.Size(38, 21);
+      this.lblLocation.TabIndex = 24;
+      this.lblLocation.Text = "????";
+      // 
+      // lblDoctorName
+      // 
+      this.lblDoctorName.AutoSize = true;
+      this.lblDoctorName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblDoctorName.ForeColor = System.Drawing.Color.Black;
+      this.lblDoctorName.Location = new System.Drawing.Point(93, 231);
+      this.lblDoctorName.Name = "lblDoctorName";
+      this.lblDoctorName.Size = new System.Drawing.Size(38, 21);
+      this.lblDoctorName.TabIndex = 23;
+      this.lblDoctorName.Text = "????";
+      // 
+      // lblPatientName
+      // 
+      this.lblPatientName.AutoSize = true;
+      this.lblPatientName.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblPatientName.ForeColor = System.Drawing.Color.Black;
+      this.lblPatientName.Location = new System.Drawing.Point(93, 184);
+      this.lblPatientName.Name = "lblPatientName";
+      this.lblPatientName.Size = new System.Drawing.Size(38, 21);
+      this.lblPatientName.TabIndex = 22;
+      this.lblPatientName.Text = "????";
+      // 
+      // lblTime
+      // 
+      this.lblTime.AutoSize = true;
+      this.lblTime.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblTime.ForeColor = System.Drawing.Color.Black;
+      this.lblTime.Location = new System.Drawing.Point(86, 137);
+      this.lblTime.Name = "lblTime";
+      this.lblTime.Size = new System.Drawing.Size(38, 21);
+      this.lblTime.TabIndex = 21;
+      this.lblTime.Text = "????";
+      // 
+      // label11
+      // 
+      this.label11.AutoSize = true;
+      this.label11.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label11.ForeColor = System.Drawing.Color.Black;
+      this.label11.Location = new System.Drawing.Point(11, 393);
+      this.label11.Name = "label11";
+      this.label11.Size = new System.Drawing.Size(51, 21);
+      this.label11.TabIndex = 20;
+      this.label11.Text = "Cost :";
+      // 
+      // label10
+      // 
+      this.label10.AutoSize = true;
+      this.label10.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label10.ForeColor = System.Drawing.Color.Black;
+      this.label10.Location = new System.Drawing.Point(11, 327);
+      this.label10.Name = "label10";
+      this.label10.Size = new System.Drawing.Size(91, 21);
+      this.label10.TabIndex = 19;
+      this.label10.Text = "Summary :";
+      // 
+      // label7
+      // 
+      this.label7.AutoSize = true;
+      this.label7.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label7.ForeColor = System.Drawing.Color.Black;
+      this.label7.Location = new System.Drawing.Point(14, 231);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(70, 21);
+      this.label7.TabIndex = 18;
+      this.label7.Text = "Doctor :";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label3.ForeColor = System.Drawing.Color.Black;
+      this.label3.Location = new System.Drawing.Point(14, 184);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(73, 21);
+      this.label3.TabIndex = 17;
+      this.label3.Text = "Patient :";
+      // 
       // lblSummaryBill
       // 
       this.lblSummaryBill.AutoSize = true;
       this.lblSummaryBill.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblSummaryBill.ForeColor = System.Drawing.Color.Black;
-      this.lblSummaryBill.Location = new System.Drawing.Point(13, 154);
+      this.lblSummaryBill.Location = new System.Drawing.Point(14, 137);
       this.lblSummaryBill.Name = "lblSummaryBill";
-      this.lblSummaryBill.Size = new System.Drawing.Size(87, 21);
+      this.lblSummaryBill.Size = new System.Drawing.Size(56, 21);
       this.lblSummaryBill.TabIndex = 16;
-      this.lblSummaryBill.Text = "Summary:";
+      this.lblSummaryBill.Text = "Time :";
       // 
       // lblBillsDate
       // 
       this.lblBillsDate.AutoSize = true;
       this.lblBillsDate.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblBillsDate.ForeColor = System.Drawing.Color.Black;
-      this.lblBillsDate.Location = new System.Drawing.Point(65, 16);
+      this.lblBillsDate.Location = new System.Drawing.Point(60, 16);
       this.lblBillsDate.Name = "lblBillsDate";
       this.lblBillsDate.Size = new System.Drawing.Size(38, 21);
       this.lblBillsDate.TabIndex = 15;
@@ -1220,7 +1350,7 @@
       this.label21.AutoSize = true;
       this.label21.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label21.ForeColor = System.Drawing.Color.Black;
-      this.label21.Location = new System.Drawing.Point(13, 16);
+      this.label21.Location = new System.Drawing.Point(9, 16);
       this.label21.Name = "label21";
       this.label21.Size = new System.Drawing.Size(50, 21);
       this.label21.TabIndex = 14;
@@ -1241,11 +1371,11 @@
       this.label20.AutoSize = true;
       this.label20.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label20.ForeColor = System.Drawing.Color.Black;
-      this.label20.Location = new System.Drawing.Point(13, 119);
+      this.label20.Location = new System.Drawing.Point(11, 278);
       this.label20.Name = "label20";
-      this.label20.Size = new System.Drawing.Size(87, 21);
+      this.label20.Size = new System.Drawing.Size(84, 21);
       this.label20.TabIndex = 12;
-      this.label20.Text = "Summary:";
+      this.label20.Text = "Location :";
       // 
       // label4
       // 
@@ -1331,6 +1461,7 @@
       this.expertsBtn2.Text = "Close";
       this.expertsBtn2.TextColor = System.Drawing.Color.WhiteSmoke;
       this.expertsBtn2.UseVisualStyleBackColor = false;
+      this.expertsBtn2.Click += new System.EventHandler(this.expertsBtn2_Click);
       // 
       // frmAddUpdateAppointmnet
       // 
@@ -1475,5 +1606,15 @@
     private Syncfusion.Windows.Forms.Tools.TextBoxExt tbNote;
     private FontAwesome.Sharp.IconButton iconNote;
     private Patients.controls.ctrlPatientCardWithFilter ctrlPatientCardWithFilter1;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label10;
+    private System.Windows.Forms.Label label7;
+    private System.Windows.Forms.Label lblCost;
+    private System.Windows.Forms.Label lblSummay;
+    private System.Windows.Forms.Label lblLocation;
+    private System.Windows.Forms.Label lblDoctorName;
+    private System.Windows.Forms.Label lblPatientName;
+    private System.Windows.Forms.Label lblTime;
+    private System.Windows.Forms.Label label11;
   }
 }

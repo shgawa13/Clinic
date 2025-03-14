@@ -41,9 +41,7 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
-
-     
-
+     // this.scheduleControl1.Item
       // Assign the custom context menu to the ScheduleControl
       this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu;
 
@@ -112,13 +110,14 @@ namespace Dental_App.Appointmnets
     {
       MessageBox.Show("Add new item clicked");
       frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
-      frm.Show();
+      frm.ShowDialog();
     }
 
     private void EditItem(object sender, EventArgs e)
     {
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(_ApptID, this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       //frm.Show();
+      
       MessageBox.Show("Edit item clicked");
     }
 
@@ -151,8 +150,8 @@ namespace Dental_App.Appointmnets
 
     private void frmAppointments_Load(object sender, EventArgs e)
     {
-
-      // FillList();
+     // FillList();
+      
       Thread t1 = new Thread(() => FillList());
       t1.Start();
       t1.Join();
@@ -197,8 +196,6 @@ namespace Dental_App.Appointmnets
       // Refreshing
       // scheduleControl1.Refresh();
     }
-
-
 
 
   }
