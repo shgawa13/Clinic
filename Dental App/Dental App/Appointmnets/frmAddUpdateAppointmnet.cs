@@ -41,6 +41,7 @@ namespace Dental_App.Appointmnets
     private string _AppointmnetTime { set; get; }
     private string _Diagnosis { set; get; }
     private decimal TotalCost = 0;
+
     // AppointmentForm Can be opened from two places
     // From Schedule to create new Appointmnet
     public frmAddUpdateAppointmnet(ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
@@ -483,8 +484,9 @@ namespace Dental_App.Appointmnets
       {
         _PaymentID = PaymentID;
         btnSteps.Enabled = true;
-        _UpdateBillInfo();
+        btnPrintBill.Enabled = true;
 
+        _UpdateBillInfo();
       }
       else
       {

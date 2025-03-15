@@ -166,7 +166,7 @@
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(861, 232);
+      this.panel1.Size = new System.Drawing.Size(864, 232);
       this.panel1.TabIndex = 131;
       // 
       // btnDiagnosis
@@ -755,7 +755,7 @@
       this.tbpAddAppointment.Location = new System.Drawing.Point(1, 29);
       this.tbpAddAppointment.Name = "tbpAddAppointment";
       this.tbpAddAppointment.ShowCloseButton = true;
-      this.tbpAddAppointment.Size = new System.Drawing.Size(861, 614);
+      this.tbpAddAppointment.Size = new System.Drawing.Size(864, 614);
       this.tbpAddAppointment.TabIndex = 1;
       this.tbpAddAppointment.Text = "Add Appointment";
       this.tbpAddAppointment.ThemesEnabled = false;
@@ -772,7 +772,7 @@
       this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-      this.groupBox1.Size = new System.Drawing.Size(861, 614);
+      this.groupBox1.Size = new System.Drawing.Size(864, 614);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointment Info";
@@ -784,7 +784,7 @@
       this.ctrlPatientCardWithFilter1.Location = new System.Drawing.Point(4, 19);
       this.ctrlPatientCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
       this.ctrlPatientCardWithFilter1.Name = "ctrlPatientCardWithFilter1";
-      this.ctrlPatientCardWithFilter1.Size = new System.Drawing.Size(853, 469);
+      this.ctrlPatientCardWithFilter1.Size = new System.Drawing.Size(856, 469);
       this.ctrlPatientCardWithFilter1.TabIndex = 152;
       // 
       // panel3
@@ -1055,7 +1055,7 @@
       this.tbpProcedures.Location = new System.Drawing.Point(1, 29);
       this.tbpProcedures.Name = "tbpProcedures";
       this.tbpProcedures.ShowCloseButton = true;
-      this.tbpProcedures.Size = new System.Drawing.Size(861, 614);
+      this.tbpProcedures.Size = new System.Drawing.Size(864, 614);
       this.tbpProcedures.TabIndex = 2;
       this.tbpProcedures.Text = "Procedures";
       this.tbpProcedures.ThemesEnabled = false;
@@ -1105,7 +1105,7 @@
       this.tcAppointment.ActiveTabFont = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tcAppointment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(864, 645);
+      this.tcAppointment.BeforeTouchSize = new System.Drawing.Size(867, 645);
       this.tcAppointment.Controls.Add(this.tbpAddAppointment);
       this.tcAppointment.Controls.Add(this.tbpProcedures);
       this.tcAppointment.Controls.Add(this.tbpBills);
@@ -1115,7 +1115,7 @@
       this.tcAppointment.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
       this.tcAppointment.MinimumSize = new System.Drawing.Size(864, 604);
       this.tcAppointment.Name = "tcAppointment";
-      this.tcAppointment.Size = new System.Drawing.Size(864, 645);
+      this.tcAppointment.Size = new System.Drawing.Size(867, 645);
       this.tcAppointment.TabIndex = 152;
       this.tcAppointment.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererMetro);
       this.tcAppointment.ThemeName = "TabRendererMetro";
@@ -1134,7 +1134,7 @@
       this.tbpBills.Location = new System.Drawing.Point(1, 29);
       this.tbpBills.Name = "tbpBills";
       this.tbpBills.ShowCloseButton = true;
-      this.tbpBills.Size = new System.Drawing.Size(861, 614);
+      this.tbpBills.Size = new System.Drawing.Size(864, 614);
       this.tbpBills.TabIndex = 3;
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
@@ -1359,9 +1359,9 @@
       // homeBtn
       // 
       this.homeBtn.Image = global::Dental_App.Properties.Resources.gzexperts_logo;
-      this.homeBtn.Location = new System.Drawing.Point(212, -1);
+      this.homeBtn.Location = new System.Drawing.Point(212, 3);
       this.homeBtn.Name = "homeBtn";
-      this.homeBtn.Size = new System.Drawing.Size(83, 104);
+      this.homeBtn.Size = new System.Drawing.Size(83, 88);
       this.homeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.homeBtn.TabIndex = 13;
       this.homeBtn.TabStop = false;
@@ -1468,7 +1468,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ControlLight;
-      this.ClientSize = new System.Drawing.Size(865, 696);
+      this.ClientSize = new System.Drawing.Size(868, 696);
       this.Controls.Add(this.btnSteps);
       this.Controls.Add(this.tcAppointment);
       this.Controls.Add(this.label4);

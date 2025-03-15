@@ -116,8 +116,8 @@ namespace Dental_App.Appointmnets
     private void EditItem(object sender, EventArgs e)
     {
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(_ApptID, this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
-      //frm.Show();
-      
+      //frm.ShowDialog();
+
       MessageBox.Show("Edit item clicked");
     }
 
@@ -129,8 +129,8 @@ namespace Dental_App.Appointmnets
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
-      if (e.Item?.UniqueID > 0)
-        _ApptID = e.Item.UniqueID;
+      if (e.Item != null)
+        MessageBox.Show("there is item");
 
     
       SelectedAppointmentDate = e.ClickDateTime.Date;
@@ -150,11 +150,11 @@ namespace Dental_App.Appointmnets
 
     private void frmAppointments_Load(object sender, EventArgs e)
     {
-     // FillList();
+      FillList();
       
-      Thread t1 = new Thread(() => FillList());
-      t1.Start();
-      t1.Join();
+      //Thread t1 = new Thread(() => FillList());
+      //t1.Start();
+      //t1.Join();
 
     }
 
