@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-  class clsProceduresData
+ public class clsProceduresData
   {
     // Add new Procedure
     public static int AddNewProcedure(byte Peroxide25, byte Peroxide40, byte CompositeFilling, byte PorcelainFilling,
@@ -219,7 +219,7 @@ namespace DataLayer
     /// Delete Procedure:
     /// </summary>
     /// <param name="ProcedureID"></param>
-    /// <returns></returns>
+    /// <returns> boolen value if deleted return true otherwise false </returns>
     public static bool DeleteProcedure(int ProcedureID)
     {
       int IsDeleted = -1;

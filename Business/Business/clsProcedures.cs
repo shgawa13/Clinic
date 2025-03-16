@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer;
 
 namespace Business
 {
@@ -81,11 +82,62 @@ namespace Business
 
     private bool _AddNew()
     {
-      return false;
+      this.ProceduerID = clsProceduresData.AddNewProcedure(this.Peroxide25,this.Peroxide40,this.CompositeFilling,
+       this.PorcelainFilling,this.AmalgamFilling,this.SingleImplant,this.DoubleImplant,this.FullMouthImplant,
+       this.Cleaning,this.Xray,this.Diagnosis,this.SimpleExtraction,this.ComplicatedExtrcation,this.ComplexExtraction,
+       this.WisdomExtraction);
+      return (this.ProceduerID > -1);
     }
 
     private bool _Update()
     {
+      return clsProceduresData.UpdateProcedure(this.ProceduerID, this.Peroxide25, this.Peroxide40, this.CompositeFilling,
+       this.PorcelainFilling, this.AmalgamFilling, this.SingleImplant, this.DoubleImplant, this.FullMouthImplant,
+       this.Cleaning, this.Xray, this.Diagnosis, this.SimpleExtraction, this.ComplicatedExtrcation, this.ComplexExtraction,
+       this.WisdomExtraction);
+    }
+
+    public static clsProcedures Find(int ProceduerID)
+    {
+      byte Peroxide25 = 0, Peroxide40 = 0, CompositeFilling = 0, PorcelainFilling = 0, AmalgamFilling = 0, SingleImplant = 0,
+       DoubleImplant = 0, FullMouthImplant = 0,Cleaning = 0, Xray = 0, Diagnosis = 0, SimpleExtraction = 0, ComplicatedExtrcation = 0,
+       ComplexExtraction = 0, WisdomExtraction = 0;
+
+      bool IsFound = clsProceduresData.GetProcedureByID(ProceduerID, ref Peroxide25, ref Peroxide40, ref CompositeFilling,
+       ref PorcelainFilling, ref AmalgamFilling, ref SingleImplant, ref DoubleImplant, ref FullMouthImplant,
+       ref Cleaning, ref Xray, ref Diagnosis, ref SimpleExtraction, ref ComplicatedExtrcation, ref ComplexExtraction,
+       ref WisdomExtraction);
+
+      if (IsFound)
+        return new clsProcedures(ProceduerID, Peroxide25, Peroxide40, CompositeFilling, PorcelainFilling, AmalgamFilling,
+          SingleImplant, DoubleImplant, FullMouthImplant, Cleaning, Xray, Diagnosis, SimpleExtraction, ComplicatedExtrcation,
+          ComplexExtraction, WisdomExtraction);
+      else
+        return null;
+    }
+
+    public static bool Delete(int ProceduerID) => clsProcedures.Delete(ProceduerID);
+
+
+    public bool Save()
+    {
+      switch (_Mode)
+      {
+        case enMode.AddNew:
+
+          if (_AddNew())
+          {
+            _Mode = enMode.Update;
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+
+        case enMode.Update:
+          return _Update();
+      }
       return false;
     }
   }
