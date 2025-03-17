@@ -7,7 +7,7 @@ using DataLayer;
 
 namespace Business
 {
-  class clsProcedures
+ public class clsProcedures
   {
     private enum enMode { AddNew = 0, Update = 1 }
     private enMode _Mode = enMode.AddNew;
@@ -56,8 +56,7 @@ namespace Business
 
     public clsProcedures(int procedureID, byte peroxide25, byte peroxide40, byte compositeFilling, byte porcelainFilling,
       byte amalgamFilling,byte singleImplant, byte doubleImplant, byte fullMouthImplant, byte cleaning, byte xray,
-      byte Diagnosis, byte simpleExtraction, byte complicatedExtraction, byte complexExtraction, byte wisdomExtraction 
-      )
+      byte Diagnosis, byte simpleExtraction, byte complicatedExtraction, byte complexExtraction, byte wisdomExtraction)
     {
       this.ProceduerID = procedureID;
       this.Peroxide25 = peroxide25;
@@ -123,6 +122,7 @@ namespace Business
     {
       switch (_Mode)
       {
+
         case enMode.AddNew:
 
           if (_AddNew())
@@ -137,6 +137,7 @@ namespace Business
 
         case enMode.Update:
           return _Update();
+
       }
       return false;
     }

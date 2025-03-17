@@ -404,6 +404,19 @@ namespace ClinicConsoleApp
       string result = sb.ToString();
     }
 
+    public static void AddProcudure()
+    {
+      clsProcedures p = new clsProcedures();
+      p.AmalgamFilling = 1;
+      p.Cleaning = 1;
+      p.Diagnosis = 1;
+
+      if (p.Save())
+        Console.WriteLine("Data Has been saved ");
+      else
+        Console.WriteLine("Error");
+    }
+
     static void Main(string[] args)
     {
 
@@ -454,14 +467,15 @@ namespace ClinicConsoleApp
       //  Console.WriteLine($"Error: {ex.Message}");
       //}
 
-      int iteration = 20000;
+      //int iteration = 20000;
 
-      // Testing with stringbuilder
-      Stopwatch st2 = Stopwatch.StartNew();
-      ConcatWithStringBuilder(iteration);
-      st2.Stop();
-      Console.WriteLine($"with StringBuilder concationation it took: {st2.ElapsedMilliseconds} ms");
+      //// Testing with stringbuilder
+      //Stopwatch st2 = Stopwatch.StartNew();
+      //ConcatWithStringBuilder(iteration);
+      //st2.Stop();
+      //Console.WriteLine($"with StringBuilder concationation it took: {st2.ElapsedMilliseconds} ms");
 
+      AddProcudure();
 
       Console.ReadKey();
     }

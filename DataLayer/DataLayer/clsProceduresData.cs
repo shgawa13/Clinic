@@ -12,15 +12,15 @@ namespace DataLayer
     // Add new Procedure
     public static int AddNewProcedure(byte Peroxide25, byte Peroxide40, byte CompositeFilling, byte PorcelainFilling,
       byte AmalgamFilling, byte SingleImplant, byte DoubleImplant, byte FullMouthImplant, byte Cleaning, byte Xray,
-      byte Diagnosis, byte SimpleExtraction, byte ComplicatedExtraction, byte ComplexExtraction, byte WisdomExtraction)
+      byte Diagnosis, byte SimpleExtraction, byte ComplicatedExtrcation, byte ComplexExtraction, byte WisdomExtarction)
     {
       int ProcedureID = -1;
 
       string query = @"Insert Into Procedures
-      (Peroxide25,Peroxide40,CompositeFilling,PorcelainFilling,AmalgamFilling,SingleImplant,DoubleImplant,FullMouthImplant
-      Cleaning,Xray,Diagnosis,SimpleExtraction,ComplicatedExtraction,ComplexExtraction,WisdomExtraction)
+      (Peroxide25,Peroxide40,CompositeFilling,PorcelainFilling,AmalgamFilling,SingleImplant,DoubleImplant,FullMouthImplant,
+      Cleaning,Xray,Diagnosis,SimpleExtraction,ComplicatedExtrcation,ComplexExtraction,WisdomExtarction)
       Values(@Peroxide25,@Peroxide40,@CompositeFilling,@PorcelainFilling,@AmalgamFilling,@SingleImplant,@DoubleImplant,
-      @FullMouthImplant,@Cleaning,@Xray,@Diagnosis,@SimpleExtraction,@ComplicatedExtraction,@ComplexExtraction,@WisdomExtraction);
+      @FullMouthImplant,@Cleaning,@Xray,@Diagnosis,@SimpleExtraction,@ComplicatedExtrcation,@ComplexExtraction,@WisdomExtarction);
       Select SCOPE_IDENTITY();";
 
       try
@@ -47,9 +47,9 @@ namespace DataLayer
             command.Parameters.AddWithValue("@Xray", Xray);
             command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
             command.Parameters.AddWithValue("@SimpleExtraction", SimpleExtraction);
-            command.Parameters.AddWithValue("@ComplicatedExtraction", ComplicatedExtraction);
+            command.Parameters.AddWithValue("@ComplicatedExtrcation", ComplicatedExtrcation);
             command.Parameters.AddWithValue("@ComplexExtraction", ComplexExtraction);
-            command.Parameters.AddWithValue("@WisdomExtraction", WisdomExtraction);
+            command.Parameters.AddWithValue("@WisdomExtarction", WisdomExtarction);
 ;
 
             // resiving object from DB
@@ -81,7 +81,7 @@ namespace DataLayer
     // Update Procedure
     public static bool UpdateProcedure(int ProcedureID, byte Peroxide25, byte Peroxide40, byte CompositeFilling, byte PorcelainFilling,
       byte AmalgamFilling, byte SingleImplant, byte DoubleImplant, byte FullMouthImplant, byte Cleaning, byte Xray,
-      byte Diagnosis, byte SimpleExtraction, byte ComplicatedExtraction, byte ComplexExtraction, byte WisdomExtraction)
+      byte Diagnosis, byte SimpleExtraction, byte ComplicatedExtrcation, byte ComplexExtraction, byte WisdomExtarction)
     {
       int EffectedRow = 0;
 
@@ -97,9 +97,9 @@ namespace DataLayer
           Cleaning=@Cleaning,
           Diagnosis=@Diagnosis,
           SimpleExtraction=@SimpleExtraction,
-          ComplicatedExtraction=@ComplicatedExtraction,
+          ComplicatedExtrcation=@ComplicatedExtrcation,
           ComplexExtraction=@ComplexExtraction,
-          WisdomExtraction=@WisdomExtraction
+          WisdomExtarction=@WisdomExtarction
           where ProcedureID=@ProcedureID";
       try
       {
@@ -126,9 +126,9 @@ namespace DataLayer
             command.Parameters.AddWithValue("@Xray", Xray);
             command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
             command.Parameters.AddWithValue("@SimpleExtraction", SimpleExtraction);
-            command.Parameters.AddWithValue("@ComplicatedExtraction", ComplicatedExtraction);
+            command.Parameters.AddWithValue("@ComplicatedExtrcation", ComplicatedExtrcation);
             command.Parameters.AddWithValue("@ComplexExtraction", ComplexExtraction);
-            command.Parameters.AddWithValue("@WisdomExtraction", WisdomExtraction);
+            command.Parameters.AddWithValue("@WisdomExtarction", WisdomExtarction);
 
 
             // rows effected  
@@ -155,8 +155,8 @@ namespace DataLayer
     // Find Procedure By ID
     public static bool GetProcedureByID(int ProcedureID,ref byte Peroxide25, ref byte Peroxide40, ref byte CompositeFilling,
       ref byte PorcelainFilling,ref byte AmalgamFilling, ref byte SingleImplant, ref byte DoubleImplant, ref byte FullMouthImplant,
-      ref byte Cleaning, ref byte Xray,ref byte Diagnosis, ref byte SimpleExtraction, ref byte ComplicatedExtraction, 
-      ref byte ComplexExtraction, ref byte WisdomExtraction)
+      ref byte Cleaning, ref byte Xray,ref byte Diagnosis, ref byte SimpleExtraction, ref byte ComplicatedExtrcation, 
+      ref byte ComplexExtraction, ref byte WisdomExtarction)
     {
       bool IsFound = false;
 
@@ -192,9 +192,9 @@ namespace DataLayer
                 Cleaning = (byte)reader["Cleaning"];
                 Diagnosis = (byte)reader["Diagnosis"];
                 SimpleExtraction = (byte)reader["SimpleExtraction"];
-                ComplicatedExtraction = (byte)reader["ComplicatedExtraction"];
+                ComplicatedExtrcation = (byte)reader["ComplicatedExtrcation"];
                 ComplexExtraction = (byte)reader["ComplexExtraction"];
-                WisdomExtraction = (byte)reader["WisdomExtraction"];
+                WisdomExtarction = (byte)reader["WisdomExtarction"];
               }
             }
 

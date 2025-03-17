@@ -1130,7 +1130,7 @@ namespace Business
       //if()
 
       switch (Mode)
-      {
+      { 
         case enMode.AddNew:
           if (_AddNewAppointment())
           {
