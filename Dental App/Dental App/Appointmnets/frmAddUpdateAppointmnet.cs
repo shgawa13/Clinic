@@ -32,14 +32,15 @@ namespace Dental_App.Appointmnets
     private clsPayments _Payment;
     private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
-    private clsPatient _Patient { set; get; }
+    private clsPatient _Patient { get; set; }
+    private clsProcedures _Procedure { get; set; }
 
     private int _PatientID;
     private int _PaymentID;
     private int _ApptID;
-    private DateTime _SelectedAppointmentDate { set; get; }
-    private string _AppointmnetTime { set; get; }
-    private string _Diagnosis { set; get; }
+    private DateTime _SelectedAppointmentDate { get; set; }
+    private string _AppointmnetTime { get; set; }
+    private string _Diagnosis { get; set; }
     private decimal TotalCost = 0;
 
     // AppointmentForm Can be opened from two places
@@ -228,6 +229,20 @@ namespace Dental_App.Appointmnets
       tbNote.Focus();
 
       btnSteps.Enabled = true;
+    }
+
+    // Load Procedure Info
+    private void _LoadProcedureInfo(int ProcedureID)
+    {
+      _Procedure = clsProcedures.Find(ProcedureID);
+      if (_Procedure == null) 
+      {
+        MessageBox.Show($"Error: Couldn't Find procedure with ID: {ProcedureID}");
+        return;
+      }
+
+      
+      
     }
 
     // Load Appointment Data:
