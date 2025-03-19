@@ -127,12 +127,12 @@ namespace Dental_App.Appointmnets
 
       if(_Mode == enMode.AddNew)
       {
-        //lblTitle.Text = "Add new Appointment";
+        //frmAddUpdateAppointmnet.Text = "Add new Appointment";
         _Appointment = new clsAppointments();
       }
       else
       {
-        //lblTitle.Text = "Update Appointment";
+        //frmAddUpdateAppointmnet.Text = "Update Appointment";
       }
       // Reset DateTime
       dtAppointmentDate.MinDateTime = DateTime.Today;
@@ -250,7 +250,7 @@ namespace Dental_App.Appointmnets
     {
       // Map database fields to checkboxes using a dictionary
         var checkboxMapping = new Dictionary<CheckBoxAdv, int?>
-      {
+        {
           { chbPeroxide25, _Procedure.Peroxide25 },
           { chbPeroxide40, _Procedure.Peroxide40 },
           { chbCompositeFilling, _Procedure.CompositeFilling },
@@ -264,7 +264,7 @@ namespace Dental_App.Appointmnets
           { chbSimpleExtraction, _Procedure.SimpleExtraction }, // Fixed typo
           { chbComplicatedExtrcation, _Procedure.ComplicatedExtrcation },
           { chbComplexExtraction, _Procedure.ComplexExtraction }
-       };
+        };
 
       // Set checkbox states
       foreach (var mapping in checkboxMapping)
@@ -286,6 +286,7 @@ namespace Dental_App.Appointmnets
       }
 
       ctrlPatientCardWithFilter1.LoadPatientInfo(_Appointment.PatientID);
+      _FindProcedure(_Appointment.ProcedureID);
       dtAppointmentDate.Value = _Appointment.StartTime.Date;
       cbStartTime.SelectedIndex = cbStartTime.FindString(_Appointment.StartTime.ToShortTimeString());
       cbEndTime.SelectedIndex = cbStartTime.FindString(_Appointment.EndTime.ToShortTimeString());

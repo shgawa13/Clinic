@@ -152,88 +152,96 @@
       this.lblEmail.AutoSize = true;
       this.lblEmail.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblEmail.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblEmail.Location = new System.Drawing.Point(183, 287);
+      this.lblEmail.Location = new System.Drawing.Point(161, 287);
       this.lblEmail.Name = "lblEmail";
       this.lblEmail.Size = new System.Drawing.Size(43, 24);
       this.lblEmail.TabIndex = 15;
       this.lblEmail.Text = "???";
+      this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
       // 
       // lblCountry
       // 
       this.lblCountry.AutoSize = true;
       this.lblCountry.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblCountry.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblCountry.Location = new System.Drawing.Point(183, 245);
+      this.lblCountry.Location = new System.Drawing.Point(161, 245);
       this.lblCountry.Name = "lblCountry";
       this.lblCountry.Size = new System.Drawing.Size(43, 24);
       this.lblCountry.TabIndex = 14;
       this.lblCountry.Text = "???";
+      this.lblCountry.Click += new System.EventHandler(this.lblCountry_Click);
       // 
       // lblPhone
       // 
       this.lblPhone.AutoSize = true;
       this.lblPhone.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblPhone.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblPhone.Location = new System.Drawing.Point(183, 211);
+      this.lblPhone.Location = new System.Drawing.Point(161, 211);
       this.lblPhone.Name = "lblPhone";
       this.lblPhone.Size = new System.Drawing.Size(43, 24);
       this.lblPhone.TabIndex = 13;
       this.lblPhone.Text = "???";
+      this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
       // 
       // lblGendor
       // 
       this.lblGendor.AutoSize = true;
       this.lblGendor.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblGendor.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblGendor.Location = new System.Drawing.Point(183, 173);
+      this.lblGendor.Location = new System.Drawing.Point(161, 173);
       this.lblGendor.Name = "lblGendor";
       this.lblGendor.Size = new System.Drawing.Size(43, 24);
       this.lblGendor.TabIndex = 12;
       this.lblGendor.Text = "???";
+      this.lblGendor.Click += new System.EventHandler(this.lblGendor_Click);
       // 
       // lblDateOfBirth
       // 
       this.lblDateOfBirth.AutoSize = true;
       this.lblDateOfBirth.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblDateOfBirth.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblDateOfBirth.Location = new System.Drawing.Point(183, 135);
+      this.lblDateOfBirth.Location = new System.Drawing.Point(161, 135);
       this.lblDateOfBirth.Name = "lblDateOfBirth";
       this.lblDateOfBirth.Size = new System.Drawing.Size(43, 24);
       this.lblDateOfBirth.TabIndex = 11;
       this.lblDateOfBirth.Text = "???";
+      this.lblDateOfBirth.Click += new System.EventHandler(this.lblDateOfBirth_Click);
       // 
       // lblNationalID
       // 
       this.lblNationalID.AutoSize = true;
       this.lblNationalID.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblNationalID.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblNationalID.Location = new System.Drawing.Point(183, 97);
+      this.lblNationalID.Location = new System.Drawing.Point(161, 97);
       this.lblNationalID.Name = "lblNationalID";
       this.lblNationalID.Size = new System.Drawing.Size(43, 24);
       this.lblNationalID.TabIndex = 10;
       this.lblNationalID.Text = "???";
+      this.lblNationalID.Click += new System.EventHandler(this.lblNationalID_Click);
       // 
       // lblFullName
       // 
       this.lblFullName.AutoSize = true;
       this.lblFullName.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblFullName.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblFullName.Location = new System.Drawing.Point(183, 59);
+      this.lblFullName.Location = new System.Drawing.Point(161, 59);
       this.lblFullName.Name = "lblFullName";
       this.lblFullName.Size = new System.Drawing.Size(43, 24);
       this.lblFullName.TabIndex = 9;
       this.lblFullName.Text = "???";
+      this.lblFullName.Click += new System.EventHandler(this.lblFullName_Click);
       // 
       // lblPatientID
       // 
       this.lblPatientID.AutoSize = true;
       this.lblPatientID.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblPatientID.ForeColor = System.Drawing.Color.FloralWhite;
-      this.lblPatientID.Location = new System.Drawing.Point(183, 21);
+      this.lblPatientID.Location = new System.Drawing.Point(161, 21);
       this.lblPatientID.Name = "lblPatientID";
       this.lblPatientID.Size = new System.Drawing.Size(43, 24);
       this.lblPatientID.TabIndex = 8;
       this.lblPatientID.Text = "???";
+      this.lblPatientID.Click += new System.EventHandler(this.lblPatientID_Click);
       // 
       // grbPatient
       // 
@@ -281,7 +289,7 @@
       this.linkEdit.ForeColor = System.Drawing.Color.Thistle;
       this.linkEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkEdit.LinkColor = System.Drawing.SystemColors.GradientActiveCaption;
-      this.linkEdit.Location = new System.Drawing.Point(466, 22);
+      this.linkEdit.Location = new System.Drawing.Point(480, 263);
       this.linkEdit.Name = "linkEdit";
       this.linkEdit.Size = new System.Drawing.Size(75, 21);
       this.linkEdit.TabIndex = 33;
@@ -292,9 +300,9 @@
       // pbAvatar
       // 
       this.pbAvatar.Image = global::Dental_App.Properties.Resources.Male_avatar;
-      this.pbAvatar.Location = new System.Drawing.Point(401, 53);
+      this.pbAvatar.Location = new System.Drawing.Point(424, 90);
       this.pbAvatar.Name = "pbAvatar";
-      this.pbAvatar.Size = new System.Drawing.Size(212, 213);
+      this.pbAvatar.Size = new System.Drawing.Size(186, 170);
       this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.pbAvatar.TabIndex = 32;
       this.pbAvatar.TabStop = false;
@@ -307,7 +315,7 @@
       this.iconButton5.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton5.IconSize = 24;
-      this.iconButton5.Location = new System.Drawing.Point(122, 281);
+      this.iconButton5.Location = new System.Drawing.Point(120, 281);
       this.iconButton5.Name = "iconButton5";
       this.iconButton5.Size = new System.Drawing.Size(34, 32);
       this.iconButton5.TabIndex = 31;
@@ -321,7 +329,7 @@
       this.iconButton6.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton6.IconSize = 24;
-      this.iconButton6.Location = new System.Drawing.Point(122, 239);
+      this.iconButton6.Location = new System.Drawing.Point(120, 239);
       this.iconButton6.Name = "iconButton6";
       this.iconButton6.Size = new System.Drawing.Size(34, 32);
       this.iconButton6.TabIndex = 30;
@@ -335,7 +343,7 @@
       this.iconButton7.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton7.IconSize = 24;
-      this.iconButton7.Location = new System.Drawing.Point(122, 205);
+      this.iconButton7.Location = new System.Drawing.Point(120, 205);
       this.iconButton7.Name = "iconButton7";
       this.iconButton7.Size = new System.Drawing.Size(34, 32);
       this.iconButton7.TabIndex = 29;
@@ -349,7 +357,7 @@
       this.iconButton8.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton8.IconSize = 24;
-      this.iconButton8.Location = new System.Drawing.Point(122, 167);
+      this.iconButton8.Location = new System.Drawing.Point(120, 167);
       this.iconButton8.Name = "iconButton8";
       this.iconButton8.Size = new System.Drawing.Size(34, 32);
       this.iconButton8.TabIndex = 28;
@@ -363,7 +371,7 @@
       this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton3.IconSize = 24;
-      this.iconButton3.Location = new System.Drawing.Point(122, 129);
+      this.iconButton3.Location = new System.Drawing.Point(120, 129);
       this.iconButton3.Name = "iconButton3";
       this.iconButton3.Size = new System.Drawing.Size(34, 32);
       this.iconButton3.TabIndex = 27;
@@ -377,7 +385,7 @@
       this.iconButton4.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton4.IconSize = 24;
-      this.iconButton4.Location = new System.Drawing.Point(122, 91);
+      this.iconButton4.Location = new System.Drawing.Point(120, 91);
       this.iconButton4.Name = "iconButton4";
       this.iconButton4.Size = new System.Drawing.Size(34, 32);
       this.iconButton4.TabIndex = 26;
@@ -391,7 +399,7 @@
       this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton2.IconSize = 24;
-      this.iconButton2.Location = new System.Drawing.Point(122, 53);
+      this.iconButton2.Location = new System.Drawing.Point(120, 53);
       this.iconButton2.Name = "iconButton2";
       this.iconButton2.Size = new System.Drawing.Size(34, 32);
       this.iconButton2.TabIndex = 25;
@@ -405,7 +413,7 @@
       this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
       this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.iconButton1.IconSize = 24;
-      this.iconButton1.Location = new System.Drawing.Point(122, 15);
+      this.iconButton1.Location = new System.Drawing.Point(120, 15);
       this.iconButton1.Name = "iconButton1";
       this.iconButton1.Size = new System.Drawing.Size(34, 32);
       this.iconButton1.TabIndex = 24;
