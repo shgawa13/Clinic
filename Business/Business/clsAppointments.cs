@@ -1003,8 +1003,10 @@ namespace Business
 
     public enum enAppointmentSataus
     { Pending = 1, Confirmed = 2, Completed = 3, Canceled = 4, Rescheduled = 5, NotShow = 6 }
-    public int AppointmentID { set; get; }
-    public enAppointmentSataus AppointmentStatus { set; get; } 
+    public int AppointmentID { get; set; }
+    public int ProcedureID { get; set; }
+
+    public enAppointmentSataus AppointmentStatus { get; set; } 
 
     public clsAppointments()
     {
@@ -1018,13 +1020,15 @@ namespace Business
       this.PaymentID = -1;
       this.LastStatusDate = DateTime.Now;
       this._Notes = string.Empty;
+      this.ProcedureID = -1;
 
       Mode = enMode.AddNew;
     }
 
     private clsAppointments(int AppointmentID, int PatientID, int DoctorID, enAppointmentSataus AppointmentStatus,
        DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, string Title,byte LabelValue,byte MarkerValue, string Notes, int PaymentID, int MedicalRecordID)
+       string Location, string Title,byte LabelValue,byte MarkerValue, string Notes, int PaymentID,
+       int MedicalRecordID,int ProcedureID)
     {
       this.AppointmentID = AppointmentID;
       this.PatientID = PatientID;
@@ -1040,7 +1044,8 @@ namespace Business
       this.Notes = Notes;
       this.PaymentID = PaymentID;
       this.MedicalRecordID = MedicalRecordID;
-      
+      this.ProcedureID = ProcedureID;
+
       Mode = enMode.Update;
     }
 
@@ -1049,7 +1054,7 @@ namespace Business
     {
       this.AppointmentID = clsAppointmentsData.AddNewAppointment(this.PatientID, this.DoctorID,
          (byte)this.AppointmentStatus, this.LastStatusDate, this.StartTime, this.EndTime, this.LocationValue,
-         (byte)this.LabelValue, (byte)this.MarkerValue,this.Notes, this.PaymentID, this.MedicalRecordID);
+         (byte)this.LabelValue, (byte)this.MarkerValue,this.Notes, this.PaymentID, this.MedicalRecordID,this.ProcedureID);
       return (this.AppointmentID != -1);
     }
 
@@ -1058,7 +1063,7 @@ namespace Business
     {
       return clsAppointmentsData.UpdateAppointment(this.AppointmentID,this.PatientID, this.DoctorID,
          (byte)this.AppointmentStatus, this.LastStatusDate, this.StartTime, this.EndTime, this.LocationValue,
-         (byte)this.LabelValue, (byte)this.MarkerValue, this.Notes, this.PaymentID, this.MedicalRecordID);
+         (byte)this.LabelValue, (byte)this.MarkerValue, this.Notes, this.PaymentID, this.MedicalRecordID,this.ProcedureID);
     }
 
     /// <summary>
@@ -1079,7 +1084,7 @@ namespace Business
     /// <returns>Object: clsAppointments</returns>
     public static clsAppointments Find(int AppointmentID)
     {
-      int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1;
+      int PatientID = -1, DoctorID = -1, MedicalRecordID = -1, PaymentID = -1, ProcedureID =-1;
       byte AppointmentStatus = 1, LabelValue = 0, MarkerValue = 0;
       DateTime LastStatusDate = DateTime.Now, StartTime = DateTime.Now,EndTime = DateTime.Now;
       string Location = "", Notes = "",Subject="";
@@ -1087,11 +1092,13 @@ namespace Business
       // pass by ref
       bool IsFound = clsAppointmentsData.GetAppointmentByID(AppointmentID, ref PatientID, ref DoctorID,
         ref AppointmentStatus, ref LastStatusDate, ref StartTime, ref EndTime,
-        ref Location, ref LabelValue,ref MarkerValue,ref Notes, ref PaymentID, ref MedicalRecordID);
+        ref Location, ref LabelValue,ref MarkerValue,ref Notes, ref PaymentID, ref MedicalRecordID,
+        ref ProcedureID);
 
       if (IsFound)
         return new clsAppointments(AppointmentID,PatientID,DoctorID,(enAppointmentSataus)AppointmentStatus,
-         LastStatusDate,StartTime,EndTime,Location,Subject,LabelValue,MarkerValue, Notes,MedicalRecordID, PaymentID);
+         LastStatusDate,StartTime,EndTime,Location,Subject,LabelValue,MarkerValue, Notes,MedicalRecordID, 
+         PaymentID, ProcedureID);
       else
         return null;
 

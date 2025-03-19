@@ -232,19 +232,48 @@ namespace Dental_App.Appointmnets
     }
 
     // Load Procedure Info
-    private void _LoadProcedureInfo(int ProcedureID)
+    private async Task  _FindProcedure(int ProcedureID)
     {
-      _Procedure = clsProcedures.Find(ProcedureID);
+      _Procedure = await Task.Run(()=> clsProcedures.Find(ProcedureID));
+
       if (_Procedure == null) 
       {
         MessageBox.Show($"Error: Couldn't Find procedure with ID: {ProcedureID}");
         return;
-      }
+      };
 
-      
-      
+      _LoadProcedureInfo();
     }
 
+    // _Load procedure Data
+    private  void  _LoadProcedureInfo()
+    {
+      // Map database fields to checkboxes using a dictionary
+        var checkboxMapping = new Dictionary<CheckBoxAdv, int?>
+      {
+          { chbPeroxide25, _Procedure.Peroxide25 },
+          { chbPeroxide40, _Procedure.Peroxide40 },
+          { chbCompositeFilling, _Procedure.CompositeFilling },
+          { chbPorcelainFilling, _Procedure.PorcelainFilling },
+          { chbAmalgamFilling, _Procedure.AmalgamFilling },
+          { chbSingleImplant, _Procedure.SingleImplant },
+          { chbDoubleImplant, _Procedure.DoubleImplant },
+          { chbFullMouthImplants, _Procedure.FullMouthImplant },
+          { chbCleaning, _Procedure.Cleaning },
+          { chbDiagnosis, _Procedure.Diagnosis },
+          { chbSimpleExtraction, _Procedure.SimpleExtraction }, // Fixed typo
+          { chbComplicatedExtrcation, _Procedure.ComplicatedExtrcation },
+          { chbComplexExtraction, _Procedure.ComplexExtraction }
+       };
+
+      // Set checkbox states
+      foreach (var mapping in checkboxMapping)
+      {
+        mapping.Key.Checked = mapping.Value == 1;
+      }
+
+    }
+    
     // Load Appointment Data:
     private void _LoadData()
     {

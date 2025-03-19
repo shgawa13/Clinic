@@ -29,13 +29,15 @@ namespace DataLayer
     /// <returns></returns>
     public static int AddNewAppointment( int PatientID, int DoctorID, byte AppointmentStatus,
        DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,
-       string Location, byte LabelValue, byte MarkerValue, string Notes, int PaymentID, int MedicalRecordID)
+       string Location, byte LabelValue, byte MarkerValue, string Notes, int PaymentID,
+       int MedicalRecordID,int ProcedureID)
     {
       int AppointmentID = -1;
       string query = @"Insert into Appointments(PatientID,DoctorID,AppointmentStatus,
-       LastStatusDate,StartTime,EndTime,Location,LabelValue,MarkerValue,Notes,PaymentID,MedicalRecordID)
+       LastStatusDate,StartTime,EndTime,Location,LabelValue,MarkerValue,Notes,PaymentID,MedicalRecordID
+       ,ProcedureID)
        Values(@PatientID,@DoctorID,@AppointmentStatus,@LastStatusDate,@StartTime,@EndTime,@Location,@LabelValue,
-       @MarkerValue,@Notes,@PaymentID,@MedicalRecordID);
+       @MarkerValue,@Notes,@PaymentID,@MedicalRecordID,@ProcedureID);
        Select SCOPE_IDENTITY();";
 
       try
@@ -59,6 +61,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@Notes", Notes);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
+            command.Parameters.AddWithValue("@ProcedureID", ProcedureID);
 
             object result = command.ExecuteScalar();
 
@@ -88,8 +91,6 @@ namespace DataLayer
     /// <param name="PatientID"></param>
     /// <param name="DoctorID"></param>
     /// <param name="AppointmentStatus"></param>
-    /// <param name="MedicalRecordID"></param>
-    /// <param name="PaymentID"></param>
     /// <param name="LastStatusDate"></param>
     /// <param name="StartTime"></param>
     /// <param name="EndTime"></param>
@@ -97,10 +98,13 @@ namespace DataLayer
     /// <param name="LabelValue"></param>
     /// <param name="MarkerValue"></param>
     /// <param name="Notes"></param>
+    /// <param name="PaymentID"></param>
+    /// <param name="MedicalRecordID"></param>
+    /// <param name="ProcedureID"></param>
     /// <returns></returns>
     public static bool UpdateAppointment(int AppointmentID, int PatientID, int DoctorID, byte AppointmentStatus,
         DateTime LastStatusDate, DateTime StartTime, DateTime EndTime,string Location, byte LabelValue, byte MarkerValue,
-        string Notes, int PaymentID, int MedicalRecordID)
+        string Notes, int PaymentID, int MedicalRecordID, int ProcedureID)
     {
       int EffectedRow = 0;
       string Query = @"Update Appointments
@@ -115,7 +119,8 @@ namespace DataLayer
       MarkerValue=@MarkerValue,
       Notes=@Notes,
       PaymentID=@PaymentID,
-      MedicalRecordID=@MedicalRecordID
+      MedicalRecordID=@MedicalRecordID,
+      ProcedureID=@ProcedureID
       where AppointmentID=@AppointmentID";
 
       try
@@ -139,6 +144,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@Notes", Notes);
             command.Parameters.AddWithValue("@PaymentID", PaymentID);
             command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
+            command.Parameters.AddWithValue("@ProcedureID", ProcedureID);
 
             EffectedRow = command.ExecuteNonQuery();
           }
@@ -164,7 +170,7 @@ namespace DataLayer
     /// <returns></returns>
     public static bool GetAppointmentByID(int AppointmentID,ref int PatientID,ref int DoctorID,ref byte AppointmentStatus,
        ref DateTime LastStatusDate, ref DateTime StartTime, ref DateTime EndTime,ref string Location, ref byte LabelValue,
-       ref byte MarkerValue, ref string Notes, ref int PaymentID, ref int MedicalRecordID)
+       ref byte MarkerValue, ref string Notes, ref int PaymentID, ref int MedicalRecordID,ref int ProcedureID)
     {
       bool IsFound = false;
 
@@ -201,6 +207,7 @@ namespace DataLayer
                 Notes = (string)reader["Notes"];
                 PaymentID = (int)reader["PaymentID"];
                 MedicalRecordID = (int)reader["MedicalRecordID"];
+                ProcedureID = (int)reader["ProcedureID"];
               }
             }
 
