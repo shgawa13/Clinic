@@ -153,10 +153,12 @@ namespace Dental_App.Appointmnets
       btnSteps.Enabled = false;
       btnSteps.Text = "Next";
     
-      cbMark.Items.Add(new CustomList(0, "None"));
-      cbMark.Items.Add(new CustomList(1, "Important"));
-      cbMark.Items.Add(new CustomList(2, "Business"));
-      cbMark.Items.Add(new CustomList(3, "Personal"));
+      cbMark.Items.Add(new CustomList(0, "Diagnosis"));
+      cbMark.Items.Add(new CustomList(1, "Extraction"));
+      cbMark.Items.Add(new CustomList(2, "Restoration"));
+      cbMark.Items.Add(new CustomList(3, "Whitening"));
+      cbMark.Items.Add(new CustomList(4, "Orthopedic"));
+      cbMark.Items.Add(new CustomList(5, "Implantation"));
       // Filling ComboBox with Data
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
