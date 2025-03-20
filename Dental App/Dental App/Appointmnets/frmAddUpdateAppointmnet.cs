@@ -124,6 +124,10 @@ namespace Dental_App.Appointmnets
     // Reset Defualt values
     private void _ResetDefualtValues()
     {
+      // Filling ComboBox with Data
+      _FillComboBoxWithTime();
+      _FillDoctorsComboBox();
+      _FillingMarkComboBox();
 
       if(_Mode == enMode.AddNew)
       {
@@ -145,26 +149,38 @@ namespace Dental_App.Appointmnets
 
       dtAppointmentDate.MaxDateTime = DateTime.Today.AddMonths(6);
 
-      // ResetLables
-     
-      //bSearch.Text = string.Empty;
+      // ResetComboBox
+      _ResetComboBox();
 
       // Disable steps button
       btnSteps.Enabled = false;
       btnSteps.Text = "Next";
     
+    }
+
+    private void _ResetComboBox()
+    {
+      cbStartTime.SelectedIndex = 0;
+      cbDoctor.SelectedIndex = 0;
+      cbEndTime.SelectedIndex = 0;
+     // cbLable.SelectedIndex = 0;
+      cbEndTime.SelectedIndex = 0;
+      cbLocation.SelectedIndex = 0;
+      cbMark.SelectedIndex = 0;
+
+    }
+
+    // Filling Mark comboBox
+    private void _FillingMarkComboBox()
+    {
       cbMark.Items.Add(new CustomList(0, "Diagnosis"));
       cbMark.Items.Add(new CustomList(1, "Extraction"));
       cbMark.Items.Add(new CustomList(2, "Restoration"));
       cbMark.Items.Add(new CustomList(3, "Whitening"));
       cbMark.Items.Add(new CustomList(4, "Orthopedic"));
       cbMark.Items.Add(new CustomList(5, "Implantation"));
-      // Filling ComboBox with Data
-      _FillComboBoxWithTime();
-      _FillDoctorsComboBox();
-     
-    }
 
+    }
 
     // Filling ComboBox with time it start with 8:00 AM.
     private void _FillComboBoxWithTime()
