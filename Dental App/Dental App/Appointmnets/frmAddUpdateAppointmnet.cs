@@ -133,6 +133,7 @@ namespace Dental_App.Appointmnets
       {
         //frmAddUpdateAppointmnet.Text = "Add new Appointment";
         _Appointment = new clsAppointments();
+        _Procedure = new clsProcedures();
       }
       else
       {
@@ -279,7 +280,7 @@ namespace Dental_App.Appointmnets
           { chbFullMouthImplants, _Procedure.FullMouthImplant },
           { chbCleaning, _Procedure.Cleaning },
           { chbDiagnosis, _Procedure.Diagnosis },
-          { chbSimpleExtraction, _Procedure.SimpleExtraction }, // Fixed typo
+          { chbSimpleExtraction, _Procedure.SimpleExtraction },
           { chbComplicatedExtrcation, _Procedure.ComplicatedExtrcation },
           { chbComplexExtraction, _Procedure.ComplexExtraction }
         };
@@ -471,11 +472,51 @@ namespace Dental_App.Appointmnets
       _Appointment.PaymentID = _PaymentID;
       _Appointment.MedicalRecordID = _GetMedicalRecordID();
 
+     // _Appointment.ProcedureID =
       _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
       _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
     }
 
+    // Fill Procedure object 
+    private void _FillProcedure()
+    {
+      // Map checkboxes to their corresponding _Procedure properties
+      var checkboxToPropertyMap = new Dictionary<CheckBoxAdv, Action<byte>>
+      {
 
+          { chbPeroxide25, value => _Procedure.Peroxide25 = value },
+          { chbPeroxide40, value => _Procedure.Peroxide40 = value },
+          { chbCompositeFilling, value => _Procedure.CompositeFilling = value },
+          { chbPorcelainFilling, value => _Procedure.PorcelainFilling = value },
+          { chbAmalgamFilling, value => _Procedure.AmalgamFilling = value },
+          { chbSingleImplant, value => _Procedure.SingleImplant = value },
+          { chbDoubleImplant, value => _Procedure.DoubleImplant = value },
+          { chbFullMouthImplants, value => _Procedure.FullMouthImplant = value },
+          { chbCleaning, value => _Procedure.Cleaning = value },
+          { chbXray, value => _Procedure.Xray = value },
+          { chbDiagnosis, value => _Procedure.Diagnosis = value },
+          { chbSimpleExtraction, value => _Procedure.SimpleExtraction = value },
+          { chbComplicatedExtrcation, value => _Procedure.ComplicatedExtrcation = value },
+          { chbComplexExtraction, value => _Procedure.ComplexExtraction = value }
+      };
+
+      // Update all properties in a loop
+      foreach (var mapping in checkboxToPropertyMap)
+      {
+        mapping.Value((byte)(mapping.Key.Checked ? 1 : 0));
+        //mapping.Value(value); // Invoke the setter
+      }
+    }
+
+
+    private int GetProcedureID()
+    {
+      if (_Procedure.Save())
+      {
+        return _Procedure.ProceduerID;
+      }
+      return -1;
+    }
 
     // OnClick on these buttons will show spicific plan panel
     private void btnDiagnosis_Click(object sender, EventArgs e)
@@ -549,6 +590,7 @@ namespace Dental_App.Appointmnets
         btnSteps.Enabled = true;
         btnPrintBill.Enabled = true;
 
+        _FillProcedure();
         _UpdateBillInfo();
       }
       else
@@ -594,6 +636,13 @@ namespace Dental_App.Appointmnets
     private void expertsBtn2_Click(object sender, EventArgs e)
     {
       this.Close();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      _FillProcedure();
+      MessageBoxAdv.Show($"{_Procedure.Xray.ToString()}");
+      MessageBoxAdv.Show($"{_Procedure.Cleaning.ToString()}");
     }
   }
 

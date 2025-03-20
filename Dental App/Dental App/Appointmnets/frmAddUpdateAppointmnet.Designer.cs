@@ -117,6 +117,7 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnSteps = new Dental_App.ExpertsBtn();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
+      this.button1 = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.pnlDiagnosis.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.chbDiagnosis)).BeginInit();
@@ -1463,12 +1464,24 @@
       this.expertsBtn2.UseVisualStyleBackColor = false;
       this.expertsBtn2.Click += new System.EventHandler(this.expertsBtn2_Click);
       // 
+      // button1
+      // 
+      this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+      this.button1.Location = new System.Drawing.Point(197, 658);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(164, 30);
+      this.button1.TabIndex = 156;
+      this.button1.Text = "button1";
+      this.button1.UseVisualStyleBackColor = false;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
       // frmAddUpdateAppointmnet
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ControlLight;
       this.ClientSize = new System.Drawing.Size(868, 696);
+      this.Controls.Add(this.button1);
       this.Controls.Add(this.btnSteps);
       this.Controls.Add(this.tcAppointment);
       this.Controls.Add(this.label4);
@@ -1616,5 +1629,6 @@
     private System.Windows.Forms.Label lblPatientName;
     private System.Windows.Forms.Label lblTime;
     private System.Windows.Forms.Label label11;
+    private System.Windows.Forms.Button button1;
   }
 }
