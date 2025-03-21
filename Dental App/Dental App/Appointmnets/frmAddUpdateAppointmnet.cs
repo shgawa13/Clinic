@@ -32,8 +32,8 @@ namespace Dental_App.Appointmnets
     private clsPayments _Payment;
     private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
-    private clsPatient _Patient { get; set; }
-    private clsProcedures _Procedure { get; set; }
+    private clsPatient _Patient;
+    private clsProcedures _Procedure;
 
     private int _PatientID;
     private int _PaymentID;
@@ -134,6 +134,7 @@ namespace Dental_App.Appointmnets
         //frmAddUpdateAppointmnet.Text = "Add new Appointment";
         _Appointment = new clsAppointments();
         _Procedure = new clsProcedures();
+
       }
       else
       {
@@ -455,6 +456,7 @@ namespace Dental_App.Appointmnets
       // Getting doctorID 
       CustomList selectedDoctor = (CustomList)cbDoctor.SelectedItem;
       CustomList selectedLable = (CustomList)cbLable.SelectedItem;
+
       _Appointment.PatientID = (int)_PatientID;
       _Appointment.DoctorID = selectedDoctor.ID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
@@ -471,8 +473,7 @@ namespace Dental_App.Appointmnets
       _Appointment.MarkerValue = 1;
       _Appointment.PaymentID = _PaymentID;
       _Appointment.MedicalRecordID = _GetMedicalRecordID();
-
-     // _Appointment.ProcedureID =
+      _Appointment.ProcedureID = GetProcedureID();
       _SelectedAppointmentDate = (DateTime)dtAppointmentDate.Value;
       _AppointmnetTime = GetSelectedTime(cbStartTime).ToString();
     }
@@ -480,32 +481,21 @@ namespace Dental_App.Appointmnets
     // Fill Procedure object 
     private void _FillProcedure()
     {
-      // Map checkboxes to their corresponding _Procedure properties
-      var checkboxToPropertyMap = new Dictionary<CheckBoxAdv, Action<byte>>
-      {
 
-          { chbPeroxide25, value => _Procedure.Peroxide25 = value },
-          { chbPeroxide40, value => _Procedure.Peroxide40 = value },
-          { chbCompositeFilling, value => _Procedure.CompositeFilling = value },
-          { chbPorcelainFilling, value => _Procedure.PorcelainFilling = value },
-          { chbAmalgamFilling, value => _Procedure.AmalgamFilling = value },
-          { chbSingleImplant, value => _Procedure.SingleImplant = value },
-          { chbDoubleImplant, value => _Procedure.DoubleImplant = value },
-          { chbFullMouthImplants, value => _Procedure.FullMouthImplant = value },
-          { chbCleaning, value => _Procedure.Cleaning = value },
-          { chbXray, value => _Procedure.Xray = value },
-          { chbDiagnosis, value => _Procedure.Diagnosis = value },
-          { chbSimpleExtraction, value => _Procedure.SimpleExtraction = value },
-          { chbComplicatedExtrcation, value => _Procedure.ComplicatedExtrcation = value },
-          { chbComplexExtraction, value => _Procedure.ComplexExtraction = value }
-      };
+      _Procedure.Peroxide25 = (byte)((chbPeroxide25.Checked) ? 1 : 0);
+      _Procedure.Peroxide40 = (byte)((chbPeroxide40.Checked) ? 1 : 0);
+      _Procedure.CompositeFilling = (byte)((chbCompositeFilling.Checked) ? 1 : 0);
+      _Procedure.PorcelainFilling = (byte)((chbPorcelainFilling.Checked) ? 1 : 0);
+      _Procedure.AmalgamFilling = (byte)((chbAmalgamFilling.Checked) ? 1 : 0);
+      _Procedure.SingleImplant = (byte)((chbSingleImplant.Checked) ? 1 : 0);
+      _Procedure.DoubleImplant = (byte)((chbDoubleImplant.Checked) ? 1 : 0);
+      _Procedure.FullMouthImplant = (byte)((chbFullMouthImplants.Checked) ? 1 : 0);
+      _Procedure.Cleaning = (byte)((chbCleaning.Checked) ? 1 : 0);
+      _Procedure.Diagnosis = (byte)((chbDiagnosis.Checked) ? 1 : 0);
+      _Procedure.SimpleExtraction = (byte)((chbSimpleExtraction.Checked) ? 1 : 0);
+      _Procedure.ComplicatedExtrcation = (byte)((chbComplicatedExtrcation.Checked) ? 1 : 0);
+      _Procedure.ComplexExtraction = (byte)((chbComplexExtraction.Checked) ? 1 : 0);
 
-      // Update all properties in a loop
-      foreach (var mapping in checkboxToPropertyMap)
-      {
-        mapping.Value((byte)(mapping.Key.Checked ? 1 : 0));
-        //mapping.Value(value); // Invoke the setter
-      }
     }
 
 
@@ -513,6 +503,7 @@ namespace Dental_App.Appointmnets
     {
       if (_Procedure.Save())
       {
+        MessageBox.Show($"procedure has been added successfully");
         return _Procedure.ProceduerID;
       }
       return -1;
@@ -568,16 +559,16 @@ namespace Dental_App.Appointmnets
 
     //------------------------------------- [ Bills Tap ] --------------------------------------------//
 
-    private void btnPrintBill_Click(object sender, EventArgs e)
-    {
-      frmPDFBills frm = new frmPDFBills();
-      frm.ShowDialog();
-    }
-
     private void btnPayBill_Click(object sender, EventArgs e)
     {
       frmPay frm = new frmPay(TotalCost);
       frm.DataBack += GetPaymentID;
+      frm.ShowDialog();
+    }
+
+    private void btnPrintBill_Click(object sender, EventArgs e)
+    {
+      frmPDFBills frm = new frmPDFBills();
       frm.ShowDialog();
     }
 
@@ -603,8 +594,8 @@ namespace Dental_App.Appointmnets
     // here we update Bill info
     private void _UpdateBillInfo()
     {
-      lblBillsDate.Text = dtAppointmentDate.Value.ToString();
-      lblTime.Text = _Appointment.StartTime.ToShortTimeString();
+      lblBillsDate.Text = dtAppointmentDate.DateTimeText;
+      lblTime.Text = cbStartTime.SelectedText;
       lblPatientName.Text = _Patient.PatientInfo.FullName;
       lblLocation.Text = cbLocation.SelectedItem.ToString();
       lblDoctorName.Text = cbDoctor.SelectedItem.ToString();
@@ -638,12 +629,7 @@ namespace Dental_App.Appointmnets
       this.Close();
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-      _FillProcedure();
-      MessageBoxAdv.Show($"{_Procedure.Xray.ToString()}");
-      MessageBoxAdv.Show($"{_Procedure.Cleaning.ToString()}");
-    }
+   
   }
 
   /// <summary>
