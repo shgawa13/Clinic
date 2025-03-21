@@ -457,7 +457,7 @@ namespace Dental_App.Appointmnets
       CustomList selectedDoctor = (CustomList)cbDoctor.SelectedItem;
       CustomList selectedLable = (CustomList)cbLable.SelectedItem;
 
-      _Appointment.PatientID = (int)_PatientID;
+      _Appointment.PatientID = (int)_Patient.PatientID;
       _Appointment.DoctorID = selectedDoctor.ID;
       _Appointment.Subject = _Patient.PatientInfo.FullName;
       _Appointment.Content = selectedDoctor.DisplayMember;
@@ -470,7 +470,7 @@ namespace Dental_App.Appointmnets
       _Appointment.LabelValue = 1;
       _Appointment.Reminder = false;
       _Appointment.Owner = 1;
-      _Appointment.MarkerValue = 1;
+      _Appointment.MarkerValue = cbMark.SelectedIndex;
       _Appointment.PaymentID = _PaymentID;
       _Appointment.MedicalRecordID = _GetMedicalRecordID();
       _Appointment.ProcedureID = GetProcedureID();
