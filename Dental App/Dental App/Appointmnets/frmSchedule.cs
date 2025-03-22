@@ -46,7 +46,6 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu;
 
     }
-
     //
     // Summary:
     //     Gets a Metro ContextMenu implementing standard set of menu items for metro theme
