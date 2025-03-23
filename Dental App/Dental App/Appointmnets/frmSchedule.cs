@@ -41,11 +41,13 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
+      //this.scheduleControl1.Re
      // this.scheduleControl1.Item
       // Assign the custom context menu to the ScheduleControl
       this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu;
 
     }
+
     //
     // Summary:
     //     Gets a Metro ContextMenu implementing standard set of menu items for metro theme
@@ -84,26 +86,24 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ContextMenuStrip = MetroContextMenu();
     }
 
-    // View Schedule by day
-    private void SwitchToDayView(object sender, EventArgs e)
+    // handle all view type
+    private void HandleViewType(ScheduleViewType ViewType)
     {
-      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Day);
+     
+      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ViewType);
     }
+
+    // View Schedule by day
+    private void SwitchToDayView(object sender, EventArgs e) => HandleViewType(ScheduleViewType.Day);
+    
 
     // View Schedule by Week 
-    private void SwitchToWeekView(object sender, EventArgs e)
-    {
-      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Week);
-    }
-
+    private void SwitchToWeekView(object sender, EventArgs e) => HandleViewType(ScheduleViewType.Week);
+   
 
     // View Schedule by Month 
-    private void SwitchToMonthView(object sender, EventArgs e)
-    {
-      this.scheduleControl1.PerformSwitchToScheduleViewTypeClick(ScheduleViewType.Month);
-    }
-
-
+    private void SwitchToMonthView(object sender, EventArgs e) => HandleViewType(ScheduleViewType.Month);
+    
 
     private void AddNew(object sender, EventArgs e)
     {
@@ -124,14 +124,15 @@ namespace Dental_App.Appointmnets
     {
       
       MessageBox.Show("Edit item clicked");
+     //this.list.
     }
 
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       if (e.Item != null)
         MessageBox.Show("there is item");
-
-    
+     
+      // e.
       SelectedAppointmentDate = e.ClickDateTime.Date;
       _AppointmnetTime = e.ClickDateTime.ToShortTimeString(); 
      

@@ -261,7 +261,7 @@ namespace GridScheduleSample
         bool val = base.IsDirty;
         if (!val) //if no global setting marked list as dirty, check individual items
         {
-          foreach (IScheduleAppointment item in this.MasterList)
+          foreach (clsAppointments item in this.MasterList)
           {
             if (item.Dirty)
             {
