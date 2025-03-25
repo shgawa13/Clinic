@@ -455,7 +455,6 @@ namespace ClinicConsoleApp
       //string keyPath = @"HKEY_CURRENT_USER\SOFTWARE\DentalApp";
       //string valueName = "UserName";
 
-
       //try
       //{
       //  string valueData= Registry.GetValue(keyPath, valueName,null) as string;
@@ -475,7 +474,7 @@ namespace ClinicConsoleApp
       //st2.Stop();
       //Console.WriteLine($"with StringBuilder concationation it took: {st2.ElapsedMilliseconds} ms");
 
-      AddProcudure();
+     // AddProcudure();
 
       Console.ReadKey();
     }
