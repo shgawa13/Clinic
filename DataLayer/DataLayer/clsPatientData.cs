@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DataLayer
 {
@@ -22,7 +23,7 @@ namespace DataLayer
       {
 
         // Create Connection 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();
@@ -67,7 +68,7 @@ namespace DataLayer
       {
 
         // Create Connection 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();
@@ -107,7 +108,7 @@ namespace DataLayer
       {
 
         // Create Connection 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();
@@ -156,7 +157,7 @@ namespace DataLayer
       {
 
         // Create Connection 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();
@@ -195,18 +196,18 @@ namespace DataLayer
 
 
     // Find by Patient by NationalID
-    public static bool FindPatientByNationalID(string NationalID, ref int PersonID, ref int PatientID)
+    public static bool FindPatientByNationalID(string NationalID, ref int PatientID, ref int PersonID)
     {
       bool IsFound = false;
       string query = @"Select Patients.PersonID,PatientID From Patients
                       inner join People On Patients.PersonID=People.PersonID
-                      Where NationalID Like @NationalID + '%';";
+                      Where NationalID=@NationalID;";
 
       try
       {
 
         // Create Connection 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();
@@ -221,8 +222,8 @@ namespace DataLayer
               {
                 IsFound = true;
 
-                PersonID = (int)reader["PersonID"];
                 PatientID = (int)reader["PatientID"];
+                PersonID = (int)reader["PersonID"];
 
               }
             }
@@ -255,7 +256,7 @@ namespace DataLayer
       try
       {
 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();
@@ -296,7 +297,7 @@ namespace DataLayer
       try
       {
 
-        using (SqlConnection connection = new SqlConnection(clsAccessSetting.ConnectingString))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
         {
           // Open the connection 
           connection.Open();

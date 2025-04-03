@@ -27,13 +27,24 @@ namespace Dental_App.Appointmnets
 
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
-   
+
+
+    public enum enLabelValue { }
+
+
     private clsAppointments _Appointment;
     private clsPayments _Payment;
     private clsMedicalRecords _MedicalRecord;
     private ScheduleControl _ScheduleGrid;
     private clsPatient _Patient;
     private clsProcedures _Procedure;
+
+    private ListObjectList _LabelList;
+    protected ListObjectList LabelList
+    {
+      get { return _LabelList; }
+      set { LabelList = value; }
+    }
 
     private int _PatientID;
     private int _PaymentID;
@@ -56,6 +67,7 @@ namespace Dental_App.Appointmnets
       CheckBoxEvent();
     }
 
+   
     //// From Schedule to Update an Existing appointment
     //public frmAddUpdateAppointmnet(int ApptID, ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     //{
@@ -110,7 +122,9 @@ namespace Dental_App.Appointmnets
       _ResetDefualtValues();
       if (_Mode == enMode.Update)
         _LoadData();
-      ctrlPatientCardWithFilter1.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1;
+
+      ctrlPatientCardWithFilter2.OnPatientSelected += CtrlPatientCardWithFilter1_OnPatientSelected1;
+      
     }
 
     private void CtrlPatientCardWithFilter1_OnPatientSelected1(object sender, Patients.controls.ctrlPatientCardWithFilter.PatientCardEventArgs e)
@@ -128,8 +142,9 @@ namespace Dental_App.Appointmnets
       _FillComboBoxWithTime();
       _FillDoctorsComboBox();
       _FillingMarkComboBox();
+      _FillingLabelComboBox();
 
-      if(_Mode == enMode.AddNew)
+      if (_Mode == enMode.AddNew)
       {
         //frmAddUpdateAppointmnet.Text = "Add new Appointment";
         _Appointment = new clsAppointments();
@@ -155,8 +170,8 @@ namespace Dental_App.Appointmnets
       _ResetComboBox();
 
       // Disable steps button
-      btnSteps.Enabled = false;
-      btnSteps.Text = "Next";
+       btnSteps.Enabled = false;
+       btnSteps.Text = "Next";
     
     }
 
@@ -181,8 +196,29 @@ namespace Dental_App.Appointmnets
       cbMark.Items.Add(new CustomList(3, "Whitening"));
       cbMark.Items.Add(new CustomList(4, "Orthopedic"));
       cbMark.Items.Add(new CustomList(5, "Implantation"));
-
+      
+     
     }
+
+    // Filing Label comboBox
+    private void _FillingLabelComboBox()
+    {
+
+      cbLable.Items.Add(new CustomList(0, "None"));
+      cbLable.Items.Add(new CustomList(1, "Important"));
+      cbLable.Items.Add(new CustomList(2, "Business"));
+      cbLable.Items.Add(new CustomList(3, "Personal"));
+      cbLable.Items.Add(new CustomList(4, "Vacation"));
+      cbLable.Items.Add(new CustomList(5, "Must Attend"));
+      cbLable.Items.Add(new CustomList(6, "Travel Required"));
+      cbLable.Items.Add(new CustomList(7, "Needs Preparation"));
+      cbLable.Items.Add(new CustomList(8, "Birthday"));
+      cbLable.Items.Add(new CustomList(9, "Anniversary"));
+      cbLable.Items.Add(new CustomList(10, "Phone Call"));
+    }
+
+
+
 
     // Filling ComboBox with time it start with 8:00 AM.
     private void _FillComboBoxWithTime()
@@ -227,11 +263,16 @@ namespace Dental_App.Appointmnets
     {
       DataTable Doctors = clsDoctors.GetAllDoctors();
 
+      if(Doctors.Rows.Count == 0)
+        cbDoctor.Items.Add(new CustomList(0, "- Select Doctor -"));
+
+
       foreach (DataRow row in Doctors.Rows)
       {
         cbDoctor.Items.Add(new CustomList((int)row["DoctorID"],(string)row["FullName"]));
       }
-
+      cbDoctor.SelectedIndex = 0;
+      
     }
 
     // Find patient
@@ -306,7 +347,7 @@ namespace Dental_App.Appointmnets
       }
 
       ctrlPatientCardWithFilter1.LoadPatientInfo(_Appointment.PatientID);
-      _FindProcedure(_Appointment.ProcedureID);
+     // _FindProcedure(_Appointment.ProcedureID);
       dtAppointmentDate.Value = _Appointment.StartTime.Date;
       cbStartTime.SelectedIndex = cbStartTime.FindString(_Appointment.StartTime.ToShortTimeString());
       cbEndTime.SelectedIndex = cbStartTime.FindString(_Appointment.EndTime.ToShortTimeString());
@@ -417,21 +458,22 @@ namespace Dental_App.Appointmnets
     }
 
    
+
     private void btnSteps_Click(object sender, EventArgs e)
     {
 
-      if(tcAppointment.SelectedIndex !=2)
-        tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
+        if (tcAppointment.SelectedIndex != 2)
+            tcAppointment.SelectedTab = tcAppointment.TabPages[tcAppointment.SelectedIndex + 1];
 
-      if(tcAppointment.SelectedIndex == 2 && btnSteps.Enabled)
-      {
-         _SaveAppointment();
-        if (_Appointment.Save())
-          MessageBox.Show("Appointment Has been Added Successully");
-        else
-          MessageBox.Show("Erorr: Something went wrong couldn't add an appointment");
+        if (tcAppointment.SelectedIndex == 2 && btnSteps.Enabled)
+        {
+            _SaveAppointment();
+            if (_Appointment.Save())
+                MessageBox.Show("Appointment Has been Added Successully");
+            else
+                MessageBox.Show("Erorr: Something went wrong couldn't add an appointment");
 
-      }
+        }
 
     }
 
@@ -444,7 +486,7 @@ namespace Dental_App.Appointmnets
       {
         btnSteps.Enabled = false;
         btnSteps.Text = "Save";
-      }
+       }
       else
       {
         btnSteps.Text = "Next";
@@ -509,42 +551,45 @@ namespace Dental_App.Appointmnets
       return -1;
     }
 
+
     // OnClick on these buttons will show spicific plan panel
-    private void btnDiagnosis_Click(object sender, EventArgs e)
+    private void DiagnosisBtn_Click(object sender, EventArgs e)
     {
-      _Plan = enPlan.Diagnosis;
-      HandlePlans();
+       _Plan = enPlan.Diagnosis;
+       HandlePlans();
     }
 
-    private void btnExtraction_Click(object sender, EventArgs e)
+    private void ExtractionBtn_Click(object sender, EventArgs e)
     {
       _Plan = enPlan.Extraction;
       HandlePlans();
     }
 
-    private void btnRestoration_Click(object sender, EventArgs e)
+    private void RestorationBtn_Click(object sender, EventArgs e)
     {
       _Plan = enPlan.Restoration;
       HandlePlans();
     }
 
-    private void btnWhitening_Click(object sender, EventArgs e)
+    private void WhiteningBtn_Click(object sender, EventArgs e)
     {
       _Plan = enPlan.Whitening;
       HandlePlans();
     }
 
-    private void Orthopedic_Click(object sender, EventArgs e)
+    private void ImplantationBtn_Click(object sender, EventArgs e)
+    {
+      _Plan = enPlan.Implantation;
+      HandlePlans();
+    }
+
+    private void OrthopedicBtn_Click(object sender, EventArgs e)
     {
       _Plan = enPlan.Orthopedic;
       HandlePlans();
     }
 
-    private void btnImplantation_Click(object sender, EventArgs e)
-    {
-      _Plan = enPlan.Implantation;
-      HandlePlans();
-    }
+
 
     // Hiding all Panels
     private void HideAllPanels()
@@ -559,19 +604,20 @@ namespace Dental_App.Appointmnets
 
     //------------------------------------- [ Bills Tap ] --------------------------------------------//
 
-    private void btnPayBill_Click(object sender, EventArgs e)
+    private void PayBillBtn_Click(object sender, EventArgs e)
     {
       frmPay frm = new frmPay(TotalCost);
       frm.DataBack += GetPaymentID;
       frm.ShowDialog();
     }
+    
 
-    private void btnPrintBill_Click(object sender, EventArgs e)
+    private void PrintBillBtn_Click(object sender, EventArgs e)
     {
       frmPDFBills frm = new frmPDFBills();
       frm.ShowDialog();
     }
-
+   
     // here we assing PaymentID 
     private void GetPaymentID(object sender, int PaymentID)
     {
@@ -624,12 +670,11 @@ namespace Dental_App.Appointmnets
       
     }
 
-    private void expertsBtn2_Click(object sender, EventArgs e)
+    private void btnClose_Click(object sender, EventArgs e)
     {
-      this.Close();
+        this.Close();
     }
 
-   
   }
 
   /// <summary>

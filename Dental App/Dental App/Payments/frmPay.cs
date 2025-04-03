@@ -132,6 +132,7 @@ namespace Dental_App.Payments
         lblTitle.Text = "Update Payment";
         lblID.Text = _Payment.PaymentID.ToString();
         MessageBox.Show("Pyament Data has been Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        btnSteps.Enabled = false;
         Mode = enMode.Update;
 
         DataBack?.Invoke(this,_Payment.PaymentID);

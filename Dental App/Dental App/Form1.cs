@@ -12,6 +12,7 @@ using FontAwesome.Sharp;
 using Dental_App.Appointmnets;
 using Dental_App.Doctors;
 using Dental_App.Patients;
+using Dental_App.Test;
 
 namespace Dental_App
 {
@@ -155,8 +156,8 @@ namespace Dental_App
 
     private void iconButton7_Click(object sender, EventArgs e)
     {
-     // MessageBox.Show("Testing");
-     // OpenChildForm(new testCard());
+      // MessageBox.Show("Testing");
+       OpenChildForm(new frmTestCardWithFilter());
     }
 
     private void homeBtn_Click(object sender, EventArgs e)

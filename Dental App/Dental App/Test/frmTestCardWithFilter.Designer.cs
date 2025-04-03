@@ -1,6 +1,6 @@
-﻿namespace Dental_App.Patients
+﻿namespace Dental_App.Test
 {
-  partial class frmPatientInfo
+  partial class frmTestCardWithFilter
   {
     /// <summary>
     /// Required designer variable.
@@ -28,34 +28,32 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.ctrlPatientCard1 = new Dental_App.Patients.controls.ctrlPatientCard();
+      this.ctrlPatientCardWithFilter1 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
       this.SuspendLayout();
       // 
-      // ctrlPatientCard1
+      // ctrlPatientCardWithFilter1
       // 
-      this.ctrlPatientCard1.BackColor = System.Drawing.Color.Gainsboro;
-      this.ctrlPatientCard1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 0);
-      this.ctrlPatientCard1.Name = "ctrlPatientCard1";
-      this.ctrlPatientCard1.SelectedPatient = null;
-      this.ctrlPatientCard1.Size = new System.Drawing.Size(621, 317);
-      this.ctrlPatientCard1.TabIndex = 0;
+      this.ctrlPatientCardWithFilter1.FilterEnable = true;
+      this.ctrlPatientCardWithFilter1.Location = new System.Drawing.Point(2, 3);
+      this.ctrlPatientCardWithFilter1.Name = "ctrlPatientCardWithFilter1";
+      this.ctrlPatientCardWithFilter1.Size = new System.Drawing.Size(619, 362);
+      this.ctrlPatientCardWithFilter1.TabIndex = 0;
       // 
-      // frmPatientInfo
+      // frmTestCardWithFilter
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(621, 317);
-      this.Controls.Add(this.ctrlPatientCard1);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-      this.Name = "frmPatientInfo";
-      this.Text = "Patient Card";
+      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.ctrlPatientCardWithFilter1);
+      this.Name = "frmTestCardWithFilter";
+      this.Text = "frmTestCardWithFilter";
+      this.Load += new System.EventHandler(this.frmTestCardWithFilter_Load);
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private controls.ctrlPatientCard ctrlPatientCard1;
+    private Patients.controls.ctrlPatientCardWithFilter ctrlPatientCardWithFilter1;
   }
 }

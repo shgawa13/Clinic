@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
 using Dental_App.Appointmnets;
+using Dental_App.Global_Classes;
 
 namespace Dental_App.Patients
 {
@@ -16,24 +17,14 @@ namespace Dental_App.Patients
   {
     private clsPatient _Patient;
 
-    private static DataTable _dtAllPatients = clsPatient.GetAllPatients();
+    private static DataTable _dtAllPatients = clsPatient.GetAllPatients() ?? new DataTable();
 
-    // show only colums in the Table
-    private DataTable _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
-      "PatientID", "NationalID", "FirstName", "SecondName", "LastName", "DateOfBirth", "Gendor",
-      "PhoneNumber", "Email");
-    // here we will refresh the list 
-    private void _RefreshPatientsList()
-    {
-      _dtAllPatients = clsPatient.GetAllPatients();
-      _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
-      "PatientID", "NationalID", "FirstName", "SecondName", "LastName", "DateOfBirth", "Gendor","PhoneNumber",
-      "Email");
+    private DataTable _dtPatients = _dtAllPatients.Clone(); // Create structure copy
 
-      dgvPatients.DataSource = _dtPatients;
-      lblPatientsNumbers.Text = dgvPatients.RowCount.ToString();
-      
-    }
+    //// show only colums in the Table
+    //private DataTable _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
+    //  "PatientID", "NationalID", "FirstName", "SecondName", "LastName", "DateOfBirth", "Gendor",
+    //  "PhoneNumber", "Email");
 
     public frmListPatients()
     {
@@ -43,21 +34,41 @@ namespace Dental_App.Patients
     }
 
 
+    // here we will refresh the list 
+    private void _RefreshPatientsList()
+    {
+      // Get data or empty table if null
+      _dtAllPatients = clsPatient.GetAllPatients() ?? new DataTable();
+
+      // we check if the table is empty or not
+      cbFilter.Enabled = _HandleEmptyTable();
+      lbPatientsDataTable.Visible = !cbFilter.Enabled;
+
+      dgvPatients.DataSource = _dtPatients;
+      lblPatientsNumbers.Text = dgvPatients.RowCount.ToString();
+
+    }
+
+
     private void frmListPatients_Load(object sender, EventArgs e)
     {
       _RefreshPatientsList();
 
       // here we style the width of columns 
-      dgvPatients.Columns[0].HeaderText = "PatientID";
-      dgvPatients.Columns[0].Width = 65;
+      if (cbFilter.Enabled)
+      {
+        dgvPatients.Columns[0].HeaderText = "PatientID";
+        dgvPatients.Columns[0].Width = 65;
 
-      dgvPatients.Columns[6].HeaderText = "Gendor";
-      dgvPatients.Columns[6].Width = 60;
+        dgvPatients.Columns[6].HeaderText = "Gendor";
+        dgvPatients.Columns[6].Width = 60;
+      }
     }
 
     private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
     {
-      txtFilterValue.Visible = (cbFilter.Text != "None");
+
+      txtFilterValue.Visible = (cbFilter.Text != "None") ;
      
       if (cbFilter.Visible)
       {
@@ -66,6 +77,25 @@ namespace Dental_App.Patients
       }
 
     }
+
+    private bool _HandleEmptyTable()
+    {
+      if (_dtAllPatients.Rows.Count >0)
+      {
+        _dtPatients = _dtAllPatients.DefaultView.ToTable(false,
+            "PatientID", "NationalID", "FirstName", "SecondName", "LastName",
+            "DateOfBirth", "Gendor", "PhoneNumber", "Email");
+        return true;
+      }
+      else
+      {
+        // Clear the table but maintain structure
+        _dtPatients.Clear();
+        return false;
+      }
+    }
+
+  
 
     private void txtFilterValue_TextChanged(object sender, EventArgs e)
     {
@@ -133,34 +163,43 @@ namespace Dental_App.Patients
       _RefreshPatientsList();
     }
 
-    private void tlsmShowInfo_Click(object sender, EventArgs e)
+
+
+    private void tlsmAddAppointment_Click(object sender, EventArgs e)
+    {
+      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet((int)dgvPatients.CurrentRow.Cells[0].Value);
+      frm.ShowDialog();
+    }
+
+    private void tlsmUpdateAppointment_Click(object sender, EventArgs e)
+    {
+      throw new NotImplementedException();
+    }
+
+    private void tlsmShowPatientInfo_Click(object sender, EventArgs e)
     {
       int PateintID = (int)dgvPatients.CurrentRow.Cells[0].Value;
       frmPatientInfo frm = new frmPatientInfo(PateintID);
       frm.ShowDialog();
-      
+
       // refreshing
-     //  _RefreshPatientsList();
+      //  _RefreshPatientsList();
+
     }
 
     private void tlsmEdit_Click(object sender, EventArgs e)
     {
       frmAddUpdatePatient frm = new frmAddUpdatePatient((int)dgvPatients.CurrentRow.Cells[0].Value);
       frm.ShowDialog();
+
     }
 
-    private void tlsmDelete_Click(object sender, EventArgs e)
+    private void tlsmDeletePatient_Click(object sender, EventArgs e)
     {
-      MessageBox.Show("Are you sure to delete this patient","Worinig",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
+      MessageBox.Show("Are you sure to delete this patient", "Worinig", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
       int PateintID = (int)dgvPatients.CurrentRow.Cells[0].Value;
       _Patient.DeletePatient(PateintID);
-      
-    }
 
-    private void addAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet((int)dgvPatients.CurrentRow.Cells[0].Value);
-      frm.ShowDialog();
     }
   }
 }

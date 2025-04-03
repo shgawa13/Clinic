@@ -121,53 +121,13 @@ namespace Dental_App.Patients.controls
 
     private void linkEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      Form frm = new frmAddUpdatePatient(_PatientID);
+      Form frm = new frmAddUpdatePatient(_Patient.PatientID);
       frm.ShowDialog();
       // refreching
       LoadPatientInfo(_PatientID);
     }
 
-    private void lblPatientID_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblFullName_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblNationalID_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblDateOfBirth_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblGendor_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblPhone_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblCountry_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void lblEmail_Click(object sender, EventArgs e)
-    {
-
-    }
-  }
-
  
+  }
 
 }

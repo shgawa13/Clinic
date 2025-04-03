@@ -201,7 +201,7 @@ namespace DataLayer
                 else
                   ImagePath = (string)reader["ImagePath"];
 
-                NationalityCountryID = (int)reader["NationalityCountryID"];
+                NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
               }
             }
 

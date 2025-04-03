@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Security.Permissions;
+using System.Data;
 
 namespace Dental_App.Global_Classes
 {
@@ -85,6 +86,10 @@ namespace Dental_App.Global_Classes
       return true;
 
     }
+    
+    // This function will handle Empty DataTable from database
+    public static bool HandleEmptyTable(ref DataTable dt) => dt.Rows.Count > 0;
+    
 
   }
 }

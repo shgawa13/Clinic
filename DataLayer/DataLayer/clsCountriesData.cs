@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace DataLayer
 {
@@ -66,7 +67,7 @@ namespace DataLayer
               if (reader.Read())
               {
                 IsFound = true;
-                ID = (int)reader["CountryID"];
+                ID = Convert.ToInt32(reader["CountryID"]);
               }
             }
           }

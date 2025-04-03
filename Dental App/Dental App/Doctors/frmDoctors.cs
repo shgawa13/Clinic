@@ -16,51 +16,79 @@ namespace Dental_App.Doctors
 {
   public partial class frmDoctors : Form
   {
-    private static DataTable _dtAllDoctors = clsDoctors.GetAllDoctors();
+    private static DataTable _dtAllDoctors = clsDoctors.GetAllDoctors() ?? new DataTable();
 
-    private DataTable _dtDoctors = _dtAllDoctors.DefaultView.ToTable(false, "DoctorID", "NationalID",
-      "FullName", "Specialization", "DateOfBirth", "Gendor","PhoneNumber", "Email", "ImagePath",
-      "NationalityCountryID");
+    private DataTable _dtDoctors = _dtAllDoctors.Clone(); // Create structure copy
+
+    //private DataTable _dtDoctors = _dtAllDoctors.DefaultView.ToTable(false, "DoctorID", "NationalID",
+    //  "FullName", "Specialization", "DateOfBirth", "Gendor","PhoneNumber", "Email", "ImagePath",
+    //  "NationalityCountryID");
+
+    
+    public frmDoctors()
+    {
+      InitializeComponent();
+      cbFilter.SelectedIndex = 0;
+    }
 
     // here we will refresh the list 
     private void _RefreshDoctorList()
     {
-      _dtAllDoctors = clsDoctors.GetAllDoctors();
-      _dtDoctors = _dtAllDoctors.DefaultView.ToTable(false, "DoctorID", "NationalID",
-      "FullName", "Specialization", "DateOfBirth", "Gendor", "PhoneNumber", "Email");
+      _dtAllDoctors = clsDoctors.GetAllDoctors() ?? new DataTable();
+
+      //_dtDoctors = _dtAllDoctors.DefaultView.ToTable(false, "DoctorID", "NationalID",
+      //"FullName", "Specialization", "DateOfBirth", "Gendor", "PhoneNumber", "Email");
+
+      cbFilter.Enabled = _HandleEmptyTable();
+      lbDoctorsDataTable.Visible = !cbFilter.Enabled;
 
       dgvDoctors.DataSource = _dtDoctors;
       lblDoctorNumbers.Text = dgvDoctors.RowCount.ToString();
     }
-    // DoctorID,NatioanlID,FullName,Spec,DateOfBirth,Gendor,PhoneNumber,Email
-    public frmDoctors()
-    {
-      InitializeComponent();
-    }
 
+    // Handle Empty Table
     private void frmDoctors_Load(object sender, EventArgs e)
     {
       _RefreshDoctorList();
 
       // here we style the width of columns
-      dgvDoctors.Columns[0].HeaderText = "DoctorID";
-      dgvDoctors.Columns[0].Width =80;
+      if (cbFilter.Enabled)
+      {
+        dgvDoctors.Columns[0].HeaderText = "DoctorID";
+        dgvDoctors.Columns[0].Width = 80;
 
-      dgvDoctors.Columns[1].HeaderText = "NationalID";
-      dgvDoctors.Columns[1].Width = 120;
+        dgvDoctors.Columns[1].HeaderText = "NationalID";
+        dgvDoctors.Columns[1].Width = 120;
 
-      dgvDoctors.Columns[2].HeaderText = "FullName";
-      dgvDoctors.Columns[2].Width = 180;
+        dgvDoctors.Columns[2].HeaderText = "FullName";
+        dgvDoctors.Columns[2].Width = 180;
 
-      dgvDoctors.Columns[3].HeaderText = "Specialization";
-      dgvDoctors.Columns[3].Width = 110;
+        dgvDoctors.Columns[3].HeaderText = "Specialization";
+        dgvDoctors.Columns[3].Width = 110;
 
-      dgvDoctors.Columns[5].HeaderText ="Gendor";
-      dgvDoctors.Columns[5].Width =60;
+        dgvDoctors.Columns[5].HeaderText = "Gendor";
+        dgvDoctors.Columns[5].Width = 60;
 
-      cbFilter.SelectedIndex = 0;
+        cbFilter.SelectedIndex = 0;
+      }
 
     }
+
+    private bool _HandleEmptyTable()
+    {
+      if(_dtAllDoctors.Rows.Count > 0)
+      {
+        _dtDoctors=_dtAllDoctors.DefaultView.ToTable(false, "DoctorID", "NationalID",
+        "FullName", "Specialization", "DateOfBirth", "Gendor", "PhoneNumber", "Email");
+        return true;
+      }
+      else
+      {
+        _dtAllDoctors.Clear();
+        return false;
+      }
+    }
+
 
     private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -143,6 +171,11 @@ namespace Dental_App.Doctors
     private void Frm_RefreshDoctors(object sender, int DoctorID)
     {
       _RefreshDoctorList();
+    }
+
+    private void dgvDoctors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
     }
   }
 }

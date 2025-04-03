@@ -86,8 +86,8 @@ namespace Dental_App.Patients.controls
       switch (cbFilterBy.Text) 
       {
         case "Patient ID":
-         IsFound = ctrlPatientCard1.LoadPatientInfo(int.Parse(txtFilterValue.Text));
-          break;
+           IsFound = ctrlPatientCard1.LoadPatientInfo(int.Parse(txtFilterValue.Text.Trim()));
+           break;
 
         case "National ID":
           IsFound = ctrlPatientCard1.LoadPatientInfo(txtFilterValue.Text);
@@ -118,11 +118,13 @@ namespace Dental_App.Patients.controls
     }
 
 
+
     private void iconSearch_Click(object sender, EventArgs e)
     {
       FindNow();
     }
 
+   
     private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
     {
       // handle numbers input
@@ -133,6 +135,7 @@ namespace Dental_App.Patients.controls
     {
       cbFilterBy.SelectedIndex = 0;
     }
+
   }
   
 }

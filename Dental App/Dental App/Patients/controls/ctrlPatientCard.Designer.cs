@@ -157,7 +157,6 @@
       this.lblEmail.Size = new System.Drawing.Size(43, 24);
       this.lblEmail.TabIndex = 15;
       this.lblEmail.Text = "???";
-      this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
       // 
       // lblCountry
       // 
@@ -169,7 +168,6 @@
       this.lblCountry.Size = new System.Drawing.Size(43, 24);
       this.lblCountry.TabIndex = 14;
       this.lblCountry.Text = "???";
-      this.lblCountry.Click += new System.EventHandler(this.lblCountry_Click);
       // 
       // lblPhone
       // 
@@ -181,7 +179,6 @@
       this.lblPhone.Size = new System.Drawing.Size(43, 24);
       this.lblPhone.TabIndex = 13;
       this.lblPhone.Text = "???";
-      this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
       // 
       // lblGendor
       // 
@@ -193,7 +190,6 @@
       this.lblGendor.Size = new System.Drawing.Size(43, 24);
       this.lblGendor.TabIndex = 12;
       this.lblGendor.Text = "???";
-      this.lblGendor.Click += new System.EventHandler(this.lblGendor_Click);
       // 
       // lblDateOfBirth
       // 
@@ -205,7 +201,6 @@
       this.lblDateOfBirth.Size = new System.Drawing.Size(43, 24);
       this.lblDateOfBirth.TabIndex = 11;
       this.lblDateOfBirth.Text = "???";
-      this.lblDateOfBirth.Click += new System.EventHandler(this.lblDateOfBirth_Click);
       // 
       // lblNationalID
       // 
@@ -217,7 +212,6 @@
       this.lblNationalID.Size = new System.Drawing.Size(43, 24);
       this.lblNationalID.TabIndex = 10;
       this.lblNationalID.Text = "???";
-      this.lblNationalID.Click += new System.EventHandler(this.lblNationalID_Click);
       // 
       // lblFullName
       // 
@@ -229,7 +223,6 @@
       this.lblFullName.Size = new System.Drawing.Size(43, 24);
       this.lblFullName.TabIndex = 9;
       this.lblFullName.Text = "???";
-      this.lblFullName.Click += new System.EventHandler(this.lblFullName_Click);
       // 
       // lblPatientID
       // 
@@ -241,7 +234,6 @@
       this.lblPatientID.Size = new System.Drawing.Size(43, 24);
       this.lblPatientID.TabIndex = 8;
       this.lblPatientID.Text = "???";
-      this.lblPatientID.Click += new System.EventHandler(this.lblPatientID_Click);
       // 
       // grbPatient
       // 
@@ -289,7 +281,7 @@
       this.linkEdit.ForeColor = System.Drawing.Color.Thistle;
       this.linkEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
       this.linkEdit.LinkColor = System.Drawing.SystemColors.GradientActiveCaption;
-      this.linkEdit.Location = new System.Drawing.Point(480, 263);
+      this.linkEdit.Location = new System.Drawing.Point(485, 263);
       this.linkEdit.Name = "linkEdit";
       this.linkEdit.Size = new System.Drawing.Size(75, 21);
       this.linkEdit.TabIndex = 33;
@@ -300,9 +292,9 @@
       // pbAvatar
       // 
       this.pbAvatar.Image = global::Dental_App.Properties.Resources.Male_avatar;
-      this.pbAvatar.Location = new System.Drawing.Point(424, 90);
+      this.pbAvatar.Location = new System.Drawing.Point(434, 90);
       this.pbAvatar.Name = "pbAvatar";
-      this.pbAvatar.Size = new System.Drawing.Size(186, 170);
+      this.pbAvatar.Size = new System.Drawing.Size(176, 170);
       this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.pbAvatar.TabIndex = 32;
       this.pbAvatar.TabStop = false;

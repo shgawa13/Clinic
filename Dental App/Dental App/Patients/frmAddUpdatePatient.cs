@@ -60,12 +60,14 @@ namespace Dental_App.Patients
       _FillCountriesInComoboBox();
       if(_Mode == enMode.AddNew)
       {
+        this.Text = "Add New Patient";
         lblTitle.Text = "Add New Patient";
         _Person = new clsPerson();
         _Patient = new clsPatient();
       }
       else
       {
+        this.Text = "Update Patient";
         lblTitle.Text = "Update Patient";
       }
 

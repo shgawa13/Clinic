@@ -172,18 +172,18 @@ namespace Dental_App.Appointmnets
         item.DoctorID = (int)row["DoctorID"];
         item.Subject = (string)row["PatientName"];
         item.Content = (string)row["DoctorName"];
-        item.AppointmentStatus = (clsAppointments.enAppointmentSataus)row["AppointmentStatus"];
+        item.AppointmentStatus = (clsAppointments.enAppointmentSataus)(byte)row["AppointmentStatus"];
         item.LastStatusDate = (DateTime)row["LastStatusDate"];
         item.StartTime = (DateTime)row["StartTime"];
         item.EndTime = (DateTime)row["EndTime"];
         item.LocationValue = (string)row["Location"];
-        item.LabelValue = (short)row["LabelValue"];
-        item.MarkerValue = (short)row["MarkerValue"];
+        item.LabelValue = (byte)row["LabelValue"];
+        item.MarkerValue = (byte)row["MarkerValue"];
         item.Reminder = false;
         item.AllDay = false;
         item.Dirty = false;
         item.Owner = 1; // (int)row["Own"];
-        item.Notes = (string)row["Notes"];
+       // item.Notes = (string)row["Notes"];
         
         list.Add(item);
         

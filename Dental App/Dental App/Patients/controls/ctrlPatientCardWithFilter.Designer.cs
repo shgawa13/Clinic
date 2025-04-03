@@ -42,6 +42,7 @@
       // 
       // grbFilter
       // 
+      this.grbFilter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.grbFilter.BackColor = System.Drawing.Color.Gainsboro;
       this.grbFilter.Controls.Add(this.cbFilterBy);
       this.grbFilter.Controls.Add(this.iconSearch);
@@ -50,7 +51,7 @@
       this.grbFilter.Dock = System.Windows.Forms.DockStyle.Top;
       this.grbFilter.Location = new System.Drawing.Point(0, 0);
       this.grbFilter.Name = "grbFilter";
-      this.grbFilter.Size = new System.Drawing.Size(619, 41);
+      this.grbFilter.Size = new System.Drawing.Size(619, 40);
       this.grbFilter.TabIndex = 151;
       // 
       // cbFilterBy
@@ -111,13 +112,11 @@
       // ctrlPatientCard1
       // 
       this.ctrlPatientCard1.BackColor = System.Drawing.Color.Gainsboro;
-      this.ctrlPatientCard1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.ctrlPatientCard1.Location = new System.Drawing.Point(0, 41);
+      this.ctrlPatientCard1.Location = new System.Drawing.Point(-2, 38);
       this.ctrlPatientCard1.Name = "ctrlPatientCard1";
       this.ctrlPatientCard1.SelectedPatient = null;
-      this.ctrlPatientCard1.Size = new System.Drawing.Size(619, 317);
+      this.ctrlPatientCard1.Size = new System.Drawing.Size(621, 319);
       this.ctrlPatientCard1.TabIndex = 152;
-      this.ctrlPatientCard1.Load += new System.EventHandler(this.ctrlPatientCard1_Load);
       // 
       // ctrlPatientCardWithFilter
       // 
@@ -140,8 +139,8 @@
     private FontAwesome.Sharp.IconButton iconSearch;
     private System.Windows.Forms.TextBox txtFilterValue;
     private System.Windows.Forms.Label label11;
-    private ctrlPatientCard ctrlPatientCard1;
     private System.Windows.Forms.ComboBox cbFilterBy;
     private System.Windows.Forms.ErrorProvider errorProvider1;
+    private ctrlPatientCard ctrlPatientCard1;
   }
 }
