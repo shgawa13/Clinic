@@ -25,6 +25,9 @@ namespace Dental_App.Appointmnets
     public enum enPlan { Diagnosis = 0, Extraction = 1, Restoration = 2, Whitening = 3, Orthopedic = 4, Implantation = 5 }
     private enPlan _Plan = enPlan.Diagnosis;
 
+    public enum enAppointmentSataus
+    { Pending = 1, Confirmed = 2, Completed = 3, Canceled = 4, Rescheduled = 5, NotShow = 6 }
+
     public enum enMode { AddNew = 0, Update = 1 };
     private enMode _Mode = enMode.AddNew;
 
@@ -67,7 +70,7 @@ namespace Dental_App.Appointmnets
       CheckBoxEvent();
     }
 
-   
+
     //// From Schedule to Update an Existing appointment
     //public frmAddUpdateAppointmnet(int ApptID, ScheduleControl control, DateTime AppointmentDate, string AppointmentTime)
     //{
@@ -196,7 +199,7 @@ namespace Dental_App.Appointmnets
       cbMark.Items.Add(new CustomList(3, "Whitening"));
       cbMark.Items.Add(new CustomList(4, "Orthopedic"));
       cbMark.Items.Add(new CustomList(5, "Implantation"));
-      
+
      
     }
 

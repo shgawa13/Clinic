@@ -31,12 +31,6 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdateAppointmnet));
       this.panel1 = new System.Windows.Forms.Panel();
-      this.OrthopedicBtn = new Dental_App.ExpertsBtn();
-      this.ImplantationBtn = new Dental_App.ExpertsBtn();
-      this.WhiteningBtn = new Dental_App.ExpertsBtn();
-      this.RestorationBtn = new Dental_App.ExpertsBtn();
-      this.ExtractionBtn = new Dental_App.ExpertsBtn();
-      this.DiagnosisBtn = new Dental_App.ExpertsBtn();
       this.pnlDiagnosis = new System.Windows.Forms.Panel();
       this.chbDiagnosis = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
       this.chbXray = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
@@ -67,7 +61,6 @@
       this.pnlExtaction = new System.Windows.Forms.Panel();
       this.tbpAddAppointment = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.ctrlPatientCardWithFilter2 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
       this.panel3 = new System.Windows.Forms.Panel();
       this.cbLable = new System.Windows.Forms.ComboBox();
       this.cbMark = new System.Windows.Forms.ComboBox();
@@ -93,8 +86,6 @@
       this.iconNote = new FontAwesome.Sharp.IconButton();
       this.tcAppointment = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
       this.tbpBills = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-      this.PrintBillBtn = new Dental_App.ExpertsBtn();
-      this.PayBillBtn = new Dental_App.ExpertsBtn();
       this.pnlBillSummary = new System.Windows.Forms.Panel();
       this.lblCost = new System.Windows.Forms.Label();
       this.lblSummay = new System.Windows.Forms.Label();
@@ -118,6 +109,15 @@
       this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
       this.btnClose = new Dental_App.ExpertsBtn();
       this.btnSteps = new Dental_App.ExpertsBtn();
+      this.ctrlPatientCardWithFilter2 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
+      this.OrthopedicBtn = new Dental_App.ExpertsBtn();
+      this.ImplantationBtn = new Dental_App.ExpertsBtn();
+      this.WhiteningBtn = new Dental_App.ExpertsBtn();
+      this.RestorationBtn = new Dental_App.ExpertsBtn();
+      this.ExtractionBtn = new Dental_App.ExpertsBtn();
+      this.DiagnosisBtn = new Dental_App.ExpertsBtn();
+      this.PrintBillBtn = new Dental_App.ExpertsBtn();
+      this.PayBillBtn = new Dental_App.ExpertsBtn();
       this.ctrlPatientCardWithFilter1 = new Dental_App.Patients.controls.ctrlPatientCardWithFilter();
       this.expertsBtn2 = new Dental_App.ExpertsBtn();
       this.btnDiagnosis = new Dental_App.ExpertsBtn();
@@ -179,144 +179,6 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(861, 232);
       this.panel1.TabIndex = 131;
-      // 
-      // OrthopedicBtn
-      // 
-      this.OrthopedicBtn.BackColor = System.Drawing.Color.AliceBlue;
-      this.OrthopedicBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.OrthopedicBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.OrthopedicBtn.BorderRadius = 7;
-      this.OrthopedicBtn.BorderSize = 0;
-      this.OrthopedicBtn.FlatAppearance.BorderSize = 0;
-      this.OrthopedicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.OrthopedicBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.OrthopedicBtn.ForeColor = System.Drawing.Color.Black;
-      this.OrthopedicBtn.Image = ((System.Drawing.Image)(resources.GetObject("OrthopedicBtn.Image")));
-      this.OrthopedicBtn.Location = new System.Drawing.Point(551, 113);
-      this.OrthopedicBtn.Name = "OrthopedicBtn";
-      this.OrthopedicBtn.Size = new System.Drawing.Size(305, 108);
-      this.OrthopedicBtn.TabIndex = 5;
-      this.OrthopedicBtn.Text = "Orthopedic";
-      this.OrthopedicBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.OrthopedicBtn.TextColor = System.Drawing.Color.Black;
-      this.OrthopedicBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.OrthopedicBtn.UseVisualStyleBackColor = false;
-      this.OrthopedicBtn.Click += new System.EventHandler(this.OrthopedicBtn_Click);
-      // 
-      // ImplantationBtn
-      // 
-      this.ImplantationBtn.BackColor = System.Drawing.Color.AliceBlue;
-      this.ImplantationBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.ImplantationBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.ImplantationBtn.BorderRadius = 7;
-      this.ImplantationBtn.BorderSize = 0;
-      this.ImplantationBtn.FlatAppearance.BorderSize = 0;
-      this.ImplantationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.ImplantationBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.ImplantationBtn.ForeColor = System.Drawing.Color.Black;
-      this.ImplantationBtn.Image = ((System.Drawing.Image)(resources.GetObject("ImplantationBtn.Image")));
-      this.ImplantationBtn.Location = new System.Drawing.Point(240, 113);
-      this.ImplantationBtn.Name = "ImplantationBtn";
-      this.ImplantationBtn.Size = new System.Drawing.Size(305, 108);
-      this.ImplantationBtn.TabIndex = 4;
-      this.ImplantationBtn.Text = "Implantation";
-      this.ImplantationBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.ImplantationBtn.TextColor = System.Drawing.Color.Black;
-      this.ImplantationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.ImplantationBtn.UseVisualStyleBackColor = false;
-      this.ImplantationBtn.Click += new System.EventHandler(this.ImplantationBtn_Click);
-      // 
-      // WhiteningBtn
-      // 
-      this.WhiteningBtn.BackColor = System.Drawing.Color.AliceBlue;
-      this.WhiteningBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.WhiteningBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.WhiteningBtn.BorderRadius = 7;
-      this.WhiteningBtn.BorderSize = 0;
-      this.WhiteningBtn.FlatAppearance.BorderSize = 0;
-      this.WhiteningBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.WhiteningBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.WhiteningBtn.ForeColor = System.Drawing.Color.Black;
-      this.WhiteningBtn.Image = ((System.Drawing.Image)(resources.GetObject("WhiteningBtn.Image")));
-      this.WhiteningBtn.Location = new System.Drawing.Point(655, 8);
-      this.WhiteningBtn.Name = "WhiteningBtn";
-      this.WhiteningBtn.Size = new System.Drawing.Size(200, 100);
-      this.WhiteningBtn.TabIndex = 3;
-      this.WhiteningBtn.Text = "Whitening";
-      this.WhiteningBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.WhiteningBtn.TextColor = System.Drawing.Color.Black;
-      this.WhiteningBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.WhiteningBtn.UseVisualStyleBackColor = false;
-      this.WhiteningBtn.Click += new System.EventHandler(this.WhiteningBtn_Click);
-      // 
-      // RestorationBtn
-      // 
-      this.RestorationBtn.BackColor = System.Drawing.Color.AliceBlue;
-      this.RestorationBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.RestorationBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.RestorationBtn.BorderRadius = 7;
-      this.RestorationBtn.BorderSize = 0;
-      this.RestorationBtn.FlatAppearance.BorderSize = 0;
-      this.RestorationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.RestorationBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.RestorationBtn.ForeColor = System.Drawing.Color.Black;
-      this.RestorationBtn.Image = ((System.Drawing.Image)(resources.GetObject("RestorationBtn.Image")));
-      this.RestorationBtn.Location = new System.Drawing.Point(448, 8);
-      this.RestorationBtn.Name = "RestorationBtn";
-      this.RestorationBtn.Size = new System.Drawing.Size(200, 100);
-      this.RestorationBtn.TabIndex = 2;
-      this.RestorationBtn.Text = "Restoration";
-      this.RestorationBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.RestorationBtn.TextColor = System.Drawing.Color.Black;
-      this.RestorationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.RestorationBtn.UseVisualStyleBackColor = false;
-      this.RestorationBtn.Click += new System.EventHandler(this.RestorationBtn_Click);
-      // 
-      // ExtractionBtn
-      // 
-      this.ExtractionBtn.BackColor = System.Drawing.Color.AliceBlue;
-      this.ExtractionBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.ExtractionBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.ExtractionBtn.BorderRadius = 7;
-      this.ExtractionBtn.BorderSize = 0;
-      this.ExtractionBtn.FlatAppearance.BorderSize = 0;
-      this.ExtractionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.ExtractionBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.ExtractionBtn.ForeColor = System.Drawing.Color.Black;
-      this.ExtractionBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExtractionBtn.Image")));
-      this.ExtractionBtn.Location = new System.Drawing.Point(241, 8);
-      this.ExtractionBtn.Name = "ExtractionBtn";
-      this.ExtractionBtn.Size = new System.Drawing.Size(200, 100);
-      this.ExtractionBtn.TabIndex = 1;
-      this.ExtractionBtn.Text = "Extraction";
-      this.ExtractionBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.ExtractionBtn.TextColor = System.Drawing.Color.Black;
-      this.ExtractionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.ExtractionBtn.UseVisualStyleBackColor = false;
-      this.ExtractionBtn.Click += new System.EventHandler(this.ExtractionBtn_Click);
-      // 
-      // DiagnosisBtn
-      // 
-      this.DiagnosisBtn.BackColor = System.Drawing.Color.AliceBlue;
-      this.DiagnosisBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
-      this.DiagnosisBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.DiagnosisBtn.BorderRadius = 7;
-      this.DiagnosisBtn.BorderSize = 0;
-      this.DiagnosisBtn.FlatAppearance.BorderSize = 0;
-      this.DiagnosisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.DiagnosisBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
-      this.DiagnosisBtn.ForeColor = System.Drawing.Color.Black;
-      this.DiagnosisBtn.Image = ((System.Drawing.Image)(resources.GetObject("DiagnosisBtn.Image")));
-      this.DiagnosisBtn.Location = new System.Drawing.Point(4, 8);
-      this.DiagnosisBtn.Name = "DiagnosisBtn";
-      this.DiagnosisBtn.Size = new System.Drawing.Size(230, 213);
-      this.DiagnosisBtn.TabIndex = 0;
-      this.DiagnosisBtn.Text = "Diagnosis";
-      this.DiagnosisBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.DiagnosisBtn.TextColor = System.Drawing.Color.Black;
-      this.DiagnosisBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.DiagnosisBtn.UseVisualStyleBackColor = false;
-      this.DiagnosisBtn.Click += new System.EventHandler(this.DiagnosisBtn_Click);
       // 
       // pnlDiagnosis
       // 
@@ -775,15 +637,6 @@
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Appointment Info";
       // 
-      // ctrlPatientCardWithFilter2
-      // 
-      this.ctrlPatientCardWithFilter2.FilterEnable = true;
-      this.ctrlPatientCardWithFilter2.Location = new System.Drawing.Point(8, 17);
-      this.ctrlPatientCardWithFilter2.Margin = new System.Windows.Forms.Padding(4);
-      this.ctrlPatientCardWithFilter2.Name = "ctrlPatientCardWithFilter2";
-      this.ctrlPatientCardWithFilter2.Size = new System.Drawing.Size(824, 467);
-      this.ctrlPatientCardWithFilter2.TabIndex = 152;
-      // 
       // panel3
       // 
       this.panel3.Controls.Add(this.cbLable);
@@ -1136,51 +989,6 @@
       this.tbpBills.Text = "Bills";
       this.tbpBills.ThemesEnabled = false;
       // 
-      // PrintBillBtn
-      // 
-      this.PrintBillBtn.BackColor = System.Drawing.Color.SteelBlue;
-      this.PrintBillBtn.BackgroundColor = System.Drawing.Color.SteelBlue;
-      this.PrintBillBtn.BorderColor = System.Drawing.Color.DarkSlateBlue;
-      this.PrintBillBtn.BorderRadius = 8;
-      this.PrintBillBtn.BorderSize = 1;
-      this.PrintBillBtn.FlatAppearance.BorderSize = 0;
-      this.PrintBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.PrintBillBtn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.PrintBillBtn.ForeColor = System.Drawing.Color.White;
-      this.PrintBillBtn.Image = ((System.Drawing.Image)(resources.GetObject("PrintBillBtn.Image")));
-      this.PrintBillBtn.Location = new System.Drawing.Point(631, 223);
-      this.PrintBillBtn.Name = "PrintBillBtn";
-      this.PrintBillBtn.Size = new System.Drawing.Size(171, 66);
-      this.PrintBillBtn.TabIndex = 14;
-      this.PrintBillBtn.Text = " Print ";
-      this.PrintBillBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-      this.PrintBillBtn.TextColor = System.Drawing.Color.White;
-      this.PrintBillBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.PrintBillBtn.UseVisualStyleBackColor = false;
-      this.PrintBillBtn.Click += new System.EventHandler(this.PrintBillBtn_Click);
-      // 
-      // PayBillBtn
-      // 
-      this.PayBillBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
-      this.PayBillBtn.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
-      this.PayBillBtn.BorderColor = System.Drawing.Color.DarkSlateBlue;
-      this.PayBillBtn.BorderRadius = 8;
-      this.PayBillBtn.BorderSize = 1;
-      this.PayBillBtn.FlatAppearance.BorderSize = 0;
-      this.PayBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.PayBillBtn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
-      this.PayBillBtn.ForeColor = System.Drawing.Color.White;
-      this.PayBillBtn.Image = ((System.Drawing.Image)(resources.GetObject("PayBillBtn.Image")));
-      this.PayBillBtn.Location = new System.Drawing.Point(631, 129);
-      this.PayBillBtn.Name = "PayBillBtn";
-      this.PayBillBtn.Size = new System.Drawing.Size(171, 66);
-      this.PayBillBtn.TabIndex = 13;
-      this.PayBillBtn.Text = "Pay Bill";
-      this.PayBillBtn.TextColor = System.Drawing.Color.White;
-      this.PayBillBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.PayBillBtn.UseVisualStyleBackColor = false;
-      this.PayBillBtn.Click += new System.EventHandler(this.PayBillBtn_Click);
-      // 
       // pnlBillSummary
       // 
       this.pnlBillSummary.BackColor = System.Drawing.Color.Azure;
@@ -1454,6 +1262,198 @@
       this.btnSteps.TextColor = System.Drawing.Color.White;
       this.btnSteps.UseVisualStyleBackColor = false;
       this.btnSteps.Click += new System.EventHandler(this.btnSteps_Click);
+      // 
+      // ctrlPatientCardWithFilter2
+      // 
+      this.ctrlPatientCardWithFilter2.FilterEnable = true;
+      this.ctrlPatientCardWithFilter2.Location = new System.Drawing.Point(8, 17);
+      this.ctrlPatientCardWithFilter2.Margin = new System.Windows.Forms.Padding(4);
+      this.ctrlPatientCardWithFilter2.Name = "ctrlPatientCardWithFilter2";
+      this.ctrlPatientCardWithFilter2.Size = new System.Drawing.Size(824, 467);
+      this.ctrlPatientCardWithFilter2.TabIndex = 152;
+      // 
+      // OrthopedicBtn
+      // 
+      this.OrthopedicBtn.BackColor = System.Drawing.Color.AliceBlue;
+      this.OrthopedicBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.OrthopedicBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.OrthopedicBtn.BorderRadius = 7;
+      this.OrthopedicBtn.BorderSize = 0;
+      this.OrthopedicBtn.FlatAppearance.BorderSize = 0;
+      this.OrthopedicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.OrthopedicBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.OrthopedicBtn.ForeColor = System.Drawing.Color.Black;
+      this.OrthopedicBtn.Image = ((System.Drawing.Image)(resources.GetObject("OrthopedicBtn.Image")));
+      this.OrthopedicBtn.Location = new System.Drawing.Point(551, 113);
+      this.OrthopedicBtn.Name = "OrthopedicBtn";
+      this.OrthopedicBtn.Size = new System.Drawing.Size(305, 108);
+      this.OrthopedicBtn.TabIndex = 5;
+      this.OrthopedicBtn.Text = "Orthopedic";
+      this.OrthopedicBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.OrthopedicBtn.TextColor = System.Drawing.Color.Black;
+      this.OrthopedicBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.OrthopedicBtn.UseVisualStyleBackColor = false;
+      this.OrthopedicBtn.Click += new System.EventHandler(this.OrthopedicBtn_Click);
+      // 
+      // ImplantationBtn
+      // 
+      this.ImplantationBtn.BackColor = System.Drawing.Color.AliceBlue;
+      this.ImplantationBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.ImplantationBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.ImplantationBtn.BorderRadius = 7;
+      this.ImplantationBtn.BorderSize = 0;
+      this.ImplantationBtn.FlatAppearance.BorderSize = 0;
+      this.ImplantationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.ImplantationBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.ImplantationBtn.ForeColor = System.Drawing.Color.Black;
+      this.ImplantationBtn.Image = ((System.Drawing.Image)(resources.GetObject("ImplantationBtn.Image")));
+      this.ImplantationBtn.Location = new System.Drawing.Point(240, 113);
+      this.ImplantationBtn.Name = "ImplantationBtn";
+      this.ImplantationBtn.Size = new System.Drawing.Size(305, 108);
+      this.ImplantationBtn.TabIndex = 4;
+      this.ImplantationBtn.Text = "Implantation";
+      this.ImplantationBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.ImplantationBtn.TextColor = System.Drawing.Color.Black;
+      this.ImplantationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.ImplantationBtn.UseVisualStyleBackColor = false;
+      this.ImplantationBtn.Click += new System.EventHandler(this.ImplantationBtn_Click);
+      // 
+      // WhiteningBtn
+      // 
+      this.WhiteningBtn.BackColor = System.Drawing.Color.AliceBlue;
+      this.WhiteningBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.WhiteningBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.WhiteningBtn.BorderRadius = 7;
+      this.WhiteningBtn.BorderSize = 0;
+      this.WhiteningBtn.FlatAppearance.BorderSize = 0;
+      this.WhiteningBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.WhiteningBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.WhiteningBtn.ForeColor = System.Drawing.Color.Black;
+      this.WhiteningBtn.Image = ((System.Drawing.Image)(resources.GetObject("WhiteningBtn.Image")));
+      this.WhiteningBtn.Location = new System.Drawing.Point(655, 8);
+      this.WhiteningBtn.Name = "WhiteningBtn";
+      this.WhiteningBtn.Size = new System.Drawing.Size(200, 100);
+      this.WhiteningBtn.TabIndex = 3;
+      this.WhiteningBtn.Text = "Whitening";
+      this.WhiteningBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.WhiteningBtn.TextColor = System.Drawing.Color.Black;
+      this.WhiteningBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.WhiteningBtn.UseVisualStyleBackColor = false;
+      this.WhiteningBtn.Click += new System.EventHandler(this.WhiteningBtn_Click);
+      // 
+      // RestorationBtn
+      // 
+      this.RestorationBtn.BackColor = System.Drawing.Color.AliceBlue;
+      this.RestorationBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.RestorationBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.RestorationBtn.BorderRadius = 7;
+      this.RestorationBtn.BorderSize = 0;
+      this.RestorationBtn.FlatAppearance.BorderSize = 0;
+      this.RestorationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.RestorationBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.RestorationBtn.ForeColor = System.Drawing.Color.Black;
+      this.RestorationBtn.Image = ((System.Drawing.Image)(resources.GetObject("RestorationBtn.Image")));
+      this.RestorationBtn.Location = new System.Drawing.Point(448, 8);
+      this.RestorationBtn.Name = "RestorationBtn";
+      this.RestorationBtn.Size = new System.Drawing.Size(200, 100);
+      this.RestorationBtn.TabIndex = 2;
+      this.RestorationBtn.Text = "Restoration";
+      this.RestorationBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.RestorationBtn.TextColor = System.Drawing.Color.Black;
+      this.RestorationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.RestorationBtn.UseVisualStyleBackColor = false;
+      this.RestorationBtn.Click += new System.EventHandler(this.RestorationBtn_Click);
+      // 
+      // ExtractionBtn
+      // 
+      this.ExtractionBtn.BackColor = System.Drawing.Color.AliceBlue;
+      this.ExtractionBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.ExtractionBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.ExtractionBtn.BorderRadius = 7;
+      this.ExtractionBtn.BorderSize = 0;
+      this.ExtractionBtn.FlatAppearance.BorderSize = 0;
+      this.ExtractionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.ExtractionBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.ExtractionBtn.ForeColor = System.Drawing.Color.Black;
+      this.ExtractionBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExtractionBtn.Image")));
+      this.ExtractionBtn.Location = new System.Drawing.Point(241, 8);
+      this.ExtractionBtn.Name = "ExtractionBtn";
+      this.ExtractionBtn.Size = new System.Drawing.Size(200, 100);
+      this.ExtractionBtn.TabIndex = 1;
+      this.ExtractionBtn.Text = "Extraction";
+      this.ExtractionBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.ExtractionBtn.TextColor = System.Drawing.Color.Black;
+      this.ExtractionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.ExtractionBtn.UseVisualStyleBackColor = false;
+      this.ExtractionBtn.Click += new System.EventHandler(this.ExtractionBtn_Click);
+      // 
+      // DiagnosisBtn
+      // 
+      this.DiagnosisBtn.BackColor = System.Drawing.Color.AliceBlue;
+      this.DiagnosisBtn.BackgroundColor = System.Drawing.Color.AliceBlue;
+      this.DiagnosisBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.DiagnosisBtn.BorderRadius = 7;
+      this.DiagnosisBtn.BorderSize = 0;
+      this.DiagnosisBtn.FlatAppearance.BorderSize = 0;
+      this.DiagnosisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.DiagnosisBtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold);
+      this.DiagnosisBtn.ForeColor = System.Drawing.Color.Black;
+      this.DiagnosisBtn.Image = ((System.Drawing.Image)(resources.GetObject("DiagnosisBtn.Image")));
+      this.DiagnosisBtn.Location = new System.Drawing.Point(4, 8);
+      this.DiagnosisBtn.Name = "DiagnosisBtn";
+      this.DiagnosisBtn.Size = new System.Drawing.Size(230, 213);
+      this.DiagnosisBtn.TabIndex = 0;
+      this.DiagnosisBtn.Text = "Diagnosis";
+      this.DiagnosisBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.DiagnosisBtn.TextColor = System.Drawing.Color.Black;
+      this.DiagnosisBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.DiagnosisBtn.UseVisualStyleBackColor = false;
+      this.DiagnosisBtn.Click += new System.EventHandler(this.DiagnosisBtn_Click);
+      // 
+      // PrintBillBtn
+      // 
+      this.PrintBillBtn.BackColor = System.Drawing.Color.SteelBlue;
+      this.PrintBillBtn.BackgroundColor = System.Drawing.Color.SteelBlue;
+      this.PrintBillBtn.BorderColor = System.Drawing.Color.DarkSlateBlue;
+      this.PrintBillBtn.BorderRadius = 8;
+      this.PrintBillBtn.BorderSize = 1;
+      this.PrintBillBtn.FlatAppearance.BorderSize = 0;
+      this.PrintBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.PrintBillBtn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.PrintBillBtn.ForeColor = System.Drawing.Color.White;
+      this.PrintBillBtn.Image = ((System.Drawing.Image)(resources.GetObject("PrintBillBtn.Image")));
+      this.PrintBillBtn.Location = new System.Drawing.Point(631, 223);
+      this.PrintBillBtn.Name = "PrintBillBtn";
+      this.PrintBillBtn.Size = new System.Drawing.Size(171, 66);
+      this.PrintBillBtn.TabIndex = 14;
+      this.PrintBillBtn.Text = " Print ";
+      this.PrintBillBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.PrintBillBtn.TextColor = System.Drawing.Color.White;
+      this.PrintBillBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.PrintBillBtn.UseVisualStyleBackColor = false;
+      this.PrintBillBtn.Click += new System.EventHandler(this.PrintBillBtn_Click);
+      // 
+      // PayBillBtn
+      // 
+      this.PayBillBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
+      this.PayBillBtn.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
+      this.PayBillBtn.BorderColor = System.Drawing.Color.DarkSlateBlue;
+      this.PayBillBtn.BorderRadius = 8;
+      this.PayBillBtn.BorderSize = 1;
+      this.PayBillBtn.FlatAppearance.BorderSize = 0;
+      this.PayBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.PayBillBtn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold);
+      this.PayBillBtn.ForeColor = System.Drawing.Color.White;
+      this.PayBillBtn.Image = ((System.Drawing.Image)(resources.GetObject("PayBillBtn.Image")));
+      this.PayBillBtn.Location = new System.Drawing.Point(631, 129);
+      this.PayBillBtn.Name = "PayBillBtn";
+      this.PayBillBtn.Size = new System.Drawing.Size(171, 66);
+      this.PayBillBtn.TabIndex = 13;
+      this.PayBillBtn.Text = "Pay Bill";
+      this.PayBillBtn.TextColor = System.Drawing.Color.White;
+      this.PayBillBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.PayBillBtn.UseVisualStyleBackColor = false;
+      this.PayBillBtn.Click += new System.EventHandler(this.PayBillBtn_Click);
       // 
       // ctrlPatientCardWithFilter1
       // 
