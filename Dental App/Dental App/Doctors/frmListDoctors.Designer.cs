@@ -1,6 +1,6 @@
 ﻿namespace Dental_App.Doctors
 {
-  partial class frmDoctors
+  partial class frmListDoctors
   {
     /// <summary>
     /// Required designer variable.

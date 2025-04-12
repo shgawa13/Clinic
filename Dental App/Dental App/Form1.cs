@@ -141,7 +141,7 @@ namespace Dental_App
     private void iconButton4_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color4);
-      OpenChildForm(new frmDoctors());
+      OpenChildForm(new frmListDoctors());
     }
 
     private void iconButton5_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace Dental_App.Patients
     private void _RefreshPatientsList()
     {
       // Get data or empty table if null
-      _dtAllPatients = clsPatient.GetAllPatients() ?? new DataTable();
+      _dtPatients = clsPatient.GetAllPatients() ?? new DataTable();
 
       // we check if the table is empty or not
       cbFilter.Enabled = _HandleEmptyTable();
@@ -78,6 +78,8 @@ namespace Dental_App.Patients
 
     }
 
+    
+
     private bool _HandleEmptyTable()
     {
       if (_dtAllPatients.Rows.Count >0)
@@ -89,13 +91,14 @@ namespace Dental_App.Patients
       }
       else
       {
-        // Clear the table but maintain structure
+        // Clear the table but maintain structure and disable Menu
         _dtPatients.Clear();
+        ctmsPatient.Enabled = false;
+
         return false;
       }
     }
 
-  
 
     private void txtFilterValue_TextChanged(object sender, EventArgs e)
     {

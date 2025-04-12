@@ -678,14 +678,15 @@ namespace Dental_App.Appointmnets
         this.Close();
     }
 
-  }
+       
+    }
 
-  /// <summary>
-  /// Custom list that hold
-  /// int ID
-  /// string displayName 
-  /// </summary>
-  public class CustomList 
+    /// <summary>
+    /// Custom list that hold
+    /// int ID
+    /// string displayName 
+    /// </summary>
+    public class CustomList 
   {
     private int id;
     private string display;

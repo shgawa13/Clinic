@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Dental_App.Doctors
 {
-  public partial class frmDoctors : Form
+  public partial class frmListDoctors : Form
   {
     private static DataTable _dtAllDoctors = clsDoctors.GetAllDoctors() ?? new DataTable();
 
@@ -25,7 +25,7 @@ namespace Dental_App.Doctors
     //  "NationalityCountryID");
 
     
-    public frmDoctors()
+    public frmListDoctors()
     {
       InitializeComponent();
       cbFilter.SelectedIndex = 0;
@@ -85,6 +85,8 @@ namespace Dental_App.Doctors
       else
       {
         _dtAllDoctors.Clear();
+        ctmsDoctors.Enabled = false;
+
         return false;
       }
     }
