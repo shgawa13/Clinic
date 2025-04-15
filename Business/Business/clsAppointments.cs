@@ -12,7 +12,7 @@ using DataLayer;
 
 namespace Business
 {
-  public class clsAppointments: IScheduleAppointment
+  public class clsAppointments: IScheduleAppointment , ICloneable
   {
 
     private bool allDay;
@@ -1136,6 +1136,7 @@ namespace Business
       // Create MedicalRecord and Payments
       //if()
 
+      
       switch (Mode)
       { 
         case enMode.AddNew:
@@ -1173,7 +1174,8 @@ namespace Business
 
     object ICloneable.Clone()
     {
-      throw new NotImplementedException();
+    //  throw new NotImplementedException();
+    return null;
     }
   }
 }

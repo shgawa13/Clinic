@@ -83,6 +83,8 @@ namespace Dental_App.Patients.controls
       lblPhone.Text = _Patient.PatientInfo.PhoneNumber;
       lblCountry.Text = clsCountries.Find(_Patient.PatientInfo.NationalityCountryID).CountryName;
       lblEmail.Text = _Patient.PatientInfo.Email;
+      linkEdit.Visible = true;
+
        _LoadPersonImage();
     }
 
@@ -115,6 +117,7 @@ namespace Dental_App.Patients.controls
       lblPhone.Text = "???";
       lblCountry.Text = "???";
       lblEmail.Text = "???";
+      linkEdit.Visible = false;
 
       pbAvatar.Image = Resources.Male_avatar;
     }
@@ -127,7 +130,7 @@ namespace Dental_App.Patients.controls
       LoadPatientInfo(_PatientID);
     }
 
- 
+    
   }
 
 }

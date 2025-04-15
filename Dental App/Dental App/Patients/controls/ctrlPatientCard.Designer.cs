@@ -287,6 +287,7 @@
       this.linkEdit.TabIndex = 33;
       this.linkEdit.TabStop = true;
       this.linkEdit.Text = "Edit Info";
+      this.linkEdit.Visible = false;
       this.linkEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEdit_LinkClicked);
       // 
       // pbAvatar

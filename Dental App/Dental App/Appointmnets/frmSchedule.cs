@@ -82,7 +82,7 @@ namespace Dental_App.Appointmnets
     // Costumize ContextMenu
     private void ScheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
     {
-      e.Cancel = true;
+      //e.Cancel = true;
       this.scheduleControl1.ContextMenuStrip = MetroContextMenu();
     }
 
@@ -130,7 +130,8 @@ namespace Dental_App.Appointmnets
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       if (e.Item != null)
-        MessageBox.Show("there is item");
+        MessageBox.Show($"there is item With ID: {e.Item.UniqueID}");
+      
      
       // e.
       SelectedAppointmentDate = e.ClickDateTime.Date;
