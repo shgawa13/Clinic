@@ -41,8 +41,7 @@ namespace Dental_App.Appointmnets
       this.scheduleControl1.ScheduleType = ScheduleViewType.Month;
       this.scheduleControl1.ShowingAppointmentForm += ScheduleControl1_ShowingAppointmentForm; ;
       this.scheduleControl1.ScheduleAppointmentClick += ScheduleAppointmentClick;
-      //this.scheduleControl1.Re
-     // this.scheduleControl1.Item
+      
       // Assign the custom context menu to the ScheduleControl
       this.scheduleControl1.SetupContextMenu += ScheduleControl1_SetupContextMenu;
 
@@ -82,7 +81,7 @@ namespace Dental_App.Appointmnets
     // Costumize ContextMenu
     private void ScheduleControl1_SetupContextMenu(object sender, CancelEventArgs e)
     {
-      //e.Cancel = true;
+      e.Cancel = true;
       this.scheduleControl1.ContextMenuStrip = MetroContextMenu();
     }
 
@@ -116,7 +115,7 @@ namespace Dental_App.Appointmnets
     {
       //frmAddUpdateAppointmnet frm = new frmAddUpdateAppointmnet(_ApptID, this.scheduleControl1, SelectedAppointmentDate, _AppointmnetTime);
       //frm.ShowDialog();
-
+      
       MessageBox.Show("Edit item clicked");
     }
 
@@ -130,13 +129,15 @@ namespace Dental_App.Appointmnets
     private void ScheduleAppointmentClick(object sender, ScheduleAppointmentClickEventArgs e)
     {
       if (e.Item != null)
-        MessageBox.Show($"there is item With ID: {e.Item.UniqueID}");
-      
-     
-      // e.
+          _ApptID = e.Item.UniqueID;
+        
+
+
+
       SelectedAppointmentDate = e.ClickDateTime.Date;
-      _AppointmnetTime = e.ClickDateTime.ToShortTimeString(); 
-     
+      _AppointmnetTime = e.ClickDateTime.ToShortTimeString();
+
+
     }
 
 
